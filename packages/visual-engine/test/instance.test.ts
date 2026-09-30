@@ -221,3 +221,72 @@ describe('VisualEngine', () => {
     expect(events.some((e) => e.name === 'visual.fc-sector-0-selected')).toBe(true);
   });
 });
+
+describe('VisualEngine — maxSelection (W-2.1)', () => {
+  const CS_SPEC = {
+    type: 'visual',
+    version: '1.0.0',
+    id: 'counting-set-max-test',
+    content: {
+      kind: 'counting-set',
+      components: [{
+        id: 'cs',
+        type: 'counting-set',
+        props: { count: 5, object: 'star', arrangement: 'row', interactive: true, maxSelection: 3 },
+      }],
+    },
+    accessibility: { label: 'Pick three stars', description: 'Counting set with a max of three' },
+  };
+
+  it('rejects the fourth select over maxSelection with INVALID_ACTION', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(CS_SPEC as never, stubHost());
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-0' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-1' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-2' } });
+    expect(instance.snapshot().selection).toEqual(['cs-object-0', 'cs-object-1', 'cs-object-2']);
+    expect(() => instance.dispatch({ type: 'select', target: { id: 'cs-object-3' } })).toThrow(/maxSelection/);
+    expect(instance.snapshot().selection).toEqual(['cs-object-0', 'cs-object-1', 'cs-object-2']);
+  });
+
+  it('deselect frees capacity for a later select', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(CS_SPEC as never, stubHost());
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-0' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-1' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-2' } });
+    instance.dispatch({ type: 'deselect', target: { id: 'cs-object-1' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-3' } });
+    expect(instance.snapshot().selection).toEqual(['cs-object-0', 'cs-object-2', 'cs-object-3']);
+  });
+
+  it('host dispatch of a non-select action is never rejected by the cap', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(CS_SPEC as never, stubHost());
+    expect(() => instance.dispatch({ type: 'focus', target: { id: 'cs-object-4' } })).not.toThrow();
+    expect(() => instance.dispatch({ type: 'reset' })).not.toThrow();
+  });
+
+  it('absent maxSelection means unlimited selection', () => {
+    const engine = new VisualEngine();
+    const spec = {
+      type: 'visual',
+      version: '1.0.0',
+      id: 'counting-set-unlimited-test',
+      content: {
+        kind: 'counting-set',
+        components: [{
+          id: 'cs',
+          type: 'counting-set',
+          props: { count: 5, object: 'star', arrangement: 'row', interactive: true },
+        }],
+      },
+      accessibility: { label: 'Counting set', description: 'Counting set' },
+    };
+    const instance = engine.instantiate(spec as never, stubHost());
+    for (let i = 0; i < 5; i++) {
+      instance.dispatch({ type: 'select', target: { id: `cs-object-${i}` } });
+    }
+    expect(instance.snapshot().selection).toHaveLength(5);
+  });
+});

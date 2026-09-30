@@ -769,6 +769,19 @@ export const catalog = [
     "title": "counting-set"
   },
   {
+    "id": "visual/counting-set-pick-n",
+    "kind": "engine",
+    "engine": "visual",
+    "slug": "counting-set-pick-n",
+    "specPath": "packages/visual-engine/fixture/counting-set-pick-n/input.visual.json",
+    "golden": {
+      "scene": "packages/visual-engine/fixture/counting-set-pick-n/expected.scene.json",
+      "a11y": "packages/visual-engine/fixture/counting-set-pick-n/expected.a11y.json",
+      "svg": "packages/visual-engine/fixture/counting-set-pick-n/expected.svg"
+    },
+    "title": "counting-set-pick-n"
+  },
+  {
     "id": "visual/fraction",
     "kind": "engine",
     "engine": "visual",

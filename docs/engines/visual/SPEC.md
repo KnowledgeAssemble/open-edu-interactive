@@ -3094,6 +3094,10 @@ This allows KnowledgeAssemble to build a reusable visual infrastructure layer wh
 
 Each component accepts the optional `interactive: boolean` prop. When `true`, every structurally valid interaction target for that kind becomes selectable (see A.3 — e.g. number-line labels/ticks, fraction parts, clock hands, grid points). Highlight props still control `metadata` but are not required for interactivity.
 
+### A.2.1 `maxSelection` (counting-set)
+
+The counting-set component accepts the optional `maxSelection: number` prop. It constrains how many objects a learner may select: a `select` that would push the component's selection past `maxSelection` is rejected deterministically with `INVALID_ACTION` (`packages/visual-engine/src/engine.ts`). Absent means unlimited. Enforcement is scoped to the learner-facing `select`/`deselect` actions only — a host `dispatch()` of any other D5 action is never rejected by the cap (ADR-12: the declared action set is an authoring contract, not a runtime access-control list). The validator ranges it to a non-negative integer (`INVALID_SPEC` otherwise). Use case: `cs-pick-n`.
+
 ## A.3 Scene node id conventions
 
 | Kind | Shape/Group | Children (guided) | Discovery interactive targets |

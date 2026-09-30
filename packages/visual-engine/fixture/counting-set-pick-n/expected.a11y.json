@@ -1,0 +1,113 @@
+{
+  "a11y": [
+    {
+      "id": "cs",
+      "role": "group",
+      "label": "cs",
+      "children": [
+        {
+          "id": "cs-object-0",
+          "role": "button",
+          "label": "Star 1",
+          "children": []
+        },
+        {
+          "id": "cs-object-1",
+          "role": "button",
+          "label": "Star 2",
+          "children": []
+        },
+        {
+          "id": "cs-object-2",
+          "role": "button",
+          "label": "Star 3",
+          "children": []
+        },
+        {
+          "id": "cs-object-3",
+          "role": "button",
+          "label": "Star 4",
+          "children": []
+        },
+        {
+          "id": "cs-object-4",
+          "role": "button",
+          "label": "Star 5",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cs-object-0",
+      "role": "button",
+      "label": "Star 1",
+      "children": []
+    },
+    {
+      "id": "cs-object-1",
+      "role": "button",
+      "label": "Star 2",
+      "children": []
+    },
+    {
+      "id": "cs-object-2",
+      "role": "button",
+      "label": "Star 3",
+      "children": []
+    },
+    {
+      "id": "cs-object-3",
+      "role": "button",
+      "label": "Star 4",
+      "children": []
+    },
+    {
+      "id": "cs-object-4",
+      "role": "button",
+      "label": "Star 5",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "cs-object-0",
+      "action": "select"
+    },
+    {
+      "id": "cs-object-0",
+      "action": "focus"
+    },
+    {
+      "id": "cs-object-1",
+      "action": "select"
+    },
+    {
+      "id": "cs-object-1",
+      "action": "focus"
+    },
+    {
+      "id": "cs-object-2",
+      "action": "select"
+    },
+    {
+      "id": "cs-object-2",
+      "action": "focus"
+    },
+    {
+      "id": "cs-object-3",
+      "action": "select"
+    },
+    {
+      "id": "cs-object-3",
+      "action": "focus"
+    },
+    {
+      "id": "cs-object-4",
+      "action": "select"
+    },
+    {
+      "id": "cs-object-4",
+      "action": "focus"
+    }
+  ]
+}

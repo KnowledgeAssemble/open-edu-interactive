@@ -84,10 +84,35 @@ export class VisualEngine implements Engine {
       unfocus: 'unfocused',
     };
 
+    const maxSelectionByComponent = new Map<string, number>();
+    for (const comp of visualSpec.content?.components ?? []) {
+      if (comp.type === 'counting-set') {
+        const props = comp.props as Record<string, unknown> | undefined;
+        const maxSelection = props?.maxSelection as number | undefined;
+        if (maxSelection !== undefined && Number.isInteger(maxSelection) && maxSelection >= 0) {
+          maxSelectionByComponent.set(comp.id, maxSelection);
+        }
+      }
+    }
+
+    function componentOf(targetId: string): string | undefined {
+      for (const compId of maxSelectionByComponent.keys()) {
+        if (targetId.startsWith(`${compId}-object-`)) return compId;
+      }
+      return undefined;
+    }
+
     return {
       id: instanceId,
       engine: this.type,
       dispatch(action: EngineAction): void {
+        if (action.type === 'select' && action.target?.id) {
+          const compId = componentOf(action.target.id);
+          const cap = compId ? maxSelectionByComponent.get(compId) : undefined;
+          if (cap !== undefined && !state.selection.includes(action.target.id) && state.selection.length >= cap) {
+            throw new EngineError('INVALID_ACTION', `counting-set "${compId}" maxSelection ${cap} reached`);
+          }
+        }
         const reduced = baseReducer(state, action);
         state = reduced;
 

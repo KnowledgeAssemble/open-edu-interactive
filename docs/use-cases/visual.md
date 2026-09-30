@@ -119,7 +119,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true`, `count: n`. |
 | **Fixture** | `counting-set-pick-n` (planned) |
 | **Host** | `selection.length === 3` and optional identity check. |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.1 `maxSelection` slice exit gate — cap rejects over-limit learner `select` with `INVALID_ACTION`, scoped to `select`/`deselect`; host dispatch of other D5 actions never capped per ADR-12; prop documented in visual SPEC A.2.1) |
 
 ---
 

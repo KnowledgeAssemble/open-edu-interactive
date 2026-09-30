@@ -57,3 +57,51 @@ test.describe('Visual Engine — geometry-discovery-vertex e2e', () => {
     expect(ids.some((id) => id.includes('side'))).toBe(false);
   });
 });
+
+test.describe('Visual Engine — counting-set-pick-n e2e (W-2.1 maxSelection)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=visual&spec=packages/visual-engine/fixture/counting-set-pick-n/input.visual.json');
+    await page.waitForFunction(() => !!(window as unknown as { __harness?: unknown }).__harness);
+  });
+
+  test('cs-pick-n: cap of three rejects the fourth learner select deterministically; deselect frees a slot', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as {
+        __harness: {
+          dispatch(a: unknown): void;
+          snapshot(): { selection: string[] };
+        }
+      }).__harness;
+      h.dispatch({ type: 'select', target: { id: 'cs-object-0' } });
+      h.dispatch({ type: 'select', target: { id: 'cs-object-1' } });
+      h.dispatch({ type: 'select', target: { id: 'cs-object-2' } });
+      let rejected = false;
+      try {
+        h.dispatch({ type: 'select', target: { id: 'cs-object-3' } });
+      } catch (error) {
+        rejected = (error as { message?: string }).message?.includes('maxSelection') ?? false;
+      }
+      const afterReject = h.snapshot().selection;
+      h.dispatch({ type: 'deselect', target: { id: 'cs-object-1' } });
+      h.dispatch({ type: 'select', target: { id: 'cs-object-3' } });
+      return { rejected, afterReject, afterDeselect: h.snapshot().selection };
+    });
+    expect(result.rejected).toBe(true);
+    expect(result.afterReject).toEqual(['cs-object-0', 'cs-object-1', 'cs-object-2']);
+    expect(result.afterDeselect).toEqual(['cs-object-0', 'cs-object-2', 'cs-object-3']);
+  });
+
+  test('cs-pick-n: host dispatch of a non-select action is never capped', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as {
+        __harness: {
+          dispatch(a: unknown): void;
+          snapshot(): { focus: string | null };
+        }
+      }).__harness;
+      h.dispatch({ type: 'focus', target: { id: 'cs-object-4' } });
+      return h.snapshot().focus;
+    });
+    expect(result).toBe('cs-object-4');
+  });
+});

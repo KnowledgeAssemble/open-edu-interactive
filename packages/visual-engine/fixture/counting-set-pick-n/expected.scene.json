@@ -1,0 +1,335 @@
+{
+  "nodes": [
+    {
+      "id": "cs",
+      "role": "group",
+      "kind": "counting-set",
+      "children": [
+        {
+          "id": "cs-object-0",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 1",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 278,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-1",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 2",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 328,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-2",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 3",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 378,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-3",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 4",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 428,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-4",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 5",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 478,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "cs": {
+      "id": "cs",
+      "role": "group",
+      "kind": "counting-set",
+      "children": [
+        {
+          "id": "cs-object-0",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 1",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 278,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-1",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 2",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 328,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-2",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 3",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 378,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-3",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 4",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 428,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "cs-object-4",
+          "role": "counting-object",
+          "kind": "star",
+          "label": "Star 5",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "arrangement": "row"
+          },
+          "children": [],
+          "bounds": {
+            "x": 478,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    "cs-object-0": {
+      "id": "cs-object-0",
+      "role": "counting-object",
+      "kind": "star",
+      "label": "Star 1",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "arrangement": "row"
+      },
+      "children": [],
+      "bounds": {
+        "x": 278,
+        "y": 278,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "cs-object-1": {
+      "id": "cs-object-1",
+      "role": "counting-object",
+      "kind": "star",
+      "label": "Star 2",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "arrangement": "row"
+      },
+      "children": [],
+      "bounds": {
+        "x": 328,
+        "y": 278,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "cs-object-2": {
+      "id": "cs-object-2",
+      "role": "counting-object",
+      "kind": "star",
+      "label": "Star 3",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "arrangement": "row"
+      },
+      "children": [],
+      "bounds": {
+        "x": 378,
+        "y": 278,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "cs-object-3": {
+      "id": "cs-object-3",
+      "role": "counting-object",
+      "kind": "star",
+      "label": "Star 4",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "arrangement": "row"
+      },
+      "children": [],
+      "bounds": {
+        "x": 428,
+        "y": 278,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "cs-object-4": {
+      "id": "cs-object-4",
+      "role": "counting-object",
+      "kind": "star",
+      "label": "Star 5",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "arrangement": "row"
+      },
+      "children": [],
+      "bounds": {
+        "x": 478,
+        "y": 278,
+        "width": 44,
+        "height": 44
+      }
+    }
+  }
+}
