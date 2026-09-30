@@ -129,6 +129,7 @@ ${childrenSvg}
       children: [],
     });
     interactive.push({ id: e.id, action: 'follow' });
+    const strength = e.metadata?.strength as number | undefined;
     alternative.push({
       kind: 'edge',
       id: e.id,
@@ -137,6 +138,7 @@ ${childrenSvg}
       to: toNodeId,
       fromLabel,
       toLabel,
+      strength,
     });
   }
 

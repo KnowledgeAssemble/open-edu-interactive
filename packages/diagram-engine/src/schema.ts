@@ -47,6 +47,7 @@ export const DiagramEdgeSchema = z
     labels: z.array(z.string()).optional(),
     interactive: z.boolean().optional(),
     gated: z.boolean().optional(),
+    strength: z.number().optional(),
   })
   .strict();
 

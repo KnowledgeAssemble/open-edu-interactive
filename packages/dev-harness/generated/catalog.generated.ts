@@ -204,6 +204,20 @@ export const catalog = [
     "title": "Rainfall and soil erosion"
   },
   {
+    "id": "diagram/di-cause-relative-influence",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cause-relative-influence",
+    "specPath": "packages/diagram-engine/fixture/di-cause-relative-influence/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cause-relative-influence/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cause-relative-influence/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cause-relative-influence/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cause-relative-influence/expected.svg"
+    },
+    "title": "Soil or rain for crop choice"
+  },
+  {
     "id": "diagram/di-class-classify",
     "kind": "engine",
     "engine": "diagram",

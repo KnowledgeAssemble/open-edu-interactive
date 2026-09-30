@@ -5,7 +5,7 @@ interface Harness {
   snapshot(): { selection: string[]; expanded: string[] };
   events(): Array<{ name: string; data?: Record<string, unknown> }>;
   svg(): string;
-  alternative(): Array<{ kind: string; id: string; label?: string; relationship?: string; members?: string[] }>;
+  alternative(): Array<{ kind: string; id: string; label?: string; relationship?: string; members?: string[]; strength?: number }>;
   tryCreate(s: unknown): { ok: boolean; code?: string };
 }
 
@@ -48,6 +48,7 @@ const FIXTURES = {
   'di-class-urban-hierarchy': 'packages/diagram-engine/fixture/di-class-urban-hierarchy/input.diagram.json',
   'di-sys-city-system': 'packages/diagram-engine/fixture/di-sys-city-system/input.diagram.json',
   'di-cause-relationship-gate': 'packages/diagram-engine/fixture/di-cause-relationship-gate/input.diagram.json',
+  'di-cause-relative-influence': 'packages/diagram-engine/fixture/di-cause-relative-influence/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -554,5 +555,23 @@ test.describe('Diagram W-3.6 — relationship-gate (di-cause-6)', () => {
     expect(result.revealedEdges).toContain('rain-erodes');
     expect(result.revealedRelationship).toBe(true);
     expect(result.followed).toBe(true);
+  });
+});
+
+test.describe('Diagram W-3.7 — edge-weight (di-cause-5)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-cause-relative-influence']);
+  });
+
+  test('edges carry semantic strength in the alternative; dominant edge is identifiable', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const edges = h.alternative().filter((r) => r.kind === 'edge');
+      const soil = edges.find((e) => e.id === 'edge-soil-crop' || e.id === 'soil-crop');
+      const rain = edges.find((e) => e.id === 'edge-rain-crop' || e.id === 'rain-crop');
+      return { soilStrength: soil?.strength, rainStrength: rain?.strength };
+    });
+    expect(result.soilStrength).toBe(0.8);
+    expect(result.rainStrength).toBe(0.6);
   });
 });

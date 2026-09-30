@@ -701,7 +701,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-relative-influence` *(planned)* |
 | **New capability** | `edge-weight` *(planned)* — weight is data, never style. |
 | **Host** | Relative-reasoning rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-6-relationship-gate` — Recall the hidden relationship, then confirm
 
