@@ -79,6 +79,8 @@
           "label": "input leads-to step",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -232,6 +234,8 @@
       "label": "input leads-to step",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -316,6 +320,8 @@
           "label": "input leads-to step",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

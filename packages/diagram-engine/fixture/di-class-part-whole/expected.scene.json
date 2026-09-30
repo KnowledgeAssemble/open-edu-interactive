@@ -110,6 +110,8 @@
           "label": "parliament contains lok-sabha",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -142,6 +144,8 @@
           "label": "parliament contains rajya-sabha",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -174,6 +178,8 @@
           "label": "lok-sabha part-of president",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -346,6 +352,8 @@
       "label": "parliament contains lok-sabha",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -364,6 +372,8 @@
       "label": "parliament contains rajya-sabha",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -382,6 +392,8 @@
       "label": "lok-sabha part-of president",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -475,6 +487,8 @@
           "label": "parliament contains lok-sabha",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -493,6 +507,8 @@
           "label": "parliament contains rajya-sabha",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -511,6 +527,8 @@
           "label": "lok-sabha part-of president",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

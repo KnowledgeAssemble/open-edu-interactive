@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 interface Harness {
   dispatch(a: unknown): void;
   snapshot(): { selection: string[]; expanded: string[] };
-  events(): Array<{ name: string }>;
+  events(): Array<{ name: string; data?: Record<string, unknown> }>;
   svg(): string;
   alternative(): Array<{ kind: string; id: string; label?: string; relationship?: string; members?: string[] }>;
   tryCreate(s: unknown): { ok: boolean; code?: string };
@@ -43,6 +43,7 @@ const FIXTURES = {
   'di-hist-causes': 'packages/diagram-engine/fixture/di-hist-causes/input.diagram.json',
   'di-hist-boundary': 'packages/diagram-engine/fixture/di-hist-boundary/input.diagram.json',
   'di-cmp-before-after': 'packages/diagram-engine/fixture/di-cmp-before-after/input.diagram.json',
+  'di-cause-relationship-name': 'packages/diagram-engine/fixture/di-cause-relationship-name/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -456,5 +457,27 @@ test.describe('Diagram W-3.2 — links vocabulary (di-hist-1..4, di-cmp-3)', () 
     });
     expect(result.nodes).toBe(3);
     expect(result.edges).toBe(2);
+  });
+});
+
+test.describe('Diagram W-3.4 — edge-select (di-cause-3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-cause-relationship-name']);
+  });
+
+  test('selecting an edge emits diagram.edge-selected; alternative lists edges with their relationship', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const before = h.events().length;
+      h.dispatch({ type: 'select', target: { id: 'rain-erodes' } });
+      const newEvents = h.events().slice(before);
+      const alt = h.alternative();
+      const edgeRows = alt.filter((r) => r.kind === 'edge');
+      const rain = edgeRows.find((r) => r.id === 'edge-rain-erodes' || r.id === 'rain-erodes');
+      return { names: newEvents.map((e) => e.name), relationship: rain?.relationship, edgeRows };
+    });
+    expect(result.names).toContain('diagram.edge-selected');
+    expect(result.relationship).toBe('influences');
+    expect(result.edgeRows.length).toBe(2);
   });
 });

@@ -21,6 +21,7 @@ export type SourceClass = (typeof SOURCE_CLASSES)[number];
 export const DIAGRAM_EVENT_SELECTED = 'diagram.node-selected';
 export const DIAGRAM_EVENT_FOCUSED = 'diagram.node-focused';
 export const DIAGRAM_EVENT_FOLLOWED = 'diagram.relationship-followed';
+export const DIAGRAM_EVENT_EDGE_SELECTED = 'diagram.edge-selected';
 
 const ID_PATTERN = /^[a-zA-Z][a-zA-Z0-9._-]*$/;
 

@@ -83,6 +83,8 @@
           "label": "start leads-to process",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -115,6 +117,8 @@
           "label": "process leads-to end",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -247,6 +251,8 @@
       "label": "start leads-to process",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -265,6 +271,8 @@
       "label": "process leads-to end",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -338,6 +346,8 @@
           "label": "start leads-to process",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -356,6 +366,8 @@
           "label": "process leads-to end",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

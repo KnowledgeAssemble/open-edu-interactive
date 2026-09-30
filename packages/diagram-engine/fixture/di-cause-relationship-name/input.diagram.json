@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cause-relationship-name",
+  "metadata": { "title": "Rainfall and soil erosion" },
+  "purpose": { "learningObjective": "Name the relationship between two concepts", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "rainfall", "label": "Rainfall" },
+      { "id": "erosion", "label": "Soil erosion" },
+      { "id": "vegetation", "label": "Vegetation" }
+    ],
+    "edges": [
+      { "id": "rain-erodes", "from": "rainfall", "to": "erosion", "relationship": "influences" },
+      { "id": "veg-reduces", "from": "vegetation", "to": "erosion", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Rainfall and vegetation influence soil erosion" }
+}

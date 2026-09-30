@@ -89,6 +89,8 @@
           "label": "structural influences immediate",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -121,6 +123,8 @@
           "label": "immediate leads-to trigger",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -265,6 +269,8 @@
       "label": "structural influences immediate",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -283,6 +289,8 @@
       "label": "immediate leads-to trigger",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -362,6 +370,8 @@
           "label": "structural influences immediate",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -380,6 +390,8 @@
           "label": "immediate leads-to trigger",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

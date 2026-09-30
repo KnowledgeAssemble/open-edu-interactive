@@ -106,6 +106,8 @@
           "label": "chloroplast produces glucose",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -138,6 +140,8 @@
           "label": "glucose feeds-on mitochondria",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -170,6 +174,8 @@
           "label": "mitochondria produces energy",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -334,6 +340,8 @@
       "label": "chloroplast produces glucose",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -352,6 +360,8 @@
       "label": "glucose feeds-on mitochondria",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -370,6 +380,8 @@
       "label": "mitochondria produces energy",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -459,6 +471,8 @@
           "label": "chloroplast produces glucose",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -477,6 +491,8 @@
           "label": "glucose feeds-on mitochondria",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -495,6 +511,8 @@
           "label": "mitochondria produces energy",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

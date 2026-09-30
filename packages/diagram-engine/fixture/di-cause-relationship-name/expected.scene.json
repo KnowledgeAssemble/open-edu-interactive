@@ -8,18 +8,18 @@
       "interactive": false,
       "children": [
         {
-          "id": "node-cause",
+          "id": "node-rainfall",
           "role": "selectable",
           "kind": "node",
-          "label": "Cause",
+          "label": "Rainfall",
           "interactive": true,
           "acceptsActions": [
             "select",
             "focus"
           ],
           "metadata": {
-            "nodeId": "cause",
-            "label": "Cause"
+            "nodeId": "rainfall",
+            "label": "Rainfall"
           },
           "children": [],
           "bounds": {
@@ -31,18 +31,18 @@
           "positionSource": "illustrative"
         },
         {
-          "id": "node-event",
+          "id": "node-erosion",
           "role": "selectable",
           "kind": "node",
-          "label": "Event",
+          "label": "Soil erosion",
           "interactive": true,
           "acceptsActions": [
             "select",
             "focus"
           ],
           "metadata": {
-            "nodeId": "event",
-            "label": "Event"
+            "nodeId": "erosion",
+            "label": "Soil erosion"
           },
           "children": [],
           "bounds": {
@@ -54,18 +54,18 @@
           "positionSource": "illustrative"
         },
         {
-          "id": "node-outcome",
+          "id": "node-vegetation",
           "role": "selectable",
           "kind": "node",
-          "label": "Outcome",
+          "label": "Vegetation",
           "interactive": true,
           "acceptsActions": [
             "select",
             "focus"
           ],
           "metadata": {
-            "nodeId": "outcome",
-            "label": "Outcome"
+            "nodeId": "vegetation",
+            "label": "Vegetation"
           },
           "children": [],
           "bounds": {
@@ -77,10 +77,10 @@
           "positionSource": "illustrative"
         },
         {
-          "id": "edge-cause-event",
+          "id": "rain-erodes",
           "role": "selectable",
           "kind": "edge",
-          "label": "cause leads-to event",
+          "label": "rainfall influences erosion",
           "interactive": true,
           "acceptsActions": [
             "select",
@@ -88,11 +88,11 @@
             "follow"
           ],
           "metadata": {
-            "fromNodeId": "cause",
-            "toNodeId": "event",
-            "relationship": "leads-to",
+            "fromNodeId": "rainfall",
+            "toNodeId": "erosion",
+            "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-cause-event",
+            "edgeId": "rain-erodes",
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -111,10 +111,10 @@
           "children": []
         },
         {
-          "id": "edge-event-outcome",
+          "id": "veg-reduces",
           "role": "selectable",
           "kind": "edge",
-          "label": "event leads-to outcome",
+          "label": "vegetation influences erosion",
           "interactive": true,
           "acceptsActions": [
             "select",
@@ -122,24 +122,24 @@
             "follow"
           ],
           "metadata": {
-            "fromNodeId": "event",
-            "toNodeId": "outcome",
-            "relationship": "leads-to",
+            "fromNodeId": "vegetation",
+            "toNodeId": "erosion",
+            "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-event-outcome",
+            "edgeId": "veg-reduces",
             "edgeGeometry": {
               "type": "line",
               "points": [
                 {
-                  "x": 468,
-                  "y": 262.5
-                },
-                {
                   "x": 308,
                   "y": 322.5
+                },
+                {
+                  "x": 468,
+                  "y": 262.5
                 }
               ],
-              "path": "M468,262.5 L308,322.5"
+              "path": "M308,322.5 L468,262.5"
             }
           },
           "children": []
@@ -148,107 +148,107 @@
     }
   ],
   "semantics": {
-    "node-cause": {
-      "id": "node-cause",
+    "node-rainfall": {
+      "id": "node-rainfall",
       "role": "selectable",
       "kind": "node",
-      "label": "Cause",
+      "label": "Rainfall",
       "interactive": true,
       "acceptsActions": [
         "select",
         "focus"
       ],
       "metadata": {
-        "nodeId": "cause",
-        "label": "Cause"
+        "nodeId": "rainfall",
+        "label": "Rainfall"
       },
       "children": []
     },
-    "cause": {
-      "id": "node-cause",
+    "rainfall": {
+      "id": "node-rainfall",
       "role": "selectable",
       "kind": "node",
-      "label": "Cause",
+      "label": "Rainfall",
       "interactive": true,
       "acceptsActions": [
         "select",
         "focus"
       ],
       "metadata": {
-        "nodeId": "cause",
-        "label": "Cause"
+        "nodeId": "rainfall",
+        "label": "Rainfall"
       },
       "children": []
     },
-    "node-event": {
-      "id": "node-event",
+    "node-erosion": {
+      "id": "node-erosion",
       "role": "selectable",
       "kind": "node",
-      "label": "Event",
+      "label": "Soil erosion",
       "interactive": true,
       "acceptsActions": [
         "select",
         "focus"
       ],
       "metadata": {
-        "nodeId": "event",
-        "label": "Event"
+        "nodeId": "erosion",
+        "label": "Soil erosion"
       },
       "children": []
     },
-    "event": {
-      "id": "node-event",
+    "erosion": {
+      "id": "node-erosion",
       "role": "selectable",
       "kind": "node",
-      "label": "Event",
+      "label": "Soil erosion",
       "interactive": true,
       "acceptsActions": [
         "select",
         "focus"
       ],
       "metadata": {
-        "nodeId": "event",
-        "label": "Event"
+        "nodeId": "erosion",
+        "label": "Soil erosion"
       },
       "children": []
     },
-    "node-outcome": {
-      "id": "node-outcome",
+    "node-vegetation": {
+      "id": "node-vegetation",
       "role": "selectable",
       "kind": "node",
-      "label": "Outcome",
+      "label": "Vegetation",
       "interactive": true,
       "acceptsActions": [
         "select",
         "focus"
       ],
       "metadata": {
-        "nodeId": "outcome",
-        "label": "Outcome"
+        "nodeId": "vegetation",
+        "label": "Vegetation"
       },
       "children": []
     },
-    "outcome": {
-      "id": "node-outcome",
+    "vegetation": {
+      "id": "node-vegetation",
       "role": "selectable",
       "kind": "node",
-      "label": "Outcome",
+      "label": "Vegetation",
       "interactive": true,
       "acceptsActions": [
         "select",
         "focus"
       ],
       "metadata": {
-        "nodeId": "outcome",
-        "label": "Outcome"
+        "nodeId": "vegetation",
+        "label": "Vegetation"
       },
       "children": []
     },
-    "edge-cause-event": {
-      "id": "edge-cause-event",
+    "rain-erodes": {
+      "id": "rain-erodes",
       "role": "selectable",
       "kind": "edge",
-      "label": "cause leads-to event",
+      "label": "rainfall influences erosion",
       "interactive": true,
       "acceptsActions": [
         "select",
@@ -256,19 +256,19 @@
         "follow"
       ],
       "metadata": {
-        "fromNodeId": "cause",
-        "toNodeId": "event",
-        "relationship": "leads-to",
+        "fromNodeId": "rainfall",
+        "toNodeId": "erosion",
+        "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-cause-event"
+        "edgeId": "rain-erodes"
       },
       "children": []
     },
-    "edge-event-outcome": {
-      "id": "edge-event-outcome",
+    "veg-reduces": {
+      "id": "veg-reduces",
       "role": "selectable",
       "kind": "edge",
-      "label": "event leads-to outcome",
+      "label": "vegetation influences erosion",
       "interactive": true,
       "acceptsActions": [
         "select",
@@ -276,11 +276,11 @@
         "follow"
       ],
       "metadata": {
-        "fromNodeId": "event",
-        "toNodeId": "outcome",
-        "relationship": "leads-to",
+        "fromNodeId": "vegetation",
+        "toNodeId": "erosion",
+        "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-event-outcome"
+        "edgeId": "veg-reduces"
       },
       "children": []
     },
@@ -292,58 +292,58 @@
       "interactive": false,
       "children": [
         {
-          "id": "node-cause",
+          "id": "node-rainfall",
           "role": "selectable",
           "kind": "node",
-          "label": "Cause",
+          "label": "Rainfall",
           "interactive": true,
           "acceptsActions": [
             "select",
             "focus"
           ],
           "metadata": {
-            "nodeId": "cause",
-            "label": "Cause"
+            "nodeId": "rainfall",
+            "label": "Rainfall"
           },
           "children": []
         },
         {
-          "id": "node-event",
+          "id": "node-erosion",
           "role": "selectable",
           "kind": "node",
-          "label": "Event",
+          "label": "Soil erosion",
           "interactive": true,
           "acceptsActions": [
             "select",
             "focus"
           ],
           "metadata": {
-            "nodeId": "event",
-            "label": "Event"
+            "nodeId": "erosion",
+            "label": "Soil erosion"
           },
           "children": []
         },
         {
-          "id": "node-outcome",
+          "id": "node-vegetation",
           "role": "selectable",
           "kind": "node",
-          "label": "Outcome",
+          "label": "Vegetation",
           "interactive": true,
           "acceptsActions": [
             "select",
             "focus"
           ],
           "metadata": {
-            "nodeId": "outcome",
-            "label": "Outcome"
+            "nodeId": "vegetation",
+            "label": "Vegetation"
           },
           "children": []
         },
         {
-          "id": "edge-cause-event",
+          "id": "rain-erodes",
           "role": "selectable",
           "kind": "edge",
-          "label": "cause leads-to event",
+          "label": "rainfall influences erosion",
           "interactive": true,
           "acceptsActions": [
             "select",
@@ -351,19 +351,19 @@
             "follow"
           ],
           "metadata": {
-            "fromNodeId": "cause",
-            "toNodeId": "event",
-            "relationship": "leads-to",
+            "fromNodeId": "rainfall",
+            "toNodeId": "erosion",
+            "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-cause-event"
+            "edgeId": "rain-erodes"
           },
           "children": []
         },
         {
-          "id": "edge-event-outcome",
+          "id": "veg-reduces",
           "role": "selectable",
           "kind": "edge",
-          "label": "event leads-to outcome",
+          "label": "vegetation influences erosion",
           "interactive": true,
           "acceptsActions": [
             "select",
@@ -371,11 +371,11 @@
             "follow"
           ],
           "metadata": {
-            "fromNodeId": "event",
-            "toNodeId": "outcome",
-            "relationship": "leads-to",
+            "fromNodeId": "vegetation",
+            "toNodeId": "erosion",
+            "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-event-outcome"
+            "edgeId": "veg-reduces"
           },
           "children": []
         }

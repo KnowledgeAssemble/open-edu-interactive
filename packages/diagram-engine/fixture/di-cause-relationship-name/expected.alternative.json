@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-rainfall",
+    "nodeId": "rainfall",
+    "label": "Rainfall"
+  },
+  {
+    "kind": "node",
+    "id": "node-erosion",
+    "nodeId": "erosion",
+    "label": "Soil erosion"
+  },
+  {
+    "kind": "node",
+    "id": "node-vegetation",
+    "nodeId": "vegetation",
+    "label": "Vegetation"
+  },
+  {
+    "kind": "edge",
+    "id": "rain-erodes",
+    "from": "rainfall",
+    "relationship": "influences",
+    "to": "erosion",
+    "fromLabel": "Rainfall",
+    "toLabel": "Soil erosion"
+  },
+  {
+    "kind": "edge",
+    "id": "veg-reduces",
+    "from": "vegetation",
+    "relationship": "influences",
+    "to": "erosion",
+    "fromLabel": "Vegetation",
+    "toLabel": "Soil erosion"
+  }
+]

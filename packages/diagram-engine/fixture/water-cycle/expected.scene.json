@@ -111,6 +111,8 @@
           "label": "evaporation leads-to condensation",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -143,6 +145,8 @@
           "label": "condensation leads-to precipitation",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -175,6 +179,8 @@
           "label": "precipitation leads-to collection",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -207,6 +213,8 @@
           "label": "collection leads-to evaporation",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -381,6 +389,8 @@
       "label": "evaporation leads-to condensation",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -399,6 +409,8 @@
       "label": "condensation leads-to precipitation",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -417,6 +429,8 @@
       "label": "precipitation leads-to collection",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -435,6 +449,8 @@
       "label": "collection leads-to evaporation",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -529,6 +545,8 @@
           "label": "evaporation leads-to condensation",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -547,6 +565,8 @@
           "label": "condensation leads-to precipitation",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -565,6 +585,8 @@
           "label": "precipitation leads-to collection",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -583,6 +605,8 @@
           "label": "collection leads-to evaporation",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

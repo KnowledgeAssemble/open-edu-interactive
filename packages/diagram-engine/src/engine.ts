@@ -14,7 +14,7 @@ import {
   EventLog,
 } from '@knowledgeassemble/interactive-engine';
 import type { DiagramSpec, DiagramContent } from './schema.js';
-import { DIAGRAM_EVENT_SELECTED, DIAGRAM_EVENT_FOCUSED, DIAGRAM_EVENT_FOLLOWED, defaultLayoutType } from './schema.js';
+import { DIAGRAM_EVENT_SELECTED, DIAGRAM_EVENT_FOCUSED, DIAGRAM_EVENT_FOLLOWED, DIAGRAM_EVENT_EDGE_SELECTED, defaultLayoutType } from './schema.js';
 import { validateSemantic } from './validation/semantic.js';
 import { validateLayout } from './validation/layout.js';
 import { validateAccessibility } from './validation/accessibility.js';
@@ -239,8 +239,18 @@ export class DiagramEngine implements Engine {
         emit(changed as Parameters<EngineHost['onEvent']>[0]);
 
         if (entityPayload) {
+          const isEdge = (() => {
+            const targetId = action.target?.id;
+            if (!targetId) return false;
+            const node = laidOut.semantics[targetId];
+            if (node?.kind === 'edge') return true;
+            if (node?.metadata?.fromNodeId !== undefined) return true;
+            const byMeta = Object.values(laidOut.semantics).find((n) => n.metadata?.nodeId === targetId);
+            return byMeta?.kind === 'edge';
+          })();
           if (action.type === 'select') {
-            const nsEvent = log.append(DIAGRAM_EVENT_SELECTED, instanceId, entityPayload as Record<string, unknown>, {
+            const evtName = isEdge ? DIAGRAM_EVENT_EDGE_SELECTED : DIAGRAM_EVENT_SELECTED;
+            const nsEvent = log.append(evtName, instanceId, entityPayload as Record<string, unknown>, {
               ...action,
               payload: entityPayload,
             });

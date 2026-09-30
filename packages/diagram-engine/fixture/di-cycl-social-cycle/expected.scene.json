@@ -83,6 +83,8 @@
           "label": "demand leads-to prices",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -115,6 +117,8 @@
           "label": "prices leads-to production",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -147,6 +151,8 @@
           "label": "production leads-to demand",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -279,6 +285,8 @@
       "label": "demand leads-to prices",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -297,6 +305,8 @@
       "label": "prices leads-to production",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -315,6 +325,8 @@
       "label": "production leads-to demand",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -388,6 +400,8 @@
           "label": "demand leads-to prices",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -406,6 +420,8 @@
           "label": "prices leads-to production",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -424,6 +440,8 @@
           "label": "production leads-to demand",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

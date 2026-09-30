@@ -131,6 +131,8 @@
           "label": "precipitation leads-to runoff",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -163,6 +165,8 @@
           "label": "precipitation leads-to groundwater",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -195,6 +199,8 @@
           "label": "groundwater leads-to river",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -227,6 +233,8 @@
           "label": "runoff leads-to river",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -259,6 +267,8 @@
           "label": "river leads-to sea",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -459,6 +469,8 @@
       "label": "precipitation leads-to runoff",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -477,6 +489,8 @@
       "label": "precipitation leads-to groundwater",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -495,6 +509,8 @@
       "label": "groundwater leads-to river",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -513,6 +529,8 @@
       "label": "runoff leads-to river",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -531,6 +549,8 @@
       "label": "river leads-to sea",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -638,6 +658,8 @@
           "label": "precipitation leads-to runoff",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -656,6 +678,8 @@
           "label": "precipitation leads-to groundwater",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -674,6 +698,8 @@
           "label": "groundwater leads-to river",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -692,6 +718,8 @@
           "label": "runoff leads-to river",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -710,6 +738,8 @@
           "label": "river leads-to sea",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

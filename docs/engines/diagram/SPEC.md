@@ -57,6 +57,7 @@ Rules:
 - Relationships are first-class (`relationship` on edges), not line styling (D5, `VISION.md` §10).
 - The closed `relationship` enum: `connected-to`, `contains`, `influences`, `is-a`, `leads-to`, `part-of`, plus the W-3.1 domain additions `feeds-on`, `transforms-to`, `produces`, `weathers-into`. Engines extend the **payload**, never add relationship names beyond this closed set.
 - `nodes[].links` carries cross-engine composition hints (W-3.2): beyond `visualEntityId`, `timelineEventId` and `geomapEntityId` are valid link keys. They are authoring metadata surfaced on the scene node (`metadata.links`) and resolved by composition bindings — never engine imports (D2/§6).
+- Edges are addressable D5 `select` targets (W-3.4): an edge id resolves to the authored edge, and selecting it emits `diagram.edge-selected` with the edge payload (`from`, `to`, `relationship`). This is an **event** distinction — the action is still D5 `select`, never a new action name.
 - `content.kind` / `profile` MVP: `flow` | `cycle` | `hierarchy` | `concept-map` (one engine, multiple profiles).
 - Layout is semantic (`layout.type`); coordinates are derived (DESIGN §8).
 - Auto-layout positions are **illustrative** unless provenance says otherwise (DESIGN §9).

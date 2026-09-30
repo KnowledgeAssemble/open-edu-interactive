@@ -83,6 +83,8 @@
           "label": "deforest leads-to erosion",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -115,6 +117,8 @@
           "label": "erosion leads-to flood",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -247,6 +251,8 @@
       "label": "deforest leads-to erosion",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -265,6 +271,8 @@
       "label": "erosion leads-to flood",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -338,6 +346,8 @@
           "label": "deforest leads-to erosion",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -356,6 +366,8 @@
           "label": "erosion leads-to flood",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

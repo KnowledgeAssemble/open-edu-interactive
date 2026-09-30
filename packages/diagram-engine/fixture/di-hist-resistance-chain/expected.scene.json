@@ -92,6 +92,8 @@
           "label": "movement-1 leads-to movement-2",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -124,6 +126,8 @@
           "label": "movement-2 leads-to movement-3",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -274,6 +278,8 @@
       "label": "movement-1 leads-to movement-2",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -292,6 +298,8 @@
       "label": "movement-2 leads-to movement-3",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -374,6 +382,8 @@
           "label": "movement-1 leads-to movement-2",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -392,6 +402,8 @@
           "label": "movement-2 leads-to movement-3",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

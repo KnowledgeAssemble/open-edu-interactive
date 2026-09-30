@@ -83,7 +83,7 @@ export function buildScene(content: DiagramContent): Scene {
       kind: 'edge',
       label: `${entry.from} ${entry.relationship} ${entry.to}`,
       interactive: entry.interactive !== false,
-      acceptsActions: entry.interactive === false ? undefined : ['follow'],
+      acceptsActions: entry.interactive === false ? undefined : ['select', 'focus', 'follow'],
       metadata: {
         fromNodeId: entry.from,
         toNodeId: entry.to,

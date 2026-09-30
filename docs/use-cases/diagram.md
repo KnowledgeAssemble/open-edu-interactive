@@ -673,7 +673,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-relationship-name` *(planned)* |
 | **New capability** | `edge-select` *(planned)* — planned `diagram.edge-selected`. |
 | **Host** | Relationship scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-4-influence-chain` — Follow an influence chain end to end
 

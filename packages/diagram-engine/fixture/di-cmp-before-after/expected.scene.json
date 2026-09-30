@@ -92,6 +92,8 @@
           "label": "course-old leads-to course-new",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -124,6 +126,8 @@
           "label": "course-new leads-to delta",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -274,6 +278,8 @@
       "label": "course-old leads-to course-new",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -292,6 +298,8 @@
       "label": "course-new leads-to delta",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -374,6 +382,8 @@
           "label": "course-old leads-to course-new",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -392,6 +402,8 @@
           "label": "course-new leads-to delta",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {

@@ -176,6 +176,20 @@
     "title": "Effects of deforestation"
   },
   {
+    "id": "diagram/di-cause-relationship-name",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cause-relationship-name",
+    "specPath": "packages/diagram-engine/fixture/di-cause-relationship-name/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cause-relationship-name/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cause-relationship-name/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cause-relationship-name/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cause-relationship-name/expected.svg"
+    },
+    "title": "Rainfall and soil erosion"
+  },
+  {
     "id": "diagram/di-class-classify",
     "kind": "engine",
     "engine": "diagram",

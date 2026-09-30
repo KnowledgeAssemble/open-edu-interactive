@@ -133,6 +133,8 @@
           "label": "planting leads-to growing",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -165,6 +167,8 @@
           "label": "growing leads-to harvesting",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -197,6 +201,8 @@
           "label": "blank leads-to growing",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -229,6 +235,8 @@
           "label": "threshing leads-to harvesting",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -433,6 +441,8 @@
       "label": "planting leads-to growing",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -451,6 +461,8 @@
       "label": "growing leads-to harvesting",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -469,6 +481,8 @@
       "label": "blank leads-to growing",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -487,6 +501,8 @@
       "label": "threshing leads-to harvesting",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -596,6 +612,8 @@
           "label": "planting leads-to growing",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -614,6 +632,8 @@
           "label": "growing leads-to harvesting",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -632,6 +652,8 @@
           "label": "blank leads-to growing",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -650,6 +672,8 @@
           "label": "threshing leads-to harvesting",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
