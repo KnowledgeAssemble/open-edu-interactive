@@ -1,0 +1,512 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-chloroplast",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Chloroplast",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "chloroplast",
+            "label": "Chloroplast"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-glucose",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "glucose",
+            "label": "Glucose"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-mitochondria",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mitochondria",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mitochondria",
+            "label": "Mitochondria"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-energy",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Energy",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "energy",
+            "label": "Energy"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-chloroplast-glucose",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "chloroplast produces glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "chloroplast",
+            "toNodeId": "glucose",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-chloroplast-glucose",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 262.5
+                }
+              ],
+              "path": "M308,262.5 L468,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-glucose-mitochondria",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "glucose feeds-on mitochondria",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "glucose",
+            "toNodeId": "mitochondria",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-glucose-mitochondria",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-mitochondria-energy",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "mitochondria produces energy",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "mitochondria",
+            "toNodeId": "energy",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-mitochondria-energy",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 322.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,322.5 L468,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-chloroplast": {
+      "id": "node-chloroplast",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Chloroplast",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "chloroplast",
+        "label": "Chloroplast"
+      },
+      "children": []
+    },
+    "chloroplast": {
+      "id": "node-chloroplast",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Chloroplast",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "chloroplast",
+        "label": "Chloroplast"
+      },
+      "children": []
+    },
+    "node-glucose": {
+      "id": "node-glucose",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Glucose",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "glucose",
+        "label": "Glucose"
+      },
+      "children": []
+    },
+    "glucose": {
+      "id": "node-glucose",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Glucose",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "glucose",
+        "label": "Glucose"
+      },
+      "children": []
+    },
+    "node-mitochondria": {
+      "id": "node-mitochondria",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mitochondria",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mitochondria",
+        "label": "Mitochondria"
+      },
+      "children": []
+    },
+    "mitochondria": {
+      "id": "node-mitochondria",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mitochondria",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mitochondria",
+        "label": "Mitochondria"
+      },
+      "children": []
+    },
+    "node-energy": {
+      "id": "node-energy",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Energy",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "energy",
+        "label": "Energy"
+      },
+      "children": []
+    },
+    "energy": {
+      "id": "node-energy",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Energy",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "energy",
+        "label": "Energy"
+      },
+      "children": []
+    },
+    "edge-chloroplast-glucose": {
+      "id": "edge-chloroplast-glucose",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "chloroplast produces glucose",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "chloroplast",
+        "toNodeId": "glucose",
+        "relationship": "produces",
+        "labels": [],
+        "edgeId": "edge-chloroplast-glucose"
+      },
+      "children": []
+    },
+    "edge-glucose-mitochondria": {
+      "id": "edge-glucose-mitochondria",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "glucose feeds-on mitochondria",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "glucose",
+        "toNodeId": "mitochondria",
+        "relationship": "feeds-on",
+        "labels": [],
+        "edgeId": "edge-glucose-mitochondria"
+      },
+      "children": []
+    },
+    "edge-mitochondria-energy": {
+      "id": "edge-mitochondria-energy",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "mitochondria produces energy",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "mitochondria",
+        "toNodeId": "energy",
+        "relationship": "produces",
+        "labels": [],
+        "edgeId": "edge-mitochondria-energy"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-chloroplast",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Chloroplast",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "chloroplast",
+            "label": "Chloroplast"
+          },
+          "children": []
+        },
+        {
+          "id": "node-glucose",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "glucose",
+            "label": "Glucose"
+          },
+          "children": []
+        },
+        {
+          "id": "node-mitochondria",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mitochondria",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mitochondria",
+            "label": "Mitochondria"
+          },
+          "children": []
+        },
+        {
+          "id": "node-energy",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Energy",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "energy",
+            "label": "Energy"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-chloroplast-glucose",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "chloroplast produces glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "chloroplast",
+            "toNodeId": "glucose",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-chloroplast-glucose"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-glucose-mitochondria",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "glucose feeds-on mitochondria",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "glucose",
+            "toNodeId": "mitochondria",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-glucose-mitochondria"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-mitochondria-energy",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "mitochondria produces energy",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "mitochondria",
+            "toNodeId": "energy",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-mitochondria-energy"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

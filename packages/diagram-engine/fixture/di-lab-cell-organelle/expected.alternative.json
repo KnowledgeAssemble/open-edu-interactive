@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-chloroplast",
+    "nodeId": "chloroplast",
+    "label": "Chloroplast"
+  },
+  {
+    "kind": "node",
+    "id": "node-glucose",
+    "nodeId": "glucose",
+    "label": "Glucose"
+  },
+  {
+    "kind": "node",
+    "id": "node-mitochondria",
+    "nodeId": "mitochondria",
+    "label": "Mitochondria"
+  },
+  {
+    "kind": "node",
+    "id": "node-energy",
+    "nodeId": "energy",
+    "label": "Energy"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-chloroplast-glucose",
+    "from": "chloroplast",
+    "relationship": "produces",
+    "to": "glucose",
+    "fromLabel": "Chloroplast",
+    "toLabel": "Glucose"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-glucose-mitochondria",
+    "from": "glucose",
+    "relationship": "feeds-on",
+    "to": "mitochondria",
+    "fromLabel": "Glucose",
+    "toLabel": "Mitochondria"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-mitochondria-energy",
+    "from": "mitochondria",
+    "relationship": "produces",
+    "to": "energy",
+    "fromLabel": "Mitochondria",
+    "toLabel": "Energy"
+  }
+]

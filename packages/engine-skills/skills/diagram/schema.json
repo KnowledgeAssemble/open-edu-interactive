@@ -129,7 +129,11 @@
                   "influences",
                   "is-a",
                   "leads-to",
-                  "part-of"
+                  "part-of",
+                  "feeds-on",
+                  "transforms-to",
+                  "produces",
+                  "weathers-into"
                 ]
               },
               "labels": {

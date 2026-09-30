@@ -1,0 +1,73 @@
+[
+  {
+    "kind": "node",
+    "id": "node-igneous",
+    "nodeId": "igneous",
+    "label": "Igneous"
+  },
+  {
+    "kind": "node",
+    "id": "node-sedimentary",
+    "nodeId": "sedimentary",
+    "label": "Sedimentary"
+  },
+  {
+    "kind": "node",
+    "id": "node-metamorphic",
+    "nodeId": "metamorphic",
+    "label": "Metamorphic"
+  },
+  {
+    "kind": "node",
+    "id": "node-magma",
+    "nodeId": "magma",
+    "label": "Magma"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-magma-igneous",
+    "from": "magma",
+    "relationship": "transforms-to",
+    "to": "igneous",
+    "fromLabel": "Magma",
+    "toLabel": "Igneous"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-igneous-sedimentary",
+    "from": "igneous",
+    "relationship": "weathers-into",
+    "to": "sedimentary",
+    "fromLabel": "Igneous",
+    "toLabel": "Sedimentary"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-sedimentary-metamorphic",
+    "from": "sedimentary",
+    "relationship": "transforms-to",
+    "to": "metamorphic",
+    "fromLabel": "Sedimentary",
+    "toLabel": "Metamorphic"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-metamorphic-magma",
+    "from": "metamorphic",
+    "relationship": "transforms-to",
+    "to": "magma",
+    "fromLabel": "Metamorphic",
+    "toLabel": "Magma"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-magma-metamorphic-sedimentary-igneous",
+    "members": [
+      "magma",
+      "metamorphic",
+      "sedimentary",
+      "igneous"
+    ],
+    "label": "Cycle: magma → metamorphic → sedimentary → igneous"
+  }
+]

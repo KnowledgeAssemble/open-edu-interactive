@@ -274,6 +274,20 @@ export const catalog = [
     "title": "Frog life cycle"
   },
   {
+    "id": "diagram/di-cycl-rock-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cycl-rock-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-cycl-rock-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cycl-rock-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cycl-rock-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cycl-rock-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cycl-rock-cycle/expected.svg"
+    },
+    "title": "Rock cycle"
+  },
+  {
     "id": "diagram/di-cycl-social-cycle",
     "kind": "engine",
     "engine": "diagram",
@@ -328,6 +342,20 @@ export const catalog = [
       "svg": "packages/diagram-engine/fixture/di-inq-open-explore/expected.svg"
     },
     "title": "Web of influences"
+  },
+  {
+    "id": "diagram/di-lab-cell-organelle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-lab-cell-organelle",
+    "specPath": "packages/diagram-engine/fixture/di-lab-cell-organelle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-lab-cell-organelle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-lab-cell-organelle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-lab-cell-organelle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-lab-cell-organelle/expected.svg"
+    },
+    "title": "Cell organelles and functions"
   },
   {
     "id": "diagram/di-lab-label-all",
@@ -426,6 +454,20 @@ export const catalog = [
       "svg": "packages/diagram-engine/fixture/di-sys-drainage-basin/expected.svg"
     },
     "title": "Drainage basin"
+  },
+  {
+    "id": "diagram/di-sys-food-web",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-sys-food-web",
+    "specPath": "packages/diagram-engine/fixture/di-sys-food-web/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-sys-food-web/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-sys-food-web/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-sys-food-web/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-sys-food-web/expected.svg"
+    },
+    "title": "Food web"
   },
   {
     "id": "diagram/di-sys-industrial-linkages",

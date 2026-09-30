@@ -1,0 +1,86 @@
+[
+  {
+    "kind": "node",
+    "id": "node-sun",
+    "nodeId": "sun",
+    "label": "Sun"
+  },
+  {
+    "kind": "node",
+    "id": "node-grass",
+    "nodeId": "grass",
+    "label": "Grass"
+  },
+  {
+    "kind": "node",
+    "id": "node-rabbit",
+    "nodeId": "rabbit",
+    "label": "Rabbit"
+  },
+  {
+    "kind": "node",
+    "id": "node-fox",
+    "nodeId": "fox",
+    "label": "Fox"
+  },
+  {
+    "kind": "node",
+    "id": "node-decomposer",
+    "nodeId": "decomposer",
+    "label": "Decomposer"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-sun-grass",
+    "from": "sun",
+    "relationship": "influences",
+    "to": "grass",
+    "fromLabel": "Sun",
+    "toLabel": "Grass"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-grass-rabbit",
+    "from": "grass",
+    "relationship": "feeds-on",
+    "to": "rabbit",
+    "fromLabel": "Grass",
+    "toLabel": "Rabbit"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-rabbit-fox",
+    "from": "rabbit",
+    "relationship": "feeds-on",
+    "to": "fox",
+    "fromLabel": "Rabbit",
+    "toLabel": "Fox"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-grass-decomposer",
+    "from": "grass",
+    "relationship": "feeds-on",
+    "to": "decomposer",
+    "fromLabel": "Grass",
+    "toLabel": "Decomposer"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-decomposer-grass",
+    "from": "decomposer",
+    "relationship": "produces",
+    "to": "grass",
+    "fromLabel": "Decomposer",
+    "toLabel": "Grass"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-grass-decomposer",
+    "members": [
+      "grass",
+      "decomposer"
+    ],
+    "label": "Cycle: grass → decomposer"
+  }
+]

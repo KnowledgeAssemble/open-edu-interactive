@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Food web: grass feeds rabbit, rabbit feeds fox, decomposer produces nutrients</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-sun" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Sun" x="160" y="240" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="228" y="262.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Sun</text>
+    <rect id="node-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Grass" x="320" y="240" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="388" y="262.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Grass</text>
+    <rect id="node-rabbit" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Rabbit" x="480" y="240" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="548" y="262.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Rabbit</text>
+    <rect id="node-fox" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Fox" x="160" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="228" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Fox</text>
+    <rect id="node-decomposer" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Decomposer" x="320" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="388" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Decomposer</text>
+    <path id="edge-sun-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="sun influences grass" data-oedu-relationship="influences" d="M228,262.5 L388,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-grass-rabbit" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grass feeds-on rabbit" data-oedu-relationship="feeds-on" d="M388,262.5 L548,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-rabbit-fox" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="rabbit feeds-on fox" data-oedu-relationship="feeds-on" d="M548,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-grass-decomposer" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grass feeds-on decomposer" data-oedu-relationship="feeds-on" d="M388,262.5 L388,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-decomposer-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="decomposer produces grass" data-oedu-relationship="produces" d="M388,322.5 L388,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

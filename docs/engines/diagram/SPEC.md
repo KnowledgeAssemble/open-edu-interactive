@@ -55,6 +55,7 @@ Rules:
 
 - `type` MUST be `"diagram"`.
 - Relationships are first-class (`relationship` on edges), not line styling (D5, `VISION.md` §10).
+- The closed `relationship` enum: `connected-to`, `contains`, `influences`, `is-a`, `leads-to`, `part-of`, plus the W-3.1 domain additions `feeds-on`, `transforms-to`, `produces`, `weathers-into`. Engines extend the **payload**, never add relationship names beyond this closed set.
 - `content.kind` / `profile` MVP: `flow` | `cycle` | `hierarchy` | `concept-map` (one engine, multiple profiles).
 - Layout is semantic (`layout.type`); coordinates are derived (DESIGN §8).
 - Auto-layout positions are **illustrative** unless provenance says otherwise (DESIGN §9).

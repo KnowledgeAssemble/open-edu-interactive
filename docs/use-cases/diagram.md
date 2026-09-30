@@ -511,7 +511,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cycl-rock-cycle` *(planned)* |
 | **New capability** | `relation-vocab` *(planned)* — domain relations (`transforms-to`, `weathers-into`) beyond the closed initial set. |
 | **Host** | Transition quizzes. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cycl-4-disaster-cycle` — Disaster management cycle
 
@@ -733,7 +733,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-sys-food-web` *(planned)* |
 | **New capability** | `filter-nodes`, `relation-vocab` (`feeds-on`). |
 | **Host** | Energy-path narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-sys-2-drainage-basin` — Drainage basin as inputs, storage, outputs
 
@@ -835,7 +835,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-lab-cell-organelle` *(planned)* |
 | **New capability** | `label-diagram`, `relation-vocab` (`produces`). |
 | **Host** | Function scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

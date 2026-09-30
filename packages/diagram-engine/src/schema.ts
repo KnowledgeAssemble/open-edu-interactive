@@ -8,6 +8,7 @@ export type Profile = (typeof PROFILES)[number];
 
 export const RELATIONSHIPS = [
   'connected-to', 'contains', 'influences', 'is-a', 'leads-to', 'part-of',
+  'feeds-on', 'transforms-to', 'produces', 'weathers-into',
 ] as const;
 export type Relationship = (typeof RELATIONSHIPS)[number];
 

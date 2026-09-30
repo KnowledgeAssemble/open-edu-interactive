@@ -35,6 +35,9 @@ const FIXTURES = {
   'di-cause-many-causes': 'packages/diagram-engine/fixture/di-cause-many-causes/input.diagram.json',
   'di-lab-label-all': 'packages/diagram-engine/fixture/di-lab-label-all/input.diagram.json',
   'interactive-gating': 'packages/diagram-engine/fixture/interactive-gating/input.diagram.json',
+  'di-cycl-rock-cycle': 'packages/diagram-engine/fixture/di-cycl-rock-cycle/input.diagram.json',
+  'di-sys-food-web': 'packages/diagram-engine/fixture/di-sys-food-web/input.diagram.json',
+  'di-lab-cell-organelle': 'packages/diagram-engine/fixture/di-lab-cell-organelle/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -352,5 +355,44 @@ test.describe('Diagram W-5a — per-item interactive gating', () => {
     expect(result.nodeStepGated).toBe(true);
     expect(result.edgeGated).toBe(true);
     expect(result.hostDispatch).toContain('step');
+  });
+});
+test.describe('Diagram W-3.1 — relation-vocab (di-cycl-3, di-sys-1, di-lab-4)', () => {
+  test('di-cycl-3: transforms-to and weathers-into relationships resolve in the alternative', async ({ page }) => {
+    await mount(page, FIXTURES['di-cycl-rock-cycle']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const edges = h.alternative().filter((r) => r.kind === 'edge');
+      return { relations: edges.map((e) => e.relationship) };
+    });
+    expect(result.relations).toContain('transforms-to');
+    expect(result.relations).toContain('weathers-into');
+  });
+
+  test('di-sys-1: feeds-on and produces resolve for the food web', async ({ page }) => {
+    await mount(page, FIXTURES['di-sys-food-web']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const edges = h.alternative().filter((r) => r.kind === 'edge');
+      const relations = edges.map((e) => e.relationship);
+      const before = h.events().length;
+      h.dispatch({ type: 'follow', target: { id: 'edge-rabbit-fox' } });
+      const names = h.events().slice(before).map((e) => e.name);
+      return { relations, followed: names.includes('diagram.relationship-followed') };
+    });
+    expect(result.relations).toContain('feeds-on');
+    expect(result.relations).toContain('produces');
+    expect(result.followed).toBe(true);
+  });
+
+  test('di-lab-4: produces resolves for cell function edges', async ({ page }) => {
+    await mount(page, FIXTURES['di-lab-cell-organelle']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const edges = h.alternative().filter((r) => r.kind === 'edge');
+      return { relations: edges.map((e) => e.relationship) };
+    });
+    expect(result.relations).toContain('produces');
+    expect(result.relations).toContain('feeds-on');
   });
 });

@@ -1,0 +1,719 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-sun",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sun",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sun",
+            "label": "Sun"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-grass",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Grass",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "grass",
+            "label": "Grass"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-rabbit",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rabbit",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rabbit",
+            "label": "Rabbit"
+          },
+          "children": [],
+          "bounds": {
+            "x": 480,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-fox",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Fox",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "fox",
+            "label": "Fox"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-decomposer",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Decomposer",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "decomposer",
+            "label": "Decomposer"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-sun-grass",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sun influences grass",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sun",
+            "toNodeId": "grass",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-sun-grass",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 388,
+                  "y": 262.5
+                }
+              ],
+              "path": "M228,262.5 L388,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-grass-rabbit",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "grass feeds-on rabbit",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "grass",
+            "toNodeId": "rabbit",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-grass-rabbit",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 262.5
+                },
+                {
+                  "x": 548,
+                  "y": 262.5
+                }
+              ],
+              "path": "M388,262.5 L548,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-rabbit-fox",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "rabbit feeds-on fox",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "rabbit",
+            "toNodeId": "fox",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-rabbit-fox",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 548,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M548,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-grass-decomposer",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "grass feeds-on decomposer",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "grass",
+            "toNodeId": "decomposer",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-grass-decomposer",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 262.5
+                },
+                {
+                  "x": 388,
+                  "y": 322.5
+                }
+              ],
+              "path": "M388,262.5 L388,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-decomposer-grass",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "decomposer produces grass",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "decomposer",
+            "toNodeId": "grass",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-decomposer-grass",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 322.5
+                },
+                {
+                  "x": 388,
+                  "y": 262.5
+                }
+              ],
+              "path": "M388,322.5 L388,262.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-sun": {
+      "id": "node-sun",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sun",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sun",
+        "label": "Sun"
+      },
+      "children": []
+    },
+    "sun": {
+      "id": "node-sun",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sun",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sun",
+        "label": "Sun"
+      },
+      "children": []
+    },
+    "node-grass": {
+      "id": "node-grass",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Grass",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "grass",
+        "label": "Grass"
+      },
+      "children": []
+    },
+    "grass": {
+      "id": "node-grass",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Grass",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "grass",
+        "label": "Grass"
+      },
+      "children": []
+    },
+    "node-rabbit": {
+      "id": "node-rabbit",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rabbit",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rabbit",
+        "label": "Rabbit"
+      },
+      "children": []
+    },
+    "rabbit": {
+      "id": "node-rabbit",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rabbit",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rabbit",
+        "label": "Rabbit"
+      },
+      "children": []
+    },
+    "node-fox": {
+      "id": "node-fox",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Fox",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "fox",
+        "label": "Fox"
+      },
+      "children": []
+    },
+    "fox": {
+      "id": "node-fox",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Fox",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "fox",
+        "label": "Fox"
+      },
+      "children": []
+    },
+    "node-decomposer": {
+      "id": "node-decomposer",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Decomposer",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "decomposer",
+        "label": "Decomposer"
+      },
+      "children": []
+    },
+    "decomposer": {
+      "id": "node-decomposer",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Decomposer",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "decomposer",
+        "label": "Decomposer"
+      },
+      "children": []
+    },
+    "edge-sun-grass": {
+      "id": "edge-sun-grass",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "sun influences grass",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "sun",
+        "toNodeId": "grass",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-sun-grass"
+      },
+      "children": []
+    },
+    "edge-grass-rabbit": {
+      "id": "edge-grass-rabbit",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "grass feeds-on rabbit",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "grass",
+        "toNodeId": "rabbit",
+        "relationship": "feeds-on",
+        "labels": [],
+        "edgeId": "edge-grass-rabbit"
+      },
+      "children": []
+    },
+    "edge-rabbit-fox": {
+      "id": "edge-rabbit-fox",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "rabbit feeds-on fox",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "rabbit",
+        "toNodeId": "fox",
+        "relationship": "feeds-on",
+        "labels": [],
+        "edgeId": "edge-rabbit-fox"
+      },
+      "children": []
+    },
+    "edge-grass-decomposer": {
+      "id": "edge-grass-decomposer",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "grass feeds-on decomposer",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "grass",
+        "toNodeId": "decomposer",
+        "relationship": "feeds-on",
+        "labels": [],
+        "edgeId": "edge-grass-decomposer"
+      },
+      "children": []
+    },
+    "edge-decomposer-grass": {
+      "id": "edge-decomposer-grass",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "decomposer produces grass",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "decomposer",
+        "toNodeId": "grass",
+        "relationship": "produces",
+        "labels": [],
+        "edgeId": "edge-decomposer-grass"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-sun",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sun",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sun",
+            "label": "Sun"
+          },
+          "children": []
+        },
+        {
+          "id": "node-grass",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Grass",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "grass",
+            "label": "Grass"
+          },
+          "children": []
+        },
+        {
+          "id": "node-rabbit",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rabbit",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rabbit",
+            "label": "Rabbit"
+          },
+          "children": []
+        },
+        {
+          "id": "node-fox",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Fox",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "fox",
+            "label": "Fox"
+          },
+          "children": []
+        },
+        {
+          "id": "node-decomposer",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Decomposer",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "decomposer",
+            "label": "Decomposer"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-sun-grass",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sun influences grass",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sun",
+            "toNodeId": "grass",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-sun-grass"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-grass-rabbit",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "grass feeds-on rabbit",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "grass",
+            "toNodeId": "rabbit",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-grass-rabbit"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-rabbit-fox",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "rabbit feeds-on fox",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "rabbit",
+            "toNodeId": "fox",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-rabbit-fox"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-grass-decomposer",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "grass feeds-on decomposer",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "grass",
+            "toNodeId": "decomposer",
+            "relationship": "feeds-on",
+            "labels": [],
+            "edgeId": "edge-grass-decomposer"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-decomposer-grass",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "decomposer produces grass",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "decomposer",
+            "toNodeId": "grass",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-decomposer-grass"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}
