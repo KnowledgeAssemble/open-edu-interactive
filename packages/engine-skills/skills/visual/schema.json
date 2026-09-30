@@ -597,6 +597,7 @@
         "connect",
         "disconnect",
         "follow",
+        "bearing",
         "reset"
       ]
     },

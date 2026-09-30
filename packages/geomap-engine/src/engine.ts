@@ -18,6 +18,7 @@ import { validateSemantic } from './validation/semantic.js';
 import { validateLayout } from './validation/layout.js';
 import { validateAccessibility } from './validation/accessibility.js';
 import { buildScene } from './scene/build.js';
+import { bearingFrom } from './scene/build.js';
 import { layout, fitScene } from './layout/engine.js';
 import type { LayoutContext, ProjectorFit } from './layout/engine.js';
 import { svgFrom } from './render/svg.js';
@@ -285,6 +286,35 @@ export class GeoMapEngine implements Engine {
         } else if (action.type === 'reset') {
           updateMapsFromReset(maps);
           rederive();
+        } else if (action.type === 'bearing') {
+          const targetId = action.target?.id;
+          if (targetId) {
+            const node = displayScene.semantics[targetId];
+            const compassNode = displayScene.semantics['geom-compass'];
+            if (node && compassNode) {
+              const lat = node.metadata?.lat as number | undefined;
+              const lon = node.metadata?.lon as number | undefined;
+              const refLat = compassNode.metadata?.referenceLat as number | undefined;
+              const refLon = compassNode.metadata?.referenceLon as number | undefined;
+              const windowFrom = compassNode.metadata?.windowFrom as number | undefined;
+              const windowTo = compassNode.metadata?.windowTo as number | undefined;
+              if (lat !== undefined && lon !== undefined && refLat !== undefined && refLon !== undefined) {
+                const bearing = bearingFrom(refLat, refLon, lat, lon);
+                const inWindow = windowFrom !== undefined && windowTo !== undefined
+                  ? windowFrom <= windowTo
+                    ? bearing >= windowFrom && bearing <= windowTo
+                    : bearing >= windowFrom || bearing <= windowTo
+                  : false;
+                const nsEvent = log.append('geomap.bearing-computed', instanceId, {
+                  entityId: targetId,
+                  referenceEntityId: compassNode.metadata?.referenceEntityId,
+                  bearing,
+                  inWindow,
+                }, action);
+                emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+              }
+            }
+          }
         }
 
         if (entityPayload && (action.type === 'select' || action.type === 'focus')) {

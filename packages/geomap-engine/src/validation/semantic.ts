@@ -139,6 +139,31 @@ export function validateSemantic(spec: GeoMapSpec): ValidationResult {
     }
   }
 
+  const compass = content.compass;
+  if (compass) {
+    const referenceId = compass.referenceEntityId;
+    if (!entityIds.has(referenceId)) {
+      issues.push({ level: 'L2', code: 'INVALID_REFERENCE', message: `compass referenceEntityId "${referenceId}" not found in entities` });
+    } else {
+      const referenceEntity = entities.find((e) => e.id === referenceId);
+      if (referenceEntity && !('coordinates' in referenceEntity.location)) {
+        issues.push({ level: 'L2', code: 'INVALID_REFERENCE', message: `compass referenceEntityId "${referenceId}" must have explicit coordinates` });
+      }
+    }
+    if (compass.window.from < 0 || compass.window.from > 360 || compass.window.to < 0 || compass.window.to > 360) {
+      issues.push({ level: 'L2', code: 'INVALID_SPEC', message: 'compass window from/to must be within [0, 360]' });
+    }
+    for (const layer of layers) {
+      for (const item of layer.items) {
+        const itemRecord = item as Record<string, unknown>;
+        const entityId = itemRecord.entity as string | undefined;
+        if (entityId === referenceId) {
+          issues.push({ level: 'L2', code: 'INVALID_REFERENCE', message: `compass reference cannot be the candidate itself (entity "${referenceId}")` });
+        }
+      }
+    }
+  }
+
   validateGeography(geomapContent, issues);
 
   const sources = spec.sources;

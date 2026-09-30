@@ -111,6 +111,19 @@ const ViewportSpecSchema = z
   })
   .strict();
 
+export const CompassSchema = z
+  .object({
+    referenceEntityId: z.string().min(1).max(128).regex(ID_PATTERN),
+    window: z
+      .object({
+        label: z.string().min(1),
+        from: z.number().min(0).max(360),
+        to: z.number().min(0).max(360),
+      })
+      .strict(),
+  })
+  .strict();
+
 export const GeoMapContentSchema = z
   .object({
     viewport: ViewportSpecSchema.optional(),
@@ -127,6 +140,7 @@ export const GeoMapContentSchema = z
       })
       .strict()
       .optional(),
+    compass: CompassSchema.optional(),
     geography: z
       .object({
         sources: z.array(GeoSourceSchema).min(1),
@@ -161,6 +175,7 @@ export type ViewportSpec = z.infer<typeof ViewportSpecSchema>;
 export type EntitySpec = z.infer<typeof EntitySchema>;
 export type GeoSourceSpec = z.infer<typeof GeoSourceSchema>;
 export type LayerSpec = z.infer<typeof LayerSchema>;
+export type CompassSpec = z.infer<typeof CompassSchema>;
 
 export interface GeoMapSpec {
   type: string;

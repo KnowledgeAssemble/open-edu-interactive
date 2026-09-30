@@ -130,6 +130,45 @@
             }
           }
         },
+        "compass": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "referenceEntityId",
+            "window"
+          ],
+          "properties": {
+            "referenceEntityId": {
+              "type": "string",
+              "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$"
+            },
+            "window": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "from",
+                "to"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "from": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 360
+                },
+                "to": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 360
+                }
+              }
+            }
+          }
+        },
         "geography": {
           "type": "object",
           "additionalProperties": false,

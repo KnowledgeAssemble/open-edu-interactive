@@ -5,6 +5,7 @@ const SPECS = {
   'multi-locate': 'packages/geomap-engine/fixture/multi-locate/input.geomap.json',
   'place-memory': 'packages/geomap-engine/fixture/place-memory/input.geomap.json',
   overlay: 'packages/geomap-engine/fixture/overlay/input.geomap.json',
+  compass: 'packages/geomap-engine/fixture/compass/input.geomap.json',
 };
 
 interface Harness {
@@ -14,9 +15,9 @@ interface Harness {
     displayState: { filterCategories: string[]; activeRouteSteps: Record<string, number>; hiddenLayerIds: string[] };
     svgResult?: { svg?: string };
   };
-  events(): Array<{ name: string; seq?: number }>;
+  events(): Array<{ name: string; seq?: number; data?: Record<string, unknown>; action?: { payload?: Record<string, unknown> } }>;
   svg(): string;
-  alternative(): Array<{ entityId: string; name: string; description?: string; location: string }>;
+  alternative(): Array<{ entityId: string; name: string; description?: string; location: string; bearing?: number; bearingInWindow?: boolean }>;
   tryCreate(spec: unknown): { ok: boolean; code?: string };
 }
 
@@ -130,5 +131,41 @@ test.describe('GeoMap W-1 — gm-asm-1 non-construct remainder (multi-layer expl
     expect(result.names).toContain('geomap.entity-selected');
     expect(result.alt).toContain('nz');
     expect(result.alt).toContain('sz');
+  });
+});
+
+test.describe('GeoMap W-2.7 — compass / bearing (gm-nav-1, gm-dir-2)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, 'compass');
+  });
+
+  test('gm-nav-1: a compass rose is visible; alternative lists each feature with its bearing from the reference', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      const svg = harness.svg();
+      const alt = harness.alternative();
+      return { svg, shrine: alt.find((a) => a.entityId === 'shrine') };
+    });
+    expect(result.svg).toContain('id="geom-compass"');
+    expect(result.shrine?.bearing).toBeDefined();
+    expect(result.shrine?.bearingInWindow).toBe(true);
+  });
+
+  test('gm-dir-2: bearing action emits geomap.bearing-computed; north-of holds only in the axis window', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      const before = harness.events().length;
+      harness.dispatch({ type: 'bearing', target: { id: 'geom-places-shrine' } });
+      harness.dispatch({ type: 'bearing', target: { id: 'geom-places-pond' } });
+      const names = harness.events().slice(before).map((e) => e.name);
+      const alt = harness.alternative();
+      const shrine = alt.find((a) => a.entityId === 'shrine');
+      const pond = alt.find((a) => a.entityId === 'pond');
+      return { names, shrineBearing: shrine?.bearing, shrineInWindow: shrine?.bearingInWindow, pondInWindow: pond?.bearingInWindow };
+    });
+    expect(result.names.filter((n) => n === 'geomap.bearing-computed').length).toBe(2);
+    expect(result.shrineBearing).toBeDefined();
+    expect(result.shrineInWindow).toBe(true);
+    expect(result.pondInWindow).toBe(false);
   });
 });

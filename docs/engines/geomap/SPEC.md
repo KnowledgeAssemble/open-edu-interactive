@@ -452,6 +452,7 @@ The content schema additionally accepts:
 - `EntitySchema.categories: string[]` and `adjacentTo: string[]` — filter categories and adjacency.
 - Route item `interactive: boolean`, `label: boolean` — segment interactivity.
 - Legend item `linkedEntities: string[]`, `interactive: boolean` — legend-link.
+- `content.compass: { referenceEntityId, window: { label, from, to } }` — compass/bearing (W-2.7). `referenceEntityId` MUST name an entity with explicit coordinates; `window` is the authored semantic axis window in degrees (`from`/`to`, `0..360`, wrap-around allowed — e.g. north = `315..45`). The compass renders as a scene node `geom-compass` (a D5 target, no pixel picking). Bearing is **derived** from the authored reference point to each candidate — never authored as a value; `bearing` on a candidate emits `geomap.bearing-computed` with `inWindow` true only when the bearing falls inside the window (a semantic field, not a tolerance constant). Validation negatives: missing `referenceEntityId` (INVALID_REFERENCE), reference lacking coordinates (INVALID_REFERENCE), reference as its own candidate (INVALID_REFERENCE), `from`/`to` outside `[0, 360]` (INVALID_SPEC).
 
 All new objects carry `additionalProperties: false`.
 
@@ -1132,6 +1133,7 @@ reset
 `toggle` targets a layer node id (`geom-<layerId>`) toggling its visibility.
 `step`/`scrub` target a route node id (`geom-<layerId>-<routeId>`).
 `filter` accepts payload `{ ids: string[] }` or `{ categories: string[] }` (engine resolves categories to node ids).
+`bearing` (W-2.7) targets any entity id and queries the compass: the engine computes the bearing from the authored reference point to that entity (plain arithmetic on authored coordinates — ADR-10) and reports whether it falls in the authored axis window.
 
 GeoMap emits the following namespaced events:
 
@@ -1143,6 +1145,7 @@ GeoMap emits the following namespaced events:
 | `geomap.legend-linked` | `{ legendItemId, entityIds }` | `focus` on legend item |
 | `geomap.entity-selected` | entity metadata | `select` |
 | `geomap.entity-focused` | entity metadata | `focus` |
+| `geomap.bearing-computed` | `{ entityId, referenceEntityId, bearing, inWindow }` | `bearing` |
 
 Namespaced GeoMap extensions MAY include `geomap.center` when documented. `highlight`, `show`, `hide`, `open-info`, and `play-animation` are superseded (`select` / `focus` / `open-annotation` / `play-pause`).
 

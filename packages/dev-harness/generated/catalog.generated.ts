@@ -471,6 +471,20 @@ export const catalog = [
     "title": "Water cycle"
   },
   {
+    "id": "geomap/compass",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "compass",
+    "specPath": "packages/geomap-engine/fixture/compass/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/compass/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/compass/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/compass/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/compass/expected.svg"
+    },
+    "title": "Compass bearings from the school"
+  },
+  {
     "id": "geomap/encoding",
     "kind": "engine",
     "engine": "geomap",

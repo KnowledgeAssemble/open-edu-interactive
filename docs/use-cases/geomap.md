@@ -326,7 +326,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Compass node on scene (or host chrome); `interaction.mode: "explore"` optional. |
 | **Fixture** | `nios/nav-follow-compass` *(planned)* |
 | **Host** | Answer key per bearing; hints degrade gracefully (N→E→SE). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-nav-2-locate-in-region` — Which region contains this point?
 
@@ -402,7 +402,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Marker layer, discovery mode. |
 | **Fixture** | `nios/dir-north-of` *(planned)* |
 | **Host** | Answer key; optional axis filter via `filter`. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

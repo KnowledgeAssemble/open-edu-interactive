@@ -1,7 +1,7 @@
 export type GeoMapSemanticRole =
   | 'map' | 'layer' | 'region' | 'marker' | 'route' | 'route-segment'
   | 'route-completed' | 'route-active'
-  | 'label' | 'legend' | 'legend-item' | 'selectable' | 'group' | 'scale-bar';
+  | 'label' | 'legend' | 'legend-item' | 'selectable' | 'group' | 'scale-bar' | 'compass';
 
 export interface Bounds {
   x: number;

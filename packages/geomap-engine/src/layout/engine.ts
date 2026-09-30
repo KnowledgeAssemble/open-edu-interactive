@@ -167,6 +167,11 @@ export function layout(
       return;
     }
 
+    if (node.kind === 'compass') {
+      node.bounds = rect(ctx.width - 70, 8, 60, 60);
+      return;
+    }
+
     for (const child of node.children) {
       assignBounds(child);
     }

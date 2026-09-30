@@ -93,6 +93,15 @@ function nodeToSvg(node: SceneNode, indent: number, minTouchTarget: number): str
       const tickR = `<line x1="${fmt(x1)}" y1="${fmt(y0 - 4)}" x2="${fmt(x1)}" y2="${fmt(y0 + 4)}" stroke="currentColor" stroke-width="1.5"/>`;
       return `${pad}<g ${attrs}>\n${pad}  ${line}\n${pad}  ${tickL}\n${pad}  ${tickR}\n${pad}</g>`;
     }
+    case 'compass': {
+      const r = Math.min(width, height) / 2;
+      const cxr = x + width / 2;
+      const cyr = y + height / 2;
+      const n = `${pad}  <line x1="${fmt(cxr)}" y1="${fmt(cyr - r)}" x2="${fmt(cxr)}" y2="${fmt(cyr + r)}" stroke="currentColor" stroke-width="1.5"/>`;
+      const e = `${pad}  <line x1="${fmt(cxr - r)}" y1="${fmt(cyr)}" x2="${fmt(cxr + r)}" y2="${fmt(cyr)}" stroke="currentColor" stroke-width="1.5"/>`;
+      const dot = `${pad}  <circle cx="${fmt(cxr)}" cy="${fmt(cyr)}" r="2" fill="currentColor"/>`;
+      return `${pad}<g ${attrs}>\n${n}\n${e}\n${dot}\n${pad}</g>`;
+    }
     default:
       return `${pad}<g ${attrs}></g>`;
   }
@@ -165,6 +174,8 @@ ${childrenSvg}
           adjacentTo: node.metadata.adjacentTo as string[] | undefined,
           measureValue: node.metadata.measureValue as number | undefined,
           encodingBucket: node.metadata.encodingBucket as string | undefined,
+          bearing: node.metadata.bearing as number | undefined,
+          bearingInWindow: node.metadata.bearingInWindow as boolean | undefined,
         });
       }
       if (node.kind === 'scale-bar') {
@@ -174,6 +185,16 @@ ${childrenSvg}
           name: String(node.metadata.label ?? ''),
           description: undefined,
           location: `${String(node.metadata.lengthKm)} ${String(node.metadata.unit).toUpperCase()}`,
+          sourceClass: undefined,
+        });
+      }
+      if (node.kind === 'compass') {
+        alternative.push({
+          entityId: node.id,
+          type: 'compass',
+          name: String(node.metadata.windowLabel ?? ''),
+          description: `Reference: ${String(node.metadata.referenceEntityId)}`,
+          location: `Window ${String(node.metadata.windowFrom)}-${String(node.metadata.windowTo)}`,
           sourceClass: undefined,
         });
       }

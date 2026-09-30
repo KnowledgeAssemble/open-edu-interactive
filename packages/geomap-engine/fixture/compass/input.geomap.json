@@ -1,0 +1,41 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "compass-bearing",
+  "metadata": { "title": "Compass bearings from the school" },
+  "purpose": { "learningObjective": "Follow a compass direction from a reference point", "reasoningMode": "identify" },
+  "content": {
+    "projection": { "type": "equirectangular" },
+    "compass": {
+      "referenceEntityId": "school",
+      "window": { "label": "North", "from": 315, "to": 45 }
+    },
+    "geography": {
+      "sources": [
+        {
+          "id": "src",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": { "type": "FeatureCollection", "features": [] }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "school", "type": "place", "name": "School", "location": { "coordinates": { "lat": 20, "lon": 80 } } },
+      { "id": "shrine", "type": "landmark", "name": "Shrine", "location": { "coordinates": { "lat": 21, "lon": 80.5 } } },
+      { "id": "pond", "type": "place", "name": "Pond", "location": { "coordinates": { "lat": 19, "lon": 80 } } },
+      { "id": "park", "type": "landmark", "name": "Park", "location": { "coordinates": { "lat": 20, "lon": 81 } } }
+    ],
+    "layers": [
+      { "id": "places", "type": "marker", "items": [
+        { "entity": "shrine", "label": true, "interactive": true },
+        { "entity": "pond", "label": true, "interactive": true },
+        { "entity": "park", "label": true, "interactive": true }
+      ] }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "bearing", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Map with a compass showing bearings from the school" }
+}

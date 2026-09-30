@@ -30,6 +30,7 @@ describe('ACTION_TYPES', () => {
       'connect',
       'disconnect',
       'follow',
+      'bearing',
       'reset',
     ]);
   });
