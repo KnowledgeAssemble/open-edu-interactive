@@ -4,6 +4,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GeoMapEngine } from '../src/engine.js';
 import { buildScene } from '../src/scene/build.js';
+import type { SceneNode } from '../src/scene/types.js';
 import { layout, fitScene } from '../src/layout/engine.js';
 import type { LayoutContext } from '../src/layout/engine.js';
 import { svgFrom } from '../src/render/svg.js';
@@ -44,8 +45,27 @@ function renderResult(spec: Record<string, unknown>) {
   const scaleBarConfig = computeScaleBar(CTX, centerLat, fit.projector, scaleBarUnit);
   const scaleBarNode = scaleBarVisible ? makeScaleBarNode(scaleBarConfig, CTX.minTouchTarget, CTX.height) : undefined;
   const displayScene = deriveDisplay(emptyMaps(), laidOut, scaleBarNode);
+  const periods = (content['periods'] as Array<{ regionEntityIds: string[] }> | undefined) ?? [];
+  if (periods.length > 0) {
+    const regionIds = new Set(periods[0]!.regionEntityIds);
+    for (const node of displayScene.nodes) {
+      walk(node, (n) => {
+        if (n.role === 'region' && n.metadata) {
+          const entityId = n.metadata.entityId as string | undefined;
+          if (entityId && !regionIds.has(entityId)) n.hidden = true;
+        }
+      });
+    }
+  }
   const result = svgFrom(displayScene, CTX, accessibility?.label, accessibility?.description);
   return { scene: displayScene, result };
+}
+
+function walk(node: SceneNode, fn: (n: SceneNode) => void): void {
+  fn(node);
+  for (const child of node.children) {
+    walk(child, fn);
+  }
 }
 
 function writeOrCompare(name: string, dir: string, spec: Record<string, unknown>) {
@@ -71,7 +91,7 @@ function writeOrCompare(name: string, dir: string, spec: Record<string, unknown>
   }
 }
 
-const FIXTURES = ['region', 'marker', 'route', 'odisha-coastal', 'encoding', 'overlay', 'route-step', 'linear', 'guided-composed', 'multi-locate', 'place-memory', 'region-adjacency', 'compass'];
+const FIXTURES = ['region', 'marker', 'route', 'odisha-coastal', 'encoding', 'overlay', 'route-step', 'linear', 'guided-composed', 'multi-locate', 'place-memory', 'region-adjacency', 'compass', 'periods'];
 
 function validateFixture(name: string, spec: unknown) {
   const result = ENGINE.validate(spec as never);

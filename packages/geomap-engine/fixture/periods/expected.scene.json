@@ -1,0 +1,1061 @@
+{
+  "nodes": [
+    {
+      "id": "geom-period-slice",
+      "role": "period-slice",
+      "kind": "period-slice",
+      "label": "Period slice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "step",
+        "scrub"
+      ],
+      "metadata": {
+        "periods": [
+          {
+            "id": "p1700",
+            "label": "1700"
+          },
+          {
+            "id": "p1800",
+            "label": "1800"
+          },
+          {
+            "id": "p1900",
+            "label": "1900"
+          }
+        ]
+      },
+      "children": [],
+      "bounds": {
+        "x": 710,
+        "y": 76,
+        "width": 72,
+        "height": 72
+      }
+    },
+    {
+      "id": "geom-regions",
+      "role": "layer",
+      "kind": "layer",
+      "label": "regions",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "regions"
+      },
+      "children": [
+        {
+          "id": "geom-regions-core",
+          "role": "region",
+          "kind": "region",
+          "label": "Core",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "core",
+            "entityType": "region",
+            "name": "Core",
+            "location": {
+              "source": "src",
+              "featureId": "core"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534433,
+            "lon": 5.000000000000029
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  10,
+                  0
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-east",
+          "role": "region",
+          "kind": "region",
+          "label": "East",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": true,
+          "metadata": {
+            "entityId": "east",
+            "entityType": "region",
+            "name": "East",
+            "location": {
+              "source": "src",
+              "featureId": "east"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.0059586335343536,
+            "lon": 14.999999999999936
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  10,
+                  0
+                ],
+                [
+                  20,
+                  0
+                ],
+                [
+                  20,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-north",
+          "role": "region",
+          "kind": "region",
+          "label": "North",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": true,
+          "metadata": {
+            "entityId": "north",
+            "entityType": "region",
+            "name": "North",
+            "location": {
+              "source": "src",
+              "featureId": "north"
+            },
+            "sourceClass": "illustrative",
+            "lat": 15.01481985543844,
+            "lon": 5.000000000000079
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  20
+                ],
+                [
+                  0,
+                  20
+                ],
+                [
+                  0,
+                  10
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 300
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 300
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 48,
+            "width": 252,
+            "height": 252
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-scale-bar",
+      "role": "scale-bar",
+      "kind": "scale-bar",
+      "label": "1000 KM",
+      "bounds": {
+        "x": 24,
+        "y": 512,
+        "width": 236,
+        "height": 68
+      },
+      "interactive": false,
+      "metadata": {
+        "lengthKm": 1000,
+        "lengthPx": 230,
+        "unit": "km",
+        "label": "1000 KM",
+        "scaleBarKind": "scale-bar"
+      },
+      "children": []
+    }
+  ],
+  "semantics": {
+    "geom-period-slice": {
+      "id": "geom-period-slice",
+      "role": "period-slice",
+      "kind": "period-slice",
+      "label": "Period slice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "step",
+        "scrub"
+      ],
+      "metadata": {
+        "periods": [
+          {
+            "id": "p1700",
+            "label": "1700"
+          },
+          {
+            "id": "p1800",
+            "label": "1800"
+          },
+          {
+            "id": "p1900",
+            "label": "1900"
+          }
+        ]
+      },
+      "children": [],
+      "bounds": {
+        "x": 710,
+        "y": 76,
+        "width": 72,
+        "height": 72
+      }
+    },
+    "geom-regions-core": {
+      "id": "geom-regions-core",
+      "role": "region",
+      "kind": "region",
+      "label": "Core",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "core",
+        "entityType": "region",
+        "name": "Core",
+        "location": {
+          "source": "src",
+          "featureId": "core"
+        },
+        "sourceClass": "illustrative",
+        "lat": 5.005958633534433,
+        "lon": 5.000000000000029
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              0,
+              10
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 148,
+            "y": 552
+          },
+          {
+            "x": 400,
+            "y": 552
+          },
+          {
+            "x": 400,
+            "y": 300
+          },
+          {
+            "x": 148,
+            "y": 300
+          },
+          {
+            "x": 148,
+            "y": 552
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 148,
+          "y": 552
+        },
+        {
+          "x": 400,
+          "y": 552
+        },
+        {
+          "x": 400,
+          "y": 300
+        },
+        {
+          "x": 148,
+          "y": 300
+        },
+        {
+          "x": 148,
+          "y": 552
+        }
+      ],
+      "bounds": {
+        "x": 148,
+        "y": 300,
+        "width": 252,
+        "height": 252
+      }
+    },
+    "geom-regions-east": {
+      "id": "geom-regions-east",
+      "role": "region",
+      "kind": "region",
+      "label": "East",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": true,
+      "metadata": {
+        "entityId": "east",
+        "entityType": "region",
+        "name": "East",
+        "location": {
+          "source": "src",
+          "featureId": "east"
+        },
+        "sourceClass": "illustrative",
+        "lat": 5.0059586335343536,
+        "lon": 14.999999999999936
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10,
+              0
+            ],
+            [
+              20,
+              0
+            ],
+            [
+              20,
+              10
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              0
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 400,
+            "y": 552
+          },
+          {
+            "x": 652,
+            "y": 552
+          },
+          {
+            "x": 652,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 552
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 400,
+          "y": 552
+        },
+        {
+          "x": 652,
+          "y": 552
+        },
+        {
+          "x": 652,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 552
+        }
+      ],
+      "bounds": {
+        "x": 400,
+        "y": 300,
+        "width": 252,
+        "height": 252
+      }
+    },
+    "geom-regions-north": {
+      "id": "geom-regions-north",
+      "role": "region",
+      "kind": "region",
+      "label": "North",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": true,
+      "metadata": {
+        "entityId": "north",
+        "entityType": "region",
+        "name": "North",
+        "location": {
+          "source": "src",
+          "featureId": "north"
+        },
+        "sourceClass": "illustrative",
+        "lat": 15.01481985543844,
+        "lon": 5.000000000000079
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              0,
+              10
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 148,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 48
+          },
+          {
+            "x": 148,
+            "y": 48
+          },
+          {
+            "x": 148,
+            "y": 300
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 148,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 48
+        },
+        {
+          "x": 148,
+          "y": 48
+        },
+        {
+          "x": 148,
+          "y": 300
+        }
+      ],
+      "bounds": {
+        "x": 148,
+        "y": 48,
+        "width": 252,
+        "height": 252
+      }
+    },
+    "geom-regions": {
+      "id": "geom-regions",
+      "role": "layer",
+      "kind": "layer",
+      "label": "regions",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "regions"
+      },
+      "children": [
+        {
+          "id": "geom-regions-core",
+          "role": "region",
+          "kind": "region",
+          "label": "Core",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "core",
+            "entityType": "region",
+            "name": "Core",
+            "location": {
+              "source": "src",
+              "featureId": "core"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534433,
+            "lon": 5.000000000000029
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  10,
+                  0
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-east",
+          "role": "region",
+          "kind": "region",
+          "label": "East",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": true,
+          "metadata": {
+            "entityId": "east",
+            "entityType": "region",
+            "name": "East",
+            "location": {
+              "source": "src",
+              "featureId": "east"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.0059586335343536,
+            "lon": 14.999999999999936
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  10,
+                  0
+                ],
+                [
+                  20,
+                  0
+                ],
+                [
+                  20,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-north",
+          "role": "region",
+          "kind": "region",
+          "label": "North",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": true,
+          "metadata": {
+            "entityId": "north",
+            "entityType": "region",
+            "name": "North",
+            "location": {
+              "source": "src",
+              "featureId": "north"
+            },
+            "sourceClass": "illustrative",
+            "lat": 15.01481985543844,
+            "lon": 5.000000000000079
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  20
+                ],
+                [
+                  0,
+                  20
+                ],
+                [
+                  0,
+                  10
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 300
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 300
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 48,
+            "width": 252,
+            "height": 252
+          }
+        }
+      ]
+    }
+  }
+}

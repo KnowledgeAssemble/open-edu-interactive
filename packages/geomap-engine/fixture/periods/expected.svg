@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Map of a territory that grew between 1700 and 1900</title>
+  <desc>An interactive geographic map</desc>
+  <g id="map-root">
+    <g id="map-layers">
+  <g id="geom-period-slice" data-oedu-role="period-slice" data-oedu-interactive="true" aria-label="Period slice">
+    <circle cx="746" cy="112" r="24" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="746" y1="88" x2="746" y2="100" stroke="currentColor" stroke-width="1.5"/>
+    <text x="746" y="146" text-anchor="middle" font-size="9">Period slice</text>
+  </g>
+  <g id="geom-regions" data-oedu-role="layer" aria-label="regions">
+    <path id="geom-regions-core" data-oedu-role="region" data-oedu-interactive="true" aria-label="Core" d="M 148 552 L 400 552 L 400 300 L 148 300 L 148 552 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="geom-regions-east" data-oedu-role="region" data-oedu-interactive="true" aria-label="East" d="M 400 552 L 652 552 L 652 300 L 400 300 L 400 552 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="geom-regions-north" data-oedu-role="region" data-oedu-interactive="true" aria-label="North" d="M 148 300 L 400 300 L 400 48 L 148 48 L 148 300 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g id="geom-scale-bar" data-oedu-role="scale-bar" aria-label="1000 KM">
+    <line x1="26" y1="530" x2="258" y2="530" stroke="currentColor" stroke-width="2"/>
+    <line x1="26" y1="526" x2="26" y2="534" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="258" y1="526" x2="258" y2="534" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+    </g>
+  </g>
+</svg>

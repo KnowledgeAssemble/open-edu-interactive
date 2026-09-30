@@ -307,3 +307,30 @@ describe('validateAccessibility', () => {
     expect(result.issues.some((i) => i.code === 'ACCESSIBILITY_ERROR')).toBe(true);
   });
 });
+describe('period-slice provenance (W-4.1)', () => {
+  it('a period slice with empty sources fails INVALID_SPEC', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        periods: [{ id: 'p1', label: 'P', from: '1700', to: '1750', sources: [], regionEntityIds: ['pt'] }],
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_SPEC' && /period.*sources/.test(i.message))).toBe(true);
+  });
+
+  it('a period slice referencing an unknown region fails INVALID_REFERENCE', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        periods: [{ id: 'p1', label: 'P', from: '1700', to: '1750', sources: [{ class: 'authoritative' }], regionEntityIds: ['ghost'] }],
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_REFERENCE' && /period.*region/.test(i.message))).toBe(true);
+  });
+});

@@ -156,6 +156,25 @@ export function buildScene(
     referenceLon = referencePos?.lon;
   }
 
+  if (content.periods && content.periods.length > 0) {
+    const periodNodeId = 'geom-period-slice';
+    assertUnique(seen, periodNodeId);
+    const periodNode: SceneNode = {
+      id: periodNodeId,
+      role: 'period-slice',
+      kind: 'period-slice',
+      label: 'Period slice',
+      interactive: true,
+      acceptsActions: ['select', 'focus', 'step', 'scrub'],
+      metadata: {
+        periods: content.periods.map((p) => ({ id: p.id, label: p.label })),
+      },
+      children: [],
+    };
+    semantics[periodNodeId] = periodNode;
+    nodes.push(periodNode);
+  }
+
   for (const layer of layers) {
     assertUnique(seen, layer.id);
     const layerId = layer.id;

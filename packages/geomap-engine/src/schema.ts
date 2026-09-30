@@ -124,6 +124,26 @@ export const CompassSchema = z
   })
   .strict();
 
+export const PeriodSourceSchema = z
+  .object({
+    class: z.enum(SOURCE_CLASSES),
+    title: z.string().optional(),
+    citation: z.string().optional(),
+    url: z.string().optional(),
+  })
+  .strict();
+
+export const PeriodSliceSchema = z
+  .object({
+    id: z.string().min(1).max(128).regex(ID_PATTERN),
+    label: z.string().min(1),
+    from: z.string().min(1),
+    to: z.string().min(1),
+    sources: z.array(PeriodSourceSchema).min(1),
+    regionEntityIds: z.array(z.string()).min(1),
+  })
+  .strict();
+
 export const GeoMapContentSchema = z
   .object({
     viewport: ViewportSpecSchema.optional(),
@@ -141,6 +161,7 @@ export const GeoMapContentSchema = z
       .strict()
       .optional(),
     compass: CompassSchema.optional(),
+    periods: z.array(PeriodSliceSchema).optional(),
     geography: z
       .object({
         sources: z.array(GeoSourceSchema).min(1),
@@ -176,6 +197,7 @@ export type EntitySpec = z.infer<typeof EntitySchema>;
 export type GeoSourceSpec = z.infer<typeof GeoSourceSchema>;
 export type LayerSpec = z.infer<typeof LayerSchema>;
 export type CompassSpec = z.infer<typeof CompassSchema>;
+export type PeriodSliceSpec = z.infer<typeof PeriodSliceSchema>;
 
 export interface GeoMapSpec {
   type: string;

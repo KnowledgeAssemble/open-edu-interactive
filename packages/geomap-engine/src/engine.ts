@@ -151,9 +151,41 @@ export class GeoMapEngine implements Engine {
     let displayScene = deriveDisplay(maps, laidOutBase, scaleBarNode);
     let svgResult: SvgResult = svgFrom(displayScene, ctx, geomapSpec.accessibility?.label, geomapSpec.accessibility?.description);
 
+    const periods = content.periods ?? [];
+    let periodIndex = 0;
+
+    if (periods.length > 0) {
+      rederive();
+    }
+
+    function activePeriod(): { id: string; label: string; regionEntityIds: string[] } | undefined {
+      return periods[periodIndex];
+    }
+
     function rederive(): void {
       displayScene = deriveDisplay(maps, laidOutBase, scaleBarNode);
+      const period = activePeriod();
+      if (period) {
+        const regionIds = new Set(period.regionEntityIds);
+        for (const node of displayScene.nodes) {
+          walkPeriod(node, (n) => {
+            if (n.role === 'region' && n.metadata) {
+              const entityId = n.metadata.entityId as string | undefined;
+              if (entityId && !regionIds.has(entityId)) {
+                n.hidden = true;
+              }
+            }
+          });
+        }
+      }
       svgResult = svgFrom(displayScene, ctx, geomapSpec.accessibility?.label, geomapSpec.accessibility?.description);
+    }
+
+    function walkPeriod(node: import('./scene/types.js').SceneNode, fn: (n: import('./scene/types.js').SceneNode) => void): void {
+      fn(node);
+      for (const child of node.children) {
+        walkPeriod(child, fn);
+      }
     }
 
     function emit(event: Parameters<EngineHost['onEvent']>[0]): void {
@@ -243,7 +275,18 @@ export class GeoMapEngine implements Engine {
           }
         } else if (action.type === 'step' || action.type === 'scrub') {
           const targetId = action.target?.id;
-          if (targetId) {
+          if (targetId === 'geom-period-slice' && periods.length > 0) {
+            if (action.type === 'scrub') {
+              const stepPayload = Number((action.payload as Record<string, unknown> | undefined)?.step);
+              periodIndex = Number.isFinite(stepPayload) ? Math.max(0, Math.min(periods.length - 1, stepPayload)) : periodIndex;
+            } else {
+              periodIndex = (periodIndex + 1) % periods.length;
+            }
+            rederive();
+            const period = activePeriod();
+            const nsEvent = log.append('geomap.period-step', instanceId, { periodIndex, periodId: period?.id }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          } else if (targetId) {
             const routeNode = displayScene.semantics[targetId];
             if (routeNode && routeNode.role === 'route') {
               const stepPayload = action.type === 'scrub' ? Number((action.payload as Record<string, unknown> | undefined)?.step) : undefined;
@@ -355,6 +398,7 @@ export class GeoMapEngine implements Engine {
           alternative: svgResult.alternative,
           displayState,
           scaleBar: scaleBarVisible ? scaleBarConfig : null,
+          activePeriod: activePeriod() ?? null,
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {

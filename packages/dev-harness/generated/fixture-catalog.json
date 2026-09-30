@@ -890,6 +890,20 @@
     "title": "Overlay with two region layers"
   },
   {
+    "id": "geomap/periods",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "periods",
+    "specPath": "packages/geomap-engine/fixture/periods/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/periods/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/periods/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/periods/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/periods/expected.svg"
+    },
+    "title": "Territory change 1700-1900"
+  },
+  {
     "id": "geomap/place-memory",
     "kind": "engine",
     "engine": "geomap",

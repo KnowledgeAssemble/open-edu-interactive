@@ -138,21 +138,24 @@ test.describe('GeoMap W-1 reconciliation — layer-visibility / overlay (gm-ovl-
     await mount(page, 'overlay');
   });
 
-  test('gm-ovl-1: toggling preserves selection identity; alternative lists both region sets', async ({ page }) => {
+  test('gm-ovl-1: toggling preserves selection identity; alternative lists visible region sets', async ({ page }) => {
     const result = await page.evaluate(() => {
       const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
       harness.dispatch({ type: 'select', target: { id: 'geom-risk-nz' } });
       const selBefore = harness.snapshot().selection;
       harness.dispatch({ type: 'toggle', target: { id: 'geom-boundary' } });
       const selAfter = harness.snapshot().selection;
+      const altWhileVisible = harness.alternative();
       harness.dispatch({ type: 'toggle', target: { id: 'geom-boundary' } });
-      const alt = harness.alternative();
-      return { selBefore, selAfter, ids: alt.map((a) => a.entityId) };
+      const altAfterHide = harness.alternative();
+      return { selBefore, selAfter, visible: altWhileVisible.map((a) => a.entityId), hidden: altAfterHide.map((a) => a.entityId) };
     });
     expect(result.selBefore).toContain('geom-risk-nz');
     expect(result.selAfter).toEqual(result.selBefore);
-    expect(result.ids).toContain('nz');
-    expect(result.ids).toContain('bd');
+    expect(result.visible).toContain('nz');
+    expect(result.visible).toContain('bd');
+    expect(result.hidden).toContain('nz');
+    expect(result.hidden).not.toContain('bd');
   });
 
   test('gm-ovl-2: factor layers compose over one basemap; selection event carries layer + entity id', async ({ page }) => {

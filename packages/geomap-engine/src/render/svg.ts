@@ -102,6 +102,15 @@ function nodeToSvg(node: SceneNode, indent: number, minTouchTarget: number): str
       const dot = `${pad}  <circle cx="${fmt(cxr)}" cy="${fmt(cyr)}" r="2" fill="currentColor"/>`;
       return `${pad}<g ${attrs}>\n${n}\n${e}\n${dot}\n${pad}</g>`;
     }
+    case 'period-slice': {
+      const cxr = x + width / 2;
+      const cyr = y + height / 2;
+      const r = Math.min(width, height) / 3;
+      const circle = `${pad}  <circle cx="${fmt(cxr)}" cy="${fmt(cyr)}" r="${fmt(r)}" fill="none" stroke="currentColor" stroke-width="1.5"/>`;
+      const tick = `${pad}  <line x1="${fmt(cxr)}" y1="${fmt(cyr - r)}" x2="${fmt(cxr)}" y2="${fmt(cyr - r / 2)}" stroke="currentColor" stroke-width="1.5"/>`;
+      const label = `${pad}  <text x="${fmt(cxr)}" y="${fmt(cyr + r + 10)}" text-anchor="middle" font-size="9">${escapeXml(node.label ?? '')}</text>`;
+      return `${pad}<g ${attrs}>\n${circle}\n${tick}\n${label}\n${pad}</g>`;
+    }
     default:
       return `${pad}<g ${attrs}></g>`;
   }
@@ -160,7 +169,7 @@ ${childrenSvg}
       }
     }
 
-    if (node.metadata) {
+    if (node.metadata && !node.hidden) {
       const entityId = node.metadata.entityId as string | undefined;
       if (entityId && !seenEntityIds.has(entityId)) {
         seenEntityIds.add(entityId);

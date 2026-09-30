@@ -584,7 +584,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/hist-boundary-change` *(planned)* |
 | **New capability** | `period-slice`. |
 | **Host** | Timeline narration; answer question on the final slice. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-hist-2-place-memory` — Locate the places of a movement
 
@@ -611,7 +611,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/hist-route-over-time` *(planned)* |
 | **New capability** | `period-slice` + `route-step` composition. |
 | **Host** | Historical facts need explicit provenance. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

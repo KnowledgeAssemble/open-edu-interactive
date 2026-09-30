@@ -1,0 +1,69 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "boundary-change-periods",
+  "metadata": { "title": "Territory change 1700-1900" },
+  "purpose": { "learningObjective": "Watch how a territory grew across periods", "reasoningMode": "explore" },
+  "content": {
+    "projection": { "type": "equirectangular" },
+    "periods": [
+      {
+        "id": "p1700",
+        "label": "1700",
+        "from": "1700",
+        "to": "1750",
+        "sources": [{ "class": "authoritative", "title": "Historical atlas 1700" }],
+        "regionEntityIds": ["core"]
+      },
+      {
+        "id": "p1800",
+        "label": "1800",
+        "from": "1751",
+        "to": "1850",
+        "sources": [{ "class": "authoritative", "title": "Historical atlas 1800" }],
+        "regionEntityIds": ["core", "east"]
+      },
+      {
+        "id": "p1900",
+        "label": "1900",
+        "from": "1851",
+        "to": "1900",
+        "sources": [{ "class": "authoritative", "title": "Historical atlas 1900" }],
+        "regionEntityIds": ["core", "east", "north"]
+      }
+    ],
+    "geography": {
+      "sources": [
+        {
+          "id": "src",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [
+              { "id": "core", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]]] } },
+              { "id": "east", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[10, 0], [20, 0], [20, 10], [10, 10], [10, 0]]] } },
+              { "id": "north", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[0, 10], [10, 10], [10, 20], [0, 20], [0, 10]]] } }
+            ]
+          }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "core", "type": "region", "name": "Core", "location": { "source": "src", "featureId": "core" } },
+      { "id": "east", "type": "region", "name": "East", "location": { "source": "src", "featureId": "east" } },
+      { "id": "north", "type": "region", "name": "North", "location": { "source": "src", "featureId": "north" } }
+    ],
+    "layers": [
+      { "id": "regions", "type": "region", "items": [
+        { "entity": "core", "interactive": true },
+        { "entity": "east", "interactive": true },
+        { "entity": "north", "interactive": true }
+      ] }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "step", "scrub", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Map of a territory that grew between 1700 and 1900" }
+}

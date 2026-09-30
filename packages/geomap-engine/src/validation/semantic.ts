@@ -164,6 +164,25 @@ export function validateSemantic(spec: GeoMapSpec): ValidationResult {
     }
   }
 
+  const periods = content.periods;
+  if (periods) {
+    for (const [i, period] of periods.entries()) {
+      if (!period.sources || period.sources.length === 0) {
+        issues.push({ level: 'L2', code: 'INVALID_SPEC', message: `period at index ${i} requires non-empty sources[] (provenance, DESIGN §9)` });
+      }
+      for (const src of period.sources ?? []) {
+        if (!(SOURCE_CLASSES as readonly string[]).includes(src.class)) {
+          issues.push({ level: 'L2', code: 'INVALID_SPEC', message: `period at index ${i} has invalid source class "${src.class}"` });
+        }
+      }
+      for (const entityId of period.regionEntityIds) {
+        if (!entityIds.has(entityId)) {
+          issues.push({ level: 'L2', code: 'INVALID_REFERENCE', message: `period "${period.id}" references unknown region entity "${entityId}"` });
+        }
+      }
+    }
+  }
+
   validateGeography(geomapContent, issues);
 
   const sources = spec.sources;

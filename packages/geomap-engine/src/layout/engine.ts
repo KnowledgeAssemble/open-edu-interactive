@@ -172,6 +172,11 @@ export function layout(
       return;
     }
 
+    if (node.kind === 'period-slice') {
+      node.bounds = rect(ctx.width - 90, 76, 72, 72);
+      return;
+    }
+
     for (const child of node.children) {
       assignBounds(child);
     }

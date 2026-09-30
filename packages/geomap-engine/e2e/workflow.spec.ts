@@ -6,6 +6,7 @@ const SPECS = {
   'place-memory': 'packages/geomap-engine/fixture/place-memory/input.geomap.json',
   overlay: 'packages/geomap-engine/fixture/overlay/input.geomap.json',
   compass: 'packages/geomap-engine/fixture/compass/input.geomap.json',
+  periods: 'packages/geomap-engine/fixture/periods/input.geomap.json',
 };
 
 interface Harness {
@@ -167,5 +168,43 @@ test.describe('GeoMap W-2.7 — compass / bearing (gm-nav-1, gm-dir-2)', () => {
     expect(result.shrineBearing).toBeDefined();
     expect(result.shrineInWindow).toBe(true);
     expect(result.pondInWindow).toBe(false);
+  });
+});
+test.describe('GeoMap W-4.1 — period-slice (gm-hist-1, gm-hist-3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, 'periods');
+  });
+
+  test('gm-hist-1: step advances the slice; snapshot exposes the active period; regions hidden accordingly', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      const initial = (harness.snapshot() as unknown as { activePeriod: { id: string } }).activePeriod;
+      harness.dispatch({ type: 'step', target: { id: 'geom-period-slice' } });
+      const second = (harness.snapshot() as unknown as { activePeriod: { id: string }; alternative: Array<{ entityId: string }> }).activePeriod;
+      const alt = (harness.snapshot() as unknown as { alternative: Array<{ entityId: string }> }).alternative;
+      harness.dispatch({ type: 'scrub', target: { id: 'geom-period-slice' }, payload: { step: 2 } });
+      const third = (harness.snapshot() as unknown as { activePeriod: { id: string } }).activePeriod;
+      const names = harness.events().map((e) => e.name);
+      return { initial: initial?.id, second: second?.id, third: third?.id, hasEast: alt.some((a) => a.entityId === 'east'), periodStep: names.includes('geomap.period-step') };
+    });
+    expect(result.initial).toBe('p1700');
+    expect(result.second).toBe('p1800');
+    expect(result.third).toBe('p1900');
+    expect(result.hasEast).toBe(true);
+    expect(result.periodStep).toBe(true);
+  });
+
+  test('gm-hist-3: route stays fixed while region slices change; selecting an entity carries its period metadata', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      harness.dispatch({ type: 'scrub', target: { id: 'geom-period-slice' }, payload: { step: 1 } });
+      const before = harness.events().length;
+      harness.dispatch({ type: 'select', target: { id: 'geom-regions-core' } });
+      const names = harness.events().slice(before).map((e) => e.name);
+      const period = (harness.snapshot() as unknown as { activePeriod: { id: string } }).activePeriod;
+      return { names, period: period?.id };
+    });
+    expect(result.names).toContain('geomap.entity-selected');
+    expect(result.period).toBe('p1800');
   });
 });

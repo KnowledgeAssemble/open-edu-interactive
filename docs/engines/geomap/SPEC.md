@@ -453,6 +453,7 @@ The content schema additionally accepts:
 - Route item `interactive: boolean`, `label: boolean` — segment interactivity.
 - Legend item `linkedEntities: string[]`, `interactive: boolean` — legend-link.
 - `content.compass: { referenceEntityId, window: { label, from, to } }` — compass/bearing (W-2.7). `referenceEntityId` MUST name an entity with explicit coordinates; `window` is the authored semantic axis window in degrees (`from`/`to`, `0..360`, wrap-around allowed — e.g. north = `315..45`). The compass renders as a scene node `geom-compass` (a D5 target, no pixel picking). Bearing is **derived** from the authored reference point to each candidate — never authored as a value; `bearing` on a candidate emits `geomap.bearing-computed` with `inWindow` true only when the bearing falls inside the window (a semantic field, not a tolerance constant). Validation negatives: missing `referenceEntityId` (INVALID_REFERENCE), reference lacking coordinates (INVALID_REFERENCE), reference as its own candidate (INVALID_REFERENCE), `from`/`to` outside `[0, 360]` (INVALID_SPEC).
+- `content.periods: [{ id, label, from, to, sources, regionEntityIds }]` — period slices (W-4.1). Each period carries its own non-empty `sources[]` (provenance mandatory; empty/missing → validation error) and the region entity ids visible in that period. The scene node `geom-period-slice` is a D5 target: `scrub` (payload `{ step }`) sets the active index, `step` advances it (deterministic reducer ops, no timers — host-driven playback only). `snapshot().activePeriod` exposes the active slice; `geomap.period-step` is emitted. Regions not in the active period's set are hidden.
 
 All new objects carry `additionalProperties: false`.
 
@@ -1146,6 +1147,7 @@ GeoMap emits the following namespaced events:
 | `geomap.entity-selected` | entity metadata | `select` |
 | `geomap.entity-focused` | entity metadata | `focus` |
 | `geomap.bearing-computed` | `{ entityId, referenceEntityId, bearing, inWindow }` | `bearing` |
+| `geomap.period-step` | `{ periodIndex, periodId }` | `step` / `scrub` on `geom-period-slice` |
 
 Namespaced GeoMap extensions MAY include `geomap.center` when documented. `highlight`, `show`, `hide`, `open-info`, and `play-animation` are superseded (`select` / `focus` / `open-annotation` / `play-pause`).
 
