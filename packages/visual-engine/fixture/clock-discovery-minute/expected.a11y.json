@@ -1,0 +1,209 @@
+{
+  "a11y": [
+    {
+      "id": "ck",
+      "role": "group",
+      "label": "ck",
+      "children": [
+        {
+          "id": "ck-face",
+          "role": "img",
+          "label": "ck-face",
+          "children": []
+        },
+        {
+          "id": "ck-hour-hand",
+          "role": "button",
+          "label": "ck-hour-hand",
+          "children": []
+        },
+        {
+          "id": "ck-minute-hand",
+          "role": "button",
+          "label": "ck-minute-hand",
+          "children": []
+        },
+        {
+          "id": "ck-number-1",
+          "role": "img",
+          "label": "1",
+          "children": []
+        },
+        {
+          "id": "ck-number-2",
+          "role": "img",
+          "label": "2",
+          "children": []
+        },
+        {
+          "id": "ck-number-3",
+          "role": "img",
+          "label": "3",
+          "children": []
+        },
+        {
+          "id": "ck-number-4",
+          "role": "img",
+          "label": "4",
+          "children": []
+        },
+        {
+          "id": "ck-number-5",
+          "role": "img",
+          "label": "5",
+          "children": []
+        },
+        {
+          "id": "ck-number-6",
+          "role": "img",
+          "label": "6",
+          "children": []
+        },
+        {
+          "id": "ck-number-7",
+          "role": "img",
+          "label": "7",
+          "children": []
+        },
+        {
+          "id": "ck-number-8",
+          "role": "img",
+          "label": "8",
+          "children": []
+        },
+        {
+          "id": "ck-number-9",
+          "role": "img",
+          "label": "9",
+          "children": []
+        },
+        {
+          "id": "ck-number-10",
+          "role": "img",
+          "label": "10",
+          "children": []
+        },
+        {
+          "id": "ck-number-11",
+          "role": "img",
+          "label": "11",
+          "children": []
+        },
+        {
+          "id": "ck-number-12",
+          "role": "img",
+          "label": "12",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ck-face",
+      "role": "img",
+      "label": "ck-face",
+      "children": []
+    },
+    {
+      "id": "ck-hour-hand",
+      "role": "button",
+      "label": "ck-hour-hand",
+      "children": []
+    },
+    {
+      "id": "ck-minute-hand",
+      "role": "button",
+      "label": "ck-minute-hand",
+      "children": []
+    },
+    {
+      "id": "ck-number-1",
+      "role": "img",
+      "label": "1",
+      "children": []
+    },
+    {
+      "id": "ck-number-2",
+      "role": "img",
+      "label": "2",
+      "children": []
+    },
+    {
+      "id": "ck-number-3",
+      "role": "img",
+      "label": "3",
+      "children": []
+    },
+    {
+      "id": "ck-number-4",
+      "role": "img",
+      "label": "4",
+      "children": []
+    },
+    {
+      "id": "ck-number-5",
+      "role": "img",
+      "label": "5",
+      "children": []
+    },
+    {
+      "id": "ck-number-6",
+      "role": "img",
+      "label": "6",
+      "children": []
+    },
+    {
+      "id": "ck-number-7",
+      "role": "img",
+      "label": "7",
+      "children": []
+    },
+    {
+      "id": "ck-number-8",
+      "role": "img",
+      "label": "8",
+      "children": []
+    },
+    {
+      "id": "ck-number-9",
+      "role": "img",
+      "label": "9",
+      "children": []
+    },
+    {
+      "id": "ck-number-10",
+      "role": "img",
+      "label": "10",
+      "children": []
+    },
+    {
+      "id": "ck-number-11",
+      "role": "img",
+      "label": "11",
+      "children": []
+    },
+    {
+      "id": "ck-number-12",
+      "role": "img",
+      "label": "12",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "ck-hour-hand",
+      "action": "select"
+    },
+    {
+      "id": "ck-hour-hand",
+      "action": "focus"
+    },
+    {
+      "id": "ck-minute-hand",
+      "action": "select"
+    },
+    {
+      "id": "ck-minute-hand",
+      "action": "focus"
+    }
+  ]
+}

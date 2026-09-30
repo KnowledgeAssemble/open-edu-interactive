@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Clock showing 3:30</title>
+  <desc>Both hands are selectable. Select the minute hand.</desc>
+  <g id="visual-root">
+  <g id="ck" data-oedu-role="group">
+    <circle id="ck-face" data-oedu-role="visual" data-oedu-bounds="190,90,420,420" cx="400" cy="300" r="210" fill="transparent" stroke="currentColor" stroke-width="2"/>
+    <path id="ck-hour-hand" data-oedu-role="marker" data-oedu-value="3" data-oedu-interactive="true" data-oedu-bounds="352.1702404650541,300,47.82975953494588,178.5030926982198" d="M400,300 L352.1702404650541,478.5030926982198" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="ck-minute-hand" data-oedu-role="marker" data-oedu-value="30" data-oedu-interactive="true" data-oedu-bounds="215.2,300,184.8,0" d="M400,300 L215.2,300" stroke="currentColor" stroke-width="2" fill="none"/>
+    <text id="ck-number-1" data-oedu-role="number" data-oedu-value="1" aria-label="1" data-oedu-bounds="543.884572681199,380,24,20" x="555.884572681199" y="390" text-anchor="middle" dominant-baseline="central">1</text>
+    <text id="ck-number-2" data-oedu-role="number" data-oedu-value="2" aria-label="2" data-oedu-bounds="478,445.88457268119896,24,20" x="490" y="455.88457268119896" text-anchor="middle" dominant-baseline="central">2</text>
+    <text id="ck-number-3" data-oedu-role="number" data-oedu-value="3" aria-label="3" data-oedu-bounds="388,470,24,20" x="400" y="480" text-anchor="middle" dominant-baseline="central">3</text>
+    <text id="ck-number-4" data-oedu-role="number" data-oedu-value="4" aria-label="4" data-oedu-bounds="298.00000000000006,445.88457268119896,24,20" x="310.00000000000006" y="455.88457268119896" text-anchor="middle" dominant-baseline="central">4</text>
+    <text id="ck-number-5" data-oedu-role="number" data-oedu-value="5" aria-label="5" data-oedu-bounds="232.11542731880104,380,24,20" x="244.11542731880104" y="390" text-anchor="middle" dominant-baseline="central">5</text>
+    <text id="ck-number-6" data-oedu-role="number" data-oedu-value="6" aria-label="6" data-oedu-bounds="208,290,24,20" x="220" y="300" text-anchor="middle" dominant-baseline="central">6</text>
+    <text id="ck-number-7" data-oedu-role="number" data-oedu-value="7" aria-label="7" data-oedu-bounds="232.11542731880104,200,24,20" x="244.11542731880104" y="210" text-anchor="middle" dominant-baseline="central">7</text>
+    <text id="ck-number-8" data-oedu-role="number" data-oedu-value="8" aria-label="8" data-oedu-bounds="297.9999999999999,134.11542731880107,24,20" x="309.9999999999999" y="144.11542731880107" text-anchor="middle" dominant-baseline="central">8</text>
+    <text id="ck-number-9" data-oedu-role="number" data-oedu-value="9" aria-label="9" data-oedu-bounds="387.99999999999994,110,24,20" x="399.99999999999994" y="120" text-anchor="middle" dominant-baseline="central">9</text>
+    <text id="ck-number-10" data-oedu-role="number" data-oedu-value="10" aria-label="10" data-oedu-bounds="478,134.11542731880104,24,20" x="490" y="144.11542731880104" text-anchor="middle" dominant-baseline="central">10</text>
+    <text id="ck-number-11" data-oedu-role="number" data-oedu-value="11" aria-label="11" data-oedu-bounds="543.884572681199,199.99999999999991,24,20" x="555.884572681199" y="209.99999999999991" text-anchor="middle" dominant-baseline="central">11</text>
+    <text id="ck-number-12" data-oedu-role="number" data-oedu-value="12" aria-label="12" data-oedu-bounds="568,289.99999999999994,24,20" x="580" y="299.99999999999994" text-anchor="middle" dominant-baseline="central">12</text>
+  </g>
+  </g>
+</svg>

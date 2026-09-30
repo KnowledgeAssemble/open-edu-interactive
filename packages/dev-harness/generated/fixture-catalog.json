@@ -287,6 +287,19 @@
     "title": "clock"
   },
   {
+    "id": "visual/clock-discovery-minute",
+    "kind": "engine",
+    "engine": "visual",
+    "slug": "clock-discovery-minute",
+    "specPath": "packages/visual-engine/fixture/clock-discovery-minute/input.visual.json",
+    "golden": {
+      "scene": "packages/visual-engine/fixture/clock-discovery-minute/expected.scene.json",
+      "a11y": "packages/visual-engine/fixture/clock-discovery-minute/expected.a11y.json",
+      "svg": "packages/visual-engine/fixture/clock-discovery-minute/expected.svg"
+    },
+    "title": "clock-discovery-minute"
+  },
+  {
     "id": "visual/clock-practice",
     "kind": "engine",
     "engine": "visual",
@@ -404,6 +417,19 @@
     "title": "geometry"
   },
   {
+    "id": "visual/geometry-discovery-vertex",
+    "kind": "engine",
+    "engine": "visual",
+    "slug": "geometry-discovery-vertex",
+    "specPath": "packages/visual-engine/fixture/geometry-discovery-vertex/input.visual.json",
+    "golden": {
+      "scene": "packages/visual-engine/fixture/geometry-discovery-vertex/expected.scene.json",
+      "a11y": "packages/visual-engine/fixture/geometry-discovery-vertex/expected.a11y.json",
+      "svg": "packages/visual-engine/fixture/geometry-discovery-vertex/expected.svg"
+    },
+    "title": "geometry-discovery-vertex"
+  },
+  {
     "id": "visual/geometry-practice",
     "kind": "engine",
     "engine": "visual",
@@ -441,6 +467,19 @@
       "svg": "packages/visual-engine/fixture/number-line/expected.svg"
     },
     "title": "number-line"
+  },
+  {
+    "id": "visual/number-line-compare-distance",
+    "kind": "engine",
+    "engine": "visual",
+    "slug": "number-line-compare-distance",
+    "specPath": "packages/visual-engine/fixture/number-line-compare-distance/input.visual.json",
+    "golden": {
+      "scene": "packages/visual-engine/fixture/number-line-compare-distance/expected.scene.json",
+      "a11y": "packages/visual-engine/fixture/number-line-compare-distance/expected.a11y.json",
+      "svg": "packages/visual-engine/fixture/number-line-compare-distance/expected.svg"
+    },
+    "title": "number-line-compare-distance"
   },
   {
     "id": "visual/number-line-identify-marked",

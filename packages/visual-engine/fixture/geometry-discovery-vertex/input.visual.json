@@ -1,0 +1,23 @@
+{
+  "type": "visual",
+  "version": "1.0.0",
+  "id": "geometry-discovery-vertex",
+  "purpose": {
+    "learningObjective": "Identify a vertex of a right-angle triangle",
+    "interactionGoal": "Select the right-angle vertex",
+    "reasoningMode": "identify"
+  },
+  "content": {
+    "kind": "geometry",
+    "components": [{
+      "id": "geo",
+      "type": "geometry",
+      "props": { "shape": "triangle", "showVertices": true, "highlightVertices": true }
+    }]
+  },
+  "accessibility": {
+    "label": "Triangle with vertices shown",
+    "description": "Select the right-angle vertex."
+  },
+  "interaction": { "mode": "identify", "actions": ["select", "focus", "deselect", "reset"] }
+}

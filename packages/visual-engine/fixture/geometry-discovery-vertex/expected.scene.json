@@ -1,0 +1,278 @@
+{
+  "nodes": [
+    {
+      "id": "geo",
+      "role": "group",
+      "kind": "geometry",
+      "children": [
+        {
+          "id": "geo-shape",
+          "role": "shape",
+          "kind": "shape",
+          "metadata": {
+            "shape": "triangle",
+            "sides": 3
+          },
+          "children": [
+            {
+              "id": "geo-shape-side-0",
+              "role": "diagram-part",
+              "kind": "line",
+              "children": []
+            },
+            {
+              "id": "geo-shape-side-1",
+              "role": "diagram-part",
+              "kind": "line",
+              "children": []
+            },
+            {
+              "id": "geo-shape-side-2",
+              "role": "diagram-part",
+              "kind": "line",
+              "children": []
+            },
+            {
+              "id": "geo-shape-vertex-0",
+              "role": "marker",
+              "kind": "circle",
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 396,
+                "y": 176,
+                "width": 8,
+                "height": 8
+              }
+            },
+            {
+              "id": "geo-shape-vertex-1",
+              "role": "marker",
+              "kind": "circle",
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 499.9230484541327,
+                "y": 355.9999999999999,
+                "width": 8,
+                "height": 8
+              }
+            },
+            {
+              "id": "geo-shape-vertex-2",
+              "role": "marker",
+              "kind": "circle",
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 292.07695154586736,
+                "y": 356,
+                "width": 8,
+                "height": 8
+              }
+            }
+          ],
+          "bounds": {
+            "x": 280,
+            "y": 180,
+            "width": 240,
+            "height": 240
+          }
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "geo": {
+      "id": "geo",
+      "role": "group",
+      "kind": "geometry",
+      "children": [
+        {
+          "id": "geo-shape",
+          "role": "shape",
+          "kind": "shape",
+          "metadata": {
+            "shape": "triangle",
+            "sides": 3
+          },
+          "children": [
+            {
+              "id": "geo-shape-side-0",
+              "role": "diagram-part",
+              "kind": "line",
+              "children": []
+            },
+            {
+              "id": "geo-shape-side-1",
+              "role": "diagram-part",
+              "kind": "line",
+              "children": []
+            },
+            {
+              "id": "geo-shape-side-2",
+              "role": "diagram-part",
+              "kind": "line",
+              "children": []
+            },
+            {
+              "id": "geo-shape-vertex-0",
+              "role": "marker",
+              "kind": "circle",
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 396,
+                "y": 176,
+                "width": 8,
+                "height": 8
+              }
+            },
+            {
+              "id": "geo-shape-vertex-1",
+              "role": "marker",
+              "kind": "circle",
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 499.9230484541327,
+                "y": 355.9999999999999,
+                "width": 8,
+                "height": 8
+              }
+            },
+            {
+              "id": "geo-shape-vertex-2",
+              "role": "marker",
+              "kind": "circle",
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 292.07695154586736,
+                "y": 356,
+                "width": 8,
+                "height": 8
+              }
+            }
+          ],
+          "bounds": {
+            "x": 280,
+            "y": 180,
+            "width": 240,
+            "height": 240
+          }
+        }
+      ]
+    },
+    "geo-shape": {
+      "id": "geo-shape",
+      "role": "shape",
+      "kind": "shape",
+      "metadata": {
+        "shape": "triangle",
+        "sides": 3
+      },
+      "children": [
+        {
+          "id": "geo-shape-side-0",
+          "role": "diagram-part",
+          "kind": "line",
+          "children": []
+        },
+        {
+          "id": "geo-shape-side-1",
+          "role": "diagram-part",
+          "kind": "line",
+          "children": []
+        },
+        {
+          "id": "geo-shape-side-2",
+          "role": "diagram-part",
+          "kind": "line",
+          "children": []
+        },
+        {
+          "id": "geo-shape-vertex-0",
+          "role": "marker",
+          "kind": "circle",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 396,
+            "y": 176,
+            "width": 8,
+            "height": 8
+          }
+        },
+        {
+          "id": "geo-shape-vertex-1",
+          "role": "marker",
+          "kind": "circle",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 499.9230484541327,
+            "y": 355.9999999999999,
+            "width": 8,
+            "height": 8
+          }
+        },
+        {
+          "id": "geo-shape-vertex-2",
+          "role": "marker",
+          "kind": "circle",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 292.07695154586736,
+            "y": 356,
+            "width": 8,
+            "height": 8
+          }
+        }
+      ],
+      "bounds": {
+        "x": 280,
+        "y": 180,
+        "width": 240,
+        "height": 240
+      }
+    }
+  }
+}

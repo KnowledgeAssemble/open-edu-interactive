@@ -76,7 +76,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `highlight: [3, 7]`; guided or discovery per lesson. |
 | **Fixture** | `number-line-compare-distance` (planned) |
 | **Host** | Compares selected id to authored answer. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `nl-place-value` — Place a value on the line (construct)
 
@@ -226,7 +226,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true`; discovery hands. |
 | **Fixture** | `clock-discovery-minute` (planned) |
 | **Host** | Target: minute hand id. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -286,7 +286,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true` + `highlightVertices`. |
 | **Fixture** | `geometry-discovery-vertex` (planned) |
 | **Host** | Vertex id check. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
