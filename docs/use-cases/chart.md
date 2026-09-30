@@ -124,7 +124,7 @@ Reference UX: trend over ordered categories or time. Requires ≥ 2 data points.
 | **Spec** | `kind: "line"`, one dimension, one measure, ≥ 2 rows |
 | **Fixture** | `packages/chart-engine/fixture/line/` |
 | **Host** | Discussion / open response |
-| **Status** | `planned` (reopened: acceptance "path visible between points" fails — `line/expected.svg` holds only `<circle>` markers, no `<polyline>`/`<path>` series code; re-flips in W-2.4/T11) |
+| **Status** | `done` (re-flipped: W-2.4 line series stroke — `<polyline id="series-line">` connects point markers in dimension order; markers stay selectable; `line/expected.svg` regenerated as a reviewed golden change; SPEC §3.1) |
 
 ### `ch-l2-identify-peak` — Which point is the maximum? (discovery)
 

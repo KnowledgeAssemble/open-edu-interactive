@@ -162,3 +162,27 @@ test.describe('Chart Engine — ch-x2 multi-measure e2e (W-2.3)', () => {
     expect(result.names).toContain('chart.data-point-selected');
   });
 });
+
+test.describe('Chart Engine — ch-l1 line series stroke e2e (W-2.4)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/line/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('path visible between points: polyline connects ≥2 points in dimension order; points remain selectable', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { svg(): string; dispatch(a: unknown): void; snapshot(): { selection: string[] } } }).__chartHarness;
+      const svg = h.svg();
+      const match = svg.match(/<polyline id="series-line"[^>]*points="([^"]+)"/);
+      h.dispatch({ type: 'select', target: { id: 'temp-point-row-jul' } });
+      return { points: match?.[1], selection: h.snapshot().selection, hasPolyline: Boolean(match) };
+    });
+    expect(result.hasPolyline).toBe(true);
+    const coords = result.points!.trim().split(/\s+/).map((p) => p.split(',').map(Number));
+    expect(coords.length).toBeGreaterThanOrEqual(4);
+    for (let i = 1; i < coords.length; i++) {
+      expect(coords[i]![0]!).toBeGreaterThan(coords[i - 1]![0]!);
+    }
+    expect(result.selection).toContain('temp-point-row-jul');
+  });
+});

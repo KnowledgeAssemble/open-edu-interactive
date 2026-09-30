@@ -35,7 +35,7 @@ describe('ChartEngine — render output has visible primitives (N1.7)', () => {
     expect(svg).toMatch(/data-oedu-role="selectable"/);
   });
 
-  it('line fixture SVG renders discrete point markers and labeled axes (no series stroke as of N1)', () => {
+  it('line fixture SVG renders a series stroke between point markers (W-2.4), markers stay selectable', () => {
     const spec = loadSpec('line');
     const engine = new ChartEngine();
     const inst = engine.instantiate(spec as never, stubHost(), 'chart-line-render');
@@ -43,9 +43,10 @@ describe('ChartEngine — render output has visible primitives (N1.7)', () => {
 
     const markers = svg.match(/<circle/g) ?? [];
     expect(markers.length).toBeGreaterThanOrEqual(4);
+    expect(svg).toMatch(/<polyline id="series-line"[^>]*data-oedu-role="series"/);
+    expect(svg).toMatch(/<polyline[^>]*points="[^"]+"/);
     expect(svg).toContain('<text');
     expect(svg).toMatch(/<text[^>]*data-oedu-role="label"[^>]*aria-label="[^"]+"/);
-    expect(svg).not.toContain('<polyline');
   });
 
   it('bar fixture SVG is not hollow (has meaningful content beyond wrappers)', () => {
