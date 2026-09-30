@@ -116,6 +116,7 @@
             "relationship": "transforms-to",
             "labels": [],
             "edgeId": "edge-magma-igneous",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -150,6 +151,7 @@
             "relationship": "weathers-into",
             "labels": [],
             "edgeId": "edge-igneous-sedimentary",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -184,6 +186,7 @@
             "relationship": "transforms-to",
             "labels": [],
             "edgeId": "edge-sedimentary-metamorphic",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -218,6 +221,7 @@
             "relationship": "transforms-to",
             "labels": [],
             "edgeId": "edge-metamorphic-magma",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -383,7 +387,8 @@
         "toNodeId": "igneous",
         "relationship": "transforms-to",
         "labels": [],
-        "edgeId": "edge-magma-igneous"
+        "edgeId": "edge-magma-igneous",
+        "gated": false
       },
       "children": []
     },
@@ -403,7 +408,8 @@
         "toNodeId": "sedimentary",
         "relationship": "weathers-into",
         "labels": [],
-        "edgeId": "edge-igneous-sedimentary"
+        "edgeId": "edge-igneous-sedimentary",
+        "gated": false
       },
       "children": []
     },
@@ -423,7 +429,8 @@
         "toNodeId": "metamorphic",
         "relationship": "transforms-to",
         "labels": [],
-        "edgeId": "edge-sedimentary-metamorphic"
+        "edgeId": "edge-sedimentary-metamorphic",
+        "gated": false
       },
       "children": []
     },
@@ -443,7 +450,8 @@
         "toNodeId": "magma",
         "relationship": "transforms-to",
         "labels": [],
-        "edgeId": "edge-metamorphic-magma"
+        "edgeId": "edge-metamorphic-magma",
+        "gated": false
       },
       "children": []
     },
@@ -534,7 +542,8 @@
             "toNodeId": "igneous",
             "relationship": "transforms-to",
             "labels": [],
-            "edgeId": "edge-magma-igneous"
+            "edgeId": "edge-magma-igneous",
+            "gated": false
           },
           "children": []
         },
@@ -554,7 +563,8 @@
             "toNodeId": "sedimentary",
             "relationship": "weathers-into",
             "labels": [],
-            "edgeId": "edge-igneous-sedimentary"
+            "edgeId": "edge-igneous-sedimentary",
+            "gated": false
           },
           "children": []
         },
@@ -574,7 +584,8 @@
             "toNodeId": "metamorphic",
             "relationship": "transforms-to",
             "labels": [],
-            "edgeId": "edge-sedimentary-metamorphic"
+            "edgeId": "edge-sedimentary-metamorphic",
+            "gated": false
           },
           "children": []
         },
@@ -594,7 +605,8 @@
             "toNodeId": "magma",
             "relationship": "transforms-to",
             "labels": [],
-            "edgeId": "edge-metamorphic-magma"
+            "edgeId": "edge-metamorphic-magma",
+            "gated": false
           },
           "children": []
         }

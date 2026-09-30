@@ -141,6 +141,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-precipitation-runoff",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -175,6 +176,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-precipitation-groundwater",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -209,6 +211,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-groundwater-river",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -243,6 +246,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-runoff-river",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -277,6 +281,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-river-sea",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -478,7 +483,8 @@
         "toNodeId": "runoff",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-precipitation-runoff"
+        "edgeId": "edge-precipitation-runoff",
+        "gated": false
       },
       "children": []
     },
@@ -498,7 +504,8 @@
         "toNodeId": "groundwater",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-precipitation-groundwater"
+        "edgeId": "edge-precipitation-groundwater",
+        "gated": false
       },
       "children": []
     },
@@ -518,7 +525,8 @@
         "toNodeId": "river",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-groundwater-river"
+        "edgeId": "edge-groundwater-river",
+        "gated": false
       },
       "children": []
     },
@@ -538,7 +546,8 @@
         "toNodeId": "river",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-runoff-river"
+        "edgeId": "edge-runoff-river",
+        "gated": false
       },
       "children": []
     },
@@ -558,7 +567,8 @@
         "toNodeId": "sea",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-river-sea"
+        "edgeId": "edge-river-sea",
+        "gated": false
       },
       "children": []
     },
@@ -667,7 +677,8 @@
             "toNodeId": "runoff",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-precipitation-runoff"
+            "edgeId": "edge-precipitation-runoff",
+            "gated": false
           },
           "children": []
         },
@@ -687,7 +698,8 @@
             "toNodeId": "groundwater",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-precipitation-groundwater"
+            "edgeId": "edge-precipitation-groundwater",
+            "gated": false
           },
           "children": []
         },
@@ -707,7 +719,8 @@
             "toNodeId": "river",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-groundwater-river"
+            "edgeId": "edge-groundwater-river",
+            "gated": false
           },
           "children": []
         },
@@ -727,7 +740,8 @@
             "toNodeId": "river",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-runoff-river"
+            "edgeId": "edge-runoff-river",
+            "gated": false
           },
           "children": []
         },
@@ -747,7 +761,8 @@
             "toNodeId": "sea",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-river-sea"
+            "edgeId": "edge-river-sea",
+            "gated": false
           },
           "children": []
         }

@@ -95,6 +95,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-root-child1",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -129,6 +130,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-root-child2",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -266,7 +268,8 @@
         "toNodeId": "child1",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-root-child1"
+        "edgeId": "edge-root-child1",
+        "gated": false
       },
       "children": []
     },
@@ -286,7 +289,8 @@
         "toNodeId": "child2",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-root-child2"
+        "edgeId": "edge-root-child2",
+        "gated": false
       },
       "children": []
     },
@@ -363,7 +367,8 @@
             "toNodeId": "child1",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-root-child1"
+            "edgeId": "edge-root-child1",
+            "gated": false
           },
           "children": []
         },
@@ -383,7 +388,8 @@
             "toNodeId": "child2",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-root-child2"
+            "edgeId": "edge-root-child2",
+            "gated": false
           },
           "children": []
         }

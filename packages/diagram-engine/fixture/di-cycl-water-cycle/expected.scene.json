@@ -116,6 +116,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-evaporation-condensation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -150,6 +151,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-condensation-precipitation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -184,6 +186,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-precipitation-collection",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -218,6 +221,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-collection-evaporation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -383,7 +387,8 @@
         "toNodeId": "condensation",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-evaporation-condensation"
+        "edgeId": "edge-evaporation-condensation",
+        "gated": false
       },
       "children": []
     },
@@ -403,7 +408,8 @@
         "toNodeId": "precipitation",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-condensation-precipitation"
+        "edgeId": "edge-condensation-precipitation",
+        "gated": false
       },
       "children": []
     },
@@ -423,7 +429,8 @@
         "toNodeId": "collection",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-precipitation-collection"
+        "edgeId": "edge-precipitation-collection",
+        "gated": false
       },
       "children": []
     },
@@ -443,7 +450,8 @@
         "toNodeId": "evaporation",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-collection-evaporation"
+        "edgeId": "edge-collection-evaporation",
+        "gated": false
       },
       "children": []
     },
@@ -534,7 +542,8 @@
             "toNodeId": "condensation",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-evaporation-condensation"
+            "edgeId": "edge-evaporation-condensation",
+            "gated": false
           },
           "children": []
         },
@@ -554,7 +563,8 @@
             "toNodeId": "precipitation",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-condensation-precipitation"
+            "edgeId": "edge-condensation-precipitation",
+            "gated": false
           },
           "children": []
         },
@@ -574,7 +584,8 @@
             "toNodeId": "collection",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-precipitation-collection"
+            "edgeId": "edge-precipitation-collection",
+            "gated": false
           },
           "children": []
         },
@@ -594,7 +605,8 @@
             "toNodeId": "evaporation",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-collection-evaporation"
+            "edgeId": "edge-collection-evaporation",
+            "gated": false
           },
           "children": []
         }

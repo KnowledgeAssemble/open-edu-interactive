@@ -102,6 +102,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-course-old-course-new",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -136,6 +137,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-course-new-delta",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -287,7 +289,8 @@
         "toNodeId": "course-new",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-course-old-course-new"
+        "edgeId": "edge-course-old-course-new",
+        "gated": false
       },
       "children": []
     },
@@ -307,7 +310,8 @@
         "toNodeId": "delta",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-course-new-delta"
+        "edgeId": "edge-course-new-delta",
+        "gated": false
       },
       "children": []
     },
@@ -391,7 +395,8 @@
             "toNodeId": "course-new",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-course-old-course-new"
+            "edgeId": "edge-course-old-course-new",
+            "gated": false
           },
           "children": []
         },
@@ -411,7 +416,8 @@
             "toNodeId": "delta",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-course-new-delta"
+            "edgeId": "edge-course-new-delta",
+            "gated": false
           },
           "children": []
         }

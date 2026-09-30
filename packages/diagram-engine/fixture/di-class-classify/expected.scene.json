@@ -143,6 +143,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-animals-vertebrates",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -177,6 +178,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-animals-invertebrates",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -211,6 +213,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-vertebrates-mammals",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -245,6 +248,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-vertebrates-birds",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -450,7 +454,8 @@
         "toNodeId": "vertebrates",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-animals-vertebrates"
+        "edgeId": "edge-animals-vertebrates",
+        "gated": false
       },
       "children": []
     },
@@ -470,7 +475,8 @@
         "toNodeId": "invertebrates",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-animals-invertebrates"
+        "edgeId": "edge-animals-invertebrates",
+        "gated": false
       },
       "children": []
     },
@@ -490,7 +496,8 @@
         "toNodeId": "mammals",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-vertebrates-mammals"
+        "edgeId": "edge-vertebrates-mammals",
+        "gated": false
       },
       "children": []
     },
@@ -510,7 +517,8 @@
         "toNodeId": "birds",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-vertebrates-birds"
+        "edgeId": "edge-vertebrates-birds",
+        "gated": false
       },
       "children": []
     },
@@ -621,7 +629,8 @@
             "toNodeId": "vertebrates",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-animals-vertebrates"
+            "edgeId": "edge-animals-vertebrates",
+            "gated": false
           },
           "children": []
         },
@@ -641,7 +650,8 @@
             "toNodeId": "invertebrates",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-animals-invertebrates"
+            "edgeId": "edge-animals-invertebrates",
+            "gated": false
           },
           "children": []
         },
@@ -661,7 +671,8 @@
             "toNodeId": "mammals",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-vertebrates-mammals"
+            "edgeId": "edge-vertebrates-mammals",
+            "gated": false
           },
           "children": []
         },
@@ -681,7 +692,8 @@
             "toNodeId": "birds",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-vertebrates-birds"
+            "edgeId": "edge-vertebrates-birds",
+            "gated": false
           },
           "children": []
         }

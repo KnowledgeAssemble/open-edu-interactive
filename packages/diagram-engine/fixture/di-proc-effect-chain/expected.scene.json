@@ -129,6 +129,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-monsoon-crop",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -163,6 +164,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-crop-price",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -197,6 +199,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-monsoon-stock",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -388,7 +391,8 @@
         "toNodeId": "crop",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-monsoon-crop"
+        "edgeId": "edge-monsoon-crop",
+        "gated": false
       },
       "children": []
     },
@@ -408,7 +412,8 @@
         "toNodeId": "price",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-crop-price"
+        "edgeId": "edge-crop-price",
+        "gated": false
       },
       "children": []
     },
@@ -428,7 +433,8 @@
         "toNodeId": "stock",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-monsoon-stock"
+        "edgeId": "edge-monsoon-stock",
+        "gated": false
       },
       "children": []
     },
@@ -532,7 +538,8 @@
             "toNodeId": "crop",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-monsoon-crop"
+            "edgeId": "edge-monsoon-crop",
+            "gated": false
           },
           "children": []
         },
@@ -552,7 +559,8 @@
             "toNodeId": "price",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-crop-price"
+            "edgeId": "edge-crop-price",
+            "gated": false
           },
           "children": []
         },
@@ -572,7 +580,8 @@
             "toNodeId": "stock",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-monsoon-stock"
+            "edgeId": "edge-monsoon-stock",
+            "gated": false
           },
           "children": []
         }

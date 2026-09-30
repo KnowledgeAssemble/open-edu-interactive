@@ -176,6 +176,20 @@ export const catalog = [
     "title": "Effects of deforestation"
   },
   {
+    "id": "diagram/di-cause-relationship-gate",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cause-relationship-gate",
+    "specPath": "packages/diagram-engine/fixture/di-cause-relationship-gate/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cause-relationship-gate/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cause-relationship-gate/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cause-relationship-gate/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cause-relationship-gate/expected.svg"
+    },
+    "title": "Rainfall and soil erosion (gated)"
+  },
+  {
     "id": "diagram/di-cause-relationship-name",
     "kind": "engine",
     "engine": "diagram",

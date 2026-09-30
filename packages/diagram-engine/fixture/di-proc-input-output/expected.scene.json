@@ -162,6 +162,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-sunlight-photosynthesis",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -196,6 +197,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-water-photosynthesis",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -230,6 +232,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-co2-photosynthesis",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -264,6 +267,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-photosynthesis-glucose",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -298,6 +302,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-photosynthesis-oxygen",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -527,7 +532,8 @@
         "toNodeId": "photosynthesis",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-sunlight-photosynthesis"
+        "edgeId": "edge-sunlight-photosynthesis",
+        "gated": false
       },
       "children": []
     },
@@ -547,7 +553,8 @@
         "toNodeId": "photosynthesis",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-water-photosynthesis"
+        "edgeId": "edge-water-photosynthesis",
+        "gated": false
       },
       "children": []
     },
@@ -567,7 +574,8 @@
         "toNodeId": "photosynthesis",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-co2-photosynthesis"
+        "edgeId": "edge-co2-photosynthesis",
+        "gated": false
       },
       "children": []
     },
@@ -587,7 +595,8 @@
         "toNodeId": "glucose",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-photosynthesis-glucose"
+        "edgeId": "edge-photosynthesis-glucose",
+        "gated": false
       },
       "children": []
     },
@@ -607,7 +616,8 @@
         "toNodeId": "oxygen",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-photosynthesis-oxygen"
+        "edgeId": "edge-photosynthesis-oxygen",
+        "gated": false
       },
       "children": []
     },
@@ -730,7 +740,8 @@
             "toNodeId": "photosynthesis",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-sunlight-photosynthesis"
+            "edgeId": "edge-sunlight-photosynthesis",
+            "gated": false
           },
           "children": []
         },
@@ -750,7 +761,8 @@
             "toNodeId": "photosynthesis",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-water-photosynthesis"
+            "edgeId": "edge-water-photosynthesis",
+            "gated": false
           },
           "children": []
         },
@@ -770,7 +782,8 @@
             "toNodeId": "photosynthesis",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-co2-photosynthesis"
+            "edgeId": "edge-co2-photosynthesis",
+            "gated": false
           },
           "children": []
         },
@@ -790,7 +803,8 @@
             "toNodeId": "glucose",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-photosynthesis-glucose"
+            "edgeId": "edge-photosynthesis-glucose",
+            "gated": false
           },
           "children": []
         },
@@ -810,7 +824,8 @@
             "toNodeId": "oxygen",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-photosynthesis-oxygen"
+            "edgeId": "edge-photosynthesis-oxygen",
+            "gated": false
           },
           "children": []
         }

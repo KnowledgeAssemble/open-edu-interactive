@@ -93,6 +93,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-cause-event",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -127,6 +128,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-event-outcome",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -260,7 +262,8 @@
         "toNodeId": "event",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-cause-event"
+        "edgeId": "edge-cause-event",
+        "gated": false
       },
       "children": []
     },
@@ -280,7 +283,8 @@
         "toNodeId": "outcome",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-event-outcome"
+        "edgeId": "edge-event-outcome",
+        "gated": false
       },
       "children": []
     },
@@ -355,7 +359,8 @@
             "toNodeId": "event",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-cause-event"
+            "edgeId": "edge-cause-event",
+            "gated": false
           },
           "children": []
         },
@@ -375,7 +380,8 @@
             "toNodeId": "outcome",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-event-outcome"
+            "edgeId": "edge-event-outcome",
+            "gated": false
           },
           "children": []
         }

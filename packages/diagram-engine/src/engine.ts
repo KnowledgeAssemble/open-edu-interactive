@@ -53,6 +53,7 @@ function render(
   label?: string,
   description?: string,
   filterCategories?: string[],
+  revealedEdges?: string[],
 ): { scene: Scene; svgResult: SvgResult } {
   const s = buildScene(content);
   const laidOut = layout(s, ctx, spec.layout?.type ?? defaultLayoutType(content.kind));
@@ -66,6 +67,17 @@ function render(
         }
       });
     }
+  }
+  const revealed = new Set(revealedEdges ?? []);
+  for (const node of laidOut.nodes) {
+    walkHide(node, (n) => {
+      if (n.kind === 'edge' && n.metadata?.gated === true && n.metadata) {
+        const edgeId = (n.metadata.edgeId as string) ?? n.id;
+        if (!revealed.has(edgeId)) {
+          n.metadata = { ...n.metadata, relationship: undefined, gatedLabel: 'hidden' };
+        }
+      }
+    });
   }
   const svgResult = svgFrom(laidOut, ctx, label, description);
   return { scene: laidOut, svgResult };
@@ -157,13 +169,14 @@ export class DiagramEngine implements Engine {
     const listeners = new Set<Parameters<EngineInstance['subscribe']>[0]>();
 
     let state: EngineState = { ...initialState(instanceId, this.type), phase: 'running' };
+    const revealedEdges: string[] = [];
 
     let laidOut: Scene = { nodes: [], semantics: {} };
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
 
     function recompute(): void {
     const filter = state.filter as string[] | undefined;
-    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter);
+    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter, revealedEdges);
     laidOut = result.scene;
     svgResult = result.svgResult;
   }
@@ -271,6 +284,13 @@ export class DiagramEngine implements Engine {
             const nsEvent = log.append('diagram.filter-applied', instanceId, { categories }, action);
             emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
           }
+        } else if (action.type === 'answer') {
+          const targetId = action.target?.id;
+          if (targetId && !revealedEdges.includes(targetId)) {
+            revealedEdges.push(targetId);
+          }
+          state = { ...state, lastAction: action };
+          recompute();
         }
 
         if (entityPayload) {
@@ -318,6 +338,7 @@ export class DiagramEngine implements Engine {
           scene: laidOut,
           svgResult,
           alternative: svgResult.alternative,
+          revealedEdges: [...revealedEdges],
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {

@@ -715,7 +715,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-relationship-gate` *(planned)* |
 | **New capability** | `relationship-gate` *(planned)* |
 | **Host** | Recall prompts + reveal copy. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

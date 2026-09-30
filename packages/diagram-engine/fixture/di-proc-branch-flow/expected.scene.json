@@ -139,6 +139,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-polling-counting",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -173,6 +174,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-counting-win",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -207,6 +209,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-counting-recount",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -241,6 +244,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-recount-runoff",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -438,7 +442,8 @@
         "toNodeId": "counting",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-polling-counting"
+        "edgeId": "edge-polling-counting",
+        "gated": false
       },
       "children": []
     },
@@ -458,7 +463,8 @@
         "toNodeId": "win",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-counting-win"
+        "edgeId": "edge-counting-win",
+        "gated": false
       },
       "children": []
     },
@@ -478,7 +484,8 @@
         "toNodeId": "recount",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-counting-recount"
+        "edgeId": "edge-counting-recount",
+        "gated": false
       },
       "children": []
     },
@@ -498,7 +505,8 @@
         "toNodeId": "runoff",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-recount-runoff"
+        "edgeId": "edge-recount-runoff",
+        "gated": false
       },
       "children": []
     },
@@ -605,7 +613,8 @@
             "toNodeId": "counting",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-polling-counting"
+            "edgeId": "edge-polling-counting",
+            "gated": false
           },
           "children": []
         },
@@ -625,7 +634,8 @@
             "toNodeId": "win",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-counting-win"
+            "edgeId": "edge-counting-win",
+            "gated": false
           },
           "children": []
         },
@@ -645,7 +655,8 @@
             "toNodeId": "recount",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-counting-recount"
+            "edgeId": "edge-counting-recount",
+            "gated": false
           },
           "children": []
         },
@@ -665,7 +676,8 @@
             "toNodeId": "runoff",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-recount-runoff"
+            "edgeId": "edge-recount-runoff",
+            "gated": false
           },
           "children": []
         }

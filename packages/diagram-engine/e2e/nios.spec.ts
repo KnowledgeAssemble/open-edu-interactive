@@ -47,6 +47,7 @@ const FIXTURES = {
   'di-proc-effect-chain': 'packages/diagram-engine/fixture/di-proc-effect-chain/input.diagram.json',
   'di-class-urban-hierarchy': 'packages/diagram-engine/fixture/di-class-urban-hierarchy/input.diagram.json',
   'di-sys-city-system': 'packages/diagram-engine/fixture/di-sys-city-system/input.diagram.json',
+  'di-cause-relationship-gate': 'packages/diagram-engine/fixture/di-cause-relationship-gate/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -528,5 +529,30 @@ test.describe('Diagram W-3.5 — filter-nodes (di-proc-5, di-class-5, di-sys-4)'
       return { visibleNodes };
     });
     expect(result.visibleNodes).toEqual(['node-waste', 'node-recycle']);
+  });
+});
+
+test.describe('Diagram W-3.6 — relationship-gate (di-cause-6)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-cause-relationship-gate']);
+  });
+
+  test('edge relationship hidden initially; answer reveals it; follow afterwards', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const svgInitial = h.svg();
+      const hiddenInitial = svgInitial.includes('data-oedu-relationship="influences"') === false;
+      h.dispatch({ type: 'answer', target: { id: 'rain-erodes' } });
+      const snap = h.snapshot() as unknown as { revealedEdges: string[] };
+      const svgRevealed = h.svg();
+      const before = h.events().length;
+      h.dispatch({ type: 'follow', target: { id: 'rain-erodes' } });
+      const names = h.events().slice(before).map((e) => e.name);
+      return { hiddenInitial, revealedEdges: snap.revealedEdges, revealedRelationship: svgRevealed.includes('data-oedu-relationship="influences"'), followed: names.includes('diagram.relationship-followed') };
+    });
+    expect(result.hiddenInitial).toBe(true);
+    expect(result.revealedEdges).toContain('rain-erodes');
+    expect(result.revealedRelationship).toBe(true);
+    expect(result.followed).toBe(true);
   });
 });

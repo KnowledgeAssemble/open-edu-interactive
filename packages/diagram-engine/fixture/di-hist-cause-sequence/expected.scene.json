@@ -99,6 +99,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-long-cause-trigger",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -133,6 +134,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-trigger-outcome",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -278,7 +280,8 @@
         "toNodeId": "trigger",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-long-cause-trigger"
+        "edgeId": "edge-long-cause-trigger",
+        "gated": false
       },
       "children": []
     },
@@ -298,7 +301,8 @@
         "toNodeId": "outcome",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-trigger-outcome"
+        "edgeId": "edge-trigger-outcome",
+        "gated": false
       },
       "children": []
     },
@@ -379,7 +383,8 @@
             "toNodeId": "trigger",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-long-cause-trigger"
+            "edgeId": "edge-long-cause-trigger",
+            "gated": false
           },
           "children": []
         },
@@ -399,7 +404,8 @@
             "toNodeId": "outcome",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-trigger-outcome"
+            "edgeId": "edge-trigger-outcome",
+            "gated": false
           },
           "children": []
         }

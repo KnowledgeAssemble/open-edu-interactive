@@ -116,6 +116,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-egg-tadpole",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -150,6 +151,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-tadpole-froglet",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -184,6 +186,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-froglet-frog",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -218,6 +221,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-frog-egg",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -383,7 +387,8 @@
         "toNodeId": "tadpole",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-egg-tadpole"
+        "edgeId": "edge-egg-tadpole",
+        "gated": false
       },
       "children": []
     },
@@ -403,7 +408,8 @@
         "toNodeId": "froglet",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-tadpole-froglet"
+        "edgeId": "edge-tadpole-froglet",
+        "gated": false
       },
       "children": []
     },
@@ -423,7 +429,8 @@
         "toNodeId": "frog",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-froglet-frog"
+        "edgeId": "edge-froglet-frog",
+        "gated": false
       },
       "children": []
     },
@@ -443,7 +450,8 @@
         "toNodeId": "egg",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-frog-egg"
+        "edgeId": "edge-frog-egg",
+        "gated": false
       },
       "children": []
     },
@@ -534,7 +542,8 @@
             "toNodeId": "tadpole",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-egg-tadpole"
+            "edgeId": "edge-egg-tadpole",
+            "gated": false
           },
           "children": []
         },
@@ -554,7 +563,8 @@
             "toNodeId": "froglet",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-tadpole-froglet"
+            "edgeId": "edge-tadpole-froglet",
+            "gated": false
           },
           "children": []
         },
@@ -574,7 +584,8 @@
             "toNodeId": "frog",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-froglet-frog"
+            "edgeId": "edge-froglet-frog",
+            "gated": false
           },
           "children": []
         },
@@ -594,7 +605,8 @@
             "toNodeId": "egg",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-frog-egg"
+            "edgeId": "edge-frog-egg",
+            "gated": false
           },
           "children": []
         }

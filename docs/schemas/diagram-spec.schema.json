@@ -153,6 +153,9 @@
               },
               "interactive": {
                 "type": "boolean"
+              },
+              "gated": {
+                "type": "boolean"
               }
             },
             "required": [

@@ -139,6 +139,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-sun-grass",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -173,6 +174,7 @@
             "relationship": "feeds-on",
             "labels": [],
             "edgeId": "edge-grass-rabbit",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -207,6 +209,7 @@
             "relationship": "feeds-on",
             "labels": [],
             "edgeId": "edge-rabbit-fox",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -241,6 +244,7 @@
             "relationship": "feeds-on",
             "labels": [],
             "edgeId": "edge-grass-decomposer",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -275,6 +279,7 @@
             "relationship": "produces",
             "labels": [],
             "edgeId": "edge-decomposer-grass",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -472,7 +477,8 @@
         "toNodeId": "grass",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-sun-grass"
+        "edgeId": "edge-sun-grass",
+        "gated": false
       },
       "children": []
     },
@@ -492,7 +498,8 @@
         "toNodeId": "rabbit",
         "relationship": "feeds-on",
         "labels": [],
-        "edgeId": "edge-grass-rabbit"
+        "edgeId": "edge-grass-rabbit",
+        "gated": false
       },
       "children": []
     },
@@ -512,7 +519,8 @@
         "toNodeId": "fox",
         "relationship": "feeds-on",
         "labels": [],
-        "edgeId": "edge-rabbit-fox"
+        "edgeId": "edge-rabbit-fox",
+        "gated": false
       },
       "children": []
     },
@@ -532,7 +540,8 @@
         "toNodeId": "decomposer",
         "relationship": "feeds-on",
         "labels": [],
-        "edgeId": "edge-grass-decomposer"
+        "edgeId": "edge-grass-decomposer",
+        "gated": false
       },
       "children": []
     },
@@ -552,7 +561,8 @@
         "toNodeId": "grass",
         "relationship": "produces",
         "labels": [],
-        "edgeId": "edge-decomposer-grass"
+        "edgeId": "edge-decomposer-grass",
+        "gated": false
       },
       "children": []
     },
@@ -659,7 +669,8 @@
             "toNodeId": "grass",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-sun-grass"
+            "edgeId": "edge-sun-grass",
+            "gated": false
           },
           "children": []
         },
@@ -679,7 +690,8 @@
             "toNodeId": "rabbit",
             "relationship": "feeds-on",
             "labels": [],
-            "edgeId": "edge-grass-rabbit"
+            "edgeId": "edge-grass-rabbit",
+            "gated": false
           },
           "children": []
         },
@@ -699,7 +711,8 @@
             "toNodeId": "fox",
             "relationship": "feeds-on",
             "labels": [],
-            "edgeId": "edge-rabbit-fox"
+            "edgeId": "edge-rabbit-fox",
+            "gated": false
           },
           "children": []
         },
@@ -719,7 +732,8 @@
             "toNodeId": "decomposer",
             "relationship": "feeds-on",
             "labels": [],
-            "edgeId": "edge-grass-decomposer"
+            "edgeId": "edge-grass-decomposer",
+            "gated": false
           },
           "children": []
         },
@@ -739,7 +753,8 @@
             "toNodeId": "grass",
             "relationship": "produces",
             "labels": [],
-            "edgeId": "edge-decomposer-grass"
+            "edgeId": "edge-decomposer-grass",
+            "gated": false
           },
           "children": []
         }

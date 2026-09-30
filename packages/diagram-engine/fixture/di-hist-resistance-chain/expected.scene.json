@@ -102,6 +102,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-movement-1-movement-2",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -136,6 +137,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-movement-2-movement-3",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -287,7 +289,8 @@
         "toNodeId": "movement-2",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-movement-1-movement-2"
+        "edgeId": "edge-movement-1-movement-2",
+        "gated": false
       },
       "children": []
     },
@@ -307,7 +310,8 @@
         "toNodeId": "movement-3",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-movement-2-movement-3"
+        "edgeId": "edge-movement-2-movement-3",
+        "gated": false
       },
       "children": []
     },
@@ -391,7 +395,8 @@
             "toNodeId": "movement-2",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-movement-1-movement-2"
+            "edgeId": "edge-movement-1-movement-2",
+            "gated": false
           },
           "children": []
         },
@@ -411,7 +416,8 @@
             "toNodeId": "movement-3",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-movement-2-movement-3"
+            "edgeId": "edge-movement-2-movement-3",
+            "gated": false
           },
           "children": []
         }

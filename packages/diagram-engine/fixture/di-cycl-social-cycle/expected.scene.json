@@ -93,6 +93,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-demand-prices",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -127,6 +128,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-prices-production",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -161,6 +163,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-production-demand",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -294,7 +297,8 @@
         "toNodeId": "prices",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-demand-prices"
+        "edgeId": "edge-demand-prices",
+        "gated": false
       },
       "children": []
     },
@@ -314,7 +318,8 @@
         "toNodeId": "production",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-prices-production"
+        "edgeId": "edge-prices-production",
+        "gated": false
       },
       "children": []
     },
@@ -334,7 +339,8 @@
         "toNodeId": "demand",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-production-demand"
+        "edgeId": "edge-production-demand",
+        "gated": false
       },
       "children": []
     },
@@ -409,7 +415,8 @@
             "toNodeId": "prices",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-demand-prices"
+            "edgeId": "edge-demand-prices",
+            "gated": false
           },
           "children": []
         },
@@ -429,7 +436,8 @@
             "toNodeId": "production",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-prices-production"
+            "edgeId": "edge-prices-production",
+            "gated": false
           },
           "children": []
         },
@@ -449,7 +457,8 @@
             "toNodeId": "demand",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-production-demand"
+            "edgeId": "edge-production-demand",
+            "gated": false
           },
           "children": []
         }

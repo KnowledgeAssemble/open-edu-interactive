@@ -116,6 +116,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-mitigation-preparedness",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -150,6 +151,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-preparedness-response",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -184,6 +186,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-response-recovery",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -218,6 +221,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-recovery-mitigation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -383,7 +387,8 @@
         "toNodeId": "preparedness",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-mitigation-preparedness"
+        "edgeId": "edge-mitigation-preparedness",
+        "gated": false
       },
       "children": []
     },
@@ -403,7 +408,8 @@
         "toNodeId": "response",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-preparedness-response"
+        "edgeId": "edge-preparedness-response",
+        "gated": false
       },
       "children": []
     },
@@ -423,7 +429,8 @@
         "toNodeId": "recovery",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-response-recovery"
+        "edgeId": "edge-response-recovery",
+        "gated": false
       },
       "children": []
     },
@@ -443,7 +450,8 @@
         "toNodeId": "mitigation",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-recovery-mitigation"
+        "edgeId": "edge-recovery-mitigation",
+        "gated": false
       },
       "children": []
     },
@@ -534,7 +542,8 @@
             "toNodeId": "preparedness",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-mitigation-preparedness"
+            "edgeId": "edge-mitigation-preparedness",
+            "gated": false
           },
           "children": []
         },
@@ -554,7 +563,8 @@
             "toNodeId": "response",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-preparedness-response"
+            "edgeId": "edge-preparedness-response",
+            "gated": false
           },
           "children": []
         },
@@ -574,7 +584,8 @@
             "toNodeId": "recovery",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-response-recovery"
+            "edgeId": "edge-response-recovery",
+            "gated": false
           },
           "children": []
         },
@@ -594,7 +605,8 @@
             "toNodeId": "mitigation",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-recovery-mitigation"
+            "edgeId": "edge-recovery-mitigation",
+            "gated": false
           },
           "children": []
         }

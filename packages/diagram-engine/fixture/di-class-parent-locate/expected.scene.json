@@ -122,6 +122,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-state-district",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -156,6 +157,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-district-tehsil",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -190,6 +192,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-tehsil-village",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -367,7 +370,8 @@
         "toNodeId": "district",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-state-district"
+        "edgeId": "edge-state-district",
+        "gated": false
       },
       "children": []
     },
@@ -387,7 +391,8 @@
         "toNodeId": "tehsil",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-district-tehsil"
+        "edgeId": "edge-district-tehsil",
+        "gated": false
       },
       "children": []
     },
@@ -407,7 +412,8 @@
         "toNodeId": "village",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-tehsil-village"
+        "edgeId": "edge-tehsil-village",
+        "gated": false
       },
       "children": []
     },
@@ -504,7 +510,8 @@
             "toNodeId": "district",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-state-district"
+            "edgeId": "edge-state-district",
+            "gated": false
           },
           "children": []
         },
@@ -524,7 +531,8 @@
             "toNodeId": "tehsil",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-district-tehsil"
+            "edgeId": "edge-district-tehsil",
+            "gated": false
           },
           "children": []
         },
@@ -544,7 +552,8 @@
             "toNodeId": "village",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-tehsil-village"
+            "edgeId": "edge-tehsil-village",
+            "gated": false
           },
           "children": []
         }

@@ -177,6 +177,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-food-city",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -211,6 +212,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-energy-city",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -245,6 +247,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-water-city",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -279,6 +282,7 @@
             "relationship": "produces",
             "labels": [],
             "edgeId": "edge-city-waste",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -313,6 +317,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-waste-recycle",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -347,6 +352,7 @@
             "relationship": "produces",
             "labels": [],
             "edgeId": "edge-recycle-city",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -606,7 +612,8 @@
         "toNodeId": "city",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-food-city"
+        "edgeId": "edge-food-city",
+        "gated": false
       },
       "children": []
     },
@@ -626,7 +633,8 @@
         "toNodeId": "city",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-energy-city"
+        "edgeId": "edge-energy-city",
+        "gated": false
       },
       "children": []
     },
@@ -646,7 +654,8 @@
         "toNodeId": "city",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-water-city"
+        "edgeId": "edge-water-city",
+        "gated": false
       },
       "children": []
     },
@@ -666,7 +675,8 @@
         "toNodeId": "waste",
         "relationship": "produces",
         "labels": [],
-        "edgeId": "edge-city-waste"
+        "edgeId": "edge-city-waste",
+        "gated": false
       },
       "children": []
     },
@@ -686,7 +696,8 @@
         "toNodeId": "recycle",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-waste-recycle"
+        "edgeId": "edge-waste-recycle",
+        "gated": false
       },
       "children": []
     },
@@ -706,7 +717,8 @@
         "toNodeId": "city",
         "relationship": "produces",
         "labels": [],
-        "edgeId": "edge-recycle-city"
+        "edgeId": "edge-recycle-city",
+        "gated": false
       },
       "children": []
     },
@@ -844,7 +856,8 @@
             "toNodeId": "city",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-food-city"
+            "edgeId": "edge-food-city",
+            "gated": false
           },
           "children": []
         },
@@ -864,7 +877,8 @@
             "toNodeId": "city",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-energy-city"
+            "edgeId": "edge-energy-city",
+            "gated": false
           },
           "children": []
         },
@@ -884,7 +898,8 @@
             "toNodeId": "city",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-water-city"
+            "edgeId": "edge-water-city",
+            "gated": false
           },
           "children": []
         },
@@ -904,7 +919,8 @@
             "toNodeId": "waste",
             "relationship": "produces",
             "labels": [],
-            "edgeId": "edge-city-waste"
+            "edgeId": "edge-city-waste",
+            "gated": false
           },
           "children": []
         },
@@ -924,7 +940,8 @@
             "toNodeId": "recycle",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-waste-recycle"
+            "edgeId": "edge-waste-recycle",
+            "gated": false
           },
           "children": []
         },
@@ -944,7 +961,8 @@
             "toNodeId": "city",
             "relationship": "produces",
             "labels": [],
-            "edgeId": "edge-recycle-city"
+            "edgeId": "edge-recycle-city",
+            "gated": false
           },
           "children": []
         }

@@ -102,6 +102,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-migration-settlement",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -136,6 +137,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-settlement-boundary",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -287,7 +289,8 @@
         "toNodeId": "settlement",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-migration-settlement"
+        "edgeId": "edge-migration-settlement",
+        "gated": false
       },
       "children": []
     },
@@ -307,7 +310,8 @@
         "toNodeId": "boundary",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-settlement-boundary"
+        "edgeId": "edge-settlement-boundary",
+        "gated": false
       },
       "children": []
     },
@@ -391,7 +395,8 @@
             "toNodeId": "settlement",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-migration-settlement"
+            "edgeId": "edge-migration-settlement",
+            "gated": false
           },
           "children": []
         },
@@ -411,7 +416,8 @@
             "toNodeId": "boundary",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-settlement-boundary"
+            "edgeId": "edge-settlement-boundary",
+            "gated": false
           },
           "children": []
         }

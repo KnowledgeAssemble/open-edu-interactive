@@ -91,6 +91,7 @@ export function buildScene(content: DiagramContent): Scene {
         relationship: entry.relationship,
         labels: entry.labels ?? [],
         edgeId,
+        gated: entry.gated === true,
       },
       children: [],
     };

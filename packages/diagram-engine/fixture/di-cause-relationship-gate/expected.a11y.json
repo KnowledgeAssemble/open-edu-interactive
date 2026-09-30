@@ -1,0 +1,20 @@
+[
+  {
+    "id": "node-rainfall",
+    "role": "button",
+    "label": "Rainfall",
+    "children": []
+  },
+  {
+    "id": "node-erosion",
+    "role": "button",
+    "label": "Soil erosion",
+    "children": []
+  },
+  {
+    "id": "rain-erodes",
+    "role": "link",
+    "label": "Rainfall  Soil erosion",
+    "children": []
+  }
+]

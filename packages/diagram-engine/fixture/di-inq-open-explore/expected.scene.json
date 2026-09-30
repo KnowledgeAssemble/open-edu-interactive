@@ -139,6 +139,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-climate-vegetation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -173,6 +174,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-soil-vegetation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -207,6 +209,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-water-vegetation",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -241,6 +244,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-vegetation-animals",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -438,7 +442,8 @@
         "toNodeId": "vegetation",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-climate-vegetation"
+        "edgeId": "edge-climate-vegetation",
+        "gated": false
       },
       "children": []
     },
@@ -458,7 +463,8 @@
         "toNodeId": "vegetation",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-soil-vegetation"
+        "edgeId": "edge-soil-vegetation",
+        "gated": false
       },
       "children": []
     },
@@ -478,7 +484,8 @@
         "toNodeId": "vegetation",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-water-vegetation"
+        "edgeId": "edge-water-vegetation",
+        "gated": false
       },
       "children": []
     },
@@ -498,7 +505,8 @@
         "toNodeId": "animals",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-vegetation-animals"
+        "edgeId": "edge-vegetation-animals",
+        "gated": false
       },
       "children": []
     },
@@ -605,7 +613,8 @@
             "toNodeId": "vegetation",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-climate-vegetation"
+            "edgeId": "edge-climate-vegetation",
+            "gated": false
           },
           "children": []
         },
@@ -625,7 +634,8 @@
             "toNodeId": "vegetation",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-soil-vegetation"
+            "edgeId": "edge-soil-vegetation",
+            "gated": false
           },
           "children": []
         },
@@ -645,7 +655,8 @@
             "toNodeId": "vegetation",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-water-vegetation"
+            "edgeId": "edge-water-vegetation",
+            "gated": false
           },
           "children": []
         },
@@ -665,7 +676,8 @@
             "toNodeId": "animals",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-vegetation-animals"
+            "edgeId": "edge-vegetation-animals",
+            "gated": false
           },
           "children": []
         }

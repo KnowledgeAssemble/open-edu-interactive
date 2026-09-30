@@ -70,6 +70,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-a-b",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -104,6 +105,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-b-a",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -205,7 +207,8 @@
         "toNodeId": "b",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-a-b"
+        "edgeId": "edge-a-b",
+        "gated": false
       },
       "children": []
     },
@@ -225,7 +228,8 @@
         "toNodeId": "a",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-b-a"
+        "edgeId": "edge-b-a",
+        "gated": false
       },
       "children": []
     },
@@ -284,7 +288,8 @@
             "toNodeId": "b",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-a-b"
+            "edgeId": "edge-a-b",
+            "gated": false
           },
           "children": []
         },
@@ -304,7 +309,8 @@
             "toNodeId": "a",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-b-a"
+            "edgeId": "edge-b-a",
+            "gated": false
           },
           "children": []
         }

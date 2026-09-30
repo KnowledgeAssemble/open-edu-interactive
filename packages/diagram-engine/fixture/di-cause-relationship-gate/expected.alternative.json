@@ -1,0 +1,23 @@
+[
+  {
+    "kind": "node",
+    "id": "node-rainfall",
+    "nodeId": "rainfall",
+    "label": "Rainfall"
+  },
+  {
+    "kind": "node",
+    "id": "node-erosion",
+    "nodeId": "erosion",
+    "label": "Soil erosion"
+  },
+  {
+    "kind": "edge",
+    "id": "rain-erodes",
+    "from": "rainfall",
+    "relationship": "",
+    "to": "erosion",
+    "fromLabel": "Rainfall",
+    "toLabel": "Soil erosion"
+  }
+]

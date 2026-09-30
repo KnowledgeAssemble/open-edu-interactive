@@ -93,6 +93,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-deforest-erosion",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -127,6 +128,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-erosion-flood",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -260,7 +262,8 @@
         "toNodeId": "erosion",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-deforest-erosion"
+        "edgeId": "edge-deforest-erosion",
+        "gated": false
       },
       "children": []
     },
@@ -280,7 +283,8 @@
         "toNodeId": "flood",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-erosion-flood"
+        "edgeId": "edge-erosion-flood",
+        "gated": false
       },
       "children": []
     },
@@ -355,7 +359,8 @@
             "toNodeId": "erosion",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-deforest-erosion"
+            "edgeId": "edge-deforest-erosion",
+            "gated": false
           },
           "children": []
         },
@@ -375,7 +380,8 @@
             "toNodeId": "flood",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-erosion-flood"
+            "edgeId": "edge-erosion-flood",
+            "gated": false
           },
           "children": []
         }

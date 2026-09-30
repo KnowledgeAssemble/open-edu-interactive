@@ -128,6 +128,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-village-town",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -162,6 +163,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-town-city",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -196,6 +198,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-city-metropolis",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -385,7 +388,8 @@
         "toNodeId": "town",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-village-town"
+        "edgeId": "edge-village-town",
+        "gated": false
       },
       "children": []
     },
@@ -405,7 +409,8 @@
         "toNodeId": "city",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-town-city"
+        "edgeId": "edge-town-city",
+        "gated": false
       },
       "children": []
     },
@@ -425,7 +430,8 @@
         "toNodeId": "metropolis",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-city-metropolis"
+        "edgeId": "edge-city-metropolis",
+        "gated": false
       },
       "children": []
     },
@@ -528,7 +534,8 @@
             "toNodeId": "town",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-village-town"
+            "edgeId": "edge-village-town",
+            "gated": false
           },
           "children": []
         },
@@ -548,7 +555,8 @@
             "toNodeId": "city",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-town-city"
+            "edgeId": "edge-town-city",
+            "gated": false
           },
           "children": []
         },
@@ -568,7 +576,8 @@
             "toNodeId": "metropolis",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-city-metropolis"
+            "edgeId": "edge-city-metropolis",
+            "gated": false
           },
           "children": []
         }

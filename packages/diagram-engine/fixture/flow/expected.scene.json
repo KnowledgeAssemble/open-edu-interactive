@@ -93,6 +93,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-start-process",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -127,6 +128,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-process-end",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -260,7 +262,8 @@
         "toNodeId": "process",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-start-process"
+        "edgeId": "edge-start-process",
+        "gated": false
       },
       "children": []
     },
@@ -280,7 +283,8 @@
         "toNodeId": "end",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-process-end"
+        "edgeId": "edge-process-end",
+        "gated": false
       },
       "children": []
     },
@@ -355,7 +359,8 @@
             "toNodeId": "process",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-start-process"
+            "edgeId": "edge-start-process",
+            "gated": false
           },
           "children": []
         },
@@ -375,7 +380,8 @@
             "toNodeId": "end",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-process-end"
+            "edgeId": "edge-process-end",
+            "gated": false
           },
           "children": []
         }

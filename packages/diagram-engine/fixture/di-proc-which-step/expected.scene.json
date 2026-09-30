@@ -116,6 +116,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-harvest-threshing",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -150,6 +151,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-threshing-grinding",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -184,6 +186,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-grinding-baking",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -349,7 +352,8 @@
         "toNodeId": "threshing",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-harvest-threshing"
+        "edgeId": "edge-harvest-threshing",
+        "gated": false
       },
       "children": []
     },
@@ -369,7 +373,8 @@
         "toNodeId": "grinding",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-threshing-grinding"
+        "edgeId": "edge-threshing-grinding",
+        "gated": false
       },
       "children": []
     },
@@ -389,7 +394,8 @@
         "toNodeId": "baking",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-grinding-baking"
+        "edgeId": "edge-grinding-baking",
+        "gated": false
       },
       "children": []
     },
@@ -480,7 +486,8 @@
             "toNodeId": "threshing",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-harvest-threshing"
+            "edgeId": "edge-harvest-threshing",
+            "gated": false
           },
           "children": []
         },
@@ -500,7 +507,8 @@
             "toNodeId": "grinding",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-threshing-grinding"
+            "edgeId": "edge-threshing-grinding",
+            "gated": false
           },
           "children": []
         },
@@ -520,7 +528,8 @@
             "toNodeId": "baking",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-grinding-baking"
+            "edgeId": "edge-grinding-baking",
+            "gated": false
           },
           "children": []
         }

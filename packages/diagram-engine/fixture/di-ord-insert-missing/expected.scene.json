@@ -143,6 +143,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-planting-growing",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -177,6 +178,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-growing-harvesting",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -211,6 +213,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-blank-growing",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -245,6 +248,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-threshing-harvesting",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -450,7 +454,8 @@
         "toNodeId": "growing",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-planting-growing"
+        "edgeId": "edge-planting-growing",
+        "gated": false
       },
       "children": []
     },
@@ -470,7 +475,8 @@
         "toNodeId": "harvesting",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-growing-harvesting"
+        "edgeId": "edge-growing-harvesting",
+        "gated": false
       },
       "children": []
     },
@@ -490,7 +496,8 @@
         "toNodeId": "growing",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-blank-growing"
+        "edgeId": "edge-blank-growing",
+        "gated": false
       },
       "children": []
     },
@@ -510,7 +517,8 @@
         "toNodeId": "harvesting",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-threshing-harvesting"
+        "edgeId": "edge-threshing-harvesting",
+        "gated": false
       },
       "children": []
     },
@@ -621,7 +629,8 @@
             "toNodeId": "growing",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-planting-growing"
+            "edgeId": "edge-planting-growing",
+            "gated": false
           },
           "children": []
         },
@@ -641,7 +650,8 @@
             "toNodeId": "harvesting",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-growing-harvesting"
+            "edgeId": "edge-growing-harvesting",
+            "gated": false
           },
           "children": []
         },
@@ -661,7 +671,8 @@
             "toNodeId": "growing",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-blank-growing"
+            "edgeId": "edge-blank-growing",
+            "gated": false
           },
           "children": []
         },
@@ -681,7 +692,8 @@
             "toNodeId": "harvesting",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-threshing-harvesting"
+            "edgeId": "edge-threshing-harvesting",
+            "gated": false
           },
           "children": []
         }

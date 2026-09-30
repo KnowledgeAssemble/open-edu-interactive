@@ -99,6 +99,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-gravity-weight",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -133,6 +134,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-mass-weight",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -278,7 +280,8 @@
         "toNodeId": "weight",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-gravity-weight"
+        "edgeId": "edge-gravity-weight",
+        "gated": false
       },
       "children": []
     },
@@ -298,7 +301,8 @@
         "toNodeId": "weight",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-mass-weight"
+        "edgeId": "edge-mass-weight",
+        "gated": false
       },
       "children": []
     },
@@ -379,7 +383,8 @@
             "toNodeId": "weight",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-gravity-weight"
+            "edgeId": "edge-gravity-weight",
+            "gated": false
           },
           "children": []
         },
@@ -399,7 +404,8 @@
             "toNodeId": "weight",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-mass-weight"
+            "edgeId": "edge-mass-weight",
+            "gated": false
           },
           "children": []
         }

@@ -24,7 +24,7 @@
           "children": [],
           "bounds": {
             "x": 240,
-            "y": 240,
+            "y": 270,
             "width": 136,
             "height": 45
           },
@@ -47,30 +47,7 @@
           "children": [],
           "bounds": {
             "x": 400,
-            "y": 240,
-            "width": 136,
-            "height": 45
-          },
-          "positionSource": "illustrative"
-        },
-        {
-          "id": "node-vegetation",
-          "role": "selectable",
-          "kind": "node",
-          "label": "Vegetation",
-          "interactive": true,
-          "acceptsActions": [
-            "select",
-            "focus"
-          ],
-          "metadata": {
-            "nodeId": "vegetation",
-            "label": "Vegetation"
-          },
-          "children": [],
-          "bounds": {
-            "x": 240,
-            "y": 300,
+            "y": 270,
             "width": 136,
             "height": 45
           },
@@ -90,59 +67,24 @@
           "metadata": {
             "fromNodeId": "rainfall",
             "toNodeId": "erosion",
-            "relationship": "influences",
             "labels": [],
             "edgeId": "rain-erodes",
-            "gated": false,
+            "gated": true,
             "edgeGeometry": {
               "type": "line",
               "points": [
                 {
                   "x": 308,
-                  "y": 262.5
+                  "y": 292.5
                 },
                 {
                   "x": 468,
-                  "y": 262.5
+                  "y": 292.5
                 }
               ],
-              "path": "M308,262.5 L468,262.5"
-            }
-          },
-          "children": []
-        },
-        {
-          "id": "veg-reduces",
-          "role": "selectable",
-          "kind": "edge",
-          "label": "vegetation influences erosion",
-          "interactive": true,
-          "acceptsActions": [
-            "select",
-            "focus",
-            "follow"
-          ],
-          "metadata": {
-            "fromNodeId": "vegetation",
-            "toNodeId": "erosion",
-            "relationship": "influences",
-            "labels": [],
-            "edgeId": "veg-reduces",
-            "gated": false,
-            "edgeGeometry": {
-              "type": "line",
-              "points": [
-                {
-                  "x": 308,
-                  "y": 322.5
-                },
-                {
-                  "x": 468,
-                  "y": 262.5
-                }
-              ],
-              "path": "M308,322.5 L468,262.5"
-            }
+              "path": "M308,292.5 L468,292.5"
+            },
+            "gatedLabel": "hidden"
           },
           "children": []
         }
@@ -214,38 +156,6 @@
       },
       "children": []
     },
-    "node-vegetation": {
-      "id": "node-vegetation",
-      "role": "selectable",
-      "kind": "node",
-      "label": "Vegetation",
-      "interactive": true,
-      "acceptsActions": [
-        "select",
-        "focus"
-      ],
-      "metadata": {
-        "nodeId": "vegetation",
-        "label": "Vegetation"
-      },
-      "children": []
-    },
-    "vegetation": {
-      "id": "node-vegetation",
-      "role": "selectable",
-      "kind": "node",
-      "label": "Vegetation",
-      "interactive": true,
-      "acceptsActions": [
-        "select",
-        "focus"
-      ],
-      "metadata": {
-        "nodeId": "vegetation",
-        "label": "Vegetation"
-      },
-      "children": []
-    },
     "rain-erodes": {
       "id": "rain-erodes",
       "role": "selectable",
@@ -263,28 +173,7 @@
         "relationship": "influences",
         "labels": [],
         "edgeId": "rain-erodes",
-        "gated": false
-      },
-      "children": []
-    },
-    "veg-reduces": {
-      "id": "veg-reduces",
-      "role": "selectable",
-      "kind": "edge",
-      "label": "vegetation influences erosion",
-      "interactive": true,
-      "acceptsActions": [
-        "select",
-        "focus",
-        "follow"
-      ],
-      "metadata": {
-        "fromNodeId": "vegetation",
-        "toNodeId": "erosion",
-        "relationship": "influences",
-        "labels": [],
-        "edgeId": "veg-reduces",
-        "gated": false
+        "gated": true
       },
       "children": []
     },
@@ -328,22 +217,6 @@
           "children": []
         },
         {
-          "id": "node-vegetation",
-          "role": "selectable",
-          "kind": "node",
-          "label": "Vegetation",
-          "interactive": true,
-          "acceptsActions": [
-            "select",
-            "focus"
-          ],
-          "metadata": {
-            "nodeId": "vegetation",
-            "label": "Vegetation"
-          },
-          "children": []
-        },
-        {
           "id": "rain-erodes",
           "role": "selectable",
           "kind": "edge",
@@ -360,28 +233,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "rain-erodes",
-            "gated": false
-          },
-          "children": []
-        },
-        {
-          "id": "veg-reduces",
-          "role": "selectable",
-          "kind": "edge",
-          "label": "vegetation influences erosion",
-          "interactive": true,
-          "acceptsActions": [
-            "select",
-            "focus",
-            "follow"
-          ],
-          "metadata": {
-            "fromNodeId": "vegetation",
-            "toNodeId": "erosion",
-            "relationship": "influences",
-            "labels": [],
-            "edgeId": "veg-reduces",
-            "gated": false
+            "gated": true
           },
           "children": []
         }

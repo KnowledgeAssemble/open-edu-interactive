@@ -46,6 +46,7 @@ export const DiagramEdgeSchema = z
     relationship: z.enum(RELATIONSHIPS),
     labels: z.array(z.string()).optional(),
     interactive: z.boolean().optional(),
+    gated: z.boolean().optional(),
   })
   .strict();
 

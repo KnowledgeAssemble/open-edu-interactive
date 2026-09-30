@@ -116,6 +116,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-mining-steel",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -150,6 +151,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-steel-machinery",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -184,6 +186,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-machinery-goods",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -349,7 +352,8 @@
         "toNodeId": "steel",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-mining-steel"
+        "edgeId": "edge-mining-steel",
+        "gated": false
       },
       "children": []
     },
@@ -369,7 +373,8 @@
         "toNodeId": "machinery",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-steel-machinery"
+        "edgeId": "edge-steel-machinery",
+        "gated": false
       },
       "children": []
     },
@@ -389,7 +394,8 @@
         "toNodeId": "goods",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-machinery-goods"
+        "edgeId": "edge-machinery-goods",
+        "gated": false
       },
       "children": []
     },
@@ -480,7 +486,8 @@
             "toNodeId": "steel",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-mining-steel"
+            "edgeId": "edge-mining-steel",
+            "gated": false
           },
           "children": []
         },
@@ -500,7 +507,8 @@
             "toNodeId": "machinery",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-steel-machinery"
+            "edgeId": "edge-steel-machinery",
+            "gated": false
           },
           "children": []
         },
@@ -520,7 +528,8 @@
             "toNodeId": "goods",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-machinery-goods"
+            "edgeId": "edge-machinery-goods",
+            "gated": false
           },
           "children": []
         }
