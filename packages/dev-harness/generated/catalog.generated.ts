@@ -526,6 +526,20 @@ export const catalog = [
     "title": "Label all parts of a flower"
   },
   {
+    "id": "diagram/di-ord-assemble-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-ord-assemble-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-ord-assemble-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-ord-assemble-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-ord-assemble-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-ord-assemble-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-ord-assemble-cycle/expected.svg"
+    },
+    "title": "Butterfly lifecycle"
+  },
+  {
     "id": "diagram/di-ord-insert-missing",
     "kind": "engine",
     "engine": "diagram",

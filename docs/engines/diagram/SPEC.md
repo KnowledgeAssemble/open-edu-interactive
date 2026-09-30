@@ -63,6 +63,7 @@ Rules:
 - Edge weight (W-3.7): edges MAY carry `strength: number` — semantic influence metadata (data, never style). It is surfaced on the edge scene node and in the alternative edge rows; the engine never uses it for layout.
 - Follow chain (W-3.8): consecutive `follow` dispatches accumulate a path. `snapshot().followedChain` lists edges in follow order, and the most recent edge renders with `data-oedu-chain-step="N"` (monotonic step). Alternative list stays the path.
 - What-if (W-3.9): D5 `answer` with payload `{ whatIf: true, whatIfNode }` non-destructively de-emphasises a node — the authored spec is never mutated; the engine re-derives scene metadata (`whatIf: "deemphasized"` → `data-oedu-what-if`) and records `snapshot().deemphasizedNodes`, emitting `diagram.what-if`.
+- Construct order (W-3.10): D5 `answer` with payload `{ construct: "order", order: [ids] }` validates the ordered sequence against the graph's directed edges and exposes the result as `snapshot().constructOrder: { order, valid }`, emitting `diagram.construct-order`. The engine never shuffles; the host presents shuffled candidates.
 - `content.kind` / `profile` MVP: `flow` | `cycle` | `hierarchy` | `concept-map` (one engine, multiple profiles).
 - Layout is semantic (`layout.type`); coordinates are derived (DESIGN §8).
 - Auto-layout positions are **illustrative** unless provenance says otherwise (DESIGN §9).

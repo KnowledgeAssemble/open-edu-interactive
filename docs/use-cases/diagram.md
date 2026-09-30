@@ -853,7 +853,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-ord-assemble-cycle` *(planned)* |
 | **New capability** | `construct-order` *(planned)* |
 | **Host** | Order validation + hinting. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-ord-2-insert-missing` — Fill the single blank in a process
 
@@ -881,7 +881,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-ord-build-valid-graph` *(planned)* |
 | **New capability** | `construct-edge`, `construct-order` |
 | **Host** | Law-based feedback. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

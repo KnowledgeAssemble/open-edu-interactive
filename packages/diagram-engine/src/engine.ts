@@ -115,6 +115,21 @@ function walkHide(node: SceneNode, fn: (n: SceneNode) => void): void {
   }
 }
 
+function validateConstructOrder(content: DiagramContent, order: string[]): boolean {
+  const nodes = new Set(content.nodes.map((n) => n.id));
+  if (order.length === 0 || order.length !== nodes.size) return false;
+  const edges = new Map<string, Set<string>>();
+  for (const edge of content.edges) {
+    const list = edges.get(edge.from) ?? new Set<string>();
+    list.add(edge.to);
+    edges.set(edge.from, list);
+  }
+  for (let i = 0; i < order.length - 1; i++) {
+    if (!edges.get(order[i]!)?.has(order[i + 1]!)) return false;
+  }
+  return true;
+}
+
 function renderForValidation(
   content: DiagramContent,
   spec: DiagramSpec,
@@ -197,6 +212,7 @@ export class DiagramEngine implements Engine {
     const revealedEdges: string[] = [];
     const followedChain: string[] = [];
     const deemphasizedNodes: string[] = [];
+    let lastConstructOrder: { order: string[]; valid: boolean } | null = null;
 
     let laidOut: Scene = { nodes: [], semantics: {} };
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
@@ -313,8 +329,14 @@ export class DiagramEngine implements Engine {
           }
         } else if (action.type === 'answer') {
           const targetId = action.target?.id;
-          const payload = action.payload as { whatIf?: boolean; whatIfNode?: string } | undefined;
-          if (payload?.whatIf && payload.whatIfNode) {
+          const payload = action.payload as { whatIf?: boolean; whatIfNode?: string; construct?: string; order?: string[] } | undefined;
+          if (payload?.construct === 'order' && Array.isArray(payload.order)) {
+            const valid = validateConstructOrder(content, payload.order);
+            lastConstructOrder = { order: [...payload.order], valid };
+            state = { ...state, lastAction: action };
+            const nsEvent = log.append('diagram.construct-order', instanceId, { order: payload.order, valid }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          } else if (payload?.whatIf && payload.whatIfNode) {
             const authored = payload.whatIfNode;
             if (!deemphasizedNodes.includes(authored)) {
               deemphasizedNodes.push(authored);
@@ -385,6 +407,7 @@ export class DiagramEngine implements Engine {
           revealedEdges: [...revealedEdges],
           followedChain: [...followedChain],
           deemphasizedNodes: [...deemphasizedNodes],
+          constructOrder: lastConstructOrder,
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {

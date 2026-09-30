@@ -51,6 +51,7 @@ const FIXTURES = {
   'di-cause-relative-influence': 'packages/diagram-engine/fixture/di-cause-relative-influence/input.diagram.json',
   'di-cause-influence-chain': 'packages/diagram-engine/fixture/di-cause-influence-chain/input.diagram.json',
   'di-inq-what-if': 'packages/diagram-engine/fixture/di-inq-what-if/input.diagram.json',
+  'di-ord-assemble-cycle': 'packages/diagram-engine/fixture/di-ord-assemble-cycle/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -616,5 +617,27 @@ test.describe('Diagram W-3.9 — what-if (di-inq-3)', () => {
     expect(result.names).toContain('diagram.what-if');
     expect(result.deemphasized).toEqual(['decomposer']);
     expect(result.marked).toBe(true);
+  });
+});
+
+test.describe('Diagram W-3.10 — construct-order (di-ord-1, di-ord-3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-ord-assemble-cycle']);
+  });
+
+  test('ordered answer is validated against the cycle reference; snapshot exposes the ordered contract', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const before = h.events().length;
+      h.dispatch({ type: 'answer', target: { id: 'egg' }, payload: { construct: 'order', order: ['egg', 'caterpillar', 'chrysalis', 'butterfly'] } });
+      const names = h.events().slice(before).map((e) => e.name);
+      const valid = (h.snapshot() as unknown as { constructOrder: { order: string[]; valid: boolean } }).constructOrder;
+      h.dispatch({ type: 'answer', target: { id: 'egg' }, payload: { construct: 'order', order: ['egg', 'butterfly', 'chrysalis', 'caterpillar'] } });
+      const invalid = (h.snapshot() as unknown as { constructOrder: { order: string[]; valid: boolean } }).constructOrder;
+      return { names, valid, invalid };
+    });
+    expect(result.names).toContain('diagram.construct-order');
+    expect(result.valid.valid).toBe(true);
+    expect(result.invalid.valid).toBe(false);
   });
 });
