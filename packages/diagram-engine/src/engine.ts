@@ -22,7 +22,7 @@ import { buildScene } from './scene/build.js';
 import { layout } from './layout/engine.js';
 import type { LayoutContext } from './layout/engine.js';
 import { svgFrom } from './render/svg.js';
-import type { Scene } from './scene/types.js';
+import type { Scene, SceneNode } from './scene/types.js';
 import type { SvgResult } from './render/types.js';
 
 const DEFAULT_LAYOUT: LayoutContext = {
@@ -52,11 +52,30 @@ function render(
   spec: DiagramSpec,
   label?: string,
   description?: string,
+  filterCategories?: string[],
 ): { scene: Scene; svgResult: SvgResult } {
   const s = buildScene(content);
   const laidOut = layout(s, ctx, spec.layout?.type ?? defaultLayoutType(content.kind));
+  if (filterCategories && filterCategories.length > 0) {
+    for (const node of laidOut.nodes) {
+      walkHide(node, (n) => {
+        if (n.kind === 'node' && n.metadata) {
+          const cats = n.metadata.categories as string[] | undefined;
+          const matches = Array.isArray(cats) && cats.some((c) => filterCategories.includes(c));
+          if (!matches) n.hidden = true;
+        }
+      });
+    }
+  }
   const svgResult = svgFrom(laidOut, ctx, label, description);
   return { scene: laidOut, svgResult };
+}
+
+function walkHide(node: SceneNode, fn: (n: SceneNode) => void): void {
+  fn(node);
+  for (const child of node.children) {
+    walkHide(child, fn);
+  }
 }
 
 function renderForValidation(
@@ -143,10 +162,11 @@ export class DiagramEngine implements Engine {
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
 
     function recompute(): void {
-      const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description);
-      laidOut = result.scene;
-      svgResult = result.svgResult;
-    }
+    const filter = state.filter as string[] | undefined;
+    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter);
+    laidOut = result.scene;
+    svgResult = result.svgResult;
+  }
 
     recompute();
 
@@ -237,6 +257,21 @@ export class DiagramEngine implements Engine {
 
         const changed = log.append('state-changed', instanceId, undefined, action);
         emit(changed as Parameters<EngineHost['onEvent']>[0]);
+
+        if (action.type === 'filter' || action.type === 'clear-filter') {
+          const payload = action.payload as { categories?: string[] } | undefined;
+          const categories = Array.isArray(payload?.categories) ? payload.categories : [];
+          state = {
+            ...state,
+            filter: action.type === 'clear-filter' ? [] : categories,
+            lastAction: action,
+          };
+          recompute();
+          if (action.type === 'filter') {
+            const nsEvent = log.append('diagram.filter-applied', instanceId, { categories }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          }
+        }
 
         if (entityPayload) {
           const isEdge = (() => {

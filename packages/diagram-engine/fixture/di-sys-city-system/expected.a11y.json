@@ -1,0 +1,74 @@
+[
+  {
+    "id": "node-food",
+    "role": "button",
+    "label": "Food",
+    "children": []
+  },
+  {
+    "id": "node-energy",
+    "role": "button",
+    "label": "Energy",
+    "children": []
+  },
+  {
+    "id": "node-water",
+    "role": "button",
+    "label": "Water",
+    "children": []
+  },
+  {
+    "id": "node-city",
+    "role": "button",
+    "label": "City",
+    "children": []
+  },
+  {
+    "id": "node-waste",
+    "role": "button",
+    "label": "Waste",
+    "children": []
+  },
+  {
+    "id": "node-recycle",
+    "role": "button",
+    "label": "Recycling loop",
+    "children": []
+  },
+  {
+    "id": "edge-food-city",
+    "role": "link",
+    "label": "Food leads-to City",
+    "children": []
+  },
+  {
+    "id": "edge-energy-city",
+    "role": "link",
+    "label": "Energy leads-to City",
+    "children": []
+  },
+  {
+    "id": "edge-water-city",
+    "role": "link",
+    "label": "Water leads-to City",
+    "children": []
+  },
+  {
+    "id": "edge-city-waste",
+    "role": "link",
+    "label": "City produces Waste",
+    "children": []
+  },
+  {
+    "id": "edge-waste-recycle",
+    "role": "link",
+    "label": "Waste leads-to Recycling loop",
+    "children": []
+  },
+  {
+    "id": "edge-recycle-city",
+    "role": "link",
+    "label": "Recycling loop produces City",
+    "children": []
+  }
+]

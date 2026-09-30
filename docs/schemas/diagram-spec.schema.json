@@ -96,6 +96,12 @@
               },
               "interactive": {
                 "type": "boolean"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [

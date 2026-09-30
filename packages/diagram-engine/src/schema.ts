@@ -32,6 +32,7 @@ export const DiagramNodeSchema = z
     description: z.string().optional(),
     links: z.record(z.string()).optional(),
     interactive: z.boolean().optional(),
+    categories: z.array(z.string()).optional(),
   })
   .strict();
 

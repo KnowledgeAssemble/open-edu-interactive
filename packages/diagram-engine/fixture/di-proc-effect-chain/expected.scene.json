@@ -1,0 +1,582 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-monsoon",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Weak monsoon",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "monsoon",
+            "label": "Weak monsoon",
+            "categories": [
+              "climate"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-crop",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Crop failure",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "crop",
+            "label": "Crop failure",
+            "categories": [
+              "agriculture"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-price",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Price rise",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "price",
+            "label": "Price rise",
+            "categories": [
+              "economy"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-stock",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Stock market",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "stock",
+            "label": "Stock market",
+            "categories": [
+              "economy",
+              "unrelated"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-monsoon-crop",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "monsoon leads-to crop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "monsoon",
+            "toNodeId": "crop",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-monsoon-crop",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-crop-price",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "crop leads-to price",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "crop",
+            "toNodeId": "price",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-crop-price",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-monsoon-stock",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "monsoon influences stock",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "monsoon",
+            "toNodeId": "stock",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-monsoon-stock",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 220,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L220,160"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-monsoon": {
+      "id": "node-monsoon",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Weak monsoon",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "monsoon",
+        "label": "Weak monsoon",
+        "categories": [
+          "climate"
+        ]
+      },
+      "children": []
+    },
+    "monsoon": {
+      "id": "node-monsoon",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Weak monsoon",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "monsoon",
+        "label": "Weak monsoon",
+        "categories": [
+          "climate"
+        ]
+      },
+      "children": []
+    },
+    "node-crop": {
+      "id": "node-crop",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Crop failure",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "crop",
+        "label": "Crop failure",
+        "categories": [
+          "agriculture"
+        ]
+      },
+      "children": []
+    },
+    "crop": {
+      "id": "node-crop",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Crop failure",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "crop",
+        "label": "Crop failure",
+        "categories": [
+          "agriculture"
+        ]
+      },
+      "children": []
+    },
+    "node-price": {
+      "id": "node-price",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Price rise",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "price",
+        "label": "Price rise",
+        "categories": [
+          "economy"
+        ]
+      },
+      "children": []
+    },
+    "price": {
+      "id": "node-price",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Price rise",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "price",
+        "label": "Price rise",
+        "categories": [
+          "economy"
+        ]
+      },
+      "children": []
+    },
+    "node-stock": {
+      "id": "node-stock",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Stock market",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "stock",
+        "label": "Stock market",
+        "categories": [
+          "economy",
+          "unrelated"
+        ]
+      },
+      "children": []
+    },
+    "stock": {
+      "id": "node-stock",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Stock market",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "stock",
+        "label": "Stock market",
+        "categories": [
+          "economy",
+          "unrelated"
+        ]
+      },
+      "children": []
+    },
+    "edge-monsoon-crop": {
+      "id": "edge-monsoon-crop",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "monsoon leads-to crop",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "monsoon",
+        "toNodeId": "crop",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-monsoon-crop"
+      },
+      "children": []
+    },
+    "edge-crop-price": {
+      "id": "edge-crop-price",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "crop leads-to price",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "crop",
+        "toNodeId": "price",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-crop-price"
+      },
+      "children": []
+    },
+    "edge-monsoon-stock": {
+      "id": "edge-monsoon-stock",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "monsoon influences stock",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "monsoon",
+        "toNodeId": "stock",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-monsoon-stock"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-monsoon",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Weak monsoon",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "monsoon",
+            "label": "Weak monsoon",
+            "categories": [
+              "climate"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-crop",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Crop failure",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "crop",
+            "label": "Crop failure",
+            "categories": [
+              "agriculture"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-price",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Price rise",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "price",
+            "label": "Price rise",
+            "categories": [
+              "economy"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-stock",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Stock market",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "stock",
+            "label": "Stock market",
+            "categories": [
+              "economy",
+              "unrelated"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "edge-monsoon-crop",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "monsoon leads-to crop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "monsoon",
+            "toNodeId": "crop",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-monsoon-crop"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-crop-price",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "crop leads-to price",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "crop",
+            "toNodeId": "price",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-crop-price"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-monsoon-stock",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "monsoon influences stock",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "monsoon",
+            "toNodeId": "stock",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-monsoon-stock"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

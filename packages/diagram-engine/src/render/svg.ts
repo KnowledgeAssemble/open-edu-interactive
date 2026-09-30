@@ -62,7 +62,7 @@ export function svgFrom(
   const height = ctx.height;
 
   const root = scene.nodes.find((n) => n.kind === 'diagram');
-  const childrenSvg = root ? root.children.map((n) => nodeToSvg(n, 2)).join('\n') : '';
+  const childrenSvg = root ? root.children.filter((n) => !n.hidden).map((n) => nodeToSvg(n, 2)).join('\n') : '';
 
   const title = label ?? 'Diagram';
   const description = desc ?? 'An interactive diagram showing structural relationships';
@@ -86,8 +86,8 @@ ${childrenSvg}
   const interactive: SvgResult['interactive'] = [];
   const alternative: RelRow[] = [];
 
-  const nodeChildren = root ? root.children.filter((n) => n.kind === 'node') : [];
-  const edgeChildren = root ? root.children.filter((n) => n.kind === 'edge') : [];
+  const nodeChildren = root ? root.children.filter((n) => n.kind === 'node' && !n.hidden) : [];
+  const edgeChildren = root ? root.children.filter((n) => n.kind === 'edge' && !n.hidden) : [];
 
   // Node roster
   for (const n of nodeChildren) {

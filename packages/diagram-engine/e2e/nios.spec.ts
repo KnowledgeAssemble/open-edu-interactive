@@ -44,6 +44,9 @@ const FIXTURES = {
   'di-hist-boundary': 'packages/diagram-engine/fixture/di-hist-boundary/input.diagram.json',
   'di-cmp-before-after': 'packages/diagram-engine/fixture/di-cmp-before-after/input.diagram.json',
   'di-cause-relationship-name': 'packages/diagram-engine/fixture/di-cause-relationship-name/input.diagram.json',
+  'di-proc-effect-chain': 'packages/diagram-engine/fixture/di-proc-effect-chain/input.diagram.json',
+  'di-class-urban-hierarchy': 'packages/diagram-engine/fixture/di-class-urban-hierarchy/input.diagram.json',
+  'di-sys-city-system': 'packages/diagram-engine/fixture/di-sys-city-system/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -479,5 +482,51 @@ test.describe('Diagram W-3.4 — edge-select (di-cause-3)', () => {
     expect(result.names).toContain('diagram.edge-selected');
     expect(result.relationship).toBe('influences');
     expect(result.edgeRows.length).toBe(2);
+  });
+});
+
+test.describe('Diagram W-3.5 — filter-nodes (di-proc-5, di-class-5, di-sys-4)', () => {
+  test('di-proc-5: filter by category greys unrelated nodes; clear-filter restores; diagram.filter-applied logged', async ({ page }) => {
+    await mount(page, FIXTURES['di-proc-effect-chain']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const before = h.events().length;
+      h.dispatch({ type: 'filter', payload: { categories: ['agriculture', 'economy'] } });
+      const names = h.events().slice(before).map((e) => e.name);
+      const svgFiltered = h.svg();
+      h.dispatch({ type: 'clear-filter' });
+      const svgRestored = h.svg();
+      return { names, filteredHasStock: svgFiltered.includes('id="node-stock"'), restoredHasStock: svgRestored.includes('id="node-stock"') };
+    });
+    expect(result.names).toContain('diagram.filter-applied');
+    expect(result.filteredHasStock).toBe(true);
+    expect(result.restoredHasStock).toBe(true);
+  });
+
+  test('di-class-5: bracket-highlight via filter keeps only the requested size category visible', async ({ page }) => {
+    await mount(page, FIXTURES['di-class-urban-hierarchy']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      h.dispatch({ type: 'filter', payload: { categories: ['large'] } });
+      const alt = h.alternative();
+      const visibleNodes = alt.filter((r) => r.kind === 'node').map((r) => r.id);
+      h.dispatch({ type: 'clear-filter' });
+      const all = h.alternative().filter((r) => r.kind === 'node').length;
+      return { visibleNodes, all };
+    });
+    expect(result.visibleNodes).toEqual(['node-city', 'node-metropolis']);
+    expect(result.all).toBe(4);
+  });
+
+  test('di-sys-4: waste-loop highlight via filter isolates the recycling loop', async ({ page }) => {
+    await mount(page, FIXTURES['di-sys-city-system']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      h.dispatch({ type: 'filter', payload: { categories: ['waste'] } });
+      const alt = h.alternative();
+      const visibleNodes = alt.filter((r) => r.kind === 'node').map((r) => r.id);
+      return { visibleNodes };
+    });
+    expect(result.visibleNodes).toEqual(['node-waste', 'node-recycle']);
   });
 });

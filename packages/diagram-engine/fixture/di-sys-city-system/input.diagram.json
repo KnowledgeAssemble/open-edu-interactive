@@ -1,0 +1,32 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-sys-city-system",
+  "metadata": { "title": "City as a metabolic system" },
+  "purpose": { "learningObjective": "Explore city inputs, waste, and recycling loops", "reasoningMode": "explore" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "system",
+    "nodes": [
+      { "id": "food", "label": "Food", "categories": ["input"] },
+      { "id": "energy", "label": "Energy", "categories": ["input"] },
+      { "id": "water", "label": "Water", "categories": ["input"] },
+      { "id": "city", "label": "City" },
+      { "id": "waste", "label": "Waste", "categories": ["waste"] },
+      { "id": "recycle", "label": "Recycling loop", "categories": ["waste"] }
+    ],
+    "edges": [
+      { "from": "food", "to": "city", "relationship": "leads-to" },
+      { "from": "energy", "to": "city", "relationship": "leads-to" },
+      { "from": "water", "to": "city", "relationship": "leads-to" },
+      { "from": "city", "to": "waste", "relationship": "produces" },
+      { "from": "waste", "to": "recycle", "relationship": "leads-to" },
+      { "from": "recycle", "to": "city", "relationship": "produces" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "filter", "clear-filter", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "City metabolic system with input, waste, and recycling loop" }
+}

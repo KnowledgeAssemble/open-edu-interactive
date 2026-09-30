@@ -1,0 +1,578 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-village",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Village",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "village",
+            "label": "Village",
+            "categories": [
+              "small"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-town",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Town",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "town",
+            "label": "Town",
+            "categories": [
+              "medium"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-city",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "city",
+            "label": "City",
+            "categories": [
+              "large"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-metropolis",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Metropolis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "metropolis",
+            "label": "Metropolis",
+            "categories": [
+              "large"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-village-town",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "village leads-to town",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "village",
+            "toNodeId": "town",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-village-town",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-town-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "town leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "town",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-town-city",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-city-metropolis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "city leads-to metropolis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "city",
+            "toNodeId": "metropolis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-city-metropolis",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M100,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-village": {
+      "id": "node-village",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Village",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "village",
+        "label": "Village",
+        "categories": [
+          "small"
+        ]
+      },
+      "children": []
+    },
+    "village": {
+      "id": "node-village",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Village",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "village",
+        "label": "Village",
+        "categories": [
+          "small"
+        ]
+      },
+      "children": []
+    },
+    "node-town": {
+      "id": "node-town",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Town",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "town",
+        "label": "Town",
+        "categories": [
+          "medium"
+        ]
+      },
+      "children": []
+    },
+    "town": {
+      "id": "node-town",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Town",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "town",
+        "label": "Town",
+        "categories": [
+          "medium"
+        ]
+      },
+      "children": []
+    },
+    "node-city": {
+      "id": "node-city",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "city",
+        "label": "City",
+        "categories": [
+          "large"
+        ]
+      },
+      "children": []
+    },
+    "city": {
+      "id": "node-city",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "city",
+        "label": "City",
+        "categories": [
+          "large"
+        ]
+      },
+      "children": []
+    },
+    "node-metropolis": {
+      "id": "node-metropolis",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Metropolis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "metropolis",
+        "label": "Metropolis",
+        "categories": [
+          "large"
+        ]
+      },
+      "children": []
+    },
+    "metropolis": {
+      "id": "node-metropolis",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Metropolis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "metropolis",
+        "label": "Metropolis",
+        "categories": [
+          "large"
+        ]
+      },
+      "children": []
+    },
+    "edge-village-town": {
+      "id": "edge-village-town",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "village leads-to town",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "village",
+        "toNodeId": "town",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-village-town"
+      },
+      "children": []
+    },
+    "edge-town-city": {
+      "id": "edge-town-city",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "town leads-to city",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "town",
+        "toNodeId": "city",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-town-city"
+      },
+      "children": []
+    },
+    "edge-city-metropolis": {
+      "id": "edge-city-metropolis",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "city leads-to metropolis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "city",
+        "toNodeId": "metropolis",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-city-metropolis"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-village",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Village",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "village",
+            "label": "Village",
+            "categories": [
+              "small"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-town",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Town",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "town",
+            "label": "Town",
+            "categories": [
+              "medium"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-city",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "city",
+            "label": "City",
+            "categories": [
+              "large"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-metropolis",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Metropolis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "metropolis",
+            "label": "Metropolis",
+            "categories": [
+              "large"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "edge-village-town",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "village leads-to town",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "village",
+            "toNodeId": "town",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-village-town"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-town-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "town leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "town",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-town-city"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-city-metropolis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "city leads-to metropolis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "city",
+            "toNodeId": "metropolis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-city-metropolis"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-monsoon",
+    "nodeId": "monsoon",
+    "label": "Weak monsoon"
+  },
+  {
+    "kind": "node",
+    "id": "node-crop",
+    "nodeId": "crop",
+    "label": "Crop failure"
+  },
+  {
+    "kind": "node",
+    "id": "node-price",
+    "nodeId": "price",
+    "label": "Price rise"
+  },
+  {
+    "kind": "node",
+    "id": "node-stock",
+    "nodeId": "stock",
+    "label": "Stock market"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-monsoon-crop",
+    "from": "monsoon",
+    "relationship": "leads-to",
+    "to": "crop",
+    "fromLabel": "Weak monsoon",
+    "toLabel": "Crop failure"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-crop-price",
+    "from": "crop",
+    "relationship": "leads-to",
+    "to": "price",
+    "fromLabel": "Crop failure",
+    "toLabel": "Price rise"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-monsoon-stock",
+    "from": "monsoon",
+    "relationship": "influences",
+    "to": "stock",
+    "fromLabel": "Weak monsoon",
+    "toLabel": "Stock market"
+  }
+]

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Effect chain from weak monsoon to crop failure to price rise</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-monsoon" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Weak monsoon" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Weak monsoon</text>
+    <rect id="node-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Crop failure" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Crop failure</text>
+    <rect id="node-price" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Price rise" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Price rise</text>
+    <rect id="node-stock" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Stock market" x="170" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="220" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Stock market</text>
+    <path id="edge-monsoon-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="monsoon leads-to crop" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-crop-price" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="crop leads-to price" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-monsoon-stock" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="monsoon influences stock" data-oedu-relationship="influences" d="M100,80 L220,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

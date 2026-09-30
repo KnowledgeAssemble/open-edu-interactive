@@ -1,0 +1,102 @@
+[
+  {
+    "kind": "node",
+    "id": "node-food",
+    "nodeId": "food",
+    "label": "Food"
+  },
+  {
+    "kind": "node",
+    "id": "node-energy",
+    "nodeId": "energy",
+    "label": "Energy"
+  },
+  {
+    "kind": "node",
+    "id": "node-water",
+    "nodeId": "water",
+    "label": "Water"
+  },
+  {
+    "kind": "node",
+    "id": "node-city",
+    "nodeId": "city",
+    "label": "City"
+  },
+  {
+    "kind": "node",
+    "id": "node-waste",
+    "nodeId": "waste",
+    "label": "Waste"
+  },
+  {
+    "kind": "node",
+    "id": "node-recycle",
+    "nodeId": "recycle",
+    "label": "Recycling loop"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-food-city",
+    "from": "food",
+    "relationship": "leads-to",
+    "to": "city",
+    "fromLabel": "Food",
+    "toLabel": "City"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-energy-city",
+    "from": "energy",
+    "relationship": "leads-to",
+    "to": "city",
+    "fromLabel": "Energy",
+    "toLabel": "City"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-water-city",
+    "from": "water",
+    "relationship": "leads-to",
+    "to": "city",
+    "fromLabel": "Water",
+    "toLabel": "City"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-city-waste",
+    "from": "city",
+    "relationship": "produces",
+    "to": "waste",
+    "fromLabel": "City",
+    "toLabel": "Waste"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-waste-recycle",
+    "from": "waste",
+    "relationship": "leads-to",
+    "to": "recycle",
+    "fromLabel": "Waste",
+    "toLabel": "Recycling loop"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-recycle-city",
+    "from": "recycle",
+    "relationship": "produces",
+    "to": "city",
+    "fromLabel": "Recycling loop",
+    "toLabel": "City"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-recycle-waste-city",
+    "members": [
+      "recycle",
+      "waste",
+      "city"
+    ],
+    "label": "Cycle: recycle → waste → city"
+  }
+]

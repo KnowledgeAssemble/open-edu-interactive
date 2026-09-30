@@ -465,7 +465,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-proc-effect-chain` *(planned)* |
 | **New capability** | `filter-nodes` *(planned)* — grey unrelated branches. |
 | **Host** | Consequence rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -613,7 +613,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-urban-hierarchy` *(planned)* |
 | **New capability** | `filter-nodes` *(planned)* — threshold-bracket highlight. |
 | **Host** | Rank prompts. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-class-6-parent-locate` — Find the parent level (reverse)
 
@@ -775,7 +775,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-sys-city-system` *(planned)* |
 | **New capability** | `filter-nodes` *(planned)* — waste-loop highlight. |
 | **Host** | Sustainability narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

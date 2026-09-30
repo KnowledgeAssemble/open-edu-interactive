@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-class-urban-hierarchy",
+  "metadata": { "title": "Urban hierarchy" },
+  "purpose": { "learningObjective": "Rank settlements by size; bracket-highlight a subset", "reasoningMode": "classify" },
+  "content": {
+    "kind": "hierarchy",
+    "profile": "concept",
+    "nodes": [
+      { "id": "village", "label": "Village", "categories": ["small"] },
+      { "id": "town", "label": "Town", "categories": ["medium"] },
+      { "id": "city", "label": "City", "categories": ["large"] },
+      { "id": "metropolis", "label": "Metropolis", "categories": ["large"] }
+    ],
+    "edges": [
+      { "from": "village", "to": "town", "relationship": "leads-to" },
+      { "from": "town", "to": "city", "relationship": "leads-to" },
+      { "from": "city", "to": "metropolis", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "clear-filter", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Urban hierarchy from village to metropolis" }
+}

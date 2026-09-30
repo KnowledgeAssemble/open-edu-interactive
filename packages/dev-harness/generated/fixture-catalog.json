@@ -260,6 +260,20 @@
     "title": "Economic sectors"
   },
   {
+    "id": "diagram/di-class-urban-hierarchy",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-class-urban-hierarchy",
+    "specPath": "packages/diagram-engine/fixture/di-class-urban-hierarchy/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-class-urban-hierarchy/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-class-urban-hierarchy/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-class-urban-hierarchy/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-class-urban-hierarchy/expected.svg"
+    },
+    "title": "Urban hierarchy"
+  },
+  {
     "id": "diagram/di-cmp-before-after",
     "kind": "engine",
     "engine": "diagram",
@@ -484,6 +498,20 @@
     "title": "Election process with outcomes"
   },
   {
+    "id": "diagram/di-proc-effect-chain",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-proc-effect-chain",
+    "specPath": "packages/diagram-engine/fixture/di-proc-effect-chain/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-proc-effect-chain/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-proc-effect-chain/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-proc-effect-chain/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-proc-effect-chain/expected.svg"
+    },
+    "title": "Weak monsoon chain"
+  },
+  {
     "id": "diagram/di-proc-follow-process",
     "kind": "engine",
     "engine": "diagram",
@@ -524,6 +552,20 @@
       "svg": "packages/diagram-engine/fixture/di-proc-which-step/expected.svg"
     },
     "title": "Grinding to flour"
+  },
+  {
+    "id": "diagram/di-sys-city-system",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-sys-city-system",
+    "specPath": "packages/diagram-engine/fixture/di-sys-city-system/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-sys-city-system/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-sys-city-system/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-sys-city-system/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-sys-city-system/expected.svg"
+    },
+    "title": "City as a metabolic system"
   },
   {
     "id": "diagram/di-sys-drainage-basin",
