@@ -1,0 +1,64 @@
+{
+  "id": "diagram-links-composition-demo",
+  "title": "Timeline drives diagram node emphasis via links.timelineEventId",
+  "engines": [
+    {
+      "instanceId": "timeline-events",
+      "engine": "timeline",
+      "spec": {
+        "type": "timeline",
+        "version": "1.0.0",
+        "id": "timeline-events",
+        "content": {
+          "kind": "events",
+          "events": [
+            { "id": "event-1857", "label": "1857 uprising", "date": "1857", "links": { "timelineEventId": "cause" } },
+            { "id": "event-1947", "label": "Independence", "date": "1947-08-15", "links": { "timelineEventId": "outcome" } }
+          ]
+        },
+        "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+        "sources": [{ "class": "authoritative" }],
+        "accessibility": { "label": "Timeline of Indian independence" },
+        "questions": []
+      }
+    },
+    {
+      "instanceId": "diagram-chain",
+      "engine": "diagram",
+      "spec": {
+        "type": "diagram",
+        "version": "1.0.0",
+        "id": "diagram-chain",
+        "content": {
+          "kind": "concept-map",
+          "profile": "cause-effect",
+          "nodes": [
+            { "id": "cause", "label": "Long-term cause", "links": { "timelineEventId": "event-1857" } },
+            { "id": "trigger", "label": "Trigger" },
+            { "id": "outcome", "label": "Outcome", "links": { "timelineEventId": "event-1947" } }
+          ],
+          "edges": [
+            { "from": "cause", "to": "trigger", "relationship": "leads-to" },
+            { "from": "trigger", "to": "outcome", "relationship": "leads-to" }
+          ]
+        },
+        "layout": { "type": "hierarchical" },
+        "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+        "sources": [{ "class": "illustrative" }],
+        "accessibility": { "label": "Causal chain keyed to timeline events" },
+        "questions": []
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "on": "timeline.event-selected",
+      "from": "timeline-events",
+      "dispatch": {
+        "to": "diagram-chain",
+        "action": "focus",
+        "targetIdFrom": "links.timelineEventId"
+      }
+    }
+  ]
+}

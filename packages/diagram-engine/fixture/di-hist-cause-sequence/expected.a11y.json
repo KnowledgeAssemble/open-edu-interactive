@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-long-cause",
+    "role": "button",
+    "label": "Long-term causes",
+    "children": []
+  },
+  {
+    "id": "node-trigger",
+    "role": "button",
+    "label": "Trigger",
+    "children": []
+  },
+  {
+    "id": "node-outcome",
+    "role": "button",
+    "label": "Outcome",
+    "children": []
+  },
+  {
+    "id": "edge-long-cause-trigger",
+    "role": "link",
+    "label": "Long-term causes leads-to Trigger",
+    "children": []
+  },
+  {
+    "id": "edge-trigger-outcome",
+    "role": "link",
+    "label": "Trigger leads-to Outcome",
+    "children": []
+  }
+]

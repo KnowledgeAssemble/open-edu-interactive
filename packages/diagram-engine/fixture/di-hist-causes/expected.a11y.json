@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-structural",
+    "role": "button",
+    "label": "Structural cause",
+    "children": []
+  },
+  {
+    "id": "node-immediate",
+    "role": "button",
+    "label": "Immediate cause",
+    "children": []
+  },
+  {
+    "id": "node-trigger",
+    "role": "button",
+    "label": "Trigger",
+    "children": []
+  },
+  {
+    "id": "edge-structural-immediate",
+    "role": "link",
+    "label": "Structural cause influences Immediate cause",
+    "children": []
+  },
+  {
+    "id": "edge-immediate-trigger",
+    "role": "link",
+    "label": "Immediate cause leads-to Trigger",
+    "children": []
+  }
+]

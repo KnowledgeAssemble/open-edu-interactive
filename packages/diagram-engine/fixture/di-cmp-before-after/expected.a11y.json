@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-course-old",
+    "role": "button",
+    "label": "Old course",
+    "children": []
+  },
+  {
+    "id": "node-course-new",
+    "role": "button",
+    "label": "New course",
+    "children": []
+  },
+  {
+    "id": "node-delta",
+    "role": "button",
+    "label": "Delta",
+    "children": []
+  },
+  {
+    "id": "edge-course-old-course-new",
+    "role": "link",
+    "label": "Old course leads-to New course",
+    "children": []
+  },
+  {
+    "id": "edge-course-new-delta",
+    "role": "link",
+    "label": "New course leads-to Delta",
+    "children": []
+  }
+]

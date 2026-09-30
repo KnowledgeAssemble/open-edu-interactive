@@ -40,4 +40,18 @@ describe('Golden event log parity', () => {
     const golden = readFileSync(GOLDEN_URL, 'utf8');
     expect(outputStr).toBe(golden);
   });
+
+  it('links vocabulary (W-3.2): timeline.event-selected routes to the diagram node via links.timelineEventId', () => {
+    const fixture = JSON.parse(readFileSync(new URL('../../../docs/fixtures/composition/timeline-diagram-links.json', import.meta.url), 'utf8'));
+    const registry = makeRegistry();
+    const lesson = Lesson.load(fixture, registry);
+    const { host } = makeHost();
+    const runtime = lesson.start(host);
+    runtime.dispatch('timeline-events', { type: 'select', target: { id: 'event-1947' } } as EngineAction);
+    const diagram = runtime.snapshot('diagram-chain') as { focus: string | null; selection: string[] };
+    const routed = runtime.events().some((e) => e.name === 'diagram.node-focused');
+    runtime.stop();
+    expect(diagram.focus).toBe('outcome');
+    expect(routed).toBe(true);
+  });
 });

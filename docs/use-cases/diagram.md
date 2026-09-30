@@ -927,7 +927,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cmp-before-after` *(planned)* |
 | **New capability** | `compare-layout`, `links` vocabulary (`timelineEventId`). |
 | **Host** | Change narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -945,7 +945,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-cause-sequence` *(planned)* |
 | **New capability** | `links` vocabulary (`timelineEventId`) *(planned)* |
 | **Host** | Period narration via Timeline. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-hist-2-resistance-chain` — A chain of movements connected by events
 
@@ -959,7 +959,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-resistance-chain` *(planned)* |
 | **New capability** | `links` vocabulary. |
 | **Host** | Event context popups (from Timeline). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-hist-3-cause-and-consequence` — Long-term causes vs immediate causes
 
@@ -973,7 +973,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-causes` *(planned)* |
 | **New capability** | `multi-select` *(planned)* |
 | **Host** | Pile scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-hist-4-boundary-as-diagram` — Structure change paired with the GeoMap engine
 
@@ -987,7 +987,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-boundary` *(planned)* |
 | **New capability** | `links` vocabulary (`geomapEntityId`) *(planned)* |
 | **Host** | Cross-engine composition. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

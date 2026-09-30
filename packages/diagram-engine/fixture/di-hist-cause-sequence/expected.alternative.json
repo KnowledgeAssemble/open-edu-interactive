@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-long-cause",
+    "nodeId": "long-cause",
+    "label": "Long-term causes"
+  },
+  {
+    "kind": "node",
+    "id": "node-trigger",
+    "nodeId": "trigger",
+    "label": "Trigger"
+  },
+  {
+    "kind": "node",
+    "id": "node-outcome",
+    "nodeId": "outcome",
+    "label": "Outcome"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-long-cause-trigger",
+    "from": "long-cause",
+    "relationship": "leads-to",
+    "to": "trigger",
+    "fromLabel": "Long-term causes",
+    "toLabel": "Trigger"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-trigger-outcome",
+    "from": "trigger",
+    "relationship": "leads-to",
+    "to": "outcome",
+    "fromLabel": "Trigger",
+    "toLabel": "Outcome"
+  }
+]

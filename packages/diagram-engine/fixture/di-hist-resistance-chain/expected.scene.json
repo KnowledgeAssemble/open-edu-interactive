@@ -1,0 +1,409 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-movement-1",
+          "role": "selectable",
+          "kind": "node",
+          "label": "First movement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "movement-1",
+            "label": "First movement",
+            "links": {
+              "timelineEventId": "event-1857"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-movement-2",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Second movement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "movement-2",
+            "label": "Second movement",
+            "links": {
+              "timelineEventId": "event-1920"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-movement-3",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Third movement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "movement-3",
+            "label": "Third movement",
+            "links": {
+              "timelineEventId": "event-1942"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-movement-1-movement-2",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "movement-1 leads-to movement-2",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "movement-1",
+            "toNodeId": "movement-2",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-movement-1-movement-2",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-movement-2-movement-3",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "movement-2 leads-to movement-3",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "movement-2",
+            "toNodeId": "movement-3",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-movement-2-movement-3",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-movement-1": {
+      "id": "node-movement-1",
+      "role": "selectable",
+      "kind": "node",
+      "label": "First movement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "movement-1",
+        "label": "First movement",
+        "links": {
+          "timelineEventId": "event-1857"
+        }
+      },
+      "children": []
+    },
+    "movement-1": {
+      "id": "node-movement-1",
+      "role": "selectable",
+      "kind": "node",
+      "label": "First movement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "movement-1",
+        "label": "First movement",
+        "links": {
+          "timelineEventId": "event-1857"
+        }
+      },
+      "children": []
+    },
+    "node-movement-2": {
+      "id": "node-movement-2",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Second movement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "movement-2",
+        "label": "Second movement",
+        "links": {
+          "timelineEventId": "event-1920"
+        }
+      },
+      "children": []
+    },
+    "movement-2": {
+      "id": "node-movement-2",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Second movement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "movement-2",
+        "label": "Second movement",
+        "links": {
+          "timelineEventId": "event-1920"
+        }
+      },
+      "children": []
+    },
+    "node-movement-3": {
+      "id": "node-movement-3",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Third movement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "movement-3",
+        "label": "Third movement",
+        "links": {
+          "timelineEventId": "event-1942"
+        }
+      },
+      "children": []
+    },
+    "movement-3": {
+      "id": "node-movement-3",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Third movement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "movement-3",
+        "label": "Third movement",
+        "links": {
+          "timelineEventId": "event-1942"
+        }
+      },
+      "children": []
+    },
+    "edge-movement-1-movement-2": {
+      "id": "edge-movement-1-movement-2",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "movement-1 leads-to movement-2",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "movement-1",
+        "toNodeId": "movement-2",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-movement-1-movement-2"
+      },
+      "children": []
+    },
+    "edge-movement-2-movement-3": {
+      "id": "edge-movement-2-movement-3",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "movement-2 leads-to movement-3",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "movement-2",
+        "toNodeId": "movement-3",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-movement-2-movement-3"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-movement-1",
+          "role": "selectable",
+          "kind": "node",
+          "label": "First movement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "movement-1",
+            "label": "First movement",
+            "links": {
+              "timelineEventId": "event-1857"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-movement-2",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Second movement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "movement-2",
+            "label": "Second movement",
+            "links": {
+              "timelineEventId": "event-1920"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-movement-3",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Third movement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "movement-3",
+            "label": "Third movement",
+            "links": {
+              "timelineEventId": "event-1942"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-movement-1-movement-2",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "movement-1 leads-to movement-2",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "movement-1",
+            "toNodeId": "movement-2",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-movement-1-movement-2"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-movement-2-movement-3",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "movement-2 leads-to movement-3",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "movement-2",
+            "toNodeId": "movement-3",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-movement-2-movement-3"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

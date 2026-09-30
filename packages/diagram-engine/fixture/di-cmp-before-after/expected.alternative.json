@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-course-old",
+    "nodeId": "course-old",
+    "label": "Old course"
+  },
+  {
+    "kind": "node",
+    "id": "node-course-new",
+    "nodeId": "course-new",
+    "label": "New course"
+  },
+  {
+    "kind": "node",
+    "id": "node-delta",
+    "nodeId": "delta",
+    "label": "Delta"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-course-old-course-new",
+    "from": "course-old",
+    "relationship": "leads-to",
+    "to": "course-new",
+    "fromLabel": "Old course",
+    "toLabel": "New course"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-course-new-delta",
+    "from": "course-new",
+    "relationship": "leads-to",
+    "to": "delta",
+    "fromLabel": "New course",
+    "toLabel": "Delta"
+  }
+]

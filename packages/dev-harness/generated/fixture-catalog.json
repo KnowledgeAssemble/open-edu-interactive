@@ -246,6 +246,20 @@
     "title": "Economic sectors"
   },
   {
+    "id": "diagram/di-cmp-before-after",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cmp-before-after",
+    "specPath": "packages/diagram-engine/fixture/di-cmp-before-after/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cmp-before-after/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cmp-before-after/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cmp-before-after/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cmp-before-after/expected.svg"
+    },
+    "title": "River course before and after"
+  },
+  {
     "id": "diagram/di-cycl-disaster-cycle",
     "kind": "engine",
     "engine": "diagram",
@@ -314,6 +328,62 @@
       "svg": "packages/diagram-engine/fixture/di-cycl-water-cycle/expected.svg"
     },
     "title": "Water cycle (course version)"
+  },
+  {
+    "id": "diagram/di-hist-boundary",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-hist-boundary",
+    "specPath": "packages/diagram-engine/fixture/di-hist-boundary/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-hist-boundary/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-hist-boundary/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-hist-boundary/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-hist-boundary/expected.svg"
+    },
+    "title": "Boundary change explained"
+  },
+  {
+    "id": "diagram/di-hist-cause-sequence",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-hist-cause-sequence",
+    "specPath": "packages/diagram-engine/fixture/di-hist-cause-sequence/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-hist-cause-sequence/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-hist-cause-sequence/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-hist-cause-sequence/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-hist-cause-sequence/expected.svg"
+    },
+    "title": "Causes of an event"
+  },
+  {
+    "id": "diagram/di-hist-causes",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-hist-causes",
+    "specPath": "packages/diagram-engine/fixture/di-hist-causes/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-hist-causes/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-hist-causes/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-hist-causes/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-hist-causes/expected.svg"
+    },
+    "title": "Long-term causes vs triggers"
+  },
+  {
+    "id": "diagram/di-hist-resistance-chain",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-hist-resistance-chain",
+    "specPath": "packages/diagram-engine/fixture/di-hist-resistance-chain/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-hist-resistance-chain/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-hist-resistance-chain/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-hist-resistance-chain/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-hist-resistance-chain/expected.svg"
+    },
+    "title": "Chain of movements"
   },
   {
     "id": "diagram/di-inq-explain-why",
@@ -1081,6 +1151,13 @@
     "slug": "skill-example",
     "specPath": "docs/fixtures/composition/skill-example.json",
     "title": "Composition skill canonical example"
+  },
+  {
+    "id": "lesson/timeline-diagram-links",
+    "kind": "composition",
+    "slug": "timeline-diagram-links",
+    "specPath": "docs/fixtures/composition/timeline-diagram-links.json",
+    "title": "Timeline drives diagram node emphasis via links.timelineEventId"
   },
   {
     "id": "diagram/skill-example",

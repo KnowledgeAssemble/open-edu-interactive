@@ -10,7 +10,8 @@
   "devDependencies": {
     "@knowledgeassemble/timeline-engine": "workspace:*",
     "@knowledgeassemble/visual-engine": "workspace:*",
-    "ajv": "^8.20.0"
+    "ajv": "^8.20.0",
+    "@knowledgeassemble/diagram-engine": "workspace:*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",

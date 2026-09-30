@@ -38,6 +38,11 @@ const FIXTURES = {
   'di-cycl-rock-cycle': 'packages/diagram-engine/fixture/di-cycl-rock-cycle/input.diagram.json',
   'di-sys-food-web': 'packages/diagram-engine/fixture/di-sys-food-web/input.diagram.json',
   'di-lab-cell-organelle': 'packages/diagram-engine/fixture/di-lab-cell-organelle/input.diagram.json',
+  'di-hist-cause-sequence': 'packages/diagram-engine/fixture/di-hist-cause-sequence/input.diagram.json',
+  'di-hist-resistance-chain': 'packages/diagram-engine/fixture/di-hist-resistance-chain/input.diagram.json',
+  'di-hist-causes': 'packages/diagram-engine/fixture/di-hist-causes/input.diagram.json',
+  'di-hist-boundary': 'packages/diagram-engine/fixture/di-hist-boundary/input.diagram.json',
+  'di-cmp-before-after': 'packages/diagram-engine/fixture/di-cmp-before-after/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -394,5 +399,62 @@ test.describe('Diagram W-3.1 — relation-vocab (di-cycl-3, di-sys-1, di-lab-4)'
     });
     expect(result.relations).toContain('produces');
     expect(result.relations).toContain('feeds-on');
+  });
+});
+
+test.describe('Diagram W-3.2 — links vocabulary (di-hist-1..4, di-cmp-3)', () => {
+  test('di-hist-1: node links resolve to timelineEventId in the scene', async ({ page }) => {
+    await mount(page, FIXTURES['di-hist-cause-sequence']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      h.dispatch({ type: 'select', target: { id: 'long-cause' } });
+      const events = h.events().map((e) => e.name);
+      return { selected: h.snapshot().selection, selectedEvent: events.includes('diagram.node-selected') };
+    });
+    expect(result.selected).toContain('long-cause');
+    expect(result.selectedEvent).toBe(true);
+  });
+
+  test('di-hist-2: chain DAG; follow resolves; node links carried', async ({ page }) => {
+    await mount(page, FIXTURES['di-hist-resistance-chain']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const before = h.events().length;
+      h.dispatch({ type: 'follow', target: { id: 'edge-movement-1-movement-2' } });
+      return { names: h.events().slice(before).map((e) => e.name) };
+    });
+    expect(result.names).toContain('diagram.relationship-followed');
+  });
+
+  test('di-hist-3: cause/trigger nodes selectable; links carried', async ({ page }) => {
+    await mount(page, FIXTURES['di-hist-causes']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      h.dispatch({ type: 'select', target: { id: 'trigger' } });
+      h.dispatch({ type: 'select', target: { id: 'structural' } });
+      return h.snapshot().selection;
+    });
+    expect(result).toEqual(['trigger', 'structural']);
+  });
+
+  test('di-hist-4: node links carry geomapEntityId', async ({ page }) => {
+    await mount(page, FIXTURES['di-hist-boundary']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const alt = h.alternative();
+      return { nodes: alt.filter((r) => r.kind === 'node').length };
+    });
+    expect(result.nodes).toBe(3);
+  });
+
+  test('di-cmp-3: before/after structure keyed to timeline events; links carried', async ({ page }) => {
+    await mount(page, FIXTURES['di-cmp-before-after']);
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const alt = h.alternative();
+      return { nodes: alt.filter((r) => r.kind === 'node').length, edges: alt.filter((r) => r.kind === 'edge').length };
+    });
+    expect(result.nodes).toBe(3);
+    expect(result.edges).toBe(2);
   });
 });
