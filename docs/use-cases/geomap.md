@@ -675,7 +675,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/mark-place-on-blank` *(planned)* |
 | **New capability** | `construct-mark` — new D5-adjacent construct action; big contract item. |
 | **Host** | Tolerance scoring; localizable prompts. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ### `gm-mark-2-line-on-blank` — Draw a linear feature on an outline map
 
@@ -689,7 +689,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/mark-line-on-blank` *(planned)* |
 | **New capability** | `construct-mark` (line variant). |
 | **Host** | Corridor tolerance scoring. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ### `gm-mark-3-build-theme` — Shade a mini theme map (SR practical crossover)
 
@@ -703,7 +703,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/mark-build-theme` *(planned)* |
 | **New capability** | `construct-mark` + `attr-encoding`. |
 | **Host** | Reference bucketing + feedback. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ---
 
@@ -735,7 +735,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/inq-local-area` *(planned)* |
 | **New capability** | `construct-mark`. |
 | **Host** | Learner-authored content is `illustrative` — never authoritative. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ---
 
@@ -781,7 +781,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/asm-verify-own-map` *(planned)* |
 | **New capability** | `layer-visibility` + `construct-mark`. |
 | **Host** | Self-check narration. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ---
 
