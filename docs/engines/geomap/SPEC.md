@@ -678,29 +678,21 @@ Historical geography frequently contains uncertainty.
 
 GeoMap MUST support provenance.
 
+Provenance is carried on the **envelope** as a non-empty root-level `sources[]` — there is no `provenance` field in the GeoMap schema. Each entry mirrors `docs/schemas/interactive-engine.schema.json` `$defs.source`: a required `class` (`authoritative` | `illustrative` | `simulated`) plus optional `title`, `citation`, `url`, `author`, `date`, and other per-source fields the `$defs.source` declares. The validator raises L2 `INVALID_SPEC` when `sources` is missing or empty (`packages/geomap-engine/src/validation/semantic.ts`).
+
 ```json
 {
-  "provenance": {
-    "sources": [
-      {
-        "title": "Historical Atlas",
-        "url": "..."
-      }
-    ],
-    "confidence": "medium",
-    "notes": "Boundary is approximate."
-  }
+  "sources": [
+    {
+      "class": "authoritative",
+      "title": "Historical Atlas",
+      "url": "..."
+    }
+  ]
 }
 ```
 
-Supported confidence levels:
-
-```text
-high
-medium
-low
-unknown
-```
+Every factual, geographic, or historical claim in a map MUST be traceable to at least one source in `sources[]`. Never invent boundaries, extents, values, or dates absent from the authored data.
 
 Historical boundaries SHOULD NOT imply false precision.
 
@@ -2023,18 +2015,24 @@ questionAnswered
 
 # 66. GeoMap Events
 
-Example:
+GeoMap events are **renderer-independent** — the same payload is delivered to the host and the event log regardless of how the scene is drawn.
+
+The **canonical payload table** is §30 "Interaction Actions": every namespaced event (`geomap.layer-toggled`, `geomap.route-step`, `geomap.filter-applied`, `geomap.legend-linked`, `geomap.entity-selected`, `geomap.entity-focused`) is defined there with its causing D5 action in the Trigger column. This section is the reference note, not a second definition.
+
+Namespaced example (`geomap.entity-selected`, caused by D5 `select`):
 
 ```json
 {
-  "event": {
-    "type": "entitySelected",
-    "entity": "odisha"
+  "name": "geomap.entity-selected",
+  "payload": {
+    "entityId": "odisha",
+    "type": "region",
+    "name": "Odisha"
   }
 }
 ```
 
-Events SHOULD remain renderer-independent.
+Events MUST use the `geomap.*` namespace, never bare camelCase names like `entitySelected`. Superseded names (`highlight`, `show`, `hide`, `open-info`, `play-animation`) MUST NOT be emitted.
 
 ---
 
