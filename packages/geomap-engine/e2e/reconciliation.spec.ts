@@ -390,3 +390,22 @@ test.describe('GeoMap W-4.2 — encoding honesty (gm-asm-2)', () => {
     expect(result.r2Value! / result.r1Value!).toBe(2);
   });
 });
+
+test.describe('GeoMap W-4.3 — coverage confirmation (gm-move-3 filter-category)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=geomap&spec=packages/geomap-engine/fixture/encoding/input.geomap.json');
+    await page.waitForFunction(() => !!(window as unknown as { __geomapHarness?: unknown }).__geomapHarness);
+  });
+
+  test('gm-move-3: filter narrows a network by category; selection within the subset works', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      harness.dispatch({ type: 'filter', payload: { categories: ['zone-a'] } });
+      const cats = harness.snapshot().displayState.filterCategories;
+      harness.dispatch({ type: 'select', target: { id: 'geom-eco-r1' } });
+      return { cats, selected: harness.snapshot().selection };
+    });
+    expect(result.cats).toEqual(['zone-a']);
+    expect(result.selected).toContain('geom-eco-r1');
+  });
+});
