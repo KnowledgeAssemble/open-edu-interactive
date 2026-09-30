@@ -194,7 +194,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Composed spec with `interaction.actions` including `reset` |
 | **Fixture** | `planned` (derive from `odisha-coastal` + guided flags) |
 | **Host** | Multi-step workflow |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -282,7 +282,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | `interaction.actions` includes `reset`; multi-layer region+marker composition. |
 | **Fixture** | `nios/loc-multi-locate` *(planned)* |
 | **Host** | Ordered step script + answer keys. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -597,7 +597,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Marker layer with historical metadata; multi-step workflow with `reset`. |
 | **Fixture** | `nios/hist-place-memory` *(planned)* |
 | **Host** | Chronological facts must carry `sources[]` (P9). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-hist-3-route-over-time` — One route across changing territory
 
@@ -753,7 +753,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/asm-board-map-skill` *(planned)* |
 | **New capability** | `construct-mark`; otherwise composed of current mechanics. |
 | **Host** | Rubric per item; per-item feedback; timing. |
-| **Status** | `planned` |
+| **Status** | `done` (loc/identify/trace half only — marking half deferred per gap-closure plan §1/§9) |
 
 ### `gm-asm-2-misconception-encoding` — Catch a misleading theme map
 

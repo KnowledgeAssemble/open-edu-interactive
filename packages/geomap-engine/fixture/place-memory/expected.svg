@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Map of places of the national movement.</title>
+  <desc>An interactive geographic map</desc>
+  <g id="map-root">
+    <g id="map-layers">
+  <g id="geom-basemap" data-oedu-role="layer" aria-label="basemap">
+    <path id="geom-basemap-region-n" data-oedu-role="region" aria-label="Region North" title="The region for this map." d="M 64 552 L 736 552 L 736 48 L 64 48 L 64 552 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g id="geom-sites" data-oedu-role="layer" aria-label="sites">
+    <circle id="geom-sites-calcutta" data-oedu-role="marker" data-oedu-interactive="true" aria-label="Calcutta" title="Event: Quit India movement launched, 1942." cx="680.9" cy="297.65" r="22" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1.5"/>
+    <circle id="geom-sites-delhi" data-oedu-role="marker" data-oedu-interactive="true" aria-label="Delhi" title="Event: Independence achieved, 1947." cx="305.92" cy="94.7" r="22" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1.5"/>
+    <circle id="geom-sites-bombay" data-oedu-role="marker" data-oedu-interactive="true" aria-label="Bombay" title="Event: Non-cooperation movement began, 1920." cx="160.77" cy="415.25" r="22" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+  <g id="geom-legend" data-oedu-role="legend" aria-label="Legend">
+    <text id="geom-legend-item-0" data-oedu-role="legend-item" aria-label="Region" x="22" y="22" text-anchor="start" dominant-baseline="central" font-size="12">Region</text>
+    <text id="geom-legend-item-1" data-oedu-role="legend-item" aria-label="Movement site" x="22" y="40" text-anchor="start" dominant-baseline="central" font-size="12">Movement site</text>
+  </g>
+  <g id="geom-scale-bar" data-oedu-role="scale-bar" aria-label="500 KM">
+    <line x1="26" y1="530" x2="192" y2="530" stroke="currentColor" stroke-width="2"/>
+    <line x1="26" y1="526" x2="26" y2="534" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="192" y1="526" x2="192" y2="534" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+    </g>
+  </g>
+</svg>

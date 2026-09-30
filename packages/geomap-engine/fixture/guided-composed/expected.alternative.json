@@ -1,0 +1,38 @@
+[
+  {
+    "entityId": "odisha",
+    "type": "state",
+    "name": "Odisha",
+    "description": "A state on the eastern coast of India.",
+    "location": "19.0007, 83.0000",
+    "sourceClass": "illustrative"
+  },
+  {
+    "entityId": "west-bengal",
+    "type": "state",
+    "name": "West Bengal",
+    "description": "A state in eastern India.",
+    "location": "23.0007, 87.0000",
+    "sourceClass": "illustrative"
+  },
+  {
+    "entityId": "bhubaneswar",
+    "type": "city",
+    "name": "Bhubaneswar",
+    "description": "Capital of Odisha.",
+    "location": "20.2961, 85.8245"
+  },
+  {
+    "entityId": "chilika",
+    "type": "lake",
+    "name": "Chilika Lake",
+    "description": "A brackish water lagoon.",
+    "location": "19.7000, 85.3000"
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "200 KM",
+    "location": "200 KM"
+  }
+]

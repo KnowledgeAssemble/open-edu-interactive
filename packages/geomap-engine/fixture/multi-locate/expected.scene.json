@@ -1,0 +1,878 @@
+{
+  "nodes": [
+    {
+      "id": "geom-basemap",
+      "role": "layer",
+      "kind": "layer",
+      "label": "basemap",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "basemap"
+      },
+      "children": [
+        {
+          "id": "geom-basemap-region-s",
+          "role": "region",
+          "kind": "region",
+          "label": "Region South",
+          "description": "The region for this map.",
+          "interactive": false,
+          "hidden": false,
+          "metadata": {
+            "entityId": "region-s",
+            "entityType": "region",
+            "name": "Region South",
+            "description": "The region for this map.",
+            "location": {
+              "source": "base",
+              "featureId": "region-s"
+            },
+            "sourceClass": "illustrative",
+            "lat": 20.053098495016297,
+            "lon": 79.99999999999999
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  70,
+                  10
+                ],
+                [
+                  90,
+                  10
+                ],
+                [
+                  90,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  10
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 48,
+            "width": 504,
+            "height": 504
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-features",
+      "role": "layer",
+      "kind": "layer",
+      "label": "features",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "features"
+      },
+      "children": [
+        {
+          "id": "geom-features-capital",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Capital City",
+          "description": "The capital.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "capital",
+            "entityType": "city",
+            "name": "Capital City",
+            "description": "The capital.",
+            "location": {
+              "coordinates": {
+                "lat": 18,
+                "lon": 80
+              }
+            },
+            "lat": 18,
+            "lon": 80
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              80,
+              18
+            ]
+          },
+          "bounds": {
+            "x": 378,
+            "y": 328.4,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-features-peak",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Peak",
+          "description": "The highest point.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "peak",
+            "entityType": "mountain",
+            "name": "Peak",
+            "description": "The highest point.",
+            "location": {
+              "coordinates": {
+                "lat": 22,
+                "lon": 78
+              }
+            },
+            "lat": 22,
+            "lon": 78
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              78,
+              22
+            ]
+          },
+          "bounds": {
+            "x": 327.5999999999999,
+            "y": 227.60000000000002,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-features-west-sea",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Western Sea",
+          "description": "The western sea.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "west-sea",
+            "entityType": "lake",
+            "name": "Western Sea",
+            "description": "The western sea.",
+            "location": {
+              "coordinates": {
+                "lat": 16,
+                "lon": 72
+              }
+            },
+            "lat": 16,
+            "lon": 72
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              72,
+              16
+            ]
+          },
+          "bounds": {
+            "x": 176.4000000000001,
+            "y": 378.8,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-legend",
+      "role": "legend",
+      "kind": "legend",
+      "label": "Legend",
+      "children": [
+        {
+          "id": "geom-legend-item-0",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Region",
+          "metadata": {
+            "role": "primary-region"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 14,
+            "width": 49,
+            "height": 16
+          }
+        },
+        {
+          "id": "geom-legend-item-1",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Feature",
+          "metadata": {
+            "role": "marker"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 32,
+            "width": 49,
+            "height": 16
+          }
+        }
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 65,
+        "height": 46
+      }
+    },
+    {
+      "id": "geom-scale-bar",
+      "role": "scale-bar",
+      "kind": "scale-bar",
+      "label": "1000 KM",
+      "bounds": {
+        "x": 24,
+        "y": 512,
+        "width": 247,
+        "height": 68
+      },
+      "interactive": false,
+      "metadata": {
+        "lengthKm": 1000,
+        "lengthPx": 241,
+        "unit": "km",
+        "label": "1000 KM",
+        "scaleBarKind": "scale-bar"
+      },
+      "children": []
+    }
+  ],
+  "semantics": {
+    "geom-basemap-region-s": {
+      "id": "geom-basemap-region-s",
+      "role": "region",
+      "kind": "region",
+      "label": "Region South",
+      "description": "The region for this map.",
+      "interactive": false,
+      "hidden": false,
+      "metadata": {
+        "entityId": "region-s",
+        "entityType": "region",
+        "name": "Region South",
+        "description": "The region for this map.",
+        "location": {
+          "source": "base",
+          "featureId": "region-s"
+        },
+        "sourceClass": "illustrative",
+        "lat": 20.053098495016297,
+        "lon": 79.99999999999999
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70,
+              10
+            ],
+            [
+              90,
+              10
+            ],
+            [
+              90,
+              30
+            ],
+            [
+              70,
+              30
+            ],
+            [
+              70,
+              10
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 148,
+            "y": 552
+          },
+          {
+            "x": 652,
+            "y": 552
+          },
+          {
+            "x": 652,
+            "y": 48
+          },
+          {
+            "x": 148,
+            "y": 48
+          },
+          {
+            "x": 148,
+            "y": 552
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 148,
+          "y": 552
+        },
+        {
+          "x": 652,
+          "y": 552
+        },
+        {
+          "x": 652,
+          "y": 48
+        },
+        {
+          "x": 148,
+          "y": 48
+        },
+        {
+          "x": 148,
+          "y": 552
+        }
+      ],
+      "bounds": {
+        "x": 148,
+        "y": 48,
+        "width": 504,
+        "height": 504
+      }
+    },
+    "geom-basemap": {
+      "id": "geom-basemap",
+      "role": "layer",
+      "kind": "layer",
+      "label": "basemap",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "basemap"
+      },
+      "children": [
+        {
+          "id": "geom-basemap-region-s",
+          "role": "region",
+          "kind": "region",
+          "label": "Region South",
+          "description": "The region for this map.",
+          "interactive": false,
+          "hidden": false,
+          "metadata": {
+            "entityId": "region-s",
+            "entityType": "region",
+            "name": "Region South",
+            "description": "The region for this map.",
+            "location": {
+              "source": "base",
+              "featureId": "region-s"
+            },
+            "sourceClass": "illustrative",
+            "lat": 20.053098495016297,
+            "lon": 79.99999999999999
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  70,
+                  10
+                ],
+                [
+                  90,
+                  10
+                ],
+                [
+                  90,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  10
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 48,
+            "width": 504,
+            "height": 504
+          }
+        }
+      ]
+    },
+    "geom-features-capital": {
+      "id": "geom-features-capital",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Capital City",
+      "description": "The capital.",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "capital",
+        "entityType": "city",
+        "name": "Capital City",
+        "description": "The capital.",
+        "location": {
+          "coordinates": {
+            "lat": 18,
+            "lon": 80
+          }
+        },
+        "lat": 18,
+        "lon": 80
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80,
+          18
+        ]
+      },
+      "bounds": {
+        "x": 378,
+        "y": 328.4,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-features-peak": {
+      "id": "geom-features-peak",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Peak",
+      "description": "The highest point.",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "peak",
+        "entityType": "mountain",
+        "name": "Peak",
+        "description": "The highest point.",
+        "location": {
+          "coordinates": {
+            "lat": 22,
+            "lon": 78
+          }
+        },
+        "lat": 22,
+        "lon": 78
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78,
+          22
+        ]
+      },
+      "bounds": {
+        "x": 327.5999999999999,
+        "y": 227.60000000000002,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-features-west-sea": {
+      "id": "geom-features-west-sea",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Western Sea",
+      "description": "The western sea.",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "west-sea",
+        "entityType": "lake",
+        "name": "Western Sea",
+        "description": "The western sea.",
+        "location": {
+          "coordinates": {
+            "lat": 16,
+            "lon": 72
+          }
+        },
+        "lat": 16,
+        "lon": 72
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72,
+          16
+        ]
+      },
+      "bounds": {
+        "x": 176.4000000000001,
+        "y": 378.8,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-features": {
+      "id": "geom-features",
+      "role": "layer",
+      "kind": "layer",
+      "label": "features",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "features"
+      },
+      "children": [
+        {
+          "id": "geom-features-capital",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Capital City",
+          "description": "The capital.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "capital",
+            "entityType": "city",
+            "name": "Capital City",
+            "description": "The capital.",
+            "location": {
+              "coordinates": {
+                "lat": 18,
+                "lon": 80
+              }
+            },
+            "lat": 18,
+            "lon": 80
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              80,
+              18
+            ]
+          },
+          "bounds": {
+            "x": 378,
+            "y": 328.4,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-features-peak",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Peak",
+          "description": "The highest point.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "peak",
+            "entityType": "mountain",
+            "name": "Peak",
+            "description": "The highest point.",
+            "location": {
+              "coordinates": {
+                "lat": 22,
+                "lon": 78
+              }
+            },
+            "lat": 22,
+            "lon": 78
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              78,
+              22
+            ]
+          },
+          "bounds": {
+            "x": 327.5999999999999,
+            "y": 227.60000000000002,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-features-west-sea",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Western Sea",
+          "description": "The western sea.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "west-sea",
+            "entityType": "lake",
+            "name": "Western Sea",
+            "description": "The western sea.",
+            "location": {
+              "coordinates": {
+                "lat": 16,
+                "lon": 72
+              }
+            },
+            "lat": 16,
+            "lon": 72
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              72,
+              16
+            ]
+          },
+          "bounds": {
+            "x": 176.4000000000001,
+            "y": 378.8,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    "geom-legend-item-0": {
+      "id": "geom-legend-item-0",
+      "role": "legend-item",
+      "kind": "legend-item",
+      "label": "Region",
+      "metadata": {
+        "role": "primary-region"
+      },
+      "children": [],
+      "bounds": {
+        "x": 16,
+        "y": 14,
+        "width": 49,
+        "height": 16
+      }
+    },
+    "geom-legend-item-1": {
+      "id": "geom-legend-item-1",
+      "role": "legend-item",
+      "kind": "legend-item",
+      "label": "Feature",
+      "metadata": {
+        "role": "marker"
+      },
+      "children": [],
+      "bounds": {
+        "x": 16,
+        "y": 32,
+        "width": 49,
+        "height": 16
+      }
+    },
+    "geom-legend": {
+      "id": "geom-legend",
+      "role": "legend",
+      "kind": "legend",
+      "label": "Legend",
+      "children": [
+        {
+          "id": "geom-legend-item-0",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Region",
+          "metadata": {
+            "role": "primary-region"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 14,
+            "width": 49,
+            "height": 16
+          }
+        },
+        {
+          "id": "geom-legend-item-1",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Feature",
+          "metadata": {
+            "role": "marker"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 32,
+            "width": 49,
+            "height": 16
+          }
+        }
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 65,
+        "height": 46
+      }
+    }
+  }
+}

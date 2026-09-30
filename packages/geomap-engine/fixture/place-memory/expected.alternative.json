@@ -1,0 +1,37 @@
+[
+  {
+    "entityId": "region-n",
+    "type": "region",
+    "name": "Region North",
+    "description": "The region for this map.",
+    "location": "22.6649, 80.0000",
+    "sourceClass": "illustrative"
+  },
+  {
+    "entityId": "calcutta",
+    "type": "city",
+    "name": "Calcutta",
+    "description": "Event: Quit India movement launched, 1942.",
+    "location": "22.5700, 88.3600"
+  },
+  {
+    "entityId": "delhi",
+    "type": "city",
+    "name": "Delhi",
+    "description": "Event: Independence achieved, 1947.",
+    "location": "28.6100, 77.2000"
+  },
+  {
+    "entityId": "bombay",
+    "type": "city",
+    "name": "Bombay",
+    "description": "Event: Non-cooperation movement began, 1920.",
+    "location": "19.0700, 72.8800"
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "500 KM",
+    "location": "500 KM"
+  }
+]

@@ -71,7 +71,7 @@ function writeOrCompare(name: string, dir: string, spec: Record<string, unknown>
   }
 }
 
-const FIXTURES = ['region', 'marker', 'route', 'odisha-coastal', 'encoding', 'overlay', 'route-step', 'linear'];
+const FIXTURES = ['region', 'marker', 'route', 'odisha-coastal', 'encoding', 'overlay', 'route-step', 'linear', 'guided-composed', 'multi-locate', 'place-memory'];
 
 function validateFixture(name: string, spec: unknown) {
   const result = ENGINE.validate(spec as never);

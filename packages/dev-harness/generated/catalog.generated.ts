@@ -136,6 +136,20 @@ export const catalog = [
     "title": "Encoding map with 5 regions, 3 breakpoints, categories"
   },
   {
+    "id": "geomap/guided-composed",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "guided-composed",
+    "specPath": "packages/geomap-engine/fixture/guided-composed/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/guided-composed/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/guided-composed/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/guided-composed/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/guided-composed/expected.svg"
+    },
+    "title": "Guided composed map: select Odisha, then its capital"
+  },
+  {
     "id": "geomap/india-coastal",
     "kind": "engine",
     "engine": "geomap",
@@ -178,6 +192,20 @@ export const catalog = [
     "title": "Marker only"
   },
   {
+    "id": "geomap/multi-locate",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "multi-locate",
+    "specPath": "packages/geomap-engine/fixture/multi-locate/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/multi-locate/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/multi-locate/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/multi-locate/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/multi-locate/expected.svg"
+    },
+    "title": "Multi-locate: mark the capital, the peak, and the western sea"
+  },
+  {
     "id": "geomap/odisha-coastal",
     "kind": "engine",
     "engine": "geomap",
@@ -204,6 +232,20 @@ export const catalog = [
       "svg": "packages/geomap-engine/fixture/overlay/expected.svg"
     },
     "title": "Overlay with two region layers"
+  },
+  {
+    "id": "geomap/place-memory",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "place-memory",
+    "specPath": "packages/geomap-engine/fixture/place-memory/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/place-memory/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/place-memory/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/place-memory/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/place-memory/expected.svg"
+    },
+    "title": "Places of the national movement"
   },
   {
     "id": "geomap/region",

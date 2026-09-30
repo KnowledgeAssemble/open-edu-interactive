@@ -1,0 +1,20 @@
+[
+  {
+    "id": "geom-sites-calcutta",
+    "role": "button",
+    "label": "Calcutta",
+    "children": []
+  },
+  {
+    "id": "geom-sites-delhi",
+    "role": "button",
+    "label": "Delhi",
+    "children": []
+  },
+  {
+    "id": "geom-sites-bombay",
+    "role": "button",
+    "label": "Bombay",
+    "children": []
+  }
+]

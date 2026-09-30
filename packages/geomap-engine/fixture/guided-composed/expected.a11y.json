@@ -1,0 +1,14 @@
+[
+  {
+    "id": "geom-states-odisha",
+    "role": "button",
+    "label": "Odisha",
+    "children": []
+  },
+  {
+    "id": "geom-cities-bhubaneswar",
+    "role": "button",
+    "label": "Bhubaneswar",
+    "children": []
+  }
+]

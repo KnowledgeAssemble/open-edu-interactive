@@ -1,0 +1,20 @@
+[
+  {
+    "id": "geom-features-capital",
+    "role": "button",
+    "label": "Capital City",
+    "children": []
+  },
+  {
+    "id": "geom-features-peak",
+    "role": "button",
+    "label": "Peak",
+    "children": []
+  },
+  {
+    "id": "geom-features-west-sea",
+    "role": "button",
+    "label": "Western Sea",
+    "children": []
+  }
+]
