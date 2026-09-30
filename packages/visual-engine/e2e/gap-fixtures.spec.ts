@@ -105,3 +105,35 @@ test.describe('Visual Engine — counting-set-pick-n e2e (W-2.1 maxSelection)', 
     expect(result).toBe('cs-object-4');
   });
 });
+
+test.describe('Visual Engine — fraction-shade-n e2e (W-2.2 selection-driven fill)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=visual&spec=packages/visual-engine/fixture/fraction-shade-n/input.visual.json');
+    await page.waitForFunction(() => !!(window as unknown as { __harness?: unknown }).__harness);
+  });
+
+  test('fr-shade-n-parts: selecting parts fills them in the re-rendered SVG; deselect unfills', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as {
+        __harness: {
+          dispatch(a: unknown): void;
+          snapshot(): { selection: string[]; svgResult: { svg: string } };
+          events(): Array<{ name: string }>;
+        }
+      }).__harness;
+      const initial = h.snapshot().svgResult.svg;
+      const initialFilled = (initial.match(/data-oedu-filled="true"/g) ?? []).length;
+      h.dispatch({ type: 'select', target: { id: 'fb-part-1' } });
+      h.dispatch({ type: 'select', target: { id: 'fb-part-3' } });
+      const filled = (h.snapshot().svgResult.svg.match(/data-oedu-filled="true"/g) ?? []).length;
+      const names = h.events().map((e) => e.name);
+      h.dispatch({ type: 'deselect', target: { id: 'fb-part-1' } });
+      const afterDeselect = (h.snapshot().svgResult.svg.match(/data-oedu-filled="true"/g) ?? []).length;
+      return { initialFilled, filled, afterDeselect, hasEvents: names.some((n) => n.includes('selected')) };
+    });
+    expect(result.initialFilled).toBe(0);
+    expect(result.filled).toBe(2);
+    expect(result.afterDeselect).toBe(1);
+    expect(result.hasEvents).toBe(true);
+  });
+});

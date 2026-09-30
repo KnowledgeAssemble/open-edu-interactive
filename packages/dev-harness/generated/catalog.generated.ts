@@ -821,6 +821,19 @@ export const catalog = [
     "title": "fraction-comparison"
   },
   {
+    "id": "visual/fraction-shade-n",
+    "kind": "engine",
+    "engine": "visual",
+    "slug": "fraction-shade-n",
+    "specPath": "packages/visual-engine/fixture/fraction-shade-n/input.visual.json",
+    "golden": {
+      "scene": "packages/visual-engine/fixture/fraction-shade-n/expected.scene.json",
+      "a11y": "packages/visual-engine/fixture/fraction-shade-n/expected.a11y.json",
+      "svg": "packages/visual-engine/fixture/fraction-shade-n/expected.svg"
+    },
+    "title": "fraction-shade-n"
+  },
+  {
     "id": "visual/geometry",
     "kind": "engine",
     "engine": "visual",

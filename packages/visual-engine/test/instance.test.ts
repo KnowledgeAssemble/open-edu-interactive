@@ -290,3 +290,50 @@ describe('VisualEngine — maxSelection (W-2.1)', () => {
     expect(instance.snapshot().selection).toHaveLength(5);
   });
 });
+
+describe('VisualEngine — selection-driven fraction fill (W-2.2)', () => {
+  const FRAC_SPEC = {
+    type: 'visual',
+    version: '1.0.0',
+    id: 'fraction-shade-test',
+    content: {
+      kind: 'fraction',
+      components: [{
+        id: 'fb',
+        type: 'fraction',
+        props: { numerator: 2, denominator: 5, interactive: true },
+      }],
+    },
+    accessibility: { label: 'Fraction bar', description: 'Shade two fifths' },
+  };
+
+  it('selecting a part re-derives metadata.filled and re-renders SVG deterministically', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(FRAC_SPEC as never, stubHost());
+    const initial = (instance.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    expect(initial).not.toContain('data-oedu-filled="true"');
+
+    instance.dispatch({ type: 'select', target: { id: 'fb-part-0' } });
+    instance.dispatch({ type: 'select', target: { id: 'fb-part-2' } });
+    const filledSvg = (instance.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    const filledCount = (filledSvg.match(/data-oedu-filled="true"/g) ?? []).length;
+    expect(filledCount).toBe(2);
+    const sel = (instance.snapshot() as { selection: string[] }).selection;
+    expect(sel).toEqual(['fb-part-0', 'fb-part-2']);
+
+    instance.dispatch({ type: 'deselect', target: { id: 'fb-part-0' } });
+    const afterDeselect = (instance.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    expect((afterDeselect.match(/data-oedu-filled="true"/g) ?? []).length).toBe(1);
+  });
+
+  it('fill re-derive is deterministic: same selection produces identical SVG', () => {
+    const engine = new VisualEngine();
+    const a = engine.instantiate(FRAC_SPEC as never, stubHost());
+    const b = engine.instantiate(FRAC_SPEC as never, stubHost());
+    a.dispatch({ type: 'select', target: { id: 'fb-part-1' } });
+    b.dispatch({ type: 'select', target: { id: 'fb-part-1' } });
+    const svgA = (a.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    const svgB = (b.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    expect(svgA).toBe(svgB);
+  });
+});

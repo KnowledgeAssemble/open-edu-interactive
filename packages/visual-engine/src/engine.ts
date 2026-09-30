@@ -59,18 +59,42 @@ export class VisualEngine implements Engine {
     }
 
     // Build scene + layout + SVG (deterministic; computed once at instantiation)
-    const scene = layout(buildScene(visualSpec.content), {
+    const baseScene = layout(buildScene(visualSpec.content), {
       width: 800,
       height: 600,
       minTouchTarget: 44,
       textStyle: 'normal',
     });
-    const svgResult = svgFrom(scene, {
+    const ctx: { width: number; height: number; minTouchTarget: number; textStyle: string } = {
       width: 800,
       height: 600,
       minTouchTarget: 44,
       textStyle: 'normal',
-    }, visualSpec.accessibility?.label, visualSpec.accessibility?.description);
+    };
+    const svgCtx = ctx;
+
+    let scene = baseScene;
+    let svgResult = svgFrom(scene, svgCtx, visualSpec.accessibility?.label, visualSpec.accessibility?.description);
+
+    function rederive(): void {
+      scene = structuredClone(baseScene);
+      walkNodes(scene.nodes, (node) => {
+        if (node.role === 'fraction-part') {
+          node.metadata = {
+            ...node.metadata,
+            filled: state.selection.includes(node.id) === true,
+          };
+        }
+      });
+      svgResult = svgFrom(scene, svgCtx, visualSpec.accessibility?.label, visualSpec.accessibility?.description);
+    }
+
+    function walkNodes(nodes: import('./scene/types.js').SceneNode[], fn: (n: import('./scene/types.js').SceneNode) => void): void {
+      for (const node of nodes) {
+        fn(node);
+        walkNodes(node.children, fn);
+      }
+    }
 
     const mounted = log.append('engine-mounted', instanceId);
     const ready = log.append('engine-ready', instanceId);
@@ -115,6 +139,9 @@ export class VisualEngine implements Engine {
         }
         const reduced = baseReducer(state, action);
         state = reduced;
+        if (action.type === 'select' || action.type === 'deselect') {
+          rederive();
+        }
 
         const started = log.append('interaction-started', instanceId, undefined, action);
         emit(started as Parameters<EngineHost['onEvent']>[0]);

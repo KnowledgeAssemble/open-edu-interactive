@@ -149,7 +149,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true`, `denominator`, `numerator` as display or target hint only. |
 | **Fixture** | `fraction-shade-n` (planned) |
 | **Host** | Validates selected set size and indices. |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.2 selection-driven fraction fill — engine-state `state.selection` re-derives `metadata.filled` per part and re-renders deterministically; SPEC A.2.2) |
 
 ---
 

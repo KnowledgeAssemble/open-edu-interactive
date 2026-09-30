@@ -3098,6 +3098,10 @@ Each component accepts the optional `interactive: boolean` prop. When `true`, ev
 
 The counting-set component accepts the optional `maxSelection: number` prop. It constrains how many objects a learner may select: a `select` that would push the component's selection past `maxSelection` is rejected deterministically with `INVALID_ACTION` (`packages/visual-engine/src/engine.ts`). Absent means unlimited. Enforcement is scoped to the learner-facing `select`/`deselect` actions only — a host `dispatch()` of any other D5 action is never rejected by the cap (ADR-12: the declared action set is an authoring contract, not a runtime access-control list). The validator ranges it to a non-negative integer (`INVALID_SPEC` otherwise). Use case: `cs-pick-n`.
 
+### A.2.2 Selection-driven fraction fill
+
+For `fraction` in discovery mode, fill is **engine-state**, not static emphasis: `state.selection` is the source of truth. Each `select`/`deselect` that touches a `fraction-part` node re-derives `metadata.filled = true` on the selected parts and re-renders the SVG deterministically (identical input → identical SVG). The renderer draws filled parts with a solid fill plus `data-oedu-filled="true"`; unfilled parts keep the translucent stroke-only look. Highlight props (`highlightedParts`) still carry guided-mode emphasis; they do not gate the selection-driven fill. Use case: `fr-shade-n-parts`.
+
 ## A.3 Scene node id conventions
 
 | Kind | Shape/Group | Children (guided) | Discovery interactive targets |
