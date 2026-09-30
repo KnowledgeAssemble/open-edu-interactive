@@ -821,7 +821,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-lab-connect-parts` *(planned)* |
 | **New capability** | `construct-edge` *(planned)* |
 | **Host** | Validity feedback. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-lab-4-cell-organelle` — Cell with parts and functions (course deep-dive)
 

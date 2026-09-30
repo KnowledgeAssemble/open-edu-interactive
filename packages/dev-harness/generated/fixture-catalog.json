@@ -512,6 +512,20 @@
     "title": "Cell organelles and functions"
   },
   {
+    "id": "diagram/di-lab-connect-parts",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-lab-connect-parts",
+    "specPath": "packages/diagram-engine/fixture/di-lab-connect-parts/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-lab-connect-parts/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-lab-connect-parts/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-lab-connect-parts/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-lab-connect-parts/expected.svg"
+    },
+    "title": "Connect blood flow parts"
+  },
+  {
     "id": "diagram/di-lab-label-all",
     "kind": "engine",
     "engine": "diagram",

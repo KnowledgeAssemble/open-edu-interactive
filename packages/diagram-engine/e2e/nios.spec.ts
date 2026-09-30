@@ -52,6 +52,7 @@ const FIXTURES = {
   'di-cause-influence-chain': 'packages/diagram-engine/fixture/di-cause-influence-chain/input.diagram.json',
   'di-inq-what-if': 'packages/diagram-engine/fixture/di-inq-what-if/input.diagram.json',
   'di-ord-assemble-cycle': 'packages/diagram-engine/fixture/di-ord-assemble-cycle/input.diagram.json',
+  'di-lab-connect-parts': 'packages/diagram-engine/fixture/di-lab-connect-parts/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -639,5 +640,28 @@ test.describe('Diagram W-3.10 — construct-order (di-ord-1, di-ord-3)', () => {
     expect(result.names).toContain('diagram.construct-order');
     expect(result.valid.valid).toBe(true);
     expect(result.invalid.valid).toBe(false);
+  });
+});
+
+test.describe('Diagram W-3.11 — construct-edge (di-lab-3, di-ord-3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-lab-connect-parts']);
+  });
+
+  test('connect adds a validated learner edge to snapshot; self-loop is rejected', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const before = h.events().length;
+      h.dispatch({ type: 'connect', payload: { from: 'artery', to: 'capillary', relationship: 'leads-to' } });
+      const names = h.events().slice(before).map((e) => e.name);
+      const snap = h.snapshot() as unknown as { learnerEdges: Array<{ from: string; to: string; relationship: string; valid: boolean }> };
+      const added = snap.learnerEdges[0];
+      h.dispatch({ type: 'connect', payload: { from: 'artery', to: 'artery', relationship: 'leads-to' } });
+      const errors = (h.snapshot() as unknown as { connectErrors: string[] }).connectErrors;
+      return { names, added, errors };
+    });
+    expect(result.names).toContain('diagram.connect');
+    expect(result.added).toEqual({ from: 'artery', to: 'capillary', relationship: 'leads-to', valid: true });
+    expect(result.errors).toEqual(['self-loop edge']);
   });
 });

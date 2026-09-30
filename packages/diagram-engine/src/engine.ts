@@ -24,6 +24,7 @@ import type { LayoutContext } from './layout/engine.js';
 import { svgFrom } from './render/svg.js';
 import type { Scene, SceneNode } from './scene/types.js';
 import type { SvgResult } from './render/types.js';
+import { adjacency, detectCycles } from './layout/graph.js';
 
 const DEFAULT_LAYOUT: LayoutContext = {
   width: 800,
@@ -130,6 +131,38 @@ function validateConstructOrder(content: DiagramContent, order: string[]): boole
   return true;
 }
 
+function connectEdge(
+  content: DiagramContent,
+  from: string,
+  to: string,
+  relationship: string,
+): { from: string; to: string; relationship: string; valid: boolean; error?: string } {
+  const nodeIds = new Set(content.nodes.map((n) => n.id));
+  if (!nodeIds.has(from) || !nodeIds.has(to)) {
+    return { from, to, relationship, valid: false, error: `unknown node` };
+  }
+  if (from === to) {
+    return { from, to, relationship, valid: false, error: 'self-loop edge' };
+  }
+  const existing = content.edges.some((e) => e.from === from && e.to === to && e.relationship === relationship);
+  if (existing) {
+    return { from, to, relationship, valid: false, error: 'duplicate edge triple' };
+  }
+  if (content.kind === 'flow' || content.kind === 'hierarchy') {
+    const pairs = [
+      ...content.edges.map((e) => ({ from: e.from, to: e.to })),
+      { from, to },
+    ];
+    const nodeIdsList = Array.from(nodeIds);
+    const g = adjacency(nodeIdsList, pairs);
+    const { hasCycle } = detectCycles(g);
+    if (hasCycle) {
+      return { from, to, relationship, valid: false, error: `cycle not allowed in ${content.kind}` };
+    }
+  }
+  return { from, to, relationship, valid: true };
+}
+
 function renderForValidation(
   content: DiagramContent,
   spec: DiagramSpec,
@@ -213,6 +246,8 @@ export class DiagramEngine implements Engine {
     const followedChain: string[] = [];
     const deemphasizedNodes: string[] = [];
     let lastConstructOrder: { order: string[]; valid: boolean } | null = null;
+    const learnerEdges: Array<{ from: string; to: string; relationship: string; valid: boolean }> = [];
+    const connectErrors: string[] = [];
 
     let laidOut: Scene = { nodes: [], semantics: {} };
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
@@ -327,6 +362,23 @@ export class DiagramEngine implements Engine {
             const nsEvent = log.append('diagram.filter-applied', instanceId, { categories }, action);
             emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
           }
+        } else if (action.type === 'connect') {
+          const payload = action.payload as { from?: string; to?: string; relationship?: string } | undefined;
+          const from = payload?.from;
+          const to = payload?.to;
+          const relationship = payload?.relationship;
+          if (from && to && relationship) {
+            const authored = connectEdge(content, from, to, relationship);
+            if (authored.valid) {
+              learnerEdges.push(authored);
+              connectErrors.length = 0;
+            } else {
+              connectErrors.push(authored.error ?? 'invalid connect');
+            }
+            state = { ...state, lastAction: action };
+            const nsEvent = log.append('diagram.connect', instanceId, { from, to, relationship, valid: authored.valid, error: authored.error }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          }
         } else if (action.type === 'answer') {
           const targetId = action.target?.id;
           const payload = action.payload as { whatIf?: boolean; whatIfNode?: string; construct?: string; order?: string[] } | undefined;
@@ -408,6 +460,8 @@ export class DiagramEngine implements Engine {
           followedChain: [...followedChain],
           deemphasizedNodes: [...deemphasizedNodes],
           constructOrder: lastConstructOrder,
+          learnerEdges: [...learnerEdges],
+          connectErrors: [...connectErrors],
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {
