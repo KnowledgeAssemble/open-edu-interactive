@@ -49,6 +49,7 @@ const FIXTURES = {
   'di-sys-city-system': 'packages/diagram-engine/fixture/di-sys-city-system/input.diagram.json',
   'di-cause-relationship-gate': 'packages/diagram-engine/fixture/di-cause-relationship-gate/input.diagram.json',
   'di-cause-relative-influence': 'packages/diagram-engine/fixture/di-cause-relative-influence/input.diagram.json',
+  'di-cause-influence-chain': 'packages/diagram-engine/fixture/di-cause-influence-chain/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -573,5 +574,25 @@ test.describe('Diagram W-3.7 — edge-weight (di-cause-5)', () => {
     });
     expect(result.soilStrength).toBe(0.8);
     expect(result.rainStrength).toBe(0.6);
+  });
+});
+
+test.describe('Diagram W-3.8 — follow-chain (di-cause-4)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-cause-influence-chain']);
+  });
+
+  test('each follow appends to the chain; last edge carries a monotonic chain step', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      h.dispatch({ type: 'follow', target: { id: 'river-silt' } });
+      h.dispatch({ type: 'follow', target: { id: 'silt-fertility' } });
+      h.dispatch({ type: 'follow', target: { id: 'fertility-crops' } });
+      const snap = h.snapshot() as unknown as { followedChain: string[] };
+      const svg = h.svg();
+      return { chain: snap.followedChain, lastStep: svg.includes('data-oedu-chain-step="3"') };
+    });
+    expect(result.chain).toEqual(['river-silt', 'silt-fertility', 'fertility-crops']);
+    expect(result.lastStep).toBe(true);
   });
 });

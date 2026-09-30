@@ -148,6 +148,20 @@
     "title": "Is this a valid flow?"
   },
   {
+    "id": "diagram/di-cause-influence-chain",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cause-influence-chain",
+    "specPath": "packages/diagram-engine/fixture/di-cause-influence-chain/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cause-influence-chain/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cause-influence-chain/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cause-influence-chain/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cause-influence-chain/expected.svg"
+    },
+    "title": "Why the delta is fertile"
+  },
+  {
     "id": "diagram/di-cause-many-causes",
     "kind": "engine",
     "engine": "diagram",

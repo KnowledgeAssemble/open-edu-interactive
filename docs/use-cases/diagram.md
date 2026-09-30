@@ -687,7 +687,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-influence-chain` *(planned)* |
 | **New capability** | `follow-chain` *(planned)* — per-step path emphasis. |
 | **Host** | Explanation rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-5-relative-influence` — Heavier vs lighter influence (advanced)
 

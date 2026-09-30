@@ -54,6 +54,7 @@ function render(
   description?: string,
   filterCategories?: string[],
   revealedEdges?: string[],
+  followedChain?: string[],
 ): { scene: Scene; svgResult: SvgResult } {
   const s = buildScene(content);
   const laidOut = layout(s, ctx, spec.layout?.type ?? defaultLayoutType(content.kind));
@@ -78,6 +79,16 @@ function render(
         }
       }
     });
+  }
+  if (followedChain && followedChain.length > 0) {
+    const lastEdge = followedChain[followedChain.length - 1]!;
+    for (const node of laidOut.nodes) {
+      walkHide(node, (n) => {
+        if (n.kind === 'edge' && (n.metadata?.edgeId === lastEdge || n.id === lastEdge)) {
+          n.metadata = { ...n.metadata, chainStep: followedChain.length, chainActive: true };
+        }
+      });
+    }
   }
   const svgResult = svgFrom(laidOut, ctx, label, description);
   return { scene: laidOut, svgResult };
@@ -170,13 +181,14 @@ export class DiagramEngine implements Engine {
 
     let state: EngineState = { ...initialState(instanceId, this.type), phase: 'running' };
     const revealedEdges: string[] = [];
+    const followedChain: string[] = [];
 
     let laidOut: Scene = { nodes: [], semantics: {} };
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
 
     function recompute(): void {
     const filter = state.filter as string[] | undefined;
-    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter, revealedEdges);
+    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter, revealedEdges, followedChain);
     laidOut = result.scene;
     svgResult = result.svgResult;
   }
@@ -317,6 +329,11 @@ export class DiagramEngine implements Engine {
             });
             emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
           } else if (action.type === 'follow') {
+            const targetId = action.target?.id;
+            if (targetId && !followedChain.includes(targetId)) {
+              followedChain.push(targetId);
+            }
+            recompute();
             const nsEvent = log.append(DIAGRAM_EVENT_FOLLOWED, instanceId, entityPayload as Record<string, unknown>, {
               ...action,
               payload: entityPayload,
@@ -339,6 +356,7 @@ export class DiagramEngine implements Engine {
           svgResult,
           alternative: svgResult.alternative,
           revealedEdges: [...revealedEdges],
+          followedChain: [...followedChain],
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {

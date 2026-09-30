@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Influence chain from river to silt to fertility to crops</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-river" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="River" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">River</text>
+    <rect id="node-silt" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Silt deposition" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Silt deposition</text>
+    <rect id="node-fertility" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Sediment fertility" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Sediment fertility</text>
+    <rect id="node-crops" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Dense crops" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Dense crops</text>
+    <path id="river-silt" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="river leads-to silt" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="silt-fertility" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="silt leads-to fertility" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="fertility-crops" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="fertility influences crops" data-oedu-relationship="influences" d="M100,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

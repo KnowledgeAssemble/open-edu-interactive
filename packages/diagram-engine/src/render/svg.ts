@@ -29,16 +29,18 @@ function nodeToSvg(node: SceneNode, indent: number): string {
     const geo = node.metadata?.edgeGeometry as { path?: string; points?: Array<{ x: number; y: number }> } | undefined;
     const rel = node.metadata?.relationship as string ?? "";
     const relationshipAttr = `data-oedu-relationship="${escapeXml(rel)}"`;
+    const chainStep = node.metadata?.chainStep as number | undefined;
+    const chainAttr = chainStep !== undefined ? ` data-oedu-chain-step="${chainStep}"` : '';
 
     if (geo?.path) {
-      return `${pad}<path ${attrs} ${relationshipAttr} d="${escapeXml(geo.path)}" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>`;
+      return `${pad}<path ${attrs} ${relationshipAttr}${chainAttr} d="${escapeXml(geo.path)}" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>`;
     }
 
     const points = geo?.points ?? [];
     if (points.length === 2) {
       const p1 = points[0]!;
       const p2 = points[1]!;
-      return `${pad}<line ${attrs} ${relationshipAttr} x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="currentColor" stroke-width="2" marker-end="url(#arrowhead)"/>`;
+      return `${pad}<line ${attrs} ${relationshipAttr}${chainAttr} x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="currentColor" stroke-width="2" marker-end="url(#arrowhead)"/>`;
     }
 
     throw new Error(`edge "${node.id}" has no geometry: expected edgeGeometry with path or points`);

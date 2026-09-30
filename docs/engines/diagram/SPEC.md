@@ -61,6 +61,7 @@ Rules:
 - Node filtering (W-3.5): nodes MAY carry `categories: string[]`. D5 `filter` with payload `{ categories }` hides every node whose categories match none of the requested set and emits `diagram.filter-applied`; `clear-filter` restores all nodes. This is a presentational grey-out/hide — the reducer never rejects a host dispatch to a filtered node.
 - Relationship gating (W-3.6): edges MAY carry `gated: boolean`. A gated edge hides its `relationship` until the learner dispatches D5 `answer` targeting the edge id (the engine records it in `snapshot().revealedEdges`); after reveal, `follow` works normally. Deterministic.
 - Edge weight (W-3.7): edges MAY carry `strength: number` — semantic influence metadata (data, never style). It is surfaced on the edge scene node and in the alternative edge rows; the engine never uses it for layout.
+- Follow chain (W-3.8): consecutive `follow` dispatches accumulate a path. `snapshot().followedChain` lists edges in follow order, and the most recent edge renders with `data-oedu-chain-step="N"` (monotonic step). Alternative list stays the path.
 - `content.kind` / `profile` MVP: `flow` | `cycle` | `hierarchy` | `concept-map` (one engine, multiple profiles).
 - Layout is semantic (`layout.type`); coordinates are derived (DESIGN §8).
 - Auto-layout positions are **illustrative** unless provenance says otherwise (DESIGN §9).
