@@ -57,6 +57,19 @@ Rules:
 2. Emit `chart.data-point-selected` (namespaced) on D5 `select`.
 3. Tabular alternative representation derived from the same semantic model (L4).
 
+## 3.1 Scene node-id scheme
+
+Scene nodes for data marks use a stable, deterministic id per measure and row:
+
+- Bar: `{measureId}-bar-{rowId}` (e.g. `rainfall-bar-row-jan`, `sunshine-bar-row-jan`).
+- Point: `{measureId}-point-{rowId}`.
+- Axis: `axis-x` / `axis-y`; gridlines `gridline-{i}`; ticks `tick-x-{i}` / `tick-y-{i}`; labels `label-x-{i}` / `label-y-{i}`.
+- Multi-measure legend: `legend-{measureId}` (emitted only when `measures[]` length ≥ 2 over one shared dimension).
+
+## 3.2 Multi-measure grouped bars
+
+When `content.kind === "bar"` and `measures[]` length ≥ 2 over one shared dimension, bars are grouped per category: within each band, one bar per measure, offset deterministically by measure index. A text legend distinguishes measures (`legend-{measureId}`). The tabular alternative lists **all** measures per row (each `measureId` → value). A single measure renders the un-grouped bar (existing behavior). Use case: `ch-x2-multi-measure`.
+
 ## 4. Non-goals
 
 Not a dashboard library. Not a second assessment engine. See DESIGN §15 and `VISION.md`.

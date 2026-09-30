@@ -191,9 +191,9 @@ Reference UX: trend over ordered categories or time. Requires ≥ 2 data points.
 | **Action** | Select the correct bar among grouped measures |
 | **Acceptance** | Two measures produce distinct node ids per row (`rainfall-bar-row-jan`, `sunshine-bar-row-jan`); legend distinguishes measures; tabular lists both values per row |
 | **Spec** | `measures[]` length 2, shared dimension |
-| **Fixture** | `planned` |
+| **Fixture** | `packages/chart-engine/fixture/bar-multi-measure/` |
 | **Host** | Scoring on `rowId` + `measureId` |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.3 grouped multi-measure — node-id scheme `{measureId}-bar-{rowId}` documented in chart SPEC §3.1; legend distinguishes measures; tabular lists both values per row) |
 
 ### `ch-x3-guided-narrow` — Guided select via pre-filter
 

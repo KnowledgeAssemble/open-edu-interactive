@@ -127,3 +127,38 @@ test.describe('Chart Engine — ch-x3 guided narrow e2e', () => {
     expect(result.restored.sort()).toEqual(['Aug', 'Feb', 'May', 'Nov']);
   });
 });
+
+test.describe('Chart Engine — ch-x2 multi-measure e2e (W-2.3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar-multi-measure/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('grouped bars: distinct node ids per measure per row; legend distinguishes measures; tabular lists all values', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { svg(): string; tabular(): Array<{ rowLabel: string; values: Array<{ measureId: string; value: number }> }> } }).__chartHarness;
+      const svg = h.svg();
+      const tabular = h.tabular();
+      return { svg, janValues: tabular.find((r) => r.rowLabel === 'Jan')?.values };
+    });
+    expect(result.svg).toContain('id="rainfall-bar-row-jan"');
+    expect(result.svg).toContain('id="sunshine-bar-row-jan"');
+    expect(result.svg).toContain('id="legend-rainfall"');
+    expect(result.svg).toContain('id="legend-sunshine"');
+    expect(result.janValues).toEqual([
+      { measureId: 'rainfall', value: 30 },
+      { measureId: 'sunshine', value: 6 },
+    ]);
+  });
+
+  test('grouped bars: selecting a grouped bar emits chart.data-point-selected', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { dispatch(a: unknown): void; snapshot(): { selection: string[] }; events(): Array<{ name: string }> } }).__chartHarness;
+      h.dispatch({ type: 'select', target: { id: 'sunshine-bar-row-jul' } });
+      const names = h.events().map((e) => e.name);
+      return { selection: h.snapshot().selection, names };
+    });
+    expect(result.selection).toContain('sunshine-bar-row-jul');
+    expect(result.names).toContain('chart.data-point-selected');
+  });
+});

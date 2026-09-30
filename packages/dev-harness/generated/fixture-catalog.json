@@ -26,6 +26,19 @@
     "title": "bar-guided-narrow"
   },
   {
+    "id": "chart/bar-multi-measure",
+    "kind": "engine",
+    "engine": "chart",
+    "slug": "bar-multi-measure",
+    "specPath": "packages/chart-engine/fixture/bar-multi-measure/input.chart.json",
+    "golden": {
+      "scene": "packages/chart-engine/fixture/bar-multi-measure/expected.scene.json",
+      "a11y": "packages/chart-engine/fixture/bar-multi-measure/expected.a11y.json",
+      "svg": "packages/chart-engine/fixture/bar-multi-measure/expected.svg"
+    },
+    "title": "bar-multi-measure"
+  },
+  {
     "id": "chart/line",
     "kind": "engine",
     "engine": "chart",

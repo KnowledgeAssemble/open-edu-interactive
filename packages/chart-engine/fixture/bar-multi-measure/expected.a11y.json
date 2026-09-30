@@ -1,0 +1,118 @@
+{
+  "a11y": [
+    {
+      "id": "rainfall-bar-row-jan",
+      "role": "button",
+      "label": "Jan: 30 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-jan",
+      "role": "button",
+      "label": "Jan: 6 hrs",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-apr",
+      "role": "button",
+      "label": "Apr: 20 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-apr",
+      "role": "button",
+      "label": "Apr: 9 hrs",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-jul",
+      "role": "button",
+      "label": "Jul: 120 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-jul",
+      "role": "button",
+      "label": "Jul: 3 hrs",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-oct",
+      "role": "button",
+      "label": "Oct: 60 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-oct",
+      "role": "button",
+      "label": "Oct: 7 hrs",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "rainfall-bar-row-jan",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-jan",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-jan",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-jan",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-apr",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-apr",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-apr",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-apr",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-jul",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-jul",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-jul",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-jul",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-oct",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-oct",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-oct",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-oct",
+      "action": "focus"
+    }
+  ]
+}
