@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-class-part-whole",
+  "metadata": { "title": "Parts of Parliament" },
+  "purpose": { "learningObjective": "Know what is part of what", "reasoningMode": "identify" },
+  "content": {
+    "kind": "hierarchy",
+    "profile": "concept",
+    "nodes": [
+      { "id": "parliament", "label": "Parliament" },
+      { "id": "lok-sabha", "label": "Lok Sabha" },
+      { "id": "rajya-sabha", "label": "Rajya Sabha" },
+      { "id": "president", "label": "President" }
+    ],
+    "edges": [
+      { "from": "parliament", "to": "lok-sabha", "relationship": "contains" },
+      { "from": "parliament", "to": "rajya-sabha", "relationship": "contains" },
+      { "from": "lok-sabha", "to": "president", "relationship": "part-of" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Parliament contains Lok Sabha and Rajya Sabha" }
+}

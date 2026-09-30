@@ -1,0 +1,56 @@
+[
+  {
+    "id": "node-climate",
+    "role": "button",
+    "label": "Climate",
+    "children": []
+  },
+  {
+    "id": "node-soil",
+    "role": "button",
+    "label": "Soil",
+    "children": []
+  },
+  {
+    "id": "node-water",
+    "role": "button",
+    "label": "Water",
+    "children": []
+  },
+  {
+    "id": "node-vegetation",
+    "role": "button",
+    "label": "Vegetation",
+    "children": []
+  },
+  {
+    "id": "node-animals",
+    "role": "button",
+    "label": "Animals",
+    "children": []
+  },
+  {
+    "id": "edge-climate-vegetation",
+    "role": "link",
+    "label": "Climate influences Vegetation",
+    "children": []
+  },
+  {
+    "id": "edge-soil-vegetation",
+    "role": "link",
+    "label": "Soil influences Vegetation",
+    "children": []
+  },
+  {
+    "id": "edge-water-vegetation",
+    "role": "link",
+    "label": "Water influences Vegetation",
+    "children": []
+  },
+  {
+    "id": "edge-vegetation-animals",
+    "role": "link",
+    "label": "Vegetation influences Animals",
+    "children": []
+  }
+]

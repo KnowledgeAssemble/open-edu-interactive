@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-jobs",
+    "nodeId": "jobs",
+    "label": "City jobs"
+  },
+  {
+    "kind": "node",
+    "id": "node-services",
+    "nodeId": "services",
+    "label": "City services"
+  },
+  {
+    "kind": "node",
+    "id": "node-rural-stress",
+    "nodeId": "rural-stress",
+    "label": "Rural distress"
+  },
+  {
+    "kind": "node",
+    "id": "node-migration",
+    "nodeId": "migration",
+    "label": "Migration to cities"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-jobs-migration",
+    "from": "jobs",
+    "relationship": "influences",
+    "to": "migration",
+    "fromLabel": "City jobs",
+    "toLabel": "Migration to cities"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-services-migration",
+    "from": "services",
+    "relationship": "influences",
+    "to": "migration",
+    "fromLabel": "City services",
+    "toLabel": "Migration to cities"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-rural-stress-migration",
+    "from": "rural-stress",
+    "relationship": "influences",
+    "to": "migration",
+    "fromLabel": "Rural distress",
+    "toLabel": "Migration to cities"
+  }
+]

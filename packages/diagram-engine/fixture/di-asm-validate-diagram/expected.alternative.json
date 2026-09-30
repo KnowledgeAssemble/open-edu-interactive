@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-input",
+    "nodeId": "input",
+    "label": "Input"
+  },
+  {
+    "kind": "node",
+    "id": "node-step",
+    "nodeId": "step",
+    "label": "Step"
+  },
+  {
+    "kind": "node",
+    "id": "node-output",
+    "nodeId": "output",
+    "label": "Output"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-input-step",
+    "from": "input",
+    "relationship": "leads-to",
+    "to": "step",
+    "fromLabel": "Input",
+    "toLabel": "Step"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-step-output",
+    "from": "step",
+    "relationship": "leads-to",
+    "to": "output",
+    "fromLabel": "Step",
+    "toLabel": "Output"
+  }
+]

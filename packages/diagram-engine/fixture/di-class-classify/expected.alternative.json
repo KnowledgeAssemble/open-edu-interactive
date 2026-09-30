@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "node",
+    "id": "node-animals",
+    "nodeId": "animals",
+    "label": "Animals"
+  },
+  {
+    "kind": "node",
+    "id": "node-vertebrates",
+    "nodeId": "vertebrates",
+    "label": "Vertebrates"
+  },
+  {
+    "kind": "node",
+    "id": "node-invertebrates",
+    "nodeId": "invertebrates",
+    "label": "Invertebrates"
+  },
+  {
+    "kind": "node",
+    "id": "node-mammals",
+    "nodeId": "mammals",
+    "label": "Mammals"
+  },
+  {
+    "kind": "node",
+    "id": "node-birds",
+    "nodeId": "birds",
+    "label": "Birds"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-animals-vertebrates",
+    "from": "animals",
+    "relationship": "contains",
+    "to": "vertebrates",
+    "fromLabel": "Animals",
+    "toLabel": "Vertebrates"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-animals-invertebrates",
+    "from": "animals",
+    "relationship": "contains",
+    "to": "invertebrates",
+    "fromLabel": "Animals",
+    "toLabel": "Invertebrates"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-vertebrates-mammals",
+    "from": "vertebrates",
+    "relationship": "contains",
+    "to": "mammals",
+    "fromLabel": "Vertebrates",
+    "toLabel": "Mammals"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-vertebrates-birds",
+    "from": "vertebrates",
+    "relationship": "contains",
+    "to": "birds",
+    "fromLabel": "Vertebrates",
+    "toLabel": "Birds"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-proc-branch-flow",
+  "metadata": { "title": "Election process with outcomes" },
+  "purpose": { "learningObjective": "Follow a flow that fans out at a junction", "reasoningMode": "explore" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "polling", "label": "Polling day" },
+      { "id": "counting", "label": "Counting" },
+      { "id": "win", "label": "Winning candidate declared" },
+      { "id": "recount", "label": "Recount requested" },
+      { "id": "runoff", "label": "Runoff election" }
+    ],
+    "edges": [
+      { "from": "polling", "to": "counting", "relationship": "leads-to" },
+      { "from": "counting", "to": "win", "relationship": "leads-to" },
+      { "from": "counting", "to": "recount", "relationship": "leads-to" },
+      { "from": "recount", "to": "runoff", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Election flow with a junction that fans out to outcomes" }
+}

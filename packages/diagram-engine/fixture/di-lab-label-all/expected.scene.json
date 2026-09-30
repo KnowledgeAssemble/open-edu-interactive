@@ -1,0 +1,512 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-petal",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Petal",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "petal",
+            "label": "Petal"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-sepal",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sepal",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sepal",
+            "label": "Sepal"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-stamen",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Stamen",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "stamen",
+            "label": "Stamen"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-pistil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Pistil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "pistil",
+            "label": "Pistil"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-petal-stamen",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "petal connected-to stamen",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "petal",
+            "toNodeId": "stamen",
+            "relationship": "connected-to",
+            "labels": [],
+            "edgeId": "edge-petal-stamen",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-sepal-petal",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sepal connected-to petal",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sepal",
+            "toNodeId": "petal",
+            "relationship": "connected-to",
+            "labels": [],
+            "edgeId": "edge-sepal-petal",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 262.5
+                }
+              ],
+              "path": "M468,262.5 L308,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-stamen-pistil",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "stamen connected-to pistil",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "stamen",
+            "toNodeId": "pistil",
+            "relationship": "connected-to",
+            "labels": [],
+            "edgeId": "edge-stamen-pistil",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 322.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,322.5 L468,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-petal": {
+      "id": "node-petal",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Petal",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "petal",
+        "label": "Petal"
+      },
+      "children": []
+    },
+    "petal": {
+      "id": "node-petal",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Petal",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "petal",
+        "label": "Petal"
+      },
+      "children": []
+    },
+    "node-sepal": {
+      "id": "node-sepal",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sepal",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sepal",
+        "label": "Sepal"
+      },
+      "children": []
+    },
+    "sepal": {
+      "id": "node-sepal",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sepal",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sepal",
+        "label": "Sepal"
+      },
+      "children": []
+    },
+    "node-stamen": {
+      "id": "node-stamen",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Stamen",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "stamen",
+        "label": "Stamen"
+      },
+      "children": []
+    },
+    "stamen": {
+      "id": "node-stamen",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Stamen",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "stamen",
+        "label": "Stamen"
+      },
+      "children": []
+    },
+    "node-pistil": {
+      "id": "node-pistil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Pistil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "pistil",
+        "label": "Pistil"
+      },
+      "children": []
+    },
+    "pistil": {
+      "id": "node-pistil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Pistil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "pistil",
+        "label": "Pistil"
+      },
+      "children": []
+    },
+    "edge-petal-stamen": {
+      "id": "edge-petal-stamen",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "petal connected-to stamen",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "petal",
+        "toNodeId": "stamen",
+        "relationship": "connected-to",
+        "labels": [],
+        "edgeId": "edge-petal-stamen"
+      },
+      "children": []
+    },
+    "edge-sepal-petal": {
+      "id": "edge-sepal-petal",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "sepal connected-to petal",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "sepal",
+        "toNodeId": "petal",
+        "relationship": "connected-to",
+        "labels": [],
+        "edgeId": "edge-sepal-petal"
+      },
+      "children": []
+    },
+    "edge-stamen-pistil": {
+      "id": "edge-stamen-pistil",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "stamen connected-to pistil",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "stamen",
+        "toNodeId": "pistil",
+        "relationship": "connected-to",
+        "labels": [],
+        "edgeId": "edge-stamen-pistil"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-petal",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Petal",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "petal",
+            "label": "Petal"
+          },
+          "children": []
+        },
+        {
+          "id": "node-sepal",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sepal",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sepal",
+            "label": "Sepal"
+          },
+          "children": []
+        },
+        {
+          "id": "node-stamen",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Stamen",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "stamen",
+            "label": "Stamen"
+          },
+          "children": []
+        },
+        {
+          "id": "node-pistil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Pistil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "pistil",
+            "label": "Pistil"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-petal-stamen",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "petal connected-to stamen",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "petal",
+            "toNodeId": "stamen",
+            "relationship": "connected-to",
+            "labels": [],
+            "edgeId": "edge-petal-stamen"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-sepal-petal",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sepal connected-to petal",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sepal",
+            "toNodeId": "petal",
+            "relationship": "connected-to",
+            "labels": [],
+            "edgeId": "edge-sepal-petal"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-stamen-pistil",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "stamen connected-to pistil",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "stamen",
+            "toNodeId": "pistil",
+            "relationship": "connected-to",
+            "labels": [],
+            "edgeId": "edge-stamen-pistil"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

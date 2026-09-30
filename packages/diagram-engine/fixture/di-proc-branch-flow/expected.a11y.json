@@ -1,0 +1,56 @@
+[
+  {
+    "id": "node-polling",
+    "role": "button",
+    "label": "Polling day",
+    "children": []
+  },
+  {
+    "id": "node-counting",
+    "role": "button",
+    "label": "Counting",
+    "children": []
+  },
+  {
+    "id": "node-win",
+    "role": "button",
+    "label": "Winning candidate declared",
+    "children": []
+  },
+  {
+    "id": "node-recount",
+    "role": "button",
+    "label": "Recount requested",
+    "children": []
+  },
+  {
+    "id": "node-runoff",
+    "role": "button",
+    "label": "Runoff election",
+    "children": []
+  },
+  {
+    "id": "edge-polling-counting",
+    "role": "link",
+    "label": "Polling day leads-to Counting",
+    "children": []
+  },
+  {
+    "id": "edge-counting-win",
+    "role": "link",
+    "label": "Counting leads-to Winning candidate declared",
+    "children": []
+  },
+  {
+    "id": "edge-counting-recount",
+    "role": "link",
+    "label": "Counting leads-to Recount requested",
+    "children": []
+  },
+  {
+    "id": "edge-recount-runoff",
+    "role": "link",
+    "label": "Recount requested leads-to Runoff election",
+    "children": []
+  }
+]

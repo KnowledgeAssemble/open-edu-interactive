@@ -1,0 +1,70 @@
+[
+  {
+    "kind": "node",
+    "id": "node-planting",
+    "nodeId": "planting",
+    "label": "Planting"
+  },
+  {
+    "kind": "node",
+    "id": "node-growing",
+    "nodeId": "growing",
+    "label": "Growing"
+  },
+  {
+    "kind": "node",
+    "id": "node-harvesting",
+    "nodeId": "harvesting",
+    "label": "Harvesting"
+  },
+  {
+    "kind": "node",
+    "id": "node-blank",
+    "nodeId": "blank",
+    "label": "Sowing candidate",
+    "description": "Candidate for the blank slot"
+  },
+  {
+    "kind": "node",
+    "id": "node-threshing",
+    "nodeId": "threshing",
+    "label": "Threshing candidate",
+    "description": "Distractor candidate"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-planting-growing",
+    "from": "planting",
+    "relationship": "leads-to",
+    "to": "growing",
+    "fromLabel": "Planting",
+    "toLabel": "Growing"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-growing-harvesting",
+    "from": "growing",
+    "relationship": "leads-to",
+    "to": "harvesting",
+    "fromLabel": "Growing",
+    "toLabel": "Harvesting"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-blank-growing",
+    "from": "blank",
+    "relationship": "leads-to",
+    "to": "growing",
+    "fromLabel": "Sowing candidate",
+    "toLabel": "Growing"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-threshing-harvesting",
+    "from": "threshing",
+    "relationship": "leads-to",
+    "to": "harvesting",
+    "fromLabel": "Threshing candidate",
+    "toLabel": "Harvesting"
+  }
+]

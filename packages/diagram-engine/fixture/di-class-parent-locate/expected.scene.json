@@ -1,0 +1,536 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-state",
+          "role": "selectable",
+          "kind": "node",
+          "label": "State",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "state",
+            "label": "State"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-district",
+          "role": "selectable",
+          "kind": "node",
+          "label": "District",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "district",
+            "label": "District"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-tehsil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Tehsil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "tehsil",
+            "label": "Tehsil"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-village",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Village",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "village",
+            "label": "Village"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-state-district",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "state contains district",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "state",
+            "toNodeId": "district",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-state-district",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-district-tehsil",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "district contains tehsil",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "district",
+            "toNodeId": "tehsil",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-district-tehsil",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-tehsil-village",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "tehsil contains village",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "tehsil",
+            "toNodeId": "village",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-tehsil-village",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M100,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-state": {
+      "id": "node-state",
+      "role": "selectable",
+      "kind": "node",
+      "label": "State",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "state",
+        "label": "State"
+      },
+      "children": []
+    },
+    "state": {
+      "id": "node-state",
+      "role": "selectable",
+      "kind": "node",
+      "label": "State",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "state",
+        "label": "State"
+      },
+      "children": []
+    },
+    "node-district": {
+      "id": "node-district",
+      "role": "selectable",
+      "kind": "node",
+      "label": "District",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "district",
+        "label": "District"
+      },
+      "children": []
+    },
+    "district": {
+      "id": "node-district",
+      "role": "selectable",
+      "kind": "node",
+      "label": "District",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "district",
+        "label": "District"
+      },
+      "children": []
+    },
+    "node-tehsil": {
+      "id": "node-tehsil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Tehsil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "tehsil",
+        "label": "Tehsil"
+      },
+      "children": []
+    },
+    "tehsil": {
+      "id": "node-tehsil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Tehsil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "tehsil",
+        "label": "Tehsil"
+      },
+      "children": []
+    },
+    "node-village": {
+      "id": "node-village",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Village",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "village",
+        "label": "Village"
+      },
+      "children": []
+    },
+    "village": {
+      "id": "node-village",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Village",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "village",
+        "label": "Village"
+      },
+      "children": []
+    },
+    "edge-state-district": {
+      "id": "edge-state-district",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "state contains district",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "state",
+        "toNodeId": "district",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-state-district"
+      },
+      "children": []
+    },
+    "edge-district-tehsil": {
+      "id": "edge-district-tehsil",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "district contains tehsil",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "district",
+        "toNodeId": "tehsil",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-district-tehsil"
+      },
+      "children": []
+    },
+    "edge-tehsil-village": {
+      "id": "edge-tehsil-village",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "tehsil contains village",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "tehsil",
+        "toNodeId": "village",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-tehsil-village"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-state",
+          "role": "selectable",
+          "kind": "node",
+          "label": "State",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "state",
+            "label": "State"
+          },
+          "children": []
+        },
+        {
+          "id": "node-district",
+          "role": "selectable",
+          "kind": "node",
+          "label": "District",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "district",
+            "label": "District"
+          },
+          "children": []
+        },
+        {
+          "id": "node-tehsil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Tehsil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "tehsil",
+            "label": "Tehsil"
+          },
+          "children": []
+        },
+        {
+          "id": "node-village",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Village",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "village",
+            "label": "Village"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-state-district",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "state contains district",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "state",
+            "toNodeId": "district",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-state-district"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-district-tehsil",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "district contains tehsil",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "district",
+            "toNodeId": "tehsil",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-district-tehsil"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-tehsil-village",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "tehsil contains village",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "tehsil",
+            "toNodeId": "village",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-tehsil-village"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

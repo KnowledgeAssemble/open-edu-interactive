@@ -80,6 +80,342 @@
     "title": "Simple cycle"
   },
   {
+    "id": "diagram/di-asm-evidence-essay",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-asm-evidence-essay",
+    "specPath": "packages/diagram-engine/fixture/di-asm-evidence-essay/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-asm-evidence-essay/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-asm-evidence-essay/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-asm-evidence-essay/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-asm-evidence-essay/expected.svg"
+    },
+    "title": "Evidence trail for an essay"
+  },
+  {
+    "id": "diagram/di-asm-read-diagram",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-asm-read-diagram",
+    "specPath": "packages/diagram-engine/fixture/di-asm-read-diagram/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-asm-read-diagram/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-asm-read-diagram/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-asm-read-diagram/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-asm-read-diagram/expected.svg"
+    },
+    "title": "Diagram reading assessment"
+  },
+  {
+    "id": "diagram/di-asm-validate-diagram",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-asm-validate-diagram",
+    "specPath": "packages/diagram-engine/fixture/di-asm-validate-diagram/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-asm-validate-diagram/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-asm-validate-diagram/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-asm-validate-diagram/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-asm-validate-diagram/expected.svg"
+    },
+    "title": "Is this a valid flow?"
+  },
+  {
+    "id": "diagram/di-cause-many-causes",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cause-many-causes",
+    "specPath": "packages/diagram-engine/fixture/di-cause-many-causes/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cause-many-causes/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cause-many-causes/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cause-many-causes/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cause-many-causes/expected.svg"
+    },
+    "title": "Drivers of urban growth"
+  },
+  {
+    "id": "diagram/di-cause-many-effects",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cause-many-effects",
+    "specPath": "packages/diagram-engine/fixture/di-cause-many-effects/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cause-many-effects/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cause-many-effects/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cause-many-effects/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cause-many-effects/expected.svg"
+    },
+    "title": "Effects of deforestation"
+  },
+  {
+    "id": "diagram/di-class-classify",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-class-classify",
+    "specPath": "packages/diagram-engine/fixture/di-class-classify/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-class-classify/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-class-classify/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-class-classify/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-class-classify/expected.svg"
+    },
+    "title": "Animal classification tree"
+  },
+  {
+    "id": "diagram/di-class-gov-levels",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-class-gov-levels",
+    "specPath": "packages/diagram-engine/fixture/di-class-gov-levels/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-class-gov-levels/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-class-gov-levels/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-class-gov-levels/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-class-gov-levels/expected.svg"
+    },
+    "title": "Levels of government"
+  },
+  {
+    "id": "diagram/di-class-parent-locate",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-class-parent-locate",
+    "specPath": "packages/diagram-engine/fixture/di-class-parent-locate/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-class-parent-locate/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-class-parent-locate/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-class-parent-locate/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-class-parent-locate/expected.svg"
+    },
+    "title": "Administrative parent levels"
+  },
+  {
+    "id": "diagram/di-class-part-whole",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-class-part-whole",
+    "specPath": "packages/diagram-engine/fixture/di-class-part-whole/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-class-part-whole/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-class-part-whole/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-class-part-whole/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-class-part-whole/expected.svg"
+    },
+    "title": "Parts of Parliament"
+  },
+  {
+    "id": "diagram/di-class-sector-taxonomy",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-class-sector-taxonomy",
+    "specPath": "packages/diagram-engine/fixture/di-class-sector-taxonomy/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-class-sector-taxonomy/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-class-sector-taxonomy/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-class-sector-taxonomy/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-class-sector-taxonomy/expected.svg"
+    },
+    "title": "Economic sectors"
+  },
+  {
+    "id": "diagram/di-cycl-disaster-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cycl-disaster-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-cycl-disaster-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cycl-disaster-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cycl-disaster-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cycl-disaster-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cycl-disaster-cycle/expected.svg"
+    },
+    "title": "Disaster management cycle"
+  },
+  {
+    "id": "diagram/di-cycl-life-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cycl-life-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-cycl-life-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cycl-life-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cycl-life-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cycl-life-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cycl-life-cycle/expected.svg"
+    },
+    "title": "Frog life cycle"
+  },
+  {
+    "id": "diagram/di-cycl-social-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cycl-social-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-cycl-social-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cycl-social-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cycl-social-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cycl-social-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cycl-social-cycle/expected.svg"
+    },
+    "title": "Demand-price cycle"
+  },
+  {
+    "id": "diagram/di-cycl-water-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-cycl-water-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-cycl-water-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-cycl-water-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-cycl-water-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-cycl-water-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-cycl-water-cycle/expected.svg"
+    },
+    "title": "Water cycle (course version)"
+  },
+  {
+    "id": "diagram/di-inq-explain-why",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-inq-explain-why",
+    "specPath": "packages/diagram-engine/fixture/di-inq-explain-why/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-inq-explain-why/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-inq-explain-why/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-inq-explain-why/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-inq-explain-why/expected.svg"
+    },
+    "title": "Why the delta is fertile"
+  },
+  {
+    "id": "diagram/di-inq-open-explore",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-inq-open-explore",
+    "specPath": "packages/diagram-engine/fixture/di-inq-open-explore/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-inq-open-explore/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-inq-open-explore/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-inq-open-explore/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-inq-open-explore/expected.svg"
+    },
+    "title": "Web of influences"
+  },
+  {
+    "id": "diagram/di-lab-label-all",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-lab-label-all",
+    "specPath": "packages/diagram-engine/fixture/di-lab-label-all/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-lab-label-all/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-lab-label-all/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-lab-label-all/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-lab-label-all/expected.svg"
+    },
+    "title": "Label all parts of a flower"
+  },
+  {
+    "id": "diagram/di-ord-insert-missing",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-ord-insert-missing",
+    "specPath": "packages/diagram-engine/fixture/di-ord-insert-missing/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-ord-insert-missing/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-ord-insert-missing/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-ord-insert-missing/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-ord-insert-missing/expected.svg"
+    },
+    "title": "Insert the missing stage"
+  },
+  {
+    "id": "diagram/di-proc-branch-flow",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-proc-branch-flow",
+    "specPath": "packages/diagram-engine/fixture/di-proc-branch-flow/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-proc-branch-flow/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-proc-branch-flow/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-proc-branch-flow/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-proc-branch-flow/expected.svg"
+    },
+    "title": "Election process with outcomes"
+  },
+  {
+    "id": "diagram/di-proc-follow-process",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-proc-follow-process",
+    "specPath": "packages/diagram-engine/fixture/di-proc-follow-process/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-proc-follow-process/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-proc-follow-process/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-proc-follow-process/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-proc-follow-process/expected.svg"
+    },
+    "title": "Weathering to deposition"
+  },
+  {
+    "id": "diagram/di-proc-input-output",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-proc-input-output",
+    "specPath": "packages/diagram-engine/fixture/di-proc-input-output/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-proc-input-output/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-proc-input-output/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-proc-input-output/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-proc-input-output/expected.svg"
+    },
+    "title": "Photosynthesis inputs and outputs"
+  },
+  {
+    "id": "diagram/di-proc-which-step",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-proc-which-step",
+    "specPath": "packages/diagram-engine/fixture/di-proc-which-step/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-proc-which-step/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-proc-which-step/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-proc-which-step/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-proc-which-step/expected.svg"
+    },
+    "title": "Grinding to flour"
+  },
+  {
+    "id": "diagram/di-sys-drainage-basin",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-sys-drainage-basin",
+    "specPath": "packages/diagram-engine/fixture/di-sys-drainage-basin/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-sys-drainage-basin/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-sys-drainage-basin/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-sys-drainage-basin/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-sys-drainage-basin/expected.svg"
+    },
+    "title": "Drainage basin"
+  },
+  {
+    "id": "diagram/di-sys-industrial-linkages",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-sys-industrial-linkages",
+    "specPath": "packages/diagram-engine/fixture/di-sys-industrial-linkages/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-sys-industrial-linkages/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-sys-industrial-linkages/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-sys-industrial-linkages/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-sys-industrial-linkages/expected.svg"
+    },
+    "title": "Industrial linkages"
+  },
+  {
     "id": "diagram/flow",
     "kind": "engine",
     "engine": "diagram",

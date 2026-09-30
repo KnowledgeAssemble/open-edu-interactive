@@ -1,0 +1,56 @@
+[
+  {
+    "id": "node-planting",
+    "role": "button",
+    "label": "Planting",
+    "children": []
+  },
+  {
+    "id": "node-growing",
+    "role": "button",
+    "label": "Growing",
+    "children": []
+  },
+  {
+    "id": "node-harvesting",
+    "role": "button",
+    "label": "Harvesting",
+    "children": []
+  },
+  {
+    "id": "node-blank",
+    "role": "button",
+    "label": "Sowing candidate",
+    "children": []
+  },
+  {
+    "id": "node-threshing",
+    "role": "button",
+    "label": "Threshing candidate",
+    "children": []
+  },
+  {
+    "id": "edge-planting-growing",
+    "role": "link",
+    "label": "Planting leads-to Growing",
+    "children": []
+  },
+  {
+    "id": "edge-growing-harvesting",
+    "role": "link",
+    "label": "Growing leads-to Harvesting",
+    "children": []
+  },
+  {
+    "id": "edge-blank-growing",
+    "role": "link",
+    "label": "Sowing candidate leads-to Growing",
+    "children": []
+  },
+  {
+    "id": "edge-threshing-harvesting",
+    "role": "link",
+    "label": "Threshing candidate leads-to Harvesting",
+    "children": []
+  }
+]

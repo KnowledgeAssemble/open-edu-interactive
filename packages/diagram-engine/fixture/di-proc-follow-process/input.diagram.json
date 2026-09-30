@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-proc-follow-process",
+  "metadata": { "title": "Weathering to deposition" },
+  "purpose": { "learningObjective": "Trace how one stage becomes the next", "reasoningMode": "explore" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "weathering", "label": "Weathering" },
+      { "id": "erosion", "label": "Erosion" },
+      { "id": "transport", "label": "Transport" },
+      { "id": "deposition", "label": "Deposition" }
+    ],
+    "edges": [
+      { "from": "weathering", "to": "erosion", "relationship": "leads-to" },
+      { "from": "erosion", "to": "transport", "relationship": "leads-to" },
+      { "from": "transport", "to": "deposition", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Flow from weathering through erosion and transport to deposition" }
+}

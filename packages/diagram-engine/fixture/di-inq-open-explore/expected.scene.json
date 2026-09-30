@@ -1,0 +1,651 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-climate",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Climate",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "climate",
+            "label": "Climate"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-soil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "soil",
+            "label": "Soil"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-water",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Water",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "water",
+            "label": "Water"
+          },
+          "children": [],
+          "bounds": {
+            "x": 480,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-vegetation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "vegetation",
+            "label": "Vegetation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-animals",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Animals",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "animals",
+            "label": "Animals"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-climate-vegetation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "climate influences vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "climate",
+            "toNodeId": "vegetation",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-climate-vegetation",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M228,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-soil-vegetation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "soil influences vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "soil",
+            "toNodeId": "vegetation",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-soil-vegetation",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M388,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-water-vegetation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "water influences vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "water",
+            "toNodeId": "vegetation",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-water-vegetation",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 548,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M548,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-vegetation-animals",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "vegetation influences animals",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "vegetation",
+            "toNodeId": "animals",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-vegetation-animals",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 322.5
+                },
+                {
+                  "x": 388,
+                  "y": 322.5
+                }
+              ],
+              "path": "M228,322.5 L388,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-climate": {
+      "id": "node-climate",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Climate",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "climate",
+        "label": "Climate"
+      },
+      "children": []
+    },
+    "climate": {
+      "id": "node-climate",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Climate",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "climate",
+        "label": "Climate"
+      },
+      "children": []
+    },
+    "node-soil": {
+      "id": "node-soil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "soil",
+        "label": "Soil"
+      },
+      "children": []
+    },
+    "soil": {
+      "id": "node-soil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "soil",
+        "label": "Soil"
+      },
+      "children": []
+    },
+    "node-water": {
+      "id": "node-water",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Water",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "water",
+        "label": "Water"
+      },
+      "children": []
+    },
+    "water": {
+      "id": "node-water",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Water",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "water",
+        "label": "Water"
+      },
+      "children": []
+    },
+    "node-vegetation": {
+      "id": "node-vegetation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Vegetation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "vegetation",
+        "label": "Vegetation"
+      },
+      "children": []
+    },
+    "vegetation": {
+      "id": "node-vegetation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Vegetation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "vegetation",
+        "label": "Vegetation"
+      },
+      "children": []
+    },
+    "node-animals": {
+      "id": "node-animals",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Animals",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "animals",
+        "label": "Animals"
+      },
+      "children": []
+    },
+    "animals": {
+      "id": "node-animals",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Animals",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "animals",
+        "label": "Animals"
+      },
+      "children": []
+    },
+    "edge-climate-vegetation": {
+      "id": "edge-climate-vegetation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "climate influences vegetation",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "climate",
+        "toNodeId": "vegetation",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-climate-vegetation"
+      },
+      "children": []
+    },
+    "edge-soil-vegetation": {
+      "id": "edge-soil-vegetation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "soil influences vegetation",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "soil",
+        "toNodeId": "vegetation",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-soil-vegetation"
+      },
+      "children": []
+    },
+    "edge-water-vegetation": {
+      "id": "edge-water-vegetation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "water influences vegetation",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "water",
+        "toNodeId": "vegetation",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-water-vegetation"
+      },
+      "children": []
+    },
+    "edge-vegetation-animals": {
+      "id": "edge-vegetation-animals",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "vegetation influences animals",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "vegetation",
+        "toNodeId": "animals",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-vegetation-animals"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-climate",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Climate",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "climate",
+            "label": "Climate"
+          },
+          "children": []
+        },
+        {
+          "id": "node-soil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "soil",
+            "label": "Soil"
+          },
+          "children": []
+        },
+        {
+          "id": "node-water",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Water",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "water",
+            "label": "Water"
+          },
+          "children": []
+        },
+        {
+          "id": "node-vegetation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "vegetation",
+            "label": "Vegetation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-animals",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Animals",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "animals",
+            "label": "Animals"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-climate-vegetation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "climate influences vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "climate",
+            "toNodeId": "vegetation",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-climate-vegetation"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-soil-vegetation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "soil influences vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "soil",
+            "toNodeId": "vegetation",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-soil-vegetation"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-water-vegetation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "water influences vegetation",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "water",
+            "toNodeId": "vegetation",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-water-vegetation"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-vegetation-animals",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "vegetation influences animals",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "vegetation",
+            "toNodeId": "animals",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-vegetation-animals"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

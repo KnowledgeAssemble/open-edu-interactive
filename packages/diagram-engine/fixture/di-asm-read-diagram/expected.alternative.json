@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-cause",
+    "nodeId": "cause",
+    "label": "Cause"
+  },
+  {
+    "kind": "node",
+    "id": "node-event",
+    "nodeId": "event",
+    "label": "Event"
+  },
+  {
+    "kind": "node",
+    "id": "node-outcome",
+    "nodeId": "outcome",
+    "label": "Outcome"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-cause-event",
+    "from": "cause",
+    "relationship": "leads-to",
+    "to": "event",
+    "fromLabel": "Cause",
+    "toLabel": "Event"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-event-outcome",
+    "from": "event",
+    "relationship": "leads-to",
+    "to": "outcome",
+    "fromLabel": "Event",
+    "toLabel": "Outcome"
+  }
+]

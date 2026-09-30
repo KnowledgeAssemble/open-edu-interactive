@@ -1,0 +1,373 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-input",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Input",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "input",
+            "label": "Input"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-step",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Step",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "step",
+            "label": "Step"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-output",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Output",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "output",
+            "label": "Output"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-input-step",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "input leads-to step",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "input",
+            "toNodeId": "step",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-input-step",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-step-output",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "step leads-to output",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "step",
+            "toNodeId": "output",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-step-output",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-input": {
+      "id": "node-input",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Input",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "input",
+        "label": "Input"
+      },
+      "children": []
+    },
+    "input": {
+      "id": "node-input",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Input",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "input",
+        "label": "Input"
+      },
+      "children": []
+    },
+    "node-step": {
+      "id": "node-step",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Step",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "step",
+        "label": "Step"
+      },
+      "children": []
+    },
+    "step": {
+      "id": "node-step",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Step",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "step",
+        "label": "Step"
+      },
+      "children": []
+    },
+    "node-output": {
+      "id": "node-output",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Output",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "output",
+        "label": "Output"
+      },
+      "children": []
+    },
+    "output": {
+      "id": "node-output",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Output",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "output",
+        "label": "Output"
+      },
+      "children": []
+    },
+    "edge-input-step": {
+      "id": "edge-input-step",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "input leads-to step",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "input",
+        "toNodeId": "step",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-input-step"
+      },
+      "children": []
+    },
+    "edge-step-output": {
+      "id": "edge-step-output",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "step leads-to output",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "step",
+        "toNodeId": "output",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-step-output"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-input",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Input",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "input",
+            "label": "Input"
+          },
+          "children": []
+        },
+        {
+          "id": "node-step",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Step",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "step",
+            "label": "Step"
+          },
+          "children": []
+        },
+        {
+          "id": "node-output",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Output",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "output",
+            "label": "Output"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-input-step",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "input leads-to step",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "input",
+            "toNodeId": "step",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-input-step"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-step-output",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "step leads-to output",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "step",
+            "toNodeId": "output",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-step-output"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

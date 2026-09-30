@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-asm-read-diagram",
+  "metadata": { "title": "Diagram reading assessment" },
+  "purpose": { "learningObjective": "Answer mixed questions about one diagram", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "cause", "label": "Cause" },
+      { "id": "event", "label": "Event" },
+      { "id": "outcome", "label": "Outcome" }
+    ],
+    "edges": [
+      { "from": "cause", "to": "event", "relationship": "leads-to" },
+      { "from": "event", "to": "outcome", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Diagram for assessment: cause leads to event leads to outcome" }
+}

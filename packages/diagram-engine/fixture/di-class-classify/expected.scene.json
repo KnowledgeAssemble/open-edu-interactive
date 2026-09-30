@@ -1,0 +1,667 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-animals",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Animals",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "animals",
+            "label": "Animals"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-vertebrates",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Vertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "vertebrates",
+            "label": "Vertebrates"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-invertebrates",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Invertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "invertebrates",
+            "label": "Invertebrates"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-mammals",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mammals",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mammals",
+            "label": "Mammals"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-birds",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Birds",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "birds",
+            "label": "Birds"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-animals-vertebrates",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "animals contains vertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "animals",
+            "toNodeId": "vertebrates",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-animals-vertebrates",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-animals-invertebrates",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "animals contains invertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "animals",
+            "toNodeId": "invertebrates",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-animals-invertebrates",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 220,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L220,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-vertebrates-mammals",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "vertebrates contains mammals",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "vertebrates",
+            "toNodeId": "mammals",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-vertebrates-mammals",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-vertebrates-birds",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "vertebrates contains birds",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "vertebrates",
+            "toNodeId": "birds",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-vertebrates-birds",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 220,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L220,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-animals": {
+      "id": "node-animals",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Animals",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "animals",
+        "label": "Animals"
+      },
+      "children": []
+    },
+    "animals": {
+      "id": "node-animals",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Animals",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "animals",
+        "label": "Animals"
+      },
+      "children": []
+    },
+    "node-vertebrates": {
+      "id": "node-vertebrates",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Vertebrates",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "vertebrates",
+        "label": "Vertebrates"
+      },
+      "children": []
+    },
+    "vertebrates": {
+      "id": "node-vertebrates",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Vertebrates",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "vertebrates",
+        "label": "Vertebrates"
+      },
+      "children": []
+    },
+    "node-invertebrates": {
+      "id": "node-invertebrates",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Invertebrates",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "invertebrates",
+        "label": "Invertebrates"
+      },
+      "children": []
+    },
+    "invertebrates": {
+      "id": "node-invertebrates",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Invertebrates",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "invertebrates",
+        "label": "Invertebrates"
+      },
+      "children": []
+    },
+    "node-mammals": {
+      "id": "node-mammals",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mammals",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mammals",
+        "label": "Mammals"
+      },
+      "children": []
+    },
+    "mammals": {
+      "id": "node-mammals",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mammals",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mammals",
+        "label": "Mammals"
+      },
+      "children": []
+    },
+    "node-birds": {
+      "id": "node-birds",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Birds",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "birds",
+        "label": "Birds"
+      },
+      "children": []
+    },
+    "birds": {
+      "id": "node-birds",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Birds",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "birds",
+        "label": "Birds"
+      },
+      "children": []
+    },
+    "edge-animals-vertebrates": {
+      "id": "edge-animals-vertebrates",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "animals contains vertebrates",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "animals",
+        "toNodeId": "vertebrates",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-animals-vertebrates"
+      },
+      "children": []
+    },
+    "edge-animals-invertebrates": {
+      "id": "edge-animals-invertebrates",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "animals contains invertebrates",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "animals",
+        "toNodeId": "invertebrates",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-animals-invertebrates"
+      },
+      "children": []
+    },
+    "edge-vertebrates-mammals": {
+      "id": "edge-vertebrates-mammals",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "vertebrates contains mammals",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "vertebrates",
+        "toNodeId": "mammals",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-vertebrates-mammals"
+      },
+      "children": []
+    },
+    "edge-vertebrates-birds": {
+      "id": "edge-vertebrates-birds",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "vertebrates contains birds",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "vertebrates",
+        "toNodeId": "birds",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-vertebrates-birds"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-animals",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Animals",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "animals",
+            "label": "Animals"
+          },
+          "children": []
+        },
+        {
+          "id": "node-vertebrates",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Vertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "vertebrates",
+            "label": "Vertebrates"
+          },
+          "children": []
+        },
+        {
+          "id": "node-invertebrates",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Invertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "invertebrates",
+            "label": "Invertebrates"
+          },
+          "children": []
+        },
+        {
+          "id": "node-mammals",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mammals",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mammals",
+            "label": "Mammals"
+          },
+          "children": []
+        },
+        {
+          "id": "node-birds",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Birds",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "birds",
+            "label": "Birds"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-animals-vertebrates",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "animals contains vertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "animals",
+            "toNodeId": "vertebrates",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-animals-vertebrates"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-animals-invertebrates",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "animals contains invertebrates",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "animals",
+            "toNodeId": "invertebrates",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-animals-invertebrates"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-vertebrates-mammals",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "vertebrates contains mammals",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "vertebrates",
+            "toNodeId": "mammals",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-vertebrates-mammals"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-vertebrates-birds",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "vertebrates contains birds",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "vertebrates",
+            "toNodeId": "birds",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-vertebrates-birds"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Flow from weathering through erosion and transport to deposition</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-weathering" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Weathering" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Weathering</text>
+    <rect id="node-erosion" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Erosion" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Erosion</text>
+    <rect id="node-transport" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Transport" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Transport</text>
+    <rect id="node-deposition" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Deposition" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Deposition</text>
+    <path id="edge-weathering-erosion" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="weathering leads-to erosion" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-erosion-transport" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="erosion leads-to transport" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-transport-deposition" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="transport leads-to deposition" data-oedu-relationship="leads-to" d="M100,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

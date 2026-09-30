@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-parliament",
+    "role": "button",
+    "label": "Parliament",
+    "children": []
+  },
+  {
+    "id": "node-lok-sabha",
+    "role": "button",
+    "label": "Lok Sabha",
+    "children": []
+  },
+  {
+    "id": "node-rajya-sabha",
+    "role": "button",
+    "label": "Rajya Sabha",
+    "children": []
+  },
+  {
+    "id": "node-president",
+    "role": "button",
+    "label": "President",
+    "children": []
+  },
+  {
+    "id": "edge-parliament-lok-sabha",
+    "role": "link",
+    "label": "Parliament contains Lok Sabha",
+    "children": []
+  },
+  {
+    "id": "edge-parliament-rajya-sabha",
+    "role": "link",
+    "label": "Parliament contains Rajya Sabha",
+    "children": []
+  },
+  {
+    "id": "edge-lok-sabha-president",
+    "role": "link",
+    "label": "Lok Sabha part-of President",
+    "children": []
+  }
+]

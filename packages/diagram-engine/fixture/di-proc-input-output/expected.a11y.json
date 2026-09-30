@@ -1,0 +1,68 @@
+[
+  {
+    "id": "node-sunlight",
+    "role": "button",
+    "label": "Sunlight",
+    "children": []
+  },
+  {
+    "id": "node-water",
+    "role": "button",
+    "label": "Water",
+    "children": []
+  },
+  {
+    "id": "node-co2",
+    "role": "button",
+    "label": "Carbon dioxide",
+    "children": []
+  },
+  {
+    "id": "node-photosynthesis",
+    "role": "button",
+    "label": "Photosynthesis",
+    "children": []
+  },
+  {
+    "id": "node-glucose",
+    "role": "button",
+    "label": "Glucose",
+    "children": []
+  },
+  {
+    "id": "node-oxygen",
+    "role": "button",
+    "label": "Oxygen",
+    "children": []
+  },
+  {
+    "id": "edge-sunlight-photosynthesis",
+    "role": "link",
+    "label": "Sunlight leads-to Photosynthesis",
+    "children": []
+  },
+  {
+    "id": "edge-water-photosynthesis",
+    "role": "link",
+    "label": "Water leads-to Photosynthesis",
+    "children": []
+  },
+  {
+    "id": "edge-co2-photosynthesis",
+    "role": "link",
+    "label": "Carbon dioxide leads-to Photosynthesis",
+    "children": []
+  },
+  {
+    "id": "edge-photosynthesis-glucose",
+    "role": "link",
+    "label": "Photosynthesis leads-to Glucose",
+    "children": []
+  },
+  {
+    "id": "edge-photosynthesis-oxygen",
+    "role": "link",
+    "label": "Photosynthesis leads-to Oxygen",
+    "children": []
+  }
+]

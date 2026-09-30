@@ -1,0 +1,28 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cycl-disaster-cycle",
+  "metadata": { "title": "Disaster management cycle" },
+  "purpose": { "learningObjective": "Identify the phases of disaster management", "reasoningMode": "explore" },
+  "content": {
+    "kind": "cycle",
+    "profile": "process",
+    "nodes": [
+      { "id": "mitigation", "label": "Mitigation" },
+      { "id": "preparedness", "label": "Preparedness" },
+      { "id": "response", "label": "Response" },
+      { "id": "recovery", "label": "Recovery" }
+    ],
+    "edges": [
+      { "from": "mitigation", "to": "preparedness", "relationship": "leads-to" },
+      { "from": "preparedness", "to": "response", "relationship": "leads-to" },
+      { "from": "response", "to": "recovery", "relationship": "leads-to" },
+      { "from": "recovery", "to": "mitigation", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "radial" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Disaster management cycle: mitigation, preparedness, response, recovery" }
+}

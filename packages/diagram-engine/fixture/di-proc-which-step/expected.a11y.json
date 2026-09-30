@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-harvest",
+    "role": "button",
+    "label": "Harvest",
+    "children": []
+  },
+  {
+    "id": "node-threshing",
+    "role": "button",
+    "label": "Threshing",
+    "children": []
+  },
+  {
+    "id": "node-grinding",
+    "role": "button",
+    "label": "Grinding",
+    "children": []
+  },
+  {
+    "id": "node-baking",
+    "role": "button",
+    "label": "Baking",
+    "children": []
+  },
+  {
+    "id": "edge-harvest-threshing",
+    "role": "link",
+    "label": "Harvest leads-to Threshing",
+    "children": []
+  },
+  {
+    "id": "edge-threshing-grinding",
+    "role": "link",
+    "label": "Threshing leads-to Grinding",
+    "children": []
+  },
+  {
+    "id": "edge-grinding-baking",
+    "role": "link",
+    "label": "Grinding leads-to Baking",
+    "children": []
+  }
+]

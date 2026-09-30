@@ -1,0 +1,29 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cause-many-effects",
+  "metadata": { "title": "Effects of deforestation" },
+  "purpose": { "learningObjective": "Select every effect of a cause", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "deforest", "label": "Deforestation" },
+      { "id": "habitat-loss", "label": "Habitat loss" },
+      { "id": "soil-erosion", "label": "Soil erosion" },
+      { "id": "climate-change", "label": "Climate change" },
+      { "id": "flooding", "label": "Flooding" }
+    ],
+    "edges": [
+      { "from": "deforest", "to": "habitat-loss", "relationship": "leads-to" },
+      { "from": "deforest", "to": "soil-erosion", "relationship": "leads-to" },
+      { "from": "deforest", "to": "climate-change", "relationship": "influences" },
+      { "from": "soil-erosion", "to": "flooding", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Concept map: effects of deforestation" }
+}

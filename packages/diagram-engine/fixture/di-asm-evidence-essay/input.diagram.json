@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-asm-evidence-essay",
+  "metadata": { "title": "Evidence trail for an essay" },
+  "purpose": { "learningObjective": "Trace a chain and back an answer with the path", "reasoningMode": "explain" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "deforest", "label": "Deforestation" },
+      { "id": "erosion", "label": "Soil erosion" },
+      { "id": "flood", "label": "Flooding" }
+    ],
+    "edges": [
+      { "from": "deforest", "to": "erosion", "relationship": "leads-to" },
+      { "from": "erosion", "to": "flood", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Evidence chain: deforestation leads to erosion leads to flooding" }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-input",
+    "role": "button",
+    "label": "Input",
+    "children": []
+  },
+  {
+    "id": "node-step",
+    "role": "button",
+    "label": "Step",
+    "children": []
+  },
+  {
+    "id": "node-output",
+    "role": "button",
+    "label": "Output",
+    "children": []
+  },
+  {
+    "id": "edge-input-step",
+    "role": "link",
+    "label": "Input leads-to Step",
+    "children": []
+  },
+  {
+    "id": "edge-step-output",
+    "role": "link",
+    "label": "Step leads-to Output",
+    "children": []
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "node",
+    "id": "node-deforest",
+    "nodeId": "deforest",
+    "label": "Deforestation"
+  },
+  {
+    "kind": "node",
+    "id": "node-habitat-loss",
+    "nodeId": "habitat-loss",
+    "label": "Habitat loss"
+  },
+  {
+    "kind": "node",
+    "id": "node-soil-erosion",
+    "nodeId": "soil-erosion",
+    "label": "Soil erosion"
+  },
+  {
+    "kind": "node",
+    "id": "node-climate-change",
+    "nodeId": "climate-change",
+    "label": "Climate change"
+  },
+  {
+    "kind": "node",
+    "id": "node-flooding",
+    "nodeId": "flooding",
+    "label": "Flooding"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-deforest-habitat-loss",
+    "from": "deforest",
+    "relationship": "leads-to",
+    "to": "habitat-loss",
+    "fromLabel": "Deforestation",
+    "toLabel": "Habitat loss"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-deforest-soil-erosion",
+    "from": "deforest",
+    "relationship": "leads-to",
+    "to": "soil-erosion",
+    "fromLabel": "Deforestation",
+    "toLabel": "Soil erosion"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-deforest-climate-change",
+    "from": "deforest",
+    "relationship": "influences",
+    "to": "climate-change",
+    "fromLabel": "Deforestation",
+    "toLabel": "Climate change"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-soil-erosion-flooding",
+    "from": "soil-erosion",
+    "relationship": "leads-to",
+    "to": "flooding",
+    "fromLabel": "Soil erosion",
+    "toLabel": "Flooding"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "node-egg",
+    "role": "button",
+    "label": "Egg",
+    "children": []
+  },
+  {
+    "id": "node-tadpole",
+    "role": "button",
+    "label": "Tadpole",
+    "children": []
+  },
+  {
+    "id": "node-froglet",
+    "role": "button",
+    "label": "Froglet",
+    "children": []
+  },
+  {
+    "id": "node-frog",
+    "role": "button",
+    "label": "Frog",
+    "children": []
+  },
+  {
+    "id": "edge-egg-tadpole",
+    "role": "link",
+    "label": "Egg leads-to Tadpole",
+    "children": []
+  },
+  {
+    "id": "edge-tadpole-froglet",
+    "role": "link",
+    "label": "Tadpole leads-to Froglet",
+    "children": []
+  },
+  {
+    "id": "edge-froglet-frog",
+    "role": "link",
+    "label": "Froglet leads-to Frog",
+    "children": []
+  },
+  {
+    "id": "edge-frog-egg",
+    "role": "link",
+    "label": "Frog leads-to Egg",
+    "children": []
+  }
+]

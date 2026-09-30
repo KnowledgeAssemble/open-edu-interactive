@@ -1,0 +1,790 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-sunlight",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sunlight",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sunlight",
+            "label": "Sunlight"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-water",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Water",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "water",
+            "label": "Water"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-co2",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Carbon dioxide",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "co2",
+            "label": "Carbon dioxide"
+          },
+          "children": [],
+          "bounds": {
+            "x": 290,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-photosynthesis",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "photosynthesis",
+            "label": "Photosynthesis"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-glucose",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "glucose",
+            "label": "Glucose"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-oxygen",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Oxygen",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "oxygen",
+            "label": "Oxygen"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-sunlight-photosynthesis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sunlight leads-to photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sunlight",
+            "toNodeId": "photosynthesis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-sunlight-photosynthesis",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-water-photosynthesis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "water leads-to photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "water",
+            "toNodeId": "photosynthesis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-water-photosynthesis",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 220,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M220,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-co2-photosynthesis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "co2 leads-to photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "co2",
+            "toNodeId": "photosynthesis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-co2-photosynthesis",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 340,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M340,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-photosynthesis-glucose",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "photosynthesis leads-to glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "photosynthesis",
+            "toNodeId": "glucose",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-photosynthesis-glucose",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-photosynthesis-oxygen",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "photosynthesis leads-to oxygen",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "photosynthesis",
+            "toNodeId": "oxygen",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-photosynthesis-oxygen",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 220,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L220,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-sunlight": {
+      "id": "node-sunlight",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sunlight",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sunlight",
+        "label": "Sunlight"
+      },
+      "children": []
+    },
+    "sunlight": {
+      "id": "node-sunlight",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sunlight",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sunlight",
+        "label": "Sunlight"
+      },
+      "children": []
+    },
+    "node-water": {
+      "id": "node-water",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Water",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "water",
+        "label": "Water"
+      },
+      "children": []
+    },
+    "water": {
+      "id": "node-water",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Water",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "water",
+        "label": "Water"
+      },
+      "children": []
+    },
+    "node-co2": {
+      "id": "node-co2",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Carbon dioxide",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "co2",
+        "label": "Carbon dioxide"
+      },
+      "children": []
+    },
+    "co2": {
+      "id": "node-co2",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Carbon dioxide",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "co2",
+        "label": "Carbon dioxide"
+      },
+      "children": []
+    },
+    "node-photosynthesis": {
+      "id": "node-photosynthesis",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Photosynthesis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "photosynthesis",
+        "label": "Photosynthesis"
+      },
+      "children": []
+    },
+    "photosynthesis": {
+      "id": "node-photosynthesis",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Photosynthesis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "photosynthesis",
+        "label": "Photosynthesis"
+      },
+      "children": []
+    },
+    "node-glucose": {
+      "id": "node-glucose",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Glucose",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "glucose",
+        "label": "Glucose"
+      },
+      "children": []
+    },
+    "glucose": {
+      "id": "node-glucose",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Glucose",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "glucose",
+        "label": "Glucose"
+      },
+      "children": []
+    },
+    "node-oxygen": {
+      "id": "node-oxygen",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Oxygen",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "oxygen",
+        "label": "Oxygen"
+      },
+      "children": []
+    },
+    "oxygen": {
+      "id": "node-oxygen",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Oxygen",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "oxygen",
+        "label": "Oxygen"
+      },
+      "children": []
+    },
+    "edge-sunlight-photosynthesis": {
+      "id": "edge-sunlight-photosynthesis",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "sunlight leads-to photosynthesis",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "sunlight",
+        "toNodeId": "photosynthesis",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-sunlight-photosynthesis"
+      },
+      "children": []
+    },
+    "edge-water-photosynthesis": {
+      "id": "edge-water-photosynthesis",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "water leads-to photosynthesis",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "water",
+        "toNodeId": "photosynthesis",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-water-photosynthesis"
+      },
+      "children": []
+    },
+    "edge-co2-photosynthesis": {
+      "id": "edge-co2-photosynthesis",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "co2 leads-to photosynthesis",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "co2",
+        "toNodeId": "photosynthesis",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-co2-photosynthesis"
+      },
+      "children": []
+    },
+    "edge-photosynthesis-glucose": {
+      "id": "edge-photosynthesis-glucose",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "photosynthesis leads-to glucose",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "photosynthesis",
+        "toNodeId": "glucose",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-photosynthesis-glucose"
+      },
+      "children": []
+    },
+    "edge-photosynthesis-oxygen": {
+      "id": "edge-photosynthesis-oxygen",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "photosynthesis leads-to oxygen",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "photosynthesis",
+        "toNodeId": "oxygen",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-photosynthesis-oxygen"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-sunlight",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sunlight",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sunlight",
+            "label": "Sunlight"
+          },
+          "children": []
+        },
+        {
+          "id": "node-water",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Water",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "water",
+            "label": "Water"
+          },
+          "children": []
+        },
+        {
+          "id": "node-co2",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Carbon dioxide",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "co2",
+            "label": "Carbon dioxide"
+          },
+          "children": []
+        },
+        {
+          "id": "node-photosynthesis",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "photosynthesis",
+            "label": "Photosynthesis"
+          },
+          "children": []
+        },
+        {
+          "id": "node-glucose",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "glucose",
+            "label": "Glucose"
+          },
+          "children": []
+        },
+        {
+          "id": "node-oxygen",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Oxygen",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "oxygen",
+            "label": "Oxygen"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-sunlight-photosynthesis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sunlight leads-to photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sunlight",
+            "toNodeId": "photosynthesis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-sunlight-photosynthesis"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-water-photosynthesis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "water leads-to photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "water",
+            "toNodeId": "photosynthesis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-water-photosynthesis"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-co2-photosynthesis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "co2 leads-to photosynthesis",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "co2",
+            "toNodeId": "photosynthesis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-co2-photosynthesis"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-photosynthesis-glucose",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "photosynthesis leads-to glucose",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "photosynthesis",
+            "toNodeId": "glucose",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-photosynthesis-glucose"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-photosynthesis-oxygen",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "photosynthesis leads-to oxygen",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "photosynthesis",
+            "toNodeId": "oxygen",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-photosynthesis-oxygen"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

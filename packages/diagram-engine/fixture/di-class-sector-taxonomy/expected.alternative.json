@@ -1,0 +1,83 @@
+[
+  {
+    "kind": "node",
+    "id": "node-economy",
+    "nodeId": "economy",
+    "label": "Economy"
+  },
+  {
+    "kind": "node",
+    "id": "node-primary",
+    "nodeId": "primary",
+    "label": "Primary"
+  },
+  {
+    "kind": "node",
+    "id": "node-secondary",
+    "nodeId": "secondary",
+    "label": "Secondary"
+  },
+  {
+    "kind": "node",
+    "id": "node-tertiary",
+    "nodeId": "tertiary",
+    "label": "Tertiary"
+  },
+  {
+    "kind": "node",
+    "id": "node-farming",
+    "nodeId": "farming",
+    "label": "Farming"
+  },
+  {
+    "kind": "node",
+    "id": "node-school",
+    "nodeId": "school",
+    "label": "School"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-economy-primary",
+    "from": "economy",
+    "relationship": "contains",
+    "to": "primary",
+    "fromLabel": "Economy",
+    "toLabel": "Primary"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-economy-secondary",
+    "from": "economy",
+    "relationship": "contains",
+    "to": "secondary",
+    "fromLabel": "Economy",
+    "toLabel": "Secondary"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-economy-tertiary",
+    "from": "economy",
+    "relationship": "contains",
+    "to": "tertiary",
+    "fromLabel": "Economy",
+    "toLabel": "Tertiary"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-primary-farming",
+    "from": "primary",
+    "relationship": "contains",
+    "to": "farming",
+    "fromLabel": "Primary",
+    "toLabel": "Farming"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-tertiary-school",
+    "from": "tertiary",
+    "relationship": "contains",
+    "to": "school",
+    "fromLabel": "Tertiary",
+    "toLabel": "School"
+  }
+]

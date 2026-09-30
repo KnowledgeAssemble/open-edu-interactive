@@ -1,0 +1,373 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-deforest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Deforestation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "deforest",
+            "label": "Deforestation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-erosion",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "erosion",
+            "label": "Soil erosion"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-flood",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Flooding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "flood",
+            "label": "Flooding"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-deforest-erosion",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest leads-to erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "erosion",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-deforest-erosion",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 262.5
+                }
+              ],
+              "path": "M308,262.5 L468,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-erosion-flood",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "erosion leads-to flood",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "erosion",
+            "toNodeId": "flood",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-erosion-flood",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-deforest": {
+      "id": "node-deforest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Deforestation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "deforest",
+        "label": "Deforestation"
+      },
+      "children": []
+    },
+    "deforest": {
+      "id": "node-deforest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Deforestation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "deforest",
+        "label": "Deforestation"
+      },
+      "children": []
+    },
+    "node-erosion": {
+      "id": "node-erosion",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "erosion",
+        "label": "Soil erosion"
+      },
+      "children": []
+    },
+    "erosion": {
+      "id": "node-erosion",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "erosion",
+        "label": "Soil erosion"
+      },
+      "children": []
+    },
+    "node-flood": {
+      "id": "node-flood",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Flooding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "flood",
+        "label": "Flooding"
+      },
+      "children": []
+    },
+    "flood": {
+      "id": "node-flood",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Flooding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "flood",
+        "label": "Flooding"
+      },
+      "children": []
+    },
+    "edge-deforest-erosion": {
+      "id": "edge-deforest-erosion",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "deforest leads-to erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "deforest",
+        "toNodeId": "erosion",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-deforest-erosion"
+      },
+      "children": []
+    },
+    "edge-erosion-flood": {
+      "id": "edge-erosion-flood",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "erosion leads-to flood",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "erosion",
+        "toNodeId": "flood",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-erosion-flood"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-deforest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Deforestation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "deforest",
+            "label": "Deforestation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-erosion",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "erosion",
+            "label": "Soil erosion"
+          },
+          "children": []
+        },
+        {
+          "id": "node-flood",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Flooding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "flood",
+            "label": "Flooding"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-deforest-erosion",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest leads-to erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "erosion",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-deforest-erosion"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-erosion-flood",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "erosion leads-to flood",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "erosion",
+            "toNodeId": "flood",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-erosion-flood"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

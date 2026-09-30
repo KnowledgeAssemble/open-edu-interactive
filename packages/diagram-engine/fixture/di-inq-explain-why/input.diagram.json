@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-inq-explain-why",
+  "metadata": { "title": "Why the delta is fertile" },
+  "purpose": { "learningObjective": "Explain why using the diagram as evidence", "reasoningMode": "explain" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "river", "label": "River" },
+      { "id": "silt", "label": "Silt deposition" },
+      { "id": "fertility", "label": "Fertile soil" },
+      { "id": "agriculture", "label": "Dense agriculture" }
+    ],
+    "edges": [
+      { "from": "river", "to": "silt", "relationship": "leads-to" },
+      { "from": "silt", "to": "fertility", "relationship": "leads-to" },
+      { "from": "fertility", "to": "agriculture", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Concept map: river, silt deposition, fertile soil, dense agriculture" }
+}

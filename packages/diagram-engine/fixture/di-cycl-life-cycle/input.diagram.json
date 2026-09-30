@@ -1,0 +1,28 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cycl-life-cycle",
+  "metadata": { "title": "Frog life cycle" },
+  "purpose": { "learningObjective": "Trace a frog's journey and find the step that repeats", "reasoningMode": "explore" },
+  "content": {
+    "kind": "cycle",
+    "profile": "process",
+    "nodes": [
+      { "id": "egg", "label": "Egg" },
+      { "id": "tadpole", "label": "Tadpole" },
+      { "id": "froglet", "label": "Froglet" },
+      { "id": "frog", "label": "Frog" }
+    ],
+    "edges": [
+      { "from": "egg", "to": "tadpole", "relationship": "leads-to" },
+      { "from": "tadpole", "to": "froglet", "relationship": "leads-to" },
+      { "from": "froglet", "to": "frog", "relationship": "leads-to" },
+      { "from": "frog", "to": "egg", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "radial" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Frog life cycle: egg, tadpole, froglet, frog" }
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "node-precipitation",
+    "role": "button",
+    "label": "Precipitation",
+    "children": []
+  },
+  {
+    "id": "node-runoff",
+    "role": "button",
+    "label": "Runoff",
+    "children": []
+  },
+  {
+    "id": "node-groundwater",
+    "role": "button",
+    "label": "Groundwater",
+    "children": []
+  },
+  {
+    "id": "node-river",
+    "role": "button",
+    "label": "River",
+    "children": []
+  },
+  {
+    "id": "node-sea",
+    "role": "button",
+    "label": "Sea",
+    "children": []
+  },
+  {
+    "id": "edge-precipitation-runoff",
+    "role": "link",
+    "label": "Precipitation leads-to Runoff",
+    "children": []
+  },
+  {
+    "id": "edge-precipitation-groundwater",
+    "role": "link",
+    "label": "Precipitation leads-to Groundwater",
+    "children": []
+  },
+  {
+    "id": "edge-groundwater-river",
+    "role": "link",
+    "label": "Groundwater leads-to River",
+    "children": []
+  },
+  {
+    "id": "edge-runoff-river",
+    "role": "link",
+    "label": "Runoff leads-to River",
+    "children": []
+  },
+  {
+    "id": "edge-river-sea",
+    "role": "link",
+    "label": "River leads-to Sea",
+    "children": []
+  }
+]

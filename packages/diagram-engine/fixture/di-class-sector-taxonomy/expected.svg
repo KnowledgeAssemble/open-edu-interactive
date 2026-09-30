@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Economic sectors: primary, secondary, tertiary</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-economy" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Economy" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Economy</text>
+    <rect id="node-primary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Primary" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Primary</text>
+    <rect id="node-secondary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Secondary" x="170" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="220" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Secondary</text>
+    <rect id="node-tertiary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Tertiary" x="290" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="340" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Tertiary</text>
+    <rect id="node-farming" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Farming" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Farming</text>
+    <rect id="node-school" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="School" x="170" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="220" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">School</text>
+    <path id="edge-economy-primary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains primary" data-oedu-relationship="contains" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-economy-secondary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains secondary" data-oedu-relationship="contains" d="M100,80 L220,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-economy-tertiary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains tertiary" data-oedu-relationship="contains" d="M100,80 L340,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-primary-farming" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="primary contains farming" data-oedu-relationship="contains" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-tertiary-school" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="tertiary contains school" data-oedu-relationship="contains" d="M340,160 L220,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

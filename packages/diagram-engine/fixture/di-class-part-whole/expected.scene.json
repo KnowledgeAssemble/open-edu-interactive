@@ -1,0 +1,528 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-parliament",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Parliament",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "parliament",
+            "label": "Parliament"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-lok-sabha",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Lok Sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "lok-sabha",
+            "label": "Lok Sabha"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-rajya-sabha",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rajya Sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rajya-sabha",
+            "label": "Rajya Sabha"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-president",
+          "role": "selectable",
+          "kind": "node",
+          "label": "President",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "president",
+            "label": "President"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-parliament-lok-sabha",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "parliament contains lok-sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "parliament",
+            "toNodeId": "lok-sabha",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-parliament-lok-sabha",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-parliament-rajya-sabha",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "parliament contains rajya-sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "parliament",
+            "toNodeId": "rajya-sabha",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-parliament-rajya-sabha",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 220,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L220,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-lok-sabha-president",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "lok-sabha part-of president",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "lok-sabha",
+            "toNodeId": "president",
+            "relationship": "part-of",
+            "labels": [],
+            "edgeId": "edge-lok-sabha-president",
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-parliament": {
+      "id": "node-parliament",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Parliament",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "parliament",
+        "label": "Parliament"
+      },
+      "children": []
+    },
+    "parliament": {
+      "id": "node-parliament",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Parliament",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "parliament",
+        "label": "Parliament"
+      },
+      "children": []
+    },
+    "node-lok-sabha": {
+      "id": "node-lok-sabha",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Lok Sabha",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "lok-sabha",
+        "label": "Lok Sabha"
+      },
+      "children": []
+    },
+    "lok-sabha": {
+      "id": "node-lok-sabha",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Lok Sabha",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "lok-sabha",
+        "label": "Lok Sabha"
+      },
+      "children": []
+    },
+    "node-rajya-sabha": {
+      "id": "node-rajya-sabha",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rajya Sabha",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rajya-sabha",
+        "label": "Rajya Sabha"
+      },
+      "children": []
+    },
+    "rajya-sabha": {
+      "id": "node-rajya-sabha",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rajya Sabha",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rajya-sabha",
+        "label": "Rajya Sabha"
+      },
+      "children": []
+    },
+    "node-president": {
+      "id": "node-president",
+      "role": "selectable",
+      "kind": "node",
+      "label": "President",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "president",
+        "label": "President"
+      },
+      "children": []
+    },
+    "president": {
+      "id": "node-president",
+      "role": "selectable",
+      "kind": "node",
+      "label": "President",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "president",
+        "label": "President"
+      },
+      "children": []
+    },
+    "edge-parliament-lok-sabha": {
+      "id": "edge-parliament-lok-sabha",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "parliament contains lok-sabha",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "parliament",
+        "toNodeId": "lok-sabha",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-parliament-lok-sabha"
+      },
+      "children": []
+    },
+    "edge-parliament-rajya-sabha": {
+      "id": "edge-parliament-rajya-sabha",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "parliament contains rajya-sabha",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "parliament",
+        "toNodeId": "rajya-sabha",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-parliament-rajya-sabha"
+      },
+      "children": []
+    },
+    "edge-lok-sabha-president": {
+      "id": "edge-lok-sabha-president",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "lok-sabha part-of president",
+      "interactive": true,
+      "acceptsActions": [
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "lok-sabha",
+        "toNodeId": "president",
+        "relationship": "part-of",
+        "labels": [],
+        "edgeId": "edge-lok-sabha-president"
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-parliament",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Parliament",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "parliament",
+            "label": "Parliament"
+          },
+          "children": []
+        },
+        {
+          "id": "node-lok-sabha",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Lok Sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "lok-sabha",
+            "label": "Lok Sabha"
+          },
+          "children": []
+        },
+        {
+          "id": "node-rajya-sabha",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rajya Sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rajya-sabha",
+            "label": "Rajya Sabha"
+          },
+          "children": []
+        },
+        {
+          "id": "node-president",
+          "role": "selectable",
+          "kind": "node",
+          "label": "President",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "president",
+            "label": "President"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-parliament-lok-sabha",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "parliament contains lok-sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "parliament",
+            "toNodeId": "lok-sabha",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-parliament-lok-sabha"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-parliament-rajya-sabha",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "parliament contains rajya-sabha",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "parliament",
+            "toNodeId": "rajya-sabha",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-parliament-rajya-sabha"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-lok-sabha-president",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "lok-sabha part-of president",
+          "interactive": true,
+          "acceptsActions": [
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "lok-sabha",
+            "toNodeId": "president",
+            "relationship": "part-of",
+            "labels": [],
+            "edgeId": "edge-lok-sabha-president"
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}
