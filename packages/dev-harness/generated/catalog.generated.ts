@@ -540,6 +540,20 @@ export const catalog = [
     "title": "Label all parts of a flower"
   },
   {
+    "id": "diagram/di-m3-cyclic-concept-map",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-m3-cyclic-concept-map",
+    "specPath": "packages/diagram-engine/fixture/di-m3-cyclic-concept-map/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-m3-cyclic-concept-map/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-m3-cyclic-concept-map/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-m3-cyclic-concept-map/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-m3-cyclic-concept-map/expected.svg"
+    },
+    "title": "Reinforcing concepts"
+  },
+  {
     "id": "diagram/di-ord-assemble-cycle",
     "kind": "engine",
     "engine": "diagram",

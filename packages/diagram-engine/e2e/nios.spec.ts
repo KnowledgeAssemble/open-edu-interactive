@@ -53,6 +53,7 @@ const FIXTURES = {
   'di-inq-what-if': 'packages/diagram-engine/fixture/di-inq-what-if/input.diagram.json',
   'di-ord-assemble-cycle': 'packages/diagram-engine/fixture/di-ord-assemble-cycle/input.diagram.json',
   'di-lab-connect-parts': 'packages/diagram-engine/fixture/di-lab-connect-parts/input.diagram.json',
+  'di-m3-cyclic-concept-map': 'packages/diagram-engine/fixture/di-m3-cyclic-concept-map/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -663,5 +664,30 @@ test.describe('Diagram W-3.11 — construct-edge (di-lab-3, di-ord-3)', () => {
     expect(result.names).toContain('diagram.connect');
     expect(result.added).toEqual({ from: 'artery', to: 'capillary', relationship: 'leads-to', valid: true });
     expect(result.errors).toEqual(['self-loop edge']);
+  });
+});
+
+test.describe('Diagram W-3.12 — concept-map-cycle (di-m3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-m3-cyclic-concept-map']);
+  });
+
+  test('concept-map accepts a directed back-edge; alternative lists the cycle; select along the path works', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const alt = h.alternative();
+      const cycleRows = alt.filter((r) => r.kind === 'cycle');
+      h.dispatch({ type: 'select', target: { id: 'practice' } });
+      h.dispatch({ type: 'select', target: { id: 'interest' } });
+      h.dispatch({ type: 'select', target: { id: 'confidence' } });
+      const snap = h.snapshot() as unknown as { scene: { nodes: Array<{ kind?: string; children: Array<{ kind?: string; positionSource?: string }> }> } };
+      const root = snap.scene.nodes.find((n) => n.kind === 'diagram');
+      const nodePositions = root?.children.filter((c) => c.kind === 'node').map((c) => c.positionSource) ?? [];
+      return { cycleRows, selection: h.snapshot().selection, nodePositions };
+    });
+    expect(result.cycleRows.length).toBeGreaterThanOrEqual(1);
+    expect(result.selection).toEqual(['practice', 'interest', 'confidence']);
+    expect(result.nodePositions.length).toBe(3);
+    expect(result.nodePositions.every((p) => p === 'illustrative')).toBe(true);
   });
 });

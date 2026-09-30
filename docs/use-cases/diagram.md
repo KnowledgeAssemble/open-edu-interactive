@@ -250,7 +250,7 @@ Reference UX: associative web of concepts; cycles allowed. Default layout: `grid
 | **Spec** | `kind: "concept-map"` with back-edge |
 | **Fixture** | `planned` |
 | **Host** | — |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

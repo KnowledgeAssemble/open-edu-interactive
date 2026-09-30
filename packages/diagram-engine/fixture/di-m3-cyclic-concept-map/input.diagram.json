@@ -1,0 +1,26 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-m3-cyclic-concept-map",
+  "metadata": { "title": "Reinforcing concepts" },
+  "purpose": { "learningObjective": "Explore reciprocal influences between concepts", "reasoningMode": "explore" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "concept",
+    "nodes": [
+      { "id": "practice", "label": "Practice" },
+      { "id": "confidence", "label": "Confidence" },
+      { "id": "interest", "label": "Interest" }
+    ],
+    "edges": [
+      { "id": "practice-confidence", "from": "practice", "to": "confidence", "relationship": "influences" },
+      { "id": "confidence-interest", "from": "confidence", "to": "interest", "relationship": "influences" },
+      { "id": "interest-practice", "from": "interest", "to": "practice", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Concept map with a directed back-edge forming a cycle" }
+}
