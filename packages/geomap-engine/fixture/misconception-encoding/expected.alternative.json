@@ -1,0 +1,26 @@
+[
+  {
+    "entityId": "r1",
+    "type": "region",
+    "name": "Region A",
+    "location": "5.0060, 5.0000",
+    "sourceClass": "illustrative",
+    "measureValue": 10,
+    "encodingBucket": "encoding-bucket-1"
+  },
+  {
+    "entityId": "r2",
+    "type": "region",
+    "name": "Region B",
+    "location": "5.0060, 20.0000",
+    "sourceClass": "illustrative",
+    "measureValue": 20,
+    "encodingBucket": "encoding-bucket-2"
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "1000 KM",
+    "location": "1000 KM"
+  }
+]

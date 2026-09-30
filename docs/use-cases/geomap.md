@@ -767,7 +767,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/asm-misconception-encoding` *(planned)* |
 | **New capability** | `attr-encoding` — and a rule that encoding is never misleading by construction. |
 | **Host** | Explanation rubric; sources required. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-asm-3-verify-own-map` — Compare a learner map against the reference
 

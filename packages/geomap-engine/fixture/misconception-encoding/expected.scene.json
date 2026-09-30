@@ -1,0 +1,767 @@
+{
+  "nodes": [
+    {
+      "id": "geom-theme",
+      "role": "layer",
+      "kind": "layer",
+      "label": "Theme",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "theme"
+      },
+      "children": [
+        {
+          "id": "geom-theme-r1",
+          "role": "region",
+          "kind": "region",
+          "label": "Region A",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r1",
+            "entityType": "region",
+            "name": "Region A",
+            "location": {
+              "source": "src",
+              "featureId": "r1"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534433,
+            "lon": 5.000000000000029,
+            "measureValue": 10,
+            "measureAttribute": "value",
+            "encodingAttribute": "value",
+            "encodingType": "fill",
+            "encodingBreakpoints": [
+              [
+                0,
+                11
+              ],
+              [
+                11,
+                100
+              ]
+            ],
+            "encodingBucket": "encoding-bucket-1"
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  10,
+                  0
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 64,
+                "y": 434.4
+              },
+              {
+                "x": 332.8,
+                "y": 434.4
+              },
+              {
+                "x": 332.8,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 64,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 64,
+                "y": 434.4
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 64,
+              "y": 434.4
+            },
+            {
+              "x": 332.8,
+              "y": 434.4
+            },
+            {
+              "x": 332.8,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 64,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 64,
+              "y": 434.4
+            }
+          ],
+          "bounds": {
+            "x": 64,
+            "y": 165.6,
+            "width": 268.8,
+            "height": 268.8
+          }
+        },
+        {
+          "id": "geom-theme-r2",
+          "role": "region",
+          "kind": "region",
+          "label": "Region B",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r2",
+            "entityType": "region",
+            "name": "Region B",
+            "location": {
+              "source": "src",
+              "featureId": "r2"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534431,
+            "lon": 20.000000000000004,
+            "measureValue": 20,
+            "measureAttribute": "value",
+            "encodingAttribute": "value",
+            "encodingType": "fill",
+            "encodingBreakpoints": [
+              [
+                0,
+                11
+              ],
+              [
+                11,
+                100
+              ]
+            ],
+            "encodingBucket": "encoding-bucket-2"
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  15,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ],
+                [
+                  25,
+                  10
+                ],
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 467.2,
+                "y": 434.4
+              },
+              {
+                "x": 736,
+                "y": 434.4
+              },
+              {
+                "x": 736,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 467.2,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 467.2,
+                "y": 434.4
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 467.2,
+              "y": 434.4
+            },
+            {
+              "x": 736,
+              "y": 434.4
+            },
+            {
+              "x": 736,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 467.2,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 467.2,
+              "y": 434.4
+            }
+          ],
+          "bounds": {
+            "x": 467.20000000000005,
+            "y": 165.6,
+            "width": 268.8,
+            "height": 268.8
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-scale-bar",
+      "role": "scale-bar",
+      "kind": "scale-bar",
+      "label": "1000 KM",
+      "bounds": {
+        "x": 24,
+        "y": 512,
+        "width": 249,
+        "height": 68
+      },
+      "interactive": false,
+      "metadata": {
+        "lengthKm": 1000,
+        "lengthPx": 243,
+        "unit": "km",
+        "label": "1000 KM",
+        "scaleBarKind": "scale-bar"
+      },
+      "children": []
+    }
+  ],
+  "semantics": {
+    "geom-theme-r1": {
+      "id": "geom-theme-r1",
+      "role": "region",
+      "kind": "region",
+      "label": "Region A",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "r1",
+        "entityType": "region",
+        "name": "Region A",
+        "location": {
+          "source": "src",
+          "featureId": "r1"
+        },
+        "sourceClass": "illustrative",
+        "lat": 5.005958633534433,
+        "lon": 5.000000000000029,
+        "measureValue": 10,
+        "measureAttribute": "value",
+        "encodingAttribute": "value",
+        "encodingType": "fill",
+        "encodingBreakpoints": [
+          [
+            0,
+            11
+          ],
+          [
+            11,
+            100
+          ]
+        ],
+        "encodingBucket": "encoding-bucket-1"
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              0,
+              10
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 64,
+            "y": 434.4
+          },
+          {
+            "x": 332.8,
+            "y": 434.4
+          },
+          {
+            "x": 332.8,
+            "y": 165.59999999999997
+          },
+          {
+            "x": 64,
+            "y": 165.59999999999997
+          },
+          {
+            "x": 64,
+            "y": 434.4
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 64,
+          "y": 434.4
+        },
+        {
+          "x": 332.8,
+          "y": 434.4
+        },
+        {
+          "x": 332.8,
+          "y": 165.59999999999997
+        },
+        {
+          "x": 64,
+          "y": 165.59999999999997
+        },
+        {
+          "x": 64,
+          "y": 434.4
+        }
+      ],
+      "bounds": {
+        "x": 64,
+        "y": 165.6,
+        "width": 268.8,
+        "height": 268.8
+      }
+    },
+    "geom-theme-r2": {
+      "id": "geom-theme-r2",
+      "role": "region",
+      "kind": "region",
+      "label": "Region B",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "r2",
+        "entityType": "region",
+        "name": "Region B",
+        "location": {
+          "source": "src",
+          "featureId": "r2"
+        },
+        "sourceClass": "illustrative",
+        "lat": 5.005958633534431,
+        "lon": 20.000000000000004,
+        "measureValue": 20,
+        "measureAttribute": "value",
+        "encodingAttribute": "value",
+        "encodingType": "fill",
+        "encodingBreakpoints": [
+          [
+            0,
+            11
+          ],
+          [
+            11,
+            100
+          ]
+        ],
+        "encodingBucket": "encoding-bucket-2"
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              15,
+              0
+            ],
+            [
+              25,
+              0
+            ],
+            [
+              25,
+              10
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              15,
+              0
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 467.2,
+            "y": 434.4
+          },
+          {
+            "x": 736,
+            "y": 434.4
+          },
+          {
+            "x": 736,
+            "y": 165.59999999999997
+          },
+          {
+            "x": 467.2,
+            "y": 165.59999999999997
+          },
+          {
+            "x": 467.2,
+            "y": 434.4
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 467.2,
+          "y": 434.4
+        },
+        {
+          "x": 736,
+          "y": 434.4
+        },
+        {
+          "x": 736,
+          "y": 165.59999999999997
+        },
+        {
+          "x": 467.2,
+          "y": 165.59999999999997
+        },
+        {
+          "x": 467.2,
+          "y": 434.4
+        }
+      ],
+      "bounds": {
+        "x": 467.20000000000005,
+        "y": 165.6,
+        "width": 268.8,
+        "height": 268.8
+      }
+    },
+    "geom-theme": {
+      "id": "geom-theme",
+      "role": "layer",
+      "kind": "layer",
+      "label": "Theme",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "theme"
+      },
+      "children": [
+        {
+          "id": "geom-theme-r1",
+          "role": "region",
+          "kind": "region",
+          "label": "Region A",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r1",
+            "entityType": "region",
+            "name": "Region A",
+            "location": {
+              "source": "src",
+              "featureId": "r1"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534433,
+            "lon": 5.000000000000029,
+            "measureValue": 10,
+            "measureAttribute": "value",
+            "encodingAttribute": "value",
+            "encodingType": "fill",
+            "encodingBreakpoints": [
+              [
+                0,
+                11
+              ],
+              [
+                11,
+                100
+              ]
+            ],
+            "encodingBucket": "encoding-bucket-1"
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  10,
+                  0
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 64,
+                "y": 434.4
+              },
+              {
+                "x": 332.8,
+                "y": 434.4
+              },
+              {
+                "x": 332.8,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 64,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 64,
+                "y": 434.4
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 64,
+              "y": 434.4
+            },
+            {
+              "x": 332.8,
+              "y": 434.4
+            },
+            {
+              "x": 332.8,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 64,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 64,
+              "y": 434.4
+            }
+          ],
+          "bounds": {
+            "x": 64,
+            "y": 165.6,
+            "width": 268.8,
+            "height": 268.8
+          }
+        },
+        {
+          "id": "geom-theme-r2",
+          "role": "region",
+          "kind": "region",
+          "label": "Region B",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r2",
+            "entityType": "region",
+            "name": "Region B",
+            "location": {
+              "source": "src",
+              "featureId": "r2"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534431,
+            "lon": 20.000000000000004,
+            "measureValue": 20,
+            "measureAttribute": "value",
+            "encodingAttribute": "value",
+            "encodingType": "fill",
+            "encodingBreakpoints": [
+              [
+                0,
+                11
+              ],
+              [
+                11,
+                100
+              ]
+            ],
+            "encodingBucket": "encoding-bucket-2"
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  15,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ],
+                [
+                  25,
+                  10
+                ],
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 467.2,
+                "y": 434.4
+              },
+              {
+                "x": 736,
+                "y": 434.4
+              },
+              {
+                "x": 736,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 467.2,
+                "y": 165.59999999999997
+              },
+              {
+                "x": 467.2,
+                "y": 434.4
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 467.2,
+              "y": 434.4
+            },
+            {
+              "x": 736,
+              "y": 434.4
+            },
+            {
+              "x": 736,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 467.2,
+              "y": 165.59999999999997
+            },
+            {
+              "x": 467.2,
+              "y": 434.4
+            }
+          ],
+          "bounds": {
+            "x": 467.20000000000005,
+            "y": 165.6,
+            "width": 268.8,
+            "height": 268.8
+          }
+        }
+      ]
+    }
+  }
+}

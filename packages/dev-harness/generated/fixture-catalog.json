@@ -848,6 +848,20 @@
     "title": "Marker only"
   },
   {
+    "id": "geomap/misconception-encoding",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "misconception-encoding",
+    "specPath": "packages/geomap-engine/fixture/misconception-encoding/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/misconception-encoding/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/misconception-encoding/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/misconception-encoding/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/misconception-encoding/expected.svg"
+    },
+    "title": "Misleading theme map"
+  },
+  {
     "id": "geomap/multi-locate",
     "kind": "engine",
     "engine": "geomap",

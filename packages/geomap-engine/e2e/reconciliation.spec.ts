@@ -5,6 +5,7 @@ const SPECS = {
   encoding: 'packages/geomap-engine/fixture/encoding/input.geomap.json',
   overlay: 'packages/geomap-engine/fixture/overlay/input.geomap.json',
   'route-step': 'packages/geomap-engine/fixture/route-step/input.geomap.json',
+  'misconception-encoding': 'packages/geomap-engine/fixture/misconception-encoding/input.geomap.json',
   linear: 'packages/geomap-engine/fixture/linear/input.geomap.json',
 };
 
@@ -366,5 +367,26 @@ test.describe('GeoMap W-2.6 — adjacency in the alternative list (gm-dir-1, gm-
     });
     expect(result.count).toBeGreaterThanOrEqual(3);
     expect(result.allNamed).toBe(true);
+  });
+});
+test.describe('GeoMap W-4.2 — encoding honesty (gm-asm-2)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=geomap&spec=packages/geomap-engine/fixture/misconception-encoding/input.geomap.json');
+    await page.waitForFunction(() => !!(window as unknown as { __geomapHarness?: unknown }).__geomapHarness);
+  });
+
+  test('alternative is ground truth: bucket exaggerates but measureValue contradicts the visual', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      const alt = harness.alternative();
+      const r1 = alt.find((a) => a.entityId === 'r1');
+      const r2 = alt.find((a) => a.entityId === 'r2');
+      return { r1Value: r1?.measureValue, r2Value: r2?.measureValue, r1Bucket: r1?.encodingBucket, r2Bucket: r2?.encodingBucket };
+    });
+    expect(result.r1Value).toBe(10);
+    expect(result.r2Value).toBe(20);
+    expect(result.r1Bucket).toBe('encoding-bucket-1');
+    expect(result.r2Bucket).toBe('encoding-bucket-2');
+    expect(result.r2Value! / result.r1Value!).toBe(2);
   });
 });
