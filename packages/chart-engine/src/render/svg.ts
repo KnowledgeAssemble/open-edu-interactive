@@ -94,6 +94,13 @@ ${childrenSvg}
       for (const action of node.acceptsActions) {
         interactive.push({ id: node.id, action });
       }
+    } else if (node.role === 'axis' || node.role === 'label' || node.role === 'tick') {
+      a11y.push({
+        id: node.id,
+        role: 'text',
+        label: node.label ?? String(node.value ?? ''),
+        children: [],
+      });
     }
 
     if ((node.kind === 'bar' || node.kind === 'point') && node.metadata) {

@@ -1,6 +1,42 @@
 {
   "a11y": [
     {
+      "id": "label-tick-0",
+      "role": "text",
+      "label": "1875",
+      "children": []
+    },
+    {
+      "id": "label-tick-1",
+      "role": "text",
+      "label": "1900",
+      "children": []
+    },
+    {
+      "id": "label-tick-2",
+      "role": "text",
+      "label": "1925",
+      "children": []
+    },
+    {
+      "id": "war-span",
+      "role": "text",
+      "label": "First World War (1914 – 1918)",
+      "children": []
+    },
+    {
+      "id": "depression-span",
+      "role": "text",
+      "label": "Great Depression (1929 – 1939)",
+      "children": []
+    },
+    {
+      "id": "independence-span",
+      "role": "text",
+      "label": "Independence movement (1857 – 1947)",
+      "children": []
+    },
+    {
       "id": "war",
       "role": "button",
       "label": "First World War (1914)",

@@ -1,6 +1,126 @@
 {
   "a11y": [
     {
+      "id": "tick-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "tick-y-1",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "tick-y-2",
+      "role": "text",
+      "label": "50",
+      "children": []
+    },
+    {
+      "id": "tick-y-3",
+      "role": "text",
+      "label": "75",
+      "children": []
+    },
+    {
+      "id": "tick-y-4",
+      "role": "text",
+      "label": "100",
+      "children": []
+    },
+    {
+      "id": "tick-y-5",
+      "role": "text",
+      "label": "125",
+      "children": []
+    },
+    {
+      "id": "tick-x-0",
+      "role": "text",
+      "label": "Feb",
+      "children": []
+    },
+    {
+      "id": "tick-x-1",
+      "role": "text",
+      "label": "May",
+      "children": []
+    },
+    {
+      "id": "tick-x-2",
+      "role": "text",
+      "label": "Aug",
+      "children": []
+    },
+    {
+      "id": "tick-x-3",
+      "role": "text",
+      "label": "Nov",
+      "children": []
+    },
+    {
+      "id": "label-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "label-y-1",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "label-y-2",
+      "role": "text",
+      "label": "50",
+      "children": []
+    },
+    {
+      "id": "label-y-3",
+      "role": "text",
+      "label": "75",
+      "children": []
+    },
+    {
+      "id": "label-y-4",
+      "role": "text",
+      "label": "100",
+      "children": []
+    },
+    {
+      "id": "label-y-5",
+      "role": "text",
+      "label": "125",
+      "children": []
+    },
+    {
+      "id": "label-x-0",
+      "role": "text",
+      "label": "Feb",
+      "children": []
+    },
+    {
+      "id": "label-x-1",
+      "role": "text",
+      "label": "May",
+      "children": []
+    },
+    {
+      "id": "label-x-2",
+      "role": "text",
+      "label": "Aug",
+      "children": []
+    },
+    {
+      "id": "label-x-3",
+      "role": "text",
+      "label": "Nov",
+      "children": []
+    },
+    {
       "id": "rainfall-bar-row-feb",
       "role": "button",
       "label": "Feb: 45 mm",

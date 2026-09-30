@@ -92,6 +92,13 @@ ${childrenSvg}
       for (const action of node.acceptsActions) {
         interactive.push({ id: node.id, action });
       }
+    } else if ((node.role === 'period-band' || node.role === 'label' || node.role === 'tick' || node.role === 'axis') && node.label) {
+      a11y.push({
+        id: node.id,
+        role: 'text',
+        label: node.label,
+        children: [],
+      });
     }
 
     if (node.kind === 'event-marker' && node.metadata) {

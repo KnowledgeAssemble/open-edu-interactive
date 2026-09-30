@@ -204,3 +204,24 @@ test.describe('Chart Engine — W-5a per-item interactive gating', () => {
     expect(result.selection).toContain('rainfall-bar-row-may');
   });
 });
+
+test.describe('Chart Engine — W-5b a11y-tree scope (ch-b5)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('axis/tick labels appear in the a11y tree as static text, never as D5 targets', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { snapshot(): { svgResult: { a11y: Array<{ id: string; role: string; label: string }> } } } }).__chartHarness;
+      const a11y = h.snapshot().svgResult.a11y;
+      const axis = a11y.find((n) => n.id === 'tick-x-0');
+      const textNodes = a11y.filter((n) => n.role === 'text');
+      const interactive = a11y.filter((n) => n.role === 'button');
+      return { axisRole: axis?.role, textCount: textNodes.length, buttonsOnly: interactive.every((n) => n.id.startsWith('rainfall-bar')) };
+    });
+    expect(result.axisRole).toBe('text');
+    expect(result.textCount).toBeGreaterThan(0);
+    expect(result.buttonsOnly).toBe(true);
+  });
+});

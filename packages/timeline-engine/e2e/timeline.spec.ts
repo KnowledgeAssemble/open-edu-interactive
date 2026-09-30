@@ -227,3 +227,22 @@ test.describe('Timeline Engine — W-5a per-item interactive gating', () => {
     expect(result.selection).toContain('e2');
   });
 });
+
+test.describe('Timeline Engine — W-5b a11y-tree scope (tl-e3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=timeline&spec=packages/timeline-engine/fixture/events/input.timeline.json');
+    await page.waitForFunction(() => !!(window as unknown as { __timelineHarness?: unknown }).__timelineHarness);
+  });
+
+  test('tick labels appear in the a11y tree as static text, never as D5 targets', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __timelineHarness: { snapshot(): { svgResult: { a11y: Array<{ id: string; role: string; label: string }> } } } }).__timelineHarness;
+      const a11y = h.snapshot().svgResult.a11y;
+      const textNodes = a11y.filter((n) => n.role === 'text');
+      const buttons = a11y.filter((n) => n.role === 'button');
+      return { textCount: textNodes.length, buttonsOnly: buttons.every((n) => n.id.startsWith('e')) };
+    });
+    expect(result.textCount).toBeGreaterThan(0);
+    expect(result.buttonsOnly).toBe(true);
+  });
+});

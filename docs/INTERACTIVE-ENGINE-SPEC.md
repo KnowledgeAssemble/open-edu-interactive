@@ -1046,6 +1046,8 @@ Example (authoring hint):
 
 Engines SHOULD expose enough semantic state (snapshot + D5 events) for OpenEdu to evaluate activities. Evaluation logic lives in OpenEdu, not in engine packages.
 
+The snapshot's a11y tree (W-5b) includes **static text** nodes (`role: "text"`) for axis, tick, label, and period-band nodes. Static text is never a `button`/interactive node and is never a D5 target; it exists so screen readers can read the scale/period names. Interactive entities keep `role: "button"` and are the only D5 targets.
+
 ---
 
 # 27. Learner Activities

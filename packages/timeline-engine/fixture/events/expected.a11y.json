@@ -1,6 +1,42 @@
 {
   "a11y": [
     {
+      "id": "label-tick-0",
+      "role": "text",
+      "label": "1900",
+      "children": []
+    },
+    {
+      "id": "label-tick-1",
+      "role": "text",
+      "label": "1902",
+      "children": []
+    },
+    {
+      "id": "label-tick-2",
+      "role": "text",
+      "label": "1904",
+      "children": []
+    },
+    {
+      "id": "label-tick-3",
+      "role": "text",
+      "label": "1906",
+      "children": []
+    },
+    {
+      "id": "label-tick-4",
+      "role": "text",
+      "label": "1908",
+      "children": []
+    },
+    {
+      "id": "label-tick-5",
+      "role": "text",
+      "label": "1910",
+      "children": []
+    },
+    {
       "id": "e1",
       "role": "button",
       "label": "Event A (1900)",
