@@ -1033,7 +1033,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-inq-what-if` *(planned)* |
 | **New capability** | `what-if` *(planned)* |
 | **Host** | Consequence narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

@@ -484,6 +484,20 @@
     "title": "Web of influences"
   },
   {
+    "id": "diagram/di-inq-what-if",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-inq-what-if",
+    "specPath": "packages/diagram-engine/fixture/di-inq-what-if/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-inq-what-if/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-inq-what-if/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-inq-what-if/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-inq-what-if/expected.svg"
+    },
+    "title": "Food web what-if"
+  },
+  {
     "id": "diagram/di-lab-cell-organelle",
     "kind": "engine",
     "engine": "diagram",

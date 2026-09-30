@@ -16,6 +16,9 @@ function nodeToSvg(node: SceneNode, indent: number): string {
   if (node.label) {
     attrs += ` aria-label="${escapeXml(node.label)}"`;
   }
+  if (node.metadata?.whatIf === 'deemphasized') {
+    attrs += ` data-oedu-what-if="deemphasized"`;
+  }
   if (node.description) {
     attrs += ` title="${escapeXml(node.description)}"`;
   }

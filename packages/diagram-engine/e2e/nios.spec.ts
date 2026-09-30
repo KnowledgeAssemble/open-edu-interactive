@@ -50,6 +50,7 @@ const FIXTURES = {
   'di-cause-relationship-gate': 'packages/diagram-engine/fixture/di-cause-relationship-gate/input.diagram.json',
   'di-cause-relative-influence': 'packages/diagram-engine/fixture/di-cause-relative-influence/input.diagram.json',
   'di-cause-influence-chain': 'packages/diagram-engine/fixture/di-cause-influence-chain/input.diagram.json',
+  'di-inq-what-if': 'packages/diagram-engine/fixture/di-inq-what-if/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -594,5 +595,26 @@ test.describe('Diagram W-3.8 — follow-chain (di-cause-4)', () => {
     });
     expect(result.chain).toEqual(['river-silt', 'silt-fertility', 'fertility-crops']);
     expect(result.lastStep).toBe(true);
+  });
+});
+
+test.describe('Diagram W-3.9 — what-if (di-inq-3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['di-inq-what-if']);
+  });
+
+  test('what-if de-emphasises a node without mutating the spec; diagram.what-if logged', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const before = h.events().length;
+      h.dispatch({ type: 'answer', target: { id: 'decomposer' }, payload: { whatIf: true, whatIfNode: 'decomposer' } });
+      const names = h.events().slice(before).map((e) => e.name);
+      const svg = h.svg();
+      const snap = h.snapshot() as unknown as { deemphasizedNodes: string[] };
+      return { names, deemphasized: snap.deemphasizedNodes, marked: svg.includes('data-oedu-what-if="deemphasized"') };
+    });
+    expect(result.names).toContain('diagram.what-if');
+    expect(result.deemphasized).toEqual(['decomposer']);
+    expect(result.marked).toBe(true);
   });
 });

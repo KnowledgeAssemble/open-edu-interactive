@@ -187,3 +187,38 @@ describe('DiagramEngine instance', () => {
     expect(result.valid).toBe(false);
   });
 });
+describe('DiagramEngine what-if immutability (W-3.9)', () => {
+  it('what-if de-emphasis never mutates the authored spec content', () => {
+    const spec: DiagramSpec = {
+      type: 'diagram',
+      version: '1.0.0',
+      id: 'what-if-spec',
+      content: {
+        kind: 'concept-map',
+        nodes: [
+          { id: 'a', label: 'A' },
+          { id: 'b', label: 'B' },
+        ],
+        edges: [{ from: 'a', to: 'b', relationship: 'leads-to' }],
+      },
+      accessibility: { label: 'What-if spec' },
+    };
+    const before = JSON.stringify(spec.content);
+    const engine = new DiagramEngine();
+    const host = {
+      locale: 'en' as const,
+      tokens: {},
+      reducedMotion: false,
+      announce: () => {},
+      onEvent: () => {},
+      resolveAsset: (id: string) => id,
+    };
+    const instance = engine.instantiate(spec as never, host, 'what-if-test');
+    instance.dispatch({ type: 'answer', target: { id: 'a' }, payload: { whatIf: true, whatIfNode: 'a' } });
+    const after = JSON.stringify(spec.content);
+    const snap = instance.snapshot() as unknown as { deemphasizedNodes: string[] };
+    expect(after).toBe(before);
+    expect(snap.deemphasizedNodes).toEqual(['a']);
+    instance.teardown();
+  });
+});

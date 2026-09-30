@@ -55,6 +55,7 @@ function render(
   filterCategories?: string[],
   revealedEdges?: string[],
   followedChain?: string[],
+  deemphasizedNodes?: string[],
 ): { scene: Scene; svgResult: SvgResult } {
   const s = buildScene(content);
   const laidOut = layout(s, ctx, spec.layout?.type ?? defaultLayoutType(content.kind));
@@ -86,6 +87,19 @@ function render(
       walkHide(node, (n) => {
         if (n.kind === 'edge' && (n.metadata?.edgeId === lastEdge || n.id === lastEdge)) {
           n.metadata = { ...n.metadata, chainStep: followedChain.length, chainActive: true };
+        }
+      });
+    }
+  }
+  if (deemphasizedNodes && deemphasizedNodes.length > 0) {
+    const deemph = new Set(deemphasizedNodes);
+    for (const node of laidOut.nodes) {
+      walkHide(node, (n) => {
+        if (n.kind === 'node') {
+          const authored = (n.metadata?.nodeId as string) ?? n.id.replace(/^node-/, '');
+          if (deemph.has(authored) || deemph.has(n.id)) {
+            n.metadata = { ...n.metadata, whatIf: 'deemphasized', whatIfDeemphasized: true };
+          }
         }
       });
     }
@@ -182,13 +196,14 @@ export class DiagramEngine implements Engine {
     let state: EngineState = { ...initialState(instanceId, this.type), phase: 'running' };
     const revealedEdges: string[] = [];
     const followedChain: string[] = [];
+    const deemphasizedNodes: string[] = [];
 
     let laidOut: Scene = { nodes: [], semantics: {} };
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
 
     function recompute(): void {
     const filter = state.filter as string[] | undefined;
-    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter, revealedEdges, followedChain);
+    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter, revealedEdges, followedChain, deemphasizedNodes);
     laidOut = result.scene;
     svgResult = result.svgResult;
   }
@@ -298,11 +313,23 @@ export class DiagramEngine implements Engine {
           }
         } else if (action.type === 'answer') {
           const targetId = action.target?.id;
-          if (targetId && !revealedEdges.includes(targetId)) {
+          const payload = action.payload as { whatIf?: boolean; whatIfNode?: string } | undefined;
+          if (payload?.whatIf && payload.whatIfNode) {
+            const authored = payload.whatIfNode;
+            if (!deemphasizedNodes.includes(authored)) {
+              deemphasizedNodes.push(authored);
+            }
+            state = { ...state, lastAction: action };
+            recompute();
+            const nsEvent = log.append('diagram.what-if', instanceId, { nodeId: authored, deemphasizedNodes: [...deemphasizedNodes] }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          } else if (targetId && !revealedEdges.includes(targetId)) {
             revealedEdges.push(targetId);
+            state = { ...state, lastAction: action };
+            recompute();
+          } else {
+            state = { ...state, lastAction: action };
           }
-          state = { ...state, lastAction: action };
-          recompute();
         }
 
         if (entityPayload) {
@@ -357,6 +384,7 @@ export class DiagramEngine implements Engine {
           alternative: svgResult.alternative,
           revealedEdges: [...revealedEdges],
           followedChain: [...followedChain],
+          deemphasizedNodes: [...deemphasizedNodes],
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {
