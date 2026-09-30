@@ -3106,7 +3106,7 @@ Each component accepts the optional `interactive: boolean` prop. When `true`, ev
 
 ## A.4 Practice fixtures
 
-See `packages/visual-engine/fixture/*-practice/` and `number-line-identify-marked` for guided and discovery examples, `docs/use-cases/visual.md` for learner scenarios, and `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md` for the full specification.
+See `packages/visual-engine/fixture/*-practice/` and `number-line-identify-marked` for guided and discovery examples, `docs/use-cases/visual.md` for learner scenarios, and `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md` for the archived full specification.
 
 ### A.4.1 Use case `nl-identify-marked`
 

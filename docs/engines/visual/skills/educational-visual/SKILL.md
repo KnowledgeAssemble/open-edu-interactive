@@ -3,8 +3,8 @@
 ## References
 
 - **Use-case catalog:** `docs/use-cases/visual.md` — canonical UX for each kind
-- **Practice-mode spec:** `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md`
-- **Implementation plan:** `docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md`
+- **Practice-mode spec (archived):** `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md`
+- **Implementation plan (archived):** `docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md`
 
 ## When to use
 

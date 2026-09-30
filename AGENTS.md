@@ -19,7 +19,7 @@ Shared infrastructure that turns declarative, renderer-independent JSON into int
 - **DEVELOPER-GUIDE.md** — how to integrate and extend; how-to layer below the contract.
 - **PLAN.md** — living, exit-gated phase plan (P0–P7). Sequencing; not design.
 - **STRUCTURE.md** — repo layout, tech stack, packaging (§7 naming per D2).
-- **Agent-Prompt-Spec.md** — the 2026-09-13 architecture-review mandate (proposed). Source of the ADR-10..12 records and the executable next-phase plan under `docs/superpowers/specs/`. A review prompt, not a design doc; the ADRs + plan are the durable deliverables.
+- **Agent-Prompt-Spec.md** (`docs/_archive/review-mandates/`) — the 2026-09-13 architecture-review mandate (proposed, now archived). Source of the ADR-10..12 records and the executable next-phase plan under `docs/superpowers/specs/`. A review prompt, not a design doc; the ADRs + plan are the durable deliverables.
 
 Conflict rule: when docs disagree, fix the **higher** document, never the implementation.
 

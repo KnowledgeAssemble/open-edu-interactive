@@ -354,7 +354,7 @@ Fix **ux-debt** before adding new kinds or props:
 
 Then add **planned** fixtures only when a use case is scheduled in PLAN-P8.
 
-**Agent implementation plan:** `docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md`
+**Agent implementation plan:** `docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md`
 
 ---
 

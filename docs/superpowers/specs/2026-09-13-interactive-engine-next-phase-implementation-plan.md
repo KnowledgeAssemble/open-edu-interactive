@@ -1,7 +1,7 @@
 # Interactive Engine Next-Phase Implementation Plan
 
 **Date:** 2026-09-13
-**Spec source:** `docs/Agent-Prompt-Spec.md` (architecture review + next-phase planning)
+**Spec source:** `docs/_archive/review-mandates/Agent-Prompt-Spec.md` (architecture review + next-phase planning)
 **Authority:** `docs/DESIGN.md` → `docs/INTERACTIVE-ENGINE-SPEC.md` → `docs/PLAN-P8.md` (Workstreams A–E)
 **Audience:** AI coding agents, maintainers, engine implementers
 **Branch:** `feat/p8-slice-honesty-completion` from `main`
@@ -641,5 +641,5 @@ N1's exit gate is green — `pnpm typecheck && pnpm lint && pnpm -w test && pnpm
 | `docs/STRUCTURE.md` | Package layout, tech stack |
 | `docs/adr/ADR-01..12.md` | Decision records |
 | `docs/use-cases/*.md` | Per-engine use-case catalogs |
-| `docs/superpowers/specs/2026-09-09-p8-workstream-a-plan.md` | Prior A1/A2 plan (now stale for A1/A2 status) |
-| `docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md` | Visual UC implementation plan |
+| `docs/_archive/implementation-plans/2026-09-09-p8-workstream-a-plan.md` | Prior A1/A2 plan (now stale for A1/A2 status) |
+| `docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md` | Visual UC implementation plan |
