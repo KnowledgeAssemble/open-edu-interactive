@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-09  
 **Status:** Implemented (contract); UX superseded by use-case catalog  
-**Implementation plan:** `docs/superpowers/specs/2026-09-09-visual-practice-mode-implementation-plan.md`  
+**Implementation plan:** `docs/_archive/implementation-plans/2026-09-09-visual-practice-mode-implementation-plan.md`  
 **Use cases (canonical UX):** `docs/use-cases/visual.md`  
 **Scope:** All 10 visual `content.kind` values (9 existing + new `fraction-circle`)  
 **Depends on:** P0–P7 gates (done); P8 Workstream A layout/render baseline (green on branch)  
@@ -402,7 +402,7 @@ Practice specs **MAY** include envelope `questions[]` (`id`, `type`, `prompt`, o
 
 ## 6. Implementation plan input
 
-Full agent-ready task breakdown: **`docs/superpowers/specs/2026-09-09-visual-practice-mode-implementation-plan.md`**. Summary below; order is exit-gated.
+Full agent-ready task breakdown: **`docs/_archive/implementation-plans/2026-09-09-visual-practice-mode-implementation-plan.md`**. Summary below; order is exit-gated.
 
 ### Phase V0 — Schema and governance
 

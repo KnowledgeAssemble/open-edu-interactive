@@ -1,7 +1,7 @@
 # Implementation Plan — Visual Engine Practice Mode
 
 **Date:** 2026-09-09  
-**Spec source:** `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md`  
+**Spec source:** `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md`  
 **Target agent:** Cursor agent on **`deepseek-4-flash`** (or equivalent fast model)  
 **Branch:** `feat/visual-practice-mode` from current `main` (or from `feat/p8-workstream-a` if merged)  
 **Deliverable:** 2 PRs — **PR1** (V0 + V1 interactivity), **PR2** (V2 fraction-circle + V3 fixtures/docs)
@@ -774,7 +774,7 @@ Open **PR2**.
 
 ## References
 
-- Practice-mode spec: `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md`
+- Practice-mode spec: `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md`
 - Visual architecture: `docs/engines/visual/ARCHITECTURE.md`
 - AGENTS.md invariants (D5, D7, D9, P4, P11)
 - Example instance/event test: `packages/visual-engine/test/instance.test.ts`

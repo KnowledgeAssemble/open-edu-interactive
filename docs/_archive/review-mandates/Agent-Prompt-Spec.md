@@ -151,7 +151,7 @@ docs/engines/timeline/VISION.md
 
 docs/PLAN-P8.md
 
-docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md
+docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md
 ```
 
 Also locate related documents concerning:

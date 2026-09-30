@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-10  
 **Spec source:** `docs/use-cases/visual.md` (canonical UX)  
-**Contract reference:** `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md` (events, discovery/guided mechanics — update §4.1 when this plan changes number-line behavior)  
+**Contract reference:** `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md` (events, discovery/guided mechanics — update §4.1 when this plan changes number-line behavior)  
 **Target agent:** Cursor agent on **`deepseek-4-flash`** (or equivalent fast model)  
 **Branch:** `feat/visual-use-cases` from current `main` (or continue `feat/visual-practice-mode` if open)  
 **Deliverable:** 3 PRs — **PR1** (U1 number-line UX), **PR2** (U2 coordinate-grid + docs), **PR3** (U3 planned fixtures, optional)
@@ -75,7 +75,7 @@ node packages/visual-engine/scripts/regen-fixtures.mjs number-line-identify-mark
 Add under **Supersedes** or new **Implementation** section:
 
 ```markdown
-**Implementation plan:** `docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md`
+**Implementation plan:** `docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md`
 ```
 
 ### Task U0-2 — PLAN-P8 note
@@ -287,7 +287,7 @@ Adjust path to use `import.meta.url` relative paths like other tests.
 
 ### Task U1-7 — Update practice-mode spec §4.1
 
-**File:** `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md`
+**File:** `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md`
 
 Replace discovery candidates line for number-line:
 
@@ -474,7 +474,7 @@ PR3 — Optional planned
 
 - Use-case catalog: `docs/use-cases/visual.md`
 - Use-case methodology: `docs/use-cases/README.md`
-- Practice-mode contract: `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md`
+- Practice-mode contract: `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md`
 - Number-line component: `packages/visual-engine/src/components/number-line.ts`
 - SVG render: `packages/visual-engine/src/render/svg.ts`
 - AGENTS.md — D7, P4, P6, P11

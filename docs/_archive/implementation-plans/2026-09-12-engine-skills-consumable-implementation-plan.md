@@ -1,7 +1,7 @@
 # Implementation Plan — `@knowledgeassemble/engine-skills`
 
 **Date:** 2026-09-12  
-**Design spec:** `docs/superpowers/specs/2026-09-12-engine-skills-consumable-design.md`  
+**Design spec:** `docs/_archive/retired-specs/2026-09-12-engine-skills-consumable-design.md`  
 **Branch:** `feat/engine-skills-package`, branched from `main` (not from the current `feat/engine-use-case-catalogs` feature branch)  
 **Target model:** deepseek-4-flash (agentic implementation; plan is written as bounded, test-first tasks with explicit file paths and verification commands)
 
@@ -12,7 +12,7 @@
 ## 0. Pre-flight (read first)
 
 Read, in this order:
-1. `docs/superpowers/specs/2026-09-12-engine-skills-consumable-design.md` — this work implements that design.
+1. `docs/_archive/retired-specs/2026-09-12-engine-skills-consumable-design.md` — this work implements that design.
 2. `docs/DESIGN.md` §8, §13, §15 D6/D7, §16 — non-negotiable invariants.
 3. `docs/STRUCTURE.md` §7, §40–41 — packaging and publishing conventions.
 4. One existing engine package, e.g. `packages/chart-engine/`, as the package-shape template.
@@ -318,7 +318,7 @@ Rule: if the engine's schema has a closed `content.kind` enum, populate `kinds` 
    - `docs/fixtures/<engine>/skill-example.json` → `./skill-example.json` (geomap, timeline)
    - `<X>Engine.validate(spec)` (any engine: `ChartEngine`, `VisualEngine`, `DiagramEngine`, `GeoMapEngine`, `TimelineEngine`) → "runtime validation is via the manifest `validationContract` (`./manifest.json` → `engines[].validationContract`): install `package`, import `symbol`, call `method(spec)`"
    - Inline verification blocks such as `pnpm --filter @knowledgeassemble/geomap-engine exec tsx -e "…"` → the same `validationContract` note (they are not runnable by consumers)
-   - References to in-repo docs in SKILL primer/header blocks (`docs/use-cases/visual.md`, `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md`, `docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md` and any other `docs/superpowers/specs/…` in `educational-visual`) → remove those list items; the files do not ship.
+   - References to in-repo docs in SKILL primer/header blocks (`docs/use-cases/visual.md`, `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md`, `docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md` and any other `docs/superpowers/specs/…` in `educational-visual`) → remove those list items; the files do not ship.
 
    Keep the prose verbatim apart from these substitutions.
 

@@ -25,11 +25,11 @@ Completed work and superseded documents live here so the live `docs/` tree only 
 
 | Archived doc | Durable deliverables |
 |--------------|----------------------|
-| `Agent-Prompt-Spec.md` | ADRs 10–12; `docs/_archive/implementation-plans/2026-09-13-interactive-engine-next-phase-implementation-plan.md` (kept live — see living specs below) |
+| `Agent-Prompt-Spec.md` | ADRs 10–12; `docs/superpowers/specs/2026-09-13-interactive-engine-next-phase-implementation-plan.md` (not archived — see living specs below) |
 
 ## Not archived (live)
 
-- `docs/superpowers/specs/2026-09-13-interactive-engine-next-phase-implementation-plan.md` — N2–N6 open
+- `docs/superpowers/specs/2026-09-13-interactive-engine-next-phase-implementation-plan.md` — N2–N6 with N2.1, N3.1, N5.1, and N6.2 already delivered (see W-5 status reconciliation in the gap-closure plan)
 - `docs/superpowers/specs/2026-09-30-use-case-gap-closure-plan.md` — current gap-closure plan
 
 Archived doc contents are historical and may be stale; the successor column is authoritative.
