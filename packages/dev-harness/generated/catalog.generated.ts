@@ -639,6 +639,19 @@ export const catalog = [
     "title": "Route with scale bar and steps"
   },
   {
+    "id": "timeline/duration-events",
+    "kind": "engine",
+    "engine": "timeline",
+    "slug": "duration-events",
+    "specPath": "packages/timeline-engine/fixture/duration-events/input.timeline.json",
+    "golden": {
+      "scene": "packages/timeline-engine/fixture/duration-events/expected.scene.json",
+      "a11y": "packages/timeline-engine/fixture/duration-events/expected.a11y.json",
+      "svg": "packages/timeline-engine/fixture/duration-events/expected.svg"
+    },
+    "title": "Duration events"
+  },
+  {
     "id": "timeline/events",
     "kind": "engine",
     "engine": "timeline",

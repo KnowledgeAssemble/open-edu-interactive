@@ -58,6 +58,10 @@ Rules:
 - `links.*` on entities are **composition hints** for lesson bindings (D8), not cross-package imports.
 - Emit `timeline.event-selected` on D5 `select`.
 
+## 2.1 Duration events (W-2.5)
+
+Events MAY carry `events[].duration` — a date-string in the same Timeline-D3 grammar as `date` (`^[+-]?\d{1,6}(-\d{2}){0,2}$`). A duration turns the event from a point marker into a **span bar** rendered from `date` to `duration`; the linear alternative lists the span (`from`/`to`). Validation negatives: an unparsable `duration`, an out-of-range calendar `duration`, or a `duration` not strictly after `date` all raise `INVALID_ENTITY`. Use case: `tl-f1-duration-events`.
+
 ## 3. MVP slice (P5)
 
 1. **Events / periods / tracks** end-to-end with replayable event log.

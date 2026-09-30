@@ -42,6 +42,8 @@ function nodeToSvg(node: SceneNode, indent: number): string {
       return `${pad}<circle ${attrs} cx="${cx}" cy="${cy}" r="${Math.max(6, Math.min(b.width, b.height) / 2)}" fill="currentColor" stroke="currentColor" stroke-width="2"/>`;
     case 'period-band':
       return `${pad}<rect ${attrs} x="${b.x}" y="${b.y}" width="${Math.max(b.width, 2)}" height="${b.height}" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1"/>`;
+    case 'event-span':
+      return `${pad}<rect ${attrs} x="${b.x}" y="${b.y}" width="${Math.max(b.width, 2)}" height="${b.height}" fill="currentColor" opacity="0.35" stroke="currentColor" stroke-width="1"/>`;
     case 'track-lane':
       return `${pad}<rect ${attrs} x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4,2"/>`;
     case 'line':
@@ -118,6 +120,19 @@ ${childrenSvg}
         from: fromStr,
         to: toStr,
         description: node.metadata.description as string | undefined,
+      });
+    }
+
+    if (node.kind === 'event-span' && node.metadata) {
+      const fromStr = node.metadata.from as string | undefined;
+      const toStr = node.metadata.to as string | undefined;
+      const eventId = node.metadata.eventId as string | undefined;
+      linear.push({
+        kind: 'span',
+        id: eventId ?? node.id,
+        label: node.label ?? '',
+        from: fromStr,
+        to: toStr,
       });
     }
   }

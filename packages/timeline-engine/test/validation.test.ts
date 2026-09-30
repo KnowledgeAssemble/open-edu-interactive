@@ -51,6 +51,33 @@ describe('validation', () => {
     expect(temporalIssues.length).toBeGreaterThan(0);
   });
 
+  it('event duration not after date fails validation (inverted span)', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: '1900' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_ENTITY' && /duration/.test(i.message))).toBe(true);
+  });
+
+  it('event duration equal to date fails validation (missing span)', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: '1950' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_ENTITY' && /duration/.test(i.message))).toBe(true);
+  });
+
+  it('unparsable event duration fails validation', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: 'yesterday' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_SPEC' && /duration/.test(i.message))).toBe(true);
+  });
+
+  it('a valid duration after date passes validation', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: '1960' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(true);
+  });
+
   it('unknown content keys fail with INVALID_SPEC (strict schema)', () => {
     const spec = validSpec({ timeline: [] } as Partial<TimelineContent>);
     const result = validateSemantic(spec);

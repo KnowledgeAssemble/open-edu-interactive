@@ -1,0 +1,48 @@
+{
+  "a11y": [
+    {
+      "id": "war",
+      "role": "button",
+      "label": "First World War (1914)",
+      "children": []
+    },
+    {
+      "id": "depression",
+      "role": "button",
+      "label": "Great Depression (1929)",
+      "children": []
+    },
+    {
+      "id": "independence",
+      "role": "button",
+      "label": "Independence movement (1857)",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "war",
+      "action": "select"
+    },
+    {
+      "id": "war",
+      "action": "focus"
+    },
+    {
+      "id": "depression",
+      "action": "select"
+    },
+    {
+      "id": "depression",
+      "action": "focus"
+    },
+    {
+      "id": "independence",
+      "action": "select"
+    },
+    {
+      "id": "independence",
+      "action": "focus"
+    }
+  ]
+}

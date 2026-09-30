@@ -54,6 +54,20 @@ describe('TimelineEngine — render output has visible primitives (N1.7)', () =>
     expect(svg).toContain('<circle');
   });
 
+  it('duration events (W-2.5): a span bar renders as a rect and the linear alternative exposes the span', () => {
+    const spec = loadSpec('duration-events');
+    const engine = new TimelineEngine();
+    const inst = engine.instantiate(spec, stubHost(), 'tl-duration-render');
+    const snap = inst.snapshot() as unknown as { svgResult: { svg: string; linear: Array<{ kind: string; id: string; from?: string; to?: string }> } };
+
+    expect(snap.svgResult.svg).toContain('data-oedu-role="period-band"');
+    expect(snap.svgResult.svg).toContain('id="war-span"');
+    const spans = snap.svgResult.linear.filter((r) => r.kind === 'span');
+    expect(spans.length).toBeGreaterThanOrEqual(1);
+    expect(spans[0]?.from).toBeDefined();
+    expect(spans[0]?.to).toBeDefined();
+  });
+
   it('tracks fixture SVG shows labeled track lanes and event markers', () => {
     const spec = loadSpec('tracks');
     const engine = new TimelineEngine();

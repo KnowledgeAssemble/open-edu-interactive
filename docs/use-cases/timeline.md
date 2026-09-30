@@ -302,9 +302,9 @@ Reference UX: full historical narrative with eras and parallel storylines. Defau
 | **Action** | Select events; compare duration metadata |
 | **Acceptance** | Event span rendered as bar, not just point marker |
 | **Spec** | `events[].duration` or `to` date (future contract) |
-| **Fixture** | `planned` |
+| **Fixture** | `packages/timeline-engine/fixture/duration-events/` |
 | **Host** | Scoring |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.5 duration events — `events[].duration` in the Timeline-D3 grammar renders a span bar from `date` to `duration`; linear alternative exposes the span; negatives inverted/unparsable/missing span rejected; SPEC §2.1) |
 
 ### `tl-f2-compare-eras` — Side-by-side era comparison *(planned)*
 
