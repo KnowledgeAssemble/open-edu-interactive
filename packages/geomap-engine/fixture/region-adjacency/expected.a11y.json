@@ -1,0 +1,14 @@
+[
+  {
+    "id": "geom-regions-r2",
+    "role": "button",
+    "label": "Region Two",
+    "children": []
+  },
+  {
+    "id": "geom-regions-r3",
+    "role": "button",
+    "label": "Region Three",
+    "children": []
+  }
+]

@@ -611,6 +611,20 @@ export const catalog = [
     "title": "Region only"
   },
   {
+    "id": "geomap/region-adjacency",
+    "kind": "engine",
+    "engine": "geomap",
+    "slug": "region-adjacency",
+    "specPath": "packages/geomap-engine/fixture/region-adjacency/input.geomap.json",
+    "golden": {
+      "scene": "packages/geomap-engine/fixture/region-adjacency/expected.scene.json",
+      "a11y": "packages/geomap-engine/fixture/region-adjacency/expected.a11y.json",
+      "alternative": "packages/geomap-engine/fixture/region-adjacency/expected.alternative.json",
+      "svg": "packages/geomap-engine/fixture/region-adjacency/expected.svg"
+    },
+    "title": "Region adjacency"
+  },
+  {
     "id": "geomap/route",
     "kind": "engine",
     "engine": "geomap",

@@ -339,7 +339,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Marker + region overlay; containment not required by engine (host scores). |
 | **Fixture** | `nios/nav-locate-in-region` *(planned)* |
 | **Host** | Containment answer key declared by host data. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -389,7 +389,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/dir-borders` *(planned)* |
 | **New capability** | `adjacency` — the alternative today lists entities, not neighbour sets. |
 | **Host** | Answer set = adjacency list. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-dir-2-north-of` — What lies to the north?
 

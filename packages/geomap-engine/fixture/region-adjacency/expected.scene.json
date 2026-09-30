@@ -1,0 +1,1007 @@
+{
+  "nodes": [
+    {
+      "id": "geom-regions",
+      "role": "layer",
+      "kind": "layer",
+      "label": "regions",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "regions"
+      },
+      "children": [
+        {
+          "id": "geom-regions-r1",
+          "role": "region",
+          "kind": "region",
+          "label": "Region One",
+          "interactive": false,
+          "hidden": false,
+          "metadata": {
+            "entityId": "r1",
+            "entityType": "region",
+            "name": "Region One",
+            "location": {
+              "source": "src",
+              "featureId": "r1"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534433,
+            "lon": 5.000000000000029,
+            "adjacentTo": [
+              "r2",
+              "r3"
+            ]
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  10,
+                  0
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-r2",
+          "role": "region",
+          "kind": "region",
+          "label": "Region Two",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r2",
+            "entityType": "region",
+            "name": "Region Two",
+            "location": {
+              "source": "src",
+              "featureId": "r2"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.0059586335343536,
+            "lon": 14.999999999999936,
+            "adjacentTo": [
+              "r1"
+            ]
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  10,
+                  0
+                ],
+                [
+                  20,
+                  0
+                ],
+                [
+                  20,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-r3",
+          "role": "region",
+          "kind": "region",
+          "label": "Region Three",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r3",
+            "entityType": "region",
+            "name": "Region Three",
+            "location": {
+              "source": "src",
+              "featureId": "r3"
+            },
+            "sourceClass": "illustrative",
+            "lat": 15.01481985543844,
+            "lon": 5.000000000000079,
+            "adjacentTo": [
+              "r1"
+            ]
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  20
+                ],
+                [
+                  0,
+                  20
+                ],
+                [
+                  0,
+                  10
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 300
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 300
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 48,
+            "width": 252,
+            "height": 252
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-scale-bar",
+      "role": "scale-bar",
+      "kind": "scale-bar",
+      "label": "1000 KM",
+      "bounds": {
+        "x": 24,
+        "y": 512,
+        "width": 236,
+        "height": 68
+      },
+      "interactive": false,
+      "metadata": {
+        "lengthKm": 1000,
+        "lengthPx": 230,
+        "unit": "km",
+        "label": "1000 KM",
+        "scaleBarKind": "scale-bar"
+      },
+      "children": []
+    }
+  ],
+  "semantics": {
+    "geom-regions-r1": {
+      "id": "geom-regions-r1",
+      "role": "region",
+      "kind": "region",
+      "label": "Region One",
+      "interactive": false,
+      "hidden": false,
+      "metadata": {
+        "entityId": "r1",
+        "entityType": "region",
+        "name": "Region One",
+        "location": {
+          "source": "src",
+          "featureId": "r1"
+        },
+        "sourceClass": "illustrative",
+        "lat": 5.005958633534433,
+        "lon": 5.000000000000029,
+        "adjacentTo": [
+          "r2",
+          "r3"
+        ]
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              0,
+              10
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 148,
+            "y": 552
+          },
+          {
+            "x": 400,
+            "y": 552
+          },
+          {
+            "x": 400,
+            "y": 300
+          },
+          {
+            "x": 148,
+            "y": 300
+          },
+          {
+            "x": 148,
+            "y": 552
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 148,
+          "y": 552
+        },
+        {
+          "x": 400,
+          "y": 552
+        },
+        {
+          "x": 400,
+          "y": 300
+        },
+        {
+          "x": 148,
+          "y": 300
+        },
+        {
+          "x": 148,
+          "y": 552
+        }
+      ],
+      "bounds": {
+        "x": 148,
+        "y": 300,
+        "width": 252,
+        "height": 252
+      }
+    },
+    "geom-regions-r2": {
+      "id": "geom-regions-r2",
+      "role": "region",
+      "kind": "region",
+      "label": "Region Two",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "r2",
+        "entityType": "region",
+        "name": "Region Two",
+        "location": {
+          "source": "src",
+          "featureId": "r2"
+        },
+        "sourceClass": "illustrative",
+        "lat": 5.0059586335343536,
+        "lon": 14.999999999999936,
+        "adjacentTo": [
+          "r1"
+        ]
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10,
+              0
+            ],
+            [
+              20,
+              0
+            ],
+            [
+              20,
+              10
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              0
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 400,
+            "y": 552
+          },
+          {
+            "x": 652,
+            "y": 552
+          },
+          {
+            "x": 652,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 552
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 400,
+          "y": 552
+        },
+        {
+          "x": 652,
+          "y": 552
+        },
+        {
+          "x": 652,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 552
+        }
+      ],
+      "bounds": {
+        "x": 400,
+        "y": 300,
+        "width": 252,
+        "height": 252
+      }
+    },
+    "geom-regions-r3": {
+      "id": "geom-regions-r3",
+      "role": "region",
+      "kind": "region",
+      "label": "Region Three",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "r3",
+        "entityType": "region",
+        "name": "Region Three",
+        "location": {
+          "source": "src",
+          "featureId": "r3"
+        },
+        "sourceClass": "illustrative",
+        "lat": 15.01481985543844,
+        "lon": 5.000000000000079,
+        "adjacentTo": [
+          "r1"
+        ]
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0,
+              10
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              0,
+              20
+            ],
+            [
+              0,
+              10
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 148,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 300
+          },
+          {
+            "x": 400,
+            "y": 48
+          },
+          {
+            "x": 148,
+            "y": 48
+          },
+          {
+            "x": 148,
+            "y": 300
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 148,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 300
+        },
+        {
+          "x": 400,
+          "y": 48
+        },
+        {
+          "x": 148,
+          "y": 48
+        },
+        {
+          "x": 148,
+          "y": 300
+        }
+      ],
+      "bounds": {
+        "x": 148,
+        "y": 48,
+        "width": 252,
+        "height": 252
+      }
+    },
+    "geom-regions": {
+      "id": "geom-regions",
+      "role": "layer",
+      "kind": "layer",
+      "label": "regions",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "regions"
+      },
+      "children": [
+        {
+          "id": "geom-regions-r1",
+          "role": "region",
+          "kind": "region",
+          "label": "Region One",
+          "interactive": false,
+          "hidden": false,
+          "metadata": {
+            "entityId": "r1",
+            "entityType": "region",
+            "name": "Region One",
+            "location": {
+              "source": "src",
+              "featureId": "r1"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.005958633534433,
+            "lon": 5.000000000000029,
+            "adjacentTo": [
+              "r2",
+              "r3"
+            ]
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  0
+                ],
+                [
+                  10,
+                  0
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  0,
+                  10
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 148,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 148,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-r2",
+          "role": "region",
+          "kind": "region",
+          "label": "Region Two",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r2",
+            "entityType": "region",
+            "name": "Region Two",
+            "location": {
+              "source": "src",
+              "featureId": "r2"
+            },
+            "sourceClass": "illustrative",
+            "lat": 5.0059586335343536,
+            "lon": 14.999999999999936,
+            "adjacentTo": [
+              "r1"
+            ]
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  10,
+                  0
+                ],
+                [
+                  20,
+                  0
+                ],
+                [
+                  20,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  0
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 400,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 552
+              },
+              {
+                "x": 652,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 400,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 552
+            },
+            {
+              "x": 652,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 252,
+            "height": 252
+          }
+        },
+        {
+          "id": "geom-regions-r3",
+          "role": "region",
+          "kind": "region",
+          "label": "Region Three",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "r3",
+            "entityType": "region",
+            "name": "Region Three",
+            "location": {
+              "source": "src",
+              "featureId": "r3"
+            },
+            "sourceClass": "illustrative",
+            "lat": 15.01481985543844,
+            "lon": 5.000000000000079,
+            "adjacentTo": [
+              "r1"
+            ]
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  0,
+                  10
+                ],
+                [
+                  10,
+                  10
+                ],
+                [
+                  10,
+                  20
+                ],
+                [
+                  0,
+                  20
+                ],
+                [
+                  0,
+                  10
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 148,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 300
+              },
+              {
+                "x": 400,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 48
+              },
+              {
+                "x": 148,
+                "y": 300
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 148,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 300
+            },
+            {
+              "x": 400,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 48
+            },
+            {
+              "x": 148,
+              "y": 300
+            }
+          ],
+          "bounds": {
+            "x": 148,
+            "y": 48,
+            "width": 252,
+            "height": 252
+          }
+        }
+      ]
+    }
+  }
+}

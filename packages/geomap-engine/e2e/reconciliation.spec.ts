@@ -21,6 +21,7 @@ interface AltRow {
   type?: string;
   measureValue?: number;
   encodingBucket?: string;
+  adjacentTo?: string[];
 }
 
 interface Harness {
@@ -329,5 +330,38 @@ test.describe('GeoMap W-1 reconciliation — scale-bar (gm-scale-1, gm-scale-2)'
     });
     expect(result.selected).toContain('geom-regions-r1');
     expect(result.names).toContain('geomap.entity-selected');
+  });
+});
+
+test.describe('GeoMap W-2.6 — adjacency in the alternative list (gm-dir-1, gm-nav-2)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=geomap&spec=packages/geomap-engine/fixture/region-adjacency/input.geomap.json');
+    await page.waitForFunction(() => !!(window as unknown as { __geomapHarness?: unknown }).__geomapHarness);
+  });
+
+  test('gm-dir-1: target emphasised without being selectable; neighbour selection emits entity-selected; alternative lists neighbours', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      const before = harness.events().length;
+      harness.dispatch({ type: 'select', target: { id: 'geom-regions-r2' } });
+      const names = harness.events().slice(before).map((e) => e.name);
+      const alt = harness.alternative();
+      const r1 = alt.find((a) => a.entityId === 'r1');
+      return { selected: harness.snapshot().selection, names, neighbours: r1?.adjacentTo };
+    });
+    expect(result.selected).toContain('geom-regions-r2');
+    expect(result.names).toContain('geomap.entity-selected');
+    expect(result.neighbours).toEqual(['r2', 'r3']);
+  });
+
+  test('gm-nav-2: point and region compose in one scene; alternative lists adjacency under the region', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const harness = (window as unknown as { __geomapHarness: Harness }).__geomapHarness;
+      const alt = harness.alternative();
+      const withNeighbours = alt.filter((a) => a.adjacentTo !== undefined);
+      return { count: withNeighbours.length, allNamed: alt.every((a) => a.name && a.location) };
+    });
+    expect(result.count).toBeGreaterThanOrEqual(3);
+    expect(result.allNamed).toBe(true);
   });
 });

@@ -1,0 +1,43 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "region-adjacency",
+  "metadata": { "title": "Region adjacency" },
+  "purpose": { "learningObjective": "Identify the neighbours of a shaded region", "reasoningMode": "identify" },
+  "content": {
+    "projection": { "type": "equirectangular" },
+    "geography": {
+      "sources": [
+        {
+          "id": "src",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [
+              { "id": "r1", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]]] } },
+              { "id": "r2", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[10, 0], [20, 0], [20, 10], [10, 10], [10, 0]]] } },
+              { "id": "r3", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[0, 10], [10, 10], [10, 20], [0, 20], [0, 10]]] } }
+            ]
+          }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "r1", "type": "region", "name": "Region One", "location": { "source": "src", "featureId": "r1" }, "adjacentTo": ["r2", "r3"] },
+      { "id": "r2", "type": "region", "name": "Region Two", "location": { "source": "src", "featureId": "r2" }, "adjacentTo": ["r1"] },
+      { "id": "r3", "type": "region", "name": "Region Three", "location": { "source": "src", "featureId": "r3" }, "adjacentTo": ["r1"] }
+    ],
+    "layers": [
+      { "id": "regions", "type": "region", "items": [
+        { "entity": "r1", "interactive": false },
+        { "entity": "r2", "interactive": true },
+        { "entity": "r3", "interactive": true }
+      ] }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Three regions where Region One borders Two and Three" }
+}
