@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Timeline with one non-interactive event</title>
+  <desc>An interactive timeline visualization</desc>
+  <g id="timeline-root">
+    <g id="timeline-tracks">
+  <line id="gridline-0" data-oedu-role="gridline" data-oedu-value="1900" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-1" data-oedu-role="gridline" data-oedu-value="1905" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-2" data-oedu-role="gridline" data-oedu-value="1910" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-3" data-oedu-role="gridline" data-oedu-value="1915" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-4" data-oedu-role="gridline" data-oedu-value="1920" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-0" data-oedu-role="tick" data-oedu-value="1900" data-oedu-bounds="99,80,2,6" x1="99" y1="80" x2="101" y2="86" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-1" data-oedu-role="tick" data-oedu-value="1905" data-oedu-bounds="269,80,2,6" x1="269" y1="80" x2="271" y2="86" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-2" data-oedu-role="tick" data-oedu-value="1910" data-oedu-bounds="439,80,2,6" x1="439" y1="80" x2="441" y2="86" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-3" data-oedu-role="tick" data-oedu-value="1915" data-oedu-bounds="609,80,2,6" x1="609" y1="80" x2="611" y2="86" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-4" data-oedu-role="tick" data-oedu-value="1920" data-oedu-bounds="779,80,2,6" x1="779" y1="80" x2="781" y2="86" stroke="currentColor" stroke-width="1"/>
+  <text id="label-tick-0" data-oedu-role="label" data-oedu-value="1900" aria-label="1900" data-oedu-bounds="70,88,60,18" x="100" y="97" text-anchor="middle" dominant-baseline="central">1900</text>
+  <text id="label-tick-1" data-oedu-role="label" data-oedu-value="1905" aria-label="1905" data-oedu-bounds="240,88,60,18" x="270" y="97" text-anchor="middle" dominant-baseline="central">1905</text>
+  <text id="label-tick-2" data-oedu-role="label" data-oedu-value="1910" aria-label="1910" data-oedu-bounds="410,88,60,18" x="440" y="97" text-anchor="middle" dominant-baseline="central">1910</text>
+  <text id="label-tick-3" data-oedu-role="label" data-oedu-value="1915" aria-label="1915" data-oedu-bounds="580,88,60,18" x="610" y="97" text-anchor="middle" dominant-baseline="central">1915</text>
+  <text id="label-tick-4" data-oedu-role="label" data-oedu-value="1920" aria-label="1920" data-oedu-bounds="750,88,60,18" x="780" y="97" text-anchor="middle" dominant-baseline="central">1920</text>
+  <text id="label-track-track-default" data-oedu-role="label" data-oedu-bounds="4,40,92,20" x="50" y="50" text-anchor="middle" dominant-baseline="central"></text>
+  <rect id="track-track-default" data-oedu-role="track-lane" data-oedu-bounds="100,20,680,60" x="100" y="20" width="680" height="60" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4,2"/>
+  <circle id="e1" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-actions="select focus" aria-label="Event A (1900)" data-oedu-bounds="78,28,44,44" cx="100" cy="50" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  <circle id="e2" data-oedu-role="selectable" aria-label="Event B (1910)" data-oedu-bounds="418,28,44,44" cx="440" cy="50" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  <circle id="e3" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-actions="select focus" aria-label="Event C (1920)" data-oedu-bounds="758,28,44,44" cx="780" cy="50" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

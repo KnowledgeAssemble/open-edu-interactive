@@ -9,7 +9,7 @@ function assertUnique(seen: Set<string>, id: string): void {
   seen.add(id);
 }
 
-function rowId(row: Record<string, string | number>, index: number): string {
+function rowId(row: Record<string, string | number | boolean>, index: number): string {
   const id = row['id'];
   if (typeof id === 'string' && id) return id;
   return String(index).padStart(4, '0');
@@ -35,7 +35,7 @@ export function buildScene(content: ChartContent): Scene {
     assertUnique(seen, rId);
 
     for (const key of Object.keys(row)) {
-      if (key === 'id' || key === 'links') continue;
+      if (key === 'id' || key === 'links' || key === 'interactive') continue;
       if (!dimIds.includes(key) && !measIds.includes(key)) {
         throw new EngineError(
           'INVALID_ENTITY',
@@ -63,6 +63,7 @@ export function buildScene(content: ChartContent): Scene {
     }
 
     const dimValue = String(row[dimIds[0] ?? ''] ?? '');
+    const rowInteractive = (row as Record<string, unknown>).interactive !== false;
 
     for (const meas of content.measures) {
       const measValue = Number(row[meas.id] ?? 0);
@@ -76,8 +77,8 @@ export function buildScene(content: ChartContent): Scene {
           kind: 'bar',
           value: measValue,
           label: `${dimValue}: ${measValue}${meas.unit ? ' ' + meas.unit : ''}`,
-          interactive: true,
-          acceptsActions: ['select', 'focus'],
+          interactive: rowInteractive,
+          acceptsActions: rowInteractive ? ['select', 'focus'] : undefined,
           metadata: {
             dimensionValue: dimValue,
             measureValue: measValue,
@@ -98,8 +99,8 @@ export function buildScene(content: ChartContent): Scene {
           kind: 'point',
           value: measValue,
           label: `${dimValue}: ${measValue}${meas.unit ? ' ' + meas.unit : ''}`,
-          interactive: true,
-          acceptsActions: ['select', 'focus'],
+          interactive: rowInteractive,
+          acceptsActions: rowInteractive ? ['select', 'focus'] : undefined,
           metadata: {
             dimensionValue: dimValue,
             measureValue: measValue,

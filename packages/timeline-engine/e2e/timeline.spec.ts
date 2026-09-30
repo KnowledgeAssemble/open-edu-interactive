@@ -209,3 +209,21 @@ test.describe('Timeline Engine — tl-f1 duration events e2e (W-2.5)', () => {
     expect(inverted.code).toBe('INVALID_ENTITY');
   });
 });
+test.describe('Timeline Engine — W-5a per-item interactive gating', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=timeline&spec=packages/timeline-engine/fixture/events-gated/input.timeline.json');
+    await page.waitForFunction(() => !!(window as unknown as { __timelineHarness?: unknown }).__timelineHarness);
+  });
+
+  test('interactive:false removes an event from the interactive surface; host dispatch still applies', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __timelineHarness: { svg(): string; dispatch(a: unknown): void; snapshot(): { selection: string[] } } }).__timelineHarness;
+      const svg = h.svg();
+      const e2Gated = svg.includes('id="e2"') && /id="e2"[^>]*data-oedu-interactive="true"/.test(svg) === false;
+      h.dispatch({ type: 'select', target: { id: 'e2' } });
+      return { e2Gated, selection: h.snapshot().selection };
+    });
+    expect(result.e2Gated).toBe(true);
+    expect(result.selection).toContain('e2');
+  });
+});

@@ -1,0 +1,19 @@
+{
+  "type": "timeline",
+  "version": "1.0.0",
+  "id": "timeline-events-gated",
+  "metadata": { "title": "Gated events" },
+  "purpose": { "learningObjective": "Demonstrate per-event interactive gating" },
+  "content": {
+    "kind": "events",
+    "events": [
+      { "id": "e1", "label": "Event A", "date": "1900" },
+      { "id": "e2", "label": "Event B", "date": "1910", "interactive": false },
+      { "id": "e3", "label": "Event C", "date": "1920" }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Timeline with one non-interactive event" }
+}

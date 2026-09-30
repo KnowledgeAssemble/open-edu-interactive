@@ -26,7 +26,7 @@ function stubHost() {
   };
 }
 
-const FIXTURES = ['bar', 'line', 'line-time', 'bar-guided-narrow', 'bar-multi-measure'];
+const FIXTURES = ['bar', 'line', 'line-time', 'bar-guided-narrow', 'bar-multi-measure', 'bar-gated'];
 
 describe('chart engine golden fixtures', () => {
   for (const name of FIXTURES) {

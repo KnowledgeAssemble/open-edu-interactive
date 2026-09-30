@@ -60,6 +60,10 @@ Rules:
 - Auto-layout positions are **illustrative** unless provenance says otherwise (DESIGN §9).
 - Emit `diagram.node-selected`, `diagram.relationship-followed`.
 
+## 2.1 Per-item `interactive` gating (W-5a)
+
+Nodes and edges accept the optional `interactive: boolean` prop. `interactive: false` removes the item from **hit-testing, tab order, and the pointer/keyboard dispatch paths** — the renderer never paints an interactive affordance for it and it never appears in the `interactive` a11y list. Absent means `true` (current behavior). Enforcement is **scoped to learner-initiated input only** (ADR-12): a direct host `dispatch()` of a D5 action targeting the item still applies — the reducer never rejects it. Per-item `interactive` is the authoring signal the guided-select rows of W-3 depend on.
+
 ## 3. MVP slice (P6)
 
 1. **Nodes / edges / auto-layout** with deterministic semantic behavior.

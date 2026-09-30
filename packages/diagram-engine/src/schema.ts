@@ -29,6 +29,7 @@ export const DiagramNodeSchema = z
     label: z.string().min(1),
     description: z.string().optional(),
     links: z.record(z.string()).optional(),
+    interactive: z.boolean().optional(),
   })
   .strict();
 
@@ -41,6 +42,7 @@ export const DiagramEdgeSchema = z
     to: z.string().min(1).max(128).regex(ID_PATTERN),
     relationship: z.enum(RELATIONSHIPS),
     labels: z.array(z.string()).optional(),
+    interactive: z.boolean().optional(),
   })
   .strict();
 

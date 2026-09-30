@@ -39,8 +39,8 @@ export function buildScene(content: DiagramContent): Scene {
       kind: 'node',
       label: entry.label,
       description: entry.description,
-      interactive: true,
-      acceptsActions,
+      interactive: entry.interactive !== false,
+      acceptsActions: entry.interactive === false ? undefined : acceptsActions,
       metadata: {
         nodeId: entry.id,
         label: entry.label,
@@ -82,8 +82,8 @@ export function buildScene(content: DiagramContent): Scene {
       role: 'selectable',
       kind: 'edge',
       label: `${entry.from} ${entry.relationship} ${entry.to}`,
-      interactive: true,
-      acceptsActions: ['follow'],
+      interactive: entry.interactive !== false,
+      acceptsActions: entry.interactive === false ? undefined : ['follow'],
       metadata: {
         fromNodeId: entry.from,
         toNodeId: entry.to,

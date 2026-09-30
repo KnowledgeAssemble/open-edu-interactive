@@ -69,8 +69,8 @@ export function buildScene(content: TimelineContent): Scene {
       role: 'selectable',
       kind: 'event-marker',
       label: `${event.label} (${event.date})`,
-      interactive: true,
-      acceptsActions: ['select', 'focus'],
+      interactive: event.interactive !== false,
+      acceptsActions: event.interactive === false ? undefined : ['select', 'focus'],
       metadata: {
         date: dn,
         dateString: event.date,

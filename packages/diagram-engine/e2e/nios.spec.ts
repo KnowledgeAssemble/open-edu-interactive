@@ -34,6 +34,7 @@ const FIXTURES = {
   'di-cause-many-effects': 'packages/diagram-engine/fixture/di-cause-many-effects/input.diagram.json',
   'di-cause-many-causes': 'packages/diagram-engine/fixture/di-cause-many-causes/input.diagram.json',
   'di-lab-label-all': 'packages/diagram-engine/fixture/di-lab-label-all/input.diagram.json',
+  'interactive-gating': 'packages/diagram-engine/fixture/interactive-gating/input.diagram.json',
 };
 
 async function mount(page: import('@playwright/test').Page, fixture: string): Promise<void> {
@@ -330,5 +331,26 @@ test.describe('Diagram W-1 — accumulation rows (di-cause-1/2, di-lab-2)', () =
     });
     expect(result.all).toEqual(['petal', 'sepal', 'stamen', 'pistil']);
     expect(result.after).toEqual(['petal', 'stamen', 'pistil']);
+  });
+});
+
+test.describe('Diagram W-5a — per-item interactive gating', () => {
+  test.beforeEach(async ({ page }) => {
+    await mount(page, FIXTURES['interactive-gating']);
+  });
+
+  test('interactive:false removes a node/edge from the interactive surface; host dispatch still applies', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __diagramHarness: Harness }).__diagramHarness;
+      const svg = h.svg();
+      const nodeStepGated = !svg.includes('id="node-step"') || svg.includes('node-step') && /id="node-step"[^>]*data-oedu-interactive="true"/.test(svg) === false;
+      const edgeGated = svg.includes('edge-step-output') && /id="edge-step-output"[^>]*data-oedu-interactive="true"/.test(svg) === false;
+      h.dispatch({ type: 'select', target: { id: 'step' } });
+      const hostDispatch = h.snapshot().selection;
+      return { nodeStepGated, edgeGated, hostDispatch };
+    });
+    expect(result.nodeStepGated).toBe(true);
+    expect(result.edgeGated).toBe(true);
+    expect(result.hostDispatch).toContain('step');
   });
 });

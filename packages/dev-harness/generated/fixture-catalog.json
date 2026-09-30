@@ -13,6 +13,19 @@
     "title": "bar"
   },
   {
+    "id": "chart/bar-gated",
+    "kind": "engine",
+    "engine": "chart",
+    "slug": "bar-gated",
+    "specPath": "packages/chart-engine/fixture/bar-gated/input.chart.json",
+    "golden": {
+      "scene": "packages/chart-engine/fixture/bar-gated/expected.scene.json",
+      "a11y": "packages/chart-engine/fixture/bar-gated/expected.a11y.json",
+      "svg": "packages/chart-engine/fixture/bar-gated/expected.svg"
+    },
+    "title": "bar-gated"
+  },
+  {
     "id": "chart/bar-guided-narrow",
     "kind": "engine",
     "engine": "chart",
@@ -457,6 +470,20 @@
     "title": "Simple hierarchy"
   },
   {
+    "id": "diagram/interactive-gating",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "interactive-gating",
+    "specPath": "packages/diagram-engine/fixture/interactive-gating/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/interactive-gating/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/interactive-gating/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/interactive-gating/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/interactive-gating/expected.svg"
+    },
+    "title": "Interactive gating"
+  },
+  {
     "id": "diagram/water-cycle",
     "kind": "engine",
     "engine": "diagram",
@@ -691,6 +718,19 @@
       "svg": "packages/timeline-engine/fixture/events/expected.svg"
     },
     "title": "Events-only test"
+  },
+  {
+    "id": "timeline/events-gated",
+    "kind": "engine",
+    "engine": "timeline",
+    "slug": "events-gated",
+    "specPath": "packages/timeline-engine/fixture/events-gated/input.timeline.json",
+    "golden": {
+      "scene": "packages/timeline-engine/fixture/events-gated/expected.scene.json",
+      "a11y": "packages/timeline-engine/fixture/events-gated/expected.a11y.json",
+      "svg": "packages/timeline-engine/fixture/events-gated/expected.svg"
+    },
+    "title": "Gated events"
   },
   {
     "id": "timeline/independence",

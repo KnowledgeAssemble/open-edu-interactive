@@ -70,6 +70,10 @@ Scene nodes for data marks use a stable, deterministic id per measure and row:
 
 When `content.kind === "bar"` and `measures[]` length ≥ 2 over one shared dimension, bars are grouped per category: within each band, one bar per measure, offset deterministically by measure index. A text legend distinguishes measures (`legend-{measureId}`). The tabular alternative lists **all** measures per row (each `measureId` → value). A single measure renders the un-grouped bar (existing behavior). Use case: `ch-x2-multi-measure`.
 
+## 3.3 Per-row `interactive` gating (W-5a)
+
+Data rows MAY carry `interactive: boolean`. `interactive: false` removes that row's bars/points from hit-testing, tab order, and the pointer/keyboard dispatch paths; the reducer never rejects a direct host `dispatch()` to it (ADR-12). Absent means `true`.
+
 ## 4. Non-goals
 
 Not a dashboard library. Not a second assessment engine. See DESIGN §15 and `VISION.md`.

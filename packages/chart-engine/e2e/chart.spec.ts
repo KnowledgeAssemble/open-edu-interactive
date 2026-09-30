@@ -186,3 +186,21 @@ test.describe('Chart Engine — ch-l1 line series stroke e2e (W-2.4)', () => {
     expect(result.selection).toContain('temp-point-row-jul');
   });
 });
+test.describe('Chart Engine — W-5a per-item interactive gating', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar-gated/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('interactive:false removes a bar from the interactive surface; host dispatch still applies', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { svg(): string; dispatch(a: unknown): void; snapshot(): { selection: string[] } } }).__chartHarness;
+      const svg = h.svg();
+      const mayGated = svg.includes('id="rainfall-bar-row-may"') && /id="rainfall-bar-row-may"[^>]*data-oedu-interactive="true"/.test(svg) === false;
+      h.dispatch({ type: 'select', target: { id: 'rainfall-bar-row-may' } });
+      return { mayGated, selection: h.snapshot().selection };
+    });
+    expect(result.mayGated).toBe(true);
+    expect(result.selection).toContain('rainfall-bar-row-may');
+  });
+});

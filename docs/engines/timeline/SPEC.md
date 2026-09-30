@@ -62,6 +62,8 @@ Rules:
 
 Events MAY carry `events[].duration` — a date-string in the same Timeline-D3 grammar as `date` (`^[+-]?\d{1,6}(-\d{2}){0,2}$`). A duration turns the event from a point marker into a **span bar** rendered from `date` to `duration`; the linear alternative lists the span (`from`/`to`). Validation negatives: an unparsable `duration`, an out-of-range calendar `duration`, or a `duration` not strictly after `date` all raise `INVALID_ENTITY`. Use case: `tl-f1-duration-events`.
 
+Events MAY also carry `events[].interactive: boolean` (W-5a). `interactive: false` removes the event from hit-testing, tab order, and the pointer/keyboard dispatch paths; the reducer never rejects a direct host `dispatch()` to it (ADR-12). Absent means `true`.
+
 ## 3. MVP slice (P5)
 
 1. **Events / periods / tracks** end-to-end with replayable event log.
