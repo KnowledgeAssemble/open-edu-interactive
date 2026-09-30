@@ -1,0 +1,62 @@
+{
+  "a11y": [
+    {
+      "id": "rainfall-bar-row-feb",
+      "role": "button",
+      "label": "Feb: 45 mm",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-may",
+      "role": "button",
+      "label": "May: 110 mm",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-aug",
+      "role": "button",
+      "label": "Aug: 80 mm",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-nov",
+      "role": "button",
+      "label": "Nov: 30 mm",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "rainfall-bar-row-feb",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-feb",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-may",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-may",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-aug",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-aug",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-nov",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-nov",
+      "action": "focus"
+    }
+  ]
+}

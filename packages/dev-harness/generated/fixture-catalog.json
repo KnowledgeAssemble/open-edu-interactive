@@ -13,6 +13,19 @@
     "title": "bar"
   },
   {
+    "id": "chart/bar-guided-narrow",
+    "kind": "engine",
+    "engine": "chart",
+    "slug": "bar-guided-narrow",
+    "specPath": "packages/chart-engine/fixture/bar-guided-narrow/input.chart.json",
+    "golden": {
+      "scene": "packages/chart-engine/fixture/bar-guided-narrow/expected.scene.json",
+      "a11y": "packages/chart-engine/fixture/bar-guided-narrow/expected.a11y.json",
+      "svg": "packages/chart-engine/fixture/bar-guided-narrow/expected.svg"
+    },
+    "title": "bar-guided-narrow"
+  },
+  {
     "id": "chart/line",
     "kind": "engine",
     "engine": "chart",
@@ -24,6 +37,19 @@
       "svg": "packages/chart-engine/fixture/line/expected.svg"
     },
     "title": "line"
+  },
+  {
+    "id": "chart/line-time",
+    "kind": "engine",
+    "engine": "chart",
+    "slug": "line-time",
+    "specPath": "packages/chart-engine/fixture/line-time/input.chart.json",
+    "golden": {
+      "scene": "packages/chart-engine/fixture/line-time/expected.scene.json",
+      "a11y": "packages/chart-engine/fixture/line-time/expected.a11y.json",
+      "svg": "packages/chart-engine/fixture/line-time/expected.svg"
+    },
+    "title": "line-time"
   },
   {
     "id": "diagram/concept-map",

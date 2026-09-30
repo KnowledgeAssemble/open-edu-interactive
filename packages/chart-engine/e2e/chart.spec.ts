@@ -82,3 +82,48 @@ test.describe('Chart Engine — bar chart e2e', () => {
     expect(result.restored.sort()).toEqual(['Aug', 'Feb', 'May', 'Nov']);
   });
 });
+
+test.describe('Chart Engine — ch-l4 time series e2e', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/line-time/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('time dimension: ISO-8601 values render as ordered x labels; select on a time point works', async ({ page }) => {
+    const snapshot = await page.evaluate(() => {
+      return (window as unknown as { __chartHarness: { snapshot(): { tabular: Array<{ rowLabel: string }> } } }).__chartHarness.snapshot();
+    });
+    expect(snapshot.tabular.map((r) => r.rowLabel)).toEqual(['2024-01-15', '2024-04-15', '2024-07-15', '2024-10-15']);
+
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { dispatch(a: unknown): void; snapshot(): { selection: string[] }; events(): Array<{ name: string }> } }).__chartHarness;
+      h.dispatch({ type: 'select', target: { id: 'temp-point-row-jul' } });
+      return { selection: h.snapshot().selection, events: h.events().map((e) => e.name) };
+    });
+    expect(result.selection).toContain('temp-point-row-jul');
+    expect(result.events).toContain('chart.data-point-selected');
+  });
+});
+
+test.describe('Chart Engine — ch-x3 guided narrow e2e', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar-guided-narrow/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('guided: host filter narrows to one bar, learner selects it, clear-filter restores between steps', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { dispatch(a: unknown): void; tabular(): Array<{ rowLabel: string }>; snapshot(): { selection: string[] } } }).__chartHarness;
+      h.dispatch({ type: 'filter', payload: { ids: ['row-may'] } });
+      const narrowed = h.tabular().map((r) => r.rowLabel);
+      h.dispatch({ type: 'select', target: { id: 'rainfall-bar-row-may' } });
+      const selection = h.snapshot().selection;
+      h.dispatch({ type: 'clear-filter' });
+      const restored = h.tabular().map((r) => r.rowLabel);
+      return { narrowed, selection, restored };
+    });
+    expect(result.narrowed).toEqual(['May']);
+    expect(result.selection).toContain('rainfall-bar-row-may');
+    expect(result.restored.sort()).toEqual(['Aug', 'Feb', 'May', 'Nov']);
+  });
+});
