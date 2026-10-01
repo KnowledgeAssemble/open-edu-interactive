@@ -124,6 +124,9 @@ importers:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       zod:
         specifier: ^3.23.0
         version: 3.25.76
