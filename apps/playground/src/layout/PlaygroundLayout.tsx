@@ -21,6 +21,18 @@ export default function PlaygroundLayout(): React.JSX.Element {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100vh", fontFamily: "system-ui, sans-serif" }}>
+      <style>{`
+        /* Engines emit fixed width/height SVG attributes; scale them down so a
+           rendered interactive never overflows its column. viewBox keeps ratio. */
+        [data-oedu-root] svg { max-width: 100%; height: auto; }
+
+        /* Below this width the fixed sidebar would starve the main pane, so
+           stack the catalog above it instead of squeezing both. */
+        @media (max-width: 720px) {
+          .pg-body { flex-wrap: wrap; }
+          .pg-aside { width: 100%; border-right: none; border-bottom: 1px solid #ccc; max-height: 40vh; }
+        }
+      `}</style>
       <header style={{ display: "flex", alignItems: "center", gap: 16, padding: "8px 16px", borderBottom: "1px solid #ccc", background: "#fafafa" }}>
         <strong>Playground</strong>
         {NAV.map((n) => (
@@ -37,8 +49,8 @@ export default function PlaygroundLayout(): React.JSX.Element {
           ))}
         </select>
       </header>
-      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
-        <aside style={{ width: 240, borderRight: "1px solid #ccc", padding: 8, overflowY: "auto", background: "#f5f5f5" }}>
+      <div className="pg-body" style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+        <aside className="pg-aside" style={{ width: 240, borderRight: "1px solid #ccc", padding: 8, overflowY: "auto", background: "#f5f5f5" }}>
           <details open>
             <summary style={{ cursor: "pointer", fontWeight: 600 }}>Catalog</summary>
             <ul style={{ listStyle: "none", padding: 0, fontSize: 13, marginTop: 4 }}>

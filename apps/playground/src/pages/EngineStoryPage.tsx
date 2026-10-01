@@ -5,6 +5,7 @@ import type { A11yNode } from "@knowledgeassemble/interactive-engine";
 import { loadSpec, getCatalog, type FixtureEntry } from "../lib/specLoader.js";
 import { DEFAULT_HOST_CONFIG, stubHostOptions, type HostConfig } from "../lib/hostPresets.js";
 import { a11yTreeFromSnapshot, formatEvents, formatValidationIssues } from "../lib/inspectorHelpers.js";
+import { COMPARE_CELL, COMPARE_GRID } from "../lib/layout.js";
 import { InspectorPanel } from "../components/InspectorPanel.js";
 import { A11yTreeView } from "../components/A11yTreeView.js";
 import { HostPanel } from "../components/HostPanel.js";
@@ -34,6 +35,7 @@ export function EngineStoryPage(): React.JSX.Element {
   );
 
   const spec = useMemo(() => (entry ? loadSpec(entry.specPath) : undefined), [entry]);
+  const specJson = useMemo(() => (spec ? JSON.stringify(spec, null, 2) : ""), [spec]);
   const actions = (spec as { interaction?: { actions?: string[] } } | undefined)?.interaction?.actions;
 
   function refreshFromHandle(handle: MountHandle): void {
@@ -98,47 +100,54 @@ export function EngineStoryPage(): React.JSX.Element {
       <h2>{engine}/{slug}</h2>
       {error && <div role="alert" style={{ color: "red" }}>{error}</div>}
       <HostPanel config={hostConfig} onChange={setHostConfig} />
-      <div ref={containerRef} data-oedu-root />
-      <div style={{ marginTop: 8, display: "flex", gap: 4, flexWrap: "wrap" }}>
-        <button type="button" onClick={() => { if (resultRef.current) refreshFromHandle(resultRef.current); }}>
-          Refresh Events
-        </button>
-        <button type="button" onClick={() => { if (resultRef.current) refreshFromHandle(resultRef.current); }}>
-          Refresh Snapshot
-        </button>
-        {entry != null && spec != null && (
-          <button
-            type="button"
-            onClick={() => {
-              if (!resultRef.current) return;
-              const v = resultRef.current.validate(spec);
-              setValidationIssues(formatValidationIssues(v.issues));
-            }}
-          >
-            Validate
-          </button>
-        )}
-        {actions?.map((actionType) => (
-          <button key={actionType} type="button" onClick={() => handleDispatch(actionType)}>
-            {actionType}
-          </button>
-        ))}
+      <div style={COMPARE_GRID}>
+        <div style={COMPARE_CELL}>
+          <div ref={containerRef} data-oedu-root />
+          <div style={{ marginTop: 8, display: "flex", gap: 4, flexWrap: "wrap" }}>
+            <button type="button" onClick={() => { if (resultRef.current) refreshFromHandle(resultRef.current); }}>
+              Refresh Events
+            </button>
+            <button type="button" onClick={() => { if (resultRef.current) refreshFromHandle(resultRef.current); }}>
+              Refresh Snapshot
+            </button>
+            {entry != null && spec != null && (
+              <button
+                type="button"
+                onClick={() => {
+                  if (!resultRef.current) return;
+                  const v = resultRef.current.validate(spec);
+                  setValidationIssues(formatValidationIssues(v.issues));
+                }}
+              >
+                Validate
+              </button>
+            )}
+            {actions?.map((actionType) => (
+              <button key={actionType} type="button" onClick={() => handleDispatch(actionType)}>
+                {actionType}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div style={COMPARE_CELL}>
+          <InspectorPanel title="Input Spec" content={specJson} copyLabel="Copy JSON" />
+          <InspectorPanel title={`Events (${events.length})`} content={events.join("\n")} copyLabel="Copy" />
+          <InspectorPanel title="Snapshot" content={snapshotJson} copyLabel="Copy JSON" />
+          {validationIssues && (
+            <InspectorPanel
+              title="Validation"
+              content={validationIssues}
+              color={validationIssues === "Valid" ? "green" : "red"}
+              copyLabel="Copy"
+            />
+          )}
+          {a11yTree && (
+            <InspectorPanel title="A11y Tree" copyLabel="Copy JSON" content={JSON.stringify(a11yTree, null, 2)}>
+              <A11yTreeView tree={a11yTree} />
+            </InspectorPanel>
+          )}
+        </div>
       </div>
-      <InspectorPanel title={`Events (${events.length})`} content={events.join("\n")} copyLabel="Copy" />
-      <InspectorPanel title="Snapshot" content={snapshotJson} copyLabel="Copy JSON" />
-      {validationIssues && (
-        <InspectorPanel
-          title="Validation"
-          content={validationIssues}
-          color={validationIssues === "Valid" ? "green" : "red"}
-          copyLabel="Copy"
-        />
-      )}
-      {a11yTree && (
-        <InspectorPanel title="A11y Tree" copyLabel="Copy JSON" content={JSON.stringify(a11yTree, null, 2)}>
-          <A11yTreeView tree={a11yTree} />
-        </InspectorPanel>
-      )}
     </div>
   );
 }
