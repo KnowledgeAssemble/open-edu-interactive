@@ -1,0 +1,616 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-egg",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "egg",
+            "label": "Egg"
+          },
+          "children": [],
+          "bounds": {
+            "x": 610,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-tadpole",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Tadpole",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "tadpole",
+            "label": "Tadpole"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 510,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-froglet",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Froglet",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "froglet",
+            "label": "Froglet"
+          },
+          "children": [],
+          "bounds": {
+            "x": 130,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-frog",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Frog",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "frog",
+            "label": "Frog"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 30,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-egg-tadpole",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "egg leads-to tadpole",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "egg",
+            "toNodeId": "tadpole",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-egg-tadpole",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 640,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 540
+                }
+              ],
+              "path": "M640,300 L400,540"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-tadpole-froglet",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "tadpole leads-to froglet",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "tadpole",
+            "toNodeId": "froglet",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-tadpole-froglet",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 540
+                },
+                {
+                  "x": 160,
+                  "y": 300
+                }
+              ],
+              "path": "M400,540 L160,300"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-froglet-frog",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "froglet leads-to frog",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "froglet",
+            "toNodeId": "frog",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-froglet-frog",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 160,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 60
+                }
+              ],
+              "path": "M160,300 L400,60"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-frog-egg",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "frog leads-to egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "frog",
+            "toNodeId": "egg",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-frog-egg",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 60
+                },
+                {
+                  "x": 640,
+                  "y": 300
+                }
+              ],
+              "path": "M400,60 L640,300"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-egg": {
+      "id": "node-egg",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Egg",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "egg",
+        "label": "Egg"
+      },
+      "children": []
+    },
+    "egg": {
+      "id": "node-egg",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Egg",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "egg",
+        "label": "Egg"
+      },
+      "children": []
+    },
+    "node-tadpole": {
+      "id": "node-tadpole",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Tadpole",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "tadpole",
+        "label": "Tadpole"
+      },
+      "children": []
+    },
+    "tadpole": {
+      "id": "node-tadpole",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Tadpole",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "tadpole",
+        "label": "Tadpole"
+      },
+      "children": []
+    },
+    "node-froglet": {
+      "id": "node-froglet",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Froglet",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "froglet",
+        "label": "Froglet"
+      },
+      "children": []
+    },
+    "froglet": {
+      "id": "node-froglet",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Froglet",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "froglet",
+        "label": "Froglet"
+      },
+      "children": []
+    },
+    "node-frog": {
+      "id": "node-frog",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Frog",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "frog",
+        "label": "Frog"
+      },
+      "children": []
+    },
+    "frog": {
+      "id": "node-frog",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Frog",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "frog",
+        "label": "Frog"
+      },
+      "children": []
+    },
+    "edge-egg-tadpole": {
+      "id": "edge-egg-tadpole",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "egg leads-to tadpole",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "egg",
+        "toNodeId": "tadpole",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-egg-tadpole",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-tadpole-froglet": {
+      "id": "edge-tadpole-froglet",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "tadpole leads-to froglet",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "tadpole",
+        "toNodeId": "froglet",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-tadpole-froglet",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-froglet-frog": {
+      "id": "edge-froglet-frog",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "froglet leads-to frog",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "froglet",
+        "toNodeId": "frog",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-froglet-frog",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-frog-egg": {
+      "id": "edge-frog-egg",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "frog leads-to egg",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "frog",
+        "toNodeId": "egg",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-frog-egg",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-egg",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "egg",
+            "label": "Egg"
+          },
+          "children": []
+        },
+        {
+          "id": "node-tadpole",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Tadpole",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "tadpole",
+            "label": "Tadpole"
+          },
+          "children": []
+        },
+        {
+          "id": "node-froglet",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Froglet",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "froglet",
+            "label": "Froglet"
+          },
+          "children": []
+        },
+        {
+          "id": "node-frog",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Frog",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "frog",
+            "label": "Frog"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-egg-tadpole",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "egg leads-to tadpole",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "egg",
+            "toNodeId": "tadpole",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-egg-tadpole",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-tadpole-froglet",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "tadpole leads-to froglet",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "tadpole",
+            "toNodeId": "froglet",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-tadpole-froglet",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-froglet-frog",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "froglet leads-to frog",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "froglet",
+            "toNodeId": "frog",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-froglet-frog",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-frog-egg",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "frog leads-to egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "frog",
+            "toNodeId": "egg",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-frog-egg",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

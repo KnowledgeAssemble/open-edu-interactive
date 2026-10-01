@@ -1,0 +1,468 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-demand",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Demand",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "demand",
+            "label": "Demand"
+          },
+          "children": [],
+          "bounds": {
+            "x": 610,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-prices",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Prices",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "prices",
+            "label": "Prices"
+          },
+          "children": [],
+          "bounds": {
+            "x": 250,
+            "y": 478,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-production",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Production",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "production",
+            "label": "Production"
+          },
+          "children": [],
+          "bounds": {
+            "x": 250,
+            "y": 62,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-demand-prices",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "demand leads-to prices",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "demand",
+            "toNodeId": "prices",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-demand-prices",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 640,
+                  "y": 300
+                },
+                {
+                  "x": 280,
+                  "y": 508
+                }
+              ],
+              "path": "M640,300 L280,508"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-prices-production",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "prices leads-to production",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "prices",
+            "toNodeId": "production",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-prices-production",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 280,
+                  "y": 508
+                },
+                {
+                  "x": 280,
+                  "y": 92
+                }
+              ],
+              "path": "M280,508 L280,92"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-production-demand",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "production leads-to demand",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "production",
+            "toNodeId": "demand",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-production-demand",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 280,
+                  "y": 92
+                },
+                {
+                  "x": 640,
+                  "y": 300
+                }
+              ],
+              "path": "M280,92 L640,300"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-demand": {
+      "id": "node-demand",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Demand",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "demand",
+        "label": "Demand"
+      },
+      "children": []
+    },
+    "demand": {
+      "id": "node-demand",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Demand",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "demand",
+        "label": "Demand"
+      },
+      "children": []
+    },
+    "node-prices": {
+      "id": "node-prices",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Prices",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "prices",
+        "label": "Prices"
+      },
+      "children": []
+    },
+    "prices": {
+      "id": "node-prices",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Prices",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "prices",
+        "label": "Prices"
+      },
+      "children": []
+    },
+    "node-production": {
+      "id": "node-production",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Production",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "production",
+        "label": "Production"
+      },
+      "children": []
+    },
+    "production": {
+      "id": "node-production",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Production",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "production",
+        "label": "Production"
+      },
+      "children": []
+    },
+    "edge-demand-prices": {
+      "id": "edge-demand-prices",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "demand leads-to prices",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "demand",
+        "toNodeId": "prices",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-demand-prices",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-prices-production": {
+      "id": "edge-prices-production",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "prices leads-to production",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "prices",
+        "toNodeId": "production",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-prices-production",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-production-demand": {
+      "id": "edge-production-demand",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "production leads-to demand",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "production",
+        "toNodeId": "demand",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-production-demand",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-demand",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Demand",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "demand",
+            "label": "Demand"
+          },
+          "children": []
+        },
+        {
+          "id": "node-prices",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Prices",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "prices",
+            "label": "Prices"
+          },
+          "children": []
+        },
+        {
+          "id": "node-production",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Production",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "production",
+            "label": "Production"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-demand-prices",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "demand leads-to prices",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "demand",
+            "toNodeId": "prices",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-demand-prices",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-prices-production",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "prices leads-to production",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "prices",
+            "toNodeId": "production",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-prices-production",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-production-demand",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "production leads-to demand",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "production",
+            "toNodeId": "demand",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-production-demand",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-evaporation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Evaporation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "evaporation",
+            "label": "Evaporation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 610,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-condensation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Condensation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "condensation",
+            "label": "Condensation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 510,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-precipitation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Precipitation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "precipitation",
+            "label": "Precipitation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 130,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-collection",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Collection",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "collection",
+            "label": "Collection"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 30,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-evaporation-condensation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "evaporation leads-to condensation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "evaporation",
+            "toNodeId": "condensation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-evaporation-condensation",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 640,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 540
+                }
+              ],
+              "path": "M640,300 L400,540"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-condensation-precipitation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "condensation leads-to precipitation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "condensation",
+            "toNodeId": "precipitation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-condensation-precipitation",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 540
+                },
+                {
+                  "x": 160,
+                  "y": 300
+                }
+              ],
+              "path": "M400,540 L160,300"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-precipitation-collection",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "precipitation leads-to collection",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "precipitation",
+            "toNodeId": "collection",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-precipitation-collection",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 160,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 60
+                }
+              ],
+              "path": "M160,300 L400,60"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-collection-evaporation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "collection leads-to evaporation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "collection",
+            "toNodeId": "evaporation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-collection-evaporation",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 60
+                },
+                {
+                  "x": 640,
+                  "y": 300
+                }
+              ],
+              "path": "M400,60 L640,300"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-evaporation": {
+      "id": "node-evaporation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Evaporation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "evaporation",
+        "label": "Evaporation"
+      },
+      "children": []
+    },
+    "evaporation": {
+      "id": "node-evaporation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Evaporation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "evaporation",
+        "label": "Evaporation"
+      },
+      "children": []
+    },
+    "node-condensation": {
+      "id": "node-condensation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Condensation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "condensation",
+        "label": "Condensation"
+      },
+      "children": []
+    },
+    "condensation": {
+      "id": "node-condensation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Condensation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "condensation",
+        "label": "Condensation"
+      },
+      "children": []
+    },
+    "node-precipitation": {
+      "id": "node-precipitation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Precipitation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "precipitation",
+        "label": "Precipitation"
+      },
+      "children": []
+    },
+    "precipitation": {
+      "id": "node-precipitation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Precipitation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "precipitation",
+        "label": "Precipitation"
+      },
+      "children": []
+    },
+    "node-collection": {
+      "id": "node-collection",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Collection",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "collection",
+        "label": "Collection"
+      },
+      "children": []
+    },
+    "collection": {
+      "id": "node-collection",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Collection",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "collection",
+        "label": "Collection"
+      },
+      "children": []
+    },
+    "edge-evaporation-condensation": {
+      "id": "edge-evaporation-condensation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "evaporation leads-to condensation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "evaporation",
+        "toNodeId": "condensation",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-evaporation-condensation",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-condensation-precipitation": {
+      "id": "edge-condensation-precipitation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "condensation leads-to precipitation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "condensation",
+        "toNodeId": "precipitation",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-condensation-precipitation",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-precipitation-collection": {
+      "id": "edge-precipitation-collection",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "precipitation leads-to collection",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "precipitation",
+        "toNodeId": "collection",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-precipitation-collection",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-collection-evaporation": {
+      "id": "edge-collection-evaporation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "collection leads-to evaporation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "collection",
+        "toNodeId": "evaporation",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-collection-evaporation",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-evaporation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Evaporation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "evaporation",
+            "label": "Evaporation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-condensation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Condensation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "condensation",
+            "label": "Condensation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-precipitation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Precipitation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "precipitation",
+            "label": "Precipitation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-collection",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Collection",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "collection",
+            "label": "Collection"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-evaporation-condensation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "evaporation leads-to condensation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "evaporation",
+            "toNodeId": "condensation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-evaporation-condensation",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-condensation-precipitation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "condensation leads-to precipitation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "condensation",
+            "toNodeId": "precipitation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-condensation-precipitation",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-precipitation-collection",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "precipitation leads-to collection",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "precipitation",
+            "toNodeId": "collection",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-precipitation-collection",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-collection-evaporation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "collection leads-to evaporation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "collection",
+            "toNodeId": "evaporation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-collection-evaporation",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

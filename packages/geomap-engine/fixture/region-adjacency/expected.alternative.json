@@ -1,0 +1,39 @@
+[
+  {
+    "entityId": "r1",
+    "type": "region",
+    "name": "Region One",
+    "location": "5.0060, 5.0000",
+    "sourceClass": "illustrative",
+    "adjacentTo": [
+      "r2",
+      "r3"
+    ]
+  },
+  {
+    "entityId": "r2",
+    "type": "region",
+    "name": "Region Two",
+    "location": "5.0060, 15.0000",
+    "sourceClass": "illustrative",
+    "adjacentTo": [
+      "r1"
+    ]
+  },
+  {
+    "entityId": "r3",
+    "type": "region",
+    "name": "Region Three",
+    "location": "15.0148, 5.0000",
+    "sourceClass": "illustrative",
+    "adjacentTo": [
+      "r1"
+    ]
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "1000 KM",
+    "location": "1000 KM"
+  }
+]

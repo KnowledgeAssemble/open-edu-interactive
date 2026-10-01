@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Fraction bar divided into five parts</title>
+  <desc>Select parts to shade two fifths.</desc>
+  <g id="visual-root">
+  <g id="fb" data-oedu-role="group">
+    <g id="fb-bar" data-oedu-role="group" data-oedu-bounds="40,276,720,48">
+      <rect id="fb-part-0" data-oedu-role="fraction-part" data-oedu-value="0" data-oedu-interactive="true" data-oedu-bounds="40,276,144,48" x="40" y="276" width="144" height="48" fill="currentColor" opacity="0.2"/>
+      <rect id="fb-part-1" data-oedu-role="fraction-part" data-oedu-value="1" data-oedu-interactive="true" data-oedu-bounds="184,276,144,48" x="184" y="276" width="144" height="48" fill="currentColor" opacity="0.2"/>
+      <rect id="fb-part-2" data-oedu-role="fraction-part" data-oedu-value="2" data-oedu-interactive="true" data-oedu-bounds="328,276,144,48" x="328" y="276" width="144" height="48" fill="currentColor" opacity="0.2"/>
+      <rect id="fb-part-3" data-oedu-role="fraction-part" data-oedu-value="3" data-oedu-interactive="true" data-oedu-bounds="472,276,144,48" x="472" y="276" width="144" height="48" fill="currentColor" opacity="0.2"/>
+      <rect id="fb-part-4" data-oedu-role="fraction-part" data-oedu-value="4" data-oedu-interactive="true" data-oedu-bounds="616,276,144,48" x="616" y="276" width="144" height="48" fill="currentColor" opacity="0.2"/>
+    </g>
+    <text id="fb-fraction-label" data-oedu-role="label" aria-label="2/5" data-oedu-bounds="40,336,200,24" x="140" y="348" text-anchor="middle" dominant-baseline="central">2/5</text>
+  </g>
+  </g>
+</svg>

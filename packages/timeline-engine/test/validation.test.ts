@@ -5,6 +5,8 @@ import { buildScene } from '../src/scene/build.js';
 import { layout } from '../src/layout/engine.js';
 import { validateLayout } from '../src/validation/layout.js';
 import { TimelineEngine } from '../src/engine.js';
+import { svgFrom } from '../src/render/svg.js';
+import { validateAccessibility } from '../src/validation/accessibility.js';
 import type { LayoutContext } from '../src/layout/engine.js';
 import type { TimelineContent, TimelineSpec } from '../src/schema.js';
 
@@ -49,6 +51,33 @@ describe('validation', () => {
     const result = validateSemantic(spec);
     const temporalIssues = [...result.issues];
     expect(temporalIssues.length).toBeGreaterThan(0);
+  });
+
+  it('event duration not after date fails validation (inverted span)', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: '1900' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_ENTITY' && /duration/.test(i.message))).toBe(true);
+  });
+
+  it('event duration equal to date fails validation (missing span)', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: '1950' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_ENTITY' && /duration/.test(i.message))).toBe(true);
+  });
+
+  it('unparsable event duration fails validation', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: 'yesterday' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_SPEC' && /duration/.test(i.message))).toBe(true);
+  });
+
+  it('a valid duration after date passes validation', () => {
+    const spec = validSpec({ events: [{ id: 'e1', label: 'A', date: '1950', duration: '1960' }] });
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(true);
   });
 
   it('unknown content keys fail with INVALID_SPEC (strict schema)', () => {
@@ -155,6 +184,16 @@ describe('validation', () => {
     const result = engine.validate(spec as never);
     expect(result.valid).toBe(false);
     expect(result.issues.some((i) => i.code === 'ACCESSIBILITY_ERROR')).toBe(true);
+  });
+
+  it('L4: validateAccessibility rejects an empty linear alternative', () => {
+    const content: TimelineContent = { kind: 'events', events: [{ id: 'e1', label: 'A', date: '1900' }] };
+    const scene = layout(buildScene(content), CTX);
+    const rendered = svgFrom(scene, CTX, 'Timeline', undefined);
+    const emptyLinear = { ...rendered, linear: [] };
+    const result = validateAccessibility({ accessibility: { label: 'Timeline' } } as never, emptyLinear);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'ACCESSIBILITY_ERROR' && /linear alternative is empty/.test(i.message))).toBe(true);
   });
 
   it('in-canvas check passes for valid layout', () => {

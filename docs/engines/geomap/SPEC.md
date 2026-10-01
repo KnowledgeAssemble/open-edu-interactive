@@ -452,6 +452,9 @@ The content schema additionally accepts:
 - `EntitySchema.categories: string[]` and `adjacentTo: string[]` — filter categories and adjacency.
 - Route item `interactive: boolean`, `label: boolean` — segment interactivity.
 - Legend item `linkedEntities: string[]`, `interactive: boolean` — legend-link.
+- `content.compass: { referenceEntityId, window: { label, from, to } }` — compass/bearing (W-2.7). `referenceEntityId` MUST name an entity with explicit coordinates; `window` is the authored semantic axis window in degrees (`from`/`to`, `0..360`, wrap-around allowed — e.g. north = `315..45`). The compass renders as a scene node `geom-compass` (a D5 target, no pixel picking). Bearing is **derived** from the authored reference point to each candidate — never authored as a value; `bearing` on a candidate emits `geomap.bearing-computed` with `inWindow` true only when the bearing falls inside the window (a semantic field, not a tolerance constant). Validation negatives: missing `referenceEntityId` (INVALID_REFERENCE), reference lacking coordinates (INVALID_REFERENCE), reference as its own candidate (INVALID_REFERENCE), `from`/`to` outside `[0, 360]` (INVALID_SPEC).
+- `content.periods: [{ id, label, from, to, sources, regionEntityIds }]` — period slices (W-4.1). Each period carries its own non-empty `sources[]` (provenance mandatory; empty/missing → validation error) and the region entity ids visible in that period. The scene node `geom-period-slice` is a D5 target: `scrub` (payload `{ step }`) sets the active index, `step` advances it (deterministic reducer ops, no timers — host-driven playback only). `snapshot().activePeriod` exposes the active slice; `geomap.period-step` is emitted. Regions not in the active period's set are hidden.
+- Encoding honesty (W-4.2): attr-encoding is **never misleading by construction**. `encoding.breakpoints` are explicit and authored; the alternative list is the ground truth and always carries the exact `measureValue` per entity, so any visual exaggeration (e.g. buckets that amplify a difference) is contradictable from the alternative. The engine never infers a visual that lacks a matching alternative value.
 
 All new objects carry `additionalProperties: false`.
 
@@ -678,29 +681,21 @@ Historical geography frequently contains uncertainty.
 
 GeoMap MUST support provenance.
 
+Provenance is carried on the **envelope** as a non-empty root-level `sources[]` — there is no `provenance` field in the GeoMap schema. Each entry mirrors `docs/schemas/interactive-engine.schema.json` `$defs.source`: a required `class` (`authoritative` | `illustrative` | `simulated`) plus optional `title`, `citation`, `url`, `author`, `date`, and other per-source fields the `$defs.source` declares. The validator raises L2 `INVALID_SPEC` when `sources` is missing or empty (`packages/geomap-engine/src/validation/semantic.ts`).
+
 ```json
 {
-  "provenance": {
-    "sources": [
-      {
-        "title": "Historical Atlas",
-        "url": "..."
-      }
-    ],
-    "confidence": "medium",
-    "notes": "Boundary is approximate."
-  }
+  "sources": [
+    {
+      "class": "authoritative",
+      "title": "Historical Atlas",
+      "url": "..."
+    }
+  ]
 }
 ```
 
-Supported confidence levels:
-
-```text
-high
-medium
-low
-unknown
-```
+Every factual, geographic, or historical claim in a map MUST be traceable to at least one source in `sources[]`. Never invent boundaries, extents, values, or dates absent from the authored data.
 
 Historical boundaries SHOULD NOT imply false precision.
 
@@ -1140,6 +1135,7 @@ reset
 `toggle` targets a layer node id (`geom-<layerId>`) toggling its visibility.
 `step`/`scrub` target a route node id (`geom-<layerId>-<routeId>`).
 `filter` accepts payload `{ ids: string[] }` or `{ categories: string[] }` (engine resolves categories to node ids).
+`bearing` (W-2.7) targets any entity id and queries the compass: the engine computes the bearing from the authored reference point to that entity (plain arithmetic on authored coordinates — ADR-10) and reports whether it falls in the authored axis window.
 
 GeoMap emits the following namespaced events:
 
@@ -1151,6 +1147,8 @@ GeoMap emits the following namespaced events:
 | `geomap.legend-linked` | `{ legendItemId, entityIds }` | `focus` on legend item |
 | `geomap.entity-selected` | entity metadata | `select` |
 | `geomap.entity-focused` | entity metadata | `focus` |
+| `geomap.bearing-computed` | `{ entityId, referenceEntityId, bearing, inWindow }` | `bearing` |
+| `geomap.period-step` | `{ periodIndex, periodId }` | `step` / `scrub` on `geom-period-slice` |
 
 Namespaced GeoMap extensions MAY include `geomap.center` when documented. `highlight`, `show`, `hide`, `open-info`, and `play-animation` are superseded (`select` / `focus` / `open-annotation` / `play-pause`).
 
@@ -2023,18 +2021,24 @@ questionAnswered
 
 # 66. GeoMap Events
 
-Example:
+GeoMap events are **renderer-independent** — the same payload is delivered to the host and the event log regardless of how the scene is drawn.
+
+The **canonical payload table** is §30 "Interaction Actions": every namespaced event (`geomap.layer-toggled`, `geomap.route-step`, `geomap.filter-applied`, `geomap.legend-linked`, `geomap.entity-selected`, `geomap.entity-focused`) is defined there with its causing D5 action in the Trigger column. This section is the reference note, not a second definition.
+
+Namespaced example (`geomap.entity-selected`, caused by D5 `select`):
 
 ```json
 {
-  "event": {
-    "type": "entitySelected",
-    "entity": "odisha"
+  "name": "geomap.entity-selected",
+  "payload": {
+    "entityId": "odisha",
+    "type": "region",
+    "name": "Odisha"
   }
 }
 ```
 
-Events SHOULD remain renderer-independent.
+Events MUST use the `geomap.*` namespace, never bare camelCase names like `entitySelected`. Superseded names (`highlight`, `show`, `hide`, `open-info`, `play-animation`) MUST NOT be emitted.
 
 ---
 

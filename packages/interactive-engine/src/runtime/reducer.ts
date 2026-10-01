@@ -96,6 +96,7 @@ export function baseReducer(state: EngineState, action: EngineAction): EngineSta
     case 'connect':
     case 'disconnect':
     case 'follow':
+    case 'bearing':
     case 'answer':
     case 'compare':
       return { ...state, lastAction: action };

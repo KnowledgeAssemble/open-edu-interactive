@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-asm-validate-diagram",
+  "metadata": { "title": "Is this a valid flow?" },
+  "purpose": { "learningObjective": "Judge whether a graph is a valid flow", "reasoningMode": "classify" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "input", "label": "Input" },
+      { "id": "step", "label": "Step" },
+      { "id": "output", "label": "Output" }
+    ],
+    "edges": [
+      { "from": "input", "to": "step", "relationship": "leads-to" },
+      { "from": "step", "to": "output", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "A flow for validity judgement: input, step, output" }
+}

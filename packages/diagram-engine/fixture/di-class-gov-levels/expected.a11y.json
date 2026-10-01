@@ -1,0 +1,68 @@
+[
+  {
+    "id": "node-centre",
+    "role": "button",
+    "label": "Central Government",
+    "children": []
+  },
+  {
+    "id": "node-state",
+    "role": "button",
+    "label": "State Government",
+    "children": []
+  },
+  {
+    "id": "node-local",
+    "role": "button",
+    "label": "Local Government",
+    "children": []
+  },
+  {
+    "id": "node-municipality",
+    "role": "button",
+    "label": "Municipality",
+    "children": []
+  },
+  {
+    "id": "node-parliament",
+    "role": "button",
+    "label": "Parliament",
+    "children": []
+  },
+  {
+    "id": "node-assembly",
+    "role": "button",
+    "label": "State Assembly",
+    "children": []
+  },
+  {
+    "id": "edge-centre-parliament",
+    "role": "link",
+    "label": "Central Government contains Parliament",
+    "children": []
+  },
+  {
+    "id": "edge-centre-state",
+    "role": "link",
+    "label": "Central Government part-of State Government",
+    "children": []
+  },
+  {
+    "id": "edge-state-assembly",
+    "role": "link",
+    "label": "State Government contains State Assembly",
+    "children": []
+  },
+  {
+    "id": "edge-state-local",
+    "role": "link",
+    "label": "State Government part-of Local Government",
+    "children": []
+  },
+  {
+    "id": "edge-local-municipality",
+    "role": "link",
+    "label": "Local Government contains Municipality",
+    "children": []
+  }
+]

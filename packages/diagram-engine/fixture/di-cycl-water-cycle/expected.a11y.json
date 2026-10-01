@@ -1,0 +1,50 @@
+[
+  {
+    "id": "node-evaporation",
+    "role": "button",
+    "label": "Evaporation",
+    "children": []
+  },
+  {
+    "id": "node-condensation",
+    "role": "button",
+    "label": "Condensation",
+    "children": []
+  },
+  {
+    "id": "node-precipitation",
+    "role": "button",
+    "label": "Precipitation",
+    "children": []
+  },
+  {
+    "id": "node-collection",
+    "role": "button",
+    "label": "Collection",
+    "children": []
+  },
+  {
+    "id": "edge-evaporation-condensation",
+    "role": "link",
+    "label": "Evaporation leads-to Condensation",
+    "children": []
+  },
+  {
+    "id": "edge-condensation-precipitation",
+    "role": "link",
+    "label": "Condensation leads-to Precipitation",
+    "children": []
+  },
+  {
+    "id": "edge-precipitation-collection",
+    "role": "link",
+    "label": "Precipitation leads-to Collection",
+    "children": []
+  },
+  {
+    "id": "edge-collection-evaporation",
+    "role": "link",
+    "label": "Collection leads-to Evaporation",
+    "children": []
+  }
+]

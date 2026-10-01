@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-state",
+    "role": "button",
+    "label": "State",
+    "children": []
+  },
+  {
+    "id": "node-district",
+    "role": "button",
+    "label": "District",
+    "children": []
+  },
+  {
+    "id": "node-tehsil",
+    "role": "button",
+    "label": "Tehsil",
+    "children": []
+  },
+  {
+    "id": "node-village",
+    "role": "button",
+    "label": "Village",
+    "children": []
+  },
+  {
+    "id": "edge-state-district",
+    "role": "link",
+    "label": "State contains District",
+    "children": []
+  },
+  {
+    "id": "edge-district-tehsil",
+    "role": "link",
+    "label": "District contains Tehsil",
+    "children": []
+  },
+  {
+    "id": "edge-tehsil-village",
+    "role": "link",
+    "label": "Tehsil contains Village",
+    "children": []
+  }
+]

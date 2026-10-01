@@ -15,6 +15,8 @@ export interface EntityRow {
   adjacentTo?: string[];
   measureValue?: number;
   encodingBucket?: string;
+  bearing?: number;
+  bearingInWindow?: boolean;
 }
 
 export interface A11yNode {

@@ -1,0 +1,23 @@
+{
+  "type": "visual",
+  "version": "1.0.0",
+  "id": "clock-discovery-minute",
+  "purpose": {
+    "learningObjective": "Identify the longer hand on an analog clock",
+    "interactionGoal": "Select the minute hand",
+    "reasoningMode": "identify"
+  },
+  "content": {
+    "kind": "clock",
+    "components": [{
+      "id": "ck",
+      "type": "clock",
+      "props": { "hour": 3, "minute": 30, "interactive": true, "highlightHand": "minute" }
+    }]
+  },
+  "accessibility": {
+    "label": "Clock showing 3:30",
+    "description": "Both hands are selectable. Select the minute hand."
+  },
+  "interaction": { "mode": "identify", "actions": ["select", "focus", "deselect", "reset"] }
+}

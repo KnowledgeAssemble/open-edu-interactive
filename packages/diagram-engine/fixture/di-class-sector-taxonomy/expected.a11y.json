@@ -1,0 +1,68 @@
+[
+  {
+    "id": "node-economy",
+    "role": "button",
+    "label": "Economy",
+    "children": []
+  },
+  {
+    "id": "node-primary",
+    "role": "button",
+    "label": "Primary",
+    "children": []
+  },
+  {
+    "id": "node-secondary",
+    "role": "button",
+    "label": "Secondary",
+    "children": []
+  },
+  {
+    "id": "node-tertiary",
+    "role": "button",
+    "label": "Tertiary",
+    "children": []
+  },
+  {
+    "id": "node-farming",
+    "role": "button",
+    "label": "Farming",
+    "children": []
+  },
+  {
+    "id": "node-school",
+    "role": "button",
+    "label": "School",
+    "children": []
+  },
+  {
+    "id": "edge-economy-primary",
+    "role": "link",
+    "label": "Economy contains Primary",
+    "children": []
+  },
+  {
+    "id": "edge-economy-secondary",
+    "role": "link",
+    "label": "Economy contains Secondary",
+    "children": []
+  },
+  {
+    "id": "edge-economy-tertiary",
+    "role": "link",
+    "label": "Economy contains Tertiary",
+    "children": []
+  },
+  {
+    "id": "edge-primary-farming",
+    "role": "link",
+    "label": "Primary contains Farming",
+    "children": []
+  },
+  {
+    "id": "edge-tertiary-school",
+    "role": "link",
+    "label": "Tertiary contains School",
+    "children": []
+  }
+]

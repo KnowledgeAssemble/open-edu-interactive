@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-hist-resistance-chain",
+  "metadata": { "title": "Chain of movements" },
+  "purpose": { "learningObjective": "Follow movements linked by events", "reasoningMode": "explain" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "movement-1", "label": "First movement", "links": { "timelineEventId": "event-1857" } },
+      { "id": "movement-2", "label": "Second movement", "links": { "timelineEventId": "event-1920" } },
+      { "id": "movement-3", "label": "Third movement", "links": { "timelineEventId": "event-1942" } }
+    ],
+    "edges": [
+      { "from": "movement-1", "to": "movement-2", "relationship": "leads-to" },
+      { "from": "movement-2", "to": "movement-3", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Chain of movements linked by events" }
+}

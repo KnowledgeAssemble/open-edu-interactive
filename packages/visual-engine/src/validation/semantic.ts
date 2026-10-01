@@ -128,6 +128,16 @@ export function validateSemantic(spec: VisualSpec): ValidationResult {
     }
   }
 
+  if (kind === 'counting-set' && spec.content?.components) {
+    for (const comp of spec.content.components) {
+      const props = comp.props ?? {};
+      const maxSelection = props.maxSelection as number | undefined;
+      if (maxSelection !== undefined && (!Number.isInteger(maxSelection) || maxSelection < 0)) {
+        issues.push({ level: 'L2', code: 'INVALID_SPEC', message: 'counting-set: maxSelection must be a non-negative integer' });
+      }
+    }
+  }
+
   if (kind === 'fraction-circle' && spec.content?.components) {
     for (const comp of spec.content.components) {
       const props = comp.props ?? {};

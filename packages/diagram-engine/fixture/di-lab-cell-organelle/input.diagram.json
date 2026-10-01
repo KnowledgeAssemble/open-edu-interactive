@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-lab-cell-organelle",
+  "metadata": { "title": "Cell organelles and functions" },
+  "purpose": { "learningObjective": "Identify organelles and their functions", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "concept",
+    "nodes": [
+      { "id": "chloroplast", "label": "Chloroplast" },
+      { "id": "glucose", "label": "Glucose" },
+      { "id": "mitochondria", "label": "Mitochondria" },
+      { "id": "energy", "label": "Energy" }
+    ],
+    "edges": [
+      { "from": "chloroplast", "to": "glucose", "relationship": "produces" },
+      { "from": "glucose", "to": "mitochondria", "relationship": "feeds-on" },
+      { "from": "mitochondria", "to": "energy", "relationship": "produces" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Cell: chloroplast produces glucose, mitochondria produce energy" }
+}

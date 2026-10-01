@@ -8,6 +8,7 @@ export type Profile = (typeof PROFILES)[number];
 
 export const RELATIONSHIPS = [
   'connected-to', 'contains', 'influences', 'is-a', 'leads-to', 'part-of',
+  'feeds-on', 'transforms-to', 'produces', 'weathers-into',
 ] as const;
 export type Relationship = (typeof RELATIONSHIPS)[number];
 
@@ -20,6 +21,7 @@ export type SourceClass = (typeof SOURCE_CLASSES)[number];
 export const DIAGRAM_EVENT_SELECTED = 'diagram.node-selected';
 export const DIAGRAM_EVENT_FOCUSED = 'diagram.node-focused';
 export const DIAGRAM_EVENT_FOLLOWED = 'diagram.relationship-followed';
+export const DIAGRAM_EVENT_EDGE_SELECTED = 'diagram.edge-selected';
 
 const ID_PATTERN = /^[a-zA-Z][a-zA-Z0-9._-]*$/;
 
@@ -29,6 +31,8 @@ export const DiagramNodeSchema = z
     label: z.string().min(1),
     description: z.string().optional(),
     links: z.record(z.string()).optional(),
+    interactive: z.boolean().optional(),
+    categories: z.array(z.string()).optional(),
   })
   .strict();
 
@@ -41,6 +45,9 @@ export const DiagramEdgeSchema = z
     to: z.string().min(1).max(128).regex(ID_PATTERN),
     relationship: z.enum(RELATIONSHIPS),
     labels: z.array(z.string()).optional(),
+    interactive: z.boolean().optional(),
+    gated: z.boolean().optional(),
+    strength: z.number().optional(),
   })
   .strict();
 

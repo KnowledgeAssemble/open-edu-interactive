@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-movement-1",
+    "nodeId": "movement-1",
+    "label": "First movement"
+  },
+  {
+    "kind": "node",
+    "id": "node-movement-2",
+    "nodeId": "movement-2",
+    "label": "Second movement"
+  },
+  {
+    "kind": "node",
+    "id": "node-movement-3",
+    "nodeId": "movement-3",
+    "label": "Third movement"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-movement-1-movement-2",
+    "from": "movement-1",
+    "relationship": "leads-to",
+    "to": "movement-2",
+    "fromLabel": "First movement",
+    "toLabel": "Second movement"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-movement-2-movement-3",
+    "from": "movement-2",
+    "relationship": "leads-to",
+    "to": "movement-3",
+    "fromLabel": "Second movement",
+    "toLabel": "Third movement"
+  }
+]

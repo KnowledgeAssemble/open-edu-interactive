@@ -1,0 +1,616 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-egg",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "egg",
+            "label": "Egg"
+          },
+          "children": [],
+          "bounds": {
+            "x": 610,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-caterpillar",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Caterpillar",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "caterpillar",
+            "label": "Caterpillar"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 510,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-chrysalis",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Chrysalis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "chrysalis",
+            "label": "Chrysalis"
+          },
+          "children": [],
+          "bounds": {
+            "x": 130,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-butterfly",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Butterfly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "butterfly",
+            "label": "Butterfly"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 30,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-egg-caterpillar",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "egg leads-to caterpillar",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "egg",
+            "toNodeId": "caterpillar",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-egg-caterpillar",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 640,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 540
+                }
+              ],
+              "path": "M640,300 L400,540"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-caterpillar-chrysalis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "caterpillar leads-to chrysalis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "caterpillar",
+            "toNodeId": "chrysalis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-caterpillar-chrysalis",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 540
+                },
+                {
+                  "x": 160,
+                  "y": 300
+                }
+              ],
+              "path": "M400,540 L160,300"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-chrysalis-butterfly",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "chrysalis leads-to butterfly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "chrysalis",
+            "toNodeId": "butterfly",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-chrysalis-butterfly",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 160,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 60
+                }
+              ],
+              "path": "M160,300 L400,60"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-butterfly-egg",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "butterfly leads-to egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "butterfly",
+            "toNodeId": "egg",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-butterfly-egg",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 60
+                },
+                {
+                  "x": 640,
+                  "y": 300
+                }
+              ],
+              "path": "M400,60 L640,300"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-egg": {
+      "id": "node-egg",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Egg",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "egg",
+        "label": "Egg"
+      },
+      "children": []
+    },
+    "egg": {
+      "id": "node-egg",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Egg",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "egg",
+        "label": "Egg"
+      },
+      "children": []
+    },
+    "node-caterpillar": {
+      "id": "node-caterpillar",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Caterpillar",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "caterpillar",
+        "label": "Caterpillar"
+      },
+      "children": []
+    },
+    "caterpillar": {
+      "id": "node-caterpillar",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Caterpillar",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "caterpillar",
+        "label": "Caterpillar"
+      },
+      "children": []
+    },
+    "node-chrysalis": {
+      "id": "node-chrysalis",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Chrysalis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "chrysalis",
+        "label": "Chrysalis"
+      },
+      "children": []
+    },
+    "chrysalis": {
+      "id": "node-chrysalis",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Chrysalis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "chrysalis",
+        "label": "Chrysalis"
+      },
+      "children": []
+    },
+    "node-butterfly": {
+      "id": "node-butterfly",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Butterfly",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "butterfly",
+        "label": "Butterfly"
+      },
+      "children": []
+    },
+    "butterfly": {
+      "id": "node-butterfly",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Butterfly",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "butterfly",
+        "label": "Butterfly"
+      },
+      "children": []
+    },
+    "edge-egg-caterpillar": {
+      "id": "edge-egg-caterpillar",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "egg leads-to caterpillar",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "egg",
+        "toNodeId": "caterpillar",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-egg-caterpillar",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-caterpillar-chrysalis": {
+      "id": "edge-caterpillar-chrysalis",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "caterpillar leads-to chrysalis",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "caterpillar",
+        "toNodeId": "chrysalis",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-caterpillar-chrysalis",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-chrysalis-butterfly": {
+      "id": "edge-chrysalis-butterfly",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "chrysalis leads-to butterfly",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "chrysalis",
+        "toNodeId": "butterfly",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-chrysalis-butterfly",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-butterfly-egg": {
+      "id": "edge-butterfly-egg",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "butterfly leads-to egg",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "butterfly",
+        "toNodeId": "egg",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-butterfly-egg",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-egg",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "egg",
+            "label": "Egg"
+          },
+          "children": []
+        },
+        {
+          "id": "node-caterpillar",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Caterpillar",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "caterpillar",
+            "label": "Caterpillar"
+          },
+          "children": []
+        },
+        {
+          "id": "node-chrysalis",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Chrysalis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "chrysalis",
+            "label": "Chrysalis"
+          },
+          "children": []
+        },
+        {
+          "id": "node-butterfly",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Butterfly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "butterfly",
+            "label": "Butterfly"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-egg-caterpillar",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "egg leads-to caterpillar",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "egg",
+            "toNodeId": "caterpillar",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-egg-caterpillar",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-caterpillar-chrysalis",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "caterpillar leads-to chrysalis",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "caterpillar",
+            "toNodeId": "chrysalis",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-caterpillar-chrysalis",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-chrysalis-butterfly",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "chrysalis leads-to butterfly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "chrysalis",
+            "toNodeId": "butterfly",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-chrysalis-butterfly",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-butterfly-egg",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "butterfly leads-to egg",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "butterfly",
+            "toNodeId": "egg",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-butterfly-egg",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

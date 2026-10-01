@@ -11,6 +11,15 @@ function assertUnique(seen: Set<string>, id: string): void {
   seen.add(id);
 }
 
+export function bearingFrom(referenceLat: number, referenceLon: number, lat: number, lon: number): number {
+  const dLat = lat - referenceLat;
+  const dLon = lon - referenceLon;
+  const angle = Math.atan2(dLon, dLat);
+  let degrees = (angle * 180) / Math.PI;
+  if (degrees < 0) degrees += 360;
+  return Number(degrees.toFixed(1));
+}
+
 function resolveSourceData(source: GeoSourceSpec, resolveAsset: (id: string) => string | Uint8Array): Record<string, unknown> | undefined {
   if (source.data) return source.data as Record<string, unknown>;
   if (source.uri) {
@@ -137,6 +146,35 @@ export function buildScene(
     }
   }
 
+  const compass = content.compass;
+  let referenceLat: number | undefined;
+  let referenceLon: number | undefined;
+  if (compass) {
+    const reference = entityById.get(compass.referenceEntityId);
+    const referencePos = reference ? resolvedPos.get(reference.id) : undefined;
+    referenceLat = referencePos?.lat;
+    referenceLon = referencePos?.lon;
+  }
+
+  if (content.periods && content.periods.length > 0) {
+    const periodNodeId = 'geom-period-slice';
+    assertUnique(seen, periodNodeId);
+    const periodNode: SceneNode = {
+      id: periodNodeId,
+      role: 'period-slice',
+      kind: 'period-slice',
+      label: 'Period slice',
+      interactive: true,
+      acceptsActions: ['select', 'focus', 'step', 'scrub'],
+      metadata: {
+        periods: content.periods.map((p) => ({ id: p.id, label: p.label })),
+      },
+      children: [],
+    };
+    semantics[periodNodeId] = periodNode;
+    nodes.push(periodNode);
+  }
+
   for (const layer of layers) {
     assertUnique(seen, layer.id);
     const layerId = layer.id;
@@ -238,6 +276,17 @@ export function buildScene(
 
         const itemMeasure = (itemRecord.measure as { attribute: string; value: number } | undefined);
 
+        let bearing: number | undefined;
+        let bearingInWindow: boolean | undefined;
+        if (compass && referenceLat !== undefined && referenceLon !== undefined && pos) {
+          bearing = bearingFrom(referenceLat, referenceLon, pos.lat, pos.lon);
+          const from = compass.window.from;
+          const to = compass.window.to;
+          bearingInWindow = from <= to
+            ? bearing >= from && bearing <= to
+            : bearing >= from || bearing <= to;
+        }
+
         const node: SceneNode = {
           id: nodeId,
           role: isLabel ? 'label' : isMarker ? 'marker' : 'region',
@@ -259,6 +308,8 @@ export function buildScene(
             lon: pos?.lon,
             categories: entity.categories ?? undefined,
             adjacentTo: entity.adjacentTo ?? undefined,
+            bearing,
+            bearingInWindow,
             ...(itemMeasure ? { measureValue: itemMeasure.value, measureAttribute: itemMeasure.attribute } : {}),
             ...encodingMeta,
           },
@@ -288,6 +339,32 @@ export function buildScene(
     };
     semantics[layerNodeId] = layerNode;
     nodes.push(layerNode);
+  }
+
+  if (compass) {
+    const compassNodeId = 'geom-compass';
+    assertUnique(seen, compassNodeId);
+    const reference = entityById.get(compass.referenceEntityId);
+    const referencePos = reference ? resolvedPos.get(reference.id) : undefined;
+    const compassNode: SceneNode = {
+      id: compassNodeId,
+      role: 'compass',
+      kind: 'compass',
+      label: compass.window.label,
+      interactive: true,
+      acceptsActions: ['select', 'focus', 'bearing'],
+      metadata: {
+        referenceEntityId: compass.referenceEntityId,
+        referenceLat: referencePos?.lat,
+        referenceLon: referencePos?.lon,
+        windowLabel: compass.window.label,
+        windowFrom: compass.window.from,
+        windowTo: compass.window.to,
+      },
+      children: [],
+    };
+    semantics[compassNodeId] = compassNode;
+    nodes.push(compassNode);
   }
 
   const legend = content.legend;

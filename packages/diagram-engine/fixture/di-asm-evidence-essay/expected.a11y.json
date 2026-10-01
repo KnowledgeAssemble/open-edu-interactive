@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-deforest",
+    "role": "button",
+    "label": "Deforestation",
+    "children": []
+  },
+  {
+    "id": "node-erosion",
+    "role": "button",
+    "label": "Soil erosion",
+    "children": []
+  },
+  {
+    "id": "node-flood",
+    "role": "button",
+    "label": "Flooding",
+    "children": []
+  },
+  {
+    "id": "edge-deforest-erosion",
+    "role": "link",
+    "label": "Deforestation leads-to Soil erosion",
+    "children": []
+  },
+  {
+    "id": "edge-erosion-flood",
+    "role": "link",
+    "label": "Soil erosion leads-to Flooding",
+    "children": []
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-deforest",
+    "nodeId": "deforest",
+    "label": "Deforestation"
+  },
+  {
+    "kind": "node",
+    "id": "node-erosion",
+    "nodeId": "erosion",
+    "label": "Soil erosion"
+  },
+  {
+    "kind": "node",
+    "id": "node-flood",
+    "nodeId": "flood",
+    "label": "Flooding"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-deforest-erosion",
+    "from": "deforest",
+    "relationship": "leads-to",
+    "to": "erosion",
+    "fromLabel": "Deforestation",
+    "toLabel": "Soil erosion"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-erosion-flood",
+    "from": "erosion",
+    "relationship": "leads-to",
+    "to": "flood",
+    "fromLabel": "Soil erosion",
+    "toLabel": "Flooding"
+  }
+]

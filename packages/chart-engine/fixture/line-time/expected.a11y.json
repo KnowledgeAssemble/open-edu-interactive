@@ -1,0 +1,182 @@
+{
+  "a11y": [
+    {
+      "id": "tick-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "tick-y-1",
+      "role": "text",
+      "label": "5",
+      "children": []
+    },
+    {
+      "id": "tick-y-2",
+      "role": "text",
+      "label": "10",
+      "children": []
+    },
+    {
+      "id": "tick-y-3",
+      "role": "text",
+      "label": "15",
+      "children": []
+    },
+    {
+      "id": "tick-y-4",
+      "role": "text",
+      "label": "20",
+      "children": []
+    },
+    {
+      "id": "tick-y-5",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "tick-x-0",
+      "role": "text",
+      "label": "2024-01-15",
+      "children": []
+    },
+    {
+      "id": "tick-x-1",
+      "role": "text",
+      "label": "2024-04-15",
+      "children": []
+    },
+    {
+      "id": "tick-x-2",
+      "role": "text",
+      "label": "2024-07-15",
+      "children": []
+    },
+    {
+      "id": "tick-x-3",
+      "role": "text",
+      "label": "2024-10-15",
+      "children": []
+    },
+    {
+      "id": "label-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "label-y-1",
+      "role": "text",
+      "label": "5",
+      "children": []
+    },
+    {
+      "id": "label-y-2",
+      "role": "text",
+      "label": "10",
+      "children": []
+    },
+    {
+      "id": "label-y-3",
+      "role": "text",
+      "label": "15",
+      "children": []
+    },
+    {
+      "id": "label-y-4",
+      "role": "text",
+      "label": "20",
+      "children": []
+    },
+    {
+      "id": "label-y-5",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "label-x-0",
+      "role": "text",
+      "label": "2024-01-15",
+      "children": []
+    },
+    {
+      "id": "label-x-1",
+      "role": "text",
+      "label": "2024-04-15",
+      "children": []
+    },
+    {
+      "id": "label-x-2",
+      "role": "text",
+      "label": "2024-07-15",
+      "children": []
+    },
+    {
+      "id": "label-x-3",
+      "role": "text",
+      "label": "2024-10-15",
+      "children": []
+    },
+    {
+      "id": "temp-point-row-jan",
+      "role": "button",
+      "label": "2024-01-15: 5 °C",
+      "children": []
+    },
+    {
+      "id": "temp-point-row-apr",
+      "role": "button",
+      "label": "2024-04-15: 14 °C",
+      "children": []
+    },
+    {
+      "id": "temp-point-row-jul",
+      "role": "button",
+      "label": "2024-07-15: 22 °C",
+      "children": []
+    },
+    {
+      "id": "temp-point-row-oct",
+      "role": "button",
+      "label": "2024-10-15: 11 °C",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "temp-point-row-jan",
+      "action": "select"
+    },
+    {
+      "id": "temp-point-row-jan",
+      "action": "focus"
+    },
+    {
+      "id": "temp-point-row-apr",
+      "action": "select"
+    },
+    {
+      "id": "temp-point-row-apr",
+      "action": "focus"
+    },
+    {
+      "id": "temp-point-row-jul",
+      "action": "select"
+    },
+    {
+      "id": "temp-point-row-jul",
+      "action": "focus"
+    },
+    {
+      "id": "temp-point-row-oct",
+      "action": "select"
+    },
+    {
+      "id": "temp-point-row-oct",
+      "action": "focus"
+    }
+  ]
+}

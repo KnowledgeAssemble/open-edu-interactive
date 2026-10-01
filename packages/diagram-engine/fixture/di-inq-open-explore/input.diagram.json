@@ -1,0 +1,29 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-inq-open-explore",
+  "metadata": { "title": "Web of influences" },
+  "purpose": { "learningObjective": "Free exploration of a rich structure", "reasoningMode": "explore" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "concept",
+    "nodes": [
+      { "id": "climate", "label": "Climate" },
+      { "id": "soil", "label": "Soil" },
+      { "id": "water", "label": "Water" },
+      { "id": "vegetation", "label": "Vegetation" },
+      { "id": "animals", "label": "Animals" }
+    ],
+    "edges": [
+      { "from": "climate", "to": "vegetation", "relationship": "influences" },
+      { "from": "soil", "to": "vegetation", "relationship": "influences" },
+      { "from": "water", "to": "vegetation", "relationship": "influences" },
+      { "from": "vegetation", "to": "animals", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Web of influences: climate, soil and water influence vegetation" }
+}

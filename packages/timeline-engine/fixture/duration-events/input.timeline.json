@@ -1,0 +1,19 @@
+{
+  "type": "timeline",
+  "version": "1.0.0",
+  "id": "timeline-duration-events",
+  "metadata": { "title": "Duration events" },
+  "purpose": { "learningObjective": "Compare how long events lasted, not just when they started" },
+  "content": {
+    "kind": "events",
+    "events": [
+      { "id": "war", "label": "First World War", "date": "1914", "duration": "1918" },
+      { "id": "depression", "label": "Great Depression", "date": "1929", "duration": "1939" },
+      { "id": "independence", "label": "Independence movement", "date": "1857", "duration": "1947" }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Timeline of events with explicit duration spans" }
+}

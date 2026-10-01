@@ -1,0 +1,238 @@
+{
+  "a11y": [
+    {
+      "id": "tick-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "tick-y-1",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "tick-y-2",
+      "role": "text",
+      "label": "50",
+      "children": []
+    },
+    {
+      "id": "tick-y-3",
+      "role": "text",
+      "label": "75",
+      "children": []
+    },
+    {
+      "id": "tick-y-4",
+      "role": "text",
+      "label": "100",
+      "children": []
+    },
+    {
+      "id": "tick-y-5",
+      "role": "text",
+      "label": "125",
+      "children": []
+    },
+    {
+      "id": "tick-x-0",
+      "role": "text",
+      "label": "Jan",
+      "children": []
+    },
+    {
+      "id": "tick-x-1",
+      "role": "text",
+      "label": "Apr",
+      "children": []
+    },
+    {
+      "id": "tick-x-2",
+      "role": "text",
+      "label": "Jul",
+      "children": []
+    },
+    {
+      "id": "tick-x-3",
+      "role": "text",
+      "label": "Oct",
+      "children": []
+    },
+    {
+      "id": "label-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "label-y-1",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "label-y-2",
+      "role": "text",
+      "label": "50",
+      "children": []
+    },
+    {
+      "id": "label-y-3",
+      "role": "text",
+      "label": "75",
+      "children": []
+    },
+    {
+      "id": "label-y-4",
+      "role": "text",
+      "label": "100",
+      "children": []
+    },
+    {
+      "id": "label-y-5",
+      "role": "text",
+      "label": "125",
+      "children": []
+    },
+    {
+      "id": "label-x-0",
+      "role": "text",
+      "label": "Jan",
+      "children": []
+    },
+    {
+      "id": "label-x-1",
+      "role": "text",
+      "label": "Apr",
+      "children": []
+    },
+    {
+      "id": "label-x-2",
+      "role": "text",
+      "label": "Jul",
+      "children": []
+    },
+    {
+      "id": "label-x-3",
+      "role": "text",
+      "label": "Oct",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-jan",
+      "role": "button",
+      "label": "Jan: 30 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-jan",
+      "role": "button",
+      "label": "Jan: 6 hrs",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-apr",
+      "role": "button",
+      "label": "Apr: 20 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-apr",
+      "role": "button",
+      "label": "Apr: 9 hrs",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-jul",
+      "role": "button",
+      "label": "Jul: 120 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-jul",
+      "role": "button",
+      "label": "Jul: 3 hrs",
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-oct",
+      "role": "button",
+      "label": "Oct: 60 mm",
+      "children": []
+    },
+    {
+      "id": "sunshine-bar-row-oct",
+      "role": "button",
+      "label": "Oct: 7 hrs",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "rainfall-bar-row-jan",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-jan",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-jan",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-jan",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-apr",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-apr",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-apr",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-apr",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-jul",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-jul",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-jul",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-jul",
+      "action": "focus"
+    },
+    {
+      "id": "rainfall-bar-row-oct",
+      "action": "select"
+    },
+    {
+      "id": "rainfall-bar-row-oct",
+      "action": "focus"
+    },
+    {
+      "id": "sunshine-bar-row-oct",
+      "action": "select"
+    },
+    {
+      "id": "sunshine-bar-row-oct",
+      "action": "focus"
+    }
+  ]
+}

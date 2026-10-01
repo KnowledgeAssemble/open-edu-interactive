@@ -1,0 +1,427 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-course-old",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Old course",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "course-old",
+            "label": "Old course",
+            "links": {
+              "timelineEventId": "event-1800"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-course-new",
+          "role": "selectable",
+          "kind": "node",
+          "label": "New course",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "course-new",
+            "label": "New course",
+            "links": {
+              "timelineEventId": "event-1900"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-delta",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Delta",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "delta",
+            "label": "Delta",
+            "links": {
+              "timelineEventId": "event-1900"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-course-old-course-new",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "course-old leads-to course-new",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "course-old",
+            "toNodeId": "course-new",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-course-old-course-new",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-course-new-delta",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "course-new leads-to delta",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "course-new",
+            "toNodeId": "delta",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-course-new-delta",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-course-old": {
+      "id": "node-course-old",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Old course",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "course-old",
+        "label": "Old course",
+        "links": {
+          "timelineEventId": "event-1800"
+        }
+      },
+      "children": []
+    },
+    "course-old": {
+      "id": "node-course-old",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Old course",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "course-old",
+        "label": "Old course",
+        "links": {
+          "timelineEventId": "event-1800"
+        }
+      },
+      "children": []
+    },
+    "node-course-new": {
+      "id": "node-course-new",
+      "role": "selectable",
+      "kind": "node",
+      "label": "New course",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "course-new",
+        "label": "New course",
+        "links": {
+          "timelineEventId": "event-1900"
+        }
+      },
+      "children": []
+    },
+    "course-new": {
+      "id": "node-course-new",
+      "role": "selectable",
+      "kind": "node",
+      "label": "New course",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "course-new",
+        "label": "New course",
+        "links": {
+          "timelineEventId": "event-1900"
+        }
+      },
+      "children": []
+    },
+    "node-delta": {
+      "id": "node-delta",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Delta",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "delta",
+        "label": "Delta",
+        "links": {
+          "timelineEventId": "event-1900"
+        }
+      },
+      "children": []
+    },
+    "delta": {
+      "id": "node-delta",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Delta",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "delta",
+        "label": "Delta",
+        "links": {
+          "timelineEventId": "event-1900"
+        }
+      },
+      "children": []
+    },
+    "edge-course-old-course-new": {
+      "id": "edge-course-old-course-new",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "course-old leads-to course-new",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "course-old",
+        "toNodeId": "course-new",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-course-old-course-new",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-course-new-delta": {
+      "id": "edge-course-new-delta",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "course-new leads-to delta",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "course-new",
+        "toNodeId": "delta",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-course-new-delta",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-course-old",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Old course",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "course-old",
+            "label": "Old course",
+            "links": {
+              "timelineEventId": "event-1800"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-course-new",
+          "role": "selectable",
+          "kind": "node",
+          "label": "New course",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "course-new",
+            "label": "New course",
+            "links": {
+              "timelineEventId": "event-1900"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-delta",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Delta",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "delta",
+            "label": "Delta",
+            "links": {
+              "timelineEventId": "event-1900"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-course-old-course-new",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "course-old leads-to course-new",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "course-old",
+            "toNodeId": "course-new",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-course-old-course-new",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-course-new-delta",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "course-new leads-to delta",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "course-new",
+            "toNodeId": "delta",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-course-new-delta",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

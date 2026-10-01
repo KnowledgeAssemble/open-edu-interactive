@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-chloroplast",
+    "role": "button",
+    "label": "Chloroplast",
+    "children": []
+  },
+  {
+    "id": "node-glucose",
+    "role": "button",
+    "label": "Glucose",
+    "children": []
+  },
+  {
+    "id": "node-mitochondria",
+    "role": "button",
+    "label": "Mitochondria",
+    "children": []
+  },
+  {
+    "id": "node-energy",
+    "role": "button",
+    "label": "Energy",
+    "children": []
+  },
+  {
+    "id": "edge-chloroplast-glucose",
+    "role": "link",
+    "label": "Chloroplast produces Glucose",
+    "children": []
+  },
+  {
+    "id": "edge-glucose-mitochondria",
+    "role": "link",
+    "label": "Glucose feeds-on Mitochondria",
+    "children": []
+  },
+  {
+    "id": "edge-mitochondria-energy",
+    "role": "link",
+    "label": "Mitochondria produces Energy",
+    "children": []
+  }
+]

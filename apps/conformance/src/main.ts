@@ -124,7 +124,8 @@ if (engineParam === 'core') {
   const { mountComposition } = await import('./composition.js');
   mountComposition(app);
 } else {
-  const specPath = ENGINE_FIXTURES[engineParam];
+  const specParam = new URLSearchParams(window.location.search).get('spec');
+  const specPath = specParam ?? ENGINE_FIXTURES[engineParam];
   if (!specPath) {
     throw new Error(`Unknown engine: ${engineParam}`);
   }

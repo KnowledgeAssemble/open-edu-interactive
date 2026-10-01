@@ -1,0 +1,73 @@
+[
+  {
+    "kind": "node",
+    "id": "node-mitigation",
+    "nodeId": "mitigation",
+    "label": "Mitigation"
+  },
+  {
+    "kind": "node",
+    "id": "node-preparedness",
+    "nodeId": "preparedness",
+    "label": "Preparedness"
+  },
+  {
+    "kind": "node",
+    "id": "node-response",
+    "nodeId": "response",
+    "label": "Response"
+  },
+  {
+    "kind": "node",
+    "id": "node-recovery",
+    "nodeId": "recovery",
+    "label": "Recovery"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-mitigation-preparedness",
+    "from": "mitigation",
+    "relationship": "leads-to",
+    "to": "preparedness",
+    "fromLabel": "Mitigation",
+    "toLabel": "Preparedness"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-preparedness-response",
+    "from": "preparedness",
+    "relationship": "leads-to",
+    "to": "response",
+    "fromLabel": "Preparedness",
+    "toLabel": "Response"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-response-recovery",
+    "from": "response",
+    "relationship": "leads-to",
+    "to": "recovery",
+    "fromLabel": "Response",
+    "toLabel": "Recovery"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-recovery-mitigation",
+    "from": "recovery",
+    "relationship": "leads-to",
+    "to": "mitigation",
+    "fromLabel": "Recovery",
+    "toLabel": "Mitigation"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-recovery-response-preparedness-mitigation",
+    "members": [
+      "recovery",
+      "response",
+      "preparedness",
+      "mitigation"
+    ],
+    "label": "Cycle: recovery → response → preparedness → mitigation"
+  }
+]

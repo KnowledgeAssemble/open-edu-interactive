@@ -55,7 +55,17 @@ export function svgFrom(scene: Scene, ctx: LayoutContext, label?: string, desc?:
   const width = ctx.width;
   const height = ctx.height;
 
-  const childrenSvg = scene.nodes.map((n) => nodeToSvg(n, 1)).join('\n');
+  const points = scene.nodes.filter((n) => n.kind === 'point' && n.bounds);
+  let seriesSvg = '';
+  if (points.length >= 2) {
+    const coords = points.map((n) => {
+      const b = n.bounds!;
+      return `${centerOf(b).cx},${centerOf(b).cy}`;
+    });
+    seriesSvg = `  <polyline id="series-line" data-oedu-role="series" points="${coords.join(' ')}" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>\n`;
+  }
+
+  const childrenSvg = seriesSvg + scene.nodes.map((n) => nodeToSvg(n, 1)).join('\n');
 
   const title = label ?? 'Chart';
   const description = desc ?? 'An interactive chart visualization';
@@ -84,6 +94,13 @@ ${childrenSvg}
       for (const action of node.acceptsActions) {
         interactive.push({ id: node.id, action });
       }
+    } else if (node.role === 'axis' || node.role === 'label' || node.role === 'tick') {
+      a11y.push({
+        id: node.id,
+        role: 'text',
+        label: node.label ?? String(node.value ?? ''),
+        children: [],
+      });
     }
 
     if ((node.kind === 'bar' || node.kind === 'point') && node.metadata) {

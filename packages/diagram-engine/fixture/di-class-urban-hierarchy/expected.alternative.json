@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-village",
+    "nodeId": "village",
+    "label": "Village"
+  },
+  {
+    "kind": "node",
+    "id": "node-town",
+    "nodeId": "town",
+    "label": "Town"
+  },
+  {
+    "kind": "node",
+    "id": "node-city",
+    "nodeId": "city",
+    "label": "City"
+  },
+  {
+    "kind": "node",
+    "id": "node-metropolis",
+    "nodeId": "metropolis",
+    "label": "Metropolis"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-village-town",
+    "from": "village",
+    "relationship": "leads-to",
+    "to": "town",
+    "fromLabel": "Village",
+    "toLabel": "Town"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-town-city",
+    "from": "town",
+    "relationship": "leads-to",
+    "to": "city",
+    "fromLabel": "Town",
+    "toLabel": "City"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-city-metropolis",
+    "from": "city",
+    "relationship": "leads-to",
+    "to": "metropolis",
+    "fromLabel": "City",
+    "toLabel": "Metropolis"
+  }
+]

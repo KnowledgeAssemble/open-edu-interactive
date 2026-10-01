@@ -1,0 +1,23 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cause-relationship-gate",
+  "metadata": { "title": "Rainfall and soil erosion (gated)" },
+  "purpose": { "learningObjective": "Recall a hidden relationship, then confirm", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "rainfall", "label": "Rainfall" },
+      { "id": "erosion", "label": "Soil erosion" }
+    ],
+    "edges": [
+      { "id": "rain-erodes", "from": "rainfall", "to": "erosion", "relationship": "influences", "gated": true }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "answer", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Rainfall influences soil erosion (relationship hidden until answered)" }
+}

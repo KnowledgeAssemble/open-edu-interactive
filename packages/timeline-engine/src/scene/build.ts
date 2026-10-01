@@ -69,8 +69,8 @@ export function buildScene(content: TimelineContent): Scene {
       role: 'selectable',
       kind: 'event-marker',
       label: `${event.label} (${event.date})`,
-      interactive: true,
-      acceptsActions: ['select', 'focus'],
+      interactive: event.interactive !== false,
+      acceptsActions: event.interactive === false ? undefined : ['select', 'focus'],
       metadata: {
         date: dn,
         dateString: event.date,
@@ -82,6 +82,28 @@ export function buildScene(content: TimelineContent): Scene {
     };
     semantics[event.id] = marker;
     nodes.push(marker);
+
+    if (event.duration !== undefined) {
+      const dnTo = parseDate(event.duration);
+      const span: SceneNode = {
+        id: `${event.id}-span`,
+        role: 'period-band',
+        kind: 'event-span',
+        label: `${event.label} (${event.date} – ${event.duration})`,
+        interactive: false,
+        metadata: {
+          fromDay: dn,
+          toDay: dnTo,
+          from: event.date,
+          to: event.duration,
+          label: event.label,
+          eventId: event.id,
+        },
+        children: [],
+      };
+      semantics[`${event.id}-span`] = span;
+      nodes.push(span);
+    }
   }
 
   const periodIds = new Set<string>();

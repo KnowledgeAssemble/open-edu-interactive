@@ -1,0 +1,57 @@
+[
+  {
+    "kind": "node",
+    "id": "node-demand",
+    "nodeId": "demand",
+    "label": "Demand"
+  },
+  {
+    "kind": "node",
+    "id": "node-prices",
+    "nodeId": "prices",
+    "label": "Prices"
+  },
+  {
+    "kind": "node",
+    "id": "node-production",
+    "nodeId": "production",
+    "label": "Production"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-demand-prices",
+    "from": "demand",
+    "relationship": "leads-to",
+    "to": "prices",
+    "fromLabel": "Demand",
+    "toLabel": "Prices"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-prices-production",
+    "from": "prices",
+    "relationship": "leads-to",
+    "to": "production",
+    "fromLabel": "Prices",
+    "toLabel": "Production"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-production-demand",
+    "from": "production",
+    "relationship": "leads-to",
+    "to": "demand",
+    "fromLabel": "Production",
+    "toLabel": "Demand"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-production-prices-demand",
+    "members": [
+      "production",
+      "prices",
+      "demand"
+    ],
+    "label": "Cycle: production → prices → demand"
+  }
+]

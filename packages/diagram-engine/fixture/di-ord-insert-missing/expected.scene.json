@@ -1,0 +1,703 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-planting",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Planting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "planting",
+            "label": "Planting"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-growing",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Growing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "growing",
+            "label": "Growing"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-harvesting",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Harvesting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "harvesting",
+            "label": "Harvesting"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-blank",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sowing candidate",
+          "description": "Candidate for the blank slot",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "blank",
+            "label": "Sowing candidate",
+            "description": "Candidate for the blank slot"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-threshing",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Threshing candidate",
+          "description": "Distractor candidate",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "threshing",
+            "label": "Threshing candidate",
+            "description": "Distractor candidate"
+          },
+          "children": [],
+          "bounds": {
+            "x": 290,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-planting-growing",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "planting leads-to growing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "planting",
+            "toNodeId": "growing",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-planting-growing",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-growing-harvesting",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "growing leads-to harvesting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "growing",
+            "toNodeId": "harvesting",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-growing-harvesting",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-blank-growing",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "blank leads-to growing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "blank",
+            "toNodeId": "growing",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-blank-growing",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 220,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M220,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-threshing-harvesting",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "threshing leads-to harvesting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "threshing",
+            "toNodeId": "harvesting",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-threshing-harvesting",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 340,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M340,80 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-planting": {
+      "id": "node-planting",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Planting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "planting",
+        "label": "Planting"
+      },
+      "children": []
+    },
+    "planting": {
+      "id": "node-planting",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Planting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "planting",
+        "label": "Planting"
+      },
+      "children": []
+    },
+    "node-growing": {
+      "id": "node-growing",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Growing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "growing",
+        "label": "Growing"
+      },
+      "children": []
+    },
+    "growing": {
+      "id": "node-growing",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Growing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "growing",
+        "label": "Growing"
+      },
+      "children": []
+    },
+    "node-harvesting": {
+      "id": "node-harvesting",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Harvesting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "harvesting",
+        "label": "Harvesting"
+      },
+      "children": []
+    },
+    "harvesting": {
+      "id": "node-harvesting",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Harvesting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "harvesting",
+        "label": "Harvesting"
+      },
+      "children": []
+    },
+    "node-blank": {
+      "id": "node-blank",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sowing candidate",
+      "description": "Candidate for the blank slot",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "blank",
+        "label": "Sowing candidate",
+        "description": "Candidate for the blank slot"
+      },
+      "children": []
+    },
+    "blank": {
+      "id": "node-blank",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sowing candidate",
+      "description": "Candidate for the blank slot",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "blank",
+        "label": "Sowing candidate",
+        "description": "Candidate for the blank slot"
+      },
+      "children": []
+    },
+    "node-threshing": {
+      "id": "node-threshing",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Threshing candidate",
+      "description": "Distractor candidate",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "threshing",
+        "label": "Threshing candidate",
+        "description": "Distractor candidate"
+      },
+      "children": []
+    },
+    "threshing": {
+      "id": "node-threshing",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Threshing candidate",
+      "description": "Distractor candidate",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "threshing",
+        "label": "Threshing candidate",
+        "description": "Distractor candidate"
+      },
+      "children": []
+    },
+    "edge-planting-growing": {
+      "id": "edge-planting-growing",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "planting leads-to growing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "planting",
+        "toNodeId": "growing",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-planting-growing",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-growing-harvesting": {
+      "id": "edge-growing-harvesting",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "growing leads-to harvesting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "growing",
+        "toNodeId": "harvesting",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-growing-harvesting",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-blank-growing": {
+      "id": "edge-blank-growing",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "blank leads-to growing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "blank",
+        "toNodeId": "growing",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-blank-growing",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-threshing-harvesting": {
+      "id": "edge-threshing-harvesting",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "threshing leads-to harvesting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "threshing",
+        "toNodeId": "harvesting",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-threshing-harvesting",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-planting",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Planting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "planting",
+            "label": "Planting"
+          },
+          "children": []
+        },
+        {
+          "id": "node-growing",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Growing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "growing",
+            "label": "Growing"
+          },
+          "children": []
+        },
+        {
+          "id": "node-harvesting",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Harvesting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "harvesting",
+            "label": "Harvesting"
+          },
+          "children": []
+        },
+        {
+          "id": "node-blank",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sowing candidate",
+          "description": "Candidate for the blank slot",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "blank",
+            "label": "Sowing candidate",
+            "description": "Candidate for the blank slot"
+          },
+          "children": []
+        },
+        {
+          "id": "node-threshing",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Threshing candidate",
+          "description": "Distractor candidate",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "threshing",
+            "label": "Threshing candidate",
+            "description": "Distractor candidate"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-planting-growing",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "planting leads-to growing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "planting",
+            "toNodeId": "growing",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-planting-growing",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-growing-harvesting",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "growing leads-to harvesting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "growing",
+            "toNodeId": "harvesting",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-growing-harvesting",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-blank-growing",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "blank leads-to growing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "blank",
+            "toNodeId": "growing",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-blank-growing",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-threshing-harvesting",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "threshing leads-to harvesting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "threshing",
+            "toNodeId": "harvesting",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-threshing-harvesting",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

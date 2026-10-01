@@ -1,0 +1,48 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "multi-locate",
+  "metadata": { "title": "Multi-locate: mark the capital, the peak, and the western sea" },
+  "purpose": { "learningObjective": "Locate several named features one at a time", "reasoningMode": "identify" },
+  "content": {
+    "viewport": { "fit": "content", "padding": 0.08 },
+    "projection": { "type": "equirectangular" },
+    "geography": {
+      "sources": [
+        {
+          "id": "base",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [
+              { "id": "region-s", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[70, 10], [90, 10], [90, 30], [70, 30], [70, 10]]] } }
+            ]
+          }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "region-s", "type": "region", "name": "Region South", "description": "The region for this map.", "location": { "source": "base", "featureId": "region-s" } },
+      { "id": "capital", "type": "city", "name": "Capital City", "description": "The capital.", "location": { "coordinates": { "lat": 18, "lon": 80 } } },
+      { "id": "peak", "type": "mountain", "name": "Peak", "description": "The highest point.", "location": { "coordinates": { "lat": 22, "lon": 78 } } },
+      { "id": "west-sea", "type": "lake", "name": "Western Sea", "description": "The western sea.", "location": { "coordinates": { "lat": 16, "lon": 72 } } }
+    ],
+    "layers": [
+      { "id": "basemap", "type": "region", "items": [{ "entity": "region-s", "interactive": false }] },
+      { "id": "features", "type": "marker", "items": [
+        { "entity": "capital", "label": true, "interactive": true },
+        { "entity": "peak", "label": true, "interactive": true },
+        { "entity": "west-sea", "label": true, "interactive": true }
+      ] }
+    ],
+    "legend": { "visible": true, "items": [
+      { "role": "primary-region", "label": "Region" },
+      { "role": "marker", "label": "Feature" }
+    ] }
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Map with the capital, the peak, and the western sea." }
+}

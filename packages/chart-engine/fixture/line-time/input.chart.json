@@ -1,0 +1,19 @@
+{
+  "type": "chart",
+  "version": "1.0.0",
+  "id": "temperature-time-series",
+  "content": {
+    "kind": "line",
+    "dimensions": [{ "id": "when", "type": "time" }],
+    "measures": [{ "id": "temp", "type": "quantitative", "unit": "°C" }],
+    "data": [
+      { "id": "row-jan", "when": "2024-01-15", "temp": 5 },
+      { "id": "row-apr", "when": "2024-04-15", "temp": 14 },
+      { "id": "row-jul", "when": "2024-07-15", "temp": 22 },
+      { "id": "row-oct", "when": "2024-10-15", "temp": 11 }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "accessibility": { "label": "Line chart of temperatures over time" },
+  "sources": [{ "class": "authoritative" }]
+}

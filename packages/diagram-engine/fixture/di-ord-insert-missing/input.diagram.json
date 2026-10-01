@@ -1,0 +1,29 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-ord-insert-missing",
+  "metadata": { "title": "Insert the missing stage" },
+  "purpose": { "learningObjective": "Fill the single blank in a process", "reasoningMode": "identify" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "planting", "label": "Planting" },
+      { "id": "growing", "label": "Growing" },
+      { "id": "harvesting", "label": "Harvesting" },
+      { "id": "blank", "label": "Sowing candidate", "description": "Candidate for the blank slot" },
+      { "id": "threshing", "label": "Threshing candidate", "description": "Distractor candidate" }
+    ],
+    "edges": [
+      { "from": "planting", "to": "growing", "relationship": "leads-to" },
+      { "from": "growing", "to": "harvesting", "relationship": "leads-to" },
+      { "from": "blank", "to": "growing", "relationship": "leads-to" },
+      { "from": "threshing", "to": "harvesting", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Process with a blank slot and candidate stages" }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-proc-which-step",
+  "metadata": { "title": "Grinding to flour" },
+  "purpose": { "learningObjective": "Identify the next or preceding step in a process", "reasoningMode": "identify" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "harvest", "label": "Harvest" },
+      { "id": "threshing", "label": "Threshing" },
+      { "id": "grinding", "label": "Grinding" },
+      { "id": "baking", "label": "Baking" }
+    ],
+    "edges": [
+      { "from": "harvest", "to": "threshing", "relationship": "leads-to" },
+      { "from": "threshing", "to": "grinding", "relationship": "leads-to" },
+      { "from": "grinding", "to": "baking", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Flow: harvest, threshing, grinding, baking" }
+}

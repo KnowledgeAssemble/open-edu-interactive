@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-hist-causes",
+  "metadata": { "title": "Long-term causes vs triggers" },
+  "purpose": { "learningObjective": "Sort structural causes from triggers", "reasoningMode": "classify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "structural", "label": "Structural cause", "links": { "timelineEventId": "event-1800" } },
+      { "id": "immediate", "label": "Immediate cause" },
+      { "id": "trigger", "label": "Trigger", "links": { "timelineEventId": "event-1942" } }
+    ],
+    "edges": [
+      { "from": "structural", "to": "immediate", "relationship": "influences" },
+      { "from": "immediate", "to": "trigger", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Long-term causes influence immediate causes lead to trigger" }
+}

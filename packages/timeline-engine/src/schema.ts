@@ -15,6 +15,8 @@ export const TimelineEventSchema = z
     id: z.string().min(1).max(128).regex(ID_PATTERN),
     label: z.string().min(1),
     date: z.string().min(1).regex(DATE_GRAMMAR, 'date must match Timeline-D3 grammar: ^[+-]?\\d{1,6}(-\\d{2}){0,2}$'),
+    duration: z.string().min(1).regex(DATE_GRAMMAR, 'duration must match Timeline-D3 grammar: ^[+-]?\\d{1,6}(-\\d{2}){0,2}$').optional(),
+    interactive: z.boolean().optional(),
     links: z.record(z.string()).optional(),
     trackId: z.string().min(1).max(128).regex(ID_PATTERN).optional(),
   })

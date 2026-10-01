@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-lab-label-all",
+  "metadata": { "title": "Label all parts of a flower" },
+  "purpose": { "learningObjective": "Label every part of a figure in any order", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "concept",
+    "nodes": [
+      { "id": "petal", "label": "Petal" },
+      { "id": "sepal", "label": "Sepal" },
+      { "id": "stamen", "label": "Stamen" },
+      { "id": "pistil", "label": "Pistil" }
+    ],
+    "edges": [
+      { "from": "petal", "to": "stamen", "relationship": "connected-to" },
+      { "from": "sepal", "to": "petal", "relationship": "connected-to" },
+      { "from": "stamen", "to": "pistil", "relationship": "connected-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Flower parts: petal, sepal, stamen, pistil" }
+}

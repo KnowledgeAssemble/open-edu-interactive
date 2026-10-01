@@ -1,0 +1,50 @@
+[
+  {
+    "id": "node-grass",
+    "role": "button",
+    "label": "Grass",
+    "children": []
+  },
+  {
+    "id": "node-rabbit",
+    "role": "button",
+    "label": "Rabbit",
+    "children": []
+  },
+  {
+    "id": "node-fox",
+    "role": "button",
+    "label": "Fox",
+    "children": []
+  },
+  {
+    "id": "node-decomposer",
+    "role": "button",
+    "label": "Decomposer",
+    "children": []
+  },
+  {
+    "id": "grass-rabbit",
+    "role": "link",
+    "label": "Grass feeds-on Rabbit",
+    "children": []
+  },
+  {
+    "id": "rabbit-fox",
+    "role": "link",
+    "label": "Rabbit feeds-on Fox",
+    "children": []
+  },
+  {
+    "id": "grass-decomposer",
+    "role": "link",
+    "label": "Grass feeds-on Decomposer",
+    "children": []
+  },
+  {
+    "id": "decomposer-grass",
+    "role": "link",
+    "label": "Decomposer produces Grass",
+    "children": []
+  }
+]

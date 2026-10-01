@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-petal",
+    "nodeId": "petal",
+    "label": "Petal"
+  },
+  {
+    "kind": "node",
+    "id": "node-sepal",
+    "nodeId": "sepal",
+    "label": "Sepal"
+  },
+  {
+    "kind": "node",
+    "id": "node-stamen",
+    "nodeId": "stamen",
+    "label": "Stamen"
+  },
+  {
+    "kind": "node",
+    "id": "node-pistil",
+    "nodeId": "pistil",
+    "label": "Pistil"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-petal-stamen",
+    "from": "petal",
+    "relationship": "connected-to",
+    "to": "stamen",
+    "fromLabel": "Petal",
+    "toLabel": "Stamen"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-sepal-petal",
+    "from": "sepal",
+    "relationship": "connected-to",
+    "to": "petal",
+    "fromLabel": "Sepal",
+    "toLabel": "Petal"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-stamen-pistil",
+    "from": "stamen",
+    "relationship": "connected-to",
+    "to": "pistil",
+    "fromLabel": "Stamen",
+    "toLabel": "Pistil"
+  }
+]

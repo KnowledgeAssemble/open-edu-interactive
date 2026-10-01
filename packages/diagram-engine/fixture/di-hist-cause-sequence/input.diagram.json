@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-hist-cause-sequence",
+  "metadata": { "title": "Causes of an event" },
+  "purpose": { "learningObjective": "Follow causes to a trigger then the outcome", "reasoningMode": "explain" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "long-cause", "label": "Long-term causes", "links": { "timelineEventId": "event-1800" } },
+      { "id": "trigger", "label": "Trigger" },
+      { "id": "outcome", "label": "Outcome", "links": { "timelineEventId": "event-1947" } }
+    ],
+    "edges": [
+      { "from": "long-cause", "to": "trigger", "relationship": "leads-to" },
+      { "from": "trigger", "to": "outcome", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Causal sequence: long-term causes to trigger to outcome" }
+}

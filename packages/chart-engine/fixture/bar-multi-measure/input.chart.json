@@ -1,0 +1,22 @@
+{
+  "type": "chart",
+  "version": "1.0.0",
+  "id": "rainfall-sunshine-multi-measure",
+  "content": {
+    "kind": "bar",
+    "dimensions": [{ "id": "month", "type": "ordinal" }],
+    "measures": [
+      { "id": "rainfall", "type": "quantitative", "unit": "mm" },
+      { "id": "sunshine", "type": "quantitative", "unit": "hrs" }
+    ],
+    "data": [
+      { "id": "row-jan", "month": "Jan", "rainfall": 30, "sunshine": 6 },
+      { "id": "row-apr", "month": "Apr", "rainfall": 20, "sunshine": 9 },
+      { "id": "row-jul", "month": "Jul", "rainfall": 120, "sunshine": 3 },
+      { "id": "row-oct", "month": "Oct", "rainfall": 60, "sunshine": 7 }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "accessibility": { "label": "Grouped bar chart of monthly rainfall and sunshine hours" },
+  "sources": [{ "class": "authoritative" }]
+}

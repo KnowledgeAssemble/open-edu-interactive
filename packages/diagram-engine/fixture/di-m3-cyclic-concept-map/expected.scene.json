@@ -1,0 +1,468 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-practice",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Practice",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "practice",
+            "label": "Practice"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-confidence",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Confidence",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "confidence",
+            "label": "Confidence"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-interest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Interest",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "interest",
+            "label": "Interest"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "practice-confidence",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "practice influences confidence",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "practice",
+            "toNodeId": "confidence",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "practice-confidence",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 262.5
+                }
+              ],
+              "path": "M308,262.5 L468,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "confidence-interest",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "confidence influences interest",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "confidence",
+            "toNodeId": "interest",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "confidence-interest",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "interest-practice",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "interest influences practice",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "interest",
+            "toNodeId": "practice",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "interest-practice",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 322.5
+                },
+                {
+                  "x": 308,
+                  "y": 262.5
+                }
+              ],
+              "path": "M308,322.5 L308,262.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-practice": {
+      "id": "node-practice",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Practice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "practice",
+        "label": "Practice"
+      },
+      "children": []
+    },
+    "practice": {
+      "id": "node-practice",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Practice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "practice",
+        "label": "Practice"
+      },
+      "children": []
+    },
+    "node-confidence": {
+      "id": "node-confidence",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Confidence",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "confidence",
+        "label": "Confidence"
+      },
+      "children": []
+    },
+    "confidence": {
+      "id": "node-confidence",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Confidence",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "confidence",
+        "label": "Confidence"
+      },
+      "children": []
+    },
+    "node-interest": {
+      "id": "node-interest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Interest",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "interest",
+        "label": "Interest"
+      },
+      "children": []
+    },
+    "interest": {
+      "id": "node-interest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Interest",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "interest",
+        "label": "Interest"
+      },
+      "children": []
+    },
+    "practice-confidence": {
+      "id": "practice-confidence",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "practice influences confidence",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "practice",
+        "toNodeId": "confidence",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "practice-confidence",
+        "gated": false
+      },
+      "children": []
+    },
+    "confidence-interest": {
+      "id": "confidence-interest",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "confidence influences interest",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "confidence",
+        "toNodeId": "interest",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "confidence-interest",
+        "gated": false
+      },
+      "children": []
+    },
+    "interest-practice": {
+      "id": "interest-practice",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "interest influences practice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "interest",
+        "toNodeId": "practice",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "interest-practice",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-practice",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Practice",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "practice",
+            "label": "Practice"
+          },
+          "children": []
+        },
+        {
+          "id": "node-confidence",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Confidence",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "confidence",
+            "label": "Confidence"
+          },
+          "children": []
+        },
+        {
+          "id": "node-interest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Interest",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "interest",
+            "label": "Interest"
+          },
+          "children": []
+        },
+        {
+          "id": "practice-confidence",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "practice influences confidence",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "practice",
+            "toNodeId": "confidence",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "practice-confidence",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "confidence-interest",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "confidence influences interest",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "confidence",
+            "toNodeId": "interest",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "confidence-interest",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "interest-practice",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "interest influences practice",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "interest",
+            "toNodeId": "practice",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "interest-practice",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-petal",
+    "role": "button",
+    "label": "Petal",
+    "children": []
+  },
+  {
+    "id": "node-sepal",
+    "role": "button",
+    "label": "Sepal",
+    "children": []
+  },
+  {
+    "id": "node-stamen",
+    "role": "button",
+    "label": "Stamen",
+    "children": []
+  },
+  {
+    "id": "node-pistil",
+    "role": "button",
+    "label": "Pistil",
+    "children": []
+  },
+  {
+    "id": "edge-petal-stamen",
+    "role": "link",
+    "label": "Petal connected-to Stamen",
+    "children": []
+  },
+  {
+    "id": "edge-sepal-petal",
+    "role": "link",
+    "label": "Sepal connected-to Petal",
+    "children": []
+  },
+  {
+    "id": "edge-stamen-pistil",
+    "role": "link",
+    "label": "Stamen connected-to Pistil",
+    "children": []
+  }
+]

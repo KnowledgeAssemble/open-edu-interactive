@@ -9,6 +9,7 @@ export interface CountingSetProps {
   columns?: number;
   highlight?: number[];
   labels?: string[];
+  maxSelection?: number;
 }
 
 const VALID_OBJECTS = ['circle', 'square', 'star'] as const;
@@ -21,10 +22,15 @@ export function createCountingSet(props: Record<string, unknown>, parentId: stri
   const columns = props.columns as number | undefined;
   const highlight = props.highlight as number[] | undefined;
   const labels = props.labels as string[] | undefined;
+  const maxSelection = props.maxSelection as number | undefined;
   const discovery = (props.interactive as boolean | undefined) ?? false;
 
   if (!Number.isInteger(count) || count <= 0) {
     throw new EngineError('INVALID_ENTITY', 'counting-set: count must be a positive integer');
+  }
+
+  if (maxSelection !== undefined && (!Number.isInteger(maxSelection) || maxSelection < 0)) {
+    throw new EngineError('INVALID_SPEC', 'counting-set: maxSelection must be a non-negative integer');
   }
 
   if (!VALID_OBJECTS.includes(object as typeof VALID_OBJECTS[number])) {

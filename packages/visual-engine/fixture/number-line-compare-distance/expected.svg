@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Number line from zero to ten</title>
+  <desc>Two values, three and seven, are emphasized. Select the value farther from zero.</desc>
+  <g id="visual-root">
+  <g id="nl" data-oedu-role="group">
+    <line id="nl-axis" data-oedu-role="axis" data-oedu-bounds="20,298,760,4" x1="20" y1="300" x2="780" y2="300" stroke="currentColor" stroke-width="2"/>
+    <line id="nl-tick-0" data-oedu-role="tick" data-oedu-value="0" data-oedu-bounds="19,294,2,12" x1="20" y1="294" x2="20" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-0" data-oedu-role="number" data-oedu-value="0" aria-label="0" data-oedu-bounds="6,314,28,18" x="20" y="323" text-anchor="middle" dominant-baseline="central">0</text>
+    <line id="nl-tick-1" data-oedu-role="tick" data-oedu-value="1" data-oedu-bounds="95,294,2,12" x1="96" y1="294" x2="96" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-1" data-oedu-role="number" data-oedu-value="1" aria-label="1" data-oedu-bounds="82,314,28,18" x="96" y="323" text-anchor="middle" dominant-baseline="central">1</text>
+    <line id="nl-tick-2" data-oedu-role="tick" data-oedu-value="2" data-oedu-bounds="171,294,2,12" x1="172" y1="294" x2="172" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-2" data-oedu-role="number" data-oedu-value="2" aria-label="2" data-oedu-bounds="158,314,28,18" x="172" y="323" text-anchor="middle" dominant-baseline="central">2</text>
+    <line id="nl-tick-3" data-oedu-role="tick" data-oedu-value="3" data-oedu-bounds="247,294,2,12" x1="248" y1="294" x2="248" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-3" data-oedu-role="number" data-oedu-value="3" aria-label="3" data-oedu-bounds="234,314,28,18" x="248" y="323" text-anchor="middle" dominant-baseline="central">3</text>
+    <line id="nl-tick-4" data-oedu-role="tick" data-oedu-value="4" data-oedu-bounds="323,294,2,12" x1="324" y1="294" x2="324" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-4" data-oedu-role="number" data-oedu-value="4" aria-label="4" data-oedu-bounds="310,314,28,18" x="324" y="323" text-anchor="middle" dominant-baseline="central">4</text>
+    <line id="nl-tick-5" data-oedu-role="tick" data-oedu-value="5" data-oedu-bounds="399,294,2,12" x1="400" y1="294" x2="400" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-5" data-oedu-role="number" data-oedu-value="5" aria-label="5" data-oedu-bounds="386,314,28,18" x="400" y="323" text-anchor="middle" dominant-baseline="central">5</text>
+    <line id="nl-tick-6" data-oedu-role="tick" data-oedu-value="6" data-oedu-bounds="475,294,2,12" x1="476" y1="294" x2="476" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-6" data-oedu-role="number" data-oedu-value="6" aria-label="6" data-oedu-bounds="462,314,28,18" x="476" y="323" text-anchor="middle" dominant-baseline="central">6</text>
+    <line id="nl-tick-7" data-oedu-role="tick" data-oedu-value="7" data-oedu-bounds="551,294,2,12" x1="552" y1="294" x2="552" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-7" data-oedu-role="number" data-oedu-value="7" aria-label="7" data-oedu-bounds="538,314,28,18" x="552" y="323" text-anchor="middle" dominant-baseline="central">7</text>
+    <line id="nl-tick-8" data-oedu-role="tick" data-oedu-value="8" data-oedu-bounds="627,294,2,12" x1="628" y1="294" x2="628" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-8" data-oedu-role="number" data-oedu-value="8" aria-label="8" data-oedu-bounds="614,314,28,18" x="628" y="323" text-anchor="middle" dominant-baseline="central">8</text>
+    <line id="nl-tick-9" data-oedu-role="tick" data-oedu-value="9" data-oedu-bounds="703,294,2,12" x1="704" y1="294" x2="704" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-9" data-oedu-role="number" data-oedu-value="9" aria-label="9" data-oedu-bounds="690,314,28,18" x="704" y="323" text-anchor="middle" dominant-baseline="central">9</text>
+    <line id="nl-tick-10" data-oedu-role="tick" data-oedu-value="10" data-oedu-bounds="779,294,2,12" x1="780" y1="294" x2="780" y2="306" stroke="currentColor" stroke-width="1"/>
+    <text id="nl-label-10" data-oedu-role="number" data-oedu-value="10" aria-label="10" data-oedu-bounds="766,314,28,18" x="780" y="323" text-anchor="middle" dominant-baseline="central">10</text>
+    <circle id="nl-marker-3" data-oedu-role="marker" data-oedu-value="3" data-oedu-interactive="true" data-oedu-bounds="226,278,44,44" cx="248" cy="300" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+    <circle id="nl-marker-7" data-oedu-role="marker" data-oedu-value="7" data-oedu-interactive="true" data-oedu-bounds="530,278,44,44" cx="552" cy="300" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  </g>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-weathering",
+    "role": "button",
+    "label": "Weathering",
+    "children": []
+  },
+  {
+    "id": "node-erosion",
+    "role": "button",
+    "label": "Erosion",
+    "children": []
+  },
+  {
+    "id": "node-transport",
+    "role": "button",
+    "label": "Transport",
+    "children": []
+  },
+  {
+    "id": "node-deposition",
+    "role": "button",
+    "label": "Deposition",
+    "children": []
+  },
+  {
+    "id": "edge-weathering-erosion",
+    "role": "link",
+    "label": "Weathering leads-to Erosion",
+    "children": []
+  },
+  {
+    "id": "edge-erosion-transport",
+    "role": "link",
+    "label": "Erosion leads-to Transport",
+    "children": []
+  },
+  {
+    "id": "edge-transport-deposition",
+    "role": "link",
+    "label": "Transport leads-to Deposition",
+    "children": []
+  }
+]

@@ -76,7 +76,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `highlight: [3, 7]`; guided or discovery per lesson. |
 | **Fixture** | `number-line-compare-distance` (planned) |
 | **Host** | Compares selected id to authored answer. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `nl-place-value` — Place a value on the line (construct)
 
@@ -119,7 +119,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true`, `count: n`. |
 | **Fixture** | `counting-set-pick-n` (planned) |
 | **Host** | `selection.length === 3` and optional identity check. |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.1 `maxSelection` slice exit gate — cap rejects over-limit learner `select` with `INVALID_ACTION`, scoped to `select`/`deselect`; host dispatch of other D5 actions never capped per ADR-12; prop documented in visual SPEC A.2.1) |
 
 ---
 
@@ -149,7 +149,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true`, `denominator`, `numerator` as display or target hint only. |
 | **Fixture** | `fraction-shade-n` (planned) |
 | **Host** | Validates selected set size and indices. |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.2 selection-driven fraction fill — engine-state `state.selection` re-derives `metadata.filled` per part and re-renders deterministically; SPEC A.2.2) |
 
 ---
 
@@ -226,7 +226,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true`; discovery hands. |
 | **Fixture** | `clock-discovery-minute` (planned) |
 | **Host** | Target: minute hand id. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -286,7 +286,7 @@ Reference UX: OpenEdu `math.number-line` widget (place + snap). Engine targets *
 | **Spec** | `interactive: true` + `highlightVertices`. |
 | **Fixture** | `geometry-discovery-vertex` (planned) |
 | **Host** | Vertex id check. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

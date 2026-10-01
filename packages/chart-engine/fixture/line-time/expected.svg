@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Line chart of temperatures over time</title>
+  <desc>An interactive chart visualization</desc>
+  <g id="chart-root">
+  <polyline id="series-line" data-oedu-role="series" points="168.625,436 332.875,248.8 497.125,82.39999999999998 661.375,311.2" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+  <line id="gridline-0" data-oedu-role="gridline" data-oedu-value="0" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-1" data-oedu-role="gridline" data-oedu-value="5" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-2" data-oedu-role="gridline" data-oedu-value="10" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-3" data-oedu-role="gridline" data-oedu-value="15" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-4" data-oedu-role="gridline" data-oedu-value="20" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-5" data-oedu-role="gridline" data-oedu-value="25" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-0" data-oedu-role="tick" data-oedu-value="0" data-oedu-bounds="44,539,6,2" x1="44" y1="539" x2="50" y2="541" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-1" data-oedu-role="tick" data-oedu-value="5" data-oedu-bounds="44,435,6,2" x1="44" y1="435" x2="50" y2="437" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-2" data-oedu-role="tick" data-oedu-value="10" data-oedu-bounds="44,331,6,2" x1="44" y1="331" x2="50" y2="333" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-3" data-oedu-role="tick" data-oedu-value="15" data-oedu-bounds="44,227,6,2" x1="44" y1="227" x2="50" y2="229" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-4" data-oedu-role="tick" data-oedu-value="20" data-oedu-bounds="44,123,6,2" x1="44" y1="123" x2="50" y2="125" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-5" data-oedu-role="tick" data-oedu-value="25" data-oedu-bounds="44,19,6,2" x1="44" y1="19" x2="50" y2="21" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-0" data-oedu-role="tick" aria-label="2024-01-15" data-oedu-bounds="167.625,540,2,6" x1="167.625" y1="540" x2="169.625" y2="546" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-1" data-oedu-role="tick" aria-label="2024-04-15" data-oedu-bounds="331.875,540,2,6" x1="331.875" y1="540" x2="333.875" y2="546" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-2" data-oedu-role="tick" aria-label="2024-07-15" data-oedu-bounds="496.125,540,2,6" x1="496.125" y1="540" x2="498.125" y2="546" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-3" data-oedu-role="tick" aria-label="2024-10-15" data-oedu-bounds="660.375,540,2,6" x1="660.375" y1="540" x2="662.375" y2="546" stroke="currentColor" stroke-width="1"/>
+  <text id="label-y-0" data-oedu-role="label" data-oedu-value="0" aria-label="0" data-oedu-bounds="0,532,44,16" x="22" y="540" text-anchor="middle" dominant-baseline="central">0</text>
+  <text id="label-y-1" data-oedu-role="label" data-oedu-value="5" aria-label="5" data-oedu-bounds="0,428,44,16" x="22" y="436" text-anchor="middle" dominant-baseline="central">5</text>
+  <text id="label-y-2" data-oedu-role="label" data-oedu-value="10" aria-label="10" data-oedu-bounds="0,324,44,16" x="22" y="332" text-anchor="middle" dominant-baseline="central">10</text>
+  <text id="label-y-3" data-oedu-role="label" data-oedu-value="15" aria-label="15" data-oedu-bounds="0,220,44,16" x="22" y="228" text-anchor="middle" dominant-baseline="central">15</text>
+  <text id="label-y-4" data-oedu-role="label" data-oedu-value="20" aria-label="20" data-oedu-bounds="0,116,44,16" x="22" y="124" text-anchor="middle" dominant-baseline="central">20</text>
+  <text id="label-y-5" data-oedu-role="label" data-oedu-value="25" aria-label="25" data-oedu-bounds="0,12,44,16" x="22" y="20" text-anchor="middle" dominant-baseline="central">25</text>
+  <text id="label-x-0" data-oedu-role="label" aria-label="2024-01-15" data-oedu-bounds="138.625,548,60,18" x="168.625" y="557" text-anchor="middle" dominant-baseline="central">2024-01-15</text>
+  <text id="label-x-1" data-oedu-role="label" aria-label="2024-04-15" data-oedu-bounds="302.875,548,60,18" x="332.875" y="557" text-anchor="middle" dominant-baseline="central">2024-04-15</text>
+  <text id="label-x-2" data-oedu-role="label" aria-label="2024-07-15" data-oedu-bounds="467.125,548,60,18" x="497.125" y="557" text-anchor="middle" dominant-baseline="central">2024-07-15</text>
+  <text id="label-x-3" data-oedu-role="label" aria-label="2024-10-15" data-oedu-bounds="631.375,548,60,18" x="661.375" y="557" text-anchor="middle" dominant-baseline="central">2024-10-15</text>
+  <circle id="temp-point-row-jan" data-oedu-role="selectable" data-oedu-value="5" data-oedu-interactive="true" aria-label="2024-01-15: 5 °C" data-oedu-bounds="146.625,414,44,44" cx="168.625" cy="436" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  <circle id="temp-point-row-apr" data-oedu-role="selectable" data-oedu-value="14" data-oedu-interactive="true" aria-label="2024-04-15: 14 °C" data-oedu-bounds="310.875,226.8,44,44" cx="332.875" cy="248.8" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  <circle id="temp-point-row-jul" data-oedu-role="selectable" data-oedu-value="22" data-oedu-interactive="true" aria-label="2024-07-15: 22 °C" data-oedu-bounds="475.125,60.39999999999998,44,44" cx="497.125" cy="82.39999999999998" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  <circle id="temp-point-row-oct" data-oedu-role="selectable" data-oedu-value="11" data-oedu-interactive="true" aria-label="2024-10-15: 11 °C" data-oedu-bounds="639.375,289.2,44,44" cx="661.375" cy="311.2" r="22" fill="currentColor" stroke="currentColor" stroke-width="2"/>
+  </g>
+</svg>

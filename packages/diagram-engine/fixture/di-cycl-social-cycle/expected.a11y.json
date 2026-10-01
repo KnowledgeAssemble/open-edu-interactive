@@ -1,0 +1,38 @@
+[
+  {
+    "id": "node-demand",
+    "role": "button",
+    "label": "Demand",
+    "children": []
+  },
+  {
+    "id": "node-prices",
+    "role": "button",
+    "label": "Prices",
+    "children": []
+  },
+  {
+    "id": "node-production",
+    "role": "button",
+    "label": "Production",
+    "children": []
+  },
+  {
+    "id": "edge-demand-prices",
+    "role": "link",
+    "label": "Demand leads-to Prices",
+    "children": []
+  },
+  {
+    "id": "edge-prices-production",
+    "role": "link",
+    "label": "Prices leads-to Production",
+    "children": []
+  },
+  {
+    "id": "edge-production-demand",
+    "role": "link",
+    "label": "Production leads-to Demand",
+    "children": []
+  }
+]

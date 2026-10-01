@@ -4,7 +4,7 @@ import { TimelineEngine } from '../src/engine.js';
 import type { EngineSpec } from '@knowledgeassemble/interactive-engine';
 
 const FIXTURE_DIR = new URL('../fixture/', import.meta.url);
-const SUITES = ['events', 'periods', 'tracks', 'independence'];
+const SUITES = ['events', 'periods', 'tracks', 'independence', 'duration-events', 'events-gated'];
 const SKILL_EXAMPLE_URL = new URL('../../../docs/fixtures/timeline/skill-example.json', import.meta.url);
 
 function loadFixture(name: string): EngineSpec {

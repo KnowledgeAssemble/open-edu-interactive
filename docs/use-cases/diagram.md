@@ -250,7 +250,7 @@ Reference UX: associative web of concepts; cycles allowed. Default layout: `grid
 | **Spec** | `kind: "concept-map"` with back-edge |
 | **Fixture** | `planned` |
 | **Host** | — |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -409,7 +409,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-proc-follow-process` *(planned)* |
 | **New capability** | — (current slice) |
 | **Host** | Step narration; order scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-proc-2-input-output` — Multi-input process with named outputs
 
@@ -423,7 +423,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-proc-input-output` *(planned)* |
 | **New capability** | — (scored lesson built on `di-x4`) |
 | **Host** | Role-group scoring; correctness narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-proc-3-which-step` — Identify the next or preceding step (reverse reading)
 
@@ -437,7 +437,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-proc-which-step` *(planned)* |
 | **New capability** | — (directed edges already support reverse prompts) |
 | **Host** | Bi-directional prompts. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-proc-4-branch-flow` — Branching / decisional flow
 
@@ -451,7 +451,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-proc-branch-flow` *(planned)* |
 | **New capability** | — (fan-out is ordinary DAG) |
 | **Host** | Branch-level acceptance; per-branch explanations. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-proc-5-effect-chain` — Cause → mechanism → consequence chain
 
@@ -465,7 +465,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-proc-effect-chain` *(planned)* |
 | **New capability** | `filter-nodes` *(planned)* — grey unrelated branches. |
 | **Host** | Consequence rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -483,7 +483,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cycl-water-cycle` *(planned; course variant of `di-c1`)* |
 | **New capability** | — |
 | **Host** | Stage narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cycl-2-life-cycle` — Butterfly / frog life cycle
 
@@ -497,7 +497,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cycl-life-cycle` *(planned)* |
 | **New capability** | — (construct variant in `di-ord-1`) |
 | **Host** | Stage narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cycl-3-rock-cycle` — Multi-path geological cycle
 
@@ -511,7 +511,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cycl-rock-cycle` *(planned)* |
 | **New capability** | `relation-vocab` *(planned)* — domain relations (`transforms-to`, `weathers-into`) beyond the closed initial set. |
 | **Host** | Transition quizzes. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cycl-4-disaster-cycle` — Disaster management cycle
 
@@ -525,7 +525,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cycl-disaster-cycle` *(planned)* |
 | **New capability** | — |
 | **Host** | Phase definitions. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cycl-5-social-cycle` — A social / economic cycle
 
@@ -539,7 +539,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cycl-social-cycle` *(planned)* |
 | **New capability** | — |
 | **Host** | Cycle-recognition prompt. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -557,7 +557,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-classify` *(planned; course variant of `di-h2`)* |
 | **New capability** | — |
 | **Host** | Level narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-class-2-part-whole` — Parts of a system
 
@@ -571,7 +571,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-part-whole` *(planned)* |
 | **New capability** | — |
 | **Host** | Membership scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-class-3-government-levels` — Union → State → Local; judiciary ladder
 
@@ -585,7 +585,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-gov-levels` *(planned)* |
 | **New capability** | — (multi-ladder is two subgraphs in one scene) |
 | **Host** | Level-label mapping. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-class-4-sector-taxonomy` — Economic sectors and their activities
 
@@ -599,7 +599,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-sector-taxonomy` *(planned)* |
 | **New capability** | — |
 | **Host** | Classification rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-class-5-urban-hierarchy` — Settlement / urban ladder
 
@@ -613,7 +613,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-urban-hierarchy` *(planned)* |
 | **New capability** | `filter-nodes` *(planned)* — threshold-bracket highlight. |
 | **Host** | Rank prompts. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-class-6-parent-locate` — Find the parent level (reverse)
 
@@ -627,7 +627,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-class-parent-locate` *(planned)* |
 | **New capability** | — (edges already support reverse reading) |
 | **Host** | Reverse-reading prompts. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -645,7 +645,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-many-effects` *(planned)* |
 | **New capability** | `multi-select` *(planned)* |
 | **Host** | Set-scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-2-many-causes` — Several causes → one outcome
 
@@ -659,7 +659,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-many-causes` *(planned)* |
 | **New capability** | `multi-select` *(planned)* |
 | **Host** | Set-scoring + distractors. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-3-relationship-name` — Name the relationship between two concepts
 
@@ -673,7 +673,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-relationship-name` *(planned)* |
 | **New capability** | `edge-select` *(planned)* — planned `diagram.edge-selected`. |
 | **Host** | Relationship scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-4-influence-chain` — Follow an influence chain end to end
 
@@ -687,7 +687,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-influence-chain` *(planned)* |
 | **New capability** | `follow-chain` *(planned)* — per-step path emphasis. |
 | **Host** | Explanation rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-5-relative-influence` — Heavier vs lighter influence (advanced)
 
@@ -701,7 +701,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-relative-influence` *(planned)* |
 | **New capability** | `edge-weight` *(planned)* — weight is data, never style. |
 | **Host** | Relative-reasoning rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-cause-6-relationship-gate` — Recall the hidden relationship, then confirm
 
@@ -715,7 +715,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cause-relationship-gate` *(planned)* |
 | **New capability** | `relationship-gate` *(planned)* |
 | **Host** | Recall prompts + reveal copy. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -733,7 +733,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-sys-food-web` *(planned)* |
 | **New capability** | `filter-nodes`, `relation-vocab` (`feeds-on`). |
 | **Host** | Energy-path narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-sys-2-drainage-basin` — Drainage basin as inputs, storage, outputs
 
@@ -747,7 +747,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-sys-drainage-basin` *(planned)* |
 | **New capability** | — (roles are node metadata; host copy) |
 | **Host** | Storage / flow narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-sys-3-industrial-linkages` — Backward / forward linkages
 
@@ -761,7 +761,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-sys-industrial-linkages` *(planned)* |
 | **New capability** | — |
 | **Host** | Linkage definitions. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-sys-4-city-system` — City as a metabolic system (inputs → waste loop)
 
@@ -775,7 +775,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-sys-city-system` *(planned)* |
 | **New capability** | `filter-nodes` *(planned)* — waste-loop highlight. |
 | **Host** | Sustainability narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -807,7 +807,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-lab-label-all` *(planned)* |
 | **New capability** | `multi-select` *(planned)* |
 | **Host** | Set-completion rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-lab-3-connect-parts` — Connect two parts with a relation
 
@@ -821,7 +821,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-lab-connect-parts` *(planned)* |
 | **New capability** | `construct-edge` *(planned)* |
 | **Host** | Validity feedback. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-lab-4-cell-organelle` — Cell with parts and functions (course deep-dive)
 
@@ -835,7 +835,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-lab-cell-organelle` *(planned)* |
 | **New capability** | `label-diagram`, `relation-vocab` (`produces`). |
 | **Host** | Function scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -853,7 +853,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-ord-assemble-cycle` *(planned)* |
 | **New capability** | `construct-order` *(planned)* |
 | **Host** | Order validation + hinting. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-ord-2-insert-missing` — Fill the single blank in a process
 
@@ -867,7 +867,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-ord-insert-missing` *(planned)* |
 | **New capability** | — (host defines the blank; candidates partially linked) |
 | **Host** | Blank definition + scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-ord-3-build-valid-graph` — Build a valid structure from parts (advanced)
 
@@ -881,7 +881,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-ord-build-valid-graph` *(planned)* |
 | **New capability** | `construct-edge`, `construct-order` |
 | **Host** | Law-based feedback. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -927,7 +927,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-cmp-before-after` *(planned)* |
 | **New capability** | `compare-layout`, `links` vocabulary (`timelineEventId`). |
 | **Host** | Change narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -945,7 +945,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-cause-sequence` *(planned)* |
 | **New capability** | `links` vocabulary (`timelineEventId`) *(planned)* |
 | **Host** | Period narration via Timeline. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-hist-2-resistance-chain` — A chain of movements connected by events
 
@@ -959,7 +959,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-resistance-chain` *(planned)* |
 | **New capability** | `links` vocabulary. |
 | **Host** | Event context popups (from Timeline). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-hist-3-cause-and-consequence` — Long-term causes vs immediate causes
 
@@ -973,7 +973,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-causes` *(planned)* |
 | **New capability** | `multi-select` *(planned)* |
 | **Host** | Pile scoring. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-hist-4-boundary-as-diagram` — Structure change paired with the GeoMap engine
 
@@ -987,7 +987,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-hist-boundary` *(planned)* |
 | **New capability** | `links` vocabulary (`geomapEntityId`) *(planned)* |
 | **Host** | Cross-engine composition. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -1005,7 +1005,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-inq-explain-why` *(planned)* |
 | **New capability** | — (event log + snapshot unchanged) |
 | **Host** | Explanation rubric; log as evidence. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-inq-2-open-explore` — Free exploration of a rich structure
 
@@ -1019,7 +1019,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-inq-open-explore` *(planned)* |
 | **New capability** | — |
 | **Host** | Minimal chrome. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-inq-3-what-if` — "What breaks if this is removed?" (systems thinking)
 
@@ -1033,7 +1033,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-inq-what-if` *(planned)* |
 | **New capability** | `what-if` *(planned)* |
 | **Host** | Consequence narration. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -1051,7 +1051,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-asm-read-diagram` *(planned)* |
 | **New capability** | — |
 | **Host** | Grading + feedback. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-asm-2-validate-diagram` — Is this a valid X? (graph-law judgement)
 
@@ -1065,7 +1065,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-asm-validate-diagram` *(planned)* |
 | **New capability** | — (validation result made learnable) |
 | **Host** | Judgement rubric. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `di-asm-3-evidence-essay` — Explain with cited diagram and event trace
 
@@ -1079,7 +1079,7 @@ As with the GeoMap catalog, most cases reveal **contract gaps**. Marked `planned
 | **Fixture** | `nios/di-asm-evidence-essay` *(planned)* |
 | **New capability** | — |
 | **Host** | Essay rubric over the event trace. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

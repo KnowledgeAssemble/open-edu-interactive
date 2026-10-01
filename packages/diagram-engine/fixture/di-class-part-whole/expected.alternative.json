@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-parliament",
+    "nodeId": "parliament",
+    "label": "Parliament"
+  },
+  {
+    "kind": "node",
+    "id": "node-lok-sabha",
+    "nodeId": "lok-sabha",
+    "label": "Lok Sabha"
+  },
+  {
+    "kind": "node",
+    "id": "node-rajya-sabha",
+    "nodeId": "rajya-sabha",
+    "label": "Rajya Sabha"
+  },
+  {
+    "kind": "node",
+    "id": "node-president",
+    "nodeId": "president",
+    "label": "President"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-parliament-lok-sabha",
+    "from": "parliament",
+    "relationship": "contains",
+    "to": "lok-sabha",
+    "fromLabel": "Parliament",
+    "toLabel": "Lok Sabha"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-parliament-rajya-sabha",
+    "from": "parliament",
+    "relationship": "contains",
+    "to": "rajya-sabha",
+    "fromLabel": "Parliament",
+    "toLabel": "Rajya Sabha"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-lok-sabha-president",
+    "from": "lok-sabha",
+    "relationship": "part-of",
+    "to": "president",
+    "fromLabel": "Lok Sabha",
+    "toLabel": "President"
+  }
+]

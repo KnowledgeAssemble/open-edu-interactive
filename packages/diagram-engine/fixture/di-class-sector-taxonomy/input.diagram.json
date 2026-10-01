@@ -1,0 +1,31 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-class-sector-taxonomy",
+  "metadata": { "title": "Economic sectors" },
+  "purpose": { "learningObjective": "Classify activities into economic sectors", "reasoningMode": "classify" },
+  "content": {
+    "kind": "hierarchy",
+    "profile": "concept",
+    "nodes": [
+      { "id": "economy", "label": "Economy" },
+      { "id": "primary", "label": "Primary" },
+      { "id": "secondary", "label": "Secondary" },
+      { "id": "tertiary", "label": "Tertiary" },
+      { "id": "farming", "label": "Farming" },
+      { "id": "school", "label": "School" }
+    ],
+    "edges": [
+      { "from": "economy", "to": "primary", "relationship": "contains" },
+      { "from": "economy", "to": "secondary", "relationship": "contains" },
+      { "from": "economy", "to": "tertiary", "relationship": "contains" },
+      { "from": "primary", "to": "farming", "relationship": "contains" },
+      { "from": "tertiary", "to": "school", "relationship": "contains" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Economic sectors: primary, secondary, tertiary" }
+}

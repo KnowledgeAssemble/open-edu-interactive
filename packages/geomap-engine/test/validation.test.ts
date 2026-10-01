@@ -164,6 +164,50 @@ describe('validateSemantic', () => {
     expect(result.valid).toBe(false);
     expect(result.issues.some((i) => i.code === 'INVALID_SPEC' && /sources\[\] is required/.test(i.message))).toBe(true);
   });
+
+  it('fails for compass referenceEntityId not found (INVALID_REFERENCE)', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        compass: { referenceEntityId: 'ghost', window: { label: 'North', from: 315, to: 45 } },
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_REFERENCE' && /compass referenceEntityId/.test(i.message))).toBe(true);
+  });
+
+  it('fails for compass reference without explicit coordinates (INVALID_REFERENCE)', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        entities: [{ id: 'ref', type: 'city', name: 'Ref', location: { source: 'src', featureId: 'f1' } }],
+        compass: { referenceEntityId: 'ref', window: { label: 'North', from: 315, to: 45 } },
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_REFERENCE' && /must have explicit coordinates/.test(i.message))).toBe(true);
+  });
+
+  it('fails when the compass reference is its own candidate (INVALID_REFERENCE)', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        entities: [
+          { id: 'ref', type: 'city', name: 'Ref', location: { coordinates: { lat: 20, lon: 85 } } },
+        ],
+        layers: [{ id: 'markers', type: 'marker', items: [{ entity: 'ref' }] }],
+        compass: { referenceEntityId: 'ref', window: { label: 'North', from: 315, to: 45 } },
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_REFERENCE' && /cannot be the candidate itself/.test(i.message))).toBe(true);
+  });
 });
 
 describe('GeoMapEngine.validate never throws', () => {
@@ -261,5 +305,32 @@ describe('validateAccessibility', () => {
     const result = validateAccessibility(spec, svgResult);
     expect(result.valid).toBe(false);
     expect(result.issues.some((i) => i.code === 'ACCESSIBILITY_ERROR')).toBe(true);
+  });
+});
+describe('period-slice provenance (W-4.1)', () => {
+  it('a period slice with empty sources fails INVALID_SPEC', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        periods: [{ id: 'p1', label: 'P', from: '1700', to: '1750', sources: [], regionEntityIds: ['pt'] }],
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_SPEC' && /period.*sources/.test(i.message))).toBe(true);
+  });
+
+  it('a period slice referencing an unknown region fails INVALID_REFERENCE', () => {
+    const spec: GeoMapSpec = {
+      ...validSpec,
+      content: {
+        ...validSpec.content!,
+        periods: [{ id: 'p1', label: 'P', from: '1700', to: '1750', sources: [{ class: 'authoritative' }], regionEntityIds: ['ghost'] }],
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues.some((i) => i.code === 'INVALID_REFERENCE' && /period.*region/.test(i.message))).toBe(true);
   });
 });

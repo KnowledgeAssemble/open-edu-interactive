@@ -1,0 +1,23 @@
+{
+  "type": "visual",
+  "version": "1.0.0",
+  "id": "counting-set-pick-n",
+  "purpose": {
+    "learningObjective": "Pick exactly three objects",
+    "interactionGoal": "Select three stars",
+    "reasoningMode": "identify"
+  },
+  "content": {
+    "kind": "counting-set",
+    "components": [{
+      "id": "cs",
+      "type": "counting-set",
+      "props": { "count": 5, "object": "star", "arrangement": "row", "interactive": true, "maxSelection": 3 }
+    }]
+  },
+  "accessibility": {
+    "label": "Five stars",
+    "description": "Select three stars."
+  },
+  "interaction": { "mode": "identify", "actions": ["select", "deselect", "focus", "reset"] }
+}

@@ -1,0 +1,540 @@
+{
+  "nodes": [
+    {
+      "id": "gridline-0",
+      "role": "gridline",
+      "kind": "line",
+      "value": 0,
+      "children": []
+    },
+    {
+      "id": "gridline-1",
+      "role": "gridline",
+      "kind": "line",
+      "value": 5,
+      "children": []
+    },
+    {
+      "id": "gridline-2",
+      "role": "gridline",
+      "kind": "line",
+      "value": 10,
+      "children": []
+    },
+    {
+      "id": "gridline-3",
+      "role": "gridline",
+      "kind": "line",
+      "value": 15,
+      "children": []
+    },
+    {
+      "id": "gridline-4",
+      "role": "gridline",
+      "kind": "line",
+      "value": 20,
+      "children": []
+    },
+    {
+      "id": "gridline-5",
+      "role": "gridline",
+      "kind": "line",
+      "value": 25,
+      "children": []
+    },
+    {
+      "id": "tick-y-0",
+      "role": "tick",
+      "kind": "tick",
+      "value": 0,
+      "bounds": {
+        "x": 44,
+        "y": 539,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-1",
+      "role": "tick",
+      "kind": "tick",
+      "value": 5,
+      "bounds": {
+        "x": 44,
+        "y": 435,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-2",
+      "role": "tick",
+      "kind": "tick",
+      "value": 10,
+      "bounds": {
+        "x": 44,
+        "y": 331,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-3",
+      "role": "tick",
+      "kind": "tick",
+      "value": 15,
+      "bounds": {
+        "x": 44,
+        "y": 227,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-4",
+      "role": "tick",
+      "kind": "tick",
+      "value": 20,
+      "bounds": {
+        "x": 44,
+        "y": 123,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-5",
+      "role": "tick",
+      "kind": "tick",
+      "value": 25,
+      "bounds": {
+        "x": 44,
+        "y": 19,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-0",
+      "role": "tick",
+      "kind": "tick",
+      "label": "2024-01-15",
+      "bounds": {
+        "x": 167.625,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-1",
+      "role": "tick",
+      "kind": "tick",
+      "label": "2024-04-15",
+      "bounds": {
+        "x": 331.875,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-2",
+      "role": "tick",
+      "kind": "tick",
+      "label": "2024-07-15",
+      "bounds": {
+        "x": 496.125,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-3",
+      "role": "tick",
+      "kind": "tick",
+      "label": "2024-10-15",
+      "bounds": {
+        "x": 660.375,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-0",
+      "role": "label",
+      "kind": "text",
+      "value": 0,
+      "label": "0",
+      "bounds": {
+        "x": 0,
+        "y": 532,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-1",
+      "role": "label",
+      "kind": "text",
+      "value": 5,
+      "label": "5",
+      "bounds": {
+        "x": 0,
+        "y": 428,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-2",
+      "role": "label",
+      "kind": "text",
+      "value": 10,
+      "label": "10",
+      "bounds": {
+        "x": 0,
+        "y": 324,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-3",
+      "role": "label",
+      "kind": "text",
+      "value": 15,
+      "label": "15",
+      "bounds": {
+        "x": 0,
+        "y": 220,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-4",
+      "role": "label",
+      "kind": "text",
+      "value": 20,
+      "label": "20",
+      "bounds": {
+        "x": 0,
+        "y": 116,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-5",
+      "role": "label",
+      "kind": "text",
+      "value": 25,
+      "label": "25",
+      "bounds": {
+        "x": 0,
+        "y": 12,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-0",
+      "role": "label",
+      "kind": "text",
+      "label": "2024-01-15",
+      "bounds": {
+        "x": 138.625,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-1",
+      "role": "label",
+      "kind": "text",
+      "label": "2024-04-15",
+      "bounds": {
+        "x": 302.875,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-2",
+      "role": "label",
+      "kind": "text",
+      "label": "2024-07-15",
+      "bounds": {
+        "x": 467.125,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-3",
+      "role": "label",
+      "kind": "text",
+      "label": "2024-10-15",
+      "bounds": {
+        "x": 631.375,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "temp-point-row-jan",
+      "role": "selectable",
+      "kind": "point",
+      "value": 5,
+      "label": "2024-01-15: 5 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-01-15",
+        "measureValue": 5,
+        "measureId": "temp",
+        "rowId": "row-jan"
+      },
+      "children": [],
+      "bounds": {
+        "x": 146.625,
+        "y": 414,
+        "width": 44,
+        "height": 44
+      }
+    },
+    {
+      "id": "temp-point-row-apr",
+      "role": "selectable",
+      "kind": "point",
+      "value": 14,
+      "label": "2024-04-15: 14 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-04-15",
+        "measureValue": 14,
+        "measureId": "temp",
+        "rowId": "row-apr"
+      },
+      "children": [],
+      "bounds": {
+        "x": 310.875,
+        "y": 226.8,
+        "width": 44,
+        "height": 44
+      }
+    },
+    {
+      "id": "temp-point-row-jul",
+      "role": "selectable",
+      "kind": "point",
+      "value": 22,
+      "label": "2024-07-15: 22 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-07-15",
+        "measureValue": 22,
+        "measureId": "temp",
+        "rowId": "row-jul"
+      },
+      "children": [],
+      "bounds": {
+        "x": 475.125,
+        "y": 60.39999999999998,
+        "width": 44,
+        "height": 44
+      }
+    },
+    {
+      "id": "temp-point-row-oct",
+      "role": "selectable",
+      "kind": "point",
+      "value": 11,
+      "label": "2024-10-15: 11 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-10-15",
+        "measureValue": 11,
+        "measureId": "temp",
+        "rowId": "row-oct"
+      },
+      "children": [],
+      "bounds": {
+        "x": 639.375,
+        "y": 289.2,
+        "width": 44,
+        "height": 44
+      }
+    }
+  ],
+  "semantics": {
+    "temp-point-row-jan": {
+      "id": "temp-point-row-jan",
+      "role": "selectable",
+      "kind": "point",
+      "value": 5,
+      "label": "2024-01-15: 5 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-01-15",
+        "measureValue": 5,
+        "measureId": "temp",
+        "rowId": "row-jan"
+      },
+      "children": [],
+      "bounds": {
+        "x": 146.625,
+        "y": 414,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "temp-point-row-apr": {
+      "id": "temp-point-row-apr",
+      "role": "selectable",
+      "kind": "point",
+      "value": 14,
+      "label": "2024-04-15: 14 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-04-15",
+        "measureValue": 14,
+        "measureId": "temp",
+        "rowId": "row-apr"
+      },
+      "children": [],
+      "bounds": {
+        "x": 310.875,
+        "y": 226.8,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "temp-point-row-jul": {
+      "id": "temp-point-row-jul",
+      "role": "selectable",
+      "kind": "point",
+      "value": 22,
+      "label": "2024-07-15: 22 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-07-15",
+        "measureValue": 22,
+        "measureId": "temp",
+        "rowId": "row-jul"
+      },
+      "children": [],
+      "bounds": {
+        "x": 475.125,
+        "y": 60.39999999999998,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "temp-point-row-oct": {
+      "id": "temp-point-row-oct",
+      "role": "selectable",
+      "kind": "point",
+      "value": 11,
+      "label": "2024-10-15: 11 °C",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "2024-10-15",
+        "measureValue": 11,
+        "measureId": "temp",
+        "rowId": "row-oct"
+      },
+      "children": [],
+      "bounds": {
+        "x": 639.375,
+        "y": 289.2,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "axis-x": {
+      "id": "axis-x",
+      "role": "axis",
+      "kind": "axis",
+      "label": "when",
+      "children": [],
+      "bounds": {
+        "x": 50,
+        "y": 540,
+        "width": 730,
+        "height": 2
+      }
+    },
+    "axis-y": {
+      "id": "axis-y",
+      "role": "axis",
+      "kind": "axis",
+      "label": "temp",
+      "children": [],
+      "bounds": {
+        "x": 50,
+        "y": 20,
+        "width": 2,
+        "height": 520
+      }
+    }
+  }
+}

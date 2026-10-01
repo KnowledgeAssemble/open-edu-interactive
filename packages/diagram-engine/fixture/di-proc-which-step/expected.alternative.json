@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-harvest",
+    "nodeId": "harvest",
+    "label": "Harvest"
+  },
+  {
+    "kind": "node",
+    "id": "node-threshing",
+    "nodeId": "threshing",
+    "label": "Threshing"
+  },
+  {
+    "kind": "node",
+    "id": "node-grinding",
+    "nodeId": "grinding",
+    "label": "Grinding"
+  },
+  {
+    "kind": "node",
+    "id": "node-baking",
+    "nodeId": "baking",
+    "label": "Baking"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-harvest-threshing",
+    "from": "harvest",
+    "relationship": "leads-to",
+    "to": "threshing",
+    "fromLabel": "Harvest",
+    "toLabel": "Threshing"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-threshing-grinding",
+    "from": "threshing",
+    "relationship": "leads-to",
+    "to": "grinding",
+    "fromLabel": "Threshing",
+    "toLabel": "Grinding"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-grinding-baking",
+    "from": "grinding",
+    "relationship": "leads-to",
+    "to": "baking",
+    "fromLabel": "Grinding",
+    "toLabel": "Baking"
+  }
+]

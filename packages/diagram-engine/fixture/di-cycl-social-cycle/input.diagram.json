@@ -1,0 +1,26 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cycl-social-cycle",
+  "metadata": { "title": "Demand-price cycle" },
+  "purpose": { "learningObjective": "Recognise a recurring economic pattern as a loop", "reasoningMode": "explore" },
+  "content": {
+    "kind": "cycle",
+    "profile": "process",
+    "nodes": [
+      { "id": "demand", "label": "Demand" },
+      { "id": "prices", "label": "Prices" },
+      { "id": "production", "label": "Production" }
+    ],
+    "edges": [
+      { "from": "demand", "to": "prices", "relationship": "leads-to" },
+      { "from": "prices", "to": "production", "relationship": "leads-to" },
+      { "from": "production", "to": "demand", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "radial" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Economic cycle: demand leads to prices leads to production returns to demand" }
+}

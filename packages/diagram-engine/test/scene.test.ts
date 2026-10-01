@@ -72,7 +72,7 @@ describe('buildScene', () => {
     expect(edgeNode).toBeDefined();
     expect(edgeNode!.id).toBe('edge-evaporation-condensation');
     expect(edgeNode!.metadata?.relationship).toBe('leads-to');
-    expect(edgeNode!.acceptsActions).toEqual(['follow']);
+    expect(edgeNode!.acceptsActions).toEqual(['select', 'focus', 'follow']);
   });
 
   it('edges reference only declared nodes', () => {

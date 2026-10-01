@@ -1,0 +1,73 @@
+[
+  {
+    "kind": "node",
+    "id": "node-egg",
+    "nodeId": "egg",
+    "label": "Egg"
+  },
+  {
+    "kind": "node",
+    "id": "node-tadpole",
+    "nodeId": "tadpole",
+    "label": "Tadpole"
+  },
+  {
+    "kind": "node",
+    "id": "node-froglet",
+    "nodeId": "froglet",
+    "label": "Froglet"
+  },
+  {
+    "kind": "node",
+    "id": "node-frog",
+    "nodeId": "frog",
+    "label": "Frog"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-egg-tadpole",
+    "from": "egg",
+    "relationship": "leads-to",
+    "to": "tadpole",
+    "fromLabel": "Egg",
+    "toLabel": "Tadpole"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-tadpole-froglet",
+    "from": "tadpole",
+    "relationship": "leads-to",
+    "to": "froglet",
+    "fromLabel": "Tadpole",
+    "toLabel": "Froglet"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-froglet-frog",
+    "from": "froglet",
+    "relationship": "leads-to",
+    "to": "frog",
+    "fromLabel": "Froglet",
+    "toLabel": "Frog"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-frog-egg",
+    "from": "frog",
+    "relationship": "leads-to",
+    "to": "egg",
+    "fromLabel": "Frog",
+    "toLabel": "Egg"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-frog-froglet-tadpole-egg",
+    "members": [
+      "frog",
+      "froglet",
+      "tadpole",
+      "egg"
+    ],
+    "label": "Cycle: frog → froglet → tadpole → egg"
+  }
+]

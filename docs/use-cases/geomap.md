@@ -91,7 +91,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Entity metadata + `interaction.actions` includes `filter`, `clear-filter` |
 | **Fixture** | `planned` |
 | **Host** | Filter control labels |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -164,7 +164,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Route layer + timeline-style interaction block |
 | **Fixture** | `planned` |
 | **Host** | Transport controls |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -194,7 +194,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Composed spec with `interaction.actions` including `reset` |
 | **Fixture** | `planned` (derive from `odisha-coastal` + guided flags) |
 | **Host** | Multi-step workflow |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -269,7 +269,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/loc-linear-feature` *(planned)* |
 | **New capability** | `linear-feature` — today `route` items are display-only; rivers/roads need selectable line targets. |
 | **Host** | Answer key: the named river. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-loc-2-multi-locate` — Label a whole map in sequence (board-skill preparation)
 
@@ -282,7 +282,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | `interaction.actions` includes `reset`; multi-layer region+marker composition. |
 | **Fixture** | `nios/loc-multi-locate` *(planned)* |
 | **Host** | Ordered step script + answer keys. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -300,7 +300,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/leg-match-symbol` *(planned)* |
 | **New capability** | `legend-link` — legend selection must drive scene emphasis without changing selection state. |
 | **Host** | Pairing rubric; symbol names localizable. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-leg-2-identify-symbol` — Name the feature a symbol stands for (display)
 
@@ -313,7 +313,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Legend rows as focusable semantic targets (display mode). |
 | **Fixture** | `nios/leg-identify-symbol` *(planned)* |
 | **Host** | Text/numeric answer check. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-nav-1-follow-compass` — Follow a compass direction
 
@@ -326,7 +326,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Compass node on scene (or host chrome); `interaction.mode: "explore"` optional. |
 | **Fixture** | `nios/nav-follow-compass` *(planned)* |
 | **Host** | Answer key per bearing; hints degrade gracefully (N→E→SE). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-nav-2-locate-in-region` — Which region contains this point?
 
@@ -339,7 +339,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Marker + region overlay; containment not required by engine (host scores). |
 | **Fixture** | `nios/nav-locate-in-region` *(planned)* |
 | **Host** | Containment answer key declared by host data. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -357,7 +357,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/scale-estimate-distance` *(planned)* |
 | **New capability** | `scale-bar` — no scale/distances exist in the current snapshot. |
 | **Host** | Tolerance band on the estimate; feedback on units. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-scale-2-nearest` — Which of two places is nearer to X?
 
@@ -371,7 +371,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/scale-nearest` *(planned)* |
 | **New capability** | `scale-bar` (visual reference for the answer); engine never asserts distance itself. |
 | **Host** | Answer key from host data. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -389,7 +389,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/dir-borders` *(planned)* |
 | **New capability** | `adjacency` — the alternative today lists entities, not neighbour sets. |
 | **Host** | Answer set = adjacency list. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-dir-2-north-of` — What lies to the north?
 
@@ -402,7 +402,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Marker layer, discovery mode. |
 | **Fixture** | `nios/dir-north-of` *(planned)* |
 | **Host** | Answer key; optional axis filter via `filter`. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -420,7 +420,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/dist-theme-identify` *(planned)* |
 | **New capability** | `attr-encoding` — current `style.role` is a closed semantic-token set, not data-driven. |
 | **Host** | Answer key: max row id + value. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-dist-2-theme-explore` — Explore a theme’s spatial pattern
 
@@ -434,7 +434,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/dist-theme-explore` *(planned)* |
 | **New capability** | `attr-encoding`. |
 | **Host** | Discussion scaffold; no single answer. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-dist-3-filter-category` — Narrow a map by category
 
@@ -448,7 +448,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/dist-filter-category` *(planned)* |
 | **New capability** | `filter-category` (extends planned `gm-r4-filter-regions` semantics). |
 | **Host** | Filter control labels. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-dist-4-graduated-marker` — Read a scaled-marker map (city population)
 
@@ -462,7 +462,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/dist-graduated-marker` *(planned)* |
 | **New capability** | `attr-encoding` (marker sizing). |
 | **Host** | Answer key. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -479,7 +479,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Two region items with authored `measure` values. |
 | **Fixture** | `nios/cmp-which-more` *(planned)* |
 | **Host** | Answer key; “both” tolerated when values tie. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-cmp-2-density-max-min` — Find the densest and sparsest region (SR)
 
@@ -493,7 +493,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/cmp-density-max-min` *(planned)* |
 | **New capability** | `attr-encoding`. |
 | **Host** | Two answer keys (dense / sparse). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-cmp-3-relief-order` — Order the regions by height (ranking)
 
@@ -506,7 +506,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Region layer, discovery; host collects an ordered sequence. |
 | **Fixture** | `nios/cmp-relief-order` *(planned)* |
 | **Host** | Sequence rubric against authored relief values. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -524,7 +524,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/move-trace-journey` *(planned)* |
 | **New capability** | `route-step`. |
 | **Host** | Narration per stop; final prompt asks for the destination. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-move-2-trade-route` — Follow an ancient trade route
 
@@ -538,7 +538,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/move-trade-route` *(planned)* |
 | **New capability** | `linear-feature` (selectable segments) + `route-step` (optional). |
 | **Host** | Narration per port. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-move-3-transport-network` — Explore a transport network
 
@@ -552,7 +552,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/move-transport-network` *(planned)* |
 | **New capability** | `linear-feature` + `filter-category`. |
 | **Host** | Endpoint answer key. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-move-4-migration-patterns` — Trace movements of people
 
@@ -566,7 +566,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/move-migration-patterns` *(planned)* |
 | **New capability** | `route-step` (direction emphasis). |
 | **Host** | Narration + discussion. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -584,7 +584,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/hist-boundary-change` *(planned)* |
 | **New capability** | `period-slice`. |
 | **Host** | Timeline narration; answer question on the final slice. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-hist-2-place-memory` — Locate the places of a movement
 
@@ -597,7 +597,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Spec** | Marker layer with historical metadata; multi-step workflow with `reset`. |
 | **Fixture** | `nios/hist-place-memory` *(planned)* |
 | **Host** | Chronological facts must carry `sources[]` (P9). |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-hist-3-route-over-time` — One route across changing territory
 
@@ -611,7 +611,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/hist-route-over-time` *(planned)* |
 | **New capability** | `period-slice` + `route-step` composition. |
 | **Host** | Historical facts need explicit provenance. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -629,7 +629,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/ovl-relate-themes` *(planned)* |
 | **New capability** | `layer-visibility` + `attr-encoding`. |
 | **Host** | Correlation discussion; sources for both themes. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-ovl-2-why-there` — Explain why an industry is where it is (SR)
 
@@ -643,7 +643,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/ovl-why-there` *(planned)* |
 | **New capability** | `layer-visibility` (and multi-select if required by a second case). |
 | **Host** | Justification rubric; sources required. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-ovl-3-risk-zones` — Read a disaster-risk map (SR)
 
@@ -657,7 +657,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/ovl-risk-zones` *(planned)* |
 | **New capability** | `layer-visibility` + `attr-encoding`. |
 | **Host** | Forward-looking discussion; data must carry provenance. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -675,7 +675,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/mark-place-on-blank` *(planned)* |
 | **New capability** | `construct-mark` — new D5-adjacent construct action; big contract item. |
 | **Host** | Tolerance scoring; localizable prompts. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ### `gm-mark-2-line-on-blank` — Draw a linear feature on an outline map
 
@@ -689,7 +689,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/mark-line-on-blank` *(planned)* |
 | **New capability** | `construct-mark` (line variant). |
 | **Host** | Corridor tolerance scoring. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ### `gm-mark-3-build-theme` — Shade a mini theme map (SR practical crossover)
 
@@ -703,7 +703,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/mark-build-theme` *(planned)* |
 | **New capability** | `construct-mark` + `attr-encoding`. |
 | **Host** | Reference bucketing + feedback. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ---
 
@@ -721,7 +721,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/inq-why-settlement` *(planned)* |
 | **New capability** | `layer-visibility` for simultaneous themes (optional). |
 | **Host** | Discussion; open response. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-inq-2-local-area` — Map the local neighbourhood (OBE / optional LAP)
 
@@ -735,7 +735,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/inq-local-area` *(planned)* |
 | **New capability** | `construct-mark`. |
 | **Host** | Learner-authored content is `illustrative` — never authoritative. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ---
 
@@ -753,7 +753,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/asm-board-map-skill` *(planned)* |
 | **New capability** | `construct-mark`; otherwise composed of current mechanics. |
 | **Host** | Rubric per item; per-item feedback; timing. |
-| **Status** | `planned` |
+| **Status** | `done` (loc/identify/trace half only — marking half deferred per gap-closure plan §1/§9) |
 
 ### `gm-asm-2-misconception-encoding` — Catch a misleading theme map
 
@@ -767,7 +767,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/asm-misconception-encoding` *(planned)* |
 | **New capability** | `attr-encoding` — and a rule that encoding is never misleading by construction. |
 | **Host** | Explanation rubric; sources required. |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ### `gm-asm-3-verify-own-map` — Compare a learner map against the reference
 
@@ -781,7 +781,7 @@ Use cases are grouped by **layer type** (`region`, `marker`, `route`). Stable sc
 | **Fixture** | `nios/asm-verify-own-map` *(planned)* |
 | **New capability** | `layer-visibility` + `construct-mark`. |
 | **Host** | Self-check narration. |
-| **Status** | `planned` |
+| **Status** | `planned` (construct-mark deferred per gap-closure plan §1/§9) |
 
 ---
 

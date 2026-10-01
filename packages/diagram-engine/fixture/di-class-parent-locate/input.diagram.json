@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-class-parent-locate",
+  "metadata": { "title": "Administrative parent levels" },
+  "purpose": { "learningObjective": "Find the immediate parent of a leaf", "reasoningMode": "identify" },
+  "content": {
+    "kind": "hierarchy",
+    "profile": "concept",
+    "nodes": [
+      { "id": "state", "label": "State" },
+      { "id": "district", "label": "District" },
+      { "id": "tehsil", "label": "Tehsil" },
+      { "id": "village", "label": "Village" }
+    ],
+    "edges": [
+      { "from": "state", "to": "district", "relationship": "contains" },
+      { "from": "district", "to": "tehsil", "relationship": "contains" },
+      { "from": "tehsil", "to": "village", "relationship": "contains" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Administrative hierarchy: state, district, tehsil, village" }
+}

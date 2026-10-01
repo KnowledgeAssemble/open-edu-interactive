@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Administrative hierarchy: state, district, tehsil, village</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-state" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="State" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">State</text>
+    <rect id="node-district" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="District" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">District</text>
+    <rect id="node-tehsil" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Tehsil" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Tehsil</text>
+    <rect id="node-village" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Village" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Village</text>
+    <path id="edge-state-district" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="state contains district" data-oedu-relationship="contains" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-district-tehsil" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="district contains tehsil" data-oedu-relationship="contains" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-tehsil-village" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="tehsil contains village" data-oedu-relationship="contains" d="M100,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

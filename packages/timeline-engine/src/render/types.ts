@@ -1,5 +1,5 @@
 export interface TimeRow {
-  kind: 'period' | 'event';
+  kind: 'period' | 'event' | 'span';
   id: string;
   label: string;
   from?: string;

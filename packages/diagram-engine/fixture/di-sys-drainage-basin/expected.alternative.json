@@ -1,0 +1,78 @@
+[
+  {
+    "kind": "node",
+    "id": "node-precipitation",
+    "nodeId": "precipitation",
+    "label": "Precipitation"
+  },
+  {
+    "kind": "node",
+    "id": "node-runoff",
+    "nodeId": "runoff",
+    "label": "Runoff"
+  },
+  {
+    "kind": "node",
+    "id": "node-groundwater",
+    "nodeId": "groundwater",
+    "label": "Groundwater",
+    "description": "Storage node"
+  },
+  {
+    "kind": "node",
+    "id": "node-river",
+    "nodeId": "river",
+    "label": "River"
+  },
+  {
+    "kind": "node",
+    "id": "node-sea",
+    "nodeId": "sea",
+    "label": "Sea"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-precipitation-runoff",
+    "from": "precipitation",
+    "relationship": "leads-to",
+    "to": "runoff",
+    "fromLabel": "Precipitation",
+    "toLabel": "Runoff"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-precipitation-groundwater",
+    "from": "precipitation",
+    "relationship": "leads-to",
+    "to": "groundwater",
+    "fromLabel": "Precipitation",
+    "toLabel": "Groundwater"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-groundwater-river",
+    "from": "groundwater",
+    "relationship": "leads-to",
+    "to": "river",
+    "fromLabel": "Groundwater",
+    "toLabel": "River"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-runoff-river",
+    "from": "runoff",
+    "relationship": "leads-to",
+    "to": "river",
+    "fromLabel": "Runoff",
+    "toLabel": "River"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-river-sea",
+    "from": "river",
+    "relationship": "leads-to",
+    "to": "sea",
+    "fromLabel": "River",
+    "toLabel": "Sea"
+  }
+]

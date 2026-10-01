@@ -1,0 +1,50 @@
+[
+  {
+    "id": "node-igneous",
+    "role": "button",
+    "label": "Igneous",
+    "children": []
+  },
+  {
+    "id": "node-sedimentary",
+    "role": "button",
+    "label": "Sedimentary",
+    "children": []
+  },
+  {
+    "id": "node-metamorphic",
+    "role": "button",
+    "label": "Metamorphic",
+    "children": []
+  },
+  {
+    "id": "node-magma",
+    "role": "button",
+    "label": "Magma",
+    "children": []
+  },
+  {
+    "id": "edge-magma-igneous",
+    "role": "link",
+    "label": "Magma transforms-to Igneous",
+    "children": []
+  },
+  {
+    "id": "edge-igneous-sedimentary",
+    "role": "link",
+    "label": "Igneous weathers-into Sedimentary",
+    "children": []
+  },
+  {
+    "id": "edge-sedimentary-metamorphic",
+    "role": "link",
+    "label": "Sedimentary transforms-to Metamorphic",
+    "children": []
+  },
+  {
+    "id": "edge-metamorphic-magma",
+    "role": "link",
+    "label": "Metamorphic transforms-to Magma",
+    "children": []
+  }
+]

@@ -1,6 +1,72 @@
 {
   "a11y": [
     {
+      "id": "label-tick-0",
+      "role": "text",
+      "label": "1800",
+      "children": []
+    },
+    {
+      "id": "label-tick-1",
+      "role": "text",
+      "label": "1825",
+      "children": []
+    },
+    {
+      "id": "label-tick-2",
+      "role": "text",
+      "label": "1850",
+      "children": []
+    },
+    {
+      "id": "label-tick-3",
+      "role": "text",
+      "label": "1875",
+      "children": []
+    },
+    {
+      "id": "label-tick-4",
+      "role": "text",
+      "label": "1900",
+      "children": []
+    },
+    {
+      "id": "label-tick-5",
+      "role": "text",
+      "label": "1925",
+      "children": []
+    },
+    {
+      "id": "label-tick-6",
+      "role": "text",
+      "label": "1950",
+      "children": []
+    },
+    {
+      "id": "label-tick-7",
+      "role": "text",
+      "label": "1975",
+      "children": []
+    },
+    {
+      "id": "label-tick-8",
+      "role": "text",
+      "label": "2000",
+      "children": []
+    },
+    {
+      "id": "period-p1",
+      "role": "text",
+      "label": "First half (1800 – 1950)",
+      "children": []
+    },
+    {
+      "id": "period-p2",
+      "role": "text",
+      "label": "Second half (1950 – 2000)",
+      "children": []
+    },
+    {
       "id": "e1",
       "role": "button",
       "label": "Event A (1900)",

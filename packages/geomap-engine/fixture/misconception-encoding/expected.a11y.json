@@ -1,0 +1,14 @@
+[
+  {
+    "id": "geom-theme-r1",
+    "role": "button",
+    "label": "Region A",
+    "children": []
+  },
+  {
+    "id": "geom-theme-r2",
+    "role": "button",
+    "label": "Region B",
+    "children": []
+  }
+]

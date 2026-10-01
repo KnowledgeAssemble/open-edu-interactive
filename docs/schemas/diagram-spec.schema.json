@@ -2,29 +2,52 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://knowledgeassemble.com/schemas/diagram-spec.schema.json",
   "title": "Diagram Engine Specification",
-  "description": "Schema for the Diagram Engine — structural reasoning (how things are connected). Nodes, edges, auto-layout.",
+  "description": "Schema for the Diagram Engine \u2014 structural reasoning (how things are connected). Nodes, edges, auto-layout.",
   "type": "object",
   "properties": {
-    "type": { "const": "diagram" },
-    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
-    "id": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$", "maxLength": 128 },
+    "type": {
+      "const": "diagram"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$",
+      "maxLength": 128
+    },
     "metadata": {
       "type": "object",
       "properties": {
-        "title": { "type": "string" },
-        "description": { "type": "string" },
-        "author": { "type": "string" }
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
     "purpose": {
       "type": "object",
       "properties": {
-        "learningObjective": { "type": "string" },
-        "interactionGoal": { "type": "string" },
-        "reasoningMode": { "type": "string" }
+        "learningObjective": {
+          "type": "string"
+        },
+        "interactionGoal": {
+          "type": "string"
+        },
+        "reasoningMode": {
+          "type": "string"
+        }
       },
-      "required": ["learningObjective"],
+      "required": [
+        "learningObjective"
+      ],
       "additionalProperties": false
     },
     "content": {
@@ -32,23 +55,59 @@
       "properties": {
         "kind": {
           "type": "string",
-          "enum": ["concept-map", "cycle", "flow", "hierarchy"]
+          "enum": [
+            "concept-map",
+            "cycle",
+            "flow",
+            "hierarchy"
+          ]
         },
         "profile": {
           "type": "string",
-          "enum": ["cause-effect", "concept", "process", "system"]
+          "enum": [
+            "cause-effect",
+            "concept",
+            "process",
+            "system"
+          ]
         },
         "nodes": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "id": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$", "maxLength": 128 },
-              "label": { "type": "string", "minLength": 1 },
-              "description": { "type": "string" },
-              "links": { "type": "object", "additionalProperties": { "type": "string" } }
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$",
+                "maxLength": 128
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string"
+              },
+              "links": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "interactive": {
+                "type": "boolean"
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             },
-            "required": ["id", "label"],
+            "required": [
+              "id",
+              "label"
+            ],
             "additionalProperties": false
           },
           "minItems": 1
@@ -58,24 +117,63 @@
           "items": {
             "type": "object",
             "properties": {
-              "id": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$", "maxLength": 128 },
-              "from": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$" },
-              "to": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$" },
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$",
+                "maxLength": 128
+              },
+              "from": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$"
+              },
+              "to": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$"
+              },
               "relationship": {
                 "type": "string",
-                "enum": ["connected-to", "contains", "influences", "is-a", "leads-to", "part-of"]
+                "enum": [
+                  "connected-to",
+                  "contains",
+                  "influences",
+                  "is-a",
+                  "leads-to",
+                  "part-of",
+                  "feeds-on",
+                  "transforms-to",
+                  "produces",
+                  "weathers-into"
+                ]
               },
               "labels": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
+              },
+              "interactive": {
+                "type": "boolean"
+              },
+              "gated": {
+                "type": "boolean"
+              },
+              "strength": {
+                "type": "number"
               }
             },
-            "required": ["from", "to", "relationship"],
+            "required": [
+              "from",
+              "to",
+              "relationship"
+            ],
             "additionalProperties": false
           }
         }
       },
-      "required": ["kind", "nodes"],
+      "required": [
+        "kind",
+        "nodes"
+      ],
       "additionalProperties": false
     },
     "layout": {
@@ -83,7 +181,11 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["grid", "hierarchical", "radial"]
+          "enum": [
+            "grid",
+            "hierarchical",
+            "radial"
+          ]
         }
       },
       "additionalProperties": false
@@ -91,38 +193,68 @@
     "interaction": {
       "type": "object",
       "properties": {
-        "mode": { "type": "string" },
+        "mode": {
+          "type": "string"
+        },
         "actions": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       },
       "additionalProperties": false
     },
-    "questions": { "type": "array" },
+    "questions": {
+      "type": "array"
+    },
     "sources": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "class": { "type": "string", "enum": ["authoritative", "illustrative", "simulated"] },
-          "title": { "type": "string" },
-          "citation": { "type": "string" }
+          "class": {
+            "type": "string",
+            "enum": [
+              "authoritative",
+              "illustrative",
+              "simulated"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "citation": {
+            "type": "string"
+          }
         },
-        "required": ["class"],
+        "required": [
+          "class"
+        ],
         "additionalProperties": false
       }
     },
     "accessibility": {
       "type": "object",
       "properties": {
-        "label": { "type": "string" },
-        "description": { "type": "string" }
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
       },
-      "required": ["label"],
+      "required": [
+        "label"
+      ],
       "additionalProperties": false
     }
   },
-  "required": ["type", "version", "id", "content"],
+  "required": [
+    "type",
+    "version",
+    "id",
+    "content"
+  ],
   "additionalProperties": false
 }

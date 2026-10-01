@@ -1,0 +1,62 @@
+[
+  {
+    "id": "node-sun",
+    "role": "button",
+    "label": "Sun",
+    "children": []
+  },
+  {
+    "id": "node-grass",
+    "role": "button",
+    "label": "Grass",
+    "children": []
+  },
+  {
+    "id": "node-rabbit",
+    "role": "button",
+    "label": "Rabbit",
+    "children": []
+  },
+  {
+    "id": "node-fox",
+    "role": "button",
+    "label": "Fox",
+    "children": []
+  },
+  {
+    "id": "node-decomposer",
+    "role": "button",
+    "label": "Decomposer",
+    "children": []
+  },
+  {
+    "id": "edge-sun-grass",
+    "role": "link",
+    "label": "Sun influences Grass",
+    "children": []
+  },
+  {
+    "id": "edge-grass-rabbit",
+    "role": "link",
+    "label": "Grass feeds-on Rabbit",
+    "children": []
+  },
+  {
+    "id": "edge-rabbit-fox",
+    "role": "link",
+    "label": "Rabbit feeds-on Fox",
+    "children": []
+  },
+  {
+    "id": "edge-grass-decomposer",
+    "role": "link",
+    "label": "Grass feeds-on Decomposer",
+    "children": []
+  },
+  {
+    "id": "edge-decomposer-grass",
+    "role": "link",
+    "label": "Decomposer produces Grass",
+    "children": []
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-ord-assemble-cycle",
+  "metadata": { "title": "Butterfly lifecycle" },
+  "purpose": { "learningObjective": "Assemble the lifecycle in the correct order", "reasoningMode": "construct" },
+  "content": {
+    "kind": "cycle",
+    "profile": "process",
+    "nodes": [
+      { "id": "egg", "label": "Egg" },
+      { "id": "caterpillar", "label": "Caterpillar" },
+      { "id": "chrysalis", "label": "Chrysalis" },
+      { "id": "butterfly", "label": "Butterfly" }
+    ],
+    "edges": [
+      { "from": "egg", "to": "caterpillar", "relationship": "leads-to" },
+      { "from": "caterpillar", "to": "chrysalis", "relationship": "leads-to" },
+      { "from": "chrysalis", "to": "butterfly", "relationship": "leads-to" },
+      { "from": "butterfly", "to": "egg", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "radial" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "answer", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Butterfly lifecycle; assemble the correct stage order" }
+}

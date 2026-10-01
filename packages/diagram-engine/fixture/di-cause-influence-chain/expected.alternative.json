@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-river",
+    "nodeId": "river",
+    "label": "River"
+  },
+  {
+    "kind": "node",
+    "id": "node-silt",
+    "nodeId": "silt",
+    "label": "Silt deposition"
+  },
+  {
+    "kind": "node",
+    "id": "node-fertility",
+    "nodeId": "fertility",
+    "label": "Sediment fertility"
+  },
+  {
+    "kind": "node",
+    "id": "node-crops",
+    "nodeId": "crops",
+    "label": "Dense crops"
+  },
+  {
+    "kind": "edge",
+    "id": "river-silt",
+    "from": "river",
+    "relationship": "leads-to",
+    "to": "silt",
+    "fromLabel": "River",
+    "toLabel": "Silt deposition"
+  },
+  {
+    "kind": "edge",
+    "id": "silt-fertility",
+    "from": "silt",
+    "relationship": "leads-to",
+    "to": "fertility",
+    "fromLabel": "Silt deposition",
+    "toLabel": "Sediment fertility"
+  },
+  {
+    "kind": "edge",
+    "id": "fertility-crops",
+    "from": "fertility",
+    "relationship": "influences",
+    "to": "crops",
+    "fromLabel": "Sediment fertility",
+    "toLabel": "Dense crops"
+  }
+]

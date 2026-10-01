@@ -47,6 +47,9 @@ export function layout(scene: Scene, content: ChartContent, ctx: LayoutContext):
   const yNice = niceTicks(yDomain[0], yDomain[1]);
   const yScale = linearScale(yNice.domain, [plotY + plotH, plotY]);
 
+  const measureIds = content.measures.map((m) => m.id);
+  const grouped = content.kind === 'bar' && measureIds.length > 1;
+
   for (const node of bars) {
     const dv = node.metadata?.dimensionValue as string | undefined;
     const cat = dv ?? '';
@@ -56,8 +59,10 @@ export function layout(scene: Scene, content: ChartContent, ctx: LayoutContext):
     const y1 = yScale(node.value ?? 0);
     const barH = Math.abs(y1 - y0);
     const barY = node.value && node.value >= 0 ? y1 : y0;
-    const size = Math.min(bw, ctx.minTouchTarget);
-    const cx = x + bw / 2;
+    const measureIndex = measureIds.indexOf(node.metadata?.measureId as string);
+    const size = Math.min(bw / (grouped ? measureIds.length : 1), ctx.minTouchTarget);
+    const offset = grouped && measureIndex >= 0 ? (measureIndex - (measureIds.length - 1) / 2) * size : 0;
+    const cx = x + bw / 2 + offset;
     node.bounds = rect(cx - size / 2, barY, size, Math.max(barH, 1));
   }
 
@@ -134,6 +139,22 @@ export function layout(scene: Scene, content: ChartContent, ctx: LayoutContext):
     ...labelNodes,
     ...nodes,
   ];
+
+  if (grouped) {
+    const legendNodes: SceneNode[] = [];
+    for (const [i, measureId] of measureIds.entries()) {
+      legendNodes.push({
+        id: `legend-${measureId}`,
+        role: 'legend',
+        kind: 'text',
+        label: measureId,
+        value: i,
+        bounds: rect(plotX + i * 120, 8, 110, 16),
+        children: [],
+      });
+    }
+    scene.nodes = [...legendNodes, ...scene.nodes];
+  }
 
   return scene;
 }

@@ -1,0 +1,616 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-mitigation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mitigation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mitigation",
+            "label": "Mitigation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 610,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-preparedness",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Preparedness",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "preparedness",
+            "label": "Preparedness"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 510,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-response",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Response",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "response",
+            "label": "Response"
+          },
+          "children": [],
+          "bounds": {
+            "x": 130,
+            "y": 270,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-recovery",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Recovery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "recovery",
+            "label": "Recovery"
+          },
+          "children": [],
+          "bounds": {
+            "x": 370,
+            "y": 30,
+            "width": 60,
+            "height": 60
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-mitigation-preparedness",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "mitigation leads-to preparedness",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "mitigation",
+            "toNodeId": "preparedness",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-mitigation-preparedness",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 640,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 540
+                }
+              ],
+              "path": "M640,300 L400,540"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-preparedness-response",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "preparedness leads-to response",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "preparedness",
+            "toNodeId": "response",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-preparedness-response",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 540
+                },
+                {
+                  "x": 160,
+                  "y": 300
+                }
+              ],
+              "path": "M400,540 L160,300"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-response-recovery",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "response leads-to recovery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "response",
+            "toNodeId": "recovery",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-response-recovery",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 160,
+                  "y": 300
+                },
+                {
+                  "x": 400,
+                  "y": 60
+                }
+              ],
+              "path": "M160,300 L400,60"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-recovery-mitigation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "recovery leads-to mitigation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "recovery",
+            "toNodeId": "mitigation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-recovery-mitigation",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 400,
+                  "y": 60
+                },
+                {
+                  "x": 640,
+                  "y": 300
+                }
+              ],
+              "path": "M400,60 L640,300"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-mitigation": {
+      "id": "node-mitigation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mitigation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mitigation",
+        "label": "Mitigation"
+      },
+      "children": []
+    },
+    "mitigation": {
+      "id": "node-mitigation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mitigation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mitigation",
+        "label": "Mitigation"
+      },
+      "children": []
+    },
+    "node-preparedness": {
+      "id": "node-preparedness",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Preparedness",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "preparedness",
+        "label": "Preparedness"
+      },
+      "children": []
+    },
+    "preparedness": {
+      "id": "node-preparedness",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Preparedness",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "preparedness",
+        "label": "Preparedness"
+      },
+      "children": []
+    },
+    "node-response": {
+      "id": "node-response",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Response",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "response",
+        "label": "Response"
+      },
+      "children": []
+    },
+    "response": {
+      "id": "node-response",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Response",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "response",
+        "label": "Response"
+      },
+      "children": []
+    },
+    "node-recovery": {
+      "id": "node-recovery",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Recovery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "recovery",
+        "label": "Recovery"
+      },
+      "children": []
+    },
+    "recovery": {
+      "id": "node-recovery",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Recovery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "recovery",
+        "label": "Recovery"
+      },
+      "children": []
+    },
+    "edge-mitigation-preparedness": {
+      "id": "edge-mitigation-preparedness",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "mitigation leads-to preparedness",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "mitigation",
+        "toNodeId": "preparedness",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-mitigation-preparedness",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-preparedness-response": {
+      "id": "edge-preparedness-response",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "preparedness leads-to response",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "preparedness",
+        "toNodeId": "response",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-preparedness-response",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-response-recovery": {
+      "id": "edge-response-recovery",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "response leads-to recovery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "response",
+        "toNodeId": "recovery",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-response-recovery",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-recovery-mitigation": {
+      "id": "edge-recovery-mitigation",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "recovery leads-to mitigation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "recovery",
+        "toNodeId": "mitigation",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-recovery-mitigation",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-mitigation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mitigation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mitigation",
+            "label": "Mitigation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-preparedness",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Preparedness",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "preparedness",
+            "label": "Preparedness"
+          },
+          "children": []
+        },
+        {
+          "id": "node-response",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Response",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "response",
+            "label": "Response"
+          },
+          "children": []
+        },
+        {
+          "id": "node-recovery",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Recovery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "recovery",
+            "label": "Recovery"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-mitigation-preparedness",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "mitigation leads-to preparedness",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "mitigation",
+            "toNodeId": "preparedness",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-mitigation-preparedness",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-preparedness-response",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "preparedness leads-to response",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "preparedness",
+            "toNodeId": "response",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-preparedness-response",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-response-recovery",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "response leads-to recovery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "response",
+            "toNodeId": "recovery",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-response-recovery",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-recovery-mitigation",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "recovery leads-to mitigation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "recovery",
+            "toNodeId": "mitigation",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-recovery-mitigation",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

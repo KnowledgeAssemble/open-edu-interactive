@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "node",
+    "id": "node-climate",
+    "nodeId": "climate",
+    "label": "Climate"
+  },
+  {
+    "kind": "node",
+    "id": "node-soil",
+    "nodeId": "soil",
+    "label": "Soil"
+  },
+  {
+    "kind": "node",
+    "id": "node-water",
+    "nodeId": "water",
+    "label": "Water"
+  },
+  {
+    "kind": "node",
+    "id": "node-vegetation",
+    "nodeId": "vegetation",
+    "label": "Vegetation"
+  },
+  {
+    "kind": "node",
+    "id": "node-animals",
+    "nodeId": "animals",
+    "label": "Animals"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-climate-vegetation",
+    "from": "climate",
+    "relationship": "influences",
+    "to": "vegetation",
+    "fromLabel": "Climate",
+    "toLabel": "Vegetation"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-soil-vegetation",
+    "from": "soil",
+    "relationship": "influences",
+    "to": "vegetation",
+    "fromLabel": "Soil",
+    "toLabel": "Vegetation"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-water-vegetation",
+    "from": "water",
+    "relationship": "influences",
+    "to": "vegetation",
+    "fromLabel": "Water",
+    "toLabel": "Vegetation"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-vegetation-animals",
+    "from": "vegetation",
+    "relationship": "influences",
+    "to": "animals",
+    "fromLabel": "Vegetation",
+    "toLabel": "Animals"
+  }
+]

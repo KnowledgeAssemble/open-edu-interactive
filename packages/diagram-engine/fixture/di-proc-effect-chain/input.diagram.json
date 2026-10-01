@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-proc-effect-chain",
+  "metadata": { "title": "Weak monsoon chain" },
+  "purpose": { "learningObjective": "Trace an effect chain and grey unrelated branches", "reasoningMode": "explain" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "monsoon", "label": "Weak monsoon", "categories": ["climate"] },
+      { "id": "crop", "label": "Crop failure", "categories": ["agriculture"] },
+      { "id": "price", "label": "Price rise", "categories": ["economy"] },
+      { "id": "stock", "label": "Stock market", "categories": ["economy", "unrelated"] }
+    ],
+    "edges": [
+      { "from": "monsoon", "to": "crop", "relationship": "leads-to" },
+      { "from": "crop", "to": "price", "relationship": "leads-to" },
+      { "from": "monsoon", "to": "stock", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "filter", "clear-filter", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Effect chain from weak monsoon to crop failure to price rise" }
+}

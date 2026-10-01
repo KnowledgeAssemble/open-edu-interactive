@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Flow: harvest, threshing, grinding, baking</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-harvest" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Harvest" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Harvest</text>
+    <rect id="node-threshing" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Threshing" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Threshing</text>
+    <rect id="node-grinding" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Grinding" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Grinding</text>
+    <rect id="node-baking" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Baking" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Baking</text>
+    <path id="edge-harvest-threshing" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="harvest leads-to threshing" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-threshing-grinding" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="threshing leads-to grinding" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-grinding-baking" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grinding leads-to baking" data-oedu-relationship="leads-to" d="M100,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

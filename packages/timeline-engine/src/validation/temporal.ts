@@ -7,7 +7,7 @@ function isInvalidDate(dateString: string): boolean {
 }
 
 export function validateTemporal(content: {
-  events?: Array<{ date: string }>;
+  events?: Array<{ date: string; duration?: string }>;
   periods?: Array<{ from: string; to: string }>;
 }): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
@@ -26,6 +26,27 @@ export function validateTemporal(content: {
           code: 'INVALID_ENTITY',
           message: `timeline: event at index ${i} has out-of-range calendar date "${event.date}"`,
         });
+      }
+      if (event.duration !== undefined) {
+        if (!DATE_GRAMMAR.test(event.duration)) {
+          issues.push({
+            level: 'L2' as const,
+            code: 'INVALID_ENTITY',
+            message: `timeline: event at index ${i} has invalid duration "${event.duration}" (must match Timeline-D3 grammar)`,
+          });
+        } else if (!isValidCalendarDate(event.duration)) {
+          issues.push({
+            level: 'L2' as const,
+            code: 'INVALID_ENTITY',
+            message: `timeline: event at index ${i} has out-of-range calendar duration "${event.duration}"`,
+          });
+        } else if (!isInvalidDate(event.date) && parseDate(event.duration) <= parseDate(event.date)) {
+          issues.push({
+            level: 'L2' as const,
+            code: 'INVALID_ENTITY',
+            message: `timeline: event at index ${i} has duration "${event.duration}" not after date "${event.date}"`,
+          });
+        }
       }
     }
   }

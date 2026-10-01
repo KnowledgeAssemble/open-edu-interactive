@@ -1,0 +1,30 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-sys-drainage-basin",
+  "metadata": { "title": "Drainage basin" },
+  "purpose": { "learningObjective": "Identify storage vs transport nodes in a basin", "reasoningMode": "explore" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "system",
+    "nodes": [
+      { "id": "precipitation", "label": "Precipitation" },
+      { "id": "runoff", "label": "Runoff" },
+      { "id": "groundwater", "label": "Groundwater", "description": "Storage node" },
+      { "id": "river", "label": "River" },
+      { "id": "sea", "label": "Sea" }
+    ],
+    "edges": [
+      { "from": "precipitation", "to": "runoff", "relationship": "leads-to" },
+      { "from": "precipitation", "to": "groundwater", "relationship": "leads-to" },
+      { "from": "groundwater", "to": "river", "relationship": "leads-to" },
+      { "from": "runoff", "to": "river", "relationship": "leads-to" },
+      { "from": "river", "to": "sea", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Drainage basin: precipitation, runoff, groundwater, river, sea" }
+}
