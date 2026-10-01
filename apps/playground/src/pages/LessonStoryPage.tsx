@@ -6,8 +6,7 @@ import { loadSpec, getCatalog, type FixtureEntry } from "../lib/specLoader.js";
 import { DEFAULT_HOST_CONFIG, stubHostOptions, type HostConfig } from "../lib/hostPresets.js";
 import { a11yTreeFromSnapshot, formatEvents, waitForInstances } from "../lib/inspectorHelpers.js";
 import { COMPARE_CELL, COMPARE_GRID } from "../lib/layout.js";
-import { InspectorPanel } from "../components/InspectorPanel.js";
-import { A11yTreeView } from "../components/A11yTreeView.js";
+import { InspectorColumn } from "../components/InspectorColumn.js";
 import { HostPanel } from "../components/HostPanel.js";
 
 export function LessonStoryPage(): React.JSX.Element {
@@ -84,14 +83,12 @@ export function LessonStoryPage(): React.JSX.Element {
           </div>
         </div>
         <div style={COMPARE_CELL}>
-          <InspectorPanel title="Input Spec" content={specJson} copyLabel="Copy JSON" />
-          <InspectorPanel title={`Events (${events.length})`} content={events.join("\n")} copyLabel="Copy" />
-          <InspectorPanel title="Snapshot" content={snapshot} copyLabel="Copy JSON" />
-          {a11yTree && (
-            <InspectorPanel title="A11y Tree" copyLabel="Copy JSON" content={JSON.stringify(a11yTree, null, 2)}>
-              <A11yTreeView tree={a11yTree} />
-            </InspectorPanel>
-          )}
+          <InspectorColumn
+            specJson={specJson}
+            events={events}
+            snapshotJson={snapshot}
+            a11yTree={a11yTree}
+          />
         </div>
       </div>
     </div>

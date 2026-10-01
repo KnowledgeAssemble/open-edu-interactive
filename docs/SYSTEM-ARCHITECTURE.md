@@ -295,7 +295,7 @@ Playwright e2e asserts exact event sequences (monotonic seq, ordered names), a11
 
 ### 9.3 `apps/playground`
 
-`apps/playground` is a React Vite app for **manual** engine and composition testing (`pnpm playground`, port 5174). It uses the same `dev-harness` mount path and fixture catalog as conformance, but adds a developer UI: fixture index, per-fixture story routes, collapsible inspector panels (events, snapshot, validation, a11y tree, host settings), and a custom-spec route (paste JSON, validate-before-mount, localStorage draft, URL hash sharing). It implements a stub `EngineHost` and is not the learner app (DESIGN D6).
+`apps/playground` is a React Vite app for **manual** engine and composition testing (`pnpm playground`, port 5174). It uses the same `dev-harness` mount path and fixture catalog as conformance, but adds a developer UI: fixture index, per-fixture story routes that render the mounted interactive beside an input-spec JSON panel, collapsible inspector panels (input spec, events, snapshot, validation, a11y tree, host settings), and a custom-spec route (paste JSON, validate-before-mount, localStorage draft, URL hash sharing). Story routes use an `auto-fit` two-column grid that stacks when the panes get narrow, and the host layer constrains engine SVG output (fixed `width`/`height` attributes) to its column via CSS while `viewBox` preserves the aspect ratio. It implements a stub `EngineHost` and is not the learner app (DESIGN D6).
 
 ## 10. Where to go next
 

@@ -8,6 +8,7 @@
     "build": "pnpm --filter @knowledgeassemble/dev-harness build && vite build",
     "typecheck": "pnpm --filter @knowledgeassemble/dev-harness build && tsc --noEmit",
     "test": "vitest run",
+    "playwright": "playwright test",
     "preview": "vite preview --port 5174"
   },
   "dependencies": {
