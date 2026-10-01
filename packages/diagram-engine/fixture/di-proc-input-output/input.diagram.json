@@ -24,7 +24,7 @@
     ]
   },
   "layout": { "type": "hierarchical" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Photosynthesis flow: sunlight, water and carbon dioxide lead to glucose and oxygen" }

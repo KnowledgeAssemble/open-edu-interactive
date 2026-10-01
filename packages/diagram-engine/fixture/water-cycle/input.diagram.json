@@ -21,7 +21,7 @@
     ]
   },
   "layout": { "type": "radial" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "expand", "collapse", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Water cycle diagram: evaporation, condensation, precipitation, collection." }

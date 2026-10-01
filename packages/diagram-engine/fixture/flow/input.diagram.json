@@ -16,7 +16,7 @@
       { "from": "process", "to": "end", "relationship": "leads-to" }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Simple flow from Start through Process to End" }

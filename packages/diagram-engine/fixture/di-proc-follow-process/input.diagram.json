@@ -20,7 +20,7 @@
     ]
   },
   "layout": { "type": "hierarchical" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Flow from weathering through erosion and transport to deposition" }

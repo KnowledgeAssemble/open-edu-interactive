@@ -13,7 +13,7 @@
       { "id": "row-oct", "when": "2024-10-15", "temp": 11 }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "accessibility": { "label": "Line chart of temperatures over time" },
   "sources": [{ "class": "authoritative" }]
 }

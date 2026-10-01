@@ -20,7 +20,7 @@
             }
           ]
         },
-        "interaction": { "actions": ["select"] }
+        "interaction": { "actions": ["select", "deselect"] }
       }
     },
     {

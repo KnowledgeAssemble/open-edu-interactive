@@ -14,7 +14,7 @@
       { "id": "p2", "label": "Second half", "from": "1950", "to": "2000" }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Test periods timeline" }

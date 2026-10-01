@@ -16,7 +16,7 @@
       { "from": "root", "to": "child2", "relationship": "contains" }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "expand", "collapse", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Simple hierarchy: Root contains Child 1 and Child 2" }

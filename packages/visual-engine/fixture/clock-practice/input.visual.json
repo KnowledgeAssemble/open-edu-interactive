@@ -19,5 +19,5 @@
     "label": "Clock showing 3:30",
     "description": "Select the hour hand."
   },
-  "interaction": { "mode": "identify", "actions": ["select", "focus", "reset"] }
+  "interaction": { "mode": "identify", "actions": ["select", "deselect", "focus", "reset"] }
 }

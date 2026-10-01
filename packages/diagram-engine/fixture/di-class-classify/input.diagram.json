@@ -22,7 +22,7 @@
     ]
   },
   "layout": { "type": "hierarchical" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "expand", "collapse", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Animal classification: vertebrates and invertebrates under animals" }

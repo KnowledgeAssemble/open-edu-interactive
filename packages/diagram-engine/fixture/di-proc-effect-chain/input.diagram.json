@@ -20,7 +20,7 @@
     ]
   },
   "layout": { "type": "hierarchical" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "filter", "clear-filter", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "filter", "clear-filter", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Effect chain from weak monsoon to crop failure to price rise" }

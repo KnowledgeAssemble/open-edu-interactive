@@ -13,7 +13,7 @@
       { "id": "row-nov", "month": "Nov", "rainfall": 30 }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "clear-filter", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "filter", "clear-filter", "reset"] },
   "accessibility": { "label": "Bar chart of monthly rainfall" },
   "sources": [{ "class": "authoritative" }]
 }

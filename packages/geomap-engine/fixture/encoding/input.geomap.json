@@ -55,7 +55,7 @@
       { "role": "primary-region", "label": "Region" }
     ] }
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "clear-filter"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "filter", "clear-filter"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Encoding map" }

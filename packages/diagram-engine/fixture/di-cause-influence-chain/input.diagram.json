@@ -20,7 +20,7 @@
     ]
   },
   "layout": { "type": "hierarchical" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Influence chain from river to silt to fertility to crops" }

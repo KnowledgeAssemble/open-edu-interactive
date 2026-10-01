@@ -15,7 +15,7 @@
       { "from": "b", "to": "a", "relationship": "leads-to" }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Simple cycle between Stage A and Stage B" }

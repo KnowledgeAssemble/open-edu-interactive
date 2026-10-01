@@ -19,7 +19,7 @@
       { "id": "markers", "type": "marker", "items": [{ "entity": "a", "interactive": true }, { "entity": "b", "interactive": true }, { "entity": "c", "interactive": true }] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Route only map" }

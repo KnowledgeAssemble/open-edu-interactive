@@ -19,7 +19,7 @@
     ]
   },
   "layout": { "type": "radial" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Economic cycle: demand leads to prices leads to production returns to demand" }

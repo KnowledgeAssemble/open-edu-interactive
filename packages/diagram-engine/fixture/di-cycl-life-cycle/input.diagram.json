@@ -21,7 +21,7 @@
     ]
   },
   "layout": { "type": "radial" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Frog life cycle: egg, tadpole, froglet, frog" }

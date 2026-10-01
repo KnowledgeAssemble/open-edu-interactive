@@ -21,7 +21,7 @@
     ]
   },
   "layout": { "type": "radial" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Disaster management cycle: mitigation, preparedness, response, recovery" }
