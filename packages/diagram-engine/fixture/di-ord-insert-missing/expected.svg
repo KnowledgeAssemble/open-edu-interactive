@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Process with a blank slot and candidate stages</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-planting" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Planting" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Planting</text>
+    <rect id="node-growing" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Growing" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Growing</text>
+    <rect id="node-harvesting" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Harvesting" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Harvesting</text>
+    <rect id="node-blank" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Sowing candidate" title="Candidate for the blank slot" x="170" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="220" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Sowing candidate</text>
+    <rect id="node-threshing" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Threshing candidate" title="Distractor candidate" x="290" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="340" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Threshing candidate</text>
+    <path id="edge-planting-growing" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="planting leads-to growing" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-growing-harvesting" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="growing leads-to harvesting" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-blank-growing" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="blank leads-to growing" data-oedu-relationship="leads-to" d="M220,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-threshing-harvesting" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="threshing leads-to harvesting" data-oedu-relationship="leads-to" d="M340,80 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

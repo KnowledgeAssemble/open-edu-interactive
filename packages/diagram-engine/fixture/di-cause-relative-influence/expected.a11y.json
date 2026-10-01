@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-soil",
+    "role": "button",
+    "label": "Soil",
+    "children": []
+  },
+  {
+    "id": "node-rain",
+    "role": "button",
+    "label": "Rain",
+    "children": []
+  },
+  {
+    "id": "node-crop",
+    "role": "button",
+    "label": "Crop choice",
+    "children": []
+  },
+  {
+    "id": "soil-crop",
+    "role": "link",
+    "label": "Soil influences Crop choice",
+    "children": []
+  },
+  {
+    "id": "rain-crop",
+    "role": "link",
+    "label": "Rain influences Crop choice",
+    "children": []
+  }
+]

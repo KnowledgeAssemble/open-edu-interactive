@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Map of Odisha, its capital Bhubaneswar, and coastal connections.</title>
+  <desc>An interactive geographic map</desc>
+  <g id="map-root">
+    <g id="map-layers">
+  <g id="geom-states" data-oedu-role="layer" aria-label="states">
+    <path id="geom-states-odisha" data-oedu-role="region" data-oedu-interactive="true" aria-label="Odisha" title="A state on the eastern coast of India." d="M 148 552 L 316 552 L 316 384 L 148 384 L 148 552 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="geom-states-west-bengal" data-oedu-role="region" aria-label="West Bengal" title="A state in eastern India." d="M 484 216 L 652 216 L 652 48 L 484 48 L 484 216 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g id="geom-cities" data-oedu-role="layer" aria-label="cities">
+    <circle id="geom-cities-bhubaneswar" data-oedu-role="marker" data-oedu-interactive="true" aria-label="Bhubaneswar" title="Capital of Odisha." cx="469.26" cy="359.13" r="22" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+  <g id="geom-water" data-oedu-role="layer" aria-label="water">
+    <circle id="geom-water-chilika" data-oedu-role="marker" aria-label="Chilika Lake" title="A brackish water lagoon." cx="425.2" cy="409.2" r="22" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+  <g id="geom-legend" data-oedu-role="legend" aria-label="Legend">
+    <text id="geom-legend-item-0" data-oedu-role="legend-item" aria-label="State" x="22" y="22" text-anchor="start" dominant-baseline="central" font-size="12">State</text>
+    <text id="geom-legend-item-1" data-oedu-role="legend-item" aria-label="City / Lake" x="22" y="40" text-anchor="start" dominant-baseline="central" font-size="12">City / Lake</text>
+  </g>
+  <g id="geom-scale-bar" data-oedu-role="scale-bar" aria-label="200 KM">
+    <line x1="26" y1="530" x2="190" y2="530" stroke="currentColor" stroke-width="2"/>
+    <line x1="26" y1="526" x2="26" y2="534" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="190" y1="526" x2="190" y2="534" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+    </g>
+  </g>
+</svg>

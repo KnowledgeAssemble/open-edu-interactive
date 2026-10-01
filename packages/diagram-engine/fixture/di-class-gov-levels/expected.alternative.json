@@ -1,0 +1,83 @@
+[
+  {
+    "kind": "node",
+    "id": "node-centre",
+    "nodeId": "centre",
+    "label": "Central Government"
+  },
+  {
+    "kind": "node",
+    "id": "node-state",
+    "nodeId": "state",
+    "label": "State Government"
+  },
+  {
+    "kind": "node",
+    "id": "node-local",
+    "nodeId": "local",
+    "label": "Local Government"
+  },
+  {
+    "kind": "node",
+    "id": "node-municipality",
+    "nodeId": "municipality",
+    "label": "Municipality"
+  },
+  {
+    "kind": "node",
+    "id": "node-parliament",
+    "nodeId": "parliament",
+    "label": "Parliament"
+  },
+  {
+    "kind": "node",
+    "id": "node-assembly",
+    "nodeId": "assembly",
+    "label": "State Assembly"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-centre-parliament",
+    "from": "centre",
+    "relationship": "contains",
+    "to": "parliament",
+    "fromLabel": "Central Government",
+    "toLabel": "Parliament"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-centre-state",
+    "from": "centre",
+    "relationship": "part-of",
+    "to": "state",
+    "fromLabel": "Central Government",
+    "toLabel": "State Government"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-state-assembly",
+    "from": "state",
+    "relationship": "contains",
+    "to": "assembly",
+    "fromLabel": "State Government",
+    "toLabel": "State Assembly"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-state-local",
+    "from": "state",
+    "relationship": "part-of",
+    "to": "local",
+    "fromLabel": "State Government",
+    "toLabel": "Local Government"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-local-municipality",
+    "from": "local",
+    "relationship": "contains",
+    "to": "municipality",
+    "fromLabel": "Local Government",
+    "toLabel": "Municipality"
+  }
+]

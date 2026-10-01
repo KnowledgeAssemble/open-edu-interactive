@@ -1,0 +1,50 @@
+[
+  {
+    "id": "node-egg",
+    "role": "button",
+    "label": "Egg",
+    "children": []
+  },
+  {
+    "id": "node-caterpillar",
+    "role": "button",
+    "label": "Caterpillar",
+    "children": []
+  },
+  {
+    "id": "node-chrysalis",
+    "role": "button",
+    "label": "Chrysalis",
+    "children": []
+  },
+  {
+    "id": "node-butterfly",
+    "role": "button",
+    "label": "Butterfly",
+    "children": []
+  },
+  {
+    "id": "edge-egg-caterpillar",
+    "role": "link",
+    "label": "Egg leads-to Caterpillar",
+    "children": []
+  },
+  {
+    "id": "edge-caterpillar-chrysalis",
+    "role": "link",
+    "label": "Caterpillar leads-to Chrysalis",
+    "children": []
+  },
+  {
+    "id": "edge-chrysalis-butterfly",
+    "role": "link",
+    "label": "Chrysalis leads-to Butterfly",
+    "children": []
+  },
+  {
+    "id": "edge-butterfly-egg",
+    "role": "link",
+    "label": "Butterfly leads-to Egg",
+    "children": []
+  }
+]

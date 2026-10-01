@@ -1,0 +1,859 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-economy",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Economy",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "economy",
+            "label": "Economy"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-primary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Primary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "primary",
+            "label": "Primary"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-secondary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Secondary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "secondary",
+            "label": "Secondary"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-tertiary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Tertiary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "tertiary",
+            "label": "Tertiary"
+          },
+          "children": [],
+          "bounds": {
+            "x": 290,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-farming",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Farming",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "farming",
+            "label": "Farming"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-school",
+          "role": "selectable",
+          "kind": "node",
+          "label": "School",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "school",
+            "label": "School"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-economy-primary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "economy contains primary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "economy",
+            "toNodeId": "primary",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-economy-primary",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-economy-secondary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "economy contains secondary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "economy",
+            "toNodeId": "secondary",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-economy-secondary",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 220,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L220,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-economy-tertiary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "economy contains tertiary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "economy",
+            "toNodeId": "tertiary",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-economy-tertiary",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 340,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L340,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-primary-farming",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "primary contains farming",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "primary",
+            "toNodeId": "farming",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-primary-farming",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-tertiary-school",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "tertiary contains school",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "tertiary",
+            "toNodeId": "school",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-tertiary-school",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 340,
+                  "y": 160
+                },
+                {
+                  "x": 220,
+                  "y": 240
+                }
+              ],
+              "path": "M340,160 L220,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-economy": {
+      "id": "node-economy",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Economy",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "economy",
+        "label": "Economy"
+      },
+      "children": []
+    },
+    "economy": {
+      "id": "node-economy",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Economy",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "economy",
+        "label": "Economy"
+      },
+      "children": []
+    },
+    "node-primary": {
+      "id": "node-primary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Primary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "primary",
+        "label": "Primary"
+      },
+      "children": []
+    },
+    "primary": {
+      "id": "node-primary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Primary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "primary",
+        "label": "Primary"
+      },
+      "children": []
+    },
+    "node-secondary": {
+      "id": "node-secondary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Secondary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "secondary",
+        "label": "Secondary"
+      },
+      "children": []
+    },
+    "secondary": {
+      "id": "node-secondary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Secondary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "secondary",
+        "label": "Secondary"
+      },
+      "children": []
+    },
+    "node-tertiary": {
+      "id": "node-tertiary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Tertiary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "tertiary",
+        "label": "Tertiary"
+      },
+      "children": []
+    },
+    "tertiary": {
+      "id": "node-tertiary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Tertiary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "tertiary",
+        "label": "Tertiary"
+      },
+      "children": []
+    },
+    "node-farming": {
+      "id": "node-farming",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Farming",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "farming",
+        "label": "Farming"
+      },
+      "children": []
+    },
+    "farming": {
+      "id": "node-farming",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Farming",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "farming",
+        "label": "Farming"
+      },
+      "children": []
+    },
+    "node-school": {
+      "id": "node-school",
+      "role": "selectable",
+      "kind": "node",
+      "label": "School",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "school",
+        "label": "School"
+      },
+      "children": []
+    },
+    "school": {
+      "id": "node-school",
+      "role": "selectable",
+      "kind": "node",
+      "label": "School",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "school",
+        "label": "School"
+      },
+      "children": []
+    },
+    "edge-economy-primary": {
+      "id": "edge-economy-primary",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "economy contains primary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "economy",
+        "toNodeId": "primary",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-economy-primary",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-economy-secondary": {
+      "id": "edge-economy-secondary",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "economy contains secondary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "economy",
+        "toNodeId": "secondary",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-economy-secondary",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-economy-tertiary": {
+      "id": "edge-economy-tertiary",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "economy contains tertiary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "economy",
+        "toNodeId": "tertiary",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-economy-tertiary",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-primary-farming": {
+      "id": "edge-primary-farming",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "primary contains farming",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "primary",
+        "toNodeId": "farming",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-primary-farming",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-tertiary-school": {
+      "id": "edge-tertiary-school",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "tertiary contains school",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "tertiary",
+        "toNodeId": "school",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-tertiary-school",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-economy",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Economy",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "economy",
+            "label": "Economy"
+          },
+          "children": []
+        },
+        {
+          "id": "node-primary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Primary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "primary",
+            "label": "Primary"
+          },
+          "children": []
+        },
+        {
+          "id": "node-secondary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Secondary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "secondary",
+            "label": "Secondary"
+          },
+          "children": []
+        },
+        {
+          "id": "node-tertiary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Tertiary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "tertiary",
+            "label": "Tertiary"
+          },
+          "children": []
+        },
+        {
+          "id": "node-farming",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Farming",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "farming",
+            "label": "Farming"
+          },
+          "children": []
+        },
+        {
+          "id": "node-school",
+          "role": "selectable",
+          "kind": "node",
+          "label": "School",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "school",
+            "label": "School"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-economy-primary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "economy contains primary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "economy",
+            "toNodeId": "primary",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-economy-primary",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-economy-secondary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "economy contains secondary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "economy",
+            "toNodeId": "secondary",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-economy-secondary",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-economy-tertiary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "economy contains tertiary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "economy",
+            "toNodeId": "tertiary",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-economy-tertiary",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-primary-farming",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "primary contains farming",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "primary",
+            "toNodeId": "farming",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-primary-farming",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-tertiary-school",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "tertiary contains school",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "tertiary",
+            "toNodeId": "school",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-tertiary-school",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

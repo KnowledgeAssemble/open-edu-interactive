@@ -30,3 +30,6 @@ export const COMPOSITION = {
   ENGINE_TYPES,
   EVENT_NAME_PATTERN: NAMESPACED_EVENT_PATTERN.source,
 } as const;
+
+export { runEngineConformance, assertEngineConformance } from './conformance/helpers.js';
+export type { EngineConformanceResult } from './conformance/helpers.js';

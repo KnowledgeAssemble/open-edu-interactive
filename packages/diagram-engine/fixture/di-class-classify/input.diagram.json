@@ -1,0 +1,29 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-class-classify",
+  "metadata": { "title": "Animal classification tree" },
+  "purpose": { "learningObjective": "Unfold a taxonomy level by level", "reasoningMode": "explore" },
+  "content": {
+    "kind": "hierarchy",
+    "profile": "concept",
+    "nodes": [
+      { "id": "animals", "label": "Animals" },
+      { "id": "vertebrates", "label": "Vertebrates" },
+      { "id": "invertebrates", "label": "Invertebrates" },
+      { "id": "mammals", "label": "Mammals" },
+      { "id": "birds", "label": "Birds" }
+    ],
+    "edges": [
+      { "from": "animals", "to": "vertebrates", "relationship": "contains" },
+      { "from": "animals", "to": "invertebrates", "relationship": "contains" },
+      { "from": "vertebrates", "to": "mammals", "relationship": "contains" },
+      { "from": "vertebrates", "to": "birds", "relationship": "contains" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Animal classification: vertebrates and invertebrates under animals" }
+}

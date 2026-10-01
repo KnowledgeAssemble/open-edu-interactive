@@ -1,0 +1,446 @@
+{
+  "nodes": [
+    {
+      "id": "gridline-0",
+      "role": "gridline",
+      "kind": "line",
+      "value": 1875,
+      "children": []
+    },
+    {
+      "id": "gridline-1",
+      "role": "gridline",
+      "kind": "line",
+      "value": 1900,
+      "children": []
+    },
+    {
+      "id": "gridline-2",
+      "role": "gridline",
+      "kind": "line",
+      "value": 1925,
+      "children": []
+    },
+    {
+      "id": "tick-0",
+      "role": "tick",
+      "kind": "tick",
+      "value": 1875,
+      "bounds": {
+        "x": 234.9958626144626,
+        "y": 80,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-1",
+      "role": "tick",
+      "kind": "tick",
+      "value": 1900,
+      "bounds": {
+        "x": 423.88819932463264,
+        "y": 80,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-2",
+      "role": "tick",
+      "kind": "tick",
+      "value": 1925,
+      "bounds": {
+        "x": 612.7805360348027,
+        "y": 80,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "label-tick-0",
+      "role": "label",
+      "kind": "text",
+      "value": 1875,
+      "label": "1875",
+      "bounds": {
+        "x": 205.9958626144626,
+        "y": 88,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-tick-1",
+      "role": "label",
+      "kind": "text",
+      "value": 1900,
+      "label": "1900",
+      "bounds": {
+        "x": 394.88819932463264,
+        "y": 88,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-tick-2",
+      "role": "label",
+      "kind": "text",
+      "value": 1925,
+      "label": "1925",
+      "bounds": {
+        "x": 583.7805360348027,
+        "y": 88,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-track-track-default",
+      "role": "label",
+      "kind": "text",
+      "label": "",
+      "bounds": {
+        "x": 4,
+        "y": 40,
+        "width": 92,
+        "height": 20
+      },
+      "children": []
+    },
+    {
+      "id": "track-track-default",
+      "role": "track-lane",
+      "kind": "track-lane",
+      "label": "",
+      "metadata": {
+        "eventIds": [
+          "war",
+          "depression",
+          "independence"
+        ],
+        "label": ""
+      },
+      "children": [],
+      "bounds": {
+        "x": 100,
+        "y": 20,
+        "width": 680,
+        "height": 60
+      }
+    },
+    {
+      "id": "war-span",
+      "role": "period-band",
+      "kind": "event-span",
+      "label": "First World War (1914 – 1918)",
+      "interactive": false,
+      "metadata": {
+        "fromDay": 2420134,
+        "toDay": 2421595,
+        "from": "1914",
+        "to": "1918",
+        "label": "First World War",
+        "eventId": "war"
+      },
+      "children": [],
+      "bounds": {
+        "x": 530.6604605883606,
+        "y": 38,
+        "width": 30.223601350734725,
+        "height": 24
+      }
+    },
+    {
+      "id": "depression-span",
+      "role": "period-band",
+      "kind": "event-span",
+      "label": "Great Depression (1929 – 1939)",
+      "interactive": false,
+      "metadata": {
+        "fromDay": 2425613,
+        "toDay": 2429265,
+        "from": "1929",
+        "to": "1939",
+        "label": "Great Depression",
+        "eventId": "depression"
+      },
+      "children": [],
+      "bounds": {
+        "x": 644.0041373855374,
+        "y": 38,
+        "width": 75.54865991299323,
+        "height": 24
+      }
+    },
+    {
+      "id": "independence-span",
+      "role": "period-band",
+      "kind": "event-span",
+      "label": "Independence movement (1857 – 1947)",
+      "interactive": false,
+      "metadata": {
+        "fromDay": 2399316,
+        "toDay": 2432187,
+        "from": "1857",
+        "to": "1947",
+        "label": "Independence movement",
+        "eventId": "independence"
+      },
+      "children": [],
+      "bounds": {
+        "x": 100,
+        "y": 38,
+        "width": 680,
+        "height": 24
+      }
+    },
+    {
+      "id": "war",
+      "role": "selectable",
+      "kind": "event-marker",
+      "label": "First World War (1914)",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "date": 2420134,
+        "dateString": "1914",
+        "label": "First World War",
+        "trackId": "track-default"
+      },
+      "children": [],
+      "bounds": {
+        "x": 508.6604605883606,
+        "y": 28,
+        "width": 44,
+        "height": 44
+      }
+    },
+    {
+      "id": "depression",
+      "role": "selectable",
+      "kind": "event-marker",
+      "label": "Great Depression (1929)",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "date": 2425613,
+        "dateString": "1929",
+        "label": "Great Depression",
+        "trackId": "track-default"
+      },
+      "children": [],
+      "bounds": {
+        "x": 622.0041373855374,
+        "y": 28,
+        "width": 44,
+        "height": 44
+      }
+    },
+    {
+      "id": "independence",
+      "role": "selectable",
+      "kind": "event-marker",
+      "label": "Independence movement (1857)",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "date": 2399316,
+        "dateString": "1857",
+        "label": "Independence movement",
+        "trackId": "track-default"
+      },
+      "children": [],
+      "bounds": {
+        "x": 78,
+        "y": 28,
+        "width": 44,
+        "height": 44
+      }
+    }
+  ],
+  "semantics": {
+    "war": {
+      "id": "war",
+      "role": "selectable",
+      "kind": "event-marker",
+      "label": "First World War (1914)",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "date": 2420134,
+        "dateString": "1914",
+        "label": "First World War",
+        "trackId": "track-default"
+      },
+      "children": [],
+      "bounds": {
+        "x": 508.6604605883606,
+        "y": 28,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "war-span": {
+      "id": "war-span",
+      "role": "period-band",
+      "kind": "event-span",
+      "label": "First World War (1914 – 1918)",
+      "interactive": false,
+      "metadata": {
+        "fromDay": 2420134,
+        "toDay": 2421595,
+        "from": "1914",
+        "to": "1918",
+        "label": "First World War",
+        "eventId": "war"
+      },
+      "children": [],
+      "bounds": {
+        "x": 530.6604605883606,
+        "y": 38,
+        "width": 30.223601350734725,
+        "height": 24
+      }
+    },
+    "depression": {
+      "id": "depression",
+      "role": "selectable",
+      "kind": "event-marker",
+      "label": "Great Depression (1929)",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "date": 2425613,
+        "dateString": "1929",
+        "label": "Great Depression",
+        "trackId": "track-default"
+      },
+      "children": [],
+      "bounds": {
+        "x": 622.0041373855374,
+        "y": 28,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "depression-span": {
+      "id": "depression-span",
+      "role": "period-band",
+      "kind": "event-span",
+      "label": "Great Depression (1929 – 1939)",
+      "interactive": false,
+      "metadata": {
+        "fromDay": 2425613,
+        "toDay": 2429265,
+        "from": "1929",
+        "to": "1939",
+        "label": "Great Depression",
+        "eventId": "depression"
+      },
+      "children": [],
+      "bounds": {
+        "x": 644.0041373855374,
+        "y": 38,
+        "width": 75.54865991299323,
+        "height": 24
+      }
+    },
+    "independence": {
+      "id": "independence",
+      "role": "selectable",
+      "kind": "event-marker",
+      "label": "Independence movement (1857)",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "date": 2399316,
+        "dateString": "1857",
+        "label": "Independence movement",
+        "trackId": "track-default"
+      },
+      "children": [],
+      "bounds": {
+        "x": 78,
+        "y": 28,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "independence-span": {
+      "id": "independence-span",
+      "role": "period-band",
+      "kind": "event-span",
+      "label": "Independence movement (1857 – 1947)",
+      "interactive": false,
+      "metadata": {
+        "fromDay": 2399316,
+        "toDay": 2432187,
+        "from": "1857",
+        "to": "1947",
+        "label": "Independence movement",
+        "eventId": "independence"
+      },
+      "children": [],
+      "bounds": {
+        "x": 100,
+        "y": 38,
+        "width": 680,
+        "height": 24
+      }
+    },
+    "track-track-default": {
+      "id": "track-track-default",
+      "role": "track-lane",
+      "kind": "track-lane",
+      "label": "",
+      "metadata": {
+        "eventIds": [
+          "war",
+          "depression",
+          "independence"
+        ],
+        "label": ""
+      },
+      "children": [],
+      "bounds": {
+        "x": 100,
+        "y": 20,
+        "width": 680,
+        "height": 60
+      }
+    },
+    "axis-time": {
+      "id": "axis-time",
+      "role": "axis",
+      "kind": "axis",
+      "label": "Time",
+      "children": []
+    }
+  }
+}

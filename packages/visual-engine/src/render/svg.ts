@@ -84,8 +84,13 @@ ${pad}</g>`;
     }
     case 'circle':
       return `${pad}<circle ${attrs} cx="${cx}" cy="${cy}" r="${Math.max(4, Math.min(b.width, b.height) / 2)}" fill="${node.interactive ? 'currentColor' : 'transparent'}" stroke="currentColor" stroke-width="2"/>`;
-    case 'rect':
+    case 'rect': {
+      const isFilled = (node.metadata as Record<string, unknown> | undefined)?.filled === true;
+      if (isFilled) {
+        return `${pad}<rect ${attrs} data-oedu-filled="true" x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="currentColor" opacity="0.6"/>`;
+      }
       return `${pad}<rect ${attrs} x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="currentColor" opacity="0.2"/>`;
+    }
     case 'square':
       return `${pad}<rect ${attrs} x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5"/>`;
     case 'star': {

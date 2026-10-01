@@ -25,3 +25,4 @@ Reasoning: the engines genuinely need different lifecycle hook points, no active
 - ~1000 lines of near-identical Lifecycle boilerplate remain; a future `createEngineInstance(config)` consolidation is a candidate once engines stabilize and a concrete shared hook-point set is proven by two engines needing identical semantics.
 
 **Revisit trigger:** a second engine requiring the same lifecycle hook the first added — that is the evidence that the hook belongs in a shared factory.
+**2026-09-30 confirmation (W-5b/T33):** publish verification (`pnpm publish:dry` + `pnpm publish:smoke`) passes for all eight published packages; no five-way lifecycle bugfix pain surfaced across W-1…W-5, so this ADR is **confirmed**, not re-recorded. The revisit trigger (a second engine requiring the same lifecycle hook) has not fired.

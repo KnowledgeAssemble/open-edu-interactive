@@ -1,0 +1,415 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-structural",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Structural cause",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "structural",
+            "label": "Structural cause",
+            "links": {
+              "timelineEventId": "event-1800"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-immediate",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Immediate cause",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "immediate",
+            "label": "Immediate cause"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-trigger",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "trigger",
+            "label": "Trigger",
+            "links": {
+              "timelineEventId": "event-1942"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-structural-immediate",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "structural influences immediate",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "structural",
+            "toNodeId": "immediate",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-structural-immediate",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-immediate-trigger",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "immediate leads-to trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "immediate",
+            "toNodeId": "trigger",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-immediate-trigger",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-structural": {
+      "id": "node-structural",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Structural cause",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "structural",
+        "label": "Structural cause",
+        "links": {
+          "timelineEventId": "event-1800"
+        }
+      },
+      "children": []
+    },
+    "structural": {
+      "id": "node-structural",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Structural cause",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "structural",
+        "label": "Structural cause",
+        "links": {
+          "timelineEventId": "event-1800"
+        }
+      },
+      "children": []
+    },
+    "node-immediate": {
+      "id": "node-immediate",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Immediate cause",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "immediate",
+        "label": "Immediate cause"
+      },
+      "children": []
+    },
+    "immediate": {
+      "id": "node-immediate",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Immediate cause",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "immediate",
+        "label": "Immediate cause"
+      },
+      "children": []
+    },
+    "node-trigger": {
+      "id": "node-trigger",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Trigger",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "trigger",
+        "label": "Trigger",
+        "links": {
+          "timelineEventId": "event-1942"
+        }
+      },
+      "children": []
+    },
+    "trigger": {
+      "id": "node-trigger",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Trigger",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "trigger",
+        "label": "Trigger",
+        "links": {
+          "timelineEventId": "event-1942"
+        }
+      },
+      "children": []
+    },
+    "edge-structural-immediate": {
+      "id": "edge-structural-immediate",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "structural influences immediate",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "structural",
+        "toNodeId": "immediate",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-structural-immediate",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-immediate-trigger": {
+      "id": "edge-immediate-trigger",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "immediate leads-to trigger",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "immediate",
+        "toNodeId": "trigger",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-immediate-trigger",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-structural",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Structural cause",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "structural",
+            "label": "Structural cause",
+            "links": {
+              "timelineEventId": "event-1800"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-immediate",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Immediate cause",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "immediate",
+            "label": "Immediate cause"
+          },
+          "children": []
+        },
+        {
+          "id": "node-trigger",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "trigger",
+            "label": "Trigger",
+            "links": {
+              "timelineEventId": "event-1942"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-structural-immediate",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "structural influences immediate",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "structural",
+            "toNodeId": "immediate",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-structural-immediate",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-immediate-trigger",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "immediate leads-to trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "immediate",
+            "toNodeId": "trigger",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-immediate-trigger",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

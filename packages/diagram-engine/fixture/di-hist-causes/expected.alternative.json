@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-structural",
+    "nodeId": "structural",
+    "label": "Structural cause"
+  },
+  {
+    "kind": "node",
+    "id": "node-immediate",
+    "nodeId": "immediate",
+    "label": "Immediate cause"
+  },
+  {
+    "kind": "node",
+    "id": "node-trigger",
+    "nodeId": "trigger",
+    "label": "Trigger"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-structural-immediate",
+    "from": "structural",
+    "relationship": "influences",
+    "to": "immediate",
+    "fromLabel": "Structural cause",
+    "toLabel": "Immediate cause"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-immediate-trigger",
+    "from": "immediate",
+    "relationship": "leads-to",
+    "to": "trigger",
+    "fromLabel": "Immediate cause",
+    "toLabel": "Trigger"
+  }
+]

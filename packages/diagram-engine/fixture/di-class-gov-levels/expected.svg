@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Levels of government: central, state, local</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <rect id="node-centre" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Central Government" x="50" y="55" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Central Government</text>
+    <rect id="node-state" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="State Government" x="50" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">State Government</text>
+    <rect id="node-local" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Local Government" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Local Government</text>
+    <rect id="node-municipality" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Municipality" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Municipality</text>
+    <rect id="node-parliament" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Parliament" x="170" y="135" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="220" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Parliament</text>
+    <rect id="node-assembly" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="State Assembly" x="170" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
+    <text x="220" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">State Assembly</text>
+    <path id="edge-centre-parliament" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="centre contains parliament" data-oedu-relationship="contains" d="M100,80 L220,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-centre-state" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="centre part-of state" data-oedu-relationship="part-of" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-state-assembly" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="state contains assembly" data-oedu-relationship="contains" d="M100,160 L220,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-state-local" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="state part-of local" data-oedu-relationship="part-of" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-local-municipality" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="local contains municipality" data-oedu-relationship="contains" d="M100,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

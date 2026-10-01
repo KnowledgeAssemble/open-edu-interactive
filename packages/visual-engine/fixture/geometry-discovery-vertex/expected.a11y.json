@@ -1,0 +1,159 @@
+{
+  "a11y": [
+    {
+      "id": "geo",
+      "role": "group",
+      "label": "geo",
+      "children": [
+        {
+          "id": "geo-shape",
+          "role": "group",
+          "label": "geo-shape",
+          "children": [
+            {
+              "id": "geo-shape-side-0",
+              "role": "img",
+              "label": "geo-shape-side-0",
+              "children": []
+            },
+            {
+              "id": "geo-shape-side-1",
+              "role": "img",
+              "label": "geo-shape-side-1",
+              "children": []
+            },
+            {
+              "id": "geo-shape-side-2",
+              "role": "img",
+              "label": "geo-shape-side-2",
+              "children": []
+            },
+            {
+              "id": "geo-shape-vertex-0",
+              "role": "button",
+              "label": "geo-shape-vertex-0",
+              "children": []
+            },
+            {
+              "id": "geo-shape-vertex-1",
+              "role": "button",
+              "label": "geo-shape-vertex-1",
+              "children": []
+            },
+            {
+              "id": "geo-shape-vertex-2",
+              "role": "button",
+              "label": "geo-shape-vertex-2",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geo-shape",
+      "role": "group",
+      "label": "geo-shape",
+      "children": [
+        {
+          "id": "geo-shape-side-0",
+          "role": "img",
+          "label": "geo-shape-side-0",
+          "children": []
+        },
+        {
+          "id": "geo-shape-side-1",
+          "role": "img",
+          "label": "geo-shape-side-1",
+          "children": []
+        },
+        {
+          "id": "geo-shape-side-2",
+          "role": "img",
+          "label": "geo-shape-side-2",
+          "children": []
+        },
+        {
+          "id": "geo-shape-vertex-0",
+          "role": "button",
+          "label": "geo-shape-vertex-0",
+          "children": []
+        },
+        {
+          "id": "geo-shape-vertex-1",
+          "role": "button",
+          "label": "geo-shape-vertex-1",
+          "children": []
+        },
+        {
+          "id": "geo-shape-vertex-2",
+          "role": "button",
+          "label": "geo-shape-vertex-2",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "geo-shape-side-0",
+      "role": "img",
+      "label": "geo-shape-side-0",
+      "children": []
+    },
+    {
+      "id": "geo-shape-side-1",
+      "role": "img",
+      "label": "geo-shape-side-1",
+      "children": []
+    },
+    {
+      "id": "geo-shape-side-2",
+      "role": "img",
+      "label": "geo-shape-side-2",
+      "children": []
+    },
+    {
+      "id": "geo-shape-vertex-0",
+      "role": "button",
+      "label": "geo-shape-vertex-0",
+      "children": []
+    },
+    {
+      "id": "geo-shape-vertex-1",
+      "role": "button",
+      "label": "geo-shape-vertex-1",
+      "children": []
+    },
+    {
+      "id": "geo-shape-vertex-2",
+      "role": "button",
+      "label": "geo-shape-vertex-2",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "geo-shape-vertex-0",
+      "action": "select"
+    },
+    {
+      "id": "geo-shape-vertex-0",
+      "action": "focus"
+    },
+    {
+      "id": "geo-shape-vertex-1",
+      "action": "select"
+    },
+    {
+      "id": "geo-shape-vertex-1",
+      "action": "focus"
+    },
+    {
+      "id": "geo-shape-vertex-2",
+      "action": "select"
+    },
+    {
+      "id": "geo-shape-vertex-2",
+      "action": "focus"
+    }
+  ]
+}

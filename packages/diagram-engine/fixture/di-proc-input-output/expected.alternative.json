@@ -1,0 +1,83 @@
+[
+  {
+    "kind": "node",
+    "id": "node-sunlight",
+    "nodeId": "sunlight",
+    "label": "Sunlight"
+  },
+  {
+    "kind": "node",
+    "id": "node-water",
+    "nodeId": "water",
+    "label": "Water"
+  },
+  {
+    "kind": "node",
+    "id": "node-co2",
+    "nodeId": "co2",
+    "label": "Carbon dioxide"
+  },
+  {
+    "kind": "node",
+    "id": "node-photosynthesis",
+    "nodeId": "photosynthesis",
+    "label": "Photosynthesis"
+  },
+  {
+    "kind": "node",
+    "id": "node-glucose",
+    "nodeId": "glucose",
+    "label": "Glucose"
+  },
+  {
+    "kind": "node",
+    "id": "node-oxygen",
+    "nodeId": "oxygen",
+    "label": "Oxygen"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-sunlight-photosynthesis",
+    "from": "sunlight",
+    "relationship": "leads-to",
+    "to": "photosynthesis",
+    "fromLabel": "Sunlight",
+    "toLabel": "Photosynthesis"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-water-photosynthesis",
+    "from": "water",
+    "relationship": "leads-to",
+    "to": "photosynthesis",
+    "fromLabel": "Water",
+    "toLabel": "Photosynthesis"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-co2-photosynthesis",
+    "from": "co2",
+    "relationship": "leads-to",
+    "to": "photosynthesis",
+    "fromLabel": "Carbon dioxide",
+    "toLabel": "Photosynthesis"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-photosynthesis-glucose",
+    "from": "photosynthesis",
+    "relationship": "leads-to",
+    "to": "glucose",
+    "fromLabel": "Photosynthesis",
+    "toLabel": "Glucose"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-photosynthesis-oxygen",
+    "from": "photosynthesis",
+    "relationship": "leads-to",
+    "to": "oxygen",
+    "fromLabel": "Photosynthesis",
+    "toLabel": "Oxygen"
+  }
+]

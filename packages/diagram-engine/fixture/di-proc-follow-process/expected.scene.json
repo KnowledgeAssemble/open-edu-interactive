@@ -1,0 +1,539 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-weathering",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Weathering",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "weathering",
+            "label": "Weathering"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-erosion",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "erosion",
+            "label": "Erosion"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-transport",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Transport",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "transport",
+            "label": "Transport"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-deposition",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Deposition",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "deposition",
+            "label": "Deposition"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-weathering-erosion",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "weathering leads-to erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "weathering",
+            "toNodeId": "erosion",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-weathering-erosion",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-erosion-transport",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "erosion leads-to transport",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "erosion",
+            "toNodeId": "transport",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-erosion-transport",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-transport-deposition",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "transport leads-to deposition",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "transport",
+            "toNodeId": "deposition",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-transport-deposition",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M100,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-weathering": {
+      "id": "node-weathering",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Weathering",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "weathering",
+        "label": "Weathering"
+      },
+      "children": []
+    },
+    "weathering": {
+      "id": "node-weathering",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Weathering",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "weathering",
+        "label": "Weathering"
+      },
+      "children": []
+    },
+    "node-erosion": {
+      "id": "node-erosion",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "erosion",
+        "label": "Erosion"
+      },
+      "children": []
+    },
+    "erosion": {
+      "id": "node-erosion",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "erosion",
+        "label": "Erosion"
+      },
+      "children": []
+    },
+    "node-transport": {
+      "id": "node-transport",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Transport",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "transport",
+        "label": "Transport"
+      },
+      "children": []
+    },
+    "transport": {
+      "id": "node-transport",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Transport",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "transport",
+        "label": "Transport"
+      },
+      "children": []
+    },
+    "node-deposition": {
+      "id": "node-deposition",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Deposition",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "deposition",
+        "label": "Deposition"
+      },
+      "children": []
+    },
+    "deposition": {
+      "id": "node-deposition",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Deposition",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "deposition",
+        "label": "Deposition"
+      },
+      "children": []
+    },
+    "edge-weathering-erosion": {
+      "id": "edge-weathering-erosion",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "weathering leads-to erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "weathering",
+        "toNodeId": "erosion",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-weathering-erosion",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-erosion-transport": {
+      "id": "edge-erosion-transport",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "erosion leads-to transport",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "erosion",
+        "toNodeId": "transport",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-erosion-transport",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-transport-deposition": {
+      "id": "edge-transport-deposition",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "transport leads-to deposition",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "transport",
+        "toNodeId": "deposition",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-transport-deposition",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-weathering",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Weathering",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "weathering",
+            "label": "Weathering"
+          },
+          "children": []
+        },
+        {
+          "id": "node-erosion",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "erosion",
+            "label": "Erosion"
+          },
+          "children": []
+        },
+        {
+          "id": "node-transport",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Transport",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "transport",
+            "label": "Transport"
+          },
+          "children": []
+        },
+        {
+          "id": "node-deposition",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Deposition",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "deposition",
+            "label": "Deposition"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-weathering-erosion",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "weathering leads-to erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "weathering",
+            "toNodeId": "erosion",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-weathering-erosion",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-erosion-transport",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "erosion leads-to transport",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "erosion",
+            "toNodeId": "transport",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-erosion-transport",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-transport-deposition",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "transport leads-to deposition",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "transport",
+            "toNodeId": "deposition",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-transport-deposition",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

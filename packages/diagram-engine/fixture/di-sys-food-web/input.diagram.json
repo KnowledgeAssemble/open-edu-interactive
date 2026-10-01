@@ -1,0 +1,30 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-sys-food-web",
+  "metadata": { "title": "Food web" },
+  "purpose": { "learningObjective": "Follow energy through a food web", "reasoningMode": "explore" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "system",
+    "nodes": [
+      { "id": "sun", "label": "Sun" },
+      { "id": "grass", "label": "Grass" },
+      { "id": "rabbit", "label": "Rabbit" },
+      { "id": "fox", "label": "Fox" },
+      { "id": "decomposer", "label": "Decomposer" }
+    ],
+    "edges": [
+      { "from": "sun", "to": "grass", "relationship": "influences" },
+      { "from": "grass", "to": "rabbit", "relationship": "feeds-on" },
+      { "from": "rabbit", "to": "fox", "relationship": "feeds-on" },
+      { "from": "grass", "to": "decomposer", "relationship": "feeds-on" },
+      { "from": "decomposer", "to": "grass", "relationship": "produces" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Food web: grass feeds rabbit, rabbit feeds fox, decomposer produces nutrients" }
+}

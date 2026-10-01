@@ -167,3 +167,82 @@ test.describe('Timeline Engine e2e', () => {
     expect(result.code).toBe('INVALID_SPEC');
   });
 });
+
+test.describe('Timeline Engine — tl-f1 duration events e2e (W-2.5)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=timeline&spec=packages/timeline-engine/fixture/duration-events/input.timeline.json');
+    await page.waitForFunction(() => !!(window as unknown as { __timelineHarness?: unknown }).__timelineHarness);
+  });
+
+  test('event span rendered as a bar, not just a point marker; linear alternative exposes from/to', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as {
+        __timelineHarness: {
+          svg(): string;
+          linear(): Array<{ kind: string; id: string; from?: string; to?: string }>;
+        }
+      }).__timelineHarness;
+      const svg = h.svg();
+      const linear = h.linear();
+      const spans = linear.filter((r) => r.kind === 'span');
+      return { svg, spans };
+    });
+    expect(result.svg).toContain('id="war-span"');
+    expect(result.svg).toContain('data-oedu-role="period-band"');
+    expect(result.spans.length).toBeGreaterThanOrEqual(1);
+    expect(result.spans[0]?.from).toBeTruthy();
+    expect(result.spans[0]?.to).toBeTruthy();
+  });
+
+  test('duration validation negatives reject through tryCreate', async ({ page }) => {
+    const inverted = await page.evaluate(() => {
+      const h = (window as unknown as {
+        __timelineHarness: { tryCreate(s: unknown): { ok: boolean; code?: string; message?: string } }
+      }).__timelineHarness;
+      return h.tryCreate({
+        type: 'timeline', version: '1.0.0', id: 'bad-inverted',
+        content: { kind: 'events', events: [{ id: 'e1', label: 'A', date: '1950', duration: '1900' }] },
+        sources: [{ class: 'authoritative' }],
+      });
+    });
+    expect(inverted.ok).toBe(false);
+    expect(inverted.code).toBe('INVALID_ENTITY');
+  });
+});
+test.describe('Timeline Engine — W-5a per-item interactive gating', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=timeline&spec=packages/timeline-engine/fixture/events-gated/input.timeline.json');
+    await page.waitForFunction(() => !!(window as unknown as { __timelineHarness?: unknown }).__timelineHarness);
+  });
+
+  test('interactive:false removes an event from the interactive surface; host dispatch still applies', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __timelineHarness: { svg(): string; dispatch(a: unknown): void; snapshot(): { selection: string[] } } }).__timelineHarness;
+      const svg = h.svg();
+      const e2Gated = svg.includes('id="e2"') && /id="e2"[^>]*data-oedu-interactive="true"/.test(svg) === false;
+      h.dispatch({ type: 'select', target: { id: 'e2' } });
+      return { e2Gated, selection: h.snapshot().selection };
+    });
+    expect(result.e2Gated).toBe(true);
+    expect(result.selection).toContain('e2');
+  });
+});
+
+test.describe('Timeline Engine — W-5b a11y-tree scope (tl-e3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=timeline&spec=packages/timeline-engine/fixture/events/input.timeline.json');
+    await page.waitForFunction(() => !!(window as unknown as { __timelineHarness?: unknown }).__timelineHarness);
+  });
+
+  test('tick labels appear in the a11y tree as static text, never as D5 targets', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __timelineHarness: { snapshot(): { svgResult: { a11y: Array<{ id: string; role: string; label: string }> } } } }).__timelineHarness;
+      const a11y = h.snapshot().svgResult.a11y;
+      const textNodes = a11y.filter((n) => n.role === 'text');
+      const buttons = a11y.filter((n) => n.role === 'button');
+      return { textCount: textNodes.length, buttonsOnly: buttons.every((n) => n.id.startsWith('e')) };
+    });
+    expect(result.textCount).toBeGreaterThan(0);
+    expect(result.buttonsOnly).toBe(true);
+  });
+});

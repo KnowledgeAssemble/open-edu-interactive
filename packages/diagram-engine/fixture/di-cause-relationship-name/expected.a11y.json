@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-rainfall",
+    "role": "button",
+    "label": "Rainfall",
+    "children": []
+  },
+  {
+    "id": "node-erosion",
+    "role": "button",
+    "label": "Soil erosion",
+    "children": []
+  },
+  {
+    "id": "node-vegetation",
+    "role": "button",
+    "label": "Vegetation",
+    "children": []
+  },
+  {
+    "id": "rain-erodes",
+    "role": "link",
+    "label": "Rainfall influences Soil erosion",
+    "children": []
+  },
+  {
+    "id": "veg-reduces",
+    "role": "link",
+    "label": "Vegetation influences Soil erosion",
+    "children": []
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "type": "chart",
+  "version": "1.0.0",
+  "id": "bar-gated",
+  "content": {
+    "kind": "bar",
+    "dimensions": [{ "id": "month", "type": "ordinal" }],
+    "measures": [{ "id": "rainfall", "type": "quantitative", "unit": "mm" }],
+    "data": [
+      { "id": "row-feb", "month": "Feb", "rainfall": 45 },
+      { "id": "row-may", "month": "May", "rainfall": 110, "interactive": false },
+      { "id": "row-aug", "month": "Aug", "rainfall": 80 }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "accessibility": { "label": "Bar chart with one non-interactive row" },
+  "sources": [{ "class": "authoritative" }]
+}

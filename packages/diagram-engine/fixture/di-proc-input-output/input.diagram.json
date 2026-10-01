@@ -1,0 +1,31 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-proc-input-output",
+  "metadata": { "title": "Photosynthesis inputs and outputs" },
+  "purpose": { "learningObjective": "Separate inputs from outputs of a process", "reasoningMode": "classify" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "sunlight", "label": "Sunlight" },
+      { "id": "water", "label": "Water" },
+      { "id": "co2", "label": "Carbon dioxide" },
+      { "id": "photosynthesis", "label": "Photosynthesis" },
+      { "id": "glucose", "label": "Glucose" },
+      { "id": "oxygen", "label": "Oxygen" }
+    ],
+    "edges": [
+      { "from": "sunlight", "to": "photosynthesis", "relationship": "leads-to" },
+      { "from": "water", "to": "photosynthesis", "relationship": "leads-to" },
+      { "from": "co2", "to": "photosynthesis", "relationship": "leads-to" },
+      { "from": "photosynthesis", "to": "glucose", "relationship": "leads-to" },
+      { "from": "photosynthesis", "to": "oxygen", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Photosynthesis flow: sunlight, water and carbon dioxide lead to glucose and oxygen" }
+}

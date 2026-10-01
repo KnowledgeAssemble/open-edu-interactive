@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "node",
+    "id": "node-migration",
+    "nodeId": "migration",
+    "label": "Migration"
+  },
+  {
+    "kind": "node",
+    "id": "node-settlement",
+    "nodeId": "settlement",
+    "label": "Settlement"
+  },
+  {
+    "kind": "node",
+    "id": "node-boundary",
+    "nodeId": "boundary",
+    "label": "Boundary shift"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-migration-settlement",
+    "from": "migration",
+    "relationship": "leads-to",
+    "to": "settlement",
+    "fromLabel": "Migration",
+    "toLabel": "Settlement"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-settlement-boundary",
+    "from": "settlement",
+    "relationship": "leads-to",
+    "to": "boundary",
+    "fromLabel": "Settlement",
+    "toLabel": "Boundary shift"
+  }
+]

@@ -16,6 +16,8 @@ function nodeBounds(nodes: SceneNode[], kind: string): [number, number] {
     if (n.kind === kind) {
       const d = n.metadata?.date as number | undefined;
       if (d !== undefined) { lo = Math.min(lo, d); hi = Math.max(hi, d); }
+      const toDay = n.metadata?.toDay as number | undefined;
+      if (toDay !== undefined) { lo = Math.min(lo, toDay); hi = Math.max(hi, toDay); }
     }
   }
   return [lo === Infinity ? 0 : lo, hi === -Infinity ? 1 : hi];
@@ -41,13 +43,16 @@ export function layout(scene: Scene, ctx: LayoutContext): Scene {
   const plotW = ctx.width - pad.left - pad.right;
 
   const markers = scene.nodes.filter((n) => n.kind === 'event-marker');
+  const spans = scene.nodes.filter((n) => n.kind === 'event-span');
   const periods = scene.nodes.filter((n) => n.kind === 'period-band');
   const tracks = scene.nodes.filter((n) => n.kind === 'track-lane');
 
   const markerDomain = nodeBounds(markers, 'event-marker');
+  const spanDomain = nodeBounds(spans, 'event-span');
   const periodDomain = periodBounds(periods);
   const presentDomains: Array<[number, number]> = [];
   if (markers.length > 0) presentDomains.push(markerDomain);
+  if (spans.length > 0) presentDomains.push(spanDomain);
   if (periods.length > 0) presentDomains.push(periodDomain);
   const domain: [number, number] = presentDomains.length === 0
     ? [0, 1]
@@ -89,6 +94,19 @@ export function layout(scene: Scene, ctx: LayoutContext): Scene {
     const y = plotY + idx * laneH + laneH / 2;
     const size = Math.max(ctx.minTouchTarget, 16);
     marker.bounds = rect(x - size / 2, y - size / 2, size, size);
+  }
+
+  for (const span of spans) {
+    const f = span.metadata?.fromDay as number | undefined;
+    const t = span.metadata?.toDay as number | undefined;
+    if (f === undefined || t === undefined) continue;
+    const x0 = xScale(f);
+    const x1 = xScale(t);
+    const trackId = span.metadata?.trackId as string | undefined;
+    const trackIdx = tracks.findIndex((tr) => tr.id === `track-${trackId}` || (trackId === 'track-default' && tr.id === 'track-track-default'));
+    const idx = trackIdx >= 0 ? trackIdx : 0;
+    const y = plotY + idx * laneH + laneH / 2 - 12;
+    span.bounds = rect(x0, y, Math.max(x1 - x0, 2), 24);
   }
 
   for (const period of periods) {
@@ -136,6 +154,7 @@ export function layout(scene: Scene, ctx: LayoutContext): Scene {
     ...labelNodes,
     ...tracks,
     ...periods,
+    ...spans,
     ...markers,
   ];
 

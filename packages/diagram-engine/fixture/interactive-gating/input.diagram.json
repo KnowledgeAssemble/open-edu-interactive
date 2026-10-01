@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "interactive-gating",
+  "metadata": { "title": "Interactive gating" },
+  "purpose": { "learningObjective": "Demonstrate per-item interactive gating", "reasoningMode": "identify" },
+  "content": {
+    "kind": "flow",
+    "profile": "process",
+    "nodes": [
+      { "id": "input", "label": "Input" },
+      { "id": "step", "label": "Step", "interactive": false },
+      { "id": "output", "label": "Output" }
+    ],
+    "edges": [
+      { "from": "input", "to": "step", "relationship": "leads-to" },
+      { "from": "step", "to": "output", "relationship": "leads-to", "interactive": false }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Flow where the middle step is not learner-interactive" }
+}

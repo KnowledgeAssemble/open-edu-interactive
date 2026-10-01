@@ -1,0 +1,31 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-class-gov-levels",
+  "metadata": { "title": "Levels of government" },
+  "purpose": { "learningObjective": "Place offices at their level of government", "reasoningMode": "identify" },
+  "content": {
+    "kind": "hierarchy",
+    "profile": "concept",
+    "nodes": [
+      { "id": "centre", "label": "Central Government" },
+      { "id": "state", "label": "State Government" },
+      { "id": "local", "label": "Local Government" },
+      { "id": "municipality", "label": "Municipality" },
+      { "id": "parliament", "label": "Parliament" },
+      { "id": "assembly", "label": "State Assembly" }
+    ],
+    "edges": [
+      { "from": "centre", "to": "parliament", "relationship": "contains" },
+      { "from": "centre", "to": "state", "relationship": "part-of" },
+      { "from": "state", "to": "assembly", "relationship": "contains" },
+      { "from": "state", "to": "local", "relationship": "part-of" },
+      { "from": "local", "to": "municipality", "relationship": "contains" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "expand", "collapse", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Levels of government: central, state, local" }
+}

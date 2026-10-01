@@ -56,7 +56,7 @@ New props or contract changes are allowed only when **two or more** catalogued u
 
 ## Implementation
 
-**Agent plan (deepseek-4-flash):** `docs/superpowers/specs/2026-09-10-visual-use-cases-implementation-plan.md`
+**Agent plan (deepseek-4-flash):** `docs/_archive/implementation-plans/2026-09-10-visual-use-cases-implementation-plan.md`
 
 Phased tasks U0–U4 map catalog use-case IDs to code, fixtures, and tests. Start with `ux-debt` rows in `visual.md` before `planned` rows.
 
@@ -72,4 +72,4 @@ Phased tasks U0–U4 map catalog use-case IDs to code, fixtures, and tests. Star
 
 ## Supersedes
 
-The practice-mode matrix in `docs/superpowers/specs/2026-09-09-visual-engine-practice-mode-spec.md` remains useful for **event ids and discovery/guided mechanics**, but **UX and per-kind interaction rules** are owned by `docs/use-cases/visual.md` going forward.
+The practice-mode matrix in `docs/_archive/retired-specs/2026-09-09-visual-engine-practice-mode-spec.md` remains useful for **event ids and discovery/guided mechanics**, but **UX and per-kind interaction rules** are owned by `docs/use-cases/visual.md` going forward.

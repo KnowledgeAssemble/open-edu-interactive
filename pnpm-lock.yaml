@@ -238,6 +238,9 @@ importers:
         specifier: ^3.23.0
         version: 3.25.76
     devDependencies:
+      '@knowledgeassemble/diagram-engine':
+        specifier: workspace:*
+        version: link:../diagram-engine
       '@knowledgeassemble/timeline-engine':
         specifier: workspace:*
         version: link:../timeline-engine

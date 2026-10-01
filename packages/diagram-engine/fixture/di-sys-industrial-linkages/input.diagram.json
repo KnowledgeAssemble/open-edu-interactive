@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-sys-industrial-linkages",
+  "metadata": { "title": "Industrial linkages" },
+  "purpose": { "learningObjective": "Follow forward and backward linkages from a hub", "reasoningMode": "explore" },
+  "content": {
+    "kind": "flow",
+    "profile": "system",
+    "nodes": [
+      { "id": "mining", "label": "Mining" },
+      { "id": "steel", "label": "Steel" },
+      { "id": "machinery", "label": "Machinery" },
+      { "id": "goods", "label": "Consumer goods" }
+    ],
+    "edges": [
+      { "from": "mining", "to": "steel", "relationship": "leads-to" },
+      { "from": "steel", "to": "machinery", "relationship": "leads-to" },
+      { "from": "machinery", "to": "goods", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Industrial linkages: mining to steel to machinery to goods" }
+}

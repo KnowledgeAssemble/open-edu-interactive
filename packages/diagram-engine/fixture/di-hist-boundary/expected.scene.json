@@ -1,0 +1,427 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-migration",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "migration",
+            "label": "Migration",
+            "links": {
+              "geomapEntityId": "route-1"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-settlement",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Settlement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "settlement",
+            "label": "Settlement",
+            "links": {
+              "geomapEntityId": "region-north"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-boundary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Boundary shift",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "boundary",
+            "label": "Boundary shift",
+            "links": {
+              "geomapEntityId": "region-new"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-migration-settlement",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "migration leads-to settlement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "migration",
+            "toNodeId": "settlement",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-migration-settlement",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-settlement-boundary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "settlement leads-to boundary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "settlement",
+            "toNodeId": "boundary",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-settlement-boundary",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-migration": {
+      "id": "node-migration",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Migration",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "migration",
+        "label": "Migration",
+        "links": {
+          "geomapEntityId": "route-1"
+        }
+      },
+      "children": []
+    },
+    "migration": {
+      "id": "node-migration",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Migration",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "migration",
+        "label": "Migration",
+        "links": {
+          "geomapEntityId": "route-1"
+        }
+      },
+      "children": []
+    },
+    "node-settlement": {
+      "id": "node-settlement",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Settlement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "settlement",
+        "label": "Settlement",
+        "links": {
+          "geomapEntityId": "region-north"
+        }
+      },
+      "children": []
+    },
+    "settlement": {
+      "id": "node-settlement",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Settlement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "settlement",
+        "label": "Settlement",
+        "links": {
+          "geomapEntityId": "region-north"
+        }
+      },
+      "children": []
+    },
+    "node-boundary": {
+      "id": "node-boundary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Boundary shift",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "boundary",
+        "label": "Boundary shift",
+        "links": {
+          "geomapEntityId": "region-new"
+        }
+      },
+      "children": []
+    },
+    "boundary": {
+      "id": "node-boundary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Boundary shift",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "boundary",
+        "label": "Boundary shift",
+        "links": {
+          "geomapEntityId": "region-new"
+        }
+      },
+      "children": []
+    },
+    "edge-migration-settlement": {
+      "id": "edge-migration-settlement",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "migration leads-to settlement",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "migration",
+        "toNodeId": "settlement",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-migration-settlement",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-settlement-boundary": {
+      "id": "edge-settlement-boundary",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "settlement leads-to boundary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "settlement",
+        "toNodeId": "boundary",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-settlement-boundary",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-migration",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "migration",
+            "label": "Migration",
+            "links": {
+              "geomapEntityId": "route-1"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-settlement",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Settlement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "settlement",
+            "label": "Settlement",
+            "links": {
+              "geomapEntityId": "region-north"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-boundary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Boundary shift",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "boundary",
+            "label": "Boundary shift",
+            "links": {
+              "geomapEntityId": "region-new"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-migration-settlement",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "migration leads-to settlement",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "migration",
+            "toNodeId": "settlement",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-migration-settlement",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-settlement-boundary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "settlement leads-to boundary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "settlement",
+            "toNodeId": "boundary",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-settlement-boundary",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

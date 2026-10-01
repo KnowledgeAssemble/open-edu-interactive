@@ -1,0 +1,50 @@
+[
+  {
+    "id": "node-mitigation",
+    "role": "button",
+    "label": "Mitigation",
+    "children": []
+  },
+  {
+    "id": "node-preparedness",
+    "role": "button",
+    "label": "Preparedness",
+    "children": []
+  },
+  {
+    "id": "node-response",
+    "role": "button",
+    "label": "Response",
+    "children": []
+  },
+  {
+    "id": "node-recovery",
+    "role": "button",
+    "label": "Recovery",
+    "children": []
+  },
+  {
+    "id": "edge-mitigation-preparedness",
+    "role": "link",
+    "label": "Mitigation leads-to Preparedness",
+    "children": []
+  },
+  {
+    "id": "edge-preparedness-response",
+    "role": "link",
+    "label": "Preparedness leads-to Response",
+    "children": []
+  },
+  {
+    "id": "edge-response-recovery",
+    "role": "link",
+    "label": "Response leads-to Recovery",
+    "children": []
+  },
+  {
+    "id": "edge-recovery-mitigation",
+    "role": "link",
+    "label": "Recovery leads-to Mitigation",
+    "children": []
+  }
+]

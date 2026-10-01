@@ -59,18 +59,42 @@ export class VisualEngine implements Engine {
     }
 
     // Build scene + layout + SVG (deterministic; computed once at instantiation)
-    const scene = layout(buildScene(visualSpec.content), {
+    const baseScene = layout(buildScene(visualSpec.content), {
       width: 800,
       height: 600,
       minTouchTarget: 44,
       textStyle: 'normal',
     });
-    const svgResult = svgFrom(scene, {
+    const ctx: { width: number; height: number; minTouchTarget: number; textStyle: string } = {
       width: 800,
       height: 600,
       minTouchTarget: 44,
       textStyle: 'normal',
-    }, visualSpec.accessibility?.label, visualSpec.accessibility?.description);
+    };
+    const svgCtx = ctx;
+
+    let scene = baseScene;
+    let svgResult = svgFrom(scene, svgCtx, visualSpec.accessibility?.label, visualSpec.accessibility?.description);
+
+    function rederive(): void {
+      scene = structuredClone(baseScene);
+      walkNodes(scene.nodes, (node) => {
+        if (node.role === 'fraction-part') {
+          node.metadata = {
+            ...node.metadata,
+            filled: state.selection.includes(node.id) === true,
+          };
+        }
+      });
+      svgResult = svgFrom(scene, svgCtx, visualSpec.accessibility?.label, visualSpec.accessibility?.description);
+    }
+
+    function walkNodes(nodes: import('./scene/types.js').SceneNode[], fn: (n: import('./scene/types.js').SceneNode) => void): void {
+      for (const node of nodes) {
+        fn(node);
+        walkNodes(node.children, fn);
+      }
+    }
 
     const mounted = log.append('engine-mounted', instanceId);
     const ready = log.append('engine-ready', instanceId);
@@ -84,12 +108,40 @@ export class VisualEngine implements Engine {
       unfocus: 'unfocused',
     };
 
+    const maxSelectionByComponent = new Map<string, number>();
+    for (const comp of visualSpec.content?.components ?? []) {
+      if (comp.type === 'counting-set') {
+        const props = comp.props as Record<string, unknown> | undefined;
+        const maxSelection = props?.maxSelection as number | undefined;
+        if (maxSelection !== undefined && Number.isInteger(maxSelection) && maxSelection >= 0) {
+          maxSelectionByComponent.set(comp.id, maxSelection);
+        }
+      }
+    }
+
+    function componentOf(targetId: string): string | undefined {
+      for (const compId of maxSelectionByComponent.keys()) {
+        if (targetId.startsWith(`${compId}-object-`)) return compId;
+      }
+      return undefined;
+    }
+
     return {
       id: instanceId,
       engine: this.type,
       dispatch(action: EngineAction): void {
+        if (action.type === 'select' && action.target?.id) {
+          const compId = componentOf(action.target.id);
+          const cap = compId ? maxSelectionByComponent.get(compId) : undefined;
+          if (cap !== undefined && !state.selection.includes(action.target.id) && state.selection.length >= cap) {
+            throw new EngineError('INVALID_ACTION', `counting-set "${compId}" maxSelection ${cap} reached`);
+          }
+        }
         const reduced = baseReducer(state, action);
         state = reduced;
+        if (action.type === 'select' || action.type === 'deselect') {
+          rederive();
+        }
 
         const started = log.append('interaction-started', instanceId, undefined, action);
         emit(started as Parameters<EngineHost['onEvent']>[0]);

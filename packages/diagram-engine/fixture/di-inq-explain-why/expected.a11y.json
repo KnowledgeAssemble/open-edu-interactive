@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-river",
+    "role": "button",
+    "label": "River",
+    "children": []
+  },
+  {
+    "id": "node-silt",
+    "role": "button",
+    "label": "Silt deposition",
+    "children": []
+  },
+  {
+    "id": "node-fertility",
+    "role": "button",
+    "label": "Fertile soil",
+    "children": []
+  },
+  {
+    "id": "node-agriculture",
+    "role": "button",
+    "label": "Dense agriculture",
+    "children": []
+  },
+  {
+    "id": "edge-river-silt",
+    "role": "link",
+    "label": "River leads-to Silt deposition",
+    "children": []
+  },
+  {
+    "id": "edge-silt-fertility",
+    "role": "link",
+    "label": "Silt deposition leads-to Fertile soil",
+    "children": []
+  },
+  {
+    "id": "edge-fertility-agriculture",
+    "role": "link",
+    "label": "Fertile soil influences Dense agriculture",
+    "children": []
+  }
+]

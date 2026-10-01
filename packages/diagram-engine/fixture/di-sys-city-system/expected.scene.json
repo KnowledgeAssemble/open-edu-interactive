@@ -1,0 +1,972 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-food",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Food",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "food",
+            "label": "Food",
+            "categories": [
+              "input"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-energy",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Energy",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "energy",
+            "label": "Energy",
+            "categories": [
+              "input"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-water",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Water",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "water",
+            "label": "Water",
+            "categories": [
+              "input"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 480,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-city",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "city",
+            "label": "City"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-waste",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Waste",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "waste",
+            "label": "Waste",
+            "categories": [
+              "waste"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-recycle",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Recycling loop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "recycle",
+            "label": "Recycling loop",
+            "categories": [
+              "waste"
+            ]
+          },
+          "children": [],
+          "bounds": {
+            "x": 480,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-food-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "food leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "food",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-food-city",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M228,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-energy-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "energy leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "energy",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-energy-city",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M388,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-water-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "water leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "water",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-water-city",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 548,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M548,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-city-waste",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "city produces waste",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "city",
+            "toNodeId": "waste",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-city-waste",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 322.5
+                },
+                {
+                  "x": 388,
+                  "y": 322.5
+                }
+              ],
+              "path": "M228,322.5 L388,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-waste-recycle",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "waste leads-to recycle",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "waste",
+            "toNodeId": "recycle",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-waste-recycle",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 322.5
+                },
+                {
+                  "x": 548,
+                  "y": 322.5
+                }
+              ],
+              "path": "M388,322.5 L548,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-recycle-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "recycle produces city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "recycle",
+            "toNodeId": "city",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-recycle-city",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 548,
+                  "y": 322.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M548,322.5 L228,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-food": {
+      "id": "node-food",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Food",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "food",
+        "label": "Food",
+        "categories": [
+          "input"
+        ]
+      },
+      "children": []
+    },
+    "food": {
+      "id": "node-food",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Food",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "food",
+        "label": "Food",
+        "categories": [
+          "input"
+        ]
+      },
+      "children": []
+    },
+    "node-energy": {
+      "id": "node-energy",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Energy",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "energy",
+        "label": "Energy",
+        "categories": [
+          "input"
+        ]
+      },
+      "children": []
+    },
+    "energy": {
+      "id": "node-energy",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Energy",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "energy",
+        "label": "Energy",
+        "categories": [
+          "input"
+        ]
+      },
+      "children": []
+    },
+    "node-water": {
+      "id": "node-water",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Water",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "water",
+        "label": "Water",
+        "categories": [
+          "input"
+        ]
+      },
+      "children": []
+    },
+    "water": {
+      "id": "node-water",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Water",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "water",
+        "label": "Water",
+        "categories": [
+          "input"
+        ]
+      },
+      "children": []
+    },
+    "node-city": {
+      "id": "node-city",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "city",
+        "label": "City"
+      },
+      "children": []
+    },
+    "city": {
+      "id": "node-city",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "city",
+        "label": "City"
+      },
+      "children": []
+    },
+    "node-waste": {
+      "id": "node-waste",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Waste",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "waste",
+        "label": "Waste",
+        "categories": [
+          "waste"
+        ]
+      },
+      "children": []
+    },
+    "waste": {
+      "id": "node-waste",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Waste",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "waste",
+        "label": "Waste",
+        "categories": [
+          "waste"
+        ]
+      },
+      "children": []
+    },
+    "node-recycle": {
+      "id": "node-recycle",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Recycling loop",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "recycle",
+        "label": "Recycling loop",
+        "categories": [
+          "waste"
+        ]
+      },
+      "children": []
+    },
+    "recycle": {
+      "id": "node-recycle",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Recycling loop",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "recycle",
+        "label": "Recycling loop",
+        "categories": [
+          "waste"
+        ]
+      },
+      "children": []
+    },
+    "edge-food-city": {
+      "id": "edge-food-city",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "food leads-to city",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "food",
+        "toNodeId": "city",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-food-city",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-energy-city": {
+      "id": "edge-energy-city",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "energy leads-to city",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "energy",
+        "toNodeId": "city",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-energy-city",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-water-city": {
+      "id": "edge-water-city",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "water leads-to city",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "water",
+        "toNodeId": "city",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-water-city",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-city-waste": {
+      "id": "edge-city-waste",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "city produces waste",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "city",
+        "toNodeId": "waste",
+        "relationship": "produces",
+        "labels": [],
+        "edgeId": "edge-city-waste",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-waste-recycle": {
+      "id": "edge-waste-recycle",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "waste leads-to recycle",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "waste",
+        "toNodeId": "recycle",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-waste-recycle",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-recycle-city": {
+      "id": "edge-recycle-city",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "recycle produces city",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "recycle",
+        "toNodeId": "city",
+        "relationship": "produces",
+        "labels": [],
+        "edgeId": "edge-recycle-city",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-food",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Food",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "food",
+            "label": "Food",
+            "categories": [
+              "input"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-energy",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Energy",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "energy",
+            "label": "Energy",
+            "categories": [
+              "input"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-water",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Water",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "water",
+            "label": "Water",
+            "categories": [
+              "input"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-city",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "city",
+            "label": "City"
+          },
+          "children": []
+        },
+        {
+          "id": "node-waste",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Waste",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "waste",
+            "label": "Waste",
+            "categories": [
+              "waste"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "node-recycle",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Recycling loop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "recycle",
+            "label": "Recycling loop",
+            "categories": [
+              "waste"
+            ]
+          },
+          "children": []
+        },
+        {
+          "id": "edge-food-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "food leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "food",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-food-city",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-energy-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "energy leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "energy",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-energy-city",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-water-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "water leads-to city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "water",
+            "toNodeId": "city",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-water-city",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-city-waste",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "city produces waste",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "city",
+            "toNodeId": "waste",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-city-waste",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-waste-recycle",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "waste leads-to recycle",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "waste",
+            "toNodeId": "recycle",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-waste-recycle",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-recycle-city",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "recycle produces city",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "recycle",
+            "toNodeId": "city",
+            "relationship": "produces",
+            "labels": [],
+            "edgeId": "edge-recycle-city",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

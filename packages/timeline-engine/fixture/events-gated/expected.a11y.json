@@ -1,0 +1,64 @@
+{
+  "a11y": [
+    {
+      "id": "label-tick-0",
+      "role": "text",
+      "label": "1900",
+      "children": []
+    },
+    {
+      "id": "label-tick-1",
+      "role": "text",
+      "label": "1905",
+      "children": []
+    },
+    {
+      "id": "label-tick-2",
+      "role": "text",
+      "label": "1910",
+      "children": []
+    },
+    {
+      "id": "label-tick-3",
+      "role": "text",
+      "label": "1915",
+      "children": []
+    },
+    {
+      "id": "label-tick-4",
+      "role": "text",
+      "label": "1920",
+      "children": []
+    },
+    {
+      "id": "e1",
+      "role": "button",
+      "label": "Event A (1900)",
+      "children": []
+    },
+    {
+      "id": "e3",
+      "role": "button",
+      "label": "Event C (1920)",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "e1",
+      "action": "select"
+    },
+    {
+      "id": "e1",
+      "action": "focus"
+    },
+    {
+      "id": "e3",
+      "action": "select"
+    },
+    {
+      "id": "e3",
+      "action": "focus"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Triangle with vertices shown</title>
+  <desc>Select the right-angle vertex.</desc>
+  <g id="visual-root">
+  <g id="geo" data-oedu-role="group">
+    <polygon id="geo-shape" data-oedu-role="shape" data-oedu-bounds="280,180,240,240" points="400,180 503.92304845413264,360 296.07695154586736,360.00000000000006" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+  </g>
+</svg>

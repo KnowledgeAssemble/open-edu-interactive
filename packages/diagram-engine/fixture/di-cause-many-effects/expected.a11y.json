@@ -1,0 +1,56 @@
+[
+  {
+    "id": "node-deforest",
+    "role": "button",
+    "label": "Deforestation",
+    "children": []
+  },
+  {
+    "id": "node-habitat-loss",
+    "role": "button",
+    "label": "Habitat loss",
+    "children": []
+  },
+  {
+    "id": "node-soil-erosion",
+    "role": "button",
+    "label": "Soil erosion",
+    "children": []
+  },
+  {
+    "id": "node-climate-change",
+    "role": "button",
+    "label": "Climate change",
+    "children": []
+  },
+  {
+    "id": "node-flooding",
+    "role": "button",
+    "label": "Flooding",
+    "children": []
+  },
+  {
+    "id": "edge-deforest-habitat-loss",
+    "role": "link",
+    "label": "Deforestation leads-to Habitat loss",
+    "children": []
+  },
+  {
+    "id": "edge-deforest-soil-erosion",
+    "role": "link",
+    "label": "Deforestation leads-to Soil erosion",
+    "children": []
+  },
+  {
+    "id": "edge-deforest-climate-change",
+    "role": "link",
+    "label": "Deforestation influences Climate change",
+    "children": []
+  },
+  {
+    "id": "edge-soil-erosion-flooding",
+    "role": "link",
+    "label": "Soil erosion leads-to Flooding",
+    "children": []
+  }
+]

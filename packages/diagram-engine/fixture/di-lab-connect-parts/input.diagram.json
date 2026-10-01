@@ -1,0 +1,24 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-lab-connect-parts",
+  "metadata": { "title": "Connect blood flow parts" },
+  "purpose": { "learningObjective": "Declare how blood moves between two parts", "reasoningMode": "construct" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "concept",
+    "nodes": [
+      { "id": "artery", "label": "Artery" },
+      { "id": "capillary", "label": "Capillary" },
+      { "id": "vein", "label": "Vein" }
+    ],
+    "edges": [
+      { "from": "capillary", "to": "vein", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "connect", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Blood flow parts; declare how blood moves from artery to capillary" }
+}

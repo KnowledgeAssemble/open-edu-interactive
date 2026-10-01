@@ -16,6 +16,9 @@ function nodeToSvg(node: SceneNode, indent: number): string {
   if (node.label) {
     attrs += ` aria-label="${escapeXml(node.label)}"`;
   }
+  if (node.metadata?.whatIf === 'deemphasized') {
+    attrs += ` data-oedu-what-if="deemphasized"`;
+  }
   if (node.description) {
     attrs += ` title="${escapeXml(node.description)}"`;
   }
@@ -29,16 +32,18 @@ function nodeToSvg(node: SceneNode, indent: number): string {
     const geo = node.metadata?.edgeGeometry as { path?: string; points?: Array<{ x: number; y: number }> } | undefined;
     const rel = node.metadata?.relationship as string ?? "";
     const relationshipAttr = `data-oedu-relationship="${escapeXml(rel)}"`;
+    const chainStep = node.metadata?.chainStep as number | undefined;
+    const chainAttr = chainStep !== undefined ? ` data-oedu-chain-step="${chainStep}"` : '';
 
     if (geo?.path) {
-      return `${pad}<path ${attrs} ${relationshipAttr} d="${escapeXml(geo.path)}" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>`;
+      return `${pad}<path ${attrs} ${relationshipAttr}${chainAttr} d="${escapeXml(geo.path)}" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>`;
     }
 
     const points = geo?.points ?? [];
     if (points.length === 2) {
       const p1 = points[0]!;
       const p2 = points[1]!;
-      return `${pad}<line ${attrs} ${relationshipAttr} x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="currentColor" stroke-width="2" marker-end="url(#arrowhead)"/>`;
+      return `${pad}<line ${attrs} ${relationshipAttr}${chainAttr} x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="currentColor" stroke-width="2" marker-end="url(#arrowhead)"/>`;
     }
 
     throw new Error(`edge "${node.id}" has no geometry: expected edgeGeometry with path or points`);
@@ -62,7 +67,7 @@ export function svgFrom(
   const height = ctx.height;
 
   const root = scene.nodes.find((n) => n.kind === 'diagram');
-  const childrenSvg = root ? root.children.map((n) => nodeToSvg(n, 2)).join('\n') : '';
+  const childrenSvg = root ? root.children.filter((n) => !n.hidden).map((n) => nodeToSvg(n, 2)).join('\n') : '';
 
   const title = label ?? 'Diagram';
   const description = desc ?? 'An interactive diagram showing structural relationships';
@@ -86,8 +91,8 @@ ${childrenSvg}
   const interactive: SvgResult['interactive'] = [];
   const alternative: RelRow[] = [];
 
-  const nodeChildren = root ? root.children.filter((n) => n.kind === 'node') : [];
-  const edgeChildren = root ? root.children.filter((n) => n.kind === 'edge') : [];
+  const nodeChildren = root ? root.children.filter((n) => n.kind === 'node' && !n.hidden) : [];
+  const edgeChildren = root ? root.children.filter((n) => n.kind === 'edge' && !n.hidden) : [];
 
   // Node roster
   for (const n of nodeChildren) {
@@ -129,6 +134,7 @@ ${childrenSvg}
       children: [],
     });
     interactive.push({ id: e.id, action: 'follow' });
+    const strength = e.metadata?.strength as number | undefined;
     alternative.push({
       kind: 'edge',
       id: e.id,
@@ -137,6 +143,7 @@ ${childrenSvg}
       to: toNodeId,
       fromLabel,
       toLabel,
+      strength,
     });
   }
 

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-movement-1",
+    "role": "button",
+    "label": "First movement",
+    "children": []
+  },
+  {
+    "id": "node-movement-2",
+    "role": "button",
+    "label": "Second movement",
+    "children": []
+  },
+  {
+    "id": "node-movement-3",
+    "role": "button",
+    "label": "Third movement",
+    "children": []
+  },
+  {
+    "id": "edge-movement-1-movement-2",
+    "role": "link",
+    "label": "First movement leads-to Second movement",
+    "children": []
+  },
+  {
+    "id": "edge-movement-2-movement-3",
+    "role": "link",
+    "label": "Second movement leads-to Third movement",
+    "children": []
+  }
+]

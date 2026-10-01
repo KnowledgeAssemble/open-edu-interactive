@@ -221,3 +221,119 @@ describe('VisualEngine', () => {
     expect(events.some((e) => e.name === 'visual.fc-sector-0-selected')).toBe(true);
   });
 });
+
+describe('VisualEngine — maxSelection (W-2.1)', () => {
+  const CS_SPEC = {
+    type: 'visual',
+    version: '1.0.0',
+    id: 'counting-set-max-test',
+    content: {
+      kind: 'counting-set',
+      components: [{
+        id: 'cs',
+        type: 'counting-set',
+        props: { count: 5, object: 'star', arrangement: 'row', interactive: true, maxSelection: 3 },
+      }],
+    },
+    accessibility: { label: 'Pick three stars', description: 'Counting set with a max of three' },
+  };
+
+  it('rejects the fourth select over maxSelection with INVALID_ACTION', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(CS_SPEC as never, stubHost());
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-0' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-1' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-2' } });
+    expect(instance.snapshot().selection).toEqual(['cs-object-0', 'cs-object-1', 'cs-object-2']);
+    expect(() => instance.dispatch({ type: 'select', target: { id: 'cs-object-3' } })).toThrow(/maxSelection/);
+    expect(instance.snapshot().selection).toEqual(['cs-object-0', 'cs-object-1', 'cs-object-2']);
+  });
+
+  it('deselect frees capacity for a later select', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(CS_SPEC as never, stubHost());
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-0' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-1' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-2' } });
+    instance.dispatch({ type: 'deselect', target: { id: 'cs-object-1' } });
+    instance.dispatch({ type: 'select', target: { id: 'cs-object-3' } });
+    expect(instance.snapshot().selection).toEqual(['cs-object-0', 'cs-object-2', 'cs-object-3']);
+  });
+
+  it('host dispatch of a non-select action is never rejected by the cap', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(CS_SPEC as never, stubHost());
+    expect(() => instance.dispatch({ type: 'focus', target: { id: 'cs-object-4' } })).not.toThrow();
+    expect(() => instance.dispatch({ type: 'reset' })).not.toThrow();
+  });
+
+  it('absent maxSelection means unlimited selection', () => {
+    const engine = new VisualEngine();
+    const spec = {
+      type: 'visual',
+      version: '1.0.0',
+      id: 'counting-set-unlimited-test',
+      content: {
+        kind: 'counting-set',
+        components: [{
+          id: 'cs',
+          type: 'counting-set',
+          props: { count: 5, object: 'star', arrangement: 'row', interactive: true },
+        }],
+      },
+      accessibility: { label: 'Counting set', description: 'Counting set' },
+    };
+    const instance = engine.instantiate(spec as never, stubHost());
+    for (let i = 0; i < 5; i++) {
+      instance.dispatch({ type: 'select', target: { id: `cs-object-${i}` } });
+    }
+    expect(instance.snapshot().selection).toHaveLength(5);
+  });
+});
+
+describe('VisualEngine — selection-driven fraction fill (W-2.2)', () => {
+  const FRAC_SPEC = {
+    type: 'visual',
+    version: '1.0.0',
+    id: 'fraction-shade-test',
+    content: {
+      kind: 'fraction',
+      components: [{
+        id: 'fb',
+        type: 'fraction',
+        props: { numerator: 2, denominator: 5, interactive: true },
+      }],
+    },
+    accessibility: { label: 'Fraction bar', description: 'Shade two fifths' },
+  };
+
+  it('selecting a part re-derives metadata.filled and re-renders SVG deterministically', () => {
+    const engine = new VisualEngine();
+    const instance = engine.instantiate(FRAC_SPEC as never, stubHost());
+    const initial = (instance.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    expect(initial).not.toContain('data-oedu-filled="true"');
+
+    instance.dispatch({ type: 'select', target: { id: 'fb-part-0' } });
+    instance.dispatch({ type: 'select', target: { id: 'fb-part-2' } });
+    const filledSvg = (instance.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    const filledCount = (filledSvg.match(/data-oedu-filled="true"/g) ?? []).length;
+    expect(filledCount).toBe(2);
+    const sel = (instance.snapshot() as { selection: string[] }).selection;
+    expect(sel).toEqual(['fb-part-0', 'fb-part-2']);
+
+    instance.dispatch({ type: 'deselect', target: { id: 'fb-part-0' } });
+    const afterDeselect = (instance.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    expect((afterDeselect.match(/data-oedu-filled="true"/g) ?? []).length).toBe(1);
+  });
+
+  it('fill re-derive is deterministic: same selection produces identical SVG', () => {
+    const engine = new VisualEngine();
+    const a = engine.instantiate(FRAC_SPEC as never, stubHost());
+    const b = engine.instantiate(FRAC_SPEC as never, stubHost());
+    a.dispatch({ type: 'select', target: { id: 'fb-part-1' } });
+    b.dispatch({ type: 'select', target: { id: 'fb-part-1' } });
+    const svgA = (a.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    const svgB = (b.snapshot() as unknown as { svgResult: { svg: string } }).svgResult.svg;
+    expect(svgA).toBe(svgB);
+  });
+});

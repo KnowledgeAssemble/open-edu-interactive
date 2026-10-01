@@ -45,7 +45,7 @@ function layoutContextFrom(tokens: Record<string, string>): LayoutContext {
   };
 }
 
-function rowIdOf(row: Record<string, string | number>, index: number): string {
+function rowIdOf(row: Record<string, string | number | boolean>, index: number): string {
   const id = row['id'];
   if (typeof id === 'string' && id) return id;
   return String(index).padStart(4, '0');
@@ -152,7 +152,7 @@ export class ChartEngine implements Engine {
           const requested = (action.payload as { ids?: unknown } | undefined)?.ids;
           const ids = new Set(Array.isArray(requested) ? (requested as string[]) : []);
           if (ids.size > 0) {
-            const rows = content.data.filter((row) => ids.has(rowIdOf(row as Record<string, string | number>, content.data.indexOf(row))));
+            const rows = content.data.filter((row) => ids.has(rowIdOf(row as Record<string, string | number | boolean>, content.data.indexOf(row))));
             recompute(rows);
           } else {
             recompute([]);

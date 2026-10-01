@@ -1,0 +1,23 @@
+{
+  "type": "visual",
+  "version": "1.0.0",
+  "id": "fraction-shade-n",
+  "purpose": {
+    "learningObjective": "Shade parts until the bar shows the target fraction",
+    "interactionGoal": "Select parts to make the bar show 2/5",
+    "reasoningMode": "identify"
+  },
+  "content": {
+    "kind": "fraction",
+    "components": [{
+      "id": "fb",
+      "type": "fraction",
+      "props": { "numerator": 2, "denominator": 5, "interactive": true }
+    }]
+  },
+  "accessibility": {
+    "label": "Fraction bar divided into five parts",
+    "description": "Select parts to shade two fifths."
+  },
+  "interaction": { "mode": "identify", "actions": ["select", "deselect", "focus", "reset"] }
+}

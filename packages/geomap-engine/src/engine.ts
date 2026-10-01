@@ -18,6 +18,7 @@ import { validateSemantic } from './validation/semantic.js';
 import { validateLayout } from './validation/layout.js';
 import { validateAccessibility } from './validation/accessibility.js';
 import { buildScene } from './scene/build.js';
+import { bearingFrom } from './scene/build.js';
 import { layout, fitScene } from './layout/engine.js';
 import type { LayoutContext, ProjectorFit } from './layout/engine.js';
 import { svgFrom } from './render/svg.js';
@@ -150,9 +151,41 @@ export class GeoMapEngine implements Engine {
     let displayScene = deriveDisplay(maps, laidOutBase, scaleBarNode);
     let svgResult: SvgResult = svgFrom(displayScene, ctx, geomapSpec.accessibility?.label, geomapSpec.accessibility?.description);
 
+    const periods = content.periods ?? [];
+    let periodIndex = 0;
+
+    if (periods.length > 0) {
+      rederive();
+    }
+
+    function activePeriod(): { id: string; label: string; regionEntityIds: string[] } | undefined {
+      return periods[periodIndex];
+    }
+
     function rederive(): void {
       displayScene = deriveDisplay(maps, laidOutBase, scaleBarNode);
+      const period = activePeriod();
+      if (period) {
+        const regionIds = new Set(period.regionEntityIds);
+        for (const node of displayScene.nodes) {
+          walkPeriod(node, (n) => {
+            if (n.role === 'region' && n.metadata) {
+              const entityId = n.metadata.entityId as string | undefined;
+              if (entityId && !regionIds.has(entityId)) {
+                n.hidden = true;
+              }
+            }
+          });
+        }
+      }
       svgResult = svgFrom(displayScene, ctx, geomapSpec.accessibility?.label, geomapSpec.accessibility?.description);
+    }
+
+    function walkPeriod(node: import('./scene/types.js').SceneNode, fn: (n: import('./scene/types.js').SceneNode) => void): void {
+      fn(node);
+      for (const child of node.children) {
+        walkPeriod(child, fn);
+      }
     }
 
     function emit(event: Parameters<EngineHost['onEvent']>[0]): void {
@@ -242,7 +275,18 @@ export class GeoMapEngine implements Engine {
           }
         } else if (action.type === 'step' || action.type === 'scrub') {
           const targetId = action.target?.id;
-          if (targetId) {
+          if (targetId === 'geom-period-slice' && periods.length > 0) {
+            if (action.type === 'scrub') {
+              const stepPayload = Number((action.payload as Record<string, unknown> | undefined)?.step);
+              periodIndex = Number.isFinite(stepPayload) ? Math.max(0, Math.min(periods.length - 1, stepPayload)) : periodIndex;
+            } else {
+              periodIndex = (periodIndex + 1) % periods.length;
+            }
+            rederive();
+            const period = activePeriod();
+            const nsEvent = log.append('geomap.period-step', instanceId, { periodIndex, periodId: period?.id }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          } else if (targetId) {
             const routeNode = displayScene.semantics[targetId];
             if (routeNode && routeNode.role === 'route') {
               const stepPayload = action.type === 'scrub' ? Number((action.payload as Record<string, unknown> | undefined)?.step) : undefined;
@@ -285,6 +329,35 @@ export class GeoMapEngine implements Engine {
         } else if (action.type === 'reset') {
           updateMapsFromReset(maps);
           rederive();
+        } else if (action.type === 'bearing') {
+          const targetId = action.target?.id;
+          if (targetId) {
+            const node = displayScene.semantics[targetId];
+            const compassNode = displayScene.semantics['geom-compass'];
+            if (node && compassNode) {
+              const lat = node.metadata?.lat as number | undefined;
+              const lon = node.metadata?.lon as number | undefined;
+              const refLat = compassNode.metadata?.referenceLat as number | undefined;
+              const refLon = compassNode.metadata?.referenceLon as number | undefined;
+              const windowFrom = compassNode.metadata?.windowFrom as number | undefined;
+              const windowTo = compassNode.metadata?.windowTo as number | undefined;
+              if (lat !== undefined && lon !== undefined && refLat !== undefined && refLon !== undefined) {
+                const bearing = bearingFrom(refLat, refLon, lat, lon);
+                const inWindow = windowFrom !== undefined && windowTo !== undefined
+                  ? windowFrom <= windowTo
+                    ? bearing >= windowFrom && bearing <= windowTo
+                    : bearing >= windowFrom || bearing <= windowTo
+                  : false;
+                const nsEvent = log.append('geomap.bearing-computed', instanceId, {
+                  entityId: targetId,
+                  referenceEntityId: compassNode.metadata?.referenceEntityId,
+                  bearing,
+                  inWindow,
+                }, action);
+                emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+              }
+            }
+          }
         }
 
         if (entityPayload && (action.type === 'select' || action.type === 'focus')) {
@@ -325,6 +398,7 @@ export class GeoMapEngine implements Engine {
           alternative: svgResult.alternative,
           displayState,
           scaleBar: scaleBarVisible ? scaleBarConfig : null,
+          activePeriod: activePeriod() ?? null,
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {

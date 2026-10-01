@@ -1,0 +1,415 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-long-cause",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Long-term causes",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "long-cause",
+            "label": "Long-term causes",
+            "links": {
+              "timelineEventId": "event-1800"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-trigger",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "trigger",
+            "label": "Trigger"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-outcome",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Outcome",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "outcome",
+            "label": "Outcome",
+            "links": {
+              "timelineEventId": "event-1947"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-long-cause-trigger",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "long-cause leads-to trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "long-cause",
+            "toNodeId": "trigger",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-long-cause-trigger",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-trigger-outcome",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "trigger leads-to outcome",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "trigger",
+            "toNodeId": "outcome",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-trigger-outcome",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-long-cause": {
+      "id": "node-long-cause",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Long-term causes",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "long-cause",
+        "label": "Long-term causes",
+        "links": {
+          "timelineEventId": "event-1800"
+        }
+      },
+      "children": []
+    },
+    "long-cause": {
+      "id": "node-long-cause",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Long-term causes",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "long-cause",
+        "label": "Long-term causes",
+        "links": {
+          "timelineEventId": "event-1800"
+        }
+      },
+      "children": []
+    },
+    "node-trigger": {
+      "id": "node-trigger",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Trigger",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "trigger",
+        "label": "Trigger"
+      },
+      "children": []
+    },
+    "trigger": {
+      "id": "node-trigger",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Trigger",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "trigger",
+        "label": "Trigger"
+      },
+      "children": []
+    },
+    "node-outcome": {
+      "id": "node-outcome",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Outcome",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "outcome",
+        "label": "Outcome",
+        "links": {
+          "timelineEventId": "event-1947"
+        }
+      },
+      "children": []
+    },
+    "outcome": {
+      "id": "node-outcome",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Outcome",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "outcome",
+        "label": "Outcome",
+        "links": {
+          "timelineEventId": "event-1947"
+        }
+      },
+      "children": []
+    },
+    "edge-long-cause-trigger": {
+      "id": "edge-long-cause-trigger",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "long-cause leads-to trigger",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "long-cause",
+        "toNodeId": "trigger",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-long-cause-trigger",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-trigger-outcome": {
+      "id": "edge-trigger-outcome",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "trigger leads-to outcome",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "trigger",
+        "toNodeId": "outcome",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-trigger-outcome",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-long-cause",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Long-term causes",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "long-cause",
+            "label": "Long-term causes",
+            "links": {
+              "timelineEventId": "event-1800"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-trigger",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "trigger",
+            "label": "Trigger"
+          },
+          "children": []
+        },
+        {
+          "id": "node-outcome",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Outcome",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "outcome",
+            "label": "Outcome",
+            "links": {
+              "timelineEventId": "event-1947"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-long-cause-trigger",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "long-cause leads-to trigger",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "long-cause",
+            "toNodeId": "trigger",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-long-cause-trigger",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-trigger-outcome",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "trigger leads-to outcome",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "trigger",
+            "toNodeId": "outcome",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-trigger-outcome",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

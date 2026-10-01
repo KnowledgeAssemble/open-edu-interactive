@@ -1,0 +1,540 @@
+{
+  "nodes": [
+    {
+      "id": "gridline-0",
+      "role": "gridline",
+      "kind": "line",
+      "value": 0,
+      "children": []
+    },
+    {
+      "id": "gridline-1",
+      "role": "gridline",
+      "kind": "line",
+      "value": 25,
+      "children": []
+    },
+    {
+      "id": "gridline-2",
+      "role": "gridline",
+      "kind": "line",
+      "value": 50,
+      "children": []
+    },
+    {
+      "id": "gridline-3",
+      "role": "gridline",
+      "kind": "line",
+      "value": 75,
+      "children": []
+    },
+    {
+      "id": "gridline-4",
+      "role": "gridline",
+      "kind": "line",
+      "value": 100,
+      "children": []
+    },
+    {
+      "id": "gridline-5",
+      "role": "gridline",
+      "kind": "line",
+      "value": 125,
+      "children": []
+    },
+    {
+      "id": "tick-y-0",
+      "role": "tick",
+      "kind": "tick",
+      "value": 0,
+      "bounds": {
+        "x": 44,
+        "y": 539,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-1",
+      "role": "tick",
+      "kind": "tick",
+      "value": 25,
+      "bounds": {
+        "x": 44,
+        "y": 435,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-2",
+      "role": "tick",
+      "kind": "tick",
+      "value": 50,
+      "bounds": {
+        "x": 44,
+        "y": 331,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-3",
+      "role": "tick",
+      "kind": "tick",
+      "value": 75,
+      "bounds": {
+        "x": 44,
+        "y": 227,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-4",
+      "role": "tick",
+      "kind": "tick",
+      "value": 100,
+      "bounds": {
+        "x": 44,
+        "y": 123,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-y-5",
+      "role": "tick",
+      "kind": "tick",
+      "value": 125,
+      "bounds": {
+        "x": 44,
+        "y": 19,
+        "width": 6,
+        "height": 2
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-0",
+      "role": "tick",
+      "kind": "tick",
+      "label": "Feb",
+      "bounds": {
+        "x": 167.625,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-1",
+      "role": "tick",
+      "kind": "tick",
+      "label": "May",
+      "bounds": {
+        "x": 331.875,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-2",
+      "role": "tick",
+      "kind": "tick",
+      "label": "Aug",
+      "bounds": {
+        "x": 496.125,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "tick-x-3",
+      "role": "tick",
+      "kind": "tick",
+      "label": "Nov",
+      "bounds": {
+        "x": 660.375,
+        "y": 540,
+        "width": 2,
+        "height": 6
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-0",
+      "role": "label",
+      "kind": "text",
+      "value": 0,
+      "label": "0",
+      "bounds": {
+        "x": 0,
+        "y": 532,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-1",
+      "role": "label",
+      "kind": "text",
+      "value": 25,
+      "label": "25",
+      "bounds": {
+        "x": 0,
+        "y": 428,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-2",
+      "role": "label",
+      "kind": "text",
+      "value": 50,
+      "label": "50",
+      "bounds": {
+        "x": 0,
+        "y": 324,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-3",
+      "role": "label",
+      "kind": "text",
+      "value": 75,
+      "label": "75",
+      "bounds": {
+        "x": 0,
+        "y": 220,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-4",
+      "role": "label",
+      "kind": "text",
+      "value": 100,
+      "label": "100",
+      "bounds": {
+        "x": 0,
+        "y": 116,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-y-5",
+      "role": "label",
+      "kind": "text",
+      "value": 125,
+      "label": "125",
+      "bounds": {
+        "x": 0,
+        "y": 12,
+        "width": 44,
+        "height": 16
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-0",
+      "role": "label",
+      "kind": "text",
+      "label": "Feb",
+      "bounds": {
+        "x": 138.625,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-1",
+      "role": "label",
+      "kind": "text",
+      "label": "May",
+      "bounds": {
+        "x": 302.875,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-2",
+      "role": "label",
+      "kind": "text",
+      "label": "Aug",
+      "bounds": {
+        "x": 467.125,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "label-x-3",
+      "role": "label",
+      "kind": "text",
+      "label": "Nov",
+      "bounds": {
+        "x": 631.375,
+        "y": 548,
+        "width": 60,
+        "height": 18
+      },
+      "children": []
+    },
+    {
+      "id": "rainfall-bar-row-feb",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 45,
+      "label": "Feb: 45 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "Feb",
+        "measureValue": 45,
+        "measureId": "rainfall",
+        "rowId": "row-feb"
+      },
+      "children": [],
+      "bounds": {
+        "x": 146.625,
+        "y": 352.79999999999995,
+        "width": 44,
+        "height": 187.20000000000005
+      }
+    },
+    {
+      "id": "rainfall-bar-row-may",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 110,
+      "label": "May: 110 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "May",
+        "measureValue": 110,
+        "measureId": "rainfall",
+        "rowId": "row-may"
+      },
+      "children": [],
+      "bounds": {
+        "x": 310.875,
+        "y": 82.39999999999998,
+        "width": 44,
+        "height": 457.6
+      }
+    },
+    {
+      "id": "rainfall-bar-row-aug",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 80,
+      "label": "Aug: 80 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "Aug",
+        "measureValue": 80,
+        "measureId": "rainfall",
+        "rowId": "row-aug"
+      },
+      "children": [],
+      "bounds": {
+        "x": 475.125,
+        "y": 207.2,
+        "width": 44,
+        "height": 332.8
+      }
+    },
+    {
+      "id": "rainfall-bar-row-nov",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 30,
+      "label": "Nov: 30 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "Nov",
+        "measureValue": 30,
+        "measureId": "rainfall",
+        "rowId": "row-nov"
+      },
+      "children": [],
+      "bounds": {
+        "x": 639.375,
+        "y": 415.2,
+        "width": 44,
+        "height": 124.80000000000001
+      }
+    }
+  ],
+  "semantics": {
+    "rainfall-bar-row-feb": {
+      "id": "rainfall-bar-row-feb",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 45,
+      "label": "Feb: 45 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "Feb",
+        "measureValue": 45,
+        "measureId": "rainfall",
+        "rowId": "row-feb"
+      },
+      "children": [],
+      "bounds": {
+        "x": 146.625,
+        "y": 352.79999999999995,
+        "width": 44,
+        "height": 187.20000000000005
+      }
+    },
+    "rainfall-bar-row-may": {
+      "id": "rainfall-bar-row-may",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 110,
+      "label": "May: 110 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "May",
+        "measureValue": 110,
+        "measureId": "rainfall",
+        "rowId": "row-may"
+      },
+      "children": [],
+      "bounds": {
+        "x": 310.875,
+        "y": 82.39999999999998,
+        "width": 44,
+        "height": 457.6
+      }
+    },
+    "rainfall-bar-row-aug": {
+      "id": "rainfall-bar-row-aug",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 80,
+      "label": "Aug: 80 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "Aug",
+        "measureValue": 80,
+        "measureId": "rainfall",
+        "rowId": "row-aug"
+      },
+      "children": [],
+      "bounds": {
+        "x": 475.125,
+        "y": 207.2,
+        "width": 44,
+        "height": 332.8
+      }
+    },
+    "rainfall-bar-row-nov": {
+      "id": "rainfall-bar-row-nov",
+      "role": "selectable",
+      "kind": "bar",
+      "value": 30,
+      "label": "Nov: 30 mm",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "dimensionValue": "Nov",
+        "measureValue": 30,
+        "measureId": "rainfall",
+        "rowId": "row-nov"
+      },
+      "children": [],
+      "bounds": {
+        "x": 639.375,
+        "y": 415.2,
+        "width": 44,
+        "height": 124.80000000000001
+      }
+    },
+    "axis-x": {
+      "id": "axis-x",
+      "role": "axis",
+      "kind": "axis",
+      "label": "month",
+      "children": [],
+      "bounds": {
+        "x": 50,
+        "y": 540,
+        "width": 730,
+        "height": 2
+      }
+    },
+    "axis-y": {
+      "id": "axis-y",
+      "role": "axis",
+      "kind": "axis",
+      "label": "rainfall",
+      "children": [],
+      "bounds": {
+        "x": 50,
+        "y": 20,
+        "width": 2,
+        "height": 520
+      }
+    }
+  }
+}

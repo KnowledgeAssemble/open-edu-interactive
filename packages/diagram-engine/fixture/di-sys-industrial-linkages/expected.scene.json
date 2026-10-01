@@ -1,0 +1,539 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-mining",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mining",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mining",
+            "label": "Mining"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-steel",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Steel",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "steel",
+            "label": "Steel"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-machinery",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Machinery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "machinery",
+            "label": "Machinery"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-goods",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Consumer goods",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "goods",
+            "label": "Consumer goods"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-mining-steel",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "mining leads-to steel",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "mining",
+            "toNodeId": "steel",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-mining-steel",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-steel-machinery",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "steel leads-to machinery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "steel",
+            "toNodeId": "machinery",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-steel-machinery",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-machinery-goods",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "machinery leads-to goods",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "machinery",
+            "toNodeId": "goods",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-machinery-goods",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M100,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-mining": {
+      "id": "node-mining",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mining",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mining",
+        "label": "Mining"
+      },
+      "children": []
+    },
+    "mining": {
+      "id": "node-mining",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Mining",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "mining",
+        "label": "Mining"
+      },
+      "children": []
+    },
+    "node-steel": {
+      "id": "node-steel",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Steel",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "steel",
+        "label": "Steel"
+      },
+      "children": []
+    },
+    "steel": {
+      "id": "node-steel",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Steel",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "steel",
+        "label": "Steel"
+      },
+      "children": []
+    },
+    "node-machinery": {
+      "id": "node-machinery",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Machinery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "machinery",
+        "label": "Machinery"
+      },
+      "children": []
+    },
+    "machinery": {
+      "id": "node-machinery",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Machinery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "machinery",
+        "label": "Machinery"
+      },
+      "children": []
+    },
+    "node-goods": {
+      "id": "node-goods",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Consumer goods",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "goods",
+        "label": "Consumer goods"
+      },
+      "children": []
+    },
+    "goods": {
+      "id": "node-goods",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Consumer goods",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "goods",
+        "label": "Consumer goods"
+      },
+      "children": []
+    },
+    "edge-mining-steel": {
+      "id": "edge-mining-steel",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "mining leads-to steel",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "mining",
+        "toNodeId": "steel",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-mining-steel",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-steel-machinery": {
+      "id": "edge-steel-machinery",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "steel leads-to machinery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "steel",
+        "toNodeId": "machinery",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-steel-machinery",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-machinery-goods": {
+      "id": "edge-machinery-goods",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "machinery leads-to goods",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "machinery",
+        "toNodeId": "goods",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-machinery-goods",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-mining",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Mining",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "mining",
+            "label": "Mining"
+          },
+          "children": []
+        },
+        {
+          "id": "node-steel",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Steel",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "steel",
+            "label": "Steel"
+          },
+          "children": []
+        },
+        {
+          "id": "node-machinery",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Machinery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "machinery",
+            "label": "Machinery"
+          },
+          "children": []
+        },
+        {
+          "id": "node-goods",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Consumer goods",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "goods",
+            "label": "Consumer goods"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-mining-steel",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "mining leads-to steel",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "mining",
+            "toNodeId": "steel",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-mining-steel",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-steel-machinery",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "steel leads-to machinery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "steel",
+            "toNodeId": "machinery",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-steel-machinery",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-machinery-goods",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "machinery leads-to goods",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "machinery",
+            "toNodeId": "goods",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-machinery-goods",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

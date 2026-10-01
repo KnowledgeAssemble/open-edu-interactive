@@ -671,8 +671,11 @@ move
 connect
 disconnect
 follow
+bearing
 reset
 ```
+
+`bearing` (GeoMap W-2.7) is the closed enum's only engine-specific extension: it queries the computed compass bearing from an authored reference point to a candidate entity. The bearing is **derived from authored geometry** — it is never authored as a value — and the "is it north of X" answer holds only when the bearing falls inside the authored axis window (a semantic field, not a tolerance constant). GeoMap emits namespaced `geomap.bearing-*` events in response; the action name itself stays in the D5 enum.
 
 Not every engine must support every action.
 
@@ -1042,6 +1045,8 @@ Example (authoring hint):
 ```
 
 Engines SHOULD expose enough semantic state (snapshot + D5 events) for OpenEdu to evaluate activities. Evaluation logic lives in OpenEdu, not in engine packages.
+
+The snapshot's a11y tree (W-5b) includes **static text** nodes (`role: "text"`) for axis, tick, label, and period-band nodes. Static text is never a `button`/interactive node and is never a D5 target; it exists so screen readers can read the scale/period names. Interactive entities keep `role: "button"` and are the only D5 targets.
 
 ---
 

@@ -1,0 +1,15 @@
+[
+  {
+    "entityId": "core",
+    "type": "region",
+    "name": "Core",
+    "location": "5.0060, 5.0000",
+    "sourceClass": "illustrative"
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "1000 KM",
+    "location": "1000 KM"
+  }
+]

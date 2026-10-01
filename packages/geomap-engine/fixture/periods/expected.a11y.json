@@ -1,0 +1,14 @@
+[
+  {
+    "id": "geom-period-slice",
+    "role": "button",
+    "label": "Period slice",
+    "children": []
+  },
+  {
+    "id": "geom-regions-core",
+    "role": "button",
+    "label": "Core",
+    "children": []
+  }
+]

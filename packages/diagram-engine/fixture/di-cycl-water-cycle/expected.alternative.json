@@ -1,0 +1,73 @@
+[
+  {
+    "kind": "node",
+    "id": "node-evaporation",
+    "nodeId": "evaporation",
+    "label": "Evaporation"
+  },
+  {
+    "kind": "node",
+    "id": "node-condensation",
+    "nodeId": "condensation",
+    "label": "Condensation"
+  },
+  {
+    "kind": "node",
+    "id": "node-precipitation",
+    "nodeId": "precipitation",
+    "label": "Precipitation"
+  },
+  {
+    "kind": "node",
+    "id": "node-collection",
+    "nodeId": "collection",
+    "label": "Collection"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-evaporation-condensation",
+    "from": "evaporation",
+    "relationship": "leads-to",
+    "to": "condensation",
+    "fromLabel": "Evaporation",
+    "toLabel": "Condensation"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-condensation-precipitation",
+    "from": "condensation",
+    "relationship": "leads-to",
+    "to": "precipitation",
+    "fromLabel": "Condensation",
+    "toLabel": "Precipitation"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-precipitation-collection",
+    "from": "precipitation",
+    "relationship": "leads-to",
+    "to": "collection",
+    "fromLabel": "Precipitation",
+    "toLabel": "Collection"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-collection-evaporation",
+    "from": "collection",
+    "relationship": "leads-to",
+    "to": "evaporation",
+    "fromLabel": "Collection",
+    "toLabel": "Evaporation"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-precipitation-condensation-evaporation-collection",
+    "members": [
+      "precipitation",
+      "condensation",
+      "evaporation",
+      "collection"
+    ],
+    "label": "Cycle: precipitation → condensation → evaporation → collection"
+  }
+]

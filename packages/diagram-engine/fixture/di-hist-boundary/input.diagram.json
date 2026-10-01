@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-hist-boundary",
+  "metadata": { "title": "Boundary change explained" },
+  "purpose": { "learningObjective": "Pair diagram causes with map entities", "reasoningMode": "explain" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "migration", "label": "Migration", "links": { "geomapEntityId": "route-1" } },
+      { "id": "settlement", "label": "Settlement", "links": { "geomapEntityId": "region-north" } },
+      { "id": "boundary", "label": "Boundary shift", "links": { "geomapEntityId": "region-new" } }
+    ],
+    "edges": [
+      { "from": "migration", "to": "settlement", "relationship": "leads-to" },
+      { "from": "settlement", "to": "boundary", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Migration leads to settlement leads to boundary shift, paired with map entities" }
+}

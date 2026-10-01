@@ -1,0 +1,616 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-igneous",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Igneous",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "igneous",
+            "label": "Igneous"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-sedimentary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sedimentary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sedimentary",
+            "label": "Sedimentary"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-metamorphic",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Metamorphic",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "metamorphic",
+            "label": "Metamorphic"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-magma",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Magma",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "magma",
+            "label": "Magma"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-magma-igneous",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "magma transforms-to igneous",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "magma",
+            "toNodeId": "igneous",
+            "relationship": "transforms-to",
+            "labels": [],
+            "edgeId": "edge-magma-igneous",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 322.5
+                },
+                {
+                  "x": 308,
+                  "y": 262.5
+                }
+              ],
+              "path": "M468,322.5 L308,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-igneous-sedimentary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "igneous weathers-into sedimentary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "igneous",
+            "toNodeId": "sedimentary",
+            "relationship": "weathers-into",
+            "labels": [],
+            "edgeId": "edge-igneous-sedimentary",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 262.5
+                }
+              ],
+              "path": "M308,262.5 L468,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-sedimentary-metamorphic",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sedimentary transforms-to metamorphic",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sedimentary",
+            "toNodeId": "metamorphic",
+            "relationship": "transforms-to",
+            "labels": [],
+            "edgeId": "edge-sedimentary-metamorphic",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-metamorphic-magma",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "metamorphic transforms-to magma",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "metamorphic",
+            "toNodeId": "magma",
+            "relationship": "transforms-to",
+            "labels": [],
+            "edgeId": "edge-metamorphic-magma",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 322.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,322.5 L468,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-igneous": {
+      "id": "node-igneous",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Igneous",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "igneous",
+        "label": "Igneous"
+      },
+      "children": []
+    },
+    "igneous": {
+      "id": "node-igneous",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Igneous",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "igneous",
+        "label": "Igneous"
+      },
+      "children": []
+    },
+    "node-sedimentary": {
+      "id": "node-sedimentary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sedimentary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sedimentary",
+        "label": "Sedimentary"
+      },
+      "children": []
+    },
+    "sedimentary": {
+      "id": "node-sedimentary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sedimentary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sedimentary",
+        "label": "Sedimentary"
+      },
+      "children": []
+    },
+    "node-metamorphic": {
+      "id": "node-metamorphic",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Metamorphic",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "metamorphic",
+        "label": "Metamorphic"
+      },
+      "children": []
+    },
+    "metamorphic": {
+      "id": "node-metamorphic",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Metamorphic",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "metamorphic",
+        "label": "Metamorphic"
+      },
+      "children": []
+    },
+    "node-magma": {
+      "id": "node-magma",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Magma",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "magma",
+        "label": "Magma"
+      },
+      "children": []
+    },
+    "magma": {
+      "id": "node-magma",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Magma",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "magma",
+        "label": "Magma"
+      },
+      "children": []
+    },
+    "edge-magma-igneous": {
+      "id": "edge-magma-igneous",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "magma transforms-to igneous",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "magma",
+        "toNodeId": "igneous",
+        "relationship": "transforms-to",
+        "labels": [],
+        "edgeId": "edge-magma-igneous",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-igneous-sedimentary": {
+      "id": "edge-igneous-sedimentary",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "igneous weathers-into sedimentary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "igneous",
+        "toNodeId": "sedimentary",
+        "relationship": "weathers-into",
+        "labels": [],
+        "edgeId": "edge-igneous-sedimentary",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-sedimentary-metamorphic": {
+      "id": "edge-sedimentary-metamorphic",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "sedimentary transforms-to metamorphic",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "sedimentary",
+        "toNodeId": "metamorphic",
+        "relationship": "transforms-to",
+        "labels": [],
+        "edgeId": "edge-sedimentary-metamorphic",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-metamorphic-magma": {
+      "id": "edge-metamorphic-magma",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "metamorphic transforms-to magma",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "metamorphic",
+        "toNodeId": "magma",
+        "relationship": "transforms-to",
+        "labels": [],
+        "edgeId": "edge-metamorphic-magma",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-igneous",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Igneous",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "igneous",
+            "label": "Igneous"
+          },
+          "children": []
+        },
+        {
+          "id": "node-sedimentary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sedimentary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sedimentary",
+            "label": "Sedimentary"
+          },
+          "children": []
+        },
+        {
+          "id": "node-metamorphic",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Metamorphic",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "metamorphic",
+            "label": "Metamorphic"
+          },
+          "children": []
+        },
+        {
+          "id": "node-magma",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Magma",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "magma",
+            "label": "Magma"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-magma-igneous",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "magma transforms-to igneous",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "magma",
+            "toNodeId": "igneous",
+            "relationship": "transforms-to",
+            "labels": [],
+            "edgeId": "edge-magma-igneous",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-igneous-sedimentary",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "igneous weathers-into sedimentary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "igneous",
+            "toNodeId": "sedimentary",
+            "relationship": "weathers-into",
+            "labels": [],
+            "edgeId": "edge-igneous-sedimentary",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-sedimentary-metamorphic",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "sedimentary transforms-to metamorphic",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "sedimentary",
+            "toNodeId": "metamorphic",
+            "relationship": "transforms-to",
+            "labels": [],
+            "edgeId": "edge-sedimentary-metamorphic",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-metamorphic-magma",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "metamorphic transforms-to magma",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "metamorphic",
+            "toNodeId": "magma",
+            "relationship": "transforms-to",
+            "labels": [],
+            "edgeId": "edge-metamorphic-magma",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

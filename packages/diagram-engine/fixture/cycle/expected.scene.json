@@ -60,6 +60,8 @@
           "label": "a leads-to b",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -68,6 +70,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-a-b",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -92,6 +95,8 @@
           "label": "b leads-to a",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -100,6 +105,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-b-a",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -192,6 +198,8 @@
       "label": "a leads-to b",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -199,7 +207,8 @@
         "toNodeId": "b",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-a-b"
+        "edgeId": "edge-a-b",
+        "gated": false
       },
       "children": []
     },
@@ -210,6 +219,8 @@
       "label": "b leads-to a",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -217,7 +228,8 @@
         "toNodeId": "a",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-b-a"
+        "edgeId": "edge-b-a",
+        "gated": false
       },
       "children": []
     },
@@ -267,6 +279,8 @@
           "label": "a leads-to b",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -274,7 +288,8 @@
             "toNodeId": "b",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-a-b"
+            "edgeId": "edge-a-b",
+            "gated": false
           },
           "children": []
         },
@@ -285,6 +300,8 @@
           "label": "b leads-to a",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -292,7 +309,8 @@
             "toNodeId": "a",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-b-a"
+            "edgeId": "edge-b-a",
+            "gated": false
           },
           "children": []
         }

@@ -1,0 +1,68 @@
+[
+  {
+    "kind": "node",
+    "id": "node-polling",
+    "nodeId": "polling",
+    "label": "Polling day"
+  },
+  {
+    "kind": "node",
+    "id": "node-counting",
+    "nodeId": "counting",
+    "label": "Counting"
+  },
+  {
+    "kind": "node",
+    "id": "node-win",
+    "nodeId": "win",
+    "label": "Winning candidate declared"
+  },
+  {
+    "kind": "node",
+    "id": "node-recount",
+    "nodeId": "recount",
+    "label": "Recount requested"
+  },
+  {
+    "kind": "node",
+    "id": "node-runoff",
+    "nodeId": "runoff",
+    "label": "Runoff election"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-polling-counting",
+    "from": "polling",
+    "relationship": "leads-to",
+    "to": "counting",
+    "fromLabel": "Polling day",
+    "toLabel": "Counting"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-counting-win",
+    "from": "counting",
+    "relationship": "leads-to",
+    "to": "win",
+    "fromLabel": "Counting",
+    "toLabel": "Winning candidate declared"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-counting-recount",
+    "from": "counting",
+    "relationship": "leads-to",
+    "to": "recount",
+    "fromLabel": "Counting",
+    "toLabel": "Recount requested"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-recount-runoff",
+    "from": "recount",
+    "relationship": "leads-to",
+    "to": "runoff",
+    "fromLabel": "Recount requested",
+    "toLabel": "Runoff election"
+  }
+]

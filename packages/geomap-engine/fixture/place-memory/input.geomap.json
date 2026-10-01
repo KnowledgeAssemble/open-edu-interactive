@@ -1,0 +1,51 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "place-memory",
+  "metadata": { "title": "Places of the national movement" },
+  "purpose": { "learningObjective": "Locate the key places of the national movement", "reasoningMode": "identify" },
+  "content": {
+    "viewport": { "fit": "content", "padding": 0.08 },
+    "projection": { "type": "equirectangular" },
+    "geography": {
+      "sources": [
+        {
+          "id": "base",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [
+              { "id": "region-n", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[70, 15], [90, 15], [90, 30], [70, 30], [70, 15]]] } }
+            ]
+          }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "region-n", "type": "region", "name": "Region North", "description": "The region for this map.", "location": { "source": "base", "featureId": "region-n" } },
+      { "id": "calcutta", "type": "city", "name": "Calcutta", "description": "Event: Quit India movement launched, 1942.", "location": { "coordinates": { "lat": 22.57, "lon": 88.36 } } },
+      { "id": "delhi", "type": "city", "name": "Delhi", "description": "Event: Independence achieved, 1947.", "location": { "coordinates": { "lat": 28.61, "lon": 77.2 } } },
+      { "id": "bombay", "type": "city", "name": "Bombay", "description": "Event: Non-cooperation movement began, 1920.", "location": { "coordinates": { "lat": 19.07, "lon": 72.88 } } }
+    ],
+    "layers": [
+      { "id": "basemap", "type": "region", "items": [{ "entity": "region-n", "interactive": false }] },
+      { "id": "sites", "type": "marker", "items": [
+        { "entity": "calcutta", "label": true, "interactive": true },
+        { "entity": "delhi", "label": true, "interactive": true },
+        { "entity": "bombay", "label": true, "interactive": true }
+      ] }
+    ],
+    "legend": { "visible": true, "items": [
+      { "role": "primary-region", "label": "Region" },
+      { "role": "marker", "label": "Movement site" }
+    ] }
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [
+    { "class": "authoritative", "title": "History textbook, National Movement chapter", "citation": "NCERT India and the Contemporary World" },
+    { "class": "illustrative", "title": "Lesson map, approximate positions" }
+  ],
+  "accessibility": { "label": "Map of places of the national movement." }
+}

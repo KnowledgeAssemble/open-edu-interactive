@@ -1,0 +1,539 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-jobs",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City jobs",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "jobs",
+            "label": "City jobs"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-services",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City services",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "services",
+            "label": "City services"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-rural-stress",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rural distress",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rural-stress",
+            "label": "Rural distress"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-migration",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Migration to cities",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "migration",
+            "label": "Migration to cities"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-jobs-migration",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "jobs influences migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "jobs",
+            "toNodeId": "migration",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-jobs-migration",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,262.5 L468,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-services-migration",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "services influences migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "services",
+            "toNodeId": "migration",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-services-migration",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L468,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-rural-stress-migration",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "rural-stress influences migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "rural-stress",
+            "toNodeId": "migration",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-rural-stress-migration",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 322.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,322.5 L468,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-jobs": {
+      "id": "node-jobs",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City jobs",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "jobs",
+        "label": "City jobs"
+      },
+      "children": []
+    },
+    "jobs": {
+      "id": "node-jobs",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City jobs",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "jobs",
+        "label": "City jobs"
+      },
+      "children": []
+    },
+    "node-services": {
+      "id": "node-services",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City services",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "services",
+        "label": "City services"
+      },
+      "children": []
+    },
+    "services": {
+      "id": "node-services",
+      "role": "selectable",
+      "kind": "node",
+      "label": "City services",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "services",
+        "label": "City services"
+      },
+      "children": []
+    },
+    "node-rural-stress": {
+      "id": "node-rural-stress",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rural distress",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rural-stress",
+        "label": "Rural distress"
+      },
+      "children": []
+    },
+    "rural-stress": {
+      "id": "node-rural-stress",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rural distress",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rural-stress",
+        "label": "Rural distress"
+      },
+      "children": []
+    },
+    "node-migration": {
+      "id": "node-migration",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Migration to cities",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "migration",
+        "label": "Migration to cities"
+      },
+      "children": []
+    },
+    "migration": {
+      "id": "node-migration",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Migration to cities",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "migration",
+        "label": "Migration to cities"
+      },
+      "children": []
+    },
+    "edge-jobs-migration": {
+      "id": "edge-jobs-migration",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "jobs influences migration",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "jobs",
+        "toNodeId": "migration",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-jobs-migration",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-services-migration": {
+      "id": "edge-services-migration",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "services influences migration",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "services",
+        "toNodeId": "migration",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-services-migration",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-rural-stress-migration": {
+      "id": "edge-rural-stress-migration",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "rural-stress influences migration",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "rural-stress",
+        "toNodeId": "migration",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-rural-stress-migration",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-jobs",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City jobs",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "jobs",
+            "label": "City jobs"
+          },
+          "children": []
+        },
+        {
+          "id": "node-services",
+          "role": "selectable",
+          "kind": "node",
+          "label": "City services",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "services",
+            "label": "City services"
+          },
+          "children": []
+        },
+        {
+          "id": "node-rural-stress",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rural distress",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rural-stress",
+            "label": "Rural distress"
+          },
+          "children": []
+        },
+        {
+          "id": "node-migration",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Migration to cities",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "migration",
+            "label": "Migration to cities"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-jobs-migration",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "jobs influences migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "jobs",
+            "toNodeId": "migration",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-jobs-migration",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-services-migration",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "services influences migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "services",
+            "toNodeId": "migration",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-services-migration",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-rural-stress-migration",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "rural-stress influences migration",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "rural-stress",
+            "toNodeId": "migration",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-rural-stress-migration",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

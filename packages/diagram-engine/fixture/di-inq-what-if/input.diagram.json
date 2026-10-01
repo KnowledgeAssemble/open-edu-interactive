@@ -1,0 +1,28 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-inq-what-if",
+  "metadata": { "title": "Food web what-if" },
+  "purpose": { "learningObjective": "Predict what breaks if a node is removed", "reasoningMode": "explain" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "system",
+    "nodes": [
+      { "id": "grass", "label": "Grass" },
+      { "id": "rabbit", "label": "Rabbit" },
+      { "id": "fox", "label": "Fox" },
+      { "id": "decomposer", "label": "Decomposer" }
+    ],
+    "edges": [
+      { "id": "grass-rabbit", "from": "grass", "to": "rabbit", "relationship": "feeds-on" },
+      { "id": "rabbit-fox", "from": "rabbit", "to": "fox", "relationship": "feeds-on" },
+      { "id": "grass-decomposer", "from": "grass", "to": "decomposer", "relationship": "feeds-on" },
+      { "id": "decomposer-grass", "from": "decomposer", "to": "grass", "relationship": "produces" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "answer", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Food web for a what-if: what if the decomposer disappears" }
+}

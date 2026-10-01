@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-mining",
+    "nodeId": "mining",
+    "label": "Mining"
+  },
+  {
+    "kind": "node",
+    "id": "node-steel",
+    "nodeId": "steel",
+    "label": "Steel"
+  },
+  {
+    "kind": "node",
+    "id": "node-machinery",
+    "nodeId": "machinery",
+    "label": "Machinery"
+  },
+  {
+    "kind": "node",
+    "id": "node-goods",
+    "nodeId": "goods",
+    "label": "Consumer goods"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-mining-steel",
+    "from": "mining",
+    "relationship": "leads-to",
+    "to": "steel",
+    "fromLabel": "Mining",
+    "toLabel": "Steel"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-steel-machinery",
+    "from": "steel",
+    "relationship": "leads-to",
+    "to": "machinery",
+    "fromLabel": "Steel",
+    "toLabel": "Machinery"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-machinery-goods",
+    "from": "machinery",
+    "relationship": "leads-to",
+    "to": "goods",
+    "fromLabel": "Machinery",
+    "toLabel": "Consumer goods"
+  }
+]

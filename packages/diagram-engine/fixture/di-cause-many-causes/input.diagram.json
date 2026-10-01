@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cause-many-causes",
+  "metadata": { "title": "Drivers of urban growth" },
+  "purpose": { "learningObjective": "Select every factor that increases migration to cities", "reasoningMode": "identify" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "jobs", "label": "City jobs" },
+      { "id": "services", "label": "City services" },
+      { "id": "rural-stress", "label": "Rural distress" },
+      { "id": "migration", "label": "Migration to cities" }
+    ],
+    "edges": [
+      { "from": "jobs", "to": "migration", "relationship": "influences" },
+      { "from": "services", "to": "migration", "relationship": "influences" },
+      { "from": "rural-stress", "to": "migration", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Concept map: drivers of migration to cities" }
+}

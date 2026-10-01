@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Three regions where Region One borders Two and Three</title>
+  <desc>An interactive geographic map</desc>
+  <g id="map-root">
+    <g id="map-layers">
+  <g id="geom-regions" data-oedu-role="layer" aria-label="regions">
+    <path id="geom-regions-r1" data-oedu-role="region" aria-label="Region One" d="M 148 552 L 400 552 L 400 300 L 148 300 L 148 552 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="geom-regions-r2" data-oedu-role="region" data-oedu-interactive="true" aria-label="Region Two" d="M 400 552 L 652 552 L 652 300 L 400 300 L 400 552 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="geom-regions-r3" data-oedu-role="region" data-oedu-interactive="true" aria-label="Region Three" d="M 148 300 L 400 300 L 400 48 L 148 48 L 148 300 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g id="geom-scale-bar" data-oedu-role="scale-bar" aria-label="1000 KM">
+    <line x1="26" y1="530" x2="258" y2="530" stroke="currentColor" stroke-width="2"/>
+    <line x1="26" y1="526" x2="26" y2="534" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="258" y1="526" x2="258" y2="534" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+    </g>
+  </g>
+</svg>

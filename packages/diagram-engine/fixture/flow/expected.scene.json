@@ -83,6 +83,8 @@
           "label": "start leads-to process",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -91,6 +93,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-start-process",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -115,6 +118,8 @@
           "label": "process leads-to end",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -123,6 +128,7 @@
             "relationship": "leads-to",
             "labels": [],
             "edgeId": "edge-process-end",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -247,6 +253,8 @@
       "label": "start leads-to process",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -254,7 +262,8 @@
         "toNodeId": "process",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-start-process"
+        "edgeId": "edge-start-process",
+        "gated": false
       },
       "children": []
     },
@@ -265,6 +274,8 @@
       "label": "process leads-to end",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -272,7 +283,8 @@
         "toNodeId": "end",
         "relationship": "leads-to",
         "labels": [],
-        "edgeId": "edge-process-end"
+        "edgeId": "edge-process-end",
+        "gated": false
       },
       "children": []
     },
@@ -338,6 +350,8 @@
           "label": "start leads-to process",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -345,7 +359,8 @@
             "toNodeId": "process",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-start-process"
+            "edgeId": "edge-start-process",
+            "gated": false
           },
           "children": []
         },
@@ -356,6 +371,8 @@
           "label": "process leads-to end",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -363,7 +380,8 @@
             "toNodeId": "end",
             "relationship": "leads-to",
             "labels": [],
-            "edgeId": "edge-process-end"
+            "edgeId": "edge-process-end",
+            "gated": false
           },
           "children": []
         }

@@ -1,0 +1,27 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cause-influence-chain",
+  "metadata": { "title": "Why the delta is fertile" },
+  "purpose": { "learningObjective": "Trace every factor feeding sediment fertility", "reasoningMode": "explain" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "river", "label": "River" },
+      { "id": "silt", "label": "Silt deposition" },
+      { "id": "fertility", "label": "Sediment fertility" },
+      { "id": "crops", "label": "Dense crops" }
+    ],
+    "edges": [
+      { "id": "river-silt", "from": "river", "to": "silt", "relationship": "leads-to" },
+      { "id": "silt-fertility", "from": "silt", "to": "fertility", "relationship": "leads-to" },
+      { "id": "fertility-crops", "from": "fertility", "to": "crops", "relationship": "influences" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Influence chain from river to silt to fertility to crops" }
+}

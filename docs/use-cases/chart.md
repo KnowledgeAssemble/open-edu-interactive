@@ -124,7 +124,7 @@ Reference UX: trend over ordered categories or time. Requires ≥ 2 data points.
 | **Spec** | `kind: "line"`, one dimension, one measure, ≥ 2 rows |
 | **Fixture** | `packages/chart-engine/fixture/line/` |
 | **Host** | Discussion / open response |
-| **Status** | `done` |
+| **Status** | `done` (re-flipped: W-2.4 line series stroke — `<polyline id="series-line">` connects point markers in dimension order; markers stay selectable; `line/expected.svg` regenerated as a reviewed golden change; SPEC §3.1) |
 
 ### `ch-l2-identify-peak` — Which point is the maximum? (discovery)
 
@@ -161,9 +161,9 @@ Reference UX: trend over ordered categories or time. Requires ≥ 2 data points.
 | **Action** | Select points along the time axis |
 | **Acceptance** | `dimensions[].type: "time"` accepts ISO-8601 strings; non-ISO values rejected with `INVALID_ENTITY`; line renders with ordered time scale |
 | **Spec** | `kind: "line"`, `dimensions: [{ id: "when", type: "time" }]` |
-| **Fixture** | `planned` (validation covered in `packages/chart-engine/test/validation.test.ts`) |
+| **Fixture** | `packages/chart-engine/fixture/line-time/` |
 | **Host** | Scoring on `rowId` or date |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 
@@ -191,9 +191,9 @@ Reference UX: trend over ordered categories or time. Requires ≥ 2 data points.
 | **Action** | Select the correct bar among grouped measures |
 | **Acceptance** | Two measures produce distinct node ids per row (`rainfall-bar-row-jan`, `sunshine-bar-row-jan`); legend distinguishes measures; tabular lists both values per row |
 | **Spec** | `measures[]` length 2, shared dimension |
-| **Fixture** | `planned` |
+| **Fixture** | `packages/chart-engine/fixture/bar-multi-measure/` |
 | **Host** | Scoring on `rowId` + `measureId` |
-| **Status** | `planned` |
+| **Status** | `done` (promoted: W-2.3 grouped multi-measure — node-id scheme `{measureId}-bar-{rowId}` documented in chart SPEC §3.1; legend distinguishes measures; tabular lists both values per row) |
 
 ### `ch-x3-guided-narrow` — Guided select via pre-filter
 
@@ -204,9 +204,9 @@ Reference UX: trend over ordered categories or time. Requires ≥ 2 data points.
 | **Action** | Host dispatches `filter: { ids: ["row-may"] }`; learner `select`s the visible bar |
 | **Acceptance** | Single visible bar; selection event matches filtered row; `reset` / `clear-filter` restores full chart between steps |
 | **Spec** | `filter` + `select` + `reset` in `interaction.actions` |
-| **Fixture** | `planned` (derive from `bar/` fixture) |
+| **Fixture** | `packages/chart-engine/fixture/bar-guided-narrow/` |
 | **Host** | Multi-step workflow |
-| **Status** | `planned` |
+| **Status** | `done` |
 
 ---
 

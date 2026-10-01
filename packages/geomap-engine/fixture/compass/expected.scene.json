@@ -1,0 +1,476 @@
+{
+  "nodes": [
+    {
+      "id": "geom-places",
+      "role": "layer",
+      "kind": "layer",
+      "label": "places",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "places"
+      },
+      "children": [
+        {
+          "id": "geom-places-shrine",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Shrine",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "shrine",
+            "entityType": "landmark",
+            "name": "Shrine",
+            "location": {
+              "coordinates": {
+                "lat": 21,
+                "lon": 80.5
+              }
+            },
+            "lat": 21,
+            "lon": 80.5,
+            "bearing": 26.6,
+            "bearingInWindow": true
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              80.5,
+              21
+            ]
+          },
+          "bounds": {
+            "x": 378,
+            "y": 26,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-places-pond",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Pond",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "pond",
+            "entityType": "place",
+            "name": "Pond",
+            "location": {
+              "coordinates": {
+                "lat": 19,
+                "lon": 80
+              }
+            },
+            "lat": 19,
+            "lon": 80,
+            "bearing": 180,
+            "bearingInWindow": false
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              80,
+              19
+            ]
+          },
+          "bounds": {
+            "x": 252,
+            "y": 530,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-places-park",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Park",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "park",
+            "entityType": "landmark",
+            "name": "Park",
+            "location": {
+              "coordinates": {
+                "lat": 20,
+                "lon": 81
+              }
+            },
+            "lat": 20,
+            "lon": 81,
+            "bearing": 90,
+            "bearingInWindow": false
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              81,
+              20
+            ]
+          },
+          "bounds": {
+            "x": 504,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-compass",
+      "role": "compass",
+      "kind": "compass",
+      "label": "North",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "bearing"
+      ],
+      "metadata": {
+        "referenceEntityId": "school",
+        "referenceLat": 20,
+        "referenceLon": 80,
+        "windowLabel": "North",
+        "windowFrom": 315,
+        "windowTo": 45
+      },
+      "children": [],
+      "bounds": {
+        "x": 730,
+        "y": 8,
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "id": "geom-scale-bar",
+      "role": "scale-bar",
+      "kind": "scale-bar",
+      "label": "100 KM",
+      "bounds": {
+        "x": 24,
+        "y": 512,
+        "width": 247,
+        "height": 68
+      },
+      "interactive": false,
+      "metadata": {
+        "lengthKm": 100,
+        "lengthPx": 241,
+        "unit": "km",
+        "label": "100 KM",
+        "scaleBarKind": "scale-bar"
+      },
+      "children": []
+    }
+  ],
+  "semantics": {
+    "geom-places-shrine": {
+      "id": "geom-places-shrine",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Shrine",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "shrine",
+        "entityType": "landmark",
+        "name": "Shrine",
+        "location": {
+          "coordinates": {
+            "lat": 21,
+            "lon": 80.5
+          }
+        },
+        "lat": 21,
+        "lon": 80.5,
+        "bearing": 26.6,
+        "bearingInWindow": true
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.5,
+          21
+        ]
+      },
+      "bounds": {
+        "x": 378,
+        "y": 26,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-places-pond": {
+      "id": "geom-places-pond",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Pond",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "pond",
+        "entityType": "place",
+        "name": "Pond",
+        "location": {
+          "coordinates": {
+            "lat": 19,
+            "lon": 80
+          }
+        },
+        "lat": 19,
+        "lon": 80,
+        "bearing": 180,
+        "bearingInWindow": false
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80,
+          19
+        ]
+      },
+      "bounds": {
+        "x": 252,
+        "y": 530,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-places-park": {
+      "id": "geom-places-park",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Park",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "park",
+        "entityType": "landmark",
+        "name": "Park",
+        "location": {
+          "coordinates": {
+            "lat": 20,
+            "lon": 81
+          }
+        },
+        "lat": 20,
+        "lon": 81,
+        "bearing": 90,
+        "bearingInWindow": false
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81,
+          20
+        ]
+      },
+      "bounds": {
+        "x": 504,
+        "y": 278,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-places": {
+      "id": "geom-places",
+      "role": "layer",
+      "kind": "layer",
+      "label": "places",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "places"
+      },
+      "children": [
+        {
+          "id": "geom-places-shrine",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Shrine",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "shrine",
+            "entityType": "landmark",
+            "name": "Shrine",
+            "location": {
+              "coordinates": {
+                "lat": 21,
+                "lon": 80.5
+              }
+            },
+            "lat": 21,
+            "lon": 80.5,
+            "bearing": 26.6,
+            "bearingInWindow": true
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              80.5,
+              21
+            ]
+          },
+          "bounds": {
+            "x": 378,
+            "y": 26,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-places-pond",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Pond",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "pond",
+            "entityType": "place",
+            "name": "Pond",
+            "location": {
+              "coordinates": {
+                "lat": 19,
+                "lon": 80
+              }
+            },
+            "lat": 19,
+            "lon": 80,
+            "bearing": 180,
+            "bearingInWindow": false
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              80,
+              19
+            ]
+          },
+          "bounds": {
+            "x": 252,
+            "y": 530,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-places-park",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Park",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "park",
+            "entityType": "landmark",
+            "name": "Park",
+            "location": {
+              "coordinates": {
+                "lat": 20,
+                "lon": 81
+              }
+            },
+            "lat": 20,
+            "lon": 81,
+            "bearing": 90,
+            "bearingInWindow": false
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              81,
+              20
+            ]
+          },
+          "bounds": {
+            "x": 504,
+            "y": 278,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    "geom-compass": {
+      "id": "geom-compass",
+      "role": "compass",
+      "kind": "compass",
+      "label": "North",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "bearing"
+      ],
+      "metadata": {
+        "referenceEntityId": "school",
+        "referenceLat": 20,
+        "referenceLon": 80,
+        "windowLabel": "North",
+        "windowFrom": 315,
+        "windowTo": 45
+      },
+      "children": [],
+      "bounds": {
+        "x": 730,
+        "y": 8,
+        "width": 60,
+        "height": 60
+      }
+    }
+  }
+}

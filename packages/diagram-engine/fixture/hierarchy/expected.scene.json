@@ -85,6 +85,8 @@
           "label": "root contains child1",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -93,6 +95,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-root-child1",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -117,6 +120,8 @@
           "label": "root contains child2",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -125,6 +130,7 @@
             "relationship": "contains",
             "labels": [],
             "edgeId": "edge-root-child2",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -253,6 +259,8 @@
       "label": "root contains child1",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -260,7 +268,8 @@
         "toNodeId": "child1",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-root-child1"
+        "edgeId": "edge-root-child1",
+        "gated": false
       },
       "children": []
     },
@@ -271,6 +280,8 @@
       "label": "root contains child2",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -278,7 +289,8 @@
         "toNodeId": "child2",
         "relationship": "contains",
         "labels": [],
-        "edgeId": "edge-root-child2"
+        "edgeId": "edge-root-child2",
+        "gated": false
       },
       "children": []
     },
@@ -346,6 +358,8 @@
           "label": "root contains child1",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -353,7 +367,8 @@
             "toNodeId": "child1",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-root-child1"
+            "edgeId": "edge-root-child1",
+            "gated": false
           },
           "children": []
         },
@@ -364,6 +379,8 @@
           "label": "root contains child2",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -371,7 +388,8 @@
             "toNodeId": "child2",
             "relationship": "contains",
             "labels": [],
-            "edgeId": "edge-root-child2"
+            "edgeId": "edge-root-child2",
+            "gated": false
           },
           "children": []
         }

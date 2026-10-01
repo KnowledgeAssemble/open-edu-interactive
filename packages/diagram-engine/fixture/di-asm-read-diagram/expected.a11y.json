@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-cause",
+    "role": "button",
+    "label": "Cause",
+    "children": []
+  },
+  {
+    "id": "node-event",
+    "role": "button",
+    "label": "Event",
+    "children": []
+  },
+  {
+    "id": "node-outcome",
+    "role": "button",
+    "label": "Outcome",
+    "children": []
+  },
+  {
+    "id": "edge-cause-event",
+    "role": "link",
+    "label": "Cause leads-to Event",
+    "children": []
+  },
+  {
+    "id": "edge-event-outcome",
+    "role": "link",
+    "label": "Event leads-to Outcome",
+    "children": []
+  }
+]

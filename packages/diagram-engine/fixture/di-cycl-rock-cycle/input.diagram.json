@@ -1,0 +1,28 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cycl-rock-cycle",
+  "metadata": { "title": "Rock cycle" },
+  "purpose": { "learningObjective": "Describe transitions between rock types", "reasoningMode": "explore" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "process",
+    "nodes": [
+      { "id": "igneous", "label": "Igneous" },
+      { "id": "sedimentary", "label": "Sedimentary" },
+      { "id": "metamorphic", "label": "Metamorphic" },
+      { "id": "magma", "label": "Magma" }
+    ],
+    "edges": [
+      { "from": "magma", "to": "igneous", "relationship": "transforms-to" },
+      { "from": "igneous", "to": "sedimentary", "relationship": "weathers-into" },
+      { "from": "sedimentary", "to": "metamorphic", "relationship": "transforms-to" },
+      { "from": "metamorphic", "to": "magma", "relationship": "transforms-to" }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Rock cycle: magma to igneous, weathering to sedimentary, transforms to metamorphic" }
+}

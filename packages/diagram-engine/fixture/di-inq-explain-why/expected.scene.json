@@ -1,0 +1,539 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-river",
+          "role": "selectable",
+          "kind": "node",
+          "label": "River",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "river",
+            "label": "River"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-silt",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Silt deposition",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "silt",
+            "label": "Silt deposition"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-fertility",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Fertile soil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "fertility",
+            "label": "Fertile soil"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-agriculture",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Dense agriculture",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "agriculture",
+            "label": "Dense agriculture"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-river-silt",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "river leads-to silt",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "river",
+            "toNodeId": "silt",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-river-silt",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 468,
+                  "y": 262.5
+                }
+              ],
+              "path": "M308,262.5 L468,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-silt-fertility",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "silt leads-to fertility",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "silt",
+            "toNodeId": "fertility",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-silt-fertility",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-fertility-agriculture",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "fertility influences agriculture",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "fertility",
+            "toNodeId": "agriculture",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-fertility-agriculture",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 322.5
+                },
+                {
+                  "x": 468,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,322.5 L468,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-river": {
+      "id": "node-river",
+      "role": "selectable",
+      "kind": "node",
+      "label": "River",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "river",
+        "label": "River"
+      },
+      "children": []
+    },
+    "river": {
+      "id": "node-river",
+      "role": "selectable",
+      "kind": "node",
+      "label": "River",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "river",
+        "label": "River"
+      },
+      "children": []
+    },
+    "node-silt": {
+      "id": "node-silt",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Silt deposition",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "silt",
+        "label": "Silt deposition"
+      },
+      "children": []
+    },
+    "silt": {
+      "id": "node-silt",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Silt deposition",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "silt",
+        "label": "Silt deposition"
+      },
+      "children": []
+    },
+    "node-fertility": {
+      "id": "node-fertility",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Fertile soil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "fertility",
+        "label": "Fertile soil"
+      },
+      "children": []
+    },
+    "fertility": {
+      "id": "node-fertility",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Fertile soil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "fertility",
+        "label": "Fertile soil"
+      },
+      "children": []
+    },
+    "node-agriculture": {
+      "id": "node-agriculture",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Dense agriculture",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "agriculture",
+        "label": "Dense agriculture"
+      },
+      "children": []
+    },
+    "agriculture": {
+      "id": "node-agriculture",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Dense agriculture",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "agriculture",
+        "label": "Dense agriculture"
+      },
+      "children": []
+    },
+    "edge-river-silt": {
+      "id": "edge-river-silt",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "river leads-to silt",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "river",
+        "toNodeId": "silt",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-river-silt",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-silt-fertility": {
+      "id": "edge-silt-fertility",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "silt leads-to fertility",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "silt",
+        "toNodeId": "fertility",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-silt-fertility",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-fertility-agriculture": {
+      "id": "edge-fertility-agriculture",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "fertility influences agriculture",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "fertility",
+        "toNodeId": "agriculture",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-fertility-agriculture",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-river",
+          "role": "selectable",
+          "kind": "node",
+          "label": "River",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "river",
+            "label": "River"
+          },
+          "children": []
+        },
+        {
+          "id": "node-silt",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Silt deposition",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "silt",
+            "label": "Silt deposition"
+          },
+          "children": []
+        },
+        {
+          "id": "node-fertility",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Fertile soil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "fertility",
+            "label": "Fertile soil"
+          },
+          "children": []
+        },
+        {
+          "id": "node-agriculture",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Dense agriculture",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "agriculture",
+            "label": "Dense agriculture"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-river-silt",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "river leads-to silt",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "river",
+            "toNodeId": "silt",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-river-silt",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-silt-fertility",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "silt leads-to fertility",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "silt",
+            "toNodeId": "fertility",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-silt-fertility",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-fertility-agriculture",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "fertility influences agriculture",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "fertility",
+            "toNodeId": "agriculture",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-fertility-agriculture",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

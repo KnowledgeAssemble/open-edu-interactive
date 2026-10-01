@@ -1,0 +1,46 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "guided-composed",
+  "metadata": { "title": "Guided composed map: select Odisha, then its capital" },
+  "purpose": { "learningObjective": "Select Odisha, then find its capital in a guided workflow", "reasoningMode": "identify" },
+  "content": {
+    "viewport": { "fit": "content", "padding": 0.08 },
+    "projection": { "type": "equirectangular" },
+    "geography": {
+      "sources": [
+        {
+          "id": "india-states",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [
+              { "id": "odisha", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[82, 18], [84, 18], [84, 20], [82, 20], [82, 18]]] } },
+              { "id": "west-bengal", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[86, 22], [88, 22], [88, 24], [86, 24], [86, 22]]] } }
+            ]
+          }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "odisha", "type": "state", "name": "Odisha", "description": "A state on the eastern coast of India.", "location": { "source": "india-states", "featureId": "odisha" } },
+      { "id": "west-bengal", "type": "state", "name": "West Bengal", "description": "A state in eastern India.", "location": { "source": "india-states", "featureId": "west-bengal" } },
+      { "id": "bhubaneswar", "type": "city", "name": "Bhubaneswar", "description": "Capital of Odisha.", "location": { "coordinates": { "lat": 20.2961, "lon": 85.8245 } } },
+      { "id": "chilika", "type": "lake", "name": "Chilika Lake", "description": "A brackish water lagoon.", "location": { "coordinates": { "lat": 19.7, "lon": 85.3 } } }
+    ],
+    "layers": [
+      { "id": "states", "type": "region", "items": [{ "entity": "odisha", "interactive": true }, { "entity": "west-bengal", "interactive": false }] },
+      { "id": "cities", "type": "marker", "items": [{ "entity": "bhubaneswar", "label": true, "interactive": true }] },
+      { "id": "water", "type": "marker", "items": [{ "entity": "chilika", "label": true, "interactive": false }] }
+    ],
+    "legend": { "visible": true, "items": [
+      { "role": "primary-region", "label": "State" },
+      { "role": "marker", "label": "City / Lake" }
+    ] }
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Map of Odisha, its capital Bhubaneswar, and coastal connections." }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-monsoon",
+    "role": "button",
+    "label": "Weak monsoon",
+    "children": []
+  },
+  {
+    "id": "node-crop",
+    "role": "button",
+    "label": "Crop failure",
+    "children": []
+  },
+  {
+    "id": "node-price",
+    "role": "button",
+    "label": "Price rise",
+    "children": []
+  },
+  {
+    "id": "node-stock",
+    "role": "button",
+    "label": "Stock market",
+    "children": []
+  },
+  {
+    "id": "edge-monsoon-crop",
+    "role": "link",
+    "label": "Weak monsoon leads-to Crop failure",
+    "children": []
+  },
+  {
+    "id": "edge-crop-price",
+    "role": "link",
+    "label": "Crop failure leads-to Price rise",
+    "children": []
+  },
+  {
+    "id": "edge-monsoon-stock",
+    "role": "link",
+    "label": "Weak monsoon influences Stock market",
+    "children": []
+  }
+]

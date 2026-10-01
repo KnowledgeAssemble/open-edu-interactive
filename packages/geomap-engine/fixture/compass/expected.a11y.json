@@ -1,0 +1,26 @@
+[
+  {
+    "id": "geom-places-shrine",
+    "role": "button",
+    "label": "Shrine",
+    "children": []
+  },
+  {
+    "id": "geom-places-pond",
+    "role": "button",
+    "label": "Pond",
+    "children": []
+  },
+  {
+    "id": "geom-places-park",
+    "role": "button",
+    "label": "Park",
+    "children": []
+  },
+  {
+    "id": "geom-compass",
+    "role": "button",
+    "label": "North",
+    "children": []
+  }
+]

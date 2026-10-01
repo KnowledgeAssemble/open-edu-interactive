@@ -14,13 +14,6 @@
     "sourceClass": "illustrative"
   },
   {
-    "entityId": "bd",
-    "type": "region",
-    "name": "Boundary Area",
-    "location": "5.0295, 7.5000",
-    "sourceClass": "illustrative"
-  },
-  {
     "entityId": "geom-scale-bar",
     "type": "scale-bar",
     "name": "2000 KM",

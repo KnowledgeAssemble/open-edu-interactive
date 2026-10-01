@@ -21,6 +21,7 @@ export interface SceneNode {
   metadata?: Record<string, unknown>;
   children: SceneNode[];
   positionSource?: string;
+  hidden?: boolean;
 }
 
 export interface Scene {

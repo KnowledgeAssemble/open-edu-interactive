@@ -1,0 +1,32 @@
+[
+  {
+    "id": "node-migration",
+    "role": "button",
+    "label": "Migration",
+    "children": []
+  },
+  {
+    "id": "node-settlement",
+    "role": "button",
+    "label": "Settlement",
+    "children": []
+  },
+  {
+    "id": "node-boundary",
+    "role": "button",
+    "label": "Boundary shift",
+    "children": []
+  },
+  {
+    "id": "edge-migration-settlement",
+    "role": "link",
+    "label": "Migration leads-to Settlement",
+    "children": []
+  },
+  {
+    "id": "edge-settlement-boundary",
+    "role": "link",
+    "label": "Settlement leads-to Boundary shift",
+    "children": []
+  }
+]

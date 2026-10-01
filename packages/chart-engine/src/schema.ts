@@ -25,7 +25,7 @@ export const MeasureSchema = z
   })
   .strict();
 
-export const DataRowSchema = z.record(z.union([z.string(), z.number()]));
+export const DataRowSchema = z.record(z.union([z.string(), z.number(), z.boolean()]));
 
 export const ChartContentSchema = z
   .object({

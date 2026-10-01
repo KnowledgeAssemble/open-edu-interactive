@@ -1,0 +1,26 @@
+[
+  {
+    "id": "node-artery",
+    "role": "button",
+    "label": "Artery",
+    "children": []
+  },
+  {
+    "id": "node-capillary",
+    "role": "button",
+    "label": "Capillary",
+    "children": []
+  },
+  {
+    "id": "node-vein",
+    "role": "button",
+    "label": "Vein",
+    "children": []
+  },
+  {
+    "id": "edge-capillary-vein",
+    "role": "link",
+    "label": "Capillary leads-to Vein",
+    "children": []
+  }
+]

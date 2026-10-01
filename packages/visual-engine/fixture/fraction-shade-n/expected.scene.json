@@ -1,0 +1,368 @@
+{
+  "nodes": [
+    {
+      "id": "fb",
+      "role": "group",
+      "kind": "fraction",
+      "children": [
+        {
+          "id": "fb-bar",
+          "role": "group",
+          "kind": "fraction-bar",
+          "children": [
+            {
+              "id": "fb-part-0",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 0,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 40,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-1",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 1,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 184,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-2",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 2,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 328,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-3",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 3,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 472,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-4",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 4,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 616,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            }
+          ],
+          "bounds": {
+            "x": 40,
+            "y": 276,
+            "width": 720,
+            "height": 48
+          }
+        },
+        {
+          "id": "fb-fraction-label",
+          "role": "label",
+          "kind": "text",
+          "label": "2/5",
+          "children": [],
+          "bounds": {
+            "x": 40,
+            "y": 336,
+            "width": 200,
+            "height": 24
+          }
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "fb": {
+      "id": "fb",
+      "role": "group",
+      "kind": "fraction",
+      "children": [
+        {
+          "id": "fb-bar",
+          "role": "group",
+          "kind": "fraction-bar",
+          "children": [
+            {
+              "id": "fb-part-0",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 0,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 40,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-1",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 1,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 184,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-2",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 2,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 328,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-3",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 3,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 472,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            },
+            {
+              "id": "fb-part-4",
+              "role": "fraction-part",
+              "kind": "rect",
+              "value": 4,
+              "interactive": true,
+              "acceptsActions": [
+                "select",
+                "focus"
+              ],
+              "children": [],
+              "bounds": {
+                "x": 616,
+                "y": 276,
+                "width": 144,
+                "height": 48
+              }
+            }
+          ],
+          "bounds": {
+            "x": 40,
+            "y": 276,
+            "width": 720,
+            "height": 48
+          }
+        },
+        {
+          "id": "fb-fraction-label",
+          "role": "label",
+          "kind": "text",
+          "label": "2/5",
+          "children": [],
+          "bounds": {
+            "x": 40,
+            "y": 336,
+            "width": 200,
+            "height": 24
+          }
+        }
+      ]
+    },
+    "fb-bar": {
+      "id": "fb-bar",
+      "role": "group",
+      "kind": "fraction-bar",
+      "children": [
+        {
+          "id": "fb-part-0",
+          "role": "fraction-part",
+          "kind": "rect",
+          "value": 0,
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 40,
+            "y": 276,
+            "width": 144,
+            "height": 48
+          }
+        },
+        {
+          "id": "fb-part-1",
+          "role": "fraction-part",
+          "kind": "rect",
+          "value": 1,
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 184,
+            "y": 276,
+            "width": 144,
+            "height": 48
+          }
+        },
+        {
+          "id": "fb-part-2",
+          "role": "fraction-part",
+          "kind": "rect",
+          "value": 2,
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 328,
+            "y": 276,
+            "width": 144,
+            "height": 48
+          }
+        },
+        {
+          "id": "fb-part-3",
+          "role": "fraction-part",
+          "kind": "rect",
+          "value": 3,
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 472,
+            "y": 276,
+            "width": 144,
+            "height": 48
+          }
+        },
+        {
+          "id": "fb-part-4",
+          "role": "fraction-part",
+          "kind": "rect",
+          "value": 4,
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "children": [],
+          "bounds": {
+            "x": 616,
+            "y": 276,
+            "width": 144,
+            "height": 48
+          }
+        }
+      ],
+      "bounds": {
+        "x": 40,
+        "y": 276,
+        "width": 720,
+        "height": 48
+      }
+    },
+    "fb-fraction-label": {
+      "id": "fb-fraction-label",
+      "role": "label",
+      "kind": "text",
+      "label": "2/5",
+      "children": [],
+      "bounds": {
+        "x": 40,
+        "y": 336,
+        "width": 200,
+        "height": 24
+      }
+    }
+  }
+}

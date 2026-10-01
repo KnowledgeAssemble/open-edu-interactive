@@ -1,0 +1,37 @@
+[
+  {
+    "entityId": "region-s",
+    "type": "region",
+    "name": "Region South",
+    "description": "The region for this map.",
+    "location": "20.0531, 80.0000",
+    "sourceClass": "illustrative"
+  },
+  {
+    "entityId": "capital",
+    "type": "city",
+    "name": "Capital City",
+    "description": "The capital.",
+    "location": "18.0000, 80.0000"
+  },
+  {
+    "entityId": "peak",
+    "type": "mountain",
+    "name": "Peak",
+    "description": "The highest point.",
+    "location": "22.0000, 78.0000"
+  },
+  {
+    "entityId": "west-sea",
+    "type": "lake",
+    "name": "Western Sea",
+    "description": "The western sea.",
+    "location": "16.0000, 72.0000"
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "1000 KM",
+    "location": "1000 KM"
+  }
+]

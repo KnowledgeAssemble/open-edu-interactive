@@ -19,7 +19,7 @@ Shared infrastructure that turns declarative, renderer-independent JSON into int
 - **DEVELOPER-GUIDE.md** — how to integrate and extend; how-to layer below the contract.
 - **PLAN.md** — living, exit-gated phase plan (P0–P7). Sequencing; not design.
 - **STRUCTURE.md** — repo layout, tech stack, packaging (§7 naming per D2).
-- **Agent-Prompt-Spec.md** — the 2026-09-13 architecture-review mandate (proposed). Source of the ADR-10..12 records and the executable next-phase plan under `docs/superpowers/specs/`. A review prompt, not a design doc; the ADRs + plan are the durable deliverables.
+- **Agent-Prompt-Spec.md** (`docs/_archive/review-mandates/`) — the 2026-09-13 architecture-review mandate (proposed, now archived). Source of the ADR-10..12 records and the executable next-phase plan under `docs/superpowers/specs/`. A review prompt, not a design doc; the ADRs + plan are the durable deliverables.
 
 Conflict rule: when docs disagree, fix the **higher** document, never the implementation.
 
@@ -64,7 +64,7 @@ Current status: **P0–P7 in-repo gates DONE.** Next: **P8 — Production readin
 - **Workflow:** edit the `docs/` sources → `pnpm generate` → commit both sides. The freshness guard (`scripts/check-engine-skills-fresh.mjs`) fails the gate if regeneration produces any diff.
 - **Portability rule:** generated `skills/*` must contain **zero** `packages/` or `docs/` path fragments (generator fails loudly, tests and freshness guard enforce). Composition's embedded-spec line points at `validateEnvelope(spec)` from `@knowledgeassemble/interactive-engine` — never at `./schema.json` (that is the lesson schema).
 - **Do not** import engine packages in the generator — their dev `exports` map to `src/index.ts`, which plain `node` cannot load. Clause kinds derive from schema JSON `content.kind.enum`. Runtime deps stay minimal (`ajv`, `ajv-formats`).
-- **Fixtures split:** `packages/<engine>/fixture/<kind>/` = private pipeline goldens asserted by that engine's own tests (never shipped/catalogued). `docs/fixtures/` = shared contract consumed by dev-harness/conformance/playground, the generator, and the fixture catalog. No fixture file lives in both places; add to the location whose consumers you serve.
+- **Fixtures split:** `packages/<engine>/fixture/<kind>/` = private pipeline goldens asserted by that engine's own tests; they are never published and are not part of the shared authoring contract. `docs/fixtures/` = shared contract consumed by dev-harness/conformance/playground, the generator, and the fixture catalog. The private `dev-harness` fixture catalog indexes **both** sources for dev tooling (`catalog.test.ts` requires every engine fixture to appear), so "not catalogued" means "not in the published `docs/fixtures/` contract", not absent from that dev index. No fixture file lives in both places; add to the location whose consumers you serve.
 - Engine-schema drift (schema file diverges from the engine's zod runtime): fix the schema **file** to match the runtime, then drop any generator workaround — never silently relax `additionalProperties`.
 
 ## Tech stack

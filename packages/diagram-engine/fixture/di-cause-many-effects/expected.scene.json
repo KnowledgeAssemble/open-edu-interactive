@@ -1,0 +1,687 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-deforest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Deforestation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "deforest",
+            "label": "Deforestation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-habitat-loss",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Habitat loss",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "habitat-loss",
+            "label": "Habitat loss"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-soil-erosion",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "soil-erosion",
+            "label": "Soil erosion"
+          },
+          "children": [],
+          "bounds": {
+            "x": 480,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-climate-change",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Climate change",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "climate-change",
+            "label": "Climate change"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-flooding",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Flooding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "flooding",
+            "label": "Flooding"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-deforest-habitat-loss",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest leads-to habitat-loss",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "habitat-loss",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-deforest-habitat-loss",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 388,
+                  "y": 262.5
+                }
+              ],
+              "path": "M228,262.5 L388,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-deforest-soil-erosion",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest leads-to soil-erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "soil-erosion",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-deforest-soil-erosion",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 548,
+                  "y": 262.5
+                }
+              ],
+              "path": "M228,262.5 L548,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-deforest-climate-change",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest influences climate-change",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "climate-change",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-deforest-climate-change",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M228,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-soil-erosion-flooding",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "soil-erosion leads-to flooding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "soil-erosion",
+            "toNodeId": "flooding",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-soil-erosion-flooding",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 548,
+                  "y": 262.5
+                },
+                {
+                  "x": 388,
+                  "y": 322.5
+                }
+              ],
+              "path": "M548,262.5 L388,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-deforest": {
+      "id": "node-deforest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Deforestation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "deforest",
+        "label": "Deforestation"
+      },
+      "children": []
+    },
+    "deforest": {
+      "id": "node-deforest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Deforestation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "deforest",
+        "label": "Deforestation"
+      },
+      "children": []
+    },
+    "node-habitat-loss": {
+      "id": "node-habitat-loss",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Habitat loss",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "habitat-loss",
+        "label": "Habitat loss"
+      },
+      "children": []
+    },
+    "habitat-loss": {
+      "id": "node-habitat-loss",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Habitat loss",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "habitat-loss",
+        "label": "Habitat loss"
+      },
+      "children": []
+    },
+    "node-soil-erosion": {
+      "id": "node-soil-erosion",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "soil-erosion",
+        "label": "Soil erosion"
+      },
+      "children": []
+    },
+    "soil-erosion": {
+      "id": "node-soil-erosion",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "soil-erosion",
+        "label": "Soil erosion"
+      },
+      "children": []
+    },
+    "node-climate-change": {
+      "id": "node-climate-change",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Climate change",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "climate-change",
+        "label": "Climate change"
+      },
+      "children": []
+    },
+    "climate-change": {
+      "id": "node-climate-change",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Climate change",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "climate-change",
+        "label": "Climate change"
+      },
+      "children": []
+    },
+    "node-flooding": {
+      "id": "node-flooding",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Flooding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "flooding",
+        "label": "Flooding"
+      },
+      "children": []
+    },
+    "flooding": {
+      "id": "node-flooding",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Flooding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "flooding",
+        "label": "Flooding"
+      },
+      "children": []
+    },
+    "edge-deforest-habitat-loss": {
+      "id": "edge-deforest-habitat-loss",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "deforest leads-to habitat-loss",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "deforest",
+        "toNodeId": "habitat-loss",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-deforest-habitat-loss",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-deforest-soil-erosion": {
+      "id": "edge-deforest-soil-erosion",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "deforest leads-to soil-erosion",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "deforest",
+        "toNodeId": "soil-erosion",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-deforest-soil-erosion",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-deforest-climate-change": {
+      "id": "edge-deforest-climate-change",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "deforest influences climate-change",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "deforest",
+        "toNodeId": "climate-change",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "edge-deforest-climate-change",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-soil-erosion-flooding": {
+      "id": "edge-soil-erosion-flooding",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "soil-erosion leads-to flooding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "soil-erosion",
+        "toNodeId": "flooding",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-soil-erosion-flooding",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-deforest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Deforestation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "deforest",
+            "label": "Deforestation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-habitat-loss",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Habitat loss",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "habitat-loss",
+            "label": "Habitat loss"
+          },
+          "children": []
+        },
+        {
+          "id": "node-soil-erosion",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "soil-erosion",
+            "label": "Soil erosion"
+          },
+          "children": []
+        },
+        {
+          "id": "node-climate-change",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Climate change",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "climate-change",
+            "label": "Climate change"
+          },
+          "children": []
+        },
+        {
+          "id": "node-flooding",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Flooding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "flooding",
+            "label": "Flooding"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-deforest-habitat-loss",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest leads-to habitat-loss",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "habitat-loss",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-deforest-habitat-loss",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-deforest-soil-erosion",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest leads-to soil-erosion",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "soil-erosion",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-deforest-soil-erosion",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-deforest-climate-change",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "deforest influences climate-change",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "deforest",
+            "toNodeId": "climate-change",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "edge-deforest-climate-change",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-soil-erosion-flooding",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "soil-erosion leads-to flooding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "soil-erosion",
+            "toNodeId": "flooding",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-soil-erosion-flooding",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

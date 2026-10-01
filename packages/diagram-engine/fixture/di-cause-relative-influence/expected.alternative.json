@@ -1,0 +1,40 @@
+[
+  {
+    "kind": "node",
+    "id": "node-soil",
+    "nodeId": "soil",
+    "label": "Soil"
+  },
+  {
+    "kind": "node",
+    "id": "node-rain",
+    "nodeId": "rain",
+    "label": "Rain"
+  },
+  {
+    "kind": "node",
+    "id": "node-crop",
+    "nodeId": "crop",
+    "label": "Crop choice"
+  },
+  {
+    "kind": "edge",
+    "id": "soil-crop",
+    "from": "soil",
+    "relationship": "influences",
+    "to": "crop",
+    "fromLabel": "Soil",
+    "toLabel": "Crop choice",
+    "strength": 0.8
+  },
+  {
+    "kind": "edge",
+    "id": "rain-crop",
+    "from": "rain",
+    "relationship": "influences",
+    "to": "crop",
+    "fromLabel": "Rain",
+    "toLabel": "Crop choice",
+    "strength": 0.6
+  }
+]

@@ -14,7 +14,7 @@ import {
   EventLog,
 } from '@knowledgeassemble/interactive-engine';
 import type { DiagramSpec, DiagramContent } from './schema.js';
-import { DIAGRAM_EVENT_SELECTED, DIAGRAM_EVENT_FOCUSED, DIAGRAM_EVENT_FOLLOWED, defaultLayoutType } from './schema.js';
+import { DIAGRAM_EVENT_SELECTED, DIAGRAM_EVENT_FOCUSED, DIAGRAM_EVENT_FOLLOWED, DIAGRAM_EVENT_EDGE_SELECTED, defaultLayoutType } from './schema.js';
 import { validateSemantic } from './validation/semantic.js';
 import { validateLayout } from './validation/layout.js';
 import { validateAccessibility } from './validation/accessibility.js';
@@ -22,8 +22,9 @@ import { buildScene } from './scene/build.js';
 import { layout } from './layout/engine.js';
 import type { LayoutContext } from './layout/engine.js';
 import { svgFrom } from './render/svg.js';
-import type { Scene } from './scene/types.js';
+import type { Scene, SceneNode } from './scene/types.js';
 import type { SvgResult } from './render/types.js';
+import { adjacency, detectCycles } from './layout/graph.js';
 
 const DEFAULT_LAYOUT: LayoutContext = {
   width: 800,
@@ -52,11 +53,114 @@ function render(
   spec: DiagramSpec,
   label?: string,
   description?: string,
+  filterCategories?: string[],
+  revealedEdges?: string[],
+  followedChain?: string[],
+  deemphasizedNodes?: string[],
 ): { scene: Scene; svgResult: SvgResult } {
   const s = buildScene(content);
   const laidOut = layout(s, ctx, spec.layout?.type ?? defaultLayoutType(content.kind));
+  if (filterCategories && filterCategories.length > 0) {
+    for (const node of laidOut.nodes) {
+      walkHide(node, (n) => {
+        if (n.kind === 'node' && n.metadata) {
+          const cats = n.metadata.categories as string[] | undefined;
+          const matches = Array.isArray(cats) && cats.some((c) => filterCategories.includes(c));
+          if (!matches) n.hidden = true;
+        }
+      });
+    }
+  }
+  const revealed = new Set(revealedEdges ?? []);
+  for (const node of laidOut.nodes) {
+    walkHide(node, (n) => {
+      if (n.kind === 'edge' && n.metadata?.gated === true && n.metadata) {
+        const edgeId = (n.metadata.edgeId as string) ?? n.id;
+        if (!revealed.has(edgeId)) {
+          n.metadata = { ...n.metadata, relationship: undefined, gatedLabel: 'hidden' };
+        }
+      }
+    });
+  }
+  if (followedChain && followedChain.length > 0) {
+    const lastEdge = followedChain[followedChain.length - 1]!;
+    for (const node of laidOut.nodes) {
+      walkHide(node, (n) => {
+        if (n.kind === 'edge' && (n.metadata?.edgeId === lastEdge || n.id === lastEdge)) {
+          n.metadata = { ...n.metadata, chainStep: followedChain.length, chainActive: true };
+        }
+      });
+    }
+  }
+  if (deemphasizedNodes && deemphasizedNodes.length > 0) {
+    const deemph = new Set(deemphasizedNodes);
+    for (const node of laidOut.nodes) {
+      walkHide(node, (n) => {
+        if (n.kind === 'node') {
+          const authored = (n.metadata?.nodeId as string) ?? n.id.replace(/^node-/, '');
+          if (deemph.has(authored) || deemph.has(n.id)) {
+            n.metadata = { ...n.metadata, whatIf: 'deemphasized', whatIfDeemphasized: true };
+          }
+        }
+      });
+    }
+  }
   const svgResult = svgFrom(laidOut, ctx, label, description);
   return { scene: laidOut, svgResult };
+}
+
+function walkHide(node: SceneNode, fn: (n: SceneNode) => void): void {
+  fn(node);
+  for (const child of node.children) {
+    walkHide(child, fn);
+  }
+}
+
+function validateConstructOrder(content: DiagramContent, order: string[]): boolean {
+  const nodes = new Set(content.nodes.map((n) => n.id));
+  if (order.length === 0 || order.length !== nodes.size) return false;
+  const edges = new Map<string, Set<string>>();
+  for (const edge of content.edges) {
+    const list = edges.get(edge.from) ?? new Set<string>();
+    list.add(edge.to);
+    edges.set(edge.from, list);
+  }
+  for (let i = 0; i < order.length - 1; i++) {
+    if (!edges.get(order[i]!)?.has(order[i + 1]!)) return false;
+  }
+  return true;
+}
+
+function connectEdge(
+  content: DiagramContent,
+  from: string,
+  to: string,
+  relationship: string,
+): { from: string; to: string; relationship: string; valid: boolean; error?: string } {
+  const nodeIds = new Set(content.nodes.map((n) => n.id));
+  if (!nodeIds.has(from) || !nodeIds.has(to)) {
+    return { from, to, relationship, valid: false, error: `unknown node` };
+  }
+  if (from === to) {
+    return { from, to, relationship, valid: false, error: 'self-loop edge' };
+  }
+  const existing = content.edges.some((e) => e.from === from && e.to === to && e.relationship === relationship);
+  if (existing) {
+    return { from, to, relationship, valid: false, error: 'duplicate edge triple' };
+  }
+  if (content.kind === 'flow' || content.kind === 'hierarchy') {
+    const pairs = [
+      ...content.edges.map((e) => ({ from: e.from, to: e.to })),
+      { from, to },
+    ];
+    const nodeIdsList = Array.from(nodeIds);
+    const g = adjacency(nodeIdsList, pairs);
+    const { hasCycle } = detectCycles(g);
+    if (hasCycle) {
+      return { from, to, relationship, valid: false, error: `cycle not allowed in ${content.kind}` };
+    }
+  }
+  return { from, to, relationship, valid: true };
 }
 
 function renderForValidation(
@@ -138,15 +242,22 @@ export class DiagramEngine implements Engine {
     const listeners = new Set<Parameters<EngineInstance['subscribe']>[0]>();
 
     let state: EngineState = { ...initialState(instanceId, this.type), phase: 'running' };
+    const revealedEdges: string[] = [];
+    const followedChain: string[] = [];
+    const deemphasizedNodes: string[] = [];
+    let lastConstructOrder: { order: string[]; valid: boolean } | null = null;
+    const learnerEdges: Array<{ from: string; to: string; relationship: string; valid: boolean }> = [];
+    const connectErrors: string[] = [];
 
     let laidOut: Scene = { nodes: [], semantics: {} };
     let svgResult: SvgResult = { svg: '', a11y: [], interactive: [], alternative: [] };
 
     function recompute(): void {
-      const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description);
-      laidOut = result.scene;
-      svgResult = result.svgResult;
-    }
+    const filter = state.filter as string[] | undefined;
+    const result = render(content, ctx, diagramSpec, diagramSpec.accessibility?.label, diagramSpec.accessibility?.description, filter, revealedEdges, followedChain, deemphasizedNodes);
+    laidOut = result.scene;
+    svgResult = result.svgResult;
+  }
 
     recompute();
 
@@ -238,9 +349,76 @@ export class DiagramEngine implements Engine {
         const changed = log.append('state-changed', instanceId, undefined, action);
         emit(changed as Parameters<EngineHost['onEvent']>[0]);
 
+        if (action.type === 'filter' || action.type === 'clear-filter') {
+          const payload = action.payload as { categories?: string[] } | undefined;
+          const categories = Array.isArray(payload?.categories) ? payload.categories : [];
+          state = {
+            ...state,
+            filter: action.type === 'clear-filter' ? [] : categories,
+            lastAction: action,
+          };
+          recompute();
+          if (action.type === 'filter') {
+            const nsEvent = log.append('diagram.filter-applied', instanceId, { categories }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          }
+        } else if (action.type === 'connect') {
+          const payload = action.payload as { from?: string; to?: string; relationship?: string } | undefined;
+          const from = payload?.from;
+          const to = payload?.to;
+          const relationship = payload?.relationship;
+          if (from && to && relationship) {
+            const authored = connectEdge(content, from, to, relationship);
+            if (authored.valid) {
+              learnerEdges.push(authored);
+              connectErrors.length = 0;
+            } else {
+              connectErrors.push(authored.error ?? 'invalid connect');
+            }
+            state = { ...state, lastAction: action };
+            const nsEvent = log.append('diagram.connect', instanceId, { from, to, relationship, valid: authored.valid, error: authored.error }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          }
+        } else if (action.type === 'answer') {
+          const targetId = action.target?.id;
+          const payload = action.payload as { whatIf?: boolean; whatIfNode?: string; construct?: string; order?: string[] } | undefined;
+          if (payload?.construct === 'order' && Array.isArray(payload.order)) {
+            const valid = validateConstructOrder(content, payload.order);
+            lastConstructOrder = { order: [...payload.order], valid };
+            state = { ...state, lastAction: action };
+            const nsEvent = log.append('diagram.construct-order', instanceId, { order: payload.order, valid }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          } else if (payload?.whatIf && payload.whatIfNode) {
+            const authored = payload.whatIfNode;
+            if (!deemphasizedNodes.includes(authored)) {
+              deemphasizedNodes.push(authored);
+            }
+            state = { ...state, lastAction: action };
+            recompute();
+            const nsEvent = log.append('diagram.what-if', instanceId, { nodeId: authored, deemphasizedNodes: [...deemphasizedNodes] }, action);
+            emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
+          } else if (targetId && !revealedEdges.includes(targetId)) {
+            revealedEdges.push(targetId);
+            state = { ...state, lastAction: action };
+            recompute();
+          } else {
+            state = { ...state, lastAction: action };
+          }
+        }
+
         if (entityPayload) {
+          const isEdge = (() => {
+            const targetId = action.target?.id;
+            if (!targetId) return false;
+            const node = laidOut.semantics[targetId];
+            if (node?.kind === 'edge') return true;
+            if (node?.metadata?.fromNodeId !== undefined) return true;
+            const byMeta = Object.values(laidOut.semantics).find((n) => n.metadata?.nodeId === targetId);
+            return byMeta?.kind === 'edge';
+          })();
           if (action.type === 'select') {
-            const nsEvent = log.append(DIAGRAM_EVENT_SELECTED, instanceId, entityPayload as Record<string, unknown>, {
+            const evtName = isEdge ? DIAGRAM_EVENT_EDGE_SELECTED : DIAGRAM_EVENT_SELECTED;
+            const nsEvent = log.append(evtName, instanceId, entityPayload as Record<string, unknown>, {
               ...action,
               payload: entityPayload,
             });
@@ -252,6 +430,11 @@ export class DiagramEngine implements Engine {
             });
             emit(nsEvent as Parameters<EngineHost['onEvent']>[0]);
           } else if (action.type === 'follow') {
+            const targetId = action.target?.id;
+            if (targetId && !followedChain.includes(targetId)) {
+              followedChain.push(targetId);
+            }
+            recompute();
             const nsEvent = log.append(DIAGRAM_EVENT_FOLLOWED, instanceId, entityPayload as Record<string, unknown>, {
               ...action,
               payload: entityPayload,
@@ -273,6 +456,12 @@ export class DiagramEngine implements Engine {
           scene: laidOut,
           svgResult,
           alternative: svgResult.alternative,
+          revealedEdges: [...revealedEdges],
+          followedChain: [...followedChain],
+          deemphasizedNodes: [...deemphasizedNodes],
+          constructOrder: lastConstructOrder,
+          learnerEdges: [...learnerEdges],
+          connectErrors: [...connectErrors],
         };
       },
       subscribe(fn: Parameters<EngineInstance['subscribe']>[0]): () => void {

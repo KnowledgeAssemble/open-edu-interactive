@@ -1,0 +1,50 @@
+{
+  "type": "geomap",
+  "version": "1.0.0",
+  "id": "misconception-encoding",
+  "metadata": { "title": "Misleading theme map" },
+  "purpose": { "learningObjective": "Spot a theme map whose buckets exaggerate a difference", "reasoningMode": "compare" },
+  "content": {
+    "projection": { "type": "equirectangular" },
+    "geography": {
+      "sources": [
+        {
+          "id": "src",
+          "type": "geojson",
+          "class": "illustrative",
+          "data": {
+            "type": "FeatureCollection",
+            "features": [
+              { "id": "r1", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]]] } },
+              { "id": "r2", "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[15, 0], [25, 0], [25, 10], [15, 10], [15, 0]]] } }
+            ]
+          }
+        }
+      ]
+    },
+    "entities": [
+      { "id": "r1", "type": "region", "name": "Region A", "location": { "source": "src", "featureId": "r1" } },
+      { "id": "r2", "type": "region", "name": "Region B", "location": { "source": "src", "featureId": "r2" } }
+    ],
+    "layers": [
+      {
+        "id": "theme",
+        "type": "region",
+        "title": "Theme",
+        "items": [
+          { "entity": "r1", "interactive": true, "measure": { "attribute": "value", "value": 10 } },
+          { "entity": "r2", "interactive": true, "measure": { "attribute": "value", "value": 20 } }
+        ],
+        "encoding": {
+          "attribute": "value",
+          "type": "fill",
+          "breakpoints": [[0, 11], [11, 100]]
+        }
+      }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Theme map where Region B is only twice Region A but falls in a much higher bucket" }
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "kind": "node",
+    "id": "node-practice",
+    "nodeId": "practice",
+    "label": "Practice"
+  },
+  {
+    "kind": "node",
+    "id": "node-confidence",
+    "nodeId": "confidence",
+    "label": "Confidence"
+  },
+  {
+    "kind": "node",
+    "id": "node-interest",
+    "nodeId": "interest",
+    "label": "Interest"
+  },
+  {
+    "kind": "edge",
+    "id": "practice-confidence",
+    "from": "practice",
+    "relationship": "influences",
+    "to": "confidence",
+    "fromLabel": "Practice",
+    "toLabel": "Confidence"
+  },
+  {
+    "kind": "edge",
+    "id": "confidence-interest",
+    "from": "confidence",
+    "relationship": "influences",
+    "to": "interest",
+    "fromLabel": "Confidence",
+    "toLabel": "Interest"
+  },
+  {
+    "kind": "edge",
+    "id": "interest-practice",
+    "from": "interest",
+    "relationship": "influences",
+    "to": "practice",
+    "fromLabel": "Interest",
+    "toLabel": "Practice"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-practice-interest-confidence",
+    "members": [
+      "practice",
+      "interest",
+      "confidence"
+    ],
+    "label": "Cycle: practice → interest → confidence"
+  }
+]

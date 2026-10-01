@@ -1,0 +1,859 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-centre",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Central Government",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "centre",
+            "label": "Central Government"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-state",
+          "role": "selectable",
+          "kind": "node",
+          "label": "State Government",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "state",
+            "label": "State Government"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-local",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Local Government",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "local",
+            "label": "Local Government"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-municipality",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Municipality",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "municipality",
+            "label": "Municipality"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-parliament",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Parliament",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "parliament",
+            "label": "Parliament"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-assembly",
+          "role": "selectable",
+          "kind": "node",
+          "label": "State Assembly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "assembly",
+            "label": "State Assembly"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-centre-parliament",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "centre contains parliament",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "centre",
+            "toNodeId": "parliament",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-centre-parliament",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 220,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L220,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-centre-state",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "centre part-of state",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "centre",
+            "toNodeId": "state",
+            "relationship": "part-of",
+            "labels": [],
+            "edgeId": "edge-centre-state",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-state-assembly",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "state contains assembly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "state",
+            "toNodeId": "assembly",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-state-assembly",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 220,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L220,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-state-local",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "state part-of local",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "state",
+            "toNodeId": "local",
+            "relationship": "part-of",
+            "labels": [],
+            "edgeId": "edge-state-local",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-local-municipality",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "local contains municipality",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "local",
+            "toNodeId": "municipality",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-local-municipality",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M100,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-centre": {
+      "id": "node-centre",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Central Government",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "centre",
+        "label": "Central Government"
+      },
+      "children": []
+    },
+    "centre": {
+      "id": "node-centre",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Central Government",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "centre",
+        "label": "Central Government"
+      },
+      "children": []
+    },
+    "node-state": {
+      "id": "node-state",
+      "role": "selectable",
+      "kind": "node",
+      "label": "State Government",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "state",
+        "label": "State Government"
+      },
+      "children": []
+    },
+    "state": {
+      "id": "node-state",
+      "role": "selectable",
+      "kind": "node",
+      "label": "State Government",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "state",
+        "label": "State Government"
+      },
+      "children": []
+    },
+    "node-local": {
+      "id": "node-local",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Local Government",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "local",
+        "label": "Local Government"
+      },
+      "children": []
+    },
+    "local": {
+      "id": "node-local",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Local Government",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "expand",
+        "collapse"
+      ],
+      "metadata": {
+        "nodeId": "local",
+        "label": "Local Government"
+      },
+      "children": []
+    },
+    "node-municipality": {
+      "id": "node-municipality",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Municipality",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "municipality",
+        "label": "Municipality"
+      },
+      "children": []
+    },
+    "municipality": {
+      "id": "node-municipality",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Municipality",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "municipality",
+        "label": "Municipality"
+      },
+      "children": []
+    },
+    "node-parliament": {
+      "id": "node-parliament",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Parliament",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "parliament",
+        "label": "Parliament"
+      },
+      "children": []
+    },
+    "parliament": {
+      "id": "node-parliament",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Parliament",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "parliament",
+        "label": "Parliament"
+      },
+      "children": []
+    },
+    "node-assembly": {
+      "id": "node-assembly",
+      "role": "selectable",
+      "kind": "node",
+      "label": "State Assembly",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "assembly",
+        "label": "State Assembly"
+      },
+      "children": []
+    },
+    "assembly": {
+      "id": "node-assembly",
+      "role": "selectable",
+      "kind": "node",
+      "label": "State Assembly",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "assembly",
+        "label": "State Assembly"
+      },
+      "children": []
+    },
+    "edge-centre-parliament": {
+      "id": "edge-centre-parliament",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "centre contains parliament",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "centre",
+        "toNodeId": "parliament",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-centre-parliament",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-centre-state": {
+      "id": "edge-centre-state",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "centre part-of state",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "centre",
+        "toNodeId": "state",
+        "relationship": "part-of",
+        "labels": [],
+        "edgeId": "edge-centre-state",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-state-assembly": {
+      "id": "edge-state-assembly",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "state contains assembly",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "state",
+        "toNodeId": "assembly",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-state-assembly",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-state-local": {
+      "id": "edge-state-local",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "state part-of local",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "state",
+        "toNodeId": "local",
+        "relationship": "part-of",
+        "labels": [],
+        "edgeId": "edge-state-local",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-local-municipality": {
+      "id": "edge-local-municipality",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "local contains municipality",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "local",
+        "toNodeId": "municipality",
+        "relationship": "contains",
+        "labels": [],
+        "edgeId": "edge-local-municipality",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-centre",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Central Government",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "centre",
+            "label": "Central Government"
+          },
+          "children": []
+        },
+        {
+          "id": "node-state",
+          "role": "selectable",
+          "kind": "node",
+          "label": "State Government",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "state",
+            "label": "State Government"
+          },
+          "children": []
+        },
+        {
+          "id": "node-local",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Local Government",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "expand",
+            "collapse"
+          ],
+          "metadata": {
+            "nodeId": "local",
+            "label": "Local Government"
+          },
+          "children": []
+        },
+        {
+          "id": "node-municipality",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Municipality",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "municipality",
+            "label": "Municipality"
+          },
+          "children": []
+        },
+        {
+          "id": "node-parliament",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Parliament",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "parliament",
+            "label": "Parliament"
+          },
+          "children": []
+        },
+        {
+          "id": "node-assembly",
+          "role": "selectable",
+          "kind": "node",
+          "label": "State Assembly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "assembly",
+            "label": "State Assembly"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-centre-parliament",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "centre contains parliament",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "centre",
+            "toNodeId": "parliament",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-centre-parliament",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-centre-state",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "centre part-of state",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "centre",
+            "toNodeId": "state",
+            "relationship": "part-of",
+            "labels": [],
+            "edgeId": "edge-centre-state",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-state-assembly",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "state contains assembly",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "state",
+            "toNodeId": "assembly",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-state-assembly",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-state-local",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "state part-of local",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "state",
+            "toNodeId": "local",
+            "relationship": "part-of",
+            "labels": [],
+            "edgeId": "edge-state-local",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-local-municipality",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "local contains municipality",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "local",
+            "toNodeId": "municipality",
+            "relationship": "contains",
+            "labels": [],
+            "edgeId": "edge-local-municipality",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

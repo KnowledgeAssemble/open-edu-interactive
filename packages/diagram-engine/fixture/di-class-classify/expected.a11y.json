@@ -1,0 +1,56 @@
+[
+  {
+    "id": "node-animals",
+    "role": "button",
+    "label": "Animals",
+    "children": []
+  },
+  {
+    "id": "node-vertebrates",
+    "role": "button",
+    "label": "Vertebrates",
+    "children": []
+  },
+  {
+    "id": "node-invertebrates",
+    "role": "button",
+    "label": "Invertebrates",
+    "children": []
+  },
+  {
+    "id": "node-mammals",
+    "role": "button",
+    "label": "Mammals",
+    "children": []
+  },
+  {
+    "id": "node-birds",
+    "role": "button",
+    "label": "Birds",
+    "children": []
+  },
+  {
+    "id": "edge-animals-vertebrates",
+    "role": "link",
+    "label": "Animals contains Vertebrates",
+    "children": []
+  },
+  {
+    "id": "edge-animals-invertebrates",
+    "role": "link",
+    "label": "Animals contains Invertebrates",
+    "children": []
+  },
+  {
+    "id": "edge-vertebrates-mammals",
+    "role": "link",
+    "label": "Vertebrates contains Mammals",
+    "children": []
+  },
+  {
+    "id": "edge-vertebrates-birds",
+    "role": "link",
+    "label": "Vertebrates contains Birds",
+    "children": []
+  }
+]

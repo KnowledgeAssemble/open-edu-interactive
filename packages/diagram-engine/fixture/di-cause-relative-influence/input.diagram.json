@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cause-relative-influence",
+  "metadata": { "title": "Soil or rain for crop choice" },
+  "purpose": { "learningObjective": "Compare edge weights to find the dominant influence", "reasoningMode": "compare" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "cause-effect",
+    "nodes": [
+      { "id": "soil", "label": "Soil" },
+      { "id": "rain", "label": "Rain" },
+      { "id": "crop", "label": "Crop choice" }
+    ],
+    "edges": [
+      { "id": "soil-crop", "from": "soil", "to": "crop", "relationship": "influences", "strength": 0.8 },
+      { "id": "rain-crop", "from": "rain", "to": "crop", "relationship": "influences", "strength": 0.6 }
+    ]
+  },
+  "layout": { "type": "grid" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Soil and rain influence crop choice with relative strengths" }
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "entityId": "shrine",
+    "type": "landmark",
+    "name": "Shrine",
+    "location": "21.0000, 80.5000",
+    "bearing": 26.6,
+    "bearingInWindow": true
+  },
+  {
+    "entityId": "pond",
+    "type": "place",
+    "name": "Pond",
+    "location": "19.0000, 80.0000",
+    "bearing": 180,
+    "bearingInWindow": false
+  },
+  {
+    "entityId": "park",
+    "type": "landmark",
+    "name": "Park",
+    "location": "20.0000, 81.0000",
+    "bearing": 90,
+    "bearingInWindow": false
+  },
+  {
+    "entityId": "geom-compass",
+    "type": "compass",
+    "name": "North",
+    "description": "Reference: school",
+    "location": "Window 315-45"
+  },
+  {
+    "entityId": "geom-scale-bar",
+    "type": "scale-bar",
+    "name": "100 KM",
+    "location": "100 KM"
+  }
+]

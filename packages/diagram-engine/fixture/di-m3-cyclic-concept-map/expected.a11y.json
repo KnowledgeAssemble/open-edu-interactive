@@ -1,0 +1,38 @@
+[
+  {
+    "id": "node-practice",
+    "role": "button",
+    "label": "Practice",
+    "children": []
+  },
+  {
+    "id": "node-confidence",
+    "role": "button",
+    "label": "Confidence",
+    "children": []
+  },
+  {
+    "id": "node-interest",
+    "role": "button",
+    "label": "Interest",
+    "children": []
+  },
+  {
+    "id": "practice-confidence",
+    "role": "link",
+    "label": "Practice influences Confidence",
+    "children": []
+  },
+  {
+    "id": "confidence-interest",
+    "role": "link",
+    "label": "Confidence influences Interest",
+    "children": []
+  },
+  {
+    "id": "interest-practice",
+    "role": "link",
+    "label": "Interest influences Practice",
+    "children": []
+  }
+]

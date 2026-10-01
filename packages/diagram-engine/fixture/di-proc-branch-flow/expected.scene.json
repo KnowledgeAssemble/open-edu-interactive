@@ -1,0 +1,687 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-polling",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Polling day",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "polling",
+            "label": "Polling day"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-counting",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Counting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "counting",
+            "label": "Counting"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-win",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Winning candidate declared",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "win",
+            "label": "Winning candidate declared"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-recount",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Recount requested",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "recount",
+            "label": "Recount requested"
+          },
+          "children": [],
+          "bounds": {
+            "x": 170,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-runoff",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Runoff election",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "runoff",
+            "label": "Runoff election"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-polling-counting",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "polling leads-to counting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "polling",
+            "toNodeId": "counting",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-polling-counting",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-counting-win",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "counting leads-to win",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "counting",
+            "toNodeId": "win",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-counting-win",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-counting-recount",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "counting leads-to recount",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "counting",
+            "toNodeId": "recount",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-counting-recount",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 220,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L220,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-recount-runoff",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "recount leads-to runoff",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "recount",
+            "toNodeId": "runoff",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-recount-runoff",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 220,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M220,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-polling": {
+      "id": "node-polling",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Polling day",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "polling",
+        "label": "Polling day"
+      },
+      "children": []
+    },
+    "polling": {
+      "id": "node-polling",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Polling day",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "polling",
+        "label": "Polling day"
+      },
+      "children": []
+    },
+    "node-counting": {
+      "id": "node-counting",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Counting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "counting",
+        "label": "Counting"
+      },
+      "children": []
+    },
+    "counting": {
+      "id": "node-counting",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Counting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "counting",
+        "label": "Counting"
+      },
+      "children": []
+    },
+    "node-win": {
+      "id": "node-win",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Winning candidate declared",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "win",
+        "label": "Winning candidate declared"
+      },
+      "children": []
+    },
+    "win": {
+      "id": "node-win",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Winning candidate declared",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "win",
+        "label": "Winning candidate declared"
+      },
+      "children": []
+    },
+    "node-recount": {
+      "id": "node-recount",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Recount requested",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "recount",
+        "label": "Recount requested"
+      },
+      "children": []
+    },
+    "recount": {
+      "id": "node-recount",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Recount requested",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "recount",
+        "label": "Recount requested"
+      },
+      "children": []
+    },
+    "node-runoff": {
+      "id": "node-runoff",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Runoff election",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "runoff",
+        "label": "Runoff election"
+      },
+      "children": []
+    },
+    "runoff": {
+      "id": "node-runoff",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Runoff election",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "runoff",
+        "label": "Runoff election"
+      },
+      "children": []
+    },
+    "edge-polling-counting": {
+      "id": "edge-polling-counting",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "polling leads-to counting",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "polling",
+        "toNodeId": "counting",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-polling-counting",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-counting-win": {
+      "id": "edge-counting-win",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "counting leads-to win",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "counting",
+        "toNodeId": "win",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-counting-win",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-counting-recount": {
+      "id": "edge-counting-recount",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "counting leads-to recount",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "counting",
+        "toNodeId": "recount",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-counting-recount",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-recount-runoff": {
+      "id": "edge-recount-runoff",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "recount leads-to runoff",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "recount",
+        "toNodeId": "runoff",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-recount-runoff",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-polling",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Polling day",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "polling",
+            "label": "Polling day"
+          },
+          "children": []
+        },
+        {
+          "id": "node-counting",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Counting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "counting",
+            "label": "Counting"
+          },
+          "children": []
+        },
+        {
+          "id": "node-win",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Winning candidate declared",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "win",
+            "label": "Winning candidate declared"
+          },
+          "children": []
+        },
+        {
+          "id": "node-recount",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Recount requested",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "recount",
+            "label": "Recount requested"
+          },
+          "children": []
+        },
+        {
+          "id": "node-runoff",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Runoff election",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "runoff",
+            "label": "Runoff election"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-polling-counting",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "polling leads-to counting",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "polling",
+            "toNodeId": "counting",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-polling-counting",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-counting-win",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "counting leads-to win",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "counting",
+            "toNodeId": "win",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-counting-win",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-counting-recount",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "counting leads-to recount",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "counting",
+            "toNodeId": "recount",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-counting-recount",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-recount-runoff",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "recount leads-to runoff",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "recount",
+            "toNodeId": "runoff",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-recount-runoff",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

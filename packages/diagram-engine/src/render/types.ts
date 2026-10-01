@@ -17,6 +17,7 @@ export interface RelRow {
   toLabel?: string;
   members?: string[];
   nodeId?: string;
+  strength?: number;
 }
 
 export interface A11yNode {

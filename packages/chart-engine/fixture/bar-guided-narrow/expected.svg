@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Bar chart of monthly rainfall</title>
+  <desc>An interactive chart visualization</desc>
+  <g id="chart-root">
+  <line id="gridline-0" data-oedu-role="gridline" data-oedu-value="0" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-1" data-oedu-role="gridline" data-oedu-value="25" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-2" data-oedu-role="gridline" data-oedu-value="50" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-3" data-oedu-role="gridline" data-oedu-value="75" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-4" data-oedu-role="gridline" data-oedu-value="100" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="gridline-5" data-oedu-role="gridline" data-oedu-value="125" x1="0" y1="0" x2="40" y2="24" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-0" data-oedu-role="tick" data-oedu-value="0" data-oedu-bounds="44,539,6,2" x1="44" y1="539" x2="50" y2="541" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-1" data-oedu-role="tick" data-oedu-value="25" data-oedu-bounds="44,435,6,2" x1="44" y1="435" x2="50" y2="437" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-2" data-oedu-role="tick" data-oedu-value="50" data-oedu-bounds="44,331,6,2" x1="44" y1="331" x2="50" y2="333" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-3" data-oedu-role="tick" data-oedu-value="75" data-oedu-bounds="44,227,6,2" x1="44" y1="227" x2="50" y2="229" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-4" data-oedu-role="tick" data-oedu-value="100" data-oedu-bounds="44,123,6,2" x1="44" y1="123" x2="50" y2="125" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-y-5" data-oedu-role="tick" data-oedu-value="125" data-oedu-bounds="44,19,6,2" x1="44" y1="19" x2="50" y2="21" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-0" data-oedu-role="tick" aria-label="Feb" data-oedu-bounds="167.625,540,2,6" x1="167.625" y1="540" x2="169.625" y2="546" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-1" data-oedu-role="tick" aria-label="May" data-oedu-bounds="331.875,540,2,6" x1="331.875" y1="540" x2="333.875" y2="546" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-2" data-oedu-role="tick" aria-label="Aug" data-oedu-bounds="496.125,540,2,6" x1="496.125" y1="540" x2="498.125" y2="546" stroke="currentColor" stroke-width="1"/>
+  <line id="tick-x-3" data-oedu-role="tick" aria-label="Nov" data-oedu-bounds="660.375,540,2,6" x1="660.375" y1="540" x2="662.375" y2="546" stroke="currentColor" stroke-width="1"/>
+  <text id="label-y-0" data-oedu-role="label" data-oedu-value="0" aria-label="0" data-oedu-bounds="0,532,44,16" x="22" y="540" text-anchor="middle" dominant-baseline="central">0</text>
+  <text id="label-y-1" data-oedu-role="label" data-oedu-value="25" aria-label="25" data-oedu-bounds="0,428,44,16" x="22" y="436" text-anchor="middle" dominant-baseline="central">25</text>
+  <text id="label-y-2" data-oedu-role="label" data-oedu-value="50" aria-label="50" data-oedu-bounds="0,324,44,16" x="22" y="332" text-anchor="middle" dominant-baseline="central">50</text>
+  <text id="label-y-3" data-oedu-role="label" data-oedu-value="75" aria-label="75" data-oedu-bounds="0,220,44,16" x="22" y="228" text-anchor="middle" dominant-baseline="central">75</text>
+  <text id="label-y-4" data-oedu-role="label" data-oedu-value="100" aria-label="100" data-oedu-bounds="0,116,44,16" x="22" y="124" text-anchor="middle" dominant-baseline="central">100</text>
+  <text id="label-y-5" data-oedu-role="label" data-oedu-value="125" aria-label="125" data-oedu-bounds="0,12,44,16" x="22" y="20" text-anchor="middle" dominant-baseline="central">125</text>
+  <text id="label-x-0" data-oedu-role="label" aria-label="Feb" data-oedu-bounds="138.625,548,60,18" x="168.625" y="557" text-anchor="middle" dominant-baseline="central">Feb</text>
+  <text id="label-x-1" data-oedu-role="label" aria-label="May" data-oedu-bounds="302.875,548,60,18" x="332.875" y="557" text-anchor="middle" dominant-baseline="central">May</text>
+  <text id="label-x-2" data-oedu-role="label" aria-label="Aug" data-oedu-bounds="467.125,548,60,18" x="497.125" y="557" text-anchor="middle" dominant-baseline="central">Aug</text>
+  <text id="label-x-3" data-oedu-role="label" aria-label="Nov" data-oedu-bounds="631.375,548,60,18" x="661.375" y="557" text-anchor="middle" dominant-baseline="central">Nov</text>
+  <rect id="rainfall-bar-row-feb" data-oedu-role="selectable" data-oedu-value="45" data-oedu-interactive="true" aria-label="Feb: 45 mm" data-oedu-bounds="146.625,352.79999999999995,44,187.20000000000005" x="146.625" y="352.79999999999995" width="44" height="187.20000000000005" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1"/>
+  <rect id="rainfall-bar-row-may" data-oedu-role="selectable" data-oedu-value="110" data-oedu-interactive="true" aria-label="May: 110 mm" data-oedu-bounds="310.875,82.39999999999998,44,457.6" x="310.875" y="82.39999999999998" width="44" height="457.6" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1"/>
+  <rect id="rainfall-bar-row-aug" data-oedu-role="selectable" data-oedu-value="80" data-oedu-interactive="true" aria-label="Aug: 80 mm" data-oedu-bounds="475.125,207.2,44,332.8" x="475.125" y="207.2" width="44" height="332.8" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1"/>
+  <rect id="rainfall-bar-row-nov" data-oedu-role="selectable" data-oedu-value="30" data-oedu-interactive="true" aria-label="Nov: 30 mm" data-oedu-bounds="639.375,415.2,44,124.80000000000001" x="639.375" y="415.2" width="44" height="124.80000000000001" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+[
+  {
+    "kind": "node",
+    "id": "node-egg",
+    "nodeId": "egg",
+    "label": "Egg"
+  },
+  {
+    "kind": "node",
+    "id": "node-caterpillar",
+    "nodeId": "caterpillar",
+    "label": "Caterpillar"
+  },
+  {
+    "kind": "node",
+    "id": "node-chrysalis",
+    "nodeId": "chrysalis",
+    "label": "Chrysalis"
+  },
+  {
+    "kind": "node",
+    "id": "node-butterfly",
+    "nodeId": "butterfly",
+    "label": "Butterfly"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-egg-caterpillar",
+    "from": "egg",
+    "relationship": "leads-to",
+    "to": "caterpillar",
+    "fromLabel": "Egg",
+    "toLabel": "Caterpillar"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-caterpillar-chrysalis",
+    "from": "caterpillar",
+    "relationship": "leads-to",
+    "to": "chrysalis",
+    "fromLabel": "Caterpillar",
+    "toLabel": "Chrysalis"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-chrysalis-butterfly",
+    "from": "chrysalis",
+    "relationship": "leads-to",
+    "to": "butterfly",
+    "fromLabel": "Chrysalis",
+    "toLabel": "Butterfly"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-butterfly-egg",
+    "from": "butterfly",
+    "relationship": "leads-to",
+    "to": "egg",
+    "fromLabel": "Butterfly",
+    "toLabel": "Egg"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-chrysalis-caterpillar-egg-butterfly",
+    "members": [
+      "chrysalis",
+      "caterpillar",
+      "egg",
+      "butterfly"
+    ],
+    "label": "Cycle: chrysalis → caterpillar → egg → butterfly"
+  }
+]

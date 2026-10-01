@@ -1,0 +1,772 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-precipitation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Precipitation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "precipitation",
+            "label": "Precipitation"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-runoff",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Runoff",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "runoff",
+            "label": "Runoff"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-groundwater",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Groundwater",
+          "description": "Storage node",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "groundwater",
+            "label": "Groundwater",
+            "description": "Storage node"
+          },
+          "children": [],
+          "bounds": {
+            "x": 480,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-river",
+          "role": "selectable",
+          "kind": "node",
+          "label": "River",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "river",
+            "label": "River"
+          },
+          "children": [],
+          "bounds": {
+            "x": 160,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-sea",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sea",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sea",
+            "label": "Sea"
+          },
+          "children": [],
+          "bounds": {
+            "x": 320,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-precipitation-runoff",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "precipitation leads-to runoff",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "precipitation",
+            "toNodeId": "runoff",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-precipitation-runoff",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 388,
+                  "y": 262.5
+                }
+              ],
+              "path": "M228,262.5 L388,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-precipitation-groundwater",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "precipitation leads-to groundwater",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "precipitation",
+            "toNodeId": "groundwater",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-precipitation-groundwater",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 262.5
+                },
+                {
+                  "x": 548,
+                  "y": 262.5
+                }
+              ],
+              "path": "M228,262.5 L548,262.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-groundwater-river",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "groundwater leads-to river",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "groundwater",
+            "toNodeId": "river",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-groundwater-river",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 548,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M548,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-runoff-river",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "runoff leads-to river",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "runoff",
+            "toNodeId": "river",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-runoff-river",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 388,
+                  "y": 262.5
+                },
+                {
+                  "x": 228,
+                  "y": 322.5
+                }
+              ],
+              "path": "M388,262.5 L228,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-river-sea",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "river leads-to sea",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "river",
+            "toNodeId": "sea",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-river-sea",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 228,
+                  "y": 322.5
+                },
+                {
+                  "x": 388,
+                  "y": 322.5
+                }
+              ],
+              "path": "M228,322.5 L388,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-precipitation": {
+      "id": "node-precipitation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Precipitation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "precipitation",
+        "label": "Precipitation"
+      },
+      "children": []
+    },
+    "precipitation": {
+      "id": "node-precipitation",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Precipitation",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "precipitation",
+        "label": "Precipitation"
+      },
+      "children": []
+    },
+    "node-runoff": {
+      "id": "node-runoff",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Runoff",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "runoff",
+        "label": "Runoff"
+      },
+      "children": []
+    },
+    "runoff": {
+      "id": "node-runoff",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Runoff",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "runoff",
+        "label": "Runoff"
+      },
+      "children": []
+    },
+    "node-groundwater": {
+      "id": "node-groundwater",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Groundwater",
+      "description": "Storage node",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "groundwater",
+        "label": "Groundwater",
+        "description": "Storage node"
+      },
+      "children": []
+    },
+    "groundwater": {
+      "id": "node-groundwater",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Groundwater",
+      "description": "Storage node",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "groundwater",
+        "label": "Groundwater",
+        "description": "Storage node"
+      },
+      "children": []
+    },
+    "node-river": {
+      "id": "node-river",
+      "role": "selectable",
+      "kind": "node",
+      "label": "River",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "river",
+        "label": "River"
+      },
+      "children": []
+    },
+    "river": {
+      "id": "node-river",
+      "role": "selectable",
+      "kind": "node",
+      "label": "River",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "river",
+        "label": "River"
+      },
+      "children": []
+    },
+    "node-sea": {
+      "id": "node-sea",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sea",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sea",
+        "label": "Sea"
+      },
+      "children": []
+    },
+    "sea": {
+      "id": "node-sea",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Sea",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "sea",
+        "label": "Sea"
+      },
+      "children": []
+    },
+    "edge-precipitation-runoff": {
+      "id": "edge-precipitation-runoff",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "precipitation leads-to runoff",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "precipitation",
+        "toNodeId": "runoff",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-precipitation-runoff",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-precipitation-groundwater": {
+      "id": "edge-precipitation-groundwater",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "precipitation leads-to groundwater",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "precipitation",
+        "toNodeId": "groundwater",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-precipitation-groundwater",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-groundwater-river": {
+      "id": "edge-groundwater-river",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "groundwater leads-to river",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "groundwater",
+        "toNodeId": "river",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-groundwater-river",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-runoff-river": {
+      "id": "edge-runoff-river",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "runoff leads-to river",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "runoff",
+        "toNodeId": "river",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-runoff-river",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-river-sea": {
+      "id": "edge-river-sea",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "river leads-to sea",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "river",
+        "toNodeId": "sea",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-river-sea",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-precipitation",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Precipitation",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "precipitation",
+            "label": "Precipitation"
+          },
+          "children": []
+        },
+        {
+          "id": "node-runoff",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Runoff",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "runoff",
+            "label": "Runoff"
+          },
+          "children": []
+        },
+        {
+          "id": "node-groundwater",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Groundwater",
+          "description": "Storage node",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "groundwater",
+            "label": "Groundwater",
+            "description": "Storage node"
+          },
+          "children": []
+        },
+        {
+          "id": "node-river",
+          "role": "selectable",
+          "kind": "node",
+          "label": "River",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "river",
+            "label": "River"
+          },
+          "children": []
+        },
+        {
+          "id": "node-sea",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Sea",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "sea",
+            "label": "Sea"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-precipitation-runoff",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "precipitation leads-to runoff",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "precipitation",
+            "toNodeId": "runoff",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-precipitation-runoff",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-precipitation-groundwater",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "precipitation leads-to groundwater",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "precipitation",
+            "toNodeId": "groundwater",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-precipitation-groundwater",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-groundwater-river",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "groundwater leads-to river",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "groundwater",
+            "toNodeId": "river",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-groundwater-river",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-runoff-river",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "runoff leads-to river",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "runoff",
+            "toNodeId": "river",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-runoff-river",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-river-sea",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "river leads-to sea",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "river",
+            "toNodeId": "sea",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-river-sea",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

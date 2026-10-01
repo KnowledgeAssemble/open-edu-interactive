@@ -1,0 +1,169 @@
+{
+  "a11y": [
+    {
+      "id": "fb",
+      "role": "group",
+      "label": "fb",
+      "children": [
+        {
+          "id": "fb-bar",
+          "role": "group",
+          "label": "fb-bar",
+          "children": [
+            {
+              "id": "fb-part-0",
+              "role": "button",
+              "label": "fb-part-0",
+              "children": []
+            },
+            {
+              "id": "fb-part-1",
+              "role": "button",
+              "label": "fb-part-1",
+              "children": []
+            },
+            {
+              "id": "fb-part-2",
+              "role": "button",
+              "label": "fb-part-2",
+              "children": []
+            },
+            {
+              "id": "fb-part-3",
+              "role": "button",
+              "label": "fb-part-3",
+              "children": []
+            },
+            {
+              "id": "fb-part-4",
+              "role": "button",
+              "label": "fb-part-4",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "fb-fraction-label",
+          "role": "img",
+          "label": "2/5",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "fb-bar",
+      "role": "group",
+      "label": "fb-bar",
+      "children": [
+        {
+          "id": "fb-part-0",
+          "role": "button",
+          "label": "fb-part-0",
+          "children": []
+        },
+        {
+          "id": "fb-part-1",
+          "role": "button",
+          "label": "fb-part-1",
+          "children": []
+        },
+        {
+          "id": "fb-part-2",
+          "role": "button",
+          "label": "fb-part-2",
+          "children": []
+        },
+        {
+          "id": "fb-part-3",
+          "role": "button",
+          "label": "fb-part-3",
+          "children": []
+        },
+        {
+          "id": "fb-part-4",
+          "role": "button",
+          "label": "fb-part-4",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "fb-part-0",
+      "role": "button",
+      "label": "fb-part-0",
+      "children": []
+    },
+    {
+      "id": "fb-part-1",
+      "role": "button",
+      "label": "fb-part-1",
+      "children": []
+    },
+    {
+      "id": "fb-part-2",
+      "role": "button",
+      "label": "fb-part-2",
+      "children": []
+    },
+    {
+      "id": "fb-part-3",
+      "role": "button",
+      "label": "fb-part-3",
+      "children": []
+    },
+    {
+      "id": "fb-part-4",
+      "role": "button",
+      "label": "fb-part-4",
+      "children": []
+    },
+    {
+      "id": "fb-fraction-label",
+      "role": "img",
+      "label": "2/5",
+      "children": []
+    }
+  ],
+  "interactive": [
+    {
+      "id": "fb-part-0",
+      "action": "select"
+    },
+    {
+      "id": "fb-part-0",
+      "action": "focus"
+    },
+    {
+      "id": "fb-part-1",
+      "action": "select"
+    },
+    {
+      "id": "fb-part-1",
+      "action": "focus"
+    },
+    {
+      "id": "fb-part-2",
+      "action": "select"
+    },
+    {
+      "id": "fb-part-2",
+      "action": "focus"
+    },
+    {
+      "id": "fb-part-3",
+      "action": "select"
+    },
+    {
+      "id": "fb-part-3",
+      "action": "focus"
+    },
+    {
+      "id": "fb-part-4",
+      "action": "select"
+    },
+    {
+      "id": "fb-part-4",
+      "action": "focus"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "node",
+    "id": "node-weathering",
+    "nodeId": "weathering",
+    "label": "Weathering"
+  },
+  {
+    "kind": "node",
+    "id": "node-erosion",
+    "nodeId": "erosion",
+    "label": "Erosion"
+  },
+  {
+    "kind": "node",
+    "id": "node-transport",
+    "nodeId": "transport",
+    "label": "Transport"
+  },
+  {
+    "kind": "node",
+    "id": "node-deposition",
+    "nodeId": "deposition",
+    "label": "Deposition"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-weathering-erosion",
+    "from": "weathering",
+    "relationship": "leads-to",
+    "to": "erosion",
+    "fromLabel": "Weathering",
+    "toLabel": "Erosion"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-erosion-transport",
+    "from": "erosion",
+    "relationship": "leads-to",
+    "to": "transport",
+    "fromLabel": "Erosion",
+    "toLabel": "Transport"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-transport-deposition",
+    "from": "transport",
+    "relationship": "leads-to",
+    "to": "deposition",
+    "fromLabel": "Transport",
+    "toLabel": "Deposition"
+  }
+]

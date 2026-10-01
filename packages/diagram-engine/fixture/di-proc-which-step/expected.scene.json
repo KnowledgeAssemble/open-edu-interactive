@@ -1,0 +1,539 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-harvest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Harvest",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "harvest",
+            "label": "Harvest"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 55,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-threshing",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Threshing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "threshing",
+            "label": "Threshing"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 135,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-grinding",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Grinding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "grinding",
+            "label": "Grinding"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 215,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-baking",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Baking",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "baking",
+            "label": "Baking"
+          },
+          "children": [],
+          "bounds": {
+            "x": 50,
+            "y": 295,
+            "width": 100,
+            "height": 50
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-harvest-threshing",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "harvest leads-to threshing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "harvest",
+            "toNodeId": "threshing",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-harvest-threshing",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 80
+                },
+                {
+                  "x": 100,
+                  "y": 160
+                }
+              ],
+              "path": "M100,80 L100,160"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-threshing-grinding",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "threshing leads-to grinding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "threshing",
+            "toNodeId": "grinding",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-threshing-grinding",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 160
+                },
+                {
+                  "x": 100,
+                  "y": 240
+                }
+              ],
+              "path": "M100,160 L100,240"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-grinding-baking",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "grinding leads-to baking",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "grinding",
+            "toNodeId": "baking",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-grinding-baking",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 100,
+                  "y": 240
+                },
+                {
+                  "x": 100,
+                  "y": 320
+                }
+              ],
+              "path": "M100,240 L100,320"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-harvest": {
+      "id": "node-harvest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Harvest",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "harvest",
+        "label": "Harvest"
+      },
+      "children": []
+    },
+    "harvest": {
+      "id": "node-harvest",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Harvest",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "harvest",
+        "label": "Harvest"
+      },
+      "children": []
+    },
+    "node-threshing": {
+      "id": "node-threshing",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Threshing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "threshing",
+        "label": "Threshing"
+      },
+      "children": []
+    },
+    "threshing": {
+      "id": "node-threshing",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Threshing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "threshing",
+        "label": "Threshing"
+      },
+      "children": []
+    },
+    "node-grinding": {
+      "id": "node-grinding",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Grinding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "grinding",
+        "label": "Grinding"
+      },
+      "children": []
+    },
+    "grinding": {
+      "id": "node-grinding",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Grinding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "grinding",
+        "label": "Grinding"
+      },
+      "children": []
+    },
+    "node-baking": {
+      "id": "node-baking",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Baking",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "baking",
+        "label": "Baking"
+      },
+      "children": []
+    },
+    "baking": {
+      "id": "node-baking",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Baking",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "baking",
+        "label": "Baking"
+      },
+      "children": []
+    },
+    "edge-harvest-threshing": {
+      "id": "edge-harvest-threshing",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "harvest leads-to threshing",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "harvest",
+        "toNodeId": "threshing",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-harvest-threshing",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-threshing-grinding": {
+      "id": "edge-threshing-grinding",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "threshing leads-to grinding",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "threshing",
+        "toNodeId": "grinding",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-threshing-grinding",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-grinding-baking": {
+      "id": "edge-grinding-baking",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "grinding leads-to baking",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "grinding",
+        "toNodeId": "baking",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-grinding-baking",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-harvest",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Harvest",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "harvest",
+            "label": "Harvest"
+          },
+          "children": []
+        },
+        {
+          "id": "node-threshing",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Threshing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "threshing",
+            "label": "Threshing"
+          },
+          "children": []
+        },
+        {
+          "id": "node-grinding",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Grinding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "grinding",
+            "label": "Grinding"
+          },
+          "children": []
+        },
+        {
+          "id": "node-baking",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Baking",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "baking",
+            "label": "Baking"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-harvest-threshing",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "harvest leads-to threshing",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "harvest",
+            "toNodeId": "threshing",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-harvest-threshing",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-threshing-grinding",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "threshing leads-to grinding",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "threshing",
+            "toNodeId": "grinding",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-threshing-grinding",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-grinding-baking",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "grinding leads-to baking",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "grinding",
+            "toNodeId": "baking",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-grinding-baking",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-soil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "soil",
+            "label": "Soil"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-rain",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rain",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rain",
+            "label": "Rain"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-crop",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Crop choice",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "crop",
+            "label": "Crop choice"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "soil-crop",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "soil influences crop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "soil",
+            "toNodeId": "crop",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "soil-crop",
+            "gated": false,
+            "strength": 0.8,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 308,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M308,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "rain-crop",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "rain influences crop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "rain",
+            "toNodeId": "crop",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "rain-crop",
+            "gated": false,
+            "strength": 0.6,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-soil": {
+      "id": "node-soil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "soil",
+        "label": "Soil"
+      },
+      "children": []
+    },
+    "soil": {
+      "id": "node-soil",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Soil",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "soil",
+        "label": "Soil"
+      },
+      "children": []
+    },
+    "node-rain": {
+      "id": "node-rain",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rain",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rain",
+        "label": "Rain"
+      },
+      "children": []
+    },
+    "rain": {
+      "id": "node-rain",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Rain",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "rain",
+        "label": "Rain"
+      },
+      "children": []
+    },
+    "node-crop": {
+      "id": "node-crop",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Crop choice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "crop",
+        "label": "Crop choice"
+      },
+      "children": []
+    },
+    "crop": {
+      "id": "node-crop",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Crop choice",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "crop",
+        "label": "Crop choice"
+      },
+      "children": []
+    },
+    "soil-crop": {
+      "id": "soil-crop",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "soil influences crop",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "soil",
+        "toNodeId": "crop",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "soil-crop",
+        "gated": false,
+        "strength": 0.8
+      },
+      "children": []
+    },
+    "rain-crop": {
+      "id": "rain-crop",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "rain influences crop",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "rain",
+        "toNodeId": "crop",
+        "relationship": "influences",
+        "labels": [],
+        "edgeId": "rain-crop",
+        "gated": false,
+        "strength": 0.6
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-soil",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Soil",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "soil",
+            "label": "Soil"
+          },
+          "children": []
+        },
+        {
+          "id": "node-rain",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Rain",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "rain",
+            "label": "Rain"
+          },
+          "children": []
+        },
+        {
+          "id": "node-crop",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Crop choice",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "crop",
+            "label": "Crop choice"
+          },
+          "children": []
+        },
+        {
+          "id": "soil-crop",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "soil influences crop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "soil",
+            "toNodeId": "crop",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "soil-crop",
+            "gated": false,
+            "strength": 0.8
+          },
+          "children": []
+        },
+        {
+          "id": "rain-crop",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "rain influences crop",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "rain",
+            "toNodeId": "crop",
+            "relationship": "influences",
+            "labels": [],
+            "edgeId": "rain-crop",
+            "gated": false,
+            "strength": 0.6
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

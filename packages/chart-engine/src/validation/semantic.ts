@@ -82,7 +82,7 @@ export function validateSemantic(spec: ChartSpec): ValidationResult {
     const rId = typeof rowRecord['id'] === 'string' && rowRecord['id'] ? rowRecord['id'] : String(i).padStart(4, '0');
 
     for (const key of Object.keys(rowRecord)) {
-      if (key === 'id' || key === 'links') continue;
+      if (key === 'id' || key === 'links' || key === 'interactive') continue;
       if (!knownIds.has(key)) {
         issues.push({
           level: 'L2',

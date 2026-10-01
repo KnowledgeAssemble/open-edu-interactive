@@ -1,0 +1,878 @@
+{
+  "nodes": [
+    {
+      "id": "geom-basemap",
+      "role": "layer",
+      "kind": "layer",
+      "label": "basemap",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "basemap"
+      },
+      "children": [
+        {
+          "id": "geom-basemap-region-n",
+          "role": "region",
+          "kind": "region",
+          "label": "Region North",
+          "description": "The region for this map.",
+          "interactive": false,
+          "hidden": false,
+          "metadata": {
+            "entityId": "region-n",
+            "entityType": "region",
+            "name": "Region North",
+            "description": "The region for this map.",
+            "location": {
+              "source": "base",
+              "featureId": "region-n"
+            },
+            "sourceClass": "illustrative",
+            "lat": 22.664895511906675,
+            "lon": 79.99999999999999
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  70,
+                  15
+                ],
+                [
+                  90,
+                  15
+                ],
+                [
+                  90,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  15
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 64,
+                "y": 552
+              },
+              {
+                "x": 736,
+                "y": 552
+              },
+              {
+                "x": 736,
+                "y": 48.000000000000114
+              },
+              {
+                "x": 64,
+                "y": 48.000000000000114
+              },
+              {
+                "x": 64,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 64,
+              "y": 552
+            },
+            {
+              "x": 736,
+              "y": 552
+            },
+            {
+              "x": 736,
+              "y": 48.000000000000114
+            },
+            {
+              "x": 64,
+              "y": 48.000000000000114
+            },
+            {
+              "x": 64,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 64,
+            "y": 48.000000000000114,
+            "width": 672,
+            "height": 503.9999999999999
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-sites",
+      "role": "layer",
+      "kind": "layer",
+      "label": "sites",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "sites"
+      },
+      "children": [
+        {
+          "id": "geom-sites-calcutta",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Calcutta",
+          "description": "Event: Quit India movement launched, 1942.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "calcutta",
+            "entityType": "city",
+            "name": "Calcutta",
+            "description": "Event: Quit India movement launched, 1942.",
+            "location": {
+              "coordinates": {
+                "lat": 22.57,
+                "lon": 88.36
+              }
+            },
+            "lat": 22.57,
+            "lon": 88.36
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              88.36,
+              22.57
+            ]
+          },
+          "bounds": {
+            "x": 658.8959999999997,
+            "y": 275.6479999999999,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-sites-delhi",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Delhi",
+          "description": "Event: Independence achieved, 1947.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "delhi",
+            "entityType": "city",
+            "name": "Delhi",
+            "description": "Event: Independence achieved, 1947.",
+            "location": {
+              "coordinates": {
+                "lat": 28.61,
+                "lon": 77.2
+              }
+            },
+            "lat": 28.61,
+            "lon": 77.2
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              77.2,
+              28.61
+            ]
+          },
+          "bounds": {
+            "x": 283.9200000000001,
+            "y": 72.70399999999995,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-sites-bombay",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Bombay",
+          "description": "Event: Non-cooperation movement began, 1920.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "bombay",
+            "entityType": "city",
+            "name": "Bombay",
+            "description": "Event: Non-cooperation movement began, 1920.",
+            "location": {
+              "coordinates": {
+                "lat": 19.07,
+                "lon": 72.88
+              }
+            },
+            "lat": 19.07,
+            "lon": 72.88
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              72.88,
+              19.07
+            ]
+          },
+          "bounds": {
+            "x": 138.76800000000003,
+            "y": 393.24800000000005,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    {
+      "id": "geom-legend",
+      "role": "legend",
+      "kind": "legend",
+      "label": "Legend",
+      "children": [
+        {
+          "id": "geom-legend-item-0",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Region",
+          "metadata": {
+            "role": "primary-region"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 14,
+            "width": 91,
+            "height": 16
+          }
+        },
+        {
+          "id": "geom-legend-item-1",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Movement site",
+          "metadata": {
+            "role": "marker"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 32,
+            "width": 91,
+            "height": 16
+          }
+        }
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 107,
+        "height": 46
+      }
+    },
+    {
+      "id": "geom-scale-bar",
+      "role": "scale-bar",
+      "kind": "scale-bar",
+      "label": "500 KM",
+      "bounds": {
+        "x": 24,
+        "y": 512,
+        "width": 170,
+        "height": 68
+      },
+      "interactive": false,
+      "metadata": {
+        "lengthKm": 500,
+        "lengthPx": 164,
+        "unit": "km",
+        "label": "500 KM",
+        "scaleBarKind": "scale-bar"
+      },
+      "children": []
+    }
+  ],
+  "semantics": {
+    "geom-basemap-region-n": {
+      "id": "geom-basemap-region-n",
+      "role": "region",
+      "kind": "region",
+      "label": "Region North",
+      "description": "The region for this map.",
+      "interactive": false,
+      "hidden": false,
+      "metadata": {
+        "entityId": "region-n",
+        "entityType": "region",
+        "name": "Region North",
+        "description": "The region for this map.",
+        "location": {
+          "source": "base",
+          "featureId": "region-n"
+        },
+        "sourceClass": "illustrative",
+        "lat": 22.664895511906675,
+        "lon": 79.99999999999999
+      },
+      "children": [],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              70,
+              15
+            ],
+            [
+              90,
+              15
+            ],
+            [
+              90,
+              30
+            ],
+            [
+              70,
+              30
+            ],
+            [
+              70,
+              15
+            ]
+          ]
+        ]
+      },
+      "rings": [
+        [
+          {
+            "x": 64,
+            "y": 552
+          },
+          {
+            "x": 736,
+            "y": 552
+          },
+          {
+            "x": 736,
+            "y": 48.000000000000114
+          },
+          {
+            "x": 64,
+            "y": 48.000000000000114
+          },
+          {
+            "x": 64,
+            "y": 552
+          }
+        ]
+      ],
+      "path": [
+        {
+          "x": 64,
+          "y": 552
+        },
+        {
+          "x": 736,
+          "y": 552
+        },
+        {
+          "x": 736,
+          "y": 48.000000000000114
+        },
+        {
+          "x": 64,
+          "y": 48.000000000000114
+        },
+        {
+          "x": 64,
+          "y": 552
+        }
+      ],
+      "bounds": {
+        "x": 64,
+        "y": 48.000000000000114,
+        "width": 672,
+        "height": 503.9999999999999
+      }
+    },
+    "geom-basemap": {
+      "id": "geom-basemap",
+      "role": "layer",
+      "kind": "layer",
+      "label": "basemap",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "basemap"
+      },
+      "children": [
+        {
+          "id": "geom-basemap-region-n",
+          "role": "region",
+          "kind": "region",
+          "label": "Region North",
+          "description": "The region for this map.",
+          "interactive": false,
+          "hidden": false,
+          "metadata": {
+            "entityId": "region-n",
+            "entityType": "region",
+            "name": "Region North",
+            "description": "The region for this map.",
+            "location": {
+              "source": "base",
+              "featureId": "region-n"
+            },
+            "sourceClass": "illustrative",
+            "lat": 22.664895511906675,
+            "lon": 79.99999999999999
+          },
+          "children": [],
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  70,
+                  15
+                ],
+                [
+                  90,
+                  15
+                ],
+                [
+                  90,
+                  30
+                ],
+                [
+                  70,
+                  30
+                ],
+                [
+                  70,
+                  15
+                ]
+              ]
+            ]
+          },
+          "rings": [
+            [
+              {
+                "x": 64,
+                "y": 552
+              },
+              {
+                "x": 736,
+                "y": 552
+              },
+              {
+                "x": 736,
+                "y": 48.000000000000114
+              },
+              {
+                "x": 64,
+                "y": 48.000000000000114
+              },
+              {
+                "x": 64,
+                "y": 552
+              }
+            ]
+          ],
+          "path": [
+            {
+              "x": 64,
+              "y": 552
+            },
+            {
+              "x": 736,
+              "y": 552
+            },
+            {
+              "x": 736,
+              "y": 48.000000000000114
+            },
+            {
+              "x": 64,
+              "y": 48.000000000000114
+            },
+            {
+              "x": 64,
+              "y": 552
+            }
+          ],
+          "bounds": {
+            "x": 64,
+            "y": 48.000000000000114,
+            "width": 672,
+            "height": 503.9999999999999
+          }
+        }
+      ]
+    },
+    "geom-sites-calcutta": {
+      "id": "geom-sites-calcutta",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Calcutta",
+      "description": "Event: Quit India movement launched, 1942.",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "calcutta",
+        "entityType": "city",
+        "name": "Calcutta",
+        "description": "Event: Quit India movement launched, 1942.",
+        "location": {
+          "coordinates": {
+            "lat": 22.57,
+            "lon": 88.36
+          }
+        },
+        "lat": 22.57,
+        "lon": 88.36
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          88.36,
+          22.57
+        ]
+      },
+      "bounds": {
+        "x": 658.8959999999997,
+        "y": 275.6479999999999,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-sites-delhi": {
+      "id": "geom-sites-delhi",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Delhi",
+      "description": "Event: Independence achieved, 1947.",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "delhi",
+        "entityType": "city",
+        "name": "Delhi",
+        "description": "Event: Independence achieved, 1947.",
+        "location": {
+          "coordinates": {
+            "lat": 28.61,
+            "lon": 77.2
+          }
+        },
+        "lat": 28.61,
+        "lon": 77.2
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.2,
+          28.61
+        ]
+      },
+      "bounds": {
+        "x": 283.9200000000001,
+        "y": 72.70399999999995,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-sites-bombay": {
+      "id": "geom-sites-bombay",
+      "role": "marker",
+      "kind": "marker",
+      "label": "Bombay",
+      "description": "Event: Non-cooperation movement began, 1920.",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "hidden": false,
+      "metadata": {
+        "entityId": "bombay",
+        "entityType": "city",
+        "name": "Bombay",
+        "description": "Event: Non-cooperation movement began, 1920.",
+        "location": {
+          "coordinates": {
+            "lat": 19.07,
+            "lon": 72.88
+          }
+        },
+        "lat": 19.07,
+        "lon": 72.88
+      },
+      "children": [],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.88,
+          19.07
+        ]
+      },
+      "bounds": {
+        "x": 138.76800000000003,
+        "y": 393.24800000000005,
+        "width": 44,
+        "height": 44
+      }
+    },
+    "geom-sites": {
+      "id": "geom-sites",
+      "role": "layer",
+      "kind": "layer",
+      "label": "sites",
+      "hidden": false,
+      "interactive": false,
+      "metadata": {
+        "layerId": "sites"
+      },
+      "children": [
+        {
+          "id": "geom-sites-calcutta",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Calcutta",
+          "description": "Event: Quit India movement launched, 1942.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "calcutta",
+            "entityType": "city",
+            "name": "Calcutta",
+            "description": "Event: Quit India movement launched, 1942.",
+            "location": {
+              "coordinates": {
+                "lat": 22.57,
+                "lon": 88.36
+              }
+            },
+            "lat": 22.57,
+            "lon": 88.36
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              88.36,
+              22.57
+            ]
+          },
+          "bounds": {
+            "x": 658.8959999999997,
+            "y": 275.6479999999999,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-sites-delhi",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Delhi",
+          "description": "Event: Independence achieved, 1947.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "delhi",
+            "entityType": "city",
+            "name": "Delhi",
+            "description": "Event: Independence achieved, 1947.",
+            "location": {
+              "coordinates": {
+                "lat": 28.61,
+                "lon": 77.2
+              }
+            },
+            "lat": 28.61,
+            "lon": 77.2
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              77.2,
+              28.61
+            ]
+          },
+          "bounds": {
+            "x": 283.9200000000001,
+            "y": 72.70399999999995,
+            "width": 44,
+            "height": 44
+          }
+        },
+        {
+          "id": "geom-sites-bombay",
+          "role": "marker",
+          "kind": "marker",
+          "label": "Bombay",
+          "description": "Event: Non-cooperation movement began, 1920.",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "hidden": false,
+          "metadata": {
+            "entityId": "bombay",
+            "entityType": "city",
+            "name": "Bombay",
+            "description": "Event: Non-cooperation movement began, 1920.",
+            "location": {
+              "coordinates": {
+                "lat": 19.07,
+                "lon": 72.88
+              }
+            },
+            "lat": 19.07,
+            "lon": 72.88
+          },
+          "children": [],
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              72.88,
+              19.07
+            ]
+          },
+          "bounds": {
+            "x": 138.76800000000003,
+            "y": 393.24800000000005,
+            "width": 44,
+            "height": 44
+          }
+        }
+      ]
+    },
+    "geom-legend-item-0": {
+      "id": "geom-legend-item-0",
+      "role": "legend-item",
+      "kind": "legend-item",
+      "label": "Region",
+      "metadata": {
+        "role": "primary-region"
+      },
+      "children": [],
+      "bounds": {
+        "x": 16,
+        "y": 14,
+        "width": 91,
+        "height": 16
+      }
+    },
+    "geom-legend-item-1": {
+      "id": "geom-legend-item-1",
+      "role": "legend-item",
+      "kind": "legend-item",
+      "label": "Movement site",
+      "metadata": {
+        "role": "marker"
+      },
+      "children": [],
+      "bounds": {
+        "x": 16,
+        "y": 32,
+        "width": 91,
+        "height": 16
+      }
+    },
+    "geom-legend": {
+      "id": "geom-legend",
+      "role": "legend",
+      "kind": "legend",
+      "label": "Legend",
+      "children": [
+        {
+          "id": "geom-legend-item-0",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Region",
+          "metadata": {
+            "role": "primary-region"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 14,
+            "width": 91,
+            "height": 16
+          }
+        },
+        {
+          "id": "geom-legend-item-1",
+          "role": "legend-item",
+          "kind": "legend-item",
+          "label": "Movement site",
+          "metadata": {
+            "role": "marker"
+          },
+          "children": [],
+          "bounds": {
+            "x": 16,
+            "y": 32,
+            "width": 91,
+            "height": 16
+          }
+        }
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 8,
+        "width": 107,
+        "height": 46
+      }
+    }
+  }
+}

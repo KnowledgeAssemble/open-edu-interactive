@@ -1,0 +1,28 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cycl-water-cycle-course",
+  "metadata": { "title": "Water cycle (course version)" },
+  "purpose": { "learningObjective": "Move around the water cycle and name each stage", "reasoningMode": "explore" },
+  "content": {
+    "kind": "cycle",
+    "profile": "process",
+    "nodes": [
+      { "id": "evaporation", "label": "Evaporation" },
+      { "id": "condensation", "label": "Condensation" },
+      { "id": "precipitation", "label": "Precipitation" },
+      { "id": "collection", "label": "Collection" }
+    ],
+    "edges": [
+      { "from": "evaporation", "to": "condensation", "relationship": "leads-to" },
+      { "from": "condensation", "to": "precipitation", "relationship": "leads-to" },
+      { "from": "precipitation", "to": "collection", "relationship": "leads-to" },
+      { "from": "collection", "to": "evaporation", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "radial" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Water cycle: evaporation, condensation, precipitation, collection" }
+}

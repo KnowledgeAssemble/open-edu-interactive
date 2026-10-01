@@ -1,0 +1,29 @@
+[
+  {
+    "kind": "node",
+    "id": "node-artery",
+    "nodeId": "artery",
+    "label": "Artery"
+  },
+  {
+    "kind": "node",
+    "id": "node-capillary",
+    "nodeId": "capillary",
+    "label": "Capillary"
+  },
+  {
+    "kind": "node",
+    "id": "node-vein",
+    "nodeId": "vein",
+    "label": "Vein"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-capillary-vein",
+    "from": "capillary",
+    "relationship": "leads-to",
+    "to": "vein",
+    "fromLabel": "Capillary",
+    "toLabel": "Vein"
+  }
+]

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Theme map where Region B is only twice Region A but falls in a much higher bucket</title>
+  <desc>An interactive geographic map</desc>
+  <g id="map-root">
+    <g id="map-layers">
+  <g id="geom-theme" data-oedu-role="layer" aria-label="Theme">
+    <path id="geom-theme-r1" data-oedu-role="region" data-oedu-interactive="true" data-oedu-encoding="encoding-bucket-1" aria-label="Region A" d="M 64 434.4 L 332.8 434.4 L 332.8 165.6 L 64 165.6 L 64 434.4 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path id="geom-theme-r2" data-oedu-role="region" data-oedu-interactive="true" data-oedu-encoding="encoding-bucket-2" aria-label="Region B" d="M 467.2 434.4 L 736 434.4 L 736 165.6 L 467.2 165.6 L 467.2 434.4 Z" fill="currentColor" opacity="0.45" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g id="geom-scale-bar" data-oedu-role="scale-bar" aria-label="1000 KM">
+    <line x1="26" y1="530" x2="271" y2="530" stroke="currentColor" stroke-width="2"/>
+    <line x1="26" y1="526" x2="26" y2="534" stroke="currentColor" stroke-width="1.5"/>
+    <line x1="271" y1="526" x2="271" y2="534" stroke="currentColor" stroke-width="1.5"/>
+  </g>
+    </g>
+  </g>
+</svg>

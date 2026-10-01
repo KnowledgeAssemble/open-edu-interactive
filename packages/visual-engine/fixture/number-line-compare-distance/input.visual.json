@@ -1,0 +1,23 @@
+{
+  "type": "visual",
+  "version": "1.0.0",
+  "id": "number-line-compare-distance",
+  "purpose": {
+    "learningObjective": "Compare the distance of two values from zero on a number line",
+    "interactionGoal": "Select which of the two emphasized values is farther from zero",
+    "reasoningMode": "compare"
+  },
+  "content": {
+    "kind": "number-line",
+    "components": [{
+      "id": "nl",
+      "type": "number-line",
+      "props": { "min": 0, "max": 10, "step": 1, "highlight": [3, 7] }
+    }]
+  },
+  "accessibility": {
+    "label": "Number line from zero to ten",
+    "description": "Two values, three and seven, are emphasized. Select the value farther from zero."
+  },
+  "interaction": { "mode": "identify", "actions": ["select", "focus", "deselect", "reset"] }
+}

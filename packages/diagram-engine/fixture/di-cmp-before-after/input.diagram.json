@@ -1,0 +1,25 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-cmp-before-after",
+  "metadata": { "title": "River course before and after" },
+  "purpose": { "learningObjective": "Compare a structure at two periods", "reasoningMode": "compare" },
+  "content": {
+    "kind": "concept-map",
+    "profile": "process",
+    "nodes": [
+      { "id": "course-old", "label": "Old course", "links": { "timelineEventId": "event-1800" } },
+      { "id": "course-new", "label": "New course", "links": { "timelineEventId": "event-1900" } },
+      { "id": "delta", "label": "Delta", "links": { "timelineEventId": "event-1900" } }
+    ],
+    "edges": [
+      { "from": "course-old", "to": "course-new", "relationship": "leads-to" },
+      { "from": "course-new", "to": "delta", "relationship": "leads-to" }
+    ]
+  },
+  "layout": { "type": "hierarchical" },
+  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "River course before and after, keyed to timeline events" }
+}

@@ -17,13 +17,11 @@
       "minLength": 1,
       "pattern": "^[a-z][a-z0-9-]*$"
     },
-
     "version": {
       "type": "string",
       "description": "Semantic version of the engine specification.",
       "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
     },
-
     "id": {
       "type": "string",
       "description": "Stable identifier for this engine instance within the lesson.",
@@ -31,29 +29,23 @@
       "maxLength": 128,
       "pattern": "^[a-zA-Z][a-zA-Z0-9._-]*$"
     },
-
     "metadata": {
       "$ref": "#/$defs/metadata"
     },
-
     "purpose": {
       "$ref": "#/$defs/purpose"
     },
-
     "content": {
       "type": "object",
       "description": "Engine-specific semantic content. Concrete engine schemas should define its structure.",
       "additionalProperties": true
     },
-
     "layout": {
       "$ref": "#/$defs/layout"
     },
-
     "interaction": {
       "$ref": "#/$defs/interaction"
     },
-
     "questions": {
       "type": "array",
       "description": "Optional pedagogical questions or activities associated with the engine.",
@@ -61,27 +53,21 @@
         "$ref": "#/$defs/question"
       }
     },
-
     "accessibility": {
       "$ref": "#/$defs/accessibility"
     },
-
     "appearance": {
       "$ref": "#/$defs/appearance"
     },
-
     "state": {
       "$ref": "#/$defs/initialState"
     },
-
     "events": {
       "$ref": "#/$defs/events"
     },
-
     "completion": {
       "$ref": "#/$defs/completion"
     },
-
     "resources": {
       "type": "array",
       "description": "Resources referenced by the engine.",
@@ -89,7 +75,6 @@
         "$ref": "#/$defs/resource"
       }
     },
-
     "sources": {
       "type": "array",
       "description": "Sources and provenance information for engine content.",
@@ -97,7 +82,6 @@
         "$ref": "#/$defs/source"
       }
     },
-
     "capabilities": {
       "type": "array",
       "description": "Capabilities explicitly supported by this engine instance.",
@@ -108,7 +92,6 @@
       }
     }
   },
-
   "$defs": {
     "metadata": {
       "type": "object",
@@ -152,7 +135,6 @@
         }
       }
     },
-
     "purpose": {
       "type": "object",
       "additionalProperties": false,
@@ -172,7 +154,6 @@
         "learningObjective"
       ]
     },
-
     "reasoningMode": {
       "type": "string",
       "enum": [
@@ -189,7 +170,6 @@
         "investigate"
       ]
     },
-
     "layout": {
       "type": "object",
       "additionalProperties": false,
@@ -240,7 +220,6 @@
         }
       }
     },
-
     "interaction": {
       "type": "object",
       "additionalProperties": false,
@@ -283,7 +262,6 @@
         }
       }
     },
-
     "actionType": {
       "type": "string",
       "description": "Semantic action from DESIGN D5. Renderer input (click, pointer, keyboard) is not valid here.",
@@ -314,10 +292,10 @@
         "connect",
         "disconnect",
         "follow",
+        "bearing",
         "reset"
       ]
     },
-
     "guidedInteraction": {
       "type": "object",
       "additionalProperties": false,
@@ -337,7 +315,6 @@
         "enabled"
       ]
     },
-
     "question": {
       "type": "object",
       "additionalProperties": false,
@@ -392,7 +369,6 @@
         }
       }
     },
-
     "feedback": {
       "type": "object",
       "additionalProperties": false,
@@ -414,7 +390,6 @@
         }
       }
     },
-
     "accessibility": {
       "type": "object",
       "additionalProperties": false,
@@ -462,7 +437,6 @@
         "label"
       ]
     },
-
     "appearance": {
       "type": "object",
       "additionalProperties": false,
@@ -483,7 +457,6 @@
         }
       }
     },
-
     "motion": {
       "type": "object",
       "additionalProperties": false,
@@ -502,13 +475,11 @@
         }
       }
     },
-
     "initialState": {
       "type": "object",
       "description": "Initial engine state. Concrete engine schemas should define engine-specific state properties.",
       "additionalProperties": true
     },
-
     "events": {
       "type": "array",
       "description": "Semantic events that this engine can emit.",
@@ -517,7 +488,6 @@
         "$ref": "#/$defs/eventDefinition"
       }
     },
-
     "eventDefinition": {
       "type": "object",
       "additionalProperties": false,
@@ -534,7 +504,6 @@
         }
       }
     },
-
     "completion": {
       "type": "object",
       "additionalProperties": false,
@@ -554,7 +523,6 @@
         }
       }
     },
-
     "condition": {
       "type": "object",
       "additionalProperties": false,
@@ -583,7 +551,6 @@
         }
       }
     },
-
     "resource": {
       "type": "object",
       "additionalProperties": false,
@@ -619,7 +586,6 @@
         }
       }
     },
-
     "source": {
       "type": "object",
       "additionalProperties": false,
@@ -643,7 +609,7 @@
             "illustrative",
             "simulated"
           ],
-          "description": "Accuracy class per DESIGN §9 (provenance)."
+          "description": "Accuracy class per DESIGN \u00a79 (provenance)."
         },
         "title": {
           "type": "string"
@@ -663,7 +629,6 @@
         }
       }
     },
-
     "reference": {
       "type": "object",
       "additionalProperties": false,
@@ -683,7 +648,6 @@
         }
       }
     },
-
     "id": {
       "type": "string",
       "minLength": 1,

@@ -89,6 +89,8 @@
           "label": "gravity influences weight",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -97,6 +99,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-gravity-weight",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -121,6 +124,8 @@
           "label": "mass influences weight",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -129,6 +134,7 @@
             "relationship": "influences",
             "labels": [],
             "edgeId": "edge-mass-weight",
+            "gated": false,
             "edgeGeometry": {
               "type": "line",
               "points": [
@@ -265,6 +271,8 @@
       "label": "gravity influences weight",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -272,7 +280,8 @@
         "toNodeId": "weight",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-gravity-weight"
+        "edgeId": "edge-gravity-weight",
+        "gated": false
       },
       "children": []
     },
@@ -283,6 +292,8 @@
       "label": "mass influences weight",
       "interactive": true,
       "acceptsActions": [
+        "select",
+        "focus",
         "follow"
       ],
       "metadata": {
@@ -290,7 +301,8 @@
         "toNodeId": "weight",
         "relationship": "influences",
         "labels": [],
-        "edgeId": "edge-mass-weight"
+        "edgeId": "edge-mass-weight",
+        "gated": false
       },
       "children": []
     },
@@ -362,6 +374,8 @@
           "label": "gravity influences weight",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -369,7 +383,8 @@
             "toNodeId": "weight",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-gravity-weight"
+            "edgeId": "edge-gravity-weight",
+            "gated": false
           },
           "children": []
         },
@@ -380,6 +395,8 @@
           "label": "mass influences weight",
           "interactive": true,
           "acceptsActions": [
+            "select",
+            "focus",
             "follow"
           ],
           "metadata": {
@@ -387,7 +404,8 @@
             "toNodeId": "weight",
             "relationship": "influences",
             "labels": [],
-            "edgeId": "edge-mass-weight"
+            "edgeId": "edge-mass-weight",
+            "gated": false
           },
           "children": []
         }

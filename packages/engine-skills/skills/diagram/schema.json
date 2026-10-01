@@ -93,6 +93,12 @@
                 "additionalProperties": {
                   "type": "string"
                 }
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
@@ -129,7 +135,11 @@
                   "influences",
                   "is-a",
                   "leads-to",
-                  "part-of"
+                  "part-of",
+                  "feeds-on",
+                  "transforms-to",
+                  "produces",
+                  "weathers-into"
                 ]
               },
               "labels": {
@@ -137,6 +147,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "gated": {
+                "type": "boolean"
+              },
+              "strength": {
+                "type": "number"
               }
             },
             "required": [

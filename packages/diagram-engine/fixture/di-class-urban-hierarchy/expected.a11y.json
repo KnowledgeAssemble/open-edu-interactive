@@ -1,0 +1,44 @@
+[
+  {
+    "id": "node-village",
+    "role": "button",
+    "label": "Village",
+    "children": []
+  },
+  {
+    "id": "node-town",
+    "role": "button",
+    "label": "Town",
+    "children": []
+  },
+  {
+    "id": "node-city",
+    "role": "button",
+    "label": "City",
+    "children": []
+  },
+  {
+    "id": "node-metropolis",
+    "role": "button",
+    "label": "Metropolis",
+    "children": []
+  },
+  {
+    "id": "edge-village-town",
+    "role": "link",
+    "label": "Village leads-to Town",
+    "children": []
+  },
+  {
+    "id": "edge-town-city",
+    "role": "link",
+    "label": "Town leads-to City",
+    "children": []
+  },
+  {
+    "id": "edge-city-metropolis",
+    "role": "link",
+    "label": "City leads-to Metropolis",
+    "children": []
+  }
+]

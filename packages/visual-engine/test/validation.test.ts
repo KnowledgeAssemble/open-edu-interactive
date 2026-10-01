@@ -129,6 +129,20 @@ describe('validateSemantic (L2)', () => {
     expect(result.issues[0]!.code).toBe('INVALID_ENTITY');
     expect(result.issues[0]!.message).toContain('denominator must be at least 2');
   });
+
+  it('rejects a negative maxSelection on counting-set with INVALID_SPEC', () => {
+    const spec: VisualSpec = {
+      ...VALID_SPEC,
+      content: {
+        kind: 'counting-set',
+        components: [{ id: 'cs', type: 'counting-set', props: { count: 3, object: 'star', arrangement: 'row', maxSelection: -1 } }],
+      },
+    };
+    const result = validateSemantic(spec);
+    expect(result.valid).toBe(false);
+    expect(result.issues[0]!.code).toBe('INVALID_SPEC');
+    expect(result.issues[0]!.message).toContain('maxSelection');
+  });
 });
 
 describe('validateAccessibility (L4)', () => {

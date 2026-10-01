@@ -1,0 +1,314 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-artery",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Artery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "artery",
+            "label": "Artery"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-capillary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Capillary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "capillary",
+            "label": "Capillary"
+          },
+          "children": [],
+          "bounds": {
+            "x": 400,
+            "y": 240,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-vein",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Vein",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "vein",
+            "label": "Vein"
+          },
+          "children": [],
+          "bounds": {
+            "x": 240,
+            "y": 300,
+            "width": 136,
+            "height": 45
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-capillary-vein",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "capillary leads-to vein",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "capillary",
+            "toNodeId": "vein",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-capillary-vein",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 468,
+                  "y": 262.5
+                },
+                {
+                  "x": 308,
+                  "y": 322.5
+                }
+              ],
+              "path": "M468,262.5 L308,322.5"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-artery": {
+      "id": "node-artery",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Artery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "artery",
+        "label": "Artery"
+      },
+      "children": []
+    },
+    "artery": {
+      "id": "node-artery",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Artery",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "artery",
+        "label": "Artery"
+      },
+      "children": []
+    },
+    "node-capillary": {
+      "id": "node-capillary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Capillary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "capillary",
+        "label": "Capillary"
+      },
+      "children": []
+    },
+    "capillary": {
+      "id": "node-capillary",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Capillary",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "capillary",
+        "label": "Capillary"
+      },
+      "children": []
+    },
+    "node-vein": {
+      "id": "node-vein",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Vein",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "vein",
+        "label": "Vein"
+      },
+      "children": []
+    },
+    "vein": {
+      "id": "node-vein",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Vein",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "vein",
+        "label": "Vein"
+      },
+      "children": []
+    },
+    "edge-capillary-vein": {
+      "id": "edge-capillary-vein",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "capillary leads-to vein",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "capillary",
+        "toNodeId": "vein",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-capillary-vein",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-artery",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Artery",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "artery",
+            "label": "Artery"
+          },
+          "children": []
+        },
+        {
+          "id": "node-capillary",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Capillary",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "capillary",
+            "label": "Capillary"
+          },
+          "children": []
+        },
+        {
+          "id": "node-vein",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Vein",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "vein",
+            "label": "Vein"
+          },
+          "children": []
+        },
+        {
+          "id": "edge-capillary-vein",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "capillary leads-to vein",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "capillary",
+            "toNodeId": "vein",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-capillary-vein",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

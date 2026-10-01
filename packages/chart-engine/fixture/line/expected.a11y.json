@@ -1,6 +1,126 @@
 {
   "a11y": [
     {
+      "id": "tick-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "tick-y-1",
+      "role": "text",
+      "label": "5",
+      "children": []
+    },
+    {
+      "id": "tick-y-2",
+      "role": "text",
+      "label": "10",
+      "children": []
+    },
+    {
+      "id": "tick-y-3",
+      "role": "text",
+      "label": "15",
+      "children": []
+    },
+    {
+      "id": "tick-y-4",
+      "role": "text",
+      "label": "20",
+      "children": []
+    },
+    {
+      "id": "tick-y-5",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "tick-x-0",
+      "role": "text",
+      "label": "Jan",
+      "children": []
+    },
+    {
+      "id": "tick-x-1",
+      "role": "text",
+      "label": "Apr",
+      "children": []
+    },
+    {
+      "id": "tick-x-2",
+      "role": "text",
+      "label": "Jul",
+      "children": []
+    },
+    {
+      "id": "tick-x-3",
+      "role": "text",
+      "label": "Oct",
+      "children": []
+    },
+    {
+      "id": "label-y-0",
+      "role": "text",
+      "label": "0",
+      "children": []
+    },
+    {
+      "id": "label-y-1",
+      "role": "text",
+      "label": "5",
+      "children": []
+    },
+    {
+      "id": "label-y-2",
+      "role": "text",
+      "label": "10",
+      "children": []
+    },
+    {
+      "id": "label-y-3",
+      "role": "text",
+      "label": "15",
+      "children": []
+    },
+    {
+      "id": "label-y-4",
+      "role": "text",
+      "label": "20",
+      "children": []
+    },
+    {
+      "id": "label-y-5",
+      "role": "text",
+      "label": "25",
+      "children": []
+    },
+    {
+      "id": "label-x-0",
+      "role": "text",
+      "label": "Jan",
+      "children": []
+    },
+    {
+      "id": "label-x-1",
+      "role": "text",
+      "label": "Apr",
+      "children": []
+    },
+    {
+      "id": "label-x-2",
+      "role": "text",
+      "label": "Jul",
+      "children": []
+    },
+    {
+      "id": "label-x-3",
+      "role": "text",
+      "label": "Oct",
+      "children": []
+    },
+    {
       "id": "temp-point-row-jan",
       "role": "button",
       "label": "Jan: 5 °C",

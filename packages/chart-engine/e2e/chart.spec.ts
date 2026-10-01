@@ -82,3 +82,146 @@ test.describe('Chart Engine — bar chart e2e', () => {
     expect(result.restored.sort()).toEqual(['Aug', 'Feb', 'May', 'Nov']);
   });
 });
+
+test.describe('Chart Engine — ch-l4 time series e2e', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/line-time/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('time dimension: ISO-8601 values render as ordered x labels; select on a time point works', async ({ page }) => {
+    const snapshot = await page.evaluate(() => {
+      return (window as unknown as { __chartHarness: { snapshot(): { tabular: Array<{ rowLabel: string }> } } }).__chartHarness.snapshot();
+    });
+    expect(snapshot.tabular.map((r) => r.rowLabel)).toEqual(['2024-01-15', '2024-04-15', '2024-07-15', '2024-10-15']);
+
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { dispatch(a: unknown): void; snapshot(): { selection: string[] }; events(): Array<{ name: string }> } }).__chartHarness;
+      h.dispatch({ type: 'select', target: { id: 'temp-point-row-jul' } });
+      return { selection: h.snapshot().selection, events: h.events().map((e) => e.name) };
+    });
+    expect(result.selection).toContain('temp-point-row-jul');
+    expect(result.events).toContain('chart.data-point-selected');
+  });
+});
+
+test.describe('Chart Engine — ch-x3 guided narrow e2e', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar-guided-narrow/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('guided: host filter narrows to one bar, learner selects it, clear-filter restores between steps', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { dispatch(a: unknown): void; tabular(): Array<{ rowLabel: string }>; snapshot(): { selection: string[] } } }).__chartHarness;
+      h.dispatch({ type: 'filter', payload: { ids: ['row-may'] } });
+      const narrowed = h.tabular().map((r) => r.rowLabel);
+      h.dispatch({ type: 'select', target: { id: 'rainfall-bar-row-may' } });
+      const selection = h.snapshot().selection;
+      h.dispatch({ type: 'clear-filter' });
+      const restored = h.tabular().map((r) => r.rowLabel);
+      return { narrowed, selection, restored };
+    });
+    expect(result.narrowed).toEqual(['May']);
+    expect(result.selection).toContain('rainfall-bar-row-may');
+    expect(result.restored.sort()).toEqual(['Aug', 'Feb', 'May', 'Nov']);
+  });
+});
+
+test.describe('Chart Engine — ch-x2 multi-measure e2e (W-2.3)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar-multi-measure/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('grouped bars: distinct node ids per measure per row; legend distinguishes measures; tabular lists all values', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { svg(): string; tabular(): Array<{ rowLabel: string; values: Array<{ measureId: string; value: number }> }> } }).__chartHarness;
+      const svg = h.svg();
+      const tabular = h.tabular();
+      return { svg, janValues: tabular.find((r) => r.rowLabel === 'Jan')?.values };
+    });
+    expect(result.svg).toContain('id="rainfall-bar-row-jan"');
+    expect(result.svg).toContain('id="sunshine-bar-row-jan"');
+    expect(result.svg).toContain('id="legend-rainfall"');
+    expect(result.svg).toContain('id="legend-sunshine"');
+    expect(result.janValues).toEqual([
+      { measureId: 'rainfall', value: 30 },
+      { measureId: 'sunshine', value: 6 },
+    ]);
+  });
+
+  test('grouped bars: selecting a grouped bar emits chart.data-point-selected', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { dispatch(a: unknown): void; snapshot(): { selection: string[] }; events(): Array<{ name: string }> } }).__chartHarness;
+      h.dispatch({ type: 'select', target: { id: 'sunshine-bar-row-jul' } });
+      const names = h.events().map((e) => e.name);
+      return { selection: h.snapshot().selection, names };
+    });
+    expect(result.selection).toContain('sunshine-bar-row-jul');
+    expect(result.names).toContain('chart.data-point-selected');
+  });
+});
+
+test.describe('Chart Engine — ch-l1 line series stroke e2e (W-2.4)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/line/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('path visible between points: polyline connects ≥2 points in dimension order; points remain selectable', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { svg(): string; dispatch(a: unknown): void; snapshot(): { selection: string[] } } }).__chartHarness;
+      const svg = h.svg();
+      const match = svg.match(/<polyline id="series-line"[^>]*points="([^"]+)"/);
+      h.dispatch({ type: 'select', target: { id: 'temp-point-row-jul' } });
+      return { points: match?.[1], selection: h.snapshot().selection, hasPolyline: Boolean(match) };
+    });
+    expect(result.hasPolyline).toBe(true);
+    const coords = result.points!.trim().split(/\s+/).map((p) => p.split(',').map(Number));
+    expect(coords.length).toBeGreaterThanOrEqual(4);
+    for (let i = 1; i < coords.length; i++) {
+      expect(coords[i]![0]!).toBeGreaterThan(coords[i - 1]![0]!);
+    }
+    expect(result.selection).toContain('temp-point-row-jul');
+  });
+});
+test.describe('Chart Engine — W-5a per-item interactive gating', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar-gated/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('interactive:false removes a bar from the interactive surface; host dispatch still applies', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { svg(): string; dispatch(a: unknown): void; snapshot(): { selection: string[] } } }).__chartHarness;
+      const svg = h.svg();
+      const mayGated = svg.includes('id="rainfall-bar-row-may"') && /id="rainfall-bar-row-may"[^>]*data-oedu-interactive="true"/.test(svg) === false;
+      h.dispatch({ type: 'select', target: { id: 'rainfall-bar-row-may' } });
+      return { mayGated, selection: h.snapshot().selection };
+    });
+    expect(result.mayGated).toBe(true);
+    expect(result.selection).toContain('rainfall-bar-row-may');
+  });
+});
+
+test.describe('Chart Engine — W-5b a11y-tree scope (ch-b5)', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/?engine=chart&spec=packages/chart-engine/fixture/bar/input.chart.json');
+    await page.waitForFunction(() => !!(window as unknown as { __chartHarness?: unknown }).__chartHarness);
+  });
+
+  test('axis/tick labels appear in the a11y tree as static text, never as D5 targets', async ({ page }) => {
+    const result = await page.evaluate(() => {
+      const h = (window as unknown as { __chartHarness: { snapshot(): { svgResult: { a11y: Array<{ id: string; role: string; label: string }> } } } }).__chartHarness;
+      const a11y = h.snapshot().svgResult.a11y;
+      const axis = a11y.find((n) => n.id === 'tick-x-0');
+      const textNodes = a11y.filter((n) => n.role === 'text');
+      const interactive = a11y.filter((n) => n.role === 'button');
+      return { axisRole: axis?.role, textCount: textNodes.length, buttonsOnly: interactive.every((n) => n.id.startsWith('rainfall-bar')) };
+    });
+    expect(result.axisRole).toBe('text');
+    expect(result.textCount).toBeGreaterThan(0);
+    expect(result.buttonsOnly).toBe(true);
+  });
+});
