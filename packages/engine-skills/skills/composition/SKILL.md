@@ -16,7 +16,7 @@ Use a **single engine spec** when one interactive stands alone. Composition buys
     {
       "instanceId": "timeline-a",
       "engine": "timeline",
-      "spec": { "type": "timeline", "version": "1.0.0", "id": "timeline-a", "content": { "kind": "events", "events": [ { "id": "event-1", "label": "First", "date": "1850", "links": { "visualEntityId": "figure-1" } } ] }, "interaction": { "actions": ["select"] } }
+      "spec": { "type": "timeline", "version": "1.0.0", "id": "timeline-a", "content": { "kind": "events", "events": [ { "id": "event-1", "label": "First", "date": "1850", "links": { "visualEntityId": "figure-1" } } ] }, "interaction": { "actions": ["select", "deselect"] } }
     },
     {
       "instanceId": "visual-b",
@@ -43,6 +43,7 @@ Use a **single engine spec** when one interactive stands alone. Composition buys
 - **Cross-engine MUST go through the lesson bus**, never through engine-to-engine imports. Engines stay isolated (D2); only `interactive-engine` knows about lessons and bindings.
 - **Embedded engine specs MUST each pass L1** on `interactive-engine.schema.json`, and engine-spec L2 where the engine defines one.
 - **Semantic-first and accessible.** Timeline events and visual entities carry `id`/`label`/`date` meaning, never coordinates. Everything interactive gets a role + non-empty label.
+- **Embedded specs follow their own engine's rules.** An embedded spec that accepts `select` must also declare `deselect` — renderer input maps repeat activation of a selected node to `deselect`, so a `select`-only declaration understates real behavior.
 
 ## Do NOT
 

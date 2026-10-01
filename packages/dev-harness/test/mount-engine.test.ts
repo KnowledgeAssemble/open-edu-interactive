@@ -94,12 +94,11 @@ describe('mountEngine', () => {
     marker!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     marker = container.querySelector('#nl-marker-7');
     marker!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-    const actions = result
+    const resultEvents = result
       .events()
-      .map((e) => (e.action as { type?: string } | undefined)?.type)
-      .filter((t): t is string => t === 'select' || t === 'deselect')
-      .filter((t, i, arr) => i === 0 || t !== arr[i - 1]);
-    expect(actions).toEqual(['select', 'deselect']);
+      .map((e) => e.name)
+      .filter((name): name is string => typeof name === 'string' && name.startsWith('visual.'));
+    expect(resultEvents).toEqual(['visual.nl-marker-7-selected', 'visual.nl-marker-7-deselected']);
     const snap = result.snapshot() as { selection?: string[] };
     expect(snap.selection).toEqual([]);
     result.teardown();

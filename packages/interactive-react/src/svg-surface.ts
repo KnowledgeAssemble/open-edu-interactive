@@ -10,11 +10,10 @@ export interface SvgSurfaceSnapshot {
 
 const POINTER_STYLE_CSS = `
 [data-oedu-interactive="true"] { cursor: pointer; }
-[data-oedu-interactive="true"]:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 [data-oedu-selected="true"] { stroke: #1d4ed8 !important; stroke-width: 4 !important; }
 [data-oedu-selected="true"] text { fill: #1d4ed8 !important; font-weight: 700; }
 [data-oedu-selected="true"] > rect[data-oedu-hit-target="true"] { fill: rgba(29, 78, 216, 0.12) !important; stroke: #1d4ed8 !important; stroke-width: 2 !important; }
-[data-oedu-focused="true"] { outline: 2px solid #1d4ed8; outline-offset: 2px; }
+[data-oedu-focused="true"], [data-oedu-interactive="true"]:focus-visible { outline: 2px solid #1d4ed8; outline-offset: 2px; }
 `.trim();
 
 export function ensureInteractivePointerStyle(root: HTMLElement): void {
@@ -24,6 +23,8 @@ export function ensureInteractivePointerStyle(root: HTMLElement): void {
   style.textContent = POINTER_STYLE_CSS;
   root.appendChild(style);
 }
+
+let pendingKeyboardFocus = false;
 
 export function applySelectionState(
   container: HTMLElement,
@@ -62,6 +63,19 @@ export function applyInteractiveFocusability(container: HTMLElement): void {
   }
 }
 
+function focusedInteractiveId(container: HTMLElement): string | null {
+  if (!pendingKeyboardFocus) return null;
+  const active = document.activeElement;
+  if (!(active instanceof Element) || !container.contains(active)) return null;
+  return active.closest('[data-oedu-interactive="true"]')?.id ?? null;
+}
+
+function restoreInteractiveFocus(container: HTMLElement, id: string | null): void {
+  if (!id) return;
+  const el = container.querySelector(`#${id}`) as (Element & { focus?: () => void }) | null;
+  el?.focus?.();
+}
+
 export function bindSvgInteraction(
   root: HTMLElement,
   dispatch: (action: EngineAction) => void,
@@ -77,15 +91,18 @@ export function bindSvgInteraction(
     const id = el?.id;
     if (!id) return;
     event.preventDefault();
+    pendingKeyboardFocus = false;
     translate(id, el.hasAttribute('data-oedu-selected'));
   }
 
   function onKeyDown(event: KeyboardEvent): void {
     if (event.key !== 'Enter' && event.key !== ' ') return;
+    if (event.repeat) return;
     const el = (event.target as Element | null)?.closest('[data-oedu-interactive="true"]');
     const id = el?.id;
     if (!id) return;
     event.preventDefault();
+    pendingKeyboardFocus = true;
     translate(id, el.hasAttribute('data-oedu-selected'));
   }
 
@@ -98,7 +115,10 @@ export function bindSvgInteraction(
 }
 
 export function syncSvgSurface(container: HTMLElement, snapshot: SvgSurfaceSnapshot): void {
+  const focusedId = focusedInteractiveId(container);
+  pendingKeyboardFocus = false;
   renderSvgInto(container, snapshot.svgResult?.svg ?? '');
   applySelectionState(container, snapshot.selection ?? [], snapshot.focus ?? null);
   applyInteractiveFocusability(container);
+  restoreInteractiveFocus(container, focusedId);
 }

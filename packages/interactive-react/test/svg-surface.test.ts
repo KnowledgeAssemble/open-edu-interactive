@@ -76,6 +76,21 @@ describe('bindSvgInteraction', () => {
     unbind();
   });
 
+  it('ignores auto-repeat keydown so a held key cannot strobe the toggle', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="nl-label-7" data-oedu-interactive="true"><text>7</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    root
+      .querySelector('#nl-label-7')!
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    root
+      .querySelector('#nl-label-7')!
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, repeat: true }));
+    expect(dispatched).toEqual([{ type: 'select', target: { id: 'nl-label-7' } }]);
+    unbind();
+  });
+
   it('does nothing on non-interactive element click', () => {
     const root = document.createElement('div');
     root.innerHTML = `<svg><g id="nl-tick-0"><line /></g></svg>`;
@@ -133,6 +148,18 @@ describe('ensureInteractivePointerStyle', () => {
     expect(style.textContent).toContain(':focus-visible');
     expect(style.textContent).not.toMatch(/\[tabindex\]/);
   });
+
+  it('declares the engine focus ring and the keyboard focus ring in one shared rule', () => {
+    const root = document.createElement('div');
+    ensureInteractivePointerStyle(root);
+    const css = root.querySelector(`#${INTERACTIVE_POINTER_STYLE_ID}`)!.textContent ?? '';
+    const focusVisibleRule = css
+      .split('}')
+      .find((chunk) => chunk.includes(':focus-visible'));
+    expect(focusVisibleRule).toBeDefined();
+    expect(focusVisibleRule).toContain('[data-oedu-focused="true"]');
+    expect(css).not.toContain('currentColor');
+  });
 });
 
 describe('renderSvgInto', () => {
@@ -173,6 +200,52 @@ describe('syncSvgSurface', () => {
 
     syncSvgSurface(container, { svgResult: { svg }, selection: ['x'], focus: null });
     expect(container.querySelector('#x')!.getAttribute('tabindex')).toBe('0');
+  });
+
+  it('restores keyboard focus to the same interactive id after a re-render replaces the DOM', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    const render = (selection: string[]) =>
+      syncSvgSurface(container, { svgResult: { svg }, selection, focus: null });
+
+    render([]);
+    const unbind = bindSvgInteraction(container, () => render(['x']));
+    const before = container.querySelector<SVGElement>('#x')!;
+    before.focus();
+    container.querySelector('#x')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+
+    const after = container.querySelector('#x')!;
+    expect(after).not.toBe(before);
+    expect(document.activeElement).toBe(after);
+    unbind();
+    container.remove();
+  });
+
+  it('does not restore focus when focus was not initiated by the keyboard', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    syncSvgSurface(container, { svgResult: { svg }, selection: [], focus: null });
+    container.querySelector<HTMLElement>('#x')!.focus();
+
+    syncSvgSurface(container, { svgResult: { svg }, selection: ['x'], focus: null });
+    expect(document.activeElement).not.toBe(container.querySelector('#x'));
+    container.remove();
+  });
+
+  it('does not steal focus when nothing interactive was focused', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const outside = document.createElement('button');
+    document.body.appendChild(outside);
+    outside.focus();
+
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    syncSvgSurface(container, { svgResult: { svg }, selection: [], focus: null });
+    expect(document.activeElement).toBe(outside);
+    container.remove();
+    outside.remove();
   });
 
   it('does not set tabindex on non-interactive nodes', () => {

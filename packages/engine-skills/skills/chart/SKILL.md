@@ -31,7 +31,7 @@ Use the shared Interactive Engine envelope (`type: "chart"`, `version`, `id`). C
       { "id": "row-may", "month": "May", "rainfall": 110 }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "filter", "reset"] },
   "sources": [{ "class": "authoritative" }],
   "accessibility": { "label": "Bar chart of monthly rainfall in millimeters" }
 }
@@ -46,6 +46,7 @@ Use the shared Interactive Engine envelope (`type: "chart"`, `version`, `id`). C
 - `sources[]` is **required** for provenance (DESIGN §9). Each source carries `class`, one of `"authoritative"` (canonical for the lesson), `"illustrative"` (simplified for teaching), or `"simulated"` (hypothetical). Use `{ "class": "authoritative" | "illustrative" | "simulated" }`.
 - Never invent data or derived numbers. Values come only from `content.data` + declared measures.
 - Never author `x`, `y`, `width`, `height`, `color` — axes, ticks, bars, and points are derived by the layout engine. Scales are deterministic (no d3).
+- **Selection toggles.** Renderer input maps a repeat activation of a selected mark to `deselect`, so any interactive accepting `select` must also declare `deselect`.
 - A line chart needs at least 2 data points (1 point is degenerate).
 - Tabular alternative is derived from the same data — accessible by default.
 
