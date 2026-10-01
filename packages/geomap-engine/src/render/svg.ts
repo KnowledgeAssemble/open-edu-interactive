@@ -1,14 +1,7 @@
+import { nodeAttrs, svgShell, escapeXml, fmt, a11yButton, pushInteractiveEntries } from '@knowledgeassemble/svg-kit';
 import type { Scene, SceneNode } from '../scene/types.js';
 import type { LayoutContext } from '../layout/engine.js';
 import type { SvgResult, EntityRow } from './types.js';
-
-function escapeXml(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function fmt(n: number): string {
-  return String(Math.round(n * 100) / 100);
-}
 
 function polylinePoints(pts: Array<{ x: number; y: number }>): string {
   return pts.map((p) => `${fmt(p.x)},${fmt(p.y)}`).join(' ');
@@ -16,25 +9,21 @@ function polylinePoints(pts: Array<{ x: number; y: number }>): string {
 
 function nodeToSvg(node: SceneNode, indent: number, minTouchTarget: number): string {
   const pad = '  '.repeat(indent);
-  let attrs = `id="${escapeXml(node.id)}" data-oedu-role="${escapeXml(node.role)}"`;
-  if (node.interactive) {
-    attrs += ` data-oedu-interactive="true"`;
-  }
+  const mid: Record<string, string> = {};
   if (node.role === 'route-completed') {
-    attrs += ` data-oedu-state="completed"`;
+    mid['data-oedu-state'] = 'completed';
   } else if (node.role === 'route-active') {
-    attrs += ` data-oedu-state="active"`;
+    mid['data-oedu-state'] = 'active';
   }
   const encodingBucket = node.metadata?.encodingBucket as string | undefined;
   if (encodingBucket) {
-    attrs += ` data-oedu-encoding="${escapeXml(encodingBucket)}"`;
+    mid['data-oedu-encoding'] = encodingBucket;
   }
-  if (node.label) {
-    attrs += ` aria-label="${escapeXml(node.label)}"`;
-  }
+  const tail: Record<string, string> = {};
   if (node.description) {
-    attrs += ` title="${escapeXml(node.description)}"`;
+    tail['title'] = node.description;
   }
+  const attrs = nodeAttrs(node, { mid, tail });
 
   if (node.kind === 'route' && node.points && node.points.length > 0) {
     const dots = node.children.map((c) => nodeToSvg(c, indent + 1, minTouchTarget)).join('\n');
@@ -136,20 +125,12 @@ export function svgFrom(scene: Scene, ctx: LayoutContext, label?: string, desc?:
   const width = ctx.width;
   const height = ctx.height;
 
-  const childrenSvg = scene.nodes.filter((n) => !n.hidden).map((n) => nodeToSvg(n, 1, ctx.minTouchTarget)).join('\n');
+  const childrenSvg = `    <g id="map-layers">\n${scene.nodes.filter((n) => !n.hidden).map((n) => nodeToSvg(n, 1, ctx.minTouchTarget)).join('\n')}\n    </g>`;
 
   const title = label ?? 'GeoMap';
   const description = desc ?? 'An interactive geographic map';
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img">
-  <title>${escapeXml(title)}</title>
-  <desc>${escapeXml(description)}</desc>
-  <g id="map-root">
-    <g id="map-layers">
-${childrenSvg}
-    </g>
-  </g>
-</svg>\n`;
+  const svg = svgShell({ width, height, rootId: 'map-root', title, desc: description, children: childrenSvg }) + '\n';
 
   const a11y: SvgResult['a11y'] = [];
   const interactive: SvgResult['interactive'] = [];
@@ -158,15 +139,8 @@ ${childrenSvg}
 
   function walk(node: SceneNode): void {
     if (!node.hidden && node.interactive && node.acceptsActions) {
-      a11y.push({
-        id: node.id,
-        role: 'button',
-        label: node.label ?? node.id,
-        children: [],
-      });
-      for (const action of node.acceptsActions) {
-        interactive.push({ id: node.id, action });
-      }
+      a11y.push(a11yButton(node));
+      pushInteractiveEntries(interactive, node);
     }
 
     if (node.metadata && !node.hidden) {

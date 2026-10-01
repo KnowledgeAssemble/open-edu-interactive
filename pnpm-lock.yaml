@@ -228,6 +228,9 @@ importers:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       '@types/d3-geo':
         specifier: ^3.1.1
         version: 3.1.1
