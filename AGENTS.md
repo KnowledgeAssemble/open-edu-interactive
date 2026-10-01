@@ -54,7 +54,7 @@ docs/                          DESIGN, INTERACTIVE-ENGINE-SPEC, STRUCTURE, PLAN,
                                PLAN-P8, README, schemas/, fixtures/, engines/<engine>/{VISION,SPEC}.md + skills/
 ```
 
-Current status: **P0–P7 in-repo gates DONE.** Next: **P8 — Production readiness** (`docs/PLAN-P8.md`). Workstream A is in progress: A1 (diagram edges) and A2 (Visual D9 kinds) are landed in `main`; the remaining A-slice work is chart/timeline golden fixtures + render honesty tests (see `docs/superpowers/specs/2026-09-13-interactive-engine-next-phase-implementation-plan.md` N1). Do not start new engine kinds (Workstream D) or library adapters until A is green. OpenEdu CourseRuntime proof is Workstream B (`docs/p7-acceptance.md`).
+Current status: **P0–P7 in-repo gates DONE.** Next: **P8 — Production readiness** (`docs/PLAN-P8.md`). **Workstream A (slice honesty) is GREEN** — A1–A4 complete and landed in `main` via the N1 slice (PR #23, `b3b450d`); "A green" means the PLAN-P8 §3 exit is met (`docs/PLAN-P8.md` §3). Chart `kind: line` is marker-only (N1.8): the series-stroke follow-on and the `ch-l1-read-trend` reopen are **chart-honesty debt tracked by the gap-closure plan** (T11, `docs/superpowers/specs/2026-09-30-use-case-gap-closure-implementation-plan.md`), not a blocker for the adapter gate below. Do not start new engine kinds (Workstream D) or library adapters until A is green; the `svg-kit` extraction (`docs/superpowers/specs/2026-10-01-svg-kit-render-extraction-implementation-plan.md`, `docs/adr/ADR-13.md`) is sequenced onto this gate. OpenEdu CourseRuntime proof is Workstream B (`docs/p7-acceptance.md`).
 
 ## Engine skills package
 

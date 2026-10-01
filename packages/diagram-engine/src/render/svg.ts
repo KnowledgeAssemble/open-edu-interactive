@@ -1,27 +1,19 @@
+import { nodeAttrs, svgShell, escapeXml } from '@knowledgeassemble/svg-kit';
 import type { Scene, SceneNode } from '../scene/types.js';
 import type { LayoutContext } from '../layout/engine.js';
 import type { SvgResult, RelRow } from './types.js';
 import { adjacency, detectCycles } from '../layout/graph.js';
 
-function escapeXml(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
 function nodeToSvg(node: SceneNode, indent: number): string {
   const pad = '  '.repeat(indent);
-  let attrs = `id="${escapeXml(node.id)}" data-oedu-role="${escapeXml(node.role)}"`;
-  if (node.interactive) {
-    attrs += ` data-oedu-interactive="true"`;
-  }
-  if (node.label) {
-    attrs += ` aria-label="${escapeXml(node.label)}"`;
-  }
+  const tail: Record<string, string> = {};
   if (node.metadata?.whatIf === 'deemphasized') {
-    attrs += ` data-oedu-what-if="deemphasized"`;
+    tail['data-oedu-what-if'] = 'deemphasized';
   }
   if (node.description) {
-    attrs += ` title="${escapeXml(node.description)}"`;
+    tail['title'] = node.description;
   }
+  const attrs = nodeAttrs(node, { tail });
 
   if (node.children.length > 0) {
     const children = node.children.map((c) => nodeToSvg(c, indent + 1)).join('\n');
@@ -68,24 +60,12 @@ export function svgFrom(
 
   const root = scene.nodes.find((n) => n.kind === 'diagram');
   const childrenSvg = root ? root.children.filter((n) => !n.hidden).map((n) => nodeToSvg(n, 2)).join('\n') : '';
+  const body = `  <defs>\n    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">\n      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>\n    </marker>\n  </defs>\n  <g id="diagram-root">\n    <g id="diagram-nodes">\n${childrenSvg}\n    </g>\n  </g>`;
 
   const title = label ?? 'Diagram';
   const description = desc ?? 'An interactive diagram showing structural relationships';
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img">
-  <title>${escapeXml(title)}</title>
-  <desc>${escapeXml(description)}</desc>
-  <defs>
-    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
-    </marker>
-  </defs>
-  <g id="diagram-root">
-    <g id="diagram-nodes">
-${childrenSvg}
-    </g>
-  </g>
-</svg>\n`;
+  const svg = svgShell({ width, height, title, desc: description, children: body }) + '\n';
 
   const a11y: SvgResult['a11y'] = [];
   const interactive: SvgResult['interactive'] = [];

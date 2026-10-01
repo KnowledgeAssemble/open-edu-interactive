@@ -1,32 +1,13 @@
+import { nodeAttrs, svgShell, escapeXml, centerOf, polygonPoints, starPoints, pushInteractiveEntries } from '@knowledgeassemble/svg-kit';
 import type { Scene, SceneNode } from '../scene/types.js';
 import type { LayoutContext } from '../layout/types.js';
 import type { SvgResult } from './types.js';
 
 export type { SvgResult };
 
-function escapeXml(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function centerOf(bounds: { x: number; y: number; width: number; height: number }): { cx: number; cy: number } {
-  return { cx: bounds.x + bounds.width / 2, cy: bounds.y + bounds.height / 2 };
-}
-
 function nodeToSvg(node: SceneNode, indent: number): string {
   const pad = '  '.repeat(indent);
-  let attrs = `id="${escapeXml(node.id)}" data-oedu-role="${escapeXml(node.role)}"`;
-  if (node.value !== undefined) {
-    attrs += ` data-oedu-value="${node.value}"`;
-  }
-  if (node.interactive) {
-    attrs += ` data-oedu-interactive="true"`;
-  }
-  if (node.label) {
-    attrs += ` aria-label="${escapeXml(node.label)}"`;
-  }
-  if (node.bounds) {
-    attrs += ` data-oedu-bounds="${node.bounds.x},${node.bounds.y},${node.bounds.width},${node.bounds.height}"`;
-  }
+  const attrs = nodeAttrs(node, { value: true, bounds: true });
 
   if (node.kind === 'shape') {
     const b = node.bounds ?? { x: 0, y: 0, width: 100, height: 100 };
@@ -147,26 +128,6 @@ ${pad}</g>`;
   }
 }
 
-function starPoints(cx: number, cy: number, outerR: number, innerR: number, points: number): Array<{ x: number; y: number }> {
-  const result: Array<{ x: number; y: number }> = [];
-  for (let i = 0; i < points * 2; i++) {
-    const angle = (Math.PI * i) / points - Math.PI / 2;
-    const r = i % 2 === 0 ? outerR : innerR;
-    result.push({ x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) });
-  }
-  return result;
-}
-
-function polygonPoints(cx: number, cy: number, r: number, sides: number): Array<{ x: number; y: number }> {
-  if (sides < 3) return [{ x: cx, y: cy }];
-  const result: Array<{ x: number; y: number }> = [];
-  for (let i = 0; i < sides; i++) {
-    const angle = (2 * Math.PI * i) / sides - Math.PI / 2;
-    result.push({ x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) });
-  }
-  return result;
-}
-
 function sceneNodeToA11y(node: SceneNode): SvgResult['a11y'][number] {
   return {
     id: node.id,
@@ -185,13 +146,7 @@ export function svgFrom(scene: Scene, ctx: LayoutContext, label?: string, desc?:
   const title = label ?? 'Visual';
   const description = desc ?? 'An interactive educational visualization';
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img">
-  <title>${escapeXml(title)}</title>
-  <desc>${escapeXml(description)}</desc>
-  <g id="visual-root">
-${childrenSvg}
-  </g>
-</svg>\n`;
+  const svg = svgShell({ width, height, rootId: 'visual-root', title, desc: description, children: childrenSvg }) + '\n';
 
   const a11y: SvgResult['a11y'] = [];
   const interactive: SvgResult['interactive'] = [];
@@ -199,11 +154,7 @@ ${childrenSvg}
   function collect(nodes: SceneNode[]): void {
     for (const node of nodes) {
       a11y.push(sceneNodeToA11y(node));
-      if (node.interactive && node.acceptsActions) {
-        for (const action of node.acceptsActions) {
-          interactive.push({ id: node.id, action });
-        }
-      }
+      pushInteractiveEntries(interactive, node);
       collect(node.children);
     }
   }

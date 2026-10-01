@@ -124,6 +124,9 @@ importers:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       zod:
         specifier: ^3.23.0
         version: 3.25.76
@@ -176,6 +179,9 @@ importers:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       zod:
         specifier: ^3.23.0
         version: 3.25.76
@@ -222,6 +228,9 @@ importers:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       '@types/d3-geo':
         specifier: ^3.1.1
         version: 3.1.1
@@ -291,11 +300,16 @@ importers:
         specifier: ^3.0.0
         version: 3.2.7(@types/node@22.20.1)(jsdom@26.1.0)
 
+  packages/svg-kit: {}
+
   packages/timeline-engine:
     dependencies:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       zod:
         specifier: ^3.23.0
         version: 3.25.76
@@ -305,6 +319,9 @@ importers:
       '@knowledgeassemble/interactive-engine':
         specifier: workspace:*
         version: link:../interactive-engine
+      '@knowledgeassemble/svg-kit':
+        specifier: workspace:*
+        version: link:../svg-kit
       zod:
         specifier: ^3.23.0
         version: 3.25.76

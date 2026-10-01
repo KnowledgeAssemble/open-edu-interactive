@@ -1,30 +1,11 @@
+import { nodeAttrs, svgShell, escapeXml, centerOf, a11yButton, pushInteractiveEntries } from '@knowledgeassemble/svg-kit';
 import type { Scene, SceneNode } from '../scene/types.js';
 import type { LayoutContext } from '../layout/engine.js';
 import type { SvgResult, TabularRow } from './types.js';
 
-function escapeXml(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
-
-function centerOf(b: { x: number; y: number; width: number; height: number }): { cx: number; cy: number } {
-  return { cx: b.x + b.width / 2, cy: b.y + b.height / 2 };
-}
-
 function nodeToSvg(node: SceneNode, indent: number): string {
   const pad = '  '.repeat(indent);
-  let attrs = `id="${escapeXml(node.id)}" data-oedu-role="${escapeXml(node.role)}"`;
-  if (node.value !== undefined) {
-    attrs += ` data-oedu-value="${node.value}"`;
-  }
-  if (node.interactive) {
-    attrs += ` data-oedu-interactive="true"`;
-  }
-  if (node.label) {
-    attrs += ` aria-label="${escapeXml(node.label)}"`;
-  }
-  if (node.bounds) {
-    attrs += ` data-oedu-bounds="${node.bounds.x},${node.bounds.y},${node.bounds.width},${node.bounds.height}"`;
-  }
+  const attrs = nodeAttrs(node, { value: true, bounds: true });
 
   if (node.children.length > 0) {
     const children = node.children.map((c) => nodeToSvg(c, indent + 1)).join('\n');
@@ -70,13 +51,7 @@ export function svgFrom(scene: Scene, ctx: LayoutContext, label?: string, desc?:
   const title = label ?? 'Chart';
   const description = desc ?? 'An interactive chart visualization';
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img">
-  <title>${escapeXml(title)}</title>
-  <desc>${escapeXml(description)}</desc>
-  <g id="chart-root">
-${childrenSvg}
-  </g>
-</svg>`;
+  const svg = svgShell({ width, height, rootId: 'chart-root', title, desc: description, children: childrenSvg });
 
   const a11y: SvgResult['a11y'] = [];
   const interactive: SvgResult['interactive'] = [];
@@ -85,15 +60,8 @@ ${childrenSvg}
 
   for (const node of scene.nodes) {
     if (node.interactive && node.acceptsActions) {
-      a11y.push({
-        id: node.id,
-        role: 'button',
-        label: node.label ?? node.id,
-        children: [],
-      });
-      for (const action of node.acceptsActions) {
-        interactive.push({ id: node.id, action });
-      }
+      a11y.push(a11yButton(node));
+      pushInteractiveEntries(interactive, node);
     } else if (node.role === 'axis' || node.role === 'label' || node.role === 'tick') {
       a11y.push({
         id: node.id,
