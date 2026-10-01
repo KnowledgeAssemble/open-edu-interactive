@@ -8,6 +8,7 @@ const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, '..');
 const PACKAGE_DIRS = [
   'interactive-engine',
+  'svg-kit',
   'chart-engine',
   'diagram-engine',
   'geomap-engine',
