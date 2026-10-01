@@ -5,8 +5,8 @@ import type { A11yNode } from "@knowledgeassemble/interactive-engine";
 import { loadSpec, getCatalog, type FixtureEntry } from "../lib/specLoader.js";
 import { DEFAULT_HOST_CONFIG, stubHostOptions, type HostConfig } from "../lib/hostPresets.js";
 import { a11yTreeFromSnapshot, formatEvents, waitForInstances } from "../lib/inspectorHelpers.js";
-import { InspectorPanel } from "../components/InspectorPanel.js";
-import { A11yTreeView } from "../components/A11yTreeView.js";
+import { COMPARE_CELL, COMPARE_GRID } from "../lib/layout.js";
+import { InspectorColumn } from "../components/InspectorColumn.js";
 import { HostPanel } from "../components/HostPanel.js";
 
 export function LessonStoryPage(): React.JSX.Element {
@@ -25,6 +25,7 @@ export function LessonStoryPage(): React.JSX.Element {
   );
 
   const lessonSpec = useMemo(() => (entry ? loadSpec(entry.specPath) : undefined), [entry]);
+  const specJson = useMemo(() => (lessonSpec ? JSON.stringify(lessonSpec, null, 2) : ""), [lessonSpec]);
 
   function refreshFromHandle(): void {
     if (!resultRef.current) return;
@@ -73,18 +74,23 @@ export function LessonStoryPage(): React.JSX.Element {
       <h2>Lesson: {slug}</h2>
       {error && <div role="alert" style={{ color: "red" }}>{error}</div>}
       <HostPanel config={hostConfig} onChange={setHostConfig} />
-      <div ref={containerRef} data-oedu-root />
-      <div style={{ marginTop: 8 }}>
-        <button type="button" onClick={refreshFromHandle}>Refresh Events</button>
-        <button type="button" onClick={refreshFromHandle}>Refresh Snapshot</button>
+      <div style={COMPARE_GRID}>
+        <div style={COMPARE_CELL}>
+          <div ref={containerRef} data-oedu-root />
+          <div style={{ marginTop: 8 }}>
+            <button type="button" onClick={refreshFromHandle}>Refresh Events</button>
+            <button type="button" onClick={refreshFromHandle}>Refresh Snapshot</button>
+          </div>
+        </div>
+        <div style={COMPARE_CELL}>
+          <InspectorColumn
+            specJson={specJson}
+            events={events}
+            snapshotJson={snapshot}
+            a11yTree={a11yTree}
+          />
+        </div>
       </div>
-      <InspectorPanel title={`Events (${events.length})`} content={events.join("\n")} copyLabel="Copy" />
-      <InspectorPanel title="Snapshot" content={snapshot} copyLabel="Copy JSON" />
-      {a11yTree && (
-        <InspectorPanel title="A11y Tree" copyLabel="Copy JSON" content={JSON.stringify(a11yTree, null, 2)}>
-          <A11yTreeView tree={a11yTree} />
-        </InspectorPanel>
-      )}
     </div>
   );
 }

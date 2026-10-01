@@ -414,7 +414,9 @@ pnpm playground          # serves on port 5174
 ```
 
 Routes: `/` (fixture index), `/engine/:engine/:slug`, `/lesson/:slug`, `/custom` (paste JSON).
-Collapsible inspector panels below the preview show Events, Snapshot, Validation, A11y tree, and Host settings.
+Story routes render two columns: the mounted interactive beside an **Input Spec** panel showing the raw spec JSON that produced it. The layout is an `auto-fit` grid that stacks the columns below two readable widths. Collapsible panels in the right column show Input Spec, Events, Snapshot, Validation, and the A11y tree; Host settings sit above the grid.
+
+Because engines emit fixed `width`/`height` SVG attributes, the host layer constrains `[data-oedu-root] svg { max-width: 100%; height: auto }` so a render never overflows its column; the `viewBox` keeps the aspect ratio. The catalog sidebar is a fixed 240px that stacks above the main pane below 720px. Both behaviours are asserted in `apps/playground/e2e/layout.spec.ts` (`pnpm --filter @knowledgeassemble/playground playwright`).
 Actions are dispatched via buttons generated from `spec.interaction.actions`; a prompt asks for `target.id` when needed.
 The Custom Spec page validates before mount, supports localStorage draft persistence (`playground:custom-spec`), and share via URL hash (`#spec=base64`).
 
