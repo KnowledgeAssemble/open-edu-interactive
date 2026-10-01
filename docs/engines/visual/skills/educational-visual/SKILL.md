@@ -128,7 +128,7 @@ Use the shared Interactive Engine envelope (`type: "visual"`, `version`, `id`). 
   },
   "interaction": {
     "mode": "explore | identify | construct",
-    "actions": ["select", "focus", "reset"]
+    "actions": ["select", "deselect", "focus", "reset"]
   }
 }
 ```
@@ -136,7 +136,8 @@ Use the shared Interactive Engine envelope (`type: "visual"`, `version`, `id`). 
 ## Rules
 
 - **Semantic-first:** describe *what*, not pixels. No `x`, `y`, `width`, `height` in spec.
-- **D5 actions only:** use `select`, `focus`, `reset`, etc. No `click`, `highlight`, `show`.
+- **D5 actions only:** use `select`, `deselect`, `focus`, `reset`, etc. No `click`, `highlight`, `show`.
+- **Selection toggles:** renderer input maps a repeat activation of a selected node to `deselect`, so any interactive that accepts `select` must also declare `deselect` — otherwise the declaration understates the node's real behavior.
 - **Accessibility required:** always include `accessibility.label` and `accessibility.description`.
 - **Valid component id pattern:** `^[a-zA-Z][a-zA-Z0-9._-]*$`, max 128 chars.
 - **No raw colors:** use semantic tokens (`accent.primary`, `surface.primary`, etc.).

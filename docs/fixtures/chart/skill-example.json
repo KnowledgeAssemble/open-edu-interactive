@@ -15,7 +15,7 @@
       { "id": "row-may", "month": "May", "rainfall": 110 }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "filter", "reset"] },
   "sources": [{ "class": "authoritative" }],
   "accessibility": { "label": "Bar chart of monthly rainfall in millimeters" }
 }

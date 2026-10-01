@@ -16,7 +16,7 @@
       { "from": "mass", "to": "weight", "relationship": "influences" }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Concept map: Gravity and Mass influence Weight" }

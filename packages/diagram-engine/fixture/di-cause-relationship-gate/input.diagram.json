@@ -16,7 +16,7 @@
     ]
   },
   "layout": { "type": "grid" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "answer", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "answer", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Rainfall influences soil erosion (relationship hidden until answered)" }

@@ -33,7 +33,7 @@
       { "id": "boundary", "type": "region", "title": "Boundary", "visible": false, "items": [{ "entity": "bd", "interactive": true }] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "toggle", "filter", "clear-filter"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "toggle", "filter", "clear-filter"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Overlay map with two layers" }

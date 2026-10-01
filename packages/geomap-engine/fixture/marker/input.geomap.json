@@ -16,7 +16,7 @@
       { "id": "markers", "type": "marker", "items": [{ "entity": "city1", "label": true, "interactive": true }] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Marker only map" }

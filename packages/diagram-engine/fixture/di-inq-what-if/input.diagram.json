@@ -21,7 +21,7 @@
     ]
   },
   "layout": { "type": "grid" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "answer", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "answer", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Food web for a what-if: what if the decomposer disappears" }

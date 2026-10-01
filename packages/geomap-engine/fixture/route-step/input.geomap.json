@@ -27,7 +27,7 @@
       { "id": "journey", "type": "route", "title": "Journey", "items": [{ "id": "r1", "path": ["a", "b", "c", "d"], "interactive": true }] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "step", "scrub", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "step", "scrub", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Route stepping map" }

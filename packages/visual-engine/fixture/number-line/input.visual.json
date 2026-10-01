@@ -28,6 +28,6 @@
   },
   "interaction": {
     "mode": "identify",
-    "actions": ["select", "focus", "reset"]
+    "actions": ["select", "deselect", "focus", "reset"]
   }
 }

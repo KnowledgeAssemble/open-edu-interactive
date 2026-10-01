@@ -31,5 +31,5 @@
     "label": "Three geometric shapes",
     "description": "Three shapes are shown side by side. Select the hexagon."
   },
-  "interaction": { "mode": "identify", "actions": ["select", "focus", "reset"] }
+  "interaction": { "mode": "identify", "actions": ["select", "deselect", "focus", "reset"] }
 }

@@ -16,7 +16,7 @@
             { "id": "event-1947", "label": "Independence", "date": "1947-08-15", "links": { "timelineEventId": "outcome" } }
           ]
         },
-        "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+        "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
         "sources": [{ "class": "authoritative" }],
         "accessibility": { "label": "Timeline of Indian independence" },
         "questions": []
@@ -43,7 +43,7 @@
           ]
         },
         "layout": { "type": "hierarchical" },
-        "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+        "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
         "sources": [{ "class": "illustrative" }],
         "accessibility": { "label": "Causal chain keyed to timeline events" },
         "questions": []

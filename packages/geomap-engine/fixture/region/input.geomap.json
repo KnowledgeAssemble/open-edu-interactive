@@ -23,7 +23,7 @@
       { "id": "regions", "type": "region", "items": [{ "entity": "r1", "interactive": true }] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Region only map" }

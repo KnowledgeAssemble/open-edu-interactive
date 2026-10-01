@@ -5,7 +5,7 @@
     "id": "number-line-conformance",
     "metadata": { "title": "Number Line" },
     "purpose": { "learningObjective": "Select the highlighted value on the number line" },
-    "interaction": { "actions": ["select", "focus", "reset"] },
+    "interaction": { "actions": ["select", "deselect", "focus", "reset"] },
     "content": {
       "kind": "number-line",
       "components": [{ "id": "nl", "type": "number-line", "props": { "min": 0, "max": 10, "step": 1, "highlight": [7] } }]
@@ -29,7 +29,7 @@
         { "id": "row-nov", "month": "Nov", "rainfall": 30 }
       ]
     },
-    "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "reset"] },
+    "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "filter", "reset"] },
     "questions": [],
     "sources": [{ "class": "authoritative" }],
     "accessibility": { "label": "Bar chart of monthly rainfall in millimeters" }

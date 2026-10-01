@@ -683,6 +683,8 @@ Individual engines SHALL declare which of these actions are valid in `interactio
 
 `highlight`, `annotate`, `blur`, `play`, and `show` are superseded (D5). Pointer events (`click`, `pointer.enter`) are renderer input and MUST NOT appear in specifications.
 
+**Selection is additive; repeat activation toggles.** `select` accumulates membership in `state.selection` and is idempotent (a repeat `select` of the same id is a no-op); `deselect` removes exactly that id. A selection-capable interactive declares both actions. Renderer input maps repeat activation of a selected node to `deselect` — that mapping is a renderer-input translation, not a new D5 action and not a change to the reducer.
+
 ---
 
 # 16. Action Structure
@@ -697,6 +699,8 @@ A common action representation SHOULD look like:
   }
 }
 ```
+
+Renderer input maps repeat activation of a selected node to a `deselect` action of the same shape; a host `dispatch()` stays additive and non-toggling.
 
 Optional parameters MAY be included:
 

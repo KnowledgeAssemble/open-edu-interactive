@@ -22,7 +22,7 @@
     ]
   },
   "layout": { "type": "grid" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Web of influences: climate, soil and water influence vegetation" }

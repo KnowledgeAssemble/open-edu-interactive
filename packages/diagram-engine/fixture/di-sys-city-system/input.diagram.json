@@ -25,7 +25,7 @@
     ]
   },
   "layout": { "type": "grid" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "filter", "clear-filter", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "filter", "clear-filter", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "City metabolic system with input, waste, and recycling loop" }

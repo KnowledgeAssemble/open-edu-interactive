@@ -20,7 +20,7 @@
     ]
   },
   "layout": { "type": "grid" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "follow", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Concept map: river, silt deposition, fertile soil, dense agriculture" }

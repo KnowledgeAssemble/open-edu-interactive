@@ -16,7 +16,7 @@
       { "id": "row-oct", "month": "Oct", "rainfall": 60, "sunshine": 7 }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "accessibility": { "label": "Grouped bar chart of monthly rainfall and sunshine hours" },
   "sources": [{ "class": "authoritative" }]
 }

@@ -20,7 +20,7 @@
     ]
   },
   "layout": { "type": "hierarchical" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "filter", "clear-filter", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "filter", "clear-filter", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Urban hierarchy from village to metropolis" }

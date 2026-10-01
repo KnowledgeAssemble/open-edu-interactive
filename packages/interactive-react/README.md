@@ -41,9 +41,9 @@ import { InteractiveLesson } from '@knowledgeassemble/interactive-react';
 />
 ```
 
-## SVG click contract
+## SVG interaction contract
 
-`[data-oedu-interactive="true"]` elements dispatch `select` via delegated click listener. OpenEdu MUST use default `controlsMode="learner"` — the `'dev'` mode is for conformance testing.
+`[data-oedu-interactive="true"]` elements are focusable (`tabindex="0"`, applied at runtime by `syncSvgSurface`) and toggle selection via a delegated listener bound to the surface root: a click or Enter/Space keydown on an unselected element dispatches `select`; the same activation on a selected element dispatches `deselect`. Selection state is mirrored onto the element as `data-oedu-selected` and `aria-pressed`. OpenEdu MUST use default `controlsMode="learner"` — the `'dev'` mode is for conformance testing.
 
 ## Subpath exports
 

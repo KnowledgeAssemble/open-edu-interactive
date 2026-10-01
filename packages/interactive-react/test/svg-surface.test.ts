@@ -20,6 +20,77 @@ describe('bindSvgInteraction', () => {
     unbind();
   });
 
+  it('dispatches deselect on second click of a selected element', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="nl-label-7" data-oedu-interactive="true" data-oedu-selected="true"><text>7</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    root.querySelector('text')!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(dispatched).toEqual([{ type: 'deselect', target: { id: 'nl-label-7' } }]);
+    unbind();
+  });
+
+  it('selects a different element even when another is already selected', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="a" data-oedu-interactive="true" data-oedu-selected="true"><text>A</text></g><g id="b" data-oedu-interactive="true"><text>B</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    root.querySelector('#b text')!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    expect(dispatched).toEqual([{ type: 'select', target: { id: 'b' } }]);
+    unbind();
+  });
+
+  it('dispatches select on Enter keydown for a focused interactive element', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="nl-label-7" data-oedu-interactive="true"><text>7</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    root
+      .querySelector('#nl-label-7')!
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    expect(dispatched).toEqual([{ type: 'select', target: { id: 'nl-label-7' } }]);
+    unbind();
+  });
+
+  it('dispatches deselect on Enter keydown for a selected element', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="nl-label-7" data-oedu-interactive="true" data-oedu-selected="true"><text>7</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    root
+      .querySelector('#nl-label-7')!
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    expect(dispatched).toEqual([{ type: 'deselect', target: { id: 'nl-label-7' } }]);
+    unbind();
+  });
+
+  it('dispatches select on Space keydown and prevents page scroll', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="nl-label-7" data-oedu-interactive="true"><text>7</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    const event = new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true });
+    root.querySelector('#nl-label-7')!.dispatchEvent(event);
+    expect(dispatched).toEqual([{ type: 'select', target: { id: 'nl-label-7' } }]);
+    expect(event.defaultPrevented).toBe(true);
+    unbind();
+  });
+
+  it('ignores auto-repeat keydown so a held key cannot strobe the toggle', () => {
+    const root = document.createElement('div');
+    root.innerHTML = `<svg><g id="nl-label-7" data-oedu-interactive="true"><text>7</text></g></svg>`;
+    const dispatched: EngineAction[] = [];
+    const unbind = bindSvgInteraction(root, (a) => dispatched.push(a));
+    root
+      .querySelector('#nl-label-7')!
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    root
+      .querySelector('#nl-label-7')!
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, repeat: true }));
+    expect(dispatched).toEqual([{ type: 'select', target: { id: 'nl-label-7' } }]);
+    unbind();
+  });
+
   it('does nothing on non-interactive element click', () => {
     const root = document.createElement('div');
     root.innerHTML = `<svg><g id="nl-tick-0"><line /></g></svg>`;
@@ -38,7 +109,7 @@ describe('applySelectionState', () => {
     applySelectionState(container, ['nl-marker-7'], null);
     const el = container.querySelector('#nl-marker-7')!;
     expect(el.getAttribute('data-oedu-selected')).toBe('true');
-    expect(el.getAttribute('aria-selected')).toBe('true');
+    expect(el.getAttribute('aria-pressed')).toBe('true');
   });
 
   it('clears previous selection before applying new', () => {
@@ -69,6 +140,26 @@ describe('ensureInteractivePointerStyle', () => {
     const styles = root.querySelectorAll(`#${INTERACTIVE_POINTER_STYLE_ID}`);
     expect(styles).toHaveLength(1);
   });
+
+  it('styles focus via :focus-visible, never a [tabindex] selector', () => {
+    const root = document.createElement('div');
+    ensureInteractivePointerStyle(root);
+    const style = root.querySelector(`#${INTERACTIVE_POINTER_STYLE_ID}`)!;
+    expect(style.textContent).toContain(':focus-visible');
+    expect(style.textContent).not.toMatch(/\[tabindex\]/);
+  });
+
+  it('declares the engine focus ring and the keyboard focus ring in one shared rule', () => {
+    const root = document.createElement('div');
+    ensureInteractivePointerStyle(root);
+    const css = root.querySelector(`#${INTERACTIVE_POINTER_STYLE_ID}`)!.textContent ?? '';
+    const focusVisibleRule = css
+      .split('}')
+      .find((chunk) => chunk.includes(':focus-visible'));
+    expect(focusVisibleRule).toBeDefined();
+    expect(focusVisibleRule).toContain('[data-oedu-focused="true"]');
+    expect(css).not.toContain('currentColor');
+  });
 });
 
 describe('renderSvgInto', () => {
@@ -89,5 +180,81 @@ describe('syncSvgSurface', () => {
     });
     expect(container.innerHTML).toContain('<text>X</text>');
     expect(container.querySelector('#x')!.getAttribute('data-oedu-selected')).toBe('true');
+  });
+
+  it('applies aria-pressed from selection snapshot', () => {
+    const container = document.createElement('div');
+    syncSvgSurface(container, {
+      svgResult: { svg: '<svg><g id="x"><text>X</text></g></svg>' },
+      selection: ['x'],
+      focus: null,
+    });
+    expect(container.querySelector('#x')!.getAttribute('aria-pressed')).toBe('true');
+  });
+
+  it('sets tabindex on interactive nodes and keeps it after a re-render', () => {
+    const container = document.createElement('div');
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    syncSvgSurface(container, { svgResult: { svg }, selection: [], focus: null });
+    expect(container.querySelector('#x')!.getAttribute('tabindex')).toBe('0');
+
+    syncSvgSurface(container, { svgResult: { svg }, selection: ['x'], focus: null });
+    expect(container.querySelector('#x')!.getAttribute('tabindex')).toBe('0');
+  });
+
+  it('restores keyboard focus to the same interactive id after a re-render replaces the DOM', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    const render = (selection: string[]) =>
+      syncSvgSurface(container, { svgResult: { svg }, selection, focus: null });
+
+    render([]);
+    const unbind = bindSvgInteraction(container, () => render(['x']));
+    const before = container.querySelector<SVGElement>('#x')!;
+    before.focus();
+    container.querySelector('#x')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+
+    const after = container.querySelector('#x')!;
+    expect(after).not.toBe(before);
+    expect(document.activeElement).toBe(after);
+    unbind();
+    container.remove();
+  });
+
+  it('does not restore focus when focus was not initiated by the keyboard', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    syncSvgSurface(container, { svgResult: { svg }, selection: [], focus: null });
+    container.querySelector<HTMLElement>('#x')!.focus();
+
+    syncSvgSurface(container, { svgResult: { svg }, selection: ['x'], focus: null });
+    expect(document.activeElement).not.toBe(container.querySelector('#x'));
+    container.remove();
+  });
+
+  it('does not steal focus when nothing interactive was focused', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const outside = document.createElement('button');
+    document.body.appendChild(outside);
+    outside.focus();
+
+    const svg = '<svg><g id="x" data-oedu-interactive="true"><text>X</text></g></svg>';
+    syncSvgSurface(container, { svgResult: { svg }, selection: [], focus: null });
+    expect(document.activeElement).toBe(outside);
+    container.remove();
+    outside.remove();
+  });
+
+  it('does not set tabindex on non-interactive nodes', () => {
+    const container = document.createElement('div');
+    syncSvgSurface(container, {
+      svgResult: { svg: '<svg><g id="x"><text>X</text></g></svg>' },
+      selection: [],
+      focus: null,
+    });
+    expect(container.querySelector('#x')!.getAttribute('tabindex')).toBeNull();
   });
 });

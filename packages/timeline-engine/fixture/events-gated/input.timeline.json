@@ -12,7 +12,7 @@
       { "id": "e3", "label": "Event C", "date": "1920" }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Timeline with one non-interactive event" }

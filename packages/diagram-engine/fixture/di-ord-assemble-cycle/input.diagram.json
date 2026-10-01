@@ -21,7 +21,7 @@
     ]
   },
   "layout": { "type": "radial" },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "answer", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "answer", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Butterfly lifecycle; assemble the correct stage order" }

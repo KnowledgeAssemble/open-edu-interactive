@@ -55,7 +55,7 @@
             { "id": "figure-independence", "label": "Independence celebration" }
           ]
         },
-        "interaction": { "mode": "explore", "actions": ["focus", "select", "reset"] },
+        "interaction": { "mode": "explore", "actions": ["focus", "select", "deselect", "reset"] },
         "accessibility": { "label": "Historical illustration for selected timeline event" },
         "questions": []
       }

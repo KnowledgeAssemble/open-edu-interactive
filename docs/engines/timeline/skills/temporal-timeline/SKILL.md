@@ -47,7 +47,7 @@ Use when authoring a **Timeline** engine specification (`type: "timeline"`) for 
   },
   "interaction": {
     "mode": "explore",
-    "actions": ["select", "focus", "play-pause", "step", "scrub", "reset"]
+    "actions": ["select", "deselect", "focus", "play-pause", "step", "scrub", "reset"]
   },
   "accessibility": {
     "label": "Descriptive label for the timeline"
@@ -69,6 +69,7 @@ Invalid: `yesterday`, `Aug 1947`, `47 BC`, `2026-13-01` (months are structural �
 - **Membership, not positions.** Track lanes and x-positions are derived. Never write `x`, `y`, `pixel`, `width` in the spec.
 - **No causality from order.** Events listed in chronological order do not necessarily imply cause/effect.
 - **Playback via D5 actions.** `play-pause` toggles, `step` advances, `scrub` jumps to an event. All through the shared action set — no `setInterval`, no timers.
+- **Selection toggles.** Renderer input maps a repeat activation of a selected event to `deselect`, so an interactive accepting `select` must also declare `deselect`.
 - **`links.*` are composition hints**, not cross-package imports. They reference entities in peer engine instances within the same lesson.
 - **Linear alternative is auto-derived.** No need to author a separate list — the engine produces `linear` as an accessible ordered list.
 

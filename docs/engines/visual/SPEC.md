@@ -1056,10 +1056,12 @@ Interactions MUST NOT contain executable code.
 Pointer, keyboard, and DOM events are **renderer input**. They MUST NOT appear in Visual specifications.
 
 ```text
-click          → maps to select / focus / open-annotation (runtime)
+click          → maps to select / deselect / focus / open-annotation (runtime)
 pointer.enter  → maps to focus (runtime)
-keydown        → maps to select / step / … (runtime)
+keydown        → maps to select / deselect / step / … (runtime)
 ```
+
+A click or Enter/Space activation on an already-selected interactive node maps to `deselect` (the selection-capable renderer toggles); the same activation on an unselected node maps to `select`. A selection-capable interactive declares both `select` and `deselect` in `interaction.actions`. Host-side `dispatch()` stays additive and non-toggling — `select` on a selected id is a no-op, `deselect` removes exactly that id.
 
 See `STRUCTURE.md` §25 and the shared contract §15. Authors specify semantic actions only.
 
@@ -1077,6 +1079,8 @@ Visual Engine instances MUST use the **closed D5 action enum** from the shared e
 | `play` | `play-pause` |
 
 Full enum: DESIGN §7.4 and `interactive-engine.schema.json` `$defs/actionType`.
+
+**Selection toggles.** A selection-capable interactive (an interactive entity or component that accepts `select`) declares **both** `select` and `deselect` in `interaction.actions`. Renderer input maps repeat activation of a selected node to `deselect` (§38), so a declaration that lists only `select` would understate the node's actual behavior. The shared reducer keeps `select` idempotent and additive (repeat `select` is a no-op) and `deselect` membership-removing; the toggle is a renderer-input translation, never a new D5 action.
 
 ---
 
@@ -3096,11 +3100,11 @@ Each component accepts the optional `interactive: boolean` prop. When `true`, ev
 
 ### A.2.1 `maxSelection` (counting-set)
 
-The counting-set component accepts the optional `maxSelection: number` prop. It constrains how many objects a learner may select: a `select` that would push the component's selection past `maxSelection` is rejected deterministically with `INVALID_ACTION` (`packages/visual-engine/src/engine.ts`). Absent means unlimited. Enforcement is scoped to the learner-facing `select`/`deselect` actions only — a host `dispatch()` of any other D5 action is never rejected by the cap (ADR-12: the declared action set is an authoring contract, not a runtime access-control list). The validator ranges it to a non-negative integer (`INVALID_SPEC` otherwise). Use case: `cs-pick-n`.
+The counting-set component accepts the optional `maxSelection: number` prop. It constrains how many objects a learner may select: a `select` that would push the component's selection past `maxSelection` is rejected deterministically with `INVALID_ACTION` (`packages/visual-engine/src/engine.ts`). Absent means unlimited. Enforcement is scoped to the learner-facing `select`/`deselect` actions only — a host `dispatch()` of any other D5 action is never rejected by the cap (ADR-12: the declared action set is an authoring contract, not a runtime access-control list). The validator ranges it to a non-negative integer (`INVALID_SPEC` otherwise). Because renderer input toggles (§39), a counting-set interactive declares both `select` and `deselect` so a learner can undo a pick before the cap is reached. Use case: `cs-pick-n`.
 
 ### A.2.2 Selection-driven fraction fill
 
-For `fraction` in discovery mode, fill is **engine-state**, not static emphasis: `state.selection` is the source of truth. Each `select`/`deselect` that touches a `fraction-part` node re-derives `metadata.filled = true` on the selected parts and re-renders the SVG deterministically (identical input → identical SVG). The renderer draws filled parts with a solid fill plus `data-oedu-filled="true"`; unfilled parts keep the translucent stroke-only look. Highlight props (`highlightedParts`) still carry guided-mode emphasis; they do not gate the selection-driven fill. Use case: `fr-shade-n-parts`.
+For `fraction` in discovery mode, fill is **engine-state**, not static emphasis: `state.selection` is the source of truth. Each `select`/`deselect` that touches a `fraction-part` node re-derives `metadata.filled = true` on the selected parts and re-renders the SVG deterministically (identical input → identical SVG). The renderer draws filled parts with a solid fill plus `data-oedu-filled="true"`; unfilled parts keep the translucent stroke-only look. Highlight props (`highlightedParts`) still carry guided-mode emphasis; they do not gate the selection-driven fill. Because renderer input toggles (§39), a discovery-mode fraction interactive declares both `select` and `deselect`, letting a learner un-fill a part. Use case: `fr-shade-n-parts`.
 
 ## A.3 Scene node id conventions
 

@@ -32,7 +32,7 @@
         },
         "interaction": {
           "mode": "explore",
-          "actions": ["select", "focus", "play-pause", "step", "reset"]
+          "actions": ["select", "deselect", "focus", "play-pause", "step", "reset"]
         },
         "sources": [
           {
@@ -63,7 +63,7 @@
         },
         "interaction": {
           "mode": "explore",
-          "actions": ["focus", "select", "reset"]
+          "actions": ["focus", "select", "deselect", "reset"]
         },
         "accessibility": {
           "label": "Historical illustration for selected timeline event"

@@ -62,7 +62,7 @@
       ] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "step", "scrub", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "step", "scrub", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Map of a territory that grew between 1700 and 1900" }

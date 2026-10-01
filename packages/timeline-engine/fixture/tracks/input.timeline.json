@@ -14,7 +14,7 @@
       { "id": "t1", "label": "First track", "events": ["e1", "e2"] }
     ]
   },
-  "interaction": { "mode": "explore", "actions": ["select", "focus", "reset"] },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "reset"] },
   "questions": [],
   "sources": [{ "class": "illustrative" }],
   "accessibility": { "label": "Test tracks timeline" }
