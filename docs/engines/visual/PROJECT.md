@@ -205,9 +205,9 @@ Whereas:
 
 ```text
 number-line
-fraction-bar
+fraction
 clock
-ten-frame
+counting-set
 coordinate-grid
 ```
 
@@ -329,21 +329,23 @@ The engine MUST support deterministic label placement.
 
 # 8. Educational Components
 
-MVP educational component library (closed set — DESIGN D9):
+Visual component library (closed set — DESIGN D9). Ten kinds; `VISUAL_KINDS` in `visual-engine/src/schema.ts` is canonical.
 
 ### Mathematics
 
 1. `number-line`
 2. `counting-set`
-3. `fraction-bar`
+3. `fraction`
 4. `fraction-circle`
-5. `clock`
-6. `coordinate-grid`
-7. `geometry-shape`
+5. `fraction-comparison`
+6. `clock`
+7. `coordinate-grid`
+8. `geometry`
 
 ### General
 
-8. `comparison`
+9. `comparison`
+10. `illustration` — geometry-less group of labelled `focus`/`select`-able entities whose picture is host-supplied (`PLAN-P2.5` T0/T3); adds no drawing surface of its own
 
 **Not Visual components:** `timeline`, `label-diagram`, and `flowchart` — use Timeline or Diagram engines.
 

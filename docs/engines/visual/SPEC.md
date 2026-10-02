@@ -234,18 +234,19 @@ The envelope `type` is always `"visual"`. The semantic kind of the visual is `co
 Initial vocabulary:
 
 ```text
-generic
 illustration
 number-line
 counting-set
 fraction
+fraction-circle
 fraction-comparison
 clock
 coordinate-grid
 geometry
 comparison
-interactive-scene
 ```
+
+`VISUAL_KINDS` in `visual-engine/src/schema.ts` is canonical for this list. `generic` and `interactive-scene` are **not** Visual kinds: they appear nowhere in the runtime and are absent from every fixture. The examples in §41 and §59 are forward-looking sketches of a possible future kind and are **not** valid against the current envelope — an `interactive-scene` spec fails `INVALID_SPEC` today. Admitting either name is a SPEC change with its own cases.
 
 `timeline`, `flowchart`, and `label-diagram` as Visual kinds are superseded (DESIGN §15). Use the Timeline or Diagram engines.
 
@@ -2132,21 +2133,16 @@ The schema itself SHOULD remain small.
 
 Educational complexity should live in registered components.
 
-Example component registry:
+The Visual component registry is the ten kinds in §9. `VISUAL_KINDS` in
+`visual-engine/src/schema.ts` is canonical.
 
-```text
-number-line
-counting-set
-fraction-bar
-fraction-circle
-clock
-coordinate-grid
-geometry-shape
-timeline
-label-diagram
-flowchart
-comparison
-```
+This section deliberately holds no second copy of that list. An earlier
+revision listed one here and it drifted: it carried `timeline`,
+`label-diagram`, and `flowchart` as Visual components and omitted
+`fraction-comparison` and `illustration`. The registry is Visual-domain
+only — `timeline`, `label-diagram`, and `flowchart` belong to the Timeline
+and Diagram engines (DESIGN §15), and listing them here is the
+engine-smuggling anti-pattern.
 
 Components expose their own prop schemas.
 
