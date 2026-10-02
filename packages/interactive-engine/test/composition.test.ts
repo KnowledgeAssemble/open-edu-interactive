@@ -49,6 +49,75 @@ describe('Lesson (composition runtime)', () => {
     runtime.stop();
   });
 
+  // The canonical fixture is timeline→visual, so the router never reads a diagram payload.
+  // W-3.2 claims nodes[].links resolves through a binding, which only this case proves.
+  it('select on a diagram node routes focus via targetIdFrom on links.visualEntityId', () => {
+    const lessonDef = {
+      id: 'diagram-links-binding',
+      engines: [
+        {
+          instanceId: 'cycle',
+          engine: 'diagram',
+          spec: {
+            type: 'diagram',
+            version: '1.0.0',
+            id: 'di-cycl-links',
+            content: {
+              kind: 'cycle',
+              nodes: [
+                {
+                  id: 'a',
+                  label: 'Stage A',
+                  links: { visualEntityId: 'figure-a' },
+                },
+                { id: 'b', label: 'Stage B' },
+              ],
+              edges: [
+                { from: 'a', to: 'b', relationship: 'transforms-to' },
+                { from: 'b', to: 'a', relationship: 'produces' },
+              ],
+            },
+            accessibility: { label: 'Two-stage cycle' },
+          },
+        },
+        {
+          instanceId: 'figures',
+          engine: 'visual',
+          spec: {
+            type: 'visual',
+            version: '1.0.0',
+            id: 'visual-figures',
+            content: {
+              kind: 'illustration',
+              entities: [{ id: 'figure-a', label: 'Figure A' }],
+            },
+            accessibility: { label: 'Stage figures' },
+          },
+        },
+      ],
+      bindings: [
+        {
+          on: 'diagram.node-selected',
+          from: 'cycle',
+          dispatch: { to: 'figures', action: 'focus', targetIdFrom: 'links.visualEntityId' },
+        },
+      ],
+    };
+    const lesson = Lesson.load(lessonDef as never, makeRegistry());
+    const runtime = lesson.start(makeHost().host);
+
+    runtime.dispatch('cycle', { type: 'select', target: { id: 'node-a' } } as EngineAction);
+
+    const visualSnapshot = runtime.snapshot('figures') as { focus: string | null };
+    expect(visualSnapshot.focus).toBe('figure-a');
+
+    const eventNames = runtime.events().map((e) => e.name);
+    expect(eventNames.indexOf('visual.figure-a-focused')).toBeGreaterThan(
+      eventNames.indexOf('diagram.node-selected'),
+    );
+    runtime.stop();
+  });
+
   it('EventLog replay from the host stream reproduces the same final snapshot', () => {
     const registry = makeRegistry();
     const lesson = Lesson.load(canonicalFixture as never, registry);
@@ -170,3 +239,4 @@ describe('Lesson (composition runtime)', () => {
     runtime.stop();
   });
 });
+

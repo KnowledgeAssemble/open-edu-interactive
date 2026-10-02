@@ -45,7 +45,7 @@ function makeHost(events: Array<{ name: string; action?: unknown }>, resolveAsse
 }
 
 describe('nodes[].links pass-through (W-3.2, DESIGN §9, P6)', () => {
-  it('reaches scene node metadata under both the authored key and an arbitrary one', () => {
+  it('reaches scene node metadata for a known link key and an unrecognised one', () => {
     const events: Array<{ name: string; action?: unknown }> = [];
     const { host } = makeHost(events);
     const instance = new DiagramEngine().instantiate(LINKS_SPEC as never, host, 'links-scene');
@@ -60,8 +60,9 @@ describe('nodes[].links pass-through (W-3.2, DESIGN §9, P6)', () => {
     const { host } = makeHost(events);
     const instance = new DiagramEngine().instantiate(LINKS_SPEC as never, host, 'links-mount');
     const snap = instance.snapshot() as unknown as SnapshotExtras;
-    // buildScene registers each node under both its scene id and its authored id, so a
-    // host walking scene.semantics MUST dedupe on metadata.nodeId or it visits a node twice.
+    // buildScene registers each node twice — once under its scene id, once under its
+    // authored id — so a host walking scene.semantics visits every node twice unless
+    // it keys on metadata.nodeId. Edges carry edgeId but no nodeId, so they drop out.
     const seen = new Set<string>();
     const visited: string[] = [];
     for (const n of Object.values(snap.scene.semantics)) {
