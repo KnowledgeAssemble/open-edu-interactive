@@ -2133,21 +2133,16 @@ The schema itself SHOULD remain small.
 
 Educational complexity should live in registered components.
 
-Example component registry:
+The Visual component registry is the ten kinds in §9. `VISUAL_KINDS` in
+`visual-engine/src/schema.ts` is canonical.
 
-```text
-number-line
-counting-set
-fraction-bar
-fraction-circle
-clock
-coordinate-grid
-geometry-shape
-timeline
-label-diagram
-flowchart
-comparison
-```
+This section deliberately holds no second copy of that list. An earlier
+revision listed one here and it drifted: it carried `timeline`,
+`label-diagram`, and `flowchart` as Visual components and omitted
+`fraction-comparison` and `illustration`. The registry is Visual-domain
+only — `timeline`, `label-diagram`, and `flowchart` belong to the Timeline
+and Diagram engines (DESIGN §15), and listing them here is the
+engine-smuggling anti-pattern.
 
 Components expose their own prop schemas.
 

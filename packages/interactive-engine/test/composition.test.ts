@@ -239,4 +239,3 @@ describe('Lesson (composition runtime)', () => {
     runtime.stop();
   });
 });
-
