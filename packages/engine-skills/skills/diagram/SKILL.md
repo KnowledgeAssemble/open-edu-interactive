@@ -43,7 +43,8 @@ Use the shared Interactive Engine envelope (`type: "diagram"`, `version`, `id`).
 
 - `content.kind` is a **closed enum**: `flow | cycle | hierarchy | concept-map`. `label-diagram` is future — do not use it.
 - `nodes[]`: `{ id, label, description?, links? }`. At least 1; ids unique.
-- `edges[]`: `{ id?, from, to, relationship }`. **`relationship` is REQUIRED and explicit** — never infer causality from adjacency. Closed enum: `leads-to, part-of, contains, is-a, connected-to, influences`. No temporal `before`/`after` (Timeline owns that). Edge id is authored or derived `edge-<from>-<to>`.
+- `links` values are **opaque references the host resolves** (`visualEntityId`, `timelineEventId`, `geomapEntityId` name an entity in another engine instance). Never put a URL, file path, base64 blob, or coordinates in `links` — a spec carries meaning, not payloads (DESIGN §9).
+- `edges[]`: `{ id?, from, to, relationship }`. **`relationship` is REQUIRED and explicit** — never infer causality from adjacency. Closed enum: `connected-to, contains, influences, is-a, leads-to, part-of` plus the W-3.1 domain additions `feeds-on, transforms-to, produces, weathers-into`. Pick the one that names the actual relationship — a life cycle is `transforms-to`, a food web is `feeds-on`, not a generic `leads-to`. No temporal `before`/`after` (Timeline owns that). Edge id is authored or derived `edge-<from>-<to>`.
 - `layout.type` (envelope root) is a **strategy selector** `radial | hierarchical | grid`; absent → kind default. **Never author x/y/positions/pixels.**
 - **Cycle laws (enforced):** `flow`/`hierarchy` MUST be acyclic (a directed cycle is invalid); `cycle` MUST contain ≥ 1 directed cycle; `concept-map` MAY contain cycles.
 - **Provenance:** auto-layout positions are **`illustrative`** (DESIGN §9, SPEC §2) — teaching aids, never measured truth. The engine stamps every laid-out position `positionSource: 'illustrative'`.
