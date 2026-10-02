@@ -79,7 +79,7 @@ All five engines share:
 - Existing widgets SHOULD progressively migrate toward engines where appropriate: `core.timeline` → Timeline Engine; `science.label-diagram` → Diagram Engine; `core.hotspot`, `core.image-compare` → Visual Engine (§95).
 - The five engines are complementary reasoning spaces — "not five unrelated widgets" (§99).
 
-**Visual closed component set (D9).** Visual MVP has eight kinds: seven mathematics components (`number-line` through `geometry-shape`) plus `comparison`. Timeline, flowchart, and label-diagram are **not** Visual components — use Timeline or Diagram engines. See `engines/visual/PROJECT.md` §8.
+**Visual closed component set (D9).** Visual has ten kinds: eight mathematics components (`number-line`, `counting-set`, `fraction`, `fraction-circle`, `fraction-comparison`, `clock`, `coordinate-grid`, `geometry`) plus `comparison` and `illustration`. `illustration` is a deliberate, decision-gated exception (`PLAN-P2.5` T0/T3): a geometry-less group of labelled, `focus`/`select`-able entities whose picture is supplied by the host, so it adds no drawing surface of its own. Timeline, flowchart, and label-diagram are **not** Visual components — use Timeline or Diagram engines. See `engines/visual/PROJECT.md` §8 and `engines/visual/SPEC.md` §9.
 
 ---
 
