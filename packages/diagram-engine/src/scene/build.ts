@@ -47,6 +47,7 @@ export function buildScene(content: DiagramContent): Scene {
         description: entry.description,
         links: entry.links ?? undefined,
         categories: entry.categories ?? undefined,
+        media: entry.media,
       },
       children: [],
     };

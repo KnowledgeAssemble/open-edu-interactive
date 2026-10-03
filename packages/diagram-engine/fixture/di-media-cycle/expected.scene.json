@@ -1,0 +1,864 @@
+{
+  "nodes": [
+    {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-observe",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Observe",
+          "description": "Look closely at what happens",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "observe",
+            "label": "Observe",
+            "description": "Look closely at what happens",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 446,
+            "y": 240,
+            "width": 220,
+            "height": 120
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-question",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Question",
+          "description": "Ask what needs explaining",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "question",
+            "label": "Question",
+            "description": "Ask what needs explaining",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 338,
+            "y": 388,
+            "width": 220,
+            "height": 120
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-hypothesize",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Hypothesize",
+          "description": "Propose a possible answer",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "hypothesize",
+            "label": "Hypothesize",
+            "description": "Propose a possible answer",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 164,
+            "y": 332,
+            "width": 220,
+            "height": 120
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-test",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Test",
+          "description": "Check the hypothesis against evidence",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "test",
+            "label": "Test",
+            "description": "Check the hypothesis against evidence",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 164,
+            "y": 148,
+            "width": 220,
+            "height": 120
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "node-conclude",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Conclude",
+          "description": "Decide what the evidence shows",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "conclude",
+            "label": "Conclude",
+            "description": "Decide what the evidence shows",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": [],
+          "bounds": {
+            "x": 338,
+            "y": 92,
+            "width": 220,
+            "height": 120
+          },
+          "positionSource": "illustrative"
+        },
+        {
+          "id": "edge-observe-question",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "observe leads-to question",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "observe",
+            "toNodeId": "question",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-observe-question",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 556,
+                  "y": 300
+                },
+                {
+                  "x": 448,
+                  "y": 448
+                }
+              ],
+              "path": "M556,300 L448,448"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-question-hypothesize",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "question leads-to hypothesize",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "question",
+            "toNodeId": "hypothesize",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-question-hypothesize",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 448,
+                  "y": 448
+                },
+                {
+                  "x": 274,
+                  "y": 392
+                }
+              ],
+              "path": "M448,448 L274,392"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-hypothesize-test",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "hypothesize leads-to test",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "hypothesize",
+            "toNodeId": "test",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-hypothesize-test",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 274,
+                  "y": 392
+                },
+                {
+                  "x": 274,
+                  "y": 208
+                }
+              ],
+              "path": "M274,392 L274,208"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-test-conclude",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "test leads-to conclude",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "test",
+            "toNodeId": "conclude",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-test-conclude",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 274,
+                  "y": 208
+                },
+                {
+                  "x": 448,
+                  "y": 152
+                }
+              ],
+              "path": "M274,208 L448,152"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-conclude-observe",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "conclude leads-to observe",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "conclude",
+            "toNodeId": "observe",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-conclude-observe",
+            "gated": false,
+            "edgeGeometry": {
+              "type": "line",
+              "points": [
+                {
+                  "x": 448,
+                  "y": 152
+                },
+                {
+                  "x": 556,
+                  "y": 300
+                }
+              ],
+              "path": "M448,152 L556,300"
+            }
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "node-observe": {
+      "id": "node-observe",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Observe",
+      "description": "Look closely at what happens",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "observe",
+        "label": "Observe",
+        "description": "Look closely at what happens",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "observe": {
+      "id": "node-observe",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Observe",
+      "description": "Look closely at what happens",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "observe",
+        "label": "Observe",
+        "description": "Look closely at what happens",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "node-question": {
+      "id": "node-question",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Question",
+      "description": "Ask what needs explaining",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "question",
+        "label": "Question",
+        "description": "Ask what needs explaining",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "question": {
+      "id": "node-question",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Question",
+      "description": "Ask what needs explaining",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "question",
+        "label": "Question",
+        "description": "Ask what needs explaining",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "node-hypothesize": {
+      "id": "node-hypothesize",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Hypothesize",
+      "description": "Propose a possible answer",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "hypothesize",
+        "label": "Hypothesize",
+        "description": "Propose a possible answer",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "hypothesize": {
+      "id": "node-hypothesize",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Hypothesize",
+      "description": "Propose a possible answer",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "hypothesize",
+        "label": "Hypothesize",
+        "description": "Propose a possible answer",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "node-test": {
+      "id": "node-test",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Test",
+      "description": "Check the hypothesis against evidence",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "test",
+        "label": "Test",
+        "description": "Check the hypothesis against evidence",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "test": {
+      "id": "node-test",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Test",
+      "description": "Check the hypothesis against evidence",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "test",
+        "label": "Test",
+        "description": "Check the hypothesis against evidence",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "node-conclude": {
+      "id": "node-conclude",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Conclude",
+      "description": "Decide what the evidence shows",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "conclude",
+        "label": "Conclude",
+        "description": "Decide what the evidence shows",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "conclude": {
+      "id": "node-conclude",
+      "role": "selectable",
+      "kind": "node",
+      "label": "Conclude",
+      "description": "Decide what the evidence shows",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus"
+      ],
+      "metadata": {
+        "nodeId": "conclude",
+        "label": "Conclude",
+        "description": "Decide what the evidence shows",
+        "media": {
+          "kind": "figure"
+        }
+      },
+      "children": []
+    },
+    "edge-observe-question": {
+      "id": "edge-observe-question",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "observe leads-to question",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "observe",
+        "toNodeId": "question",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-observe-question",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-question-hypothesize": {
+      "id": "edge-question-hypothesize",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "question leads-to hypothesize",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "question",
+        "toNodeId": "hypothesize",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-question-hypothesize",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-hypothesize-test": {
+      "id": "edge-hypothesize-test",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "hypothesize leads-to test",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "hypothesize",
+        "toNodeId": "test",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-hypothesize-test",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-test-conclude": {
+      "id": "edge-test-conclude",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "test leads-to conclude",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "test",
+        "toNodeId": "conclude",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-test-conclude",
+        "gated": false
+      },
+      "children": []
+    },
+    "edge-conclude-observe": {
+      "id": "edge-conclude-observe",
+      "role": "selectable",
+      "kind": "edge",
+      "label": "conclude leads-to observe",
+      "interactive": true,
+      "acceptsActions": [
+        "select",
+        "focus",
+        "follow"
+      ],
+      "metadata": {
+        "fromNodeId": "conclude",
+        "toNodeId": "observe",
+        "relationship": "leads-to",
+        "labels": [],
+        "edgeId": "edge-conclude-observe",
+        "gated": false
+      },
+      "children": []
+    },
+    "diagram-root": {
+      "id": "diagram-root",
+      "role": "group",
+      "kind": "diagram",
+      "label": "Diagram",
+      "interactive": false,
+      "children": [
+        {
+          "id": "node-observe",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Observe",
+          "description": "Look closely at what happens",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "observe",
+            "label": "Observe",
+            "description": "Look closely at what happens",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-question",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Question",
+          "description": "Ask what needs explaining",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "question",
+            "label": "Question",
+            "description": "Ask what needs explaining",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-hypothesize",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Hypothesize",
+          "description": "Propose a possible answer",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "hypothesize",
+            "label": "Hypothesize",
+            "description": "Propose a possible answer",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-test",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Test",
+          "description": "Check the hypothesis against evidence",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "test",
+            "label": "Test",
+            "description": "Check the hypothesis against evidence",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "node-conclude",
+          "role": "selectable",
+          "kind": "node",
+          "label": "Conclude",
+          "description": "Decide what the evidence shows",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus"
+          ],
+          "metadata": {
+            "nodeId": "conclude",
+            "label": "Conclude",
+            "description": "Decide what the evidence shows",
+            "media": {
+              "kind": "figure"
+            }
+          },
+          "children": []
+        },
+        {
+          "id": "edge-observe-question",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "observe leads-to question",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "observe",
+            "toNodeId": "question",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-observe-question",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-question-hypothesize",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "question leads-to hypothesize",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "question",
+            "toNodeId": "hypothesize",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-question-hypothesize",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-hypothesize-test",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "hypothesize leads-to test",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "hypothesize",
+            "toNodeId": "test",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-hypothesize-test",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-test-conclude",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "test leads-to conclude",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "test",
+            "toNodeId": "conclude",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-test-conclude",
+            "gated": false
+          },
+          "children": []
+        },
+        {
+          "id": "edge-conclude-observe",
+          "role": "selectable",
+          "kind": "edge",
+          "label": "conclude leads-to observe",
+          "interactive": true,
+          "acceptsActions": [
+            "select",
+            "focus",
+            "follow"
+          ],
+          "metadata": {
+            "fromNodeId": "conclude",
+            "toNodeId": "observe",
+            "relationship": "leads-to",
+            "labels": [],
+            "edgeId": "edge-conclude-observe",
+            "gated": false
+          },
+          "children": []
+        }
+      ]
+    }
+  }
+}

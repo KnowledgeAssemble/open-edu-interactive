@@ -5,6 +5,8 @@ import {
   RELATIONSHIPS,
   LAYOUT_TYPES,
   SOURCE_CLASSES,
+  DiagramNodeSchema,
+  DiagramEdgeSchema,
 } from '../src/schema.js';
 import schemaJson from '../src/schemas/diagram-spec.schema.json' with { type: 'json' };
 
@@ -60,5 +62,17 @@ describe('Schema ↔ Zod parity', () => {
   it('SOURCE_CLASSES match envelope sources class enum', () => {
     const schemaEnum: string[] = schemaJson.properties.sources.items.properties.class.enum;
     expect([...SOURCE_CLASSES].sort()).toEqual([...schemaEnum].sort());
+  });
+
+  it('node property keys match between zod and JSON Schema', () => {
+    const zodKeys = Object.keys(DiagramNodeSchema.shape).sort();
+    const jsonKeys = Object.keys(schemaJson.properties.content.properties.nodes.items.properties).sort();
+    expect(jsonKeys).toEqual(zodKeys);
+  });
+
+  it('edge property keys match between zod and JSON Schema', () => {
+    const zodKeys = Object.keys(DiagramEdgeSchema.shape).sort();
+    const jsonKeys = Object.keys(schemaJson.properties.content.properties.edges.items.properties).sort();
+    expect(jsonKeys).toEqual(zodKeys);
   });
 });

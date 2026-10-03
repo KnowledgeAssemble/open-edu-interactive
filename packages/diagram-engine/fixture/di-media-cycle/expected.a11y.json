@@ -1,0 +1,62 @@
+[
+  {
+    "id": "node-observe",
+    "role": "button",
+    "label": "Observe",
+    "children": []
+  },
+  {
+    "id": "node-question",
+    "role": "button",
+    "label": "Question",
+    "children": []
+  },
+  {
+    "id": "node-hypothesize",
+    "role": "button",
+    "label": "Hypothesize",
+    "children": []
+  },
+  {
+    "id": "node-test",
+    "role": "button",
+    "label": "Test",
+    "children": []
+  },
+  {
+    "id": "node-conclude",
+    "role": "button",
+    "label": "Conclude",
+    "children": []
+  },
+  {
+    "id": "edge-observe-question",
+    "role": "link",
+    "label": "Observe leads-to Question",
+    "children": []
+  },
+  {
+    "id": "edge-question-hypothesize",
+    "role": "link",
+    "label": "Question leads-to Hypothesize",
+    "children": []
+  },
+  {
+    "id": "edge-hypothesize-test",
+    "role": "link",
+    "label": "Hypothesize leads-to Test",
+    "children": []
+  },
+  {
+    "id": "edge-test-conclude",
+    "role": "link",
+    "label": "Test leads-to Conclude",
+    "children": []
+  },
+  {
+    "id": "edge-conclude-observe",
+    "role": "link",
+    "label": "Conclude leads-to Observe",
+    "children": []
+  }
+]

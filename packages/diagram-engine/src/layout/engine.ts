@@ -3,6 +3,7 @@ import { adjacency, kahnTopoSort } from './graph.js';
 import { assignLayers, computeHierarchicalBounds } from './hierarchical.js';
 import { radialLayout } from './radial.js';
 import { gridLayout } from './grid.js';
+import { MEDIA_BOX } from '@knowledgeassemble/svg-kit';
 
 export interface LayoutContext {
   width: number;
@@ -65,6 +66,16 @@ export function layout(scene: Scene, ctx: LayoutContext, layoutType?: string): S
 
   const nodeIds = nodeChildren.map((n) => n.metadata?.nodeId as string ?? n.id);
 
+  const mediaSizes = new Map<string, { width: number; height: number }>();
+  for (const n of nodeChildren) {
+    const nid = n.metadata?.nodeId as string | undefined;
+    const media = n.metadata?.media as { kind?: string } | undefined;
+    if (nid && media?.kind === 'figure') {
+      mediaSizes.set(nid, { ...MEDIA_BOX });
+    }
+  }
+  const sizes = mediaSizes.size > 0 ? mediaSizes : undefined;
+
   const edgePairs = edgeChildren.map((e) => ({
     from: e.metadata?.fromNodeId as string,
     to: e.metadata?.toNodeId as string,
@@ -80,13 +91,13 @@ export function layout(scene: Scene, ctx: LayoutContext, layoutType?: string): S
   let nodeBounds: Map<string, BoundsWithPos>;
 
   if (strategy === 'radial') {
-    const radialBounds = radialLayout(nodeIds, edgePairs, ctx);
+    const radialBounds = radialLayout(nodeIds, edgePairs, ctx, sizes);
     nodeBounds = new Map<string, BoundsWithPos>();
     for (const [id, b] of radialBounds) {
       nodeBounds.set(id, b as unknown as BoundsWithPos);
     }
   } else if (strategy === 'grid') {
-    const gridBounds = gridLayout(nodeIds, ctx);
+    const gridBounds = gridLayout(nodeIds, ctx, sizes);
     nodeBounds = new Map<string, BoundsWithPos>();
     for (const [id, b] of gridBounds) {
       nodeBounds.set(id, b as unknown as BoundsWithPos);
@@ -97,11 +108,11 @@ export function layout(scene: Scene, ctx: LayoutContext, layoutType?: string): S
       const layerOf = assignLayers(nodeIds, edgePairs, topoSort);
       const sizeMap = new Map<string, { width: number; height: number }>();
       for (const id of nodeIds) {
-        sizeMap.set(id, { width: 100, height: 50 });
+        sizeMap.set(id, mediaSizes?.get(id) ?? { width: 100, height: 50 });
       }
-      nodeBounds = computeHierarchicalBounds(layerOf, sizeMap, ctx);
+      nodeBounds = computeHierarchicalBounds(layerOf, sizeMap, ctx, mediaSizes.size > 0);
     } else {
-      const gridBounds = gridLayout(nodeIds, ctx);
+      const gridBounds = gridLayout(nodeIds, ctx, sizes);
       nodeBounds = new Map<string, BoundsWithPos>();
       for (const [id, b] of gridBounds) {
         nodeBounds.set(id, b as unknown as BoundsWithPos);

@@ -144,4 +144,34 @@ describe('svgFrom', () => {
     const circleMatches = result.svg.match(/data-oedu-role="marker"/g) ?? [];
     expect(circleMatches).toHaveLength(0);
   });
+
+  it('renders an entity as a media slot: faint frame, label below, no dominant-baseline', () => {
+    const scene: Scene = {
+      nodes: [
+        {
+          id: 'illustration-sun',
+          role: 'selectable',
+          kind: 'entity',
+          label: 'Sun',
+          interactive: true,
+          acceptsActions: ['select', 'focus'],
+          bounds: { x: 40, y: 240, width: 220, height: 120 },
+          children: [],
+        },
+      ],
+      semantics: {},
+    };
+    const result = svgFrom(scene, { width: 800, height: 600, minTouchTarget: 44, textStyle: 'normal' });
+    expect(result.svg).toContain('data-oedu-media="slot"');
+    expect(result.svg).toContain('data-oedu-bounds="40,240,220,120"');
+    expect(result.svg).toContain('opacity="0.15"');
+    expect(result.svg).not.toContain('opacity="0.85"');
+    expect(result.svg).not.toContain('fill="white"');
+    expect(result.svg).not.toContain('dominant-baseline');
+    const text = /<text[^>]*y="(\d+)"[^>]*>Sun<\/text>/.exec(result.svg);
+    expect(text).not.toBeNull();
+    expect(Number(text![1])).toBeGreaterThan(240 + 120);
+    expect(result.svg).not.toContain('<image');
+    expect(result.svg).not.toContain('xlink:href');
+  });
 });

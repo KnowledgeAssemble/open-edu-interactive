@@ -102,6 +102,21 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "media": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "figure"
+                    ]
+                  }
+                },
+                "required": [
+                  "kind"
+                ],
+                "additionalProperties": false
               }
             },
             "required": [

@@ -554,6 +554,20 @@
     "title": "Reinforcing concepts"
   },
   {
+    "id": "diagram/di-media-cycle",
+    "kind": "engine",
+    "engine": "diagram",
+    "slug": "di-media-cycle",
+    "specPath": "packages/diagram-engine/fixture/di-media-cycle/input.diagram.json",
+    "golden": {
+      "scene": "packages/diagram-engine/fixture/di-media-cycle/expected.scene.json",
+      "a11y": "packages/diagram-engine/fixture/di-media-cycle/expected.a11y.json",
+      "alternative": "packages/diagram-engine/fixture/di-media-cycle/expected.alternative.json",
+      "svg": "packages/diagram-engine/fixture/di-media-cycle/expected.svg"
+    },
+    "title": "Inquiry cycle with media slots"
+  },
+  {
     "id": "diagram/di-ord-assemble-cycle",
     "kind": "engine",
     "engine": "diagram",

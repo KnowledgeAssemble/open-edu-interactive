@@ -1,4 +1,4 @@
-import { nodeAttrs, svgShell, escapeXml } from '@knowledgeassemble/svg-kit';
+import { nodeAttrs, svgShell, escapeXml, mediaSlot, MEDIA_BOX } from '@knowledgeassemble/svg-kit';
 import type { Scene, SceneNode } from '../scene/types.js';
 import type { LayoutContext } from '../layout/engine.js';
 import type { SvgResult, RelRow } from './types.js';
@@ -12,6 +12,18 @@ function nodeToSvg(node: SceneNode, indent: number): string {
   }
   if (node.description) {
     tail['title'] = node.description;
+  }
+  const media = node.metadata?.media as { kind?: string } | undefined;
+  if (media?.kind === 'figure') {
+    return mediaSlot(
+      {
+        ...node,
+        fontSize: 11,
+        tail,
+        bounds: node.bounds ?? { x: 0, y: 0, width: MEDIA_BOX.width, height: MEDIA_BOX.height },
+      },
+      indent,
+    );
   }
   const attrs = nodeAttrs(node, { tail });
 

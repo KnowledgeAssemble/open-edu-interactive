@@ -184,4 +184,99 @@ describe('validation', () => {
     const codes = result.issues.map((i) => i.code);
     expect(codes).toContain('INVALID_SPEC');
   });
+
+  it('node with media: { kind: "figure" } validates', () => {
+    const spec = {
+      type: 'diagram',
+      version: '1.0.0',
+      id: 'media-figure',
+      content: {
+        kind: 'cycle',
+        nodes: [
+          { id: 'a', label: 'A', media: { kind: 'figure' } },
+          { id: 'b', label: 'B' },
+        ],
+        edges: [
+          { from: 'a', to: 'b', relationship: 'leads-to' },
+          { from: 'b', to: 'a', relationship: 'leads-to' },
+        ],
+      },
+      accessibility: { label: 'Media figure' },
+    };
+    const result = engine.validate(spec as never);
+    expect(result.valid).toBe(true);
+    expect(result.issues).toHaveLength(0);
+  });
+
+  it('media with an unknown kind fails INVALID_SPEC', () => {
+    const spec = {
+      type: 'diagram',
+      version: '1.0.0',
+      id: 'media-video',
+      content: {
+        kind: 'cycle',
+        nodes: [
+          { id: 'a', label: 'A', media: { kind: 'video' } },
+          { id: 'b', label: 'B' },
+        ],
+        edges: [
+          { from: 'a', to: 'b', relationship: 'leads-to' },
+          { from: 'b', to: 'a', relationship: 'leads-to' },
+        ],
+      },
+      accessibility: { label: 'Media video' },
+    };
+    const result = engine.validate(spec as never);
+    expect(result.valid).toBe(false);
+    const codes = result.issues.map((i) => i.code);
+    expect(codes).toContain('INVALID_SPEC');
+  });
+
+  it('media with an unknown key fails INVALID_SPEC', () => {
+    const spec = {
+      type: 'diagram',
+      version: '1.0.0',
+      id: 'media-src',
+      content: {
+        kind: 'cycle',
+        nodes: [
+          { id: 'a', label: 'A', media: { src: 'a.png' } },
+          { id: 'b', label: 'B' },
+        ],
+        edges: [
+          { from: 'a', to: 'b', relationship: 'leads-to' },
+          { from: 'b', to: 'a', relationship: 'leads-to' },
+        ],
+      },
+      accessibility: { label: 'Media src' },
+    };
+    const result = engine.validate(spec as never);
+    expect(result.valid).toBe(false);
+    const codes = result.issues.map((i) => i.code);
+    expect(codes).toContain('INVALID_SPEC');
+  });
+
+  it('media object with a sibling unknown key fails INVALID_SPEC (strict inner object)', () => {
+    const spec = {
+      type: 'diagram',
+      version: '1.0.0',
+      id: 'media-sibling',
+      content: {
+        kind: 'cycle',
+        nodes: [
+          { id: 'a', label: 'A', media: { kind: 'figure', src: 'a.png' } },
+          { id: 'b', label: 'B' },
+        ],
+        edges: [
+          { from: 'a', to: 'b', relationship: 'leads-to' },
+          { from: 'b', to: 'a', relationship: 'leads-to' },
+        ],
+      },
+      accessibility: { label: 'Media sibling' },
+    };
+    const result = engine.validate(spec as never);
+    expect(result.valid).toBe(false);
+    const codes = result.issues.map((i) => i.code);
+    expect(codes).toContain('INVALID_SPEC');
+  });
 });

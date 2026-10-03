@@ -3,17 +3,17 @@
   <desc>Three labeled celestial entities shown together.</desc>
   <g id="visual-root">
   <g id="illustration-sun-illustration" data-oedu-role="visual">
-    <g id="illustration-sun" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Sun" data-oedu-bounds="40,240,220,120">
+    <g id="illustration-sun" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Sun" data-oedu-bounds="40,240,220,120">
       <rect x="40" y="240" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
-      <text x="150" y="300" text-anchor="middle" dominant-baseline="central" fill="currentColor">Sun</text>
+      <text x="150" y="374" text-anchor="middle" fill="currentColor">Sun</text>
     </g>
-    <g id="illustration-moon" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Moon" data-oedu-bounds="290,240,220,120">
+    <g id="illustration-moon" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Moon" data-oedu-bounds="290,240,220,120">
       <rect x="290" y="240" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
-      <text x="400" y="300" text-anchor="middle" dominant-baseline="central" fill="currentColor">Moon</text>
+      <text x="400" y="374" text-anchor="middle" fill="currentColor">Moon</text>
     </g>
-    <g id="illustration-star" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Star" data-oedu-bounds="540,240,220,120">
+    <g id="illustration-star" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Star" data-oedu-bounds="540,240,220,120">
       <rect x="540" y="240" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
-      <text x="650" y="300" text-anchor="middle" dominant-baseline="central" fill="currentColor">Star</text>
+      <text x="650" y="374" text-anchor="middle" fill="currentColor">Star</text>
     </g>
   </g>
   </g>

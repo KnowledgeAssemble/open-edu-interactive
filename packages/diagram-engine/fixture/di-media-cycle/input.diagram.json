@@ -1,0 +1,29 @@
+{
+  "type": "diagram",
+  "version": "1.0.0",
+  "id": "di-media-cycle",
+  "metadata": { "title": "Inquiry cycle with media slots" },
+  "purpose": { "learningObjective": "Recognise the repeating steps of an inquiry cycle", "reasoningMode": "explore" },
+  "content": {
+    "kind": "cycle",
+    "profile": "process",
+    "nodes": [
+      { "id": "observe", "label": "Observe", "description": "Look closely at what happens", "media": { "kind": "figure" } },
+      { "id": "question", "label": "Question", "description": "Ask what needs explaining", "media": { "kind": "figure" } },
+      { "id": "hypothesize", "label": "Hypothesize", "description": "Propose a possible answer", "media": { "kind": "figure" } },
+      { "id": "test", "label": "Test", "description": "Check the hypothesis against evidence", "media": { "kind": "figure" } },
+      { "id": "conclude", "label": "Conclude", "description": "Decide what the evidence shows", "media": { "kind": "figure" } }
+    ],
+    "edges": [
+      { "from": "observe", "to": "question", "relationship": "leads-to" },
+      { "from": "question", "to": "hypothesize", "relationship": "leads-to" },
+      { "from": "hypothesize", "to": "test", "relationship": "leads-to" },
+      { "from": "test", "to": "conclude", "relationship": "leads-to" },
+      { "from": "conclude", "to": "observe", "relationship": "leads-to" }
+    ]
+  },
+  "interaction": { "mode": "explore", "actions": ["select", "deselect", "focus", "follow", "reset"] },
+  "questions": [],
+  "sources": [{ "class": "illustrative" }],
+  "accessibility": { "label": "Inquiry cycle: observe, question, hypothesize, test, conclude" }
+}
