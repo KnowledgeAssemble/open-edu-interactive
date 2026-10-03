@@ -1,4 +1,4 @@
-import { nodeAttrs, svgShell, escapeXml, centerOf, polygonPoints, starPoints, pushInteractiveEntries } from '@knowledgeassemble/svg-kit';
+import { nodeAttrs, svgShell, escapeXml, centerOf, polygonPoints, starPoints, pushInteractiveEntries, mediaSlot } from '@knowledgeassemble/svg-kit';
 import type { Scene, SceneNode } from '../scene/types.js';
 import type { LayoutContext } from '../layout/types.js';
 import type { SvgResult } from './types.js';
@@ -80,13 +80,8 @@ ${pad}</g>`;
       const d = points.map((p) => `${p.x},${p.y}`).join(' L');
       return `${pad}<path ${attrs} d="M${d} Z" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5"/>`;
     }
-    case 'entity': {
-      const labelText = node.label ?? '';
-      return `${pad}<g ${attrs}>
-${pad}  <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
-${pad}  <text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central" fill="currentColor">${escapeXml(labelText)}</text>
-${pad}</g>`;
-    }
+    case 'entity':
+      return mediaSlot({ ...node, bounds: b }, indent);
     case 'wedge': {
       const meta = node.metadata as { cx?: number; cy?: number; r?: number; startAngle?: number; endAngle?: number } | undefined;
       if (meta && meta.cx !== undefined && meta.cy !== undefined && meta.r !== undefined && meta.startAngle !== undefined && meta.endAngle !== undefined) {
