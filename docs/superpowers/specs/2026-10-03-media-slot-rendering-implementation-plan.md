@@ -78,6 +78,8 @@ rg -n 'rx="6"' packages/*/src                                    # expect exactl
 #   packages/visual-engine/src/render/svg.ts:86
 ```
 
+The `rx="6"` count rises to **3** at T2, when `mediaSlot` itself lands (the emitter contains `rx="6"`), and returns to **2** at T9, when Visual's hand-rolled frame is replaced by the shared emitter. It never reaches 1: Diagram's non-media filled box keeps its own `rx="6"` rect, because sharing that markup would change every non-media node and churn all 49 goldens.
+
 ## 2. Task ledger
 
 Gates: **G1** svg-kit · **G2** Diagram contract+layout+render+fixtures · **G3** Visual render + e2e · **G4** docs + full gate. Spec IDs in the last column; this plan is a finer split.
@@ -361,7 +363,7 @@ The cast is **required**: `metadata` is `Record<string, unknown>` (`scene/types.
 - a non-media node's SVG is unchanged from before this task (assert the exact string for one known fixture)
 - neither variant contains `<image` or `xlink:href` anywhere
 
-**Acceptance:** tests green; `rg -n 'rx="6"' packages/*/src` still returns exactly 2 hits (you have not inlined a frame yet — `mediaSlot` lives in svg-kit, so this stays 2 until T9 removes the Visual one).
+**Acceptance:** tests green; `rg -n 'rx="6"' packages/*/src` returns exactly **3** hits — `packages/svg-kit/src/media-slot.ts` (T2's emitter), `packages/diagram-engine/src/render/svg.ts` (the non-media box you left alone), and `packages/visual-engine/src/render/svg.ts` (still hand-rolled until T9). You have not inlined a frame; nothing has dropped out yet.
 
 ---
 
@@ -441,7 +443,7 @@ Inspect the diff and confirm it matches this shape; if anything else moved, stop
 
 **Context you need:** this change is **preventative**. No figure can reach a Visual illustration entity today, because entities carry no `metadata` at all and the host's `authoredIdOf` therefore finds no id (spec §0). Do **not** add `metadata.entityId` in this task — that would make Visual host-addressable without the companion spec's D6 decision, which is not this repo's call.
 
-**Acceptance:** `rg -n 'rx="6"' packages/*/src` returns exactly **1** hit, in `packages/svg-kit/src/media-slot.ts`. That single grep is the proof the two hand-rolled emitters are gone. Record the number in the commit body.
+**Acceptance:** `rg -n 'rx="6"' packages/*/src` returns exactly **2** hits — `packages/svg-kit/src/media-slot.ts` and `packages/diagram-engine/src/render/svg.ts` — and `rg -n 'rx="6"' packages/visual-engine/src` returns **0**. Visual's hand-rolled emitter is gone and the shared emitter owns every slot; Diagram's non-media rect survives on purpose, so the count drops 3 → 2 rather than reaching 1. Record both numbers in the commit body.
 
 ---
 
@@ -498,7 +500,8 @@ Then the spec's extra assertions:
 ```bash
 rg -l 'opacity="0.85"' packages/diagram-engine/fixture | wc -l          # expect 49
 git diff main --stat -- packages/diagram-engine/fixture                  # only di-media-cycle/
-rg -n 'rx="6"' packages/*/src                                             # expect exactly 1, in svg-kit
+rg -n 'rx="6"' packages/*/src                                             # expect exactly 2: svg-kit + diagram non-media
+rg -n 'rx="6"' packages/visual-engine/src                                 # expect 0
 pnpm build:fixtures && git status --porcelain                        # expect no catalog diff
 ```
 
