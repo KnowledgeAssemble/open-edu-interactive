@@ -115,4 +115,31 @@ describe('buildScene', () => {
     expect(node).toBeDefined();
     expect(node!.metadata?.nodeId).toBe('evaporation');
   });
+
+  it('a media node carries metadata.media = { kind: "figure" }', () => {
+    const content: DiagramContent = {
+      kind: 'cycle',
+      nodes: [
+        { id: 'a', label: 'A', media: { kind: 'figure' } },
+        { id: 'b', label: 'B' },
+      ],
+      edges: [
+        { from: 'a', to: 'b', relationship: 'leads-to' },
+        { from: 'b', to: 'a', relationship: 'leads-to' },
+      ],
+    };
+    const scene = buildScene(content);
+    const root = scene.nodes[0]!;
+    const mediaNode = root.children.find((n) => n.metadata?.nodeId === 'a');
+    expect(mediaNode).toBeDefined();
+    expect(mediaNode!.metadata?.media).toEqual({ kind: 'figure' });
+  });
+
+  it('a node without media has metadata.media absent', () => {
+    const scene = buildScene(WATER_CYCLE);
+    const root = scene.nodes[0]!;
+    const plainNode = root.children.find((n) => n.metadata?.nodeId === 'evaporation');
+    expect(plainNode).toBeDefined();
+    expect(plainNode!.metadata?.media).toBeUndefined();
+  });
 });
