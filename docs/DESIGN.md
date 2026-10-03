@@ -284,6 +284,7 @@ Composition binds an emitted event to another instance’s semantic action (Sect
   - `simulated` — hypothetical; clearly labeled, never presented as fact.
 - Engines MUST NOT invent facts, boundaries, or values that are not present in the data (GeoMap rule, `engines/geomap/SPEC.md` §9; anti-pattern, Section 15).
 - Assets (images, files) are referenced by ID and resolved by the runtime's asset layer. Specifications never embed heavy binary payloads.
+- **Media slots** — a node MAY declare `media: { kind: "figure" }` to reserve a host-fillable box. The engine owns the geometry: a fixed 220×120 box with the label drawn below it on the default baseline, the reservation carried as `data-oedu-bounds`. The host owns the asset: it anchors a figure at the node's bounds by authored id and never rescales the box (D9). The engine never embeds, resolves, or styles a picture. Nothing is conveyed by the frame fill alone — the label sits outside the box, so a placed figure cannot cover it (P6).
 - Everything MUST work fully offline (P12).
 
 ---

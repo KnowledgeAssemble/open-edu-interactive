@@ -412,6 +412,7 @@ The **Spec** step is where the per-engine normative documents missing today are 
 
 | Date | Change |
 |------|--------|
+| 2026-10-03 | W-3.13 media slots: `content.nodes[].media: { kind: "figure" }` reserves a host-fillable 220×120 box rendered by a single shared `svg-kit` `mediaSlot` emitter adopted by Diagram and Visual. The label moves **outside** the frame (fixes the host-figure/caption overlap); the engine owns geometry, the host owns assets (DESIGN §9, D9). Opt-in per node — all existing Diagram goldens byte-identical; `data-oedu-bounds` emitted for media nodes only. Visual `illustration` entities now render through the same emitter (preventative: no figure reaches them today). Schema copies (zod + both JSON) agree on `media` and the pre-existing `interactive` drift is restored; parity tests now compare property sets, not just enums. New `di-media-cycle` golden + browser e2e. |
 | 2026-09-07 | Initial plan; P0 status captured; phases gated per DESIGN D3. |
 | 2026-09-07 | D4: P2 number-line fixture and DESIGN envelope example aligned to schema `purpose` / `interaction`. |
 | 2026-09-07 | D1: Visual and GeoMap engine docs migrated off `schemaVersion` / `{ "geomap": {} }` wrappers. |

@@ -94,11 +94,29 @@
                   "type": "string"
                 }
               },
+              "interactive": {
+                "type": "boolean"
+              },
               "categories": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "media": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "figure"
+                    ]
+                  }
+                },
+                "required": [
+                  "kind"
+                ],
+                "additionalProperties": false
               }
             },
             "required": [
@@ -147,6 +165,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "interactive": {
+                "type": "boolean"
               },
               "gated": {
                 "type": "boolean"
