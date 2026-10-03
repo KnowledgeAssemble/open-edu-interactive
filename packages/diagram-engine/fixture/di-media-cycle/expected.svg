@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img">
+  <title>Inquiry cycle: observe, question, hypothesize, test, conclude</title>
+  <desc>An interactive diagram showing structural relationships</desc>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g id="diagram-root">
+    <g id="diagram-nodes">
+    <g id="node-observe" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Observe" data-oedu-bounds="446,240,220,120" title="Look closely at what happens">
+      <rect x="446" y="240" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+      <text x="556" y="374" text-anchor="middle" fill="currentColor" font-size="11">Observe</text>
+    </g>
+    <g id="node-question" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Question" data-oedu-bounds="338,388,220,120" title="Ask what needs explaining">
+      <rect x="338" y="388" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+      <text x="448" y="522" text-anchor="middle" fill="currentColor" font-size="11">Question</text>
+    </g>
+    <g id="node-hypothesize" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Hypothesize" data-oedu-bounds="164,332,220,120" title="Propose a possible answer">
+      <rect x="164" y="332" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+      <text x="274" y="466" text-anchor="middle" fill="currentColor" font-size="11">Hypothesize</text>
+    </g>
+    <g id="node-test" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Test" data-oedu-bounds="164,148,220,120" title="Check the hypothesis against evidence">
+      <rect x="164" y="148" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+      <text x="274" y="282" text-anchor="middle" fill="currentColor" font-size="11">Test</text>
+    </g>
+    <g id="node-conclude" data-oedu-role="selectable" data-oedu-interactive="true" data-oedu-media="slot" aria-label="Conclude" data-oedu-bounds="338,92,220,120" title="Decide what the evidence shows">
+      <rect x="338" y="92" width="220" height="120" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
+      <text x="448" y="226" text-anchor="middle" fill="currentColor" font-size="11">Conclude</text>
+    </g>
+    <path id="edge-observe-question" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="observe leads-to question" data-oedu-relationship="leads-to" d="M556,300 L448,448" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-question-hypothesize" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="question leads-to hypothesize" data-oedu-relationship="leads-to" d="M448,448 L274,392" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-hypothesize-test" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="hypothesize leads-to test" data-oedu-relationship="leads-to" d="M274,392 L274,208" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-test-conclude" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="test leads-to conclude" data-oedu-relationship="leads-to" d="M274,208 L448,152" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-conclude-observe" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="conclude leads-to observe" data-oedu-relationship="leads-to" d="M448,152 L556,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

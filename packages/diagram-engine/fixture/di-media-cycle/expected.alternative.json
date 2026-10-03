@@ -1,0 +1,94 @@
+[
+  {
+    "kind": "node",
+    "id": "node-observe",
+    "nodeId": "observe",
+    "label": "Observe",
+    "description": "Look closely at what happens"
+  },
+  {
+    "kind": "node",
+    "id": "node-question",
+    "nodeId": "question",
+    "label": "Question",
+    "description": "Ask what needs explaining"
+  },
+  {
+    "kind": "node",
+    "id": "node-hypothesize",
+    "nodeId": "hypothesize",
+    "label": "Hypothesize",
+    "description": "Propose a possible answer"
+  },
+  {
+    "kind": "node",
+    "id": "node-test",
+    "nodeId": "test",
+    "label": "Test",
+    "description": "Check the hypothesis against evidence"
+  },
+  {
+    "kind": "node",
+    "id": "node-conclude",
+    "nodeId": "conclude",
+    "label": "Conclude",
+    "description": "Decide what the evidence shows"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-observe-question",
+    "from": "observe",
+    "relationship": "leads-to",
+    "to": "question",
+    "fromLabel": "Observe",
+    "toLabel": "Question"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-question-hypothesize",
+    "from": "question",
+    "relationship": "leads-to",
+    "to": "hypothesize",
+    "fromLabel": "Question",
+    "toLabel": "Hypothesize"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-hypothesize-test",
+    "from": "hypothesize",
+    "relationship": "leads-to",
+    "to": "test",
+    "fromLabel": "Hypothesize",
+    "toLabel": "Test"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-test-conclude",
+    "from": "test",
+    "relationship": "leads-to",
+    "to": "conclude",
+    "fromLabel": "Test",
+    "toLabel": "Conclude"
+  },
+  {
+    "kind": "edge",
+    "id": "edge-conclude-observe",
+    "from": "conclude",
+    "relationship": "leads-to",
+    "to": "observe",
+    "fromLabel": "Conclude",
+    "toLabel": "Observe"
+  },
+  {
+    "kind": "cycle",
+    "id": "cycle-test-hypothesize-question-observe-conclude",
+    "members": [
+      "test",
+      "hypothesize",
+      "question",
+      "observe",
+      "conclude"
+    ],
+    "label": "Cycle: test → hypothesize → question → observe → conclude"
+  }
+]
