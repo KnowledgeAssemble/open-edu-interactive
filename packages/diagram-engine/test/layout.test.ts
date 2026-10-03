@@ -159,4 +159,83 @@ describe('media node layout', () => {
     expect(byId.get('b')).toEqual({ x: 40, y: 211, width: 220, height: 120 });
     expect(byId.get('c')).toEqual({ x: 40, y: 365, width: 220, height: 120 });
   });
+
+  it('mixed radial cycle: media nodes 220x120, non-media nodes keep the 60x60 default', () => {
+    const content: DiagramContent = {
+      kind: 'cycle',
+      nodes: [
+        { id: 'a', label: 'A', media: { kind: 'figure' } },
+        { id: 'b', label: 'B' },
+        { id: 'c', label: 'C', media: { kind: 'figure' } },
+        { id: 'd', label: 'D' },
+      ],
+      edges: [
+        { from: 'a', to: 'b', relationship: 'leads-to' },
+        { from: 'b', to: 'c', relationship: 'leads-to' },
+        { from: 'c', to: 'd', relationship: 'leads-to' },
+        { from: 'd', to: 'a', relationship: 'leads-to' },
+      ],
+    };
+    const rows = nodeRows(layout(buildScene(content), CTX, 'radial'));
+    expect(rows).toHaveLength(4);
+    const byId = new Map(rows.map((r) => [r.id, r.bounds]));
+    expect(byId.get('a')!.width).toBe(220);
+    expect(byId.get('a')!.height).toBe(120);
+    expect(byId.get('c')!.width).toBe(220);
+    expect(byId.get('c')!.height).toBe(120);
+    expect(byId.get('b')!.width).toBe(60);
+    expect(byId.get('b')!.height).toBe(60);
+    expect(byId.get('d')!.width).toBe(60);
+    expect(byId.get('d')!.height).toBe(60);
+    for (const r of rows) {
+      expect(Number.isFinite(r.bounds.x)).toBe(true);
+      expect(Number.isFinite(r.bounds.y)).toBe(true);
+    }
+  });
+
+  it('mixed grid: media cells 220x120, non-media cells stay within the shared cell', () => {
+    const content: DiagramContent = {
+      kind: 'concept-map',
+      nodes: [
+        { id: 'a', label: 'A', media: { kind: 'figure' } },
+        { id: 'b', label: 'B' },
+        { id: 'c', label: 'C', media: { kind: 'figure' } },
+      ],
+      edges: [],
+    };
+    const rows = nodeRows(layout(buildScene(content), CTX, 'grid'));
+    expect(rows).toHaveLength(3);
+    const byId = new Map(rows.map((r) => [r.id, r.bounds]));
+    expect(byId.get('a')!.width).toBe(220);
+    expect(byId.get('a')!.height).toBe(120);
+    expect(byId.get('c')!.width).toBe(220);
+    expect(byId.get('c')!.height).toBe(120);
+    expect(byId.get('b')!.width).toBeLessThan(220);
+    expect(byId.get('b')!.height).toBeLessThan(120);
+    for (const r of rows) {
+      expect(Number.isFinite(r.bounds.x)).toBe(true);
+      expect(Number.isFinite(r.bounds.y)).toBe(true);
+    }
+  });
+
+  it('mixed hierarchy: media layer 220x120, non-media layer keeps the 100x50 default', () => {
+    const content: DiagramContent = {
+      kind: 'hierarchy',
+      nodes: [
+        { id: 'a', label: 'A', media: { kind: 'figure' } },
+        { id: 'b', label: 'B' },
+        { id: 'c', label: 'C' },
+      ],
+      edges: [{ from: 'a', to: 'b', relationship: 'contains' }],
+    };
+    const rows = nodeRows(layout(buildScene(content), CTX, 'hierarchical'));
+    expect(rows).toHaveLength(3);
+    const byId = new Map(rows.map((r) => [r.id, r.bounds]));
+    expect(byId.get('a')!.width).toBe(220);
+    expect(byId.get('a')!.height).toBe(120);
+    expect(byId.get('b')!.width).toBe(100);
+    expect(byId.get('b')!.height).toBe(50);
+    expect(byId.get('c')!.width).toBe(100);
+    expect(byId.get('c')!.height).toBe(50);
+  });
 });
