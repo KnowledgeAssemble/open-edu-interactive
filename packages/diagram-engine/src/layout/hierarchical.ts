@@ -1,4 +1,5 @@
 import type { Bounds } from '../scene/types.js';
+import { MEDIA_BOX, MEDIA_LABEL_GAP } from '@knowledgeassemble/svg-kit';
 
 export function assignLayers(
   nodeIds: string[],
@@ -40,9 +41,10 @@ export function computeHierarchicalBounds(
   layerOf: Map<string, number>,
   nodeBounds: Map<string, { width: number; height: number }>,
   ctx: { width: number; height: number; minTouchTarget: number },
+  hasMedia = false,
 ): Map<string, Bounds> {
-  const colWidth = Math.max(ctx.minTouchTarget, 120);
-  const layerHeight = Math.max(ctx.minTouchTarget + 20, 80);
+  const colWidth = Math.max(ctx.minTouchTarget, 120, hasMedia ? MEDIA_BOX.width : 0);
+  const layerHeight = Math.max(ctx.minTouchTarget + 20, 80, hasMedia ? MEDIA_BOX.height + MEDIA_LABEL_GAP + 20 : 0);
   const padding = 40;
 
   const nodesInLayer = new Map<number, string[]>();
