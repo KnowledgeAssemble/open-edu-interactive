@@ -1,5 +1,5 @@
 import type { Bounds } from '../scene/types.js';
-import { MEDIA_BOX, MEDIA_LABEL_GAP } from '@knowledgeassemble/svg-kit';
+import { LABEL_ALLOWANCE, fitMediaBox } from './fit.js';
 
 export function gridLayout(
   nodeIds: string[],
@@ -10,27 +10,31 @@ export function gridLayout(
   if (n === 0) return new Map();
 
   const cols = Math.max(1, Math.ceil(Math.sqrt(n)));
+  const rows = Math.ceil(n / cols);
   const hasMedia = sizes !== undefined && sizes.size > 0;
-  const cellW = hasMedia
-    ? Math.max(ctx.minTouchTarget, Math.min(ctx.width / cols, 160), MEDIA_BOX.width)
-    : Math.max(ctx.minTouchTarget, Math.min(ctx.width / cols, 160));
-  const cellH = hasMedia
-    ? Math.max(ctx.minTouchTarget, 60, MEDIA_BOX.height)
-    : Math.max(ctx.minTouchTarget, 60);
-  const rowPitch = hasMedia ? cellH + MEDIA_LABEL_GAP + 20 : cellH;
+
+  // Media boxes must fit the canvas rather than dictate the cell: the previous
+  // max(..., MEDIA_BOX.width) let a 220px cell overflow a narrower canvas.
+  const mediaBox = hasMedia
+    ? fitMediaBox(ctx.width / cols, (ctx.height - (rows - 1) * LABEL_ALLOWANCE) / rows)
+    : null;
+
+  const cellW = mediaBox ? mediaBox.width : Math.max(ctx.minTouchTarget, Math.min(ctx.width / cols, 160));
+  const plainH = mediaBox ? mediaBox.height : Math.max(ctx.minTouchTarget, 60);
+  const rowPitch = mediaBox ? mediaBox.height + LABEL_ALLOWANCE : plainH;
+
   const bounds = new Map<string, Bounds>();
   const startX = (ctx.width - cols * cellW) / 2;
-  const rows = Math.ceil(n / cols);
   const startY = (ctx.height - rows * rowPitch) / 2;
 
   for (let i = 0; i < nodeIds.length; i++) {
     const col = i % cols;
     const row = Math.floor(i / cols);
-    const box = sizes?.get(nodeIds[i]!) ?? {
-      width: Math.round(cellW * 0.85),
-      height: Math.round(cellH * 0.75),
-    };
-    bounds.set(nodeIds[i]!, {
+    const id = nodeIds[i]!;
+    const box = hasMedia && sizes!.has(id)
+      ? mediaBox!
+      : { width: Math.round(cellW * 0.85), height: Math.round(plainH * 0.75) };
+    bounds.set(id, {
       x: Math.round(startX + col * cellW),
       y: Math.round(startY + row * rowPitch),
       width: box.width,

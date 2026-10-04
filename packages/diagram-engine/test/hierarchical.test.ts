@@ -25,7 +25,7 @@ describe('hierarchical layout', () => {
     for (const id of DAG_NODES) {
       sizeMap.set(id, { width: 100, height: 50 });
     }
-    const bounds = computeHierarchicalBounds(layerOf, sizeMap, {
+    const bounds = computeHierarchicalBounds(layerOf, sizeMap, new Set(), {
       width: 800,
       height: 600,
       minTouchTarget: 44,
@@ -46,8 +46,8 @@ describe('hierarchical layout', () => {
     for (const id of DAG_NODES) {
       sizeMap.set(id, { width: 100, height: 50 });
     }
-    const b1 = computeHierarchicalBounds(layerOf, sizeMap, { width: 800, height: 600, minTouchTarget: 44 });
-    const b2 = computeHierarchicalBounds(layerOf, sizeMap, { width: 800, height: 600, minTouchTarget: 44 });
+    const b1 = computeHierarchicalBounds(layerOf, sizeMap, new Set(), { width: 800, height: 600, minTouchTarget: 44 });
+    const b2 = computeHierarchicalBounds(layerOf, sizeMap, new Set(), { width: 800, height: 600, minTouchTarget: 44 });
     expect(JSON.stringify([...b1])).toBe(JSON.stringify([...b2]));
   });
 });

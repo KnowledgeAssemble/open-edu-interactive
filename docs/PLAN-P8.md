@@ -146,7 +146,7 @@ New `kind`s and projections are **new phase tasks** with T0 decisions in PLAN.md
 | Chart | PLAN-P3 Chart-D1 | `area`, `scatter`; then SPEC families |
 | GeoMap | PLAN-P4 GeoMap-D1/D2, SPEC §83 | projections beyond `equirectangular`; flow/heatmap/animation/scenes; `d3-geo` only when enum grows |
 | Timeline | PLAN-P5 | no engine-side `setInterval` playback; extra kinds out of P5 |
-| Diagram | PLAN-P6 Diagram-D1 | `label-diagram`; ELK only behind `LayoutEngine` if a later slice outgrows radial/hierarchical/grid |
+| Diagram | PLAN-P6 Diagram-D1 | `label-diagram`; a new layout strategy is a SPEC slice first. A third-party layout dependency is barred by ADR-14 unless that slice produces the measurements §8a lacks (see the reopen trigger there) |
 | Visual | D9 | equation/measurement/angle **out**; never steal Timeline/Diagram |
 
 When D needs commodity math: isolate behind an adapter; never in JSON; never as the semantic model; goldens stay deterministic (STRUCTURE §16–20).
@@ -175,6 +175,102 @@ Update `docs/PLAN.md` §10/§11 when a substage completes — do not mark all of
 
 ---
 
+## 8a. Layout library evaluation (ADR-14)
+
+Centring arrows between node centres hid every arrowhead inside its target node.
+Anchoring them on node borders fixes that and, on a ring, introduces uneven arrow
+lengths — a 5-node media cycle at 800x600 renders 112/72/64/72/112, a 1.74 ratio.
+The obvious response was to adopt an industry layout library. Both real candidates
+were built and measured against the actual failing fixture rather than judged on
+reputation. Reproduce with `node scripts/measure-layout-libs.mjs`; pinned versions, raw
+output and an honesty note on earlier drafts are in `docs/layout-benchmark.md`.
+
+| Candidate | 5-node cycle result | Verdict |
+|-----------|--------------------|---------|
+| Hand-rolled ring, centre-to-centre (pre-A1.3) | fits 800x600, arrows 183/183/184/183/183, ratio **1.007** | uniform, but every arrowhead buried in its target |
+| Hand-rolled ring, border-anchored 220x120 | fits 800x600, arrows 112/72/64/72/112, ratio **1.74** | the skew anchoring introduces |
+| Hand-rolled ring, border-anchored square slots | fits 800x600, arrows 159/120/102/120/159, ratio **1.55** | shipped |
+| **Graphviz `circo`** (`@hpcc-js/wasm`) | perfect ring (radius spread 0.0px), fits at 653x580, arrows 49/156/49/128/128, ratio **3.16** | worse than shipped; WASM asset loading |
+| Graphviz `dot` | 282x768, does not fit, arrows 36/32/32/36/537, ratio **16.64** | rejected |
+| Graphviz `twopi` | 211x499, not a ring (radius spread 192px), ratio 1055 | rejected |
+| **ELK `layered`** (`elkjs`) | 1180x140, does not fit, arrows 20…802, ratio **40.1** | rejected for cycles |
+| ELK `radial` | refuses the cycle: `IllegalArgumentException: The given graph is not a tree!` | rejected for cycles |
+| ELK `stress` / `mrtree` | 6.33 ratio with float-noisy extents / collapses to a 220x680 column | rejected; `stress` is force-directed, which P4 forbids |
+
+Costs that would apply even where a library looked competitive:
+
+- `elkjs` is asynchronous, so adopting it forces `layout()` async across
+  diagram-engine, interactive-engine, dev-harness's sync `tryCreate`, and the
+  Playwright suite.
+- Payload is pinned per version in `docs/layout-benchmark.md`: `elkjs@0.12.0` is
+  8.0 MB unpacked, `@hpcc-js/wasm@2.35.3` is 37.2 MB. Both dwarf the ~830 lines of
+  layout code they would replace, which runs against STRUCTURE §40's "minimal bundle
+  size" and "low memory usage" performance principles.
+- No candidate performs canvas fitting. A 12-stage flow came back from ELK at
+  2140x48, so `layout/fit.ts` would stay regardless.
+
+**Decision (ADR-14, supersedes the conditional permission in §6 Workstream D and
+gap-closure task T37): do not add a third-party layout dependency.** Layout quality is
+asserted as CI invariants in `packages/diagram-engine/test/media-layout.test.ts` — no
+overlap, canvas + label fit, `NODE_GAP` clearance, centring, determinism, and an
+arrow-ratio ceiling.
+
+### Why a ring skews, and what actually moves the number
+
+On a ring every centre-to-centre chord is equal, so arrow length is decided entirely by
+how much chord each media box absorbs. That inset depends on the chord direction against
+the box aspect: a horizontal chord gives up `width`, a vertical one gives up `height`.
+At a **fixed ring radius of 216** on a 5-node ring, varying only the aspect:
+
+| Slot | Border-anchored arrows | Ratio |
+|------|------------------------|-------|
+| 220x120 | 172, 81, 134, 81, 172 | 2.12 |
+| 170x170 | 153, 106, 84, 106, 153 | 1.82 |
+| 152x152 | 158, 119, 102, 119, 158 | 1.55 |
+| 120x120 | 172, 145, 134, 145, 172 | 1.28 |
+
+Equalising the two insets is the lever, so radial layouts take **square** slots
+(`RADIAL_BOX_MAX = 170`, falling back to the 11:6 slot on canvases too small for a
+120x120 square):
+
+| Canvas | Slot | Arrow ratio |
+|--------|------|-------------|
+| 1600x1200 | 170x170 | 1.62 |
+| 1200x900 | 170x170 | 1.62 |
+| 800x600 | 152x152 | 1.56 |
+| 700x520 | 125x125 | 1.47 |
+| 640x480 | 183x100 (fallback) | 2.11 — tracked as **T39** |
+
+The ratio is **not** invariant to box size. Holding the slot at 220x120 and varying only
+the radius gives 1.74 (r=156), 2.12 (r=216) and 1.66 (r=300) — it depends on slot size
+relative to radius, so bigger slots at a given radius are worse. That is why the greedy
+in `radial.ts` takes the largest slot the canvas affords rather than the smallest.
+
+Grid and hierarchical keep the 11:6 slot; only the ring needs squares.
+
+Not yet exploited: routing every ring edge radially out to a shared outer routing circle
+and back would make all arrows identical by symmetry (ratio 1.0) at the cost of a wider
+footprint and a new visual idiom. Deliberately out of scope.
+
+### Reopen trigger
+
+ADR-14 is re-opened when any of these holds, and not before:
+
+- A diagram slice needs a graph shape the three in-repo strategies cannot express —
+  specifically one that is neither a ring, a layer DAG, nor a grid.
+- `media-layout.test.ts` cannot state an invariant that the in-repo layouts meet, and
+  the shortfall is documented against a real fixture rather than a hypothetical.
+- A candidate is measured against the current failing fixture with a committed
+  harness, and beats the shipped ring on the arrow-ratio ceiling **and** fits the
+  canvas without extra fitting code.
+
+`elkjs` remains the only serious candidate: it is the best layered layout available
+in JS, and `layered` measured clean on the hierarchy DAG. It was rejected here for
+cycles, which is the shape this engine actually ships fixtures for. If a future slice
+is layer-only, that calculation changes and should be re-run, not assumed.
+
+---
+
 ## 9. Anti-patterns for this phase
 
 1. Reverse-engineering playground bugs into a new architecture. Map bugs to A1–A4 or to a named Workstream D slice.
@@ -189,3 +285,4 @@ Update `docs/PLAN.md` §10/§11 when a substage completes — do not mark all of
 | Date | Change |
 |------|--------|
 | 2026-09-09 | Initial P8: production-readiness workstreams A–E derived from PLAN.md + PLAN-P1…P7 + p7-acceptance (not from ad-hoc playground archaeology). |
+| 2026-10-04 | §8a + ADR-14: evaluated `elkjs` and Graphviz for diagram layout against the failing media cycle; both measured worse than the hand-rolled ring, so no layout dependency was added. Ring layouts now use square media slots (arrow ratio 1.74 → 1.55 at 800x600) with the ratio asserted as a CI invariant. The 220x120 fixed-box contract in DESIGN.md §9 and the diagram SPEC/SKILL is superseded by canvas-fitted geometry. |

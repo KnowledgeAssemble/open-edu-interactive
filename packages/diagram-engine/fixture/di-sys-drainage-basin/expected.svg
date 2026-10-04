@@ -18,11 +18,11 @@
     <text x="228" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">River</text>
     <rect id="node-sea" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Sea" x="320" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="388" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Sea</text>
-    <path id="edge-precipitation-runoff" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="precipitation leads-to runoff" data-oedu-relationship="leads-to" d="M228,262.5 L388,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-precipitation-groundwater" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="precipitation leads-to groundwater" data-oedu-relationship="leads-to" d="M228,262.5 L548,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-groundwater-river" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="groundwater leads-to river" data-oedu-relationship="leads-to" d="M548,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-runoff-river" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="runoff leads-to river" data-oedu-relationship="leads-to" d="M388,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-river-sea" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="river leads-to sea" data-oedu-relationship="leads-to" d="M228,322.5 L388,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-precipitation-runoff" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="precipitation leads-to runoff" data-oedu-relationship="leads-to" d="M296,262.5 L320,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-precipitation-groundwater" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="precipitation leads-to groundwater" data-oedu-relationship="leads-to" d="M296,262.5 L480,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-groundwater-river" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="groundwater leads-to river" data-oedu-relationship="leads-to" d="M480,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-runoff-river" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="runoff leads-to river" data-oedu-relationship="leads-to" d="M320,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-river-sea" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="river leads-to sea" data-oedu-relationship="leads-to" d="M296,322.5 L320,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

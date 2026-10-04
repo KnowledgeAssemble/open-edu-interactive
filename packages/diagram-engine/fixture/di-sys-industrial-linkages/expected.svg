@@ -16,9 +16,9 @@
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Machinery</text>
     <rect id="node-goods" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Consumer goods" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Consumer goods</text>
-    <path id="edge-mining-steel" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="mining leads-to steel" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-steel-machinery" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="steel leads-to machinery" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-machinery-goods" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="machinery leads-to goods" data-oedu-relationship="leads-to" d="M100,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-mining-steel" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="mining leads-to steel" data-oedu-relationship="leads-to" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-steel-machinery" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="steel leads-to machinery" data-oedu-relationship="leads-to" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-machinery-goods" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="machinery leads-to goods" data-oedu-relationship="leads-to" d="M100,265 L100,295" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

@@ -14,8 +14,8 @@
     <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Immediate cause</text>
     <rect id="node-trigger" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Trigger" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Trigger</text>
-    <path id="edge-structural-immediate" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="structural influences immediate" data-oedu-relationship="influences" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-immediate-trigger" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="immediate leads-to trigger" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-structural-immediate" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="structural influences immediate" data-oedu-relationship="influences" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-immediate-trigger" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="immediate leads-to trigger" data-oedu-relationship="leads-to" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

@@ -18,11 +18,11 @@
     <text x="228" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Fox</text>
     <rect id="node-decomposer" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Decomposer" x="320" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="388" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Decomposer</text>
-    <path id="edge-sun-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="sun influences grass" data-oedu-relationship="influences" d="M228,262.5 L388,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-grass-rabbit" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grass feeds-on rabbit" data-oedu-relationship="feeds-on" d="M388,262.5 L548,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-rabbit-fox" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="rabbit feeds-on fox" data-oedu-relationship="feeds-on" d="M548,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-grass-decomposer" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grass feeds-on decomposer" data-oedu-relationship="feeds-on" d="M388,262.5 L388,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-decomposer-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="decomposer produces grass" data-oedu-relationship="produces" d="M388,322.5 L388,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-sun-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="sun influences grass" data-oedu-relationship="influences" d="M296,262.5 L320,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-grass-rabbit" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grass feeds-on rabbit" data-oedu-relationship="feeds-on" d="M456,262.5 L480,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-rabbit-fox" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="rabbit feeds-on fox" data-oedu-relationship="feeds-on" d="M480,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-grass-decomposer" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="grass feeds-on decomposer" data-oedu-relationship="feeds-on" d="M388,285 L388,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-decomposer-grass" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="decomposer produces grass" data-oedu-relationship="produces" d="M388,300 L388,285" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

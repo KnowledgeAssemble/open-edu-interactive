@@ -18,10 +18,10 @@
     <text x="220" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Recount requested</text>
     <rect id="node-runoff" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Runoff election" x="50" y="295" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="100" y="320" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Runoff election</text>
-    <path id="edge-polling-counting" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="polling leads-to counting" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-counting-win" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="counting leads-to win" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-counting-recount" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="counting leads-to recount" data-oedu-relationship="leads-to" d="M100,160 L220,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-recount-runoff" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="recount leads-to runoff" data-oedu-relationship="leads-to" d="M220,240 L100,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-polling-counting" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="polling leads-to counting" data-oedu-relationship="leads-to" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-counting-win" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="counting leads-to win" data-oedu-relationship="leads-to" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-counting-recount" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="counting leads-to recount" data-oedu-relationship="leads-to" d="M150,160 L170,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-recount-runoff" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="recount leads-to runoff" data-oedu-relationship="leads-to" d="M170,240 L150,320" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

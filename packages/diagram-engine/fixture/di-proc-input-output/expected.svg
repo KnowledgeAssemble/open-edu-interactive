@@ -20,11 +20,11 @@
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Glucose</text>
     <rect id="node-oxygen" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Oxygen" x="170" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="220" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Oxygen</text>
-    <path id="edge-sunlight-photosynthesis" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="sunlight leads-to photosynthesis" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-water-photosynthesis" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="water leads-to photosynthesis" data-oedu-relationship="leads-to" d="M220,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-co2-photosynthesis" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="co2 leads-to photosynthesis" data-oedu-relationship="leads-to" d="M340,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-photosynthesis-glucose" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="photosynthesis leads-to glucose" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-photosynthesis-oxygen" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="photosynthesis leads-to oxygen" data-oedu-relationship="leads-to" d="M100,160 L220,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-sunlight-photosynthesis" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="sunlight leads-to photosynthesis" data-oedu-relationship="leads-to" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-water-photosynthesis" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="water leads-to photosynthesis" data-oedu-relationship="leads-to" d="M170,80 L150,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-co2-photosynthesis" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="co2 leads-to photosynthesis" data-oedu-relationship="leads-to" d="M290,80 L150,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-photosynthesis-glucose" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="photosynthesis leads-to glucose" data-oedu-relationship="leads-to" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-photosynthesis-oxygen" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="photosynthesis leads-to oxygen" data-oedu-relationship="leads-to" d="M150,160 L170,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

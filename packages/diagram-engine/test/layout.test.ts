@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { buildScene } from '../src/scene/build.js';
 import { layout } from '../src/layout/engine.js';
+import { centerOf } from '../src/layout/edge-geometry.js';
 import type { DiagramContent } from '../src/schema.js';
-import type { Scene, SceneNode } from '../src/scene/types.js';
+import type { Bounds, Scene, SceneNode } from '../src/scene/types.js';
 
 const WATER_CYCLE: DiagramContent = {
   kind: 'cycle',
@@ -75,29 +76,34 @@ function nodeRows(laidOut: Scene): Array<{ id: string; bounds: { x: number; y: n
   }));
 }
 
+/** Strictly-inside test; local to the test so src/ carries no test-only export. */
+function pointInInterior(b: Bounds, p: { x: number; y: number }): boolean {
+  return p.x > b.x && p.x < b.x + b.width && p.y > b.y && p.y < b.y + b.height;
+}
+
 describe('media node layout', () => {
   const CTX = { width: 800, height: 600, minTouchTarget: 44, textStyle: 'normal' as const };
 
-  it('5-node media cycle: 220x120 boxes, worst label y ~522.4', () => {
+  it('5-node media cycle: square media slot, worst label y ~579', () => {
     const rows = nodeRows(layout(buildScene(mediaCycle(5)), CTX, 'radial'));
     expect(rows).toHaveLength(5);
     for (const r of rows) {
-      expect(r.bounds.width).toBe(220);
-      expect(r.bounds.height).toBe(120);
+      expect(r.bounds.width).toBe(152);
+      expect(r.bounds.height).toBe(152);
     }
     const worstLabelY = Math.max(...rows.map((r) => r.bounds.y + r.bounds.height + 14));
-    expect(Math.abs(worstLabelY - 522.4)).toBeLessThanOrEqual(1);
+    expect(Math.abs(worstLabelY - 579)).toBeLessThanOrEqual(1);
   });
 
-  it('6-node media cycle: worst label y ~509.1', () => {
+  it('6-node media cycle: square media slot, worst label y ~579', () => {
     const rows = nodeRows(layout(buildScene(mediaCycle(6)), CTX, 'radial'));
     expect(rows).toHaveLength(6);
     for (const r of rows) {
-      expect(r.bounds.width).toBe(220);
-      expect(r.bounds.height).toBe(120);
+      expect(r.bounds.width).toBe(152);
+      expect(r.bounds.height).toBe(152);
     }
     const worstLabelY = Math.max(...rows.map((r) => r.bounds.y + r.bounds.height + 14));
-    expect(Math.abs(worstLabelY - 509.1)).toBeLessThanOrEqual(1);
+    expect(Math.abs(worstLabelY - 579)).toBeLessThanOrEqual(1);
   });
 
   it('non-media 5-node cycle bounds are byte-identical to baseline', () => {
@@ -160,7 +166,7 @@ describe('media node layout', () => {
     expect(byId.get('c')).toEqual({ x: 40, y: 365, width: 220, height: 120 });
   });
 
-  it('mixed radial cycle: media nodes 220x120, non-media nodes keep the 60x60 default', () => {
+  it('mixed radial cycle: media nodes square, non-media nodes keep the 60x60 default', () => {
     const content: DiagramContent = {
       kind: 'cycle',
       nodes: [
@@ -179,10 +185,8 @@ describe('media node layout', () => {
     const rows = nodeRows(layout(buildScene(content), CTX, 'radial'));
     expect(rows).toHaveLength(4);
     const byId = new Map(rows.map((r) => [r.id, r.bounds]));
-    expect(byId.get('a')!.width).toBe(220);
-    expect(byId.get('a')!.height).toBe(120);
-    expect(byId.get('c')!.width).toBe(220);
-    expect(byId.get('c')!.height).toBe(120);
+    expect(byId.get('a')!.width).toBe(byId.get('a')!.height);
+    expect(byId.get('c')!.width).toBe(byId.get('c')!.height);
     expect(byId.get('b')!.width).toBe(60);
     expect(byId.get('b')!.height).toBe(60);
     expect(byId.get('d')!.width).toBe(60);
@@ -237,5 +241,155 @@ describe('media node layout', () => {
     expect(byId.get('b')!.height).toBe(50);
     expect(byId.get('c')!.width).toBe(100);
     expect(byId.get('c')!.height).toBe(50);
+  });
+});
+
+interface EdgeGeometry {
+  type: string;
+  points: Array<{ x: number; y: number }>;
+  path?: string;
+}
+
+function edgesOf(laidOut: Scene): Array<{ from: string; to: string; geo: EdgeGeometry }> {
+  const root = laidOut.nodes.find((n) => n.kind === 'diagram');
+  const edges: SceneNode[] = root ? root.children.filter((n) => n.kind === 'edge') : [];
+  return edges.map((e) => ({
+    from: e.metadata?.fromNodeId as string,
+    to: e.metadata?.toNodeId as string,
+    geo: e.metadata?.edgeGeometry as EdgeGeometry,
+  }));
+}
+
+function boundsOf(laidOut: Scene): Map<string, Bounds> {
+  const root = laidOut.nodes.find((n) => n.kind === 'diagram');
+  const nodes: SceneNode[] = root ? root.children.filter((n) => n.kind === 'node') : [];
+  return new Map(
+    nodes.map((n) => [
+      n.metadata?.nodeId as string,
+      { x: n.bounds!.x, y: n.bounds!.y, width: n.bounds!.width, height: n.bounds!.height },
+    ]),
+  );
+}
+
+const MEDIA_CHAIN: DiagramContent = {
+  kind: 'hierarchy',
+  nodes: ['a', 'b', 'c'].map((id) => ({ id, label: id.toUpperCase(), media: { kind: 'figure' } })),
+  edges: [
+    { from: 'a', to: 'b', relationship: 'contains' },
+    { from: 'b', to: 'c', relationship: 'contains' },
+  ],
+};
+
+describe('edge boundary routing', () => {
+  const CTX = { width: 800, height: 600, minTouchTarget: 44, textStyle: 'normal' as const };
+
+  it('does not anchor edges at node centers (the arrow-overlap bug)', () => {
+    const bounds = boundsOf(layout(buildScene(MEDIA_CHAIN), CTX, 'hierarchical'));
+    for (const { from, to, geo } of edgesOf(layout(buildScene(MEDIA_CHAIN), CTX, 'hierarchical'))) {
+      expect(geo.points).not.toContainEqual(centerOf(bounds.get(from)!));
+      expect(geo.points).not.toContainEqual(centerOf(bounds.get(to)!));
+    }
+  });
+
+  it('anchors a vertical hierarchy edge on the source bottom and target top borders', () => {
+    const laidOut = layout(buildScene(MEDIA_CHAIN), CTX, 'hierarchical');
+    const bounds = boundsOf(laidOut);
+    const ab = edgesOf(laidOut).find((e) => e.from === 'a' && e.to === 'b')!;
+    const a = bounds.get('a')!;
+    const b = bounds.get('b')!;
+    expect(ab.geo.points[0]).toEqual({ x: a.x + a.width / 2, y: a.y + a.height });
+    expect(ab.geo.points[1]).toEqual({ x: b.x + b.width / 2, y: b.y });
+  });
+
+  it('keeps every edge endpoint on the border of its own endpoint box', () => {
+    const layered: DiagramContent = {
+      kind: 'concept-map',
+      nodes: ['a', 'b', 'c', 'd'].map((id) => ({ id, label: id })),
+      edges: [
+        { from: 'a', to: 'b', relationship: 'leads-to' },
+        { from: 'b', to: 'c', relationship: 'leads-to' },
+        { from: 'a', to: 'd', relationship: 'leads-to' },
+        { from: 'c', to: 'd', relationship: 'leads-to' },
+      ],
+    };
+    for (const strategy of ['hierarchical', 'grid', 'radial'] as const) {
+      const content = strategy === 'radial' ? mediaCycle(5) : layered;
+      const laidOut = layout(buildScene(content), CTX, strategy);
+      const bounds = boundsOf(laidOut);
+      for (const { from, to, geo } of edgesOf(laidOut)) {
+        const start = geo.points[0]!;
+        const end = geo.points[1]!;
+        expect(pointInInterior(bounds.get(from)!, start), `${from}->${to} start inside source`).toBe(false);
+        expect(pointInInterior(bounds.get(to)!, end), `${from}->${to} end inside target`).toBe(false);
+        expect(Math.hypot(end.x - start.x, end.y - start.y)).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('non-overlapping layouts: no edge endpoint falls inside any node box', () => {
+    const layered: DiagramContent = {
+      kind: 'concept-map',
+      nodes: ['a', 'b', 'c', 'd'].map((id) => ({ id, label: id })),
+      edges: [
+        { from: 'a', to: 'b', relationship: 'leads-to' },
+        { from: 'b', to: 'c', relationship: 'leads-to' },
+        { from: 'a', to: 'd', relationship: 'leads-to' },
+        { from: 'c', to: 'd', relationship: 'leads-to' },
+      ],
+    };
+    for (const strategy of ['hierarchical', 'grid'] as const) {
+      const laidOut = layout(buildScene(layered), CTX, strategy);
+      const boxes = [...boundsOf(laidOut).values()];
+      for (const { geo } of edgesOf(laidOut)) {
+        for (const p of geo.points) {
+          for (const b of boxes) {
+            expect(pointInInterior(b, p), `${strategy}: endpoint inside a node`).toBe(false);
+          }
+        }
+      }
+    }
+  });
+
+  // Regression guard for the radial media overlap that previously shipped as
+  // KNOWN DEBT: the ring radius is now derived from the fitted box size, so an
+  // endpoint anchored on one box's border is never inside its neighbour.
+  it('radial media cycle keeps every node box disjoint', () => {
+    const laidOut = layout(buildScene(mediaCycle(5)), CTX, 'radial');
+    const boxes = [...boundsOf(laidOut).entries()];
+    const overlaps: string[] = [];
+    for (let i = 0; i < boxes.length; i++) {
+      for (let j = i + 1; j < boxes.length; j++) {
+        const a = boxes[i]![1];
+        const b = boxes[j]![1];
+        const ox = Math.min(a.x + a.width, b.x + b.width) - Math.max(a.x, b.x);
+        const oy = Math.min(a.y + a.height, b.y + b.height) - Math.max(a.y, b.y);
+        if (ox > 0 && oy > 0) overlaps.push(`${boxes[i]![0]}/${boxes[j]![0]}`);
+      }
+    }
+    expect(overlaps).toEqual([]);
+  });
+
+  it('never lets the target endpoint sit at the target center', () => {
+    const laidOut = layout(buildScene(mediaCycle(5)), CTX, 'radial');
+    const bounds = boundsOf(laidOut);
+    for (const { to, geo } of edgesOf(laidOut)) {
+      expect(geo.points[1]).not.toEqual(centerOf(bounds.get(to)!));
+    }
+  });
+
+  it('emits non-degenerate segments for a cycle where nodes are close together', () => {
+    const laidOut = layout(buildScene(mediaCycle(6)), CTX, 'radial');
+    for (const { geo } of edgesOf(laidOut)) {
+      const [a, b] = geo.points;
+      expect(Math.hypot(b!.x - a!.x, b!.y - a!.y)).toBeGreaterThan(0);
+    }
+  });
+
+  it('keeps the svg path in sync with the geometry points', () => {
+    const laidOut = layout(buildScene(MEDIA_CHAIN), CTX, 'hierarchical');
+    for (const { geo } of edgesOf(laidOut)) {
+      const [a, b] = geo.points;
+      expect(geo.path).toBe(`M${a!.x},${a!.y} L${b!.x},${b!.y}`);
+    }
   });
 });
