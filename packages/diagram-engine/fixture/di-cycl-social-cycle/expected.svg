@@ -14,9 +14,9 @@
     <text x="280" y="508" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Prices</text>
     <rect id="node-production" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Production" x="250" y="62" width="60" height="60" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="280" y="92" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Production</text>
-    <path id="edge-demand-prices" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="demand leads-to prices" data-oedu-relationship="leads-to" d="M640,300 L280,508" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-prices-production" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="prices leads-to production" data-oedu-relationship="leads-to" d="M280,508 L280,92" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-production-demand" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="production leads-to demand" data-oedu-relationship="leads-to" d="M280,92 L640,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-demand-prices" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="demand leads-to prices" data-oedu-relationship="leads-to" d="M610,300 L310,508" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-prices-production" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="prices leads-to production" data-oedu-relationship="leads-to" d="M280,478 L280,122" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-production-demand" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="production leads-to demand" data-oedu-relationship="leads-to" d="M310,92 L610,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

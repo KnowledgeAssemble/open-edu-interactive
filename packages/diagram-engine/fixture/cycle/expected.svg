@@ -12,8 +12,8 @@
     <text x="640" y="300" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Stage A</text>
     <rect id="node-b" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Stage B" x="130" y="270" width="60" height="60" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="160" y="300" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Stage B</text>
-    <path id="edge-a-b" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="a leads-to b" data-oedu-relationship="leads-to" d="M640,300 L160,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-b-a" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="b leads-to a" data-oedu-relationship="leads-to" d="M160,300 L640,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-a-b" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="a leads-to b" data-oedu-relationship="leads-to" d="M610,300 L190,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-b-a" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="b leads-to a" data-oedu-relationship="leads-to" d="M190,300 L610,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

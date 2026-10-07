@@ -20,12 +20,12 @@
     <text x="388" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Waste</text>
     <rect id="node-recycle" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Recycling loop" x="480" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="548" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Recycling loop</text>
-    <path id="edge-food-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="food leads-to city" data-oedu-relationship="leads-to" d="M228,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-energy-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="energy leads-to city" data-oedu-relationship="leads-to" d="M388,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-water-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="water leads-to city" data-oedu-relationship="leads-to" d="M548,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-city-waste" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="city produces waste" data-oedu-relationship="produces" d="M228,322.5 L388,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-waste-recycle" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="waste leads-to recycle" data-oedu-relationship="leads-to" d="M388,322.5 L548,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-recycle-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="recycle produces city" data-oedu-relationship="produces" d="M548,322.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-food-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="food leads-to city" data-oedu-relationship="leads-to" d="M228,285 L228,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-energy-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="energy leads-to city" data-oedu-relationship="leads-to" d="M320,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-water-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="water leads-to city" data-oedu-relationship="leads-to" d="M480,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-city-waste" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="city produces waste" data-oedu-relationship="produces" d="M296,322.5 L320,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-waste-recycle" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="waste leads-to recycle" data-oedu-relationship="leads-to" d="M456,322.5 L480,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-recycle-city" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="recycle produces city" data-oedu-relationship="produces" d="M480,322.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

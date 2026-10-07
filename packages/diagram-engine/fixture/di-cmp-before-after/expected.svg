@@ -14,8 +14,8 @@
     <text x="100" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">New course</text>
     <rect id="node-delta" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Delta" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Delta</text>
-    <path id="edge-course-old-course-new" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="course-old leads-to course-new" data-oedu-relationship="leads-to" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-course-new-delta" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="course-new leads-to delta" data-oedu-relationship="leads-to" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-course-old-course-new" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="course-old leads-to course-new" data-oedu-relationship="leads-to" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-course-new-delta" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="course-new leads-to delta" data-oedu-relationship="leads-to" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

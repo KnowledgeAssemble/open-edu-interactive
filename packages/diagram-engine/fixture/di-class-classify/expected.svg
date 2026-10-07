@@ -18,10 +18,10 @@
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Mammals</text>
     <rect id="node-birds" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Birds" x="170" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="220" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Birds</text>
-    <path id="edge-animals-vertebrates" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="animals contains vertebrates" data-oedu-relationship="contains" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-animals-invertebrates" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="animals contains invertebrates" data-oedu-relationship="contains" d="M100,80 L220,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-vertebrates-mammals" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="vertebrates contains mammals" data-oedu-relationship="contains" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-vertebrates-birds" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="vertebrates contains birds" data-oedu-relationship="contains" d="M100,160 L220,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-animals-vertebrates" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="animals contains vertebrates" data-oedu-relationship="contains" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-animals-invertebrates" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="animals contains invertebrates" data-oedu-relationship="contains" d="M150,80 L170,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-vertebrates-mammals" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="vertebrates contains mammals" data-oedu-relationship="contains" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-vertebrates-birds" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="vertebrates contains birds" data-oedu-relationship="contains" d="M150,160 L170,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

@@ -20,11 +20,11 @@
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Farming</text>
     <rect id="node-school" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="School" x="170" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="220" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">School</text>
-    <path id="edge-economy-primary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains primary" data-oedu-relationship="contains" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-economy-secondary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains secondary" data-oedu-relationship="contains" d="M100,80 L220,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-economy-tertiary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains tertiary" data-oedu-relationship="contains" d="M100,80 L340,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-primary-farming" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="primary contains farming" data-oedu-relationship="contains" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-tertiary-school" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="tertiary contains school" data-oedu-relationship="contains" d="M340,160 L220,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-economy-primary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains primary" data-oedu-relationship="contains" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-economy-secondary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains secondary" data-oedu-relationship="contains" d="M150,80 L170,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-economy-tertiary" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="economy contains tertiary" data-oedu-relationship="contains" d="M150,80 L290,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-primary-farming" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="primary contains farming" data-oedu-relationship="contains" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-tertiary-school" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="tertiary contains school" data-oedu-relationship="contains" d="M290,160 L270,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

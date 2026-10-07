@@ -14,8 +14,8 @@
     <text x="468" y="262.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Rain</text>
     <rect id="node-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Crop choice" x="240" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="308" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Crop choice</text>
-    <path id="soil-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="soil influences crop" data-oedu-relationship="influences" d="M308,262.5 L308,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="rain-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="rain influences crop" data-oedu-relationship="influences" d="M468,262.5 L308,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="soil-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="soil influences crop" data-oedu-relationship="influences" d="M308,285 L308,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="rain-crop" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="rain influences crop" data-oedu-relationship="influences" d="M400,262.5 L376,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

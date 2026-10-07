@@ -16,9 +16,9 @@
     <text x="220" y="160" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Rajya Sabha</text>
     <rect id="node-president" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="President" x="50" y="215" width="100" height="50" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="100" y="240" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">President</text>
-    <path id="edge-parliament-lok-sabha" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="parliament contains lok-sabha" data-oedu-relationship="contains" d="M100,80 L100,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-parliament-rajya-sabha" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="parliament contains rajya-sabha" data-oedu-relationship="contains" d="M100,80 L220,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-lok-sabha-president" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="lok-sabha part-of president" data-oedu-relationship="part-of" d="M100,160 L100,240" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-parliament-lok-sabha" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="parliament contains lok-sabha" data-oedu-relationship="contains" d="M100,105 L100,135" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-parliament-rajya-sabha" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="parliament contains rajya-sabha" data-oedu-relationship="contains" d="M150,80 L170,160" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-lok-sabha-president" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="lok-sabha part-of president" data-oedu-relationship="part-of" d="M100,185 L100,215" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

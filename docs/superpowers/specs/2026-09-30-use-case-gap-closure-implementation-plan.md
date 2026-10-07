@@ -454,8 +454,9 @@ Each slice: add its row to `docs/PLAN-P8.md` §6 **at open time** (a slice absen
 | T34 | Chart `kind: "area"` | `ch-p1` | filled path; reuses line stroke (T11) + series machinery |
 | T35 | Chart `kind: "scatter"` | `ch-p2` | two quantitative dimensions; validation negatives (single-series scatter rejects) |
 | T36 | Diagram `kind: "label-diagram"` | `di-p1`, `di-lab-1` | node → region-of-interest mapping; first future-kind gate |
-| T37 | Diagram compare-layout / diff-emphasis | `di-cmp-1`, `di-cmp-2` | decide composition vs new layout strategy in the SPEC slice before code; `di-cmp-3` is W-3.2's, not here; ELK only behind `LayoutEngine` if the slice outgrows radial/hierarchical/grid (PLAN-P6) |
+| T37 | Diagram compare-layout / diff-emphasis | `di-cmp-1`, `di-cmp-2` | decide composition vs new layout strategy in the SPEC slice before code; `di-cmp-3` is W-3.2's, not here; a third-party layout dependency is barred by ADR-14 unless the slice produces the measurements PLAN-P8 §8a lacks (PLAN-P6) |
 | T38 | Timeline `eras[]` / parallel timelines | `tl-f2` | synchronized side-by-side axes; composition vs new slice decided in SPEC; **must not reintroduce a timer** (PLAN-P5) |
+| T39 | Diagram sub-700x520 media ring | — | ring falls back to an 11:6 slot below 700x520 and the arrow ratio regresses to ~2.11; pinned as debt in `test/media-layout.test.ts` and PLAN-P8 §8a. A routing-ring variant (ADR-14) would fix it at the cost of footprint |
 
 ---
 

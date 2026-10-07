@@ -18,10 +18,10 @@
     <text x="228" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Climate change</text>
     <rect id="node-flooding" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Flooding" x="320" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="388" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Flooding</text>
-    <path id="edge-deforest-habitat-loss" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="deforest leads-to habitat-loss" data-oedu-relationship="leads-to" d="M228,262.5 L388,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-deforest-soil-erosion" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="deforest leads-to soil-erosion" data-oedu-relationship="leads-to" d="M228,262.5 L548,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-deforest-climate-change" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="deforest influences climate-change" data-oedu-relationship="influences" d="M228,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-soil-erosion-flooding" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="soil-erosion leads-to flooding" data-oedu-relationship="leads-to" d="M548,262.5 L388,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-deforest-habitat-loss" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="deforest leads-to habitat-loss" data-oedu-relationship="leads-to" d="M296,262.5 L320,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-deforest-soil-erosion" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="deforest leads-to soil-erosion" data-oedu-relationship="leads-to" d="M296,262.5 L480,262.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-deforest-climate-change" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="deforest influences climate-change" data-oedu-relationship="influences" d="M228,285 L228,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-soil-erosion-flooding" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="soil-erosion leads-to flooding" data-oedu-relationship="leads-to" d="M480,262.5 L456,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

@@ -18,10 +18,10 @@
     <text x="228" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Vegetation</text>
     <rect id="node-animals" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Animals" x="320" y="300" width="136" height="45" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="388" y="322.5" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Animals</text>
-    <path id="edge-climate-vegetation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="climate influences vegetation" data-oedu-relationship="influences" d="M228,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-soil-vegetation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="soil influences vegetation" data-oedu-relationship="influences" d="M388,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-water-vegetation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="water influences vegetation" data-oedu-relationship="influences" d="M548,262.5 L228,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-vegetation-animals" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="vegetation influences animals" data-oedu-relationship="influences" d="M228,322.5 L388,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-climate-vegetation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="climate influences vegetation" data-oedu-relationship="influences" d="M228,285 L228,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-soil-vegetation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="soil influences vegetation" data-oedu-relationship="influences" d="M320,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-water-vegetation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="water influences vegetation" data-oedu-relationship="influences" d="M480,262.5 L296,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-vegetation-animals" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="vegetation influences animals" data-oedu-relationship="influences" d="M296,322.5 L320,322.5" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

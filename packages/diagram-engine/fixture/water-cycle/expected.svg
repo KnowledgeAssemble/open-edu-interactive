@@ -16,10 +16,10 @@
     <text x="160" y="300" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Precipitation</text>
     <rect id="node-collection" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="Collection" x="370" y="30" width="60" height="60" rx="6" fill="currentColor" opacity="0.85" stroke="currentColor" stroke-width="1.5"/>
     <text x="400" y="60" text-anchor="middle" dominant-baseline="central" font-size="11" fill="white">Collection</text>
-    <path id="edge-evaporation-condensation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="evaporation leads-to condensation" data-oedu-relationship="leads-to" d="M640,300 L400,540" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-condensation-precipitation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="condensation leads-to precipitation" data-oedu-relationship="leads-to" d="M400,540 L160,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-precipitation-collection" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="precipitation leads-to collection" data-oedu-relationship="leads-to" d="M160,300 L400,60" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
-    <path id="edge-collection-evaporation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="collection leads-to evaporation" data-oedu-relationship="leads-to" d="M400,60 L640,300" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-evaporation-condensation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="evaporation leads-to condensation" data-oedu-relationship="leads-to" d="M640,330 L400,510" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-condensation-precipitation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="condensation leads-to precipitation" data-oedu-relationship="leads-to" d="M400,510 L160,330" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-precipitation-collection" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="precipitation leads-to collection" data-oedu-relationship="leads-to" d="M160,270 L400,90" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path id="edge-collection-evaporation" data-oedu-role="selectable" data-oedu-interactive="true" aria-label="collection leads-to evaporation" data-oedu-relationship="leads-to" d="M400,90 L640,270" marker-end="url(#arrowhead)" stroke="currentColor" stroke-width="2" fill="none"/>
     </g>
   </g>
 </svg>

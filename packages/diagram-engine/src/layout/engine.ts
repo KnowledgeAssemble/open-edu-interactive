@@ -3,6 +3,8 @@ import { adjacency, kahnTopoSort } from './graph.js';
 import { assignLayers, computeHierarchicalBounds } from './hierarchical.js';
 import { radialLayout } from './radial.js';
 import { gridLayout } from './grid.js';
+import { computeEdgeGeometry } from './edge-geometry.js';
+import type { EdgeGeometry } from './edge-geometry.js';
 import { MEDIA_BOX } from '@knowledgeassemble/svg-kit';
 
 export interface LayoutContext {
@@ -17,44 +19,6 @@ interface BoundsWithPos {
   y: number;
   width: number;
   height: number;
-}
-
-interface EdgeGeometry {
-  type: 'line' | 'path';
-  points: Array<{ x: number; y: number }>;
-  path?: string;
-}
-
-function clampPoint(
-  p: { x: number; y: number },
-  canvas: { width: number; height: number },
-): { x: number; y: number } {
-  return {
-    x: Math.max(0, Math.min(canvas.width, p.x)),
-    y: Math.max(0, Math.min(canvas.height, p.y)),
-  };
-}
-
-function computeEdgeGeometry(
-  fromBounds: BoundsWithPos,
-  toBounds: BoundsWithPos,
-  canvas: { width: number; height: number },
-): EdgeGeometry {
-  const fromCenter = {
-    x: fromBounds.x + fromBounds.width / 2,
-    y: fromBounds.y + fromBounds.height / 2,
-  };
-  const toCenter = {
-    x: toBounds.x + toBounds.width / 2,
-    y: toBounds.y + toBounds.height / 2,
-  };
-  const p1 = clampPoint(fromCenter, canvas);
-  const p2 = clampPoint(toCenter, canvas);
-  return {
-    type: 'line',
-    points: [p1, p2],
-    path: `M${p1.x},${p1.y} L${p2.x},${p2.y}`,
-  };
 }
 
 export function layout(scene: Scene, ctx: LayoutContext, layoutType?: string): Scene {
@@ -110,7 +74,7 @@ export function layout(scene: Scene, ctx: LayoutContext, layoutType?: string): S
       for (const id of nodeIds) {
         sizeMap.set(id, mediaSizes?.get(id) ?? { width: 100, height: 50 });
       }
-      nodeBounds = computeHierarchicalBounds(layerOf, sizeMap, ctx, mediaSizes.size > 0);
+      nodeBounds = computeHierarchicalBounds(layerOf, sizeMap, new Set(mediaSizes.keys()), ctx);
     } else {
       const gridBounds = gridLayout(nodeIds, ctx, sizes);
       nodeBounds = new Map<string, BoundsWithPos>();
