@@ -29,7 +29,7 @@ Orientation: [`SYSTEM-ARCHITECTURE.md`](SYSTEM-ARCHITECTURE.md) (high-level syst
 | Timeline | Temporal / when | [`engines/timeline/VISION.md`](engines/timeline/VISION.md) | [`engines/timeline/SPEC.md`](engines/timeline/SPEC.md) (thin) | — |
 | Diagram | Structural / how connected | [`engines/diagram/VISION.md`](engines/diagram/VISION.md) | [`engines/diagram/SPEC.md`](engines/diagram/SPEC.md) (thin) | — |
 
-Status key: **thin** = normative envelope + MVP slice only (gates P3–P6 code); expand in schemas/code, not unbounded vision prose. **GeoMap schema + agent tooling** = TODO.
+Status key: **thin** = normative envelope + MVP slice only (gates P3–P6 code); expand in schemas/code, not unbounded vision prose. Every engine now ships a machine-readable schema (`packages/<engine>/src/schemas/`) and an authoring skill (`docs/engines/<engine>/skills/`), projected into `@knowledgeassemble/engine-skills`.
 
 ## Status matrix
 
@@ -64,9 +64,13 @@ The engine family ships as published npm packages. Install the core + the engine
 
 ```sh
 pnpm add @knowledgeassemble/interactive-engine \
-  @knowledgeassemble/visual-engine @knowledgeassemble/timeline-engine \
+  @knowledgeassemble/visual-engine @knowledgeassemble/chart-engine \
+  @knowledgeassemble/geomap-engine @knowledgeassemble/timeline-engine \
+  @knowledgeassemble/diagram-engine \
   @knowledgeassemble/interactive-react
 ```
+
+`@knowledgeassemble/svg-kit` and `@knowledgeassemble/engine-skills` are also published: `svg-kit` is the shared SVG render kit the engines depend on (installed transitively), and `engine-skills` ships the authoring guidance for content-creator agents.
 
 Mount a single interactive node, or a composed lesson, through the React package:
 
@@ -97,7 +101,9 @@ The `OpenEduBridge` is passed **in** — the engine packages never import `@open
 
 ### Publish workflow (T1/T7)
 
-All seven packages are published as per-file `tsc` ESM emit (STRUCTURE §40-41) into `dist/`; `prepublishOnly` runs `build && typecheck && lint && test`. Vitest gates for publishability live at `packages/interactive-engine/test/p7/` and `packages/interactive-react/test/`; the installed-package suite is a script:
+Nine public packages publish under the `@knowledgeassemble` scope: `interactive-engine`, `svg-kit`, the five engines (`visual`, `chart`, `geomap`, `timeline`, `diagram`), `interactive-react`, and `engine-skills`. `dev-harness` and both apps are `private` and never publish.
+
+All packages publish as per-file `tsc` ESM emit (STRUCTURE §40-41) into `dist/`; `prepublishOnly` runs `build && typecheck && lint && test`. Vitest gates for publishability live at `packages/interactive-engine/test/p7/` and `packages/interactive-react/test/`; the installed-package suite is a script:
 
 ```sh
 pnpm publish:dry     # pnpm -r publish --dry-run (runs prepublishOnly, no registry push)
@@ -106,3 +112,16 @@ pnpm publish:smoke   # scripts/p7-publish-smoke.mjs — packs, installs into a t
 ```
 
 The smoke script is the in-repo evidence for PLAN criterion 2 (all engines pass the common conformance suite on the installed packages, not just workspace paths).
+
+To release to npm (registry `https://registry.npmjs.org/`):
+
+```sh
+# 1. Bump the version in every publishable package.json (bump them together).
+# 2. Validate: dry-run + installed-package smoke.
+pnpm publish:dry && pnpm publish:smoke
+# 3. Publish. pnpm publishes in dependency order and rewrites workspace:* deps to the
+#    local version; --access public is required for first publishes of scoped packages.
+pnpm -r publish --access public --no-git-checks
+```
+
+A newly published package or version may briefly show a `0.0.0-stage` placeholder in the registry before the real version goes live.
