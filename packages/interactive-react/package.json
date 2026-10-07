@@ -1,6 +1,6 @@
 {
   "name": "@knowledgeassemble/interactive-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -57,6 +57,10 @@
       ".": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
+      },
+      "./svg-surface": {
+        "types": "./dist/svg-surface.d.ts",
+        "default": "./dist/svg-surface.js"
       }
     }
   }
